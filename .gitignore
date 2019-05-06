@@ -1,2 +1,4 @@
 .idea
 mysql/data
+app/*
+!app/index.php

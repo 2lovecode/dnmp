@@ -25,7 +25,7 @@ services:
     ports:
       - "9000"
     volumes:
-      - ./app:/usr/share/nginx/html
+      - ./app:/var/www/html
       # Your php.ini
       - ./php/php.ini:/usr/local/etc/php/php.ini:ro
       - ./php/php-fpm.conf:/usr/local/etc/php/php-fpm.conf:ro
@@ -39,12 +39,13 @@ services:
     # - DB_PASSWORD=
     links:
       - mysql:mysql
+      - redis:redis
 
 
   nginx:
     image: nginx:1.15
     ports:
-      - "8080:80"
+      - "8888:80"
       #- "443:443"
     volumes:
       # app
