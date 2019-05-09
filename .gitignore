@@ -2,3 +2,5 @@
 mysql/data
 app/*
 !app/index.php
+nginx/conf.d/*
+!nginx/conf.d/default.conf

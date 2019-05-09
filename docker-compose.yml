@@ -5,17 +5,18 @@ services:
   redis:
     image: redis:5.0
     ports:
-      - "6380:6379"
+      - "6379:6379"
 
   # database
   mysql:
     image: mysql:8.0
     ports:
     # Allow client to access 3306
-      - "6667:3306"
+      - "3306:3306"
     volumes:
       # NOTE: your data will be stored in ./mysql
       - ./mysql/data:/var/lib/mysql
+      - ./mysql/conf/my.cnf:/etc/mysql/my.cnf
     environment:
       - MYSQL_ROOT_PASSWORD=123456
 
@@ -45,7 +46,7 @@ services:
   nginx:
     image: nginx:1.15
     ports:
-      - "8888:80"
+      - "80:80"
       #- "443:443"
     volumes:
       # app
