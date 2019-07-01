@@ -4,3 +4,7 @@ fe00::0	ip6-localnet
 ff00::0	ip6-mcastprefix
 ff02::1	ip6-allnodes
 ff02::2	ip6-allrouters
+
+10.251.33.13  s3-ap-southeast-1.amazonaws.com
+#10.112.80.83	www.code.com
+172.17.0.1	www.code.com

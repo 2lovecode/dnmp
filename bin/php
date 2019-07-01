@@ -1,0 +1,3 @@
+#!/bin/bash
+DOCKER_NAME=docker_php_1
+sudo docker exec -it $DOCKER_NAME /bin/bash  -c "/usr/local/bin/php $*"

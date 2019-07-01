@@ -52,7 +52,8 @@ RUN docker-php-ext-configure gd \
         mbstring \
         opcache \
         pdo_mysql \
-        pdo_pgsql
+        pdo_pgsql \
+        pcntl
 
 # Install PECL extensions
 # see http://stackoverflow.com/a/8154466/291573) for usage of `printf`
