@@ -1,7 +1,8 @@
-FROM php:7.1-fpm
+FROM php:7.1-fpm-stretch
 
 # Install system packages for PHP extensions recommended
 ENV DEBIAN_FRONTEND=noninteractive
+
 
 RUN apt-get update && \
     apt-get -y install \
@@ -24,7 +25,7 @@ RUN apt-get update && \
             libxml2-dev \
             libzip-dev \
             zlib1g-dev \
-            mysql-client \
+            default-mysql-client \
             openssh-client \
             nano \
             unzip \
@@ -34,7 +35,7 @@ RUN apt-get update && \
         apt-get clean && \
         rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# Install PHP extensions required
+# Install PHP extensions required for Yii 2.0 Framework
 RUN docker-php-ext-configure gd \
         --with-freetype-dir=/usr/include/ \
         --with-png-dir=/usr/include/ \
@@ -68,7 +69,7 @@ RUN printf "\n" | pecl install \
 RUN cd /tmp && \
     git clone git://github.com/xdebug/xdebug.git && \
     cd xdebug && \
-    git checkout 2.7.0beta1 && \
+    git checkout 2.7.2 && \
     phpize && \
     ./configure --enable-xdebug && \
     make && \
