@@ -3,6 +3,18 @@ FROM php:7.1-fpm-stretch
 # Install system packages for PHP extensions recommended
 ENV DEBIAN_FRONTEND=noninteractive
 
+ENV SWOOLE_VERSION 4.4.3
+
+#更新apt-get源 使用163的源
+RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak && \
+    echo "deb http://mirrors.163.com/debian/ stretch main non-free contrib" >/etc/apt/sources.list && \
+    echo "deb http://mirrors.163.com/debian/ stretch-updates main non-free contrib" >>/etc/apt/sources.list && \
+    echo "deb http://mirrors.163.com/debian/ stretch-backports main non-free contrib" >>/etc/apt/sources.list && \
+    echo "deb-src http://mirrors.163.com/debian/ stretch main non-free contrib" >>/etc/apt/sources.list && \
+    echo "deb-src http://mirrors.163.com/debian/ stretch-updates main non-free contrib" >>/etc/apt/sources.list && \
+    echo "deb-src http://mirrors.163.com/debian/ stretch-backports main non-free contrib" >>/etc/apt/sources.list && \
+    echo "deb http://mirrors.163.com/debian-security/ stretch/updates main non-free contrib" >>/etc/apt/sources.list && \
+    echo "deb-src http://mirrors.163.com/debian-security/ stretch/updates main non-free contrib" >>/etc/apt/sources.list
 
 RUN apt-get update && \
     apt-get -y install \
@@ -31,6 +43,7 @@ RUN apt-get update && \
             unzip \
             libcurl4-openssl-dev \
             libssl-dev \
+            wget \
         --no-install-recommends && \
         apt-get clean && \
         rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -103,6 +116,19 @@ RUN composer global require --optimize-autoloader \
         "hirak/prestissimo:${VERSION_PRESTISSIMO_PLUGIN}" && \
     composer global dumpautoload --optimize && \
     composer clear-cache
+
+RUN wget https://github.com/swoole/swoole-src/archive/v${SWOOLE_VERSION}.tar.gz -O swoole.tar.gz \
+    && mkdir -p swoole \
+    && tar -xf swoole.tar.gz -C swoole --strip-components=1 \
+    && rm swoole.tar.gz \
+    && ( \
+    cd swoole \
+    && phpize \
+    && ./configure --enable-openssl \
+    && make \
+    && make install \
+    ) \
+    && rm -r swoole
 
 # Enable mod_rewrite for images with apache
 RUN if command -v a2enmod >/dev/null 2>&1; then \
