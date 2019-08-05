@@ -2,6 +2,7 @@
 mysql/data
 app/*
 !app/index.php
+!app/swoole.php
 nginx/conf.d/*
 !nginx/conf.d/default.conf
 php/php-fpm.d/cacerts/*
