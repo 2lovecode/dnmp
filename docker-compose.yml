@@ -39,7 +39,6 @@ services:
     # - DB_DATABASE=
     # - DB_USERNAME=
     # - DB_PASSWORD=
-    entrypoint: ["php", "/var/www/html/swoole.php"]
     links:
       - mysql:mysql
       - redis:redis
