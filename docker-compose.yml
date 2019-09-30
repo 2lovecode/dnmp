@@ -25,6 +25,7 @@ services:
     build: ./php
     ports:
       - "9000"
+      - "9505:9505"
     volumes:
       - ./app:/var/www/html
       # Your php.ini
@@ -32,6 +33,8 @@ services:
       - ./php/php-fpm.conf:/usr/local/etc/php/php-fpm.conf:ro
       - ./php/php-fpm.d:/usr/local/etc/php/php-fpm.d
       - ./php/hosts:/etc/hosts
+      # - ./php/certs/cacert.pem:/etc/ssl/certs/cacert.pem
+
     # environment:
     # Set your APP env variables here:
     # - APP_KEY=

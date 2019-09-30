@@ -8,3 +8,11 @@ ff02::2	ip6-allrouters
 10.251.33.13  s3-ap-southeast-1.amazonaws.com
 #10.112.80.83	www.code.com
 172.17.0.1	www.code.com
+172.17.0.1  www.lenovo-mbg.com
+172.17.0.1  www.mbg-api.com
+172.17.0.1  www.mbg.com
+
+172.17.0.1 kafka1
+172.17.0.1 kafka2
+
+10.122.12.61 mds-device.earth.xpaas.lenovo.com
