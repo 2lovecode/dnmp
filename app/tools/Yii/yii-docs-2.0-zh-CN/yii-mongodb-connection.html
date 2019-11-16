@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>Connection, yii\mongodb\Connection - Yii Framework 2.0 API Documentation</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w16295" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w16295-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Yii Framework 2.0 API Documentation</a></div><div id="w16295-collapse" class="collapse navbar-collapse"><ul id="w16296" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w16297" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-3">
+                <div id="navigation" class="list-group"><a class="list-group-item active" href="#navigation-16286" data-toggle="collapse" data-parent="#navigation">yii\mongodb <b class="caret"></b></a><div id="navigation-16286" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./yii-mongodb-activefixture.html">ActiveFixture</a>
+<a class="list-group-item" href="./yii-mongodb-activequery.html">ActiveQuery</a>
+<a class="list-group-item" href="./yii-mongodb-activerecord.html">ActiveRecord</a>
+<a class="list-group-item" href="./yii-mongodb-batchqueryresult.html">BatchQueryResult</a>
+<a class="list-group-item" href="./yii-mongodb-cache.html">Cache</a>
+<a class="list-group-item" href="./yii-mongodb-collection.html">Collection</a>
+<a class="list-group-item" href="./yii-mongodb-command.html">Command</a>
+<a class="list-group-item active" href="./yii-mongodb-connection.html">Connection</a>
+<a class="list-group-item" href="./yii-mongodb-database.html">Database</a>
+<a class="list-group-item" href="./yii-mongodb-exception.html">Exception</a>
+<a class="list-group-item" href="./yii-mongodb-logbuilder.html">LogBuilder</a>
+<a class="list-group-item" href="./yii-mongodb-migration.html">Migration</a>
+<a class="list-group-item" href="./yii-mongodb-query.html">Query</a>
+<a class="list-group-item" href="./yii-mongodb-querybuilder.html">QueryBuilder</a>
+<a class="list-group-item" href="./yii-mongodb-session.html">Session</a></div>
+<a class="list-group-item" href="#navigation-16287" data-toggle="collapse" data-parent="#navigation">yii\mongodb\console\controllers <b class="caret"></b></a><div id="navigation-16287" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-console-controllers-migratecontroller.html">MigrateController</a></div>
+<a class="list-group-item" href="#navigation-16288" data-toggle="collapse" data-parent="#navigation">yii\mongodb\debug <b class="caret"></b></a><div id="navigation-16288" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-debug-explainaction.html">ExplainAction</a>
+<a class="list-group-item" href="./yii-mongodb-debug-mongodbpanel.html">MongoDbPanel</a></div>
+<a class="list-group-item" href="#navigation-16289" data-toggle="collapse" data-parent="#navigation">yii\mongodb\file <b class="caret"></b></a><div id="navigation-16289" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-file-activequery.html">ActiveQuery</a>
+<a class="list-group-item" href="./yii-mongodb-file-activerecord.html">ActiveRecord</a>
+<a class="list-group-item" href="./yii-mongodb-file-collection.html">Collection</a>
+<a class="list-group-item" href="./yii-mongodb-file-cursor.html">Cursor</a>
+<a class="list-group-item" href="./yii-mongodb-file-download.html">Download</a>
+<a class="list-group-item" href="./yii-mongodb-file-query.html">Query</a>
+<a class="list-group-item" href="./yii-mongodb-file-streamwrapper.html">StreamWrapper</a>
+<a class="list-group-item" href="./yii-mongodb-file-upload.html">Upload</a></div>
+<a class="list-group-item" href="#navigation-16290" data-toggle="collapse" data-parent="#navigation">yii\mongodb\gii\model <b class="caret"></b></a><div id="navigation-16290" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-gii-model-generator.html">Generator</a></div>
+<a class="list-group-item" href="#navigation-16291" data-toggle="collapse" data-parent="#navigation">yii\mongodb\i18n <b class="caret"></b></a><div id="navigation-16291" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-i18n-mongodbmessagesource.html">MongoDbMessageSource</a></div>
+<a class="list-group-item" href="#navigation-16292" data-toggle="collapse" data-parent="#navigation">yii\mongodb\log <b class="caret"></b></a><div id="navigation-16292" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-log-mongodbtarget.html">MongoDbTarget</a></div>
+<a class="list-group-item" href="#navigation-16293" data-toggle="collapse" data-parent="#navigation">yii\mongodb\rbac <b class="caret"></b></a><div id="navigation-16293" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-rbac-mongodbmanager.html">MongoDbManager</a>
+<a class="list-group-item" href="./yii-mongodb-rbac-permission.html">Permission</a>
+<a class="list-group-item" href="./yii-mongodb-rbac-role.html">Role</a></div>
+<a class="list-group-item" href="#navigation-16294" data-toggle="collapse" data-parent="#navigation">yii\mongodb\validators <b class="caret"></b></a><div id="navigation-16294" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-validators-mongodatevalidator.html">MongoDateValidator</a>
+<a class="list-group-item" href="./yii-mongodb-validators-mongoidvalidator.html">MongoIdValidator</a></div></div>    </div>
+    <div class="col-md-9 api-content" role="main">
+        <h1>Class yii\mongodb\Connection</h1>
+<div class="top-nav">
+    <a href="index.html">All Classes</a>
+            | <a href="#properties">Properties</a>
+                | <a href="#methods">Methods</a>
+                | <a href="#events">Events</a>
+        </div>
+
+<table class="summaryTable docClass table table-bordered">
+    <colgroup>
+        <col class="col-name" />
+        <col class="col-value" />
+    </colgroup>
+            <tr><th>Inheritance</th><td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a> &raquo;
+<a href="yii-base-component.html">yii\base\Component</a> &raquo;
+<a href="yii-base-baseobject.html">yii\base\BaseObject</a></td></tr>
+                <tr><th>Implements</th><td><a href="yii-base-configurable.html">yii\base\Configurable</a></td></tr>
+                                    <tr><th>Available since version</th><td>2.0</td></tr>
+                    <tr>
+          <th>Source Code</th>
+          <td><a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php">https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php</a></td>
+        </tr>
+    </table>
+
+<div class="class-description">
+    <p><strong>Connection represents a connection to a MongoDb server.</strong></p>
+    <p>Connection works together with <a href="yii-mongodb-database.html">yii\mongodb\Database</a> and <a href="yii-mongodb-collection.html">yii\mongodb\Collection</a> to provide data access
+to the Mongo database. They are wrappers of the [[MongoDB PHP extension]](<a href="http://us1.php.net/manual/en/book.mongo.php">http://us1.php.net/manual/en/book.mongo.php</a>).</p>
+<p>To establish a DB connection, set <a href="yii-mongodb-connection.html#$dsn-detail">$dsn</a> and then call <a href="yii-mongodb-connection.html#open()-detail">open()</a> to be true.</p>
+<p>The following example shows how to create a Connection instance and establish
+the DB connection:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$connection</span> = <span class="hljs-keyword">new</span> \yii\mongodb\Connection([
+    <span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-variable">$dsn</span>,
+]);
+<span class="hljs-variable">$connection</span>-&gt;open();
+</code></pre>
+<p>After the Mongo connection is established, one can access Mongo databases and collections:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$database</span> = <span class="hljs-variable">$connection</span>-&gt;getDatabase(<span class="hljs-string">'my_mongo_db'</span>);
+<span class="hljs-variable">$collection</span> = <span class="hljs-variable">$database</span>-&gt;getCollection(<span class="hljs-string">'customer'</span>);
+<span class="hljs-variable">$collection</span>-&gt;insert([<span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'John Smith'</span>, <span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">1</span>]);
+</code></pre>
+<p>You can work with several different databases at the same server using this class.
+However, while it is unlikely your application will actually need it, the Connection class
+provides ability to use <a href="yii-mongodb-connection.html#$defaultDatabaseName-detail">$defaultDatabaseName</a> as well as a shortcut method <a href="yii-mongodb-connection.html#getCollection()-detail">getCollection()</a>
+to retrieve a particular collection instance:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// get collection 'customer' from default database:</span>
+<span class="hljs-variable">$collection</span> = <span class="hljs-variable">$connection</span>-&gt;getCollection(<span class="hljs-string">'customer'</span>);
+<span class="hljs-comment">// get collection 'customer' from database 'mydatabase':</span>
+<span class="hljs-variable">$collection</span> = <span class="hljs-variable">$connection</span>-&gt;getCollection([<span class="hljs-string">'mydatabase'</span>, <span class="hljs-string">'customer'</span>]);
+</code></pre>
+<p>Connection is often used as an application component and configured in the application
+configuration like the following:</p>
+<pre><code class="hljs php language-php">[
+     <span class="hljs-string">'components'</span> =&gt; [
+         <span class="hljs-string">'mongodb'</span> =&gt; [
+             <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'\yii\mongodb\Connection'</span>,
+             <span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'mongodb://developer:password@localhost:27017/mydatabase'</span>,
+         ],
+     ],
+]
+</code></pre>
+
+    </div>
+
+<a id="properties"></a>
+
+<div class="summary doc-property">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-property" />
+    <col class="col-type" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr class="inherited" id="$behaviors">
+        <td><a href="yii-base-component.html#$behaviors-detail">$behaviors</a></td>
+        <td><a href="yii-base-behavior.html">yii\base\Behavior</a>[]</td>
+        <td>List of behaviors attached to this component</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr id="$database">
+        <td><a href="yii-mongodb-connection.html#$database-detail">$database</a></td>
+        <td><a href="yii-mongodb-database.html">yii\mongodb\Database</a></td>
+        <td>Database instance.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr id="$defaultDatabaseName">
+        <td><a href="yii-mongodb-connection.html#$defaultDatabaseName-detail">$defaultDatabaseName</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>Default database name.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr id="$driverOptions">
+        <td><a href="yii-mongodb-connection.html#$driverOptions-detail">$driverOptions</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>Options for the MongoDB driver.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr id="$dsn">
+        <td><a href="yii-mongodb-connection.html#$dsn-detail">$dsn</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>Host:port
+
+Correct syntax is:
+mongodb://[username:password@]host1[:port1][,host2[:port2:],.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr id="$enableLogging">
+        <td><a href="yii-mongodb-connection.html#$enableLogging-detail">$enableLogging</a></td>
+        <td><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+        <td>Whether to log command and query executions.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr id="$enableProfiling">
+        <td><a href="yii-mongodb-connection.html#$enableProfiling-detail">$enableProfiling</a></td>
+        <td><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+        <td>Whether to enable profiling the commands and queries being executed.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr id="$fileCollection">
+        <td><a href="yii-mongodb-connection.html#$fileCollection-detail">$fileCollection</a></td>
+        <td><a href="yii-mongodb-file-collection.html">yii\mongodb\file\Collection</a></td>
+        <td>Mongo GridFS collection instance.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr id="$fileStreamProtocol">
+        <td><a href="yii-mongodb-connection.html#$fileStreamProtocol-detail">$fileStreamProtocol</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>Name of the protocol, which should be used for the GridFS stream wrapper.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr id="$fileStreamWrapperClass">
+        <td><a href="yii-mongodb-connection.html#$fileStreamWrapperClass-detail">$fileStreamWrapperClass</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>Name of the class, which should serve as a stream wrapper for <a href="yii-mongodb-connection.html#$fileStreamProtocol-detail">$fileStreamProtocol</a> protocol.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr id="$isActive">
+        <td><a href="yii-mongodb-connection.html#$isActive-detail">$isActive</a></td>
+        <td><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+        <td>Whether the Mongo connection is established</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr id="$logBuilder">
+        <td><a href="yii-mongodb-connection.html#$logBuilder-detail">$logBuilder</a></td>
+        <td><a href="yii-mongodb-logbuilder.html">yii\mongodb\LogBuilder</a></td>
+        <td>The log builder for this connection.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr id="$manager">
+        <td><a href="yii-mongodb-connection.html#$manager-detail">$manager</a></td>
+        <td>\MongoDB\Driver\Manager</td>
+        <td>MongoDB driver manager.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr id="$options">
+        <td><a href="yii-mongodb-connection.html#$options-detail">$options</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>Connection options.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr id="$queryBuilder">
+        <td><a href="yii-mongodb-connection.html#$queryBuilder-detail">$queryBuilder</a></td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+        <td>The query builder for the this MongoDB connection.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr id="$typeMap">
+        <td><a href="yii-mongodb-connection.html#$typeMap-detail">$typeMap</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>Type map to use for BSON unserialization.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+    </table>
+</div>
+
+<a id="methods"></a>
+
+<div class="summary doc-method">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr class="inherited" id="__call()">
+        <td><a href="yii-base-component.html#__call()-detail">__call()</a></td>
+        <td>Calls the named method which is not a class method.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="__clone()">
+        <td><a href="yii-base-component.html#__clone()-detail">__clone()</a></td>
+        <td>This method is called after the object is created by cloning an existing one.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="__construct()">
+        <td><a href="yii-base-baseobject.html#__construct()-detail">__construct()</a></td>
+        <td>Constructor.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr class="inherited" id="__get()">
+        <td><a href="yii-base-component.html#__get()-detail">__get()</a></td>
+        <td>Returns the value of a component property.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="__isset()">
+        <td><a href="yii-base-component.html#__isset()-detail">__isset()</a></td>
+        <td>Checks if a property is set, i.e. defined and not null.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="__set()">
+        <td><a href="yii-base-component.html#__set()-detail">__set()</a></td>
+        <td>Sets the value of a component property.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="__unset()">
+        <td><a href="yii-base-component.html#__unset()-detail">__unset()</a></td>
+        <td>Sets a component property to be null.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="attachBehavior()">
+        <td><a href="yii-base-component.html#attachBehavior()-detail">attachBehavior()</a></td>
+        <td>Attaches a behavior to this component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="attachBehaviors()">
+        <td><a href="yii-base-component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+        <td>Attaches a list of behaviors to the component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="behaviors()">
+        <td><a href="yii-base-component.html#behaviors()-detail">behaviors()</a></td>
+        <td>Returns a list of behaviors that this component should behave as.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="canGetProperty()">
+        <td><a href="yii-base-component.html#canGetProperty()-detail">canGetProperty()</a></td>
+        <td>Returns a value indicating whether a property can be read.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="canSetProperty()">
+        <td><a href="yii-base-component.html#canSetProperty()-detail">canSetProperty()</a></td>
+        <td>Returns a value indicating whether a property can be set.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="className()">
+        <td><a href="yii-base-baseobject.html#className()-detail">className()</a></td>
+        <td>Returns the fully qualified name of this class.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr id="close()">
+        <td><a href="yii-mongodb-connection.html#close()-detail">close()</a></td>
+        <td>Closes the currently active DB connection.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr id="createCommand()">
+        <td><a href="yii-mongodb-connection.html#createCommand()-detail">createCommand()</a></td>
+        <td>Creates MongoDB command.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr class="inherited" id="detachBehavior()">
+        <td><a href="yii-base-component.html#detachBehavior()-detail">detachBehavior()</a></td>
+        <td>Detaches a behavior from the component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="detachBehaviors()">
+        <td><a href="yii-base-component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+        <td>Detaches all behaviors from the component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="ensureBehaviors()">
+        <td><a href="yii-base-component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+        <td>Makes sure that the behaviors declared in <a href="yii-base-component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="getBehavior()">
+        <td><a href="yii-base-component.html#getBehavior()-detail">getBehavior()</a></td>
+        <td>Returns the named behavior object.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="getBehaviors()">
+        <td><a href="yii-base-component.html#getBehaviors()-detail">getBehaviors()</a></td>
+        <td>Returns all behaviors attached to this component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr id="getCollection()">
+        <td><a href="yii-mongodb-connection.html#getCollection()-detail">getCollection()</a></td>
+        <td>Returns the MongoDB collection with the given name.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr id="getDatabase()">
+        <td><a href="yii-mongodb-connection.html#getDatabase()-detail">getDatabase()</a></td>
+        <td>Returns the MongoDB database with the given name.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr id="getDefaultDatabaseName()">
+        <td><a href="yii-mongodb-connection.html#getDefaultDatabaseName()-detail">getDefaultDatabaseName()</a></td>
+        <td>Returns default database name, if it is not set,
+attempts to determine it from <a href="yii-mongodb-connection.html#$dsn-detail">$dsn</a> value.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr id="getFileCollection()">
+        <td><a href="yii-mongodb-connection.html#getFileCollection()-detail">getFileCollection()</a></td>
+        <td>Returns the MongoDB GridFS collection.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr id="getIsActive()">
+        <td><a href="yii-mongodb-connection.html#getIsActive()-detail">getIsActive()</a></td>
+        <td>Returns a value indicating whether the Mongo connection is established.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr id="getLogBuilder()">
+        <td><a href="yii-mongodb-connection.html#getLogBuilder()-detail">getLogBuilder()</a></td>
+        <td>Returns log builder for this connection.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr id="getQueryBuilder()">
+        <td><a href="yii-mongodb-connection.html#getQueryBuilder()-detail">getQueryBuilder()</a></td>
+        <td>Returns the query builder for the this MongoDB connection.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr class="inherited" id="hasEventHandlers()">
+        <td><a href="yii-base-component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+        <td>Returns a value indicating whether there is any handler attached to the named event.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="hasMethod()">
+        <td><a href="yii-base-component.html#hasMethod()-detail">hasMethod()</a></td>
+        <td>Returns a value indicating whether a method is defined.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="hasProperty()">
+        <td><a href="yii-base-component.html#hasProperty()-detail">hasProperty()</a></td>
+        <td>Returns a value indicating whether a property is defined for this component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="init()">
+        <td><a href="yii-base-baseobject.html#init()-detail">init()</a></td>
+        <td>Initializes the object.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+                <tr class="inherited" id="off()">
+        <td><a href="yii-base-component.html#off()-detail">off()</a></td>
+        <td>Detaches an existing event handler from this component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="on()">
+        <td><a href="yii-base-component.html#on()-detail">on()</a></td>
+        <td>Attaches an event handler to an event.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr id="open()">
+        <td><a href="yii-mongodb-connection.html#open()-detail">open()</a></td>
+        <td>Establishes a Mongo connection.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr id="registerFileStreamWrapper()">
+        <td><a href="yii-mongodb-connection.html#registerFileStreamWrapper()-detail">registerFileStreamWrapper()</a></td>
+        <td>Registers GridFS stream wrapper for the <a href="yii-mongodb-connection.html#$fileStreamProtocol-detail">$fileStreamProtocol</a> protocol.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+                <tr id="setDefaultDatabaseName()">
+        <td><a href="yii-mongodb-connection.html#setDefaultDatabaseName()-detail">setDefaultDatabaseName()</a></td>
+        <td>Sets default database name.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr id="setLogBuilder()">
+        <td><a href="yii-mongodb-connection.html#setLogBuilder()-detail">setLogBuilder()</a></td>
+        <td>Sets log builder used for this connection.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr id="setQueryBuilder()">
+        <td><a href="yii-mongodb-connection.html#setQueryBuilder()-detail">setQueryBuilder()</a></td>
+        <td>Sets the query builder for the this MongoDB connection.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+            <tr class="inherited" id="trigger()">
+        <td><a href="yii-base-component.html#trigger()-detail">trigger()</a></td>
+        <td>Triggers an event.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+    </table>
+</div>
+
+<div class="summary doc-method">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+                                                                                                                                    <tr id="initConnection()">
+        <td><a href="yii-mongodb-connection.html#initConnection()-detail">initConnection()</a></td>
+        <td>Initializes the DB connection.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+                            <tr id="selectDatabase()">
+        <td><a href="yii-mongodb-connection.html#selectDatabase()-detail">selectDatabase()</a></td>
+        <td>Selects the database with given name.</td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+                    </table>
+</div>
+
+<a id="events"></a>
+<div class="summary doc-event">
+    <h2>Events</h2>
+
+    <p><a href="#" class="toggle">Hide inherited events</a></p>
+
+    <table class="summary-table table table-striped table-bordered table-hover">
+    <colgroup>
+        <col class="col-event" />
+        <col class="col-type" />
+        <col class="col-description" />
+        <col class="col-defined" />
+    </colgroup>
+    <tr>
+        <th>Event</th><th>Type</th><th>Description</th><th>Defined By</th>
+    </tr>
+        <tr id="EVENT_AFTER_OPEN">
+        <td><a href="yii-mongodb-connection.html#EVENT_AFTER_OPEN-detail">EVENT_AFTER_OPEN</a></td>
+        <td>\yii\mongodb\Event</td>
+        <td>
+            An event that is triggered after a DB connection is established                    </td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+    </tr>
+        </table>
+</div>
+
+<a id="constants"></a>
+
+<h2>Property Details</h2>
+
+<div class="property-doc">
+
+    <div class="detail-header h3" id="$database-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#$database-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $database        <span class="detail-header-tag small">
+            public                         <em>read-only</em>                         property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>Database instance.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-mongodb-database.html">yii\mongodb\Database</a></span> <strong><a href="yii-mongodb-connection.html#getDatabase()-detail">getDatabase</a></strong> ( <span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span>, <span style="color: #0000BB">$refresh&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false</span> )</div>
+
+
+    <div class="detail-header h3" id="$defaultDatabaseName-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#$defaultDatabaseName-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $defaultDatabaseName        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>Default database name.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="yii-mongodb-connection.html#getDefaultDatabaseName()-detail">getDefaultDatabaseName</a></strong> ( )<br /><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-connection.html#setDefaultDatabaseName()-detail">setDefaultDatabaseName</a></strong> ( <span style="color: #0000BB">$name</span> )</div>
+
+
+    <div class="detail-header h3" id="$driverOptions-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#$driverOptions-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php#L118" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php#L118" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $driverOptions        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>Options for the MongoDB driver.
+Any driver-specific options not included in MongoDB connection string specification.</p>
+
+        <p>See also <a href="http://php.net/manual/en/mongodb-driver-manager.construct.php">http://php.net/manual/en/mongodb-driver-manager.construct.php</a>.</p>    </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <a href="yii-mongodb-connection.html#$driverOptions-detail">$driverOptions</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[]</span></div>
+
+
+    <div class="detail-header h3" id="$dsn-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#$dsn-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php#L97" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php#L97" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $dsn        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>Host:port</p>
+<p>Correct syntax is:
+mongodb://[username:password@]host1[:port1][,host2[:port2:],...][/dbname]
+For example:
+mongodb://localhost:27017
+mongodb://developer:password@localhost:27017
+mongodb://developer:password@localhost:27017/mydatabase</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="yii-mongodb-connection.html#$dsn-detail">$dsn</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+
+
+    <div class="detail-header h3" id="$enableLogging-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#$enableLogging-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php#L138" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php#L138" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $enableLogging        <span class="detail-header-tag small">
+            public                                                property
+                            (available since version 2.1)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>Whether to log command and query executions.
+When enabled this option may reduce performance. MongoDB commands may contain large data,
+consuming both CPU and memory.
+It makes sense to disable this option in the production environment.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <a href="yii-mongodb-connection.html#$enableLogging-detail">$enableLogging</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true</span></div>
+
+
+    <div class="detail-header h3" id="$enableProfiling-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#$enableProfiling-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php#L144" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php#L144" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $enableProfiling        <span class="detail-header-tag small">
+            public                                                property
+                            (available since version 2.1)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>Whether to enable profiling the commands and queries being executed.
+This option will have no effect in case <a href="yii-mongodb-connection.html#$enableLogging-detail">$enableLogging</a> is disabled.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <a href="yii-mongodb-connection.html#$enableProfiling-detail">$enableProfiling</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true</span></div>
+
+
+    <div class="detail-header h3" id="$fileCollection-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#$fileCollection-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $fileCollection        <span class="detail-header-tag small">
+            public                         <em>read-only</em>                         property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>Mongo GridFS collection instance.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-mongodb-file-collection.html">yii\mongodb\file\Collection</a></span> <strong><a href="yii-mongodb-connection.html#getFileCollection()-detail">getFileCollection</a></strong> ( <span style="color: #0000BB">$prefix&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'fs'</span>, <span style="color: #0000BB">$refresh&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false</span> )</div>
+
+
+    <div class="detail-header h3" id="$fileStreamProtocol-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#$fileStreamProtocol-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php#L151" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php#L151" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $fileStreamProtocol        <span class="detail-header-tag small">
+            public                                                property
+                            (available since version 2.1)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>Name of the protocol, which should be used for the GridFS stream wrapper.
+Only alphanumeric values are allowed: do not use any URL special characters, such as '/', '&amp;', ':' etc.</p>
+
+        <p>See also <a href="yii-mongodb-file-streamwrapper.html">yii\mongodb\file\StreamWrapper</a>.</p>    </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="yii-mongodb-connection.html#$fileStreamProtocol-detail">$fileStreamProtocol</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'gridfs'</span></div>
+
+
+    <div class="detail-header h3" id="$fileStreamWrapperClass-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#$fileStreamWrapperClass-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php#L156" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php#L156" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $fileStreamWrapperClass        <span class="detail-header-tag small">
+            public                                                property
+                            (available since version 2.1)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>Name of the class, which should serve as a stream wrapper for <a href="yii-mongodb-connection.html#$fileStreamProtocol-detail">$fileStreamProtocol</a> protocol.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="yii-mongodb-connection.html#$fileStreamWrapperClass-detail">$fileStreamWrapperClass</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'yii\mongodb\file\StreamWrapper'</span></div>
+
+
+    <div class="detail-header h3" id="$isActive-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#$isActive-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $isActive        <span class="detail-header-tag small">
+            public                         <em>read-only</em>                         property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>Whether the Mongo connection is established</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-mongodb-connection.html#getIsActive()-detail">getIsActive</a></strong> ( )</div>
+
+
+    <div class="detail-header h3" id="$logBuilder-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#$logBuilder-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $logBuilder        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>The log builder for this connection.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-mongodb-logbuilder.html">yii\mongodb\LogBuilder</a></span> <strong><a href="yii-mongodb-connection.html#getLogBuilder()-detail">getLogBuilder</a></strong> ( )<br /><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-connection.html#setLogBuilder()-detail">setLogBuilder</a></strong> ( <span style="color: #0000BB">$logBuilder</span> )</div>
+
+
+    <div class="detail-header h3" id="$manager-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#$manager-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php#L123" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php#L123" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $manager        <span class="detail-header-tag small">
+            public                                                property
+                            (available since version 2.1)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>MongoDB driver manager.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type">\MongoDB\Driver\Manager</span> <a href="yii-mongodb-connection.html#$manager-detail">$manager</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+
+
+    <div class="detail-header h3" id="$options-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#$options-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php#L111" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php#L111" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $options        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>Connection options.
+For example:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'socketTimeoutMS'</span> =&gt; <span class="hljs-number">1000</span>, <span class="hljs-comment">// how long a send or receive on a socket can take before timing out</span>
+    <span class="hljs-string">'ssl'</span> =&gt; <span class="hljs-keyword">true</span> <span class="hljs-comment">// initiate the connection with TLS/SSL</span>
+]
+</code></pre>
+
+        <p>See also <a href="https://docs.mongodb.com/manual/reference/connection-string/#connections-connection-options">https://docs.mongodb.com/manual/reference/connection-string/#connections-connection-options</a>.</p>    </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <a href="yii-mongodb-connection.html#$options-detail">$options</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[]</span></div>
+
+
+    <div class="detail-header h3" id="$queryBuilder-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#$queryBuilder-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $queryBuilder        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>The query builder for the this MongoDB connection.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></span> <strong><a href="yii-mongodb-connection.html#getQueryBuilder()-detail">getQueryBuilder</a></strong> ( )<br /><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-connection.html#setQueryBuilder()-detail">setQueryBuilder</a></strong> ( <span style="color: #0000BB">$queryBuilder</span> )</div>
+
+
+    <div class="detail-header h3" id="$typeMap-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#$typeMap-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php#L130" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php#L130" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $typeMap        <span class="detail-header-tag small">
+            public                                                property
+                            (available since version 2.1)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>Type map to use for BSON unserialization.
+Note: default type map will be automatically merged into this field, possibly overriding user-defined values.</p>
+
+        <p>See also <a href="http://php.net/manual/en/mongodb-driver-cursor.settypemap.php">http://php.net/manual/en/mongodb-driver-cursor.settypemap.php</a>.</p>    </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <a href="yii-mongodb-connection.html#$typeMap-detail">$typeMap</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[]</span></div>
+
+</div>
+<h2>Method Details</h2>
+
+<div class="method-doc">
+
+    <div class="detail-header h3" id="close()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#close()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php#L380" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php#L380" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        close()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Closes the currently active DB connection.</strong></p>
+
+        <p>It does nothing if the connection is already closed.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-connection.html#close()-detail">close</a></strong> ( )</td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="createCommand()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#createCommand()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php#L409" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php#L409" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        createCommand()
+        <span class="detail-header-tag small">
+            public                                    method
+                            (available since version 2.1)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Creates MongoDB command.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-mongodb-command.html">yii\mongodb\Command</a></span> <strong><a href="yii-mongodb-connection.html#createCommand()-detail">createCommand</a></strong> ( <span style="color: #0000BB">$document&nbsp;</span><span style="color: #007700">=&nbsp;[]</span>, <span style="color: #0000BB">$databaseName&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$document</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Command document contents.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$databaseName</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.null">null</a></td>
+                  <td class="param-desc-col"><p>Database name, if not set <a href="yii-mongodb-connection.html#$defaultDatabaseName-detail">$defaultDatabaseName</a> will be used.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-mongodb-command.html">yii\mongodb\Command</a></td>
+                  <td class="param-desc-col"><p>Command instance.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getCollection()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#getCollection()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php#L299" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php#L299" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getCollection()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns the MongoDB collection with the given name.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-mongodb-collection.html">yii\mongodb\Collection</a></span> <strong><a href="yii-mongodb-connection.html#getCollection()-detail">getCollection</a></strong> ( <span style="color: #0000BB">$name</span>, <span style="color: #0000BB">$refresh&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Collection name. If string considered as the name of the collection
+inside the default database. If array - first element considered as the name of the database,
+second - as name of collection inside that database</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$refresh</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>Whether to reload the collection instance even if it is found in the cache.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-mongodb-collection.html">yii\mongodb\Collection</a></td>
+                  <td class="param-desc-col"><p>Mongo collection instance.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getDatabase()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#getDatabase()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php#L265" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php#L265" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getDatabase()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns the MongoDB database with the given name.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-mongodb-database.html">yii\mongodb\Database</a></span> <strong><a href="yii-mongodb-connection.html#getDatabase()-detail">getDatabase</a></strong> ( <span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span>, <span style="color: #0000BB">$refresh&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.null">null</a></td>
+                  <td class="param-desc-col"><p>Database name, if null default one will be used.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$refresh</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>Whether to reestablish the database connection even, if it is found in the cache.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-mongodb-database.html">yii\mongodb\Database</a></td>
+                  <td class="param-desc-col"><p>Database instance.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getDefaultDatabaseName()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#getDefaultDatabaseName()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php#L200" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php#L200" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getDefaultDatabaseName()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns default database name, if it is not set,
+attempts to determine it from <a href="yii-mongodb-connection.html#$dsn-detail">$dsn</a> value.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="yii-mongodb-connection.html#getDefaultDatabaseName()-detail">getDefaultDatabaseName</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Default database name</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="yii-base-invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+                  <td class="param-desc-col"><p>if unable to determine default database name.</p>
+</td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getFileCollection()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#getFileCollection()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php#L317" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php#L317" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getFileCollection()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns the MongoDB GridFS collection.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-mongodb-file-collection.html">yii\mongodb\file\Collection</a></span> <strong><a href="yii-mongodb-connection.html#getFileCollection()-detail">getFileCollection</a></strong> ( <span style="color: #0000BB">$prefix&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'fs'</span>, <span style="color: #0000BB">$refresh&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$prefix</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Collection prefix. If string considered as the prefix of the GridFS
+collection inside the default database. If array - first element considered as the name of the database,
+second - as prefix of the GridFS collection inside that database, if no second element present
+default "fs" prefix will be used.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$refresh</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>Whether to reload the collection instance even if it is found in the cache.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-mongodb-file-collection.html">yii\mongodb\file\Collection</a></td>
+                  <td class="param-desc-col"><p>Mongo GridFS collection instance.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getIsActive()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#getIsActive()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php#L334" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php#L334" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getIsActive()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns a value indicating whether the Mongo connection is established.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-mongodb-connection.html#getIsActive()-detail">getIsActive</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>Whether the Mongo connection is established</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getLogBuilder()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#getLogBuilder()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php#L241" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php#L241" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getLogBuilder()
+        <span class="detail-header-tag small">
+            public                                    method
+                            (available since version 2.1)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns log builder for this connection.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-mongodb-logbuilder.html">yii\mongodb\LogBuilder</a></span> <strong><a href="yii-mongodb-connection.html#getLogBuilder()-detail">getLogBuilder</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-mongodb-logbuilder.html">yii\mongodb\LogBuilder</a></td>
+                  <td class="param-desc-col"><p>The log builder for this connection.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getQueryBuilder()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#getQueryBuilder()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php#L218" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php#L218" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getQueryBuilder()
+        <span class="detail-header-tag small">
+            public                                    method
+                            (available since version 2.1)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns the query builder for the this MongoDB connection.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></span> <strong><a href="yii-mongodb-connection.html#getQueryBuilder()-detail">getQueryBuilder</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+                  <td class="param-desc-col"><p>The query builder for the this MongoDB connection.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="initConnection()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#initConnection()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php#L397" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php#L397" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        initConnection()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Initializes the DB connection.</strong></p>
+
+        <p>This method is invoked right after the DB connection is established.
+The default implementation triggers an <a href="yii-mongodb-connection.html#EVENT_AFTER_OPEN-detail">EVENT_AFTER_OPEN</a> event.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-connection.html#initConnection()-detail">initConnection</a></strong> ( )</td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="open()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#open()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php#L344" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php#L344" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        open()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Establishes a Mongo connection.</strong></p>
+
+        <p>It does nothing if a MongoDB connection has already been established.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-connection.html#open()-detail">open</a></strong> ( )</td></tr>
+                                                            <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="yii-mongodb-exception.html">yii\mongodb\Exception</a></td>
+                  <td class="param-desc-col"><p>if connection fails</p>
+</td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="registerFileStreamWrapper()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#registerFileStreamWrapper()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php#L423" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php#L423" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        registerFileStreamWrapper()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Registers GridFS stream wrapper for the <a href="yii-mongodb-connection.html#$fileStreamProtocol-detail">$fileStreamProtocol</a> protocol.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="yii-mongodb-connection.html#registerFileStreamWrapper()-detail">registerFileStreamWrapper</a></strong> ( <span style="color: #0000BB">$force&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$force</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>Whether to enforce registration even wrapper has been already registered.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Registered stream protocol name.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="selectDatabase()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#selectDatabase()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php#L282" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php#L282" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        selectDatabase()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Selects the database with given name.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="yii-mongodb-database.html">yii\mongodb\Database</a></span> <strong><a href="yii-mongodb-connection.html#selectDatabase()-detail">selectDatabase</a></strong> ( <span style="color: #0000BB">$name</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Database name.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-mongodb-database.html">yii\mongodb\Database</a></td>
+                  <td class="param-desc-col"><p>Database instance.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="setDefaultDatabaseName()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#setDefaultDatabaseName()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php#L189" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php#L189" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        setDefaultDatabaseName()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Sets default database name.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-connection.html#setDefaultDatabaseName()-detail">setDefaultDatabaseName</a></strong> ( <span style="color: #0000BB">$name</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Default database name.</p>
+</td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="setLogBuilder()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#setLogBuilder()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php#L254" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php#L254" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        setLogBuilder()
+        <span class="detail-header-tag small">
+            public                                    method
+                            (available since version 2.1)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Sets log builder used for this connection.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-connection.html#setLogBuilder()-detail">setLogBuilder</a></strong> ( <span style="color: #0000BB">$logBuilder</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$logBuilder</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a>|<a href="http://www.php.net/language.types.string">string</a>|<a href="yii-mongodb-logbuilder.html">yii\mongodb\LogBuilder</a></td>
+                  <td class="param-desc-col"><p>The log builder for this connection.</p>
+</td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="setQueryBuilder()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#setQueryBuilder()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php#L231" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php#L231" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        setQueryBuilder()
+        <span class="detail-header-tag small">
+            public                                    method
+                            (available since version 2.1)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Sets the query builder for the this MongoDB connection.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-connection.html#setQueryBuilder()-detail">setQueryBuilder</a></strong> ( <span style="color: #0000BB">$queryBuilder</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$queryBuilder</span></td>
+                  <td class="param-type-col"><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a>|<a href="http://www.php.net/language.types.array">array</a>|<a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.null">null</a></td>
+                  <td class="param-desc-col"><p>The query builder for this MongoDB connection.</p>
+</td>
+                </tr>
+                                                </table>
+
+<!--	-->
+</div>
+    <h2>Event Details</h2>
+
+<div class="event-doc">
+    <div class="detail-header h3" id="EVENT_AFTER_OPEN-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-connection.html#EVENT_AFTER_OPEN-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/Connection.php#L85" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/Connection.php#L85" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        EVENT_AFTER_OPEN        <span class="detail-header-tag small">
+        event
+        of type \yii\mongodb\Event                </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>An event that is triggered after a DB connection is established</p>
+
+            </div>
+
+</div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    /*<![CDATA[*/
+    $("a.toggle").on('click', function () {
+        var $this = $(this);
+        if ($this.hasClass('properties-hidden')) {
+            $this.text($this.text().replace(/Show/,'Hide'));
+            $this.parents(".summary").find(".inherited").show();
+            $this.removeClass('properties-hidden');
+        } else {
+            $this.text($this.text().replace(/Hide/,'Show'));
+            $this.parents(".summary").find(".inherited").hide();
+            $this.addClass('properties-hidden');
+        }
+
+        return false;
+    });
+    /*
+     $(".sourceCode a.show").toggle(function () {
+     $(this).text($(this).text().replace(/show/,'hide'));
+     $(this).parents(".sourceCode").find("div.code").show();
+     },function () {
+     $(this).text($(this).text().replace(/hide/,'show'));
+     $(this).parents(".sourceCode").find("div.code").hide();
+     });
+     $("a.sourceLink").click(function () {
+     $(this).attr('target','_blank');
+     });
+     */
+    /*]]>*/
+</script>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:29 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

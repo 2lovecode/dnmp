@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>收发邮件（Mailing） - 高级专题（Special Topics） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1631" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1631-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1631-collapse" class="collapse navbar-collapse"><ul id="w1632" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1633" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1615" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-1615" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-1616" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-1616" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-1617" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-1617" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-1618" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-1618" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-1619" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-1619" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-1620" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-1620" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-zh-CN/README.md">Sphinx</a>
+<a class="list-group-item" href="./guide-yii2-redis.html">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-zh-CN/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-zh-CN/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1621" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-1621" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-1622" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-1622" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-1623" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-1623" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-1624" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-1624" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-1625" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-1625" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-1626" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-1626" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-1627" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-1627" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item active" href="#navigation-1628" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-1628" class="submenu panel-collapse collapse in"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item active" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-1629" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-1629" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1630" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-1630" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>收发邮件 <span id="shou-fa-you-jian"></span><a href="#shou-fa-you-jian" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#pei-zhi">配置</a></li>
+<li><a href="#ji-ben-yong-fa">基本用法</a></li>
+<li><a href="#zhuan-xie-you-jian-nei-rong">撰写邮件内容</a></li>
+<li><a href="#wen-jian-fu-jian">文件附件</a></li>
+<li><a href="#qian-ru-tu-pian">嵌入图片</a></li>
+<li><a href="#ce-shi-he-diao-shi">测试和调试</a></li>
+<li><a href="#chuang-jian-zi-ji-de-you-jian-jie-jue-fang-an">创建自己的邮件解决方案</a></li></ol></div>
+<blockquote class="note"><p><strong>注意： </strong>本节正在开发中。</p>
+</blockquote>
+<p>Yii 支持组成和发送电子邮件。然而，该框架提供的只有内容组成功能和基本接口。
+实际的邮件发送机制可以通过扩展提供，
+因为不同的项目可能需要不同的实现方式，
+它通常取决于外部服务和库。</p>
+<p>大多数情况下你可以使用 <a href="https://github.com/yiisoft/yii2-swiftmailer">yii2-swiftmailer</a> 官方扩展。</p>
+<h2>配置 <span id="pei-zhi"></span><a href="#pei-zhi" class="hashlink">&para;</a></h2><p>邮件组件配置取决于你所使用的扩展。
+一般来说你的应用程序配置应如下：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">//....</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'mailer'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\swiftmailer\Mailer'</span>,
+        ],
+    ],
+];
+</code></pre>
+<h2>基本用法 <span id="ji-ben-yong-fa"></span><a href="#ji-ben-yong-fa" class="hashlink">&para;</a></h2><p>一旦 “mailer” 组件被配置，可以使用下面的代码来发送邮件：</p>
+<pre><code class="hljs php language-php">Yii::<span class="hljs-variable">$app</span>-&gt;mailer-&gt;compose()
+    -&gt;setFrom(<span class="hljs-string">'from@domain.com'</span>)
+    -&gt;setTo(<span class="hljs-string">'to@domain.com'</span>)
+    -&gt;setSubject(<span class="hljs-string">'Message subject'</span>)
+    -&gt;setTextBody(<span class="hljs-string">'Plain text content'</span>)
+    -&gt;setHtmlBody(<span class="hljs-string">'&lt;b&gt;HTML content&lt;/b&gt;'</span>)
+    -&gt;send();
+</code></pre>
+<p>在上面的例子中所述的 <code>compose()</code> 方法创建了电子邮件消息，这是填充和发送的一个实例。
+如果需要的话在这个过程中你可以用上更复杂的逻辑：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$message</span> = Yii::<span class="hljs-variable">$app</span>-&gt;mailer-&gt;compose();
+<span class="hljs-keyword">if</span> (Yii::<span class="hljs-variable">$app</span>-&gt;user-&gt;isGuest) {
+    <span class="hljs-variable">$message</span>-&gt;setFrom(<span class="hljs-string">'from@domain.com'</span>)
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-variable">$message</span>-&gt;setFrom(Yii::<span class="hljs-variable">$app</span>-&gt;user-&gt;identity-&gt;email)
+}
+<span class="hljs-variable">$message</span>-&gt;setTo(Yii::<span class="hljs-variable">$app</span>-&gt;params[<span class="hljs-string">'adminEmail'</span>])
+    -&gt;setSubject(<span class="hljs-string">'Message subject'</span>)
+    -&gt;setTextBody(<span class="hljs-string">'Plain text content'</span>)
+    -&gt;send();
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>每个 “mailer” 的扩展也有两个主要类别：“Mailer” 
+  和 “Message”。 “Mailer” 总是知道类名和具体的 “Message”。
+  不要试图直接实例 “Message” 对象 - 而是始终使用 <code>compose()</code> 方法。</p>
+</blockquote>
+<p>你也可以一次发送几封邮件：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$messages</span> = [];
+<span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$users</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$user</span>) {
+    <span class="hljs-variable">$messages</span>[] = Yii::<span class="hljs-variable">$app</span>-&gt;mailer-&gt;compose()
+        <span class="hljs-comment">// ...</span>
+        -&gt;setTo(<span class="hljs-variable">$user</span>-&gt;email);
+}
+Yii::<span class="hljs-variable">$app</span>-&gt;mailer-&gt;sendMultiple(<span class="hljs-variable">$messages</span>);
+</code></pre>
+<p>一些特定的扩展可能会受益于这种方法，使用单一的网络消息等。</p>
+<h2>撰写邮件内容 <span id="zhuan-xie-you-jian-nei-rong"></span><a href="#zhuan-xie-you-jian-nei-rong" class="hashlink">&para;</a></h2><p>Yii 允许通过特殊的视图文件来撰写实际的邮件内容。默认情况下，
+这些文件应该位于 “@app/mail” 路径。</p>
+<p>一个邮件视图内容的例子：</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">Html</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">Url</span>;
+
+<span class="hljs-comment">/* <span class="hljs-doctag">@var</span> $this \yii\web\View view component instance */</span>
+<span class="hljs-comment">/* <span class="hljs-doctag">@var</span> $message \yii\mail\BaseMessage instance of newly created mail message */</span>
+
+<span class="hljs-preprocessor">?&gt;</span>
+&lt;h2&gt;This message allows you to visit our site home page by one click&lt;/h2&gt;
+<span class="hljs-preprocessor">&lt;?</span>= Html::a(<span class="hljs-string">'Go to home page'</span>, Url::home(<span class="hljs-string">'http'</span>)) <span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>为了通过视图文件撰写正文可传递视图名称到 <code>compose()</code> 方法中：</p>
+<pre><code class="hljs php language-php">Yii::<span class="hljs-variable">$app</span>-&gt;mailer-&gt;compose(<span class="hljs-string">'home-link'</span>) <span class="hljs-comment">// 渲染一个视图作为邮件内容</span>
+    -&gt;setFrom(<span class="hljs-string">'from@domain.com'</span>)
+    -&gt;setTo(<span class="hljs-string">'to@domain.com'</span>)
+    -&gt;setSubject(<span class="hljs-string">'Message subject'</span>)
+    -&gt;send();
+</code></pre>
+<p>你也可以在 <code>compose()</code> 方法中传递一些视图所需参数，这些参数可以在视图文件中使用：</p>
+<pre><code class="hljs php language-php">Yii::<span class="hljs-variable">$app</span>-&gt;mailer-&gt;compose(<span class="hljs-string">'greetings'</span>, [
+    <span class="hljs-string">'user'</span> =&gt; Yii::<span class="hljs-variable">$app</span>-&gt;user-&gt;identity,
+    <span class="hljs-string">'advertisement'</span> =&gt; <span class="hljs-variable">$adContent</span>,
+]);
+</code></pre>
+<p>你可以指定不同的视图文件的 HTML 和纯文本邮件内容：</p>
+<pre><code class="hljs php language-php">Yii::<span class="hljs-variable">$app</span>-&gt;mailer-&gt;compose([
+    <span class="hljs-string">'html'</span> =&gt; <span class="hljs-string">'contact-html'</span>,
+    <span class="hljs-string">'text'</span> =&gt; <span class="hljs-string">'contact-text'</span>,
+]);
+</code></pre>
+<p>如果指定视图名称为纯字符串，它的渲染结果将被用来作为 HTML Body，
+同时纯文本正文将被删除所有 HTML 实体。</p>
+<p>视图渲染结果可以被包裹进布局，可使用 <a href="./yii-mail-basemailer.html#$htmlLayout-detail">yii\mail\BaseMailer::$htmlLayout</a> 和 <a href="./yii-mail-basemailer.html#$textLayout-detail">yii\mail\BaseMailer::$textLayout</a> 来设置。
+它的运行方式跟常规应用程序的布局是一样的。
+布局可用于设置邮件 CSS 样式或其他共享内容：</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">Html</span>;
+
+<span class="hljs-comment">/* <span class="hljs-doctag">@var</span> $this \yii\web\View view component instance */</span>
+<span class="hljs-comment">/* <span class="hljs-doctag">@var</span> $message \yii\mail\MessageInterface the message being composed */</span>
+<span class="hljs-comment">/* <span class="hljs-doctag">@var</span> $content string main view render result */</span>
+<span class="hljs-preprocessor">?&gt;</span>
+<span class="hljs-preprocessor">&lt;?php</span> <span class="hljs-variable">$this</span>-&gt;beginPage() <span class="hljs-preprocessor">?&gt;</span>
+&lt;!DOCTYPE html <span class="hljs-keyword">PUBLIC</span> <span class="hljs-string">"-//W3C//DTD XHTML 1.0 Strict//EN"</span> <span class="hljs-string">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"</span>&gt;
+&lt;html xmlns=<span class="hljs-string">"http://www.w3.org/1999/xhtml"</span>&gt;
+&lt;head&gt;
+    &lt;meta http-equiv=<span class="hljs-string">"Content-Type"</span> content=<span class="hljs-string">"text/html; charset=&lt;?= Yii::$app-&gt;charset ?&gt;"</span> /&gt;
+    &lt;style type=<span class="hljs-string">"text/css"</span>&gt;
+        .heading {...}
+        .<span class="hljs-keyword">list</span> {...}
+        .footer {...}
+    &lt;/style&gt;
+    <span class="hljs-preprocessor">&lt;?php</span> <span class="hljs-variable">$this</span>-&gt;head() <span class="hljs-preprocessor">?&gt;</span>
+&lt;/head&gt;
+&lt;body&gt;
+    <span class="hljs-preprocessor">&lt;?php</span> <span class="hljs-variable">$this</span>-&gt;beginBody() <span class="hljs-preprocessor">?&gt;</span>
+    <span class="hljs-preprocessor">&lt;?</span>= <span class="hljs-variable">$content</span> <span class="hljs-preprocessor">?&gt;</span>
+    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>="<span class="hljs-title">footer</span>"&gt;<span class="hljs-title">With</span> <span class="hljs-title">kind</span> <span class="hljs-title">regards</span>, &lt;?= <span class="hljs-title">Yii</span>::$<span class="hljs-title">app</span>-&gt;<span class="hljs-title">name</span> ?&gt; <span class="hljs-title">team</span>&lt;/<span class="hljs-title">div</span>&gt;
+    &lt;?<span class="hljs-title">php</span> $<span class="hljs-title">this</span>-&gt;<span class="hljs-title">endBody</span>() ?&gt;
+&lt;/<span class="hljs-title">body</span>&gt;
+&lt;/<span class="hljs-title">html</span>&gt;
+&lt;?<span class="hljs-title">php</span> $<span class="hljs-title">this</span>-&gt;<span class="hljs-title">endPage</span>() ?&gt;
+</span></code></pre>
+<h2>文件附件 <span id="wen-jian-fu-jian"></span><a href="#wen-jian-fu-jian" class="hashlink">&para;</a></h2><p>你可以使用 <code>attach()</code> 和 <code>attachContent()</code> 方法来添加附件的信息：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$message</span> = Yii::<span class="hljs-variable">$app</span>-&gt;mailer-&gt;compose();
+
+<span class="hljs-comment">// 附件来自本地文件</span>
+<span class="hljs-variable">$message</span>-&gt;attach(<span class="hljs-string">'/path/to/source/file.pdf'</span>);
+
+<span class="hljs-comment">// 动态创建一个文件附件</span>
+<span class="hljs-variable">$message</span>-&gt;attachContent(<span class="hljs-string">'Attachment content'</span>, [<span class="hljs-string">'fileName'</span> =&gt; <span class="hljs-string">'attach.txt'</span>, <span class="hljs-string">'contentType'</span> =&gt; <span class="hljs-string">'text/plain'</span>]);
+</code></pre>
+<h2>嵌入图片 <span id="qian-ru-tu-pian"></span><a href="#qian-ru-tu-pian" class="hashlink">&para;</a></h2><p>你可以使用 <code>embed()</code> 方法将图片插入到邮件内容。
+此方法返回会图片 ID ，这将用在“img”标签中。
+当通过视图文件来写信时，这种方法易于使用：</p>
+<pre><code class="hljs php language-php">Yii::<span class="hljs-variable">$app</span>-&gt;mailer-&gt;compose(<span class="hljs-string">'embed-email'</span>, [<span class="hljs-string">'imageFileName'</span> =&gt; <span class="hljs-string">'/path/to/image.jpg'</span>])
+    <span class="hljs-comment">// ...</span>
+    -&gt;send();
+</code></pre>
+<p>然后在该视图文件中，你可以使用下面的代码：</p>
+<pre><code class="hljs php language-php">&lt;img src=<span class="hljs-string">"&lt;?= $message-&gt;embed($imageFileName); ?&gt;"</span>&gt;
+</code></pre>
+<h2>测试和调试 <span id="ce-shi-he-diao-shi"></span><a href="#ce-shi-he-diao-shi" class="hashlink">&para;</a></h2><p>开发人员常常要检查一下，有什么电子邮件是由应用程序发送的，他们的内容是什么等。
+这可通过 <code>yii\mail\BaseMailer::useFileTransport</code> 来检查。
+如果开启这个选项，会把邮件信息保存在本地文件而不是发送它们。
+这些文件保存在 <code>yii\mail\BaseMailer::fileTransportPath</code> 中，默认在 '@runtime/mail' 。</p>
+<blockquote class="tip"><p><strong>提示： </strong>你可以保存这些信息到本地文件或者把它们发送出去，但不能同时两者都做。</p>
+</blockquote>
+<p>邮件信息文件可以在一个普通的文本编辑器中打开，这样你就可以浏览实际的邮件标题，内容等。
+这种机制可以用来调试应用程序或运行单元测试。</p>
+<blockquote class="tip"><p><strong>提示： </strong>该邮件信息文件是会被 <code>\yii\mail\MessageInterface::toString()</code> 转成字符串保存的，
+  它依赖于实际在应用程序中使用的邮件扩展。</p>
+</blockquote>
+<h2>创建自己的邮件解决方案 <span id="chuang-jian-zi-ji-de-you-jian-jie-jue-fang-an"></span><a href="#chuang-jian-zi-ji-de-you-jian-jie-jue-fang-an" class="hashlink">&para;</a></h2><p>为了创建你自己的邮件解决方案，你需要创建两个类，一个用于 “Mailer”，另一个用于 “Message”。
+你可以使用 <code>yii\mail\BaseMailer</code> 和 <code>yii\mail\BaseMessage</code> 作为基类。
+这些类已经实现了基本的逻辑，这在本指南中有介绍。
+然而，它们的使用不是必须的，
+它实现了 <code>yii\mail\MailerInterface</code> 和 <code>yii\mail\MessageInterface</code> 接口。
+然后，你需要实现所有 abstract 方法来构建解决方案。</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:19 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

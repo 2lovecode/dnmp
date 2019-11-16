@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>Request, yii\httpclient\Request - Yii Framework 2.0 API Documentation</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w17922" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w17922-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Yii Framework 2.0 API Documentation</a></div><div id="w17922-collapse" class="collapse navbar-collapse"><ul id="w17923" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w17924" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-3">
+                <div id="navigation" class="list-group"><a class="list-group-item active" href="#navigation-17920" data-toggle="collapse" data-parent="#navigation">yii\httpclient <b class="caret"></b></a><div id="navigation-17920" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./yii-httpclient-client.html">Client</a>
+<a class="list-group-item" href="./yii-httpclient-curlformatter.html">CurlFormatter</a>
+<a class="list-group-item" href="./yii-httpclient-curltransport.html">CurlTransport</a>
+<a class="list-group-item" href="./yii-httpclient-exception.html">Exception</a>
+<a class="list-group-item" href="./yii-httpclient-formatterinterface.html">FormatterInterface</a>
+<a class="list-group-item" href="./yii-httpclient-jsonformatter.html">JsonFormatter</a>
+<a class="list-group-item" href="./yii-httpclient-jsonparser.html">JsonParser</a>
+<a class="list-group-item" href="./yii-httpclient-message.html">Message</a>
+<a class="list-group-item" href="./yii-httpclient-mocktransport.html">MockTransport</a>
+<a class="list-group-item" href="./yii-httpclient-parserinterface.html">ParserInterface</a>
+<a class="list-group-item active" href="./yii-httpclient-request.html">Request</a>
+<a class="list-group-item" href="./yii-httpclient-requestevent.html">RequestEvent</a>
+<a class="list-group-item" href="./yii-httpclient-response.html">Response</a>
+<a class="list-group-item" href="./yii-httpclient-streamtransport.html">StreamTransport</a>
+<a class="list-group-item" href="./yii-httpclient-transport.html">Transport</a>
+<a class="list-group-item" href="./yii-httpclient-urlencodedformatter.html">UrlEncodedFormatter</a>
+<a class="list-group-item" href="./yii-httpclient-urlencodedparser.html">UrlEncodedParser</a>
+<a class="list-group-item" href="./yii-httpclient-xmlformatter.html">XmlFormatter</a>
+<a class="list-group-item" href="./yii-httpclient-xmlparser.html">XmlParser</a></div>
+<a class="list-group-item" href="#navigation-17921" data-toggle="collapse" data-parent="#navigation">yii\httpclient\debug <b class="caret"></b></a><div id="navigation-17921" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-httpclient-debug-httpclientpanel.html">HttpClientPanel</a>
+<a class="list-group-item" href="./yii-httpclient-debug-requestexecuteaction.html">RequestExecuteAction</a>
+<a class="list-group-item" href="./yii-httpclient-debug-searchmodel.html">SearchModel</a></div></div>    </div>
+    <div class="col-md-9 api-content" role="main">
+        <h1>Class yii\httpclient\Request</h1>
+<div class="top-nav">
+    <a href="index.html">All Classes</a>
+            | <a href="#properties">Properties</a>
+                | <a href="#methods">Methods</a>
+                | <a href="#events">Events</a>
+        </div>
+
+<table class="summaryTable docClass table table-bordered">
+    <colgroup>
+        <col class="col-name" />
+        <col class="col-value" />
+    </colgroup>
+            <tr><th>Inheritance</th><td><a href="yii-httpclient-request.html">yii\httpclient\Request</a> &raquo;
+<a href="yii-httpclient-message.html">yii\httpclient\Message</a> &raquo;
+<a href="yii-base-component.html">yii\base\Component</a> &raquo;
+<a href="yii-base-baseobject.html">yii\base\BaseObject</a></td></tr>
+                <tr><th>Implements</th><td><a href="yii-base-configurable.html">yii\base\Configurable</a></td></tr>
+                                    <tr><th>Available since version</th><td>2.0</td></tr>
+                    <tr>
+          <th>Source Code</th>
+          <td><a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php">https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php</a></td>
+        </tr>
+    </table>
+
+<div class="class-description">
+    <p><strong>Request represents HTTP request.</strong></p>
+    
+    </div>
+
+<a id="properties"></a>
+
+<div class="summary doc-property">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-property" />
+    <col class="col-type" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr class="inherited" id="$behaviors">
+        <td><a href="yii-base-component.html#$behaviors-detail">$behaviors</a></td>
+        <td><a href="yii-base-behavior.html">yii\base\Behavior</a>[]</td>
+        <td>List of behaviors attached to this component</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="$client">
+        <td><a href="yii-httpclient-message.html#$client-detail">$client</a></td>
+        <td><a href="yii-httpclient-client.html">yii\httpclient\Client</a></td>
+        <td>Owner client instance.</td>
+        <td><a href="yii-httpclient-message.html">yii\httpclient\Message</a></td>
+    </tr>
+            <tr class="inherited" id="$content">
+        <td><a href="yii-httpclient-message.html#$content-detail">$content</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>Raw content.</td>
+        <td><a href="yii-httpclient-message.html">yii\httpclient\Message</a></td>
+    </tr>
+            <tr class="inherited" id="$cookies">
+        <td><a href="yii-httpclient-message.html#$cookies-detail">$cookies</a></td>
+        <td><a href="yii-web-cookiecollection.html">yii\web\CookieCollection</a>|<a href="yii-web-cookie.html">yii\web\Cookie</a>[]|<a href="http://www.php.net/language.types.array">array</a></td>
+        <td>Cookie collection or cookies list.</td>
+        <td><a href="yii-httpclient-message.html">yii\httpclient\Message</a></td>
+    </tr>
+            <tr id="$data">
+        <td><a href="yii-httpclient-request.html#$data-detail">$data</a></td>
+        <td>mixed</td>
+        <td>Content data fields.</td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr class="inherited" id="$format">
+        <td><a href="yii-httpclient-message.html#$format-detail">$format</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>Body format name.</td>
+        <td><a href="yii-httpclient-message.html">yii\httpclient\Message</a></td>
+    </tr>
+            <tr id="$fullUrl">
+        <td><a href="yii-httpclient-request.html#$fullUrl-detail">$fullUrl</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>Full target URL.</td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr class="inherited" id="$headers">
+        <td><a href="yii-httpclient-message.html#$headers-detail">$headers</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a>|<a href="yii-web-headercollection.html">yii\web\HeaderCollection</a></td>
+        <td>Headers collection or headers list in format: [headerName => headerValue]</td>
+        <td><a href="yii-httpclient-message.html">yii\httpclient\Message</a></td>
+    </tr>
+            <tr id="$method">
+        <td><a href="yii-httpclient-request.html#$method-detail">$method</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>Request method</td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr id="$options">
+        <td><a href="yii-httpclient-request.html#$options-detail">$options</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>Request options.</td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr id="$outputFile">
+        <td><a href="yii-httpclient-request.html#$outputFile-detail">$outputFile</a></td>
+        <td><a href="http://www.php.net/language.types.resource">resource</a></td>
+        <td></td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr id="$url">
+        <td><a href="yii-httpclient-request.html#$url-detail">$url</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.array">array</a></td>
+        <td>Use a string to represent a URL (e.g. `<a href="http://some-domain">http://some-domain</a>.</td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+    </table>
+</div>
+
+<a id="methods"></a>
+
+<div class="summary doc-method">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr class="inherited" id="__call()">
+        <td><a href="yii-base-component.html#__call()-detail">__call()</a></td>
+        <td>Calls the named method which is not a class method.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="__clone()">
+        <td><a href="yii-base-component.html#__clone()-detail">__clone()</a></td>
+        <td>This method is called after the object is created by cloning an existing one.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="__construct()">
+        <td><a href="yii-base-baseobject.html#__construct()-detail">__construct()</a></td>
+        <td>Constructor.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr class="inherited" id="__get()">
+        <td><a href="yii-base-component.html#__get()-detail">__get()</a></td>
+        <td>Returns the value of a component property.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="__isset()">
+        <td><a href="yii-base-component.html#__isset()-detail">__isset()</a></td>
+        <td>Checks if a property is set, i.e. defined and not null.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="__set()">
+        <td><a href="yii-base-component.html#__set()-detail">__set()</a></td>
+        <td>Sets the value of a component property.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="__toString()">
+        <td><a href="yii-httpclient-message.html#__toString()-detail">__toString()</a></td>
+        <td>PHP magic method that returns the string representation of this object.</td>
+        <td><a href="yii-httpclient-message.html">yii\httpclient\Message</a></td>
+    </tr>
+            <tr class="inherited" id="__unset()">
+        <td><a href="yii-base-component.html#__unset()-detail">__unset()</a></td>
+        <td>Sets a component property to be null.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr id="addContent()">
+        <td><a href="yii-httpclient-request.html#addContent()-detail">addContent()</a></td>
+        <td>Adds a content part for multi-part content request.</td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr class="inherited" id="addCookies()">
+        <td><a href="yii-httpclient-message.html#addCookies()-detail">addCookies()</a></td>
+        <td>Adds more cookies to the already defined ones.</td>
+        <td><a href="yii-httpclient-message.html">yii\httpclient\Message</a></td>
+    </tr>
+            <tr id="addData()">
+        <td><a href="yii-httpclient-request.html#addData()-detail">addData()</a></td>
+        <td>Adds data fields to the existing ones.</td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr id="addFile()">
+        <td><a href="yii-httpclient-request.html#addFile()-detail">addFile()</a></td>
+        <td>Adds a file for upload as multi-part content.</td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr id="addFileContent()">
+        <td><a href="yii-httpclient-request.html#addFileContent()-detail">addFileContent()</a></td>
+        <td>Adds a string as a file upload.</td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr class="inherited" id="addHeaders()">
+        <td><a href="yii-httpclient-message.html#addHeaders()-detail">addHeaders()</a></td>
+        <td>Adds more headers to the already defined ones.</td>
+        <td><a href="yii-httpclient-message.html">yii\httpclient\Message</a></td>
+    </tr>
+            <tr id="addOptions()">
+        <td><a href="yii-httpclient-request.html#addOptions()-detail">addOptions()</a></td>
+        <td>Adds more options to already defined ones.</td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr id="afterSend()">
+        <td><a href="yii-httpclient-request.html#afterSend()-detail">afterSend()</a></td>
+        <td>This method is invoked right after this request is sent.</td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr class="inherited" id="attachBehavior()">
+        <td><a href="yii-base-component.html#attachBehavior()-detail">attachBehavior()</a></td>
+        <td>Attaches a behavior to this component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="attachBehaviors()">
+        <td><a href="yii-base-component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+        <td>Attaches a list of behaviors to the component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr id="beforeSend()">
+        <td><a href="yii-httpclient-request.html#beforeSend()-detail">beforeSend()</a></td>
+        <td>This method is invoked right before this request is sent.</td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr class="inherited" id="behaviors()">
+        <td><a href="yii-base-component.html#behaviors()-detail">behaviors()</a></td>
+        <td>Returns a list of behaviors that this component should behave as.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="canGetProperty()">
+        <td><a href="yii-base-component.html#canGetProperty()-detail">canGetProperty()</a></td>
+        <td>Returns a value indicating whether a property can be read.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="canSetProperty()">
+        <td><a href="yii-base-component.html#canSetProperty()-detail">canSetProperty()</a></td>
+        <td>Returns a value indicating whether a property can be set.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="className()">
+        <td><a href="yii-base-baseobject.html#className()-detail">className()</a></td>
+        <td>Returns the fully qualified name of this class.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr id="composeHeaderLines()">
+        <td><a href="yii-httpclient-request.html#composeHeaderLines()-detail">composeHeaderLines()</a></td>
+        <td>Composes raw header lines from <a href="yii-httpclient-message.html#$headers-detail">$headers</a>.</td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+                <tr class="inherited" id="detachBehavior()">
+        <td><a href="yii-base-component.html#detachBehavior()-detail">detachBehavior()</a></td>
+        <td>Detaches a behavior from the component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="detachBehaviors()">
+        <td><a href="yii-base-component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+        <td>Detaches all behaviors from the component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="ensureBehaviors()">
+        <td><a href="yii-base-component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+        <td>Makes sure that the behaviors declared in <a href="yii-base-component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="getBehavior()">
+        <td><a href="yii-base-component.html#getBehavior()-detail">getBehavior()</a></td>
+        <td>Returns the named behavior object.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="getBehaviors()">
+        <td><a href="yii-base-component.html#getBehaviors()-detail">getBehaviors()</a></td>
+        <td>Returns all behaviors attached to this component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="getContent()">
+        <td><a href="yii-httpclient-message.html#getContent()-detail">getContent()</a></td>
+        <td>Returns HTTP message raw content.</td>
+        <td><a href="yii-httpclient-message.html">yii\httpclient\Message</a></td>
+    </tr>
+            <tr class="inherited" id="getCookies()">
+        <td><a href="yii-httpclient-message.html#getCookies()-detail">getCookies()</a></td>
+        <td>Returns the cookie collection.</td>
+        <td><a href="yii-httpclient-message.html">yii\httpclient\Message</a></td>
+    </tr>
+            <tr class="inherited" id="getData()">
+        <td><a href="yii-httpclient-message.html#getData()-detail">getData()</a></td>
+        <td>Returns the data fields, parsed from raw content.</td>
+        <td><a href="yii-httpclient-message.html">yii\httpclient\Message</a></td>
+    </tr>
+            <tr class="inherited" id="getFormat()">
+        <td><a href="yii-httpclient-message.html#getFormat()-detail">getFormat()</a></td>
+        <td>Returns body format.</td>
+        <td><a href="yii-httpclient-message.html">yii\httpclient\Message</a></td>
+    </tr>
+            <tr id="getFullUrl()">
+        <td><a href="yii-httpclient-request.html#getFullUrl()-detail">getFullUrl()</a></td>
+        <td>Returns full target URL, including <a href="yii-httpclient-client.html#$baseUrl-detail">yii\httpclient\Client::$baseUrl</a> as a string.</td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr class="inherited" id="getHeaders()">
+        <td><a href="yii-httpclient-message.html#getHeaders()-detail">getHeaders()</a></td>
+        <td>Returns the header collection.</td>
+        <td><a href="yii-httpclient-message.html">yii\httpclient\Message</a></td>
+    </tr>
+            <tr id="getMethod()">
+        <td><a href="yii-httpclient-request.html#getMethod()-detail">getMethod()</a></td>
+        <td></td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr id="getOptions()">
+        <td><a href="yii-httpclient-request.html#getOptions()-detail">getOptions()</a></td>
+        <td></td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr id="getOutputFile()">
+        <td><a href="yii-httpclient-request.html#getOutputFile()-detail">getOutputFile()</a></td>
+        <td>Gets the outputFile property</td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr id="getUrl()">
+        <td><a href="yii-httpclient-request.html#getUrl()-detail">getUrl()</a></td>
+        <td>Returns target URL.</td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr class="inherited" id="hasContent()">
+        <td><a href="yii-httpclient-message.html#hasContent()-detail">hasContent()</a></td>
+        <td>Checks if content with provided name exists</td>
+        <td><a href="yii-httpclient-message.html">yii\httpclient\Message</a></td>
+    </tr>
+            <tr class="inherited" id="hasCookies()">
+        <td><a href="yii-httpclient-message.html#hasCookies()-detail">hasCookies()</a></td>
+        <td>Checks of HTTP message contains any cookie.</td>
+        <td><a href="yii-httpclient-message.html">yii\httpclient\Message</a></td>
+    </tr>
+            <tr class="inherited" id="hasEventHandlers()">
+        <td><a href="yii-base-component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+        <td>Returns a value indicating whether there is any handler attached to the named event.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="hasHeaders()">
+        <td><a href="yii-httpclient-message.html#hasHeaders()-detail">hasHeaders()</a></td>
+        <td>Checks of HTTP message contains any header.</td>
+        <td><a href="yii-httpclient-message.html">yii\httpclient\Message</a></td>
+    </tr>
+            <tr class="inherited" id="hasMethod()">
+        <td><a href="yii-base-component.html#hasMethod()-detail">hasMethod()</a></td>
+        <td>Returns a value indicating whether a method is defined.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="hasProperty()">
+        <td><a href="yii-base-component.html#hasProperty()-detail">hasProperty()</a></td>
+        <td>Returns a value indicating whether a property is defined for this component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="init()">
+        <td><a href="yii-base-baseobject.html#init()-detail">init()</a></td>
+        <td>Initializes the object.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr class="inherited" id="off()">
+        <td><a href="yii-base-component.html#off()-detail">off()</a></td>
+        <td>Detaches an existing event handler from this component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="on()">
+        <td><a href="yii-base-component.html#on()-detail">on()</a></td>
+        <td>Attaches an event handler to an event.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr id="prepare()">
+        <td><a href="yii-httpclient-request.html#prepare()-detail">prepare()</a></td>
+        <td>Prepares this request instance for sending.</td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr id="responseTime()">
+        <td><a href="yii-httpclient-request.html#responseTime()-detail">responseTime()</a></td>
+        <td>Return the response time in seconds</td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr id="send()">
+        <td><a href="yii-httpclient-request.html#send()-detail">send()</a></td>
+        <td>Sends this request.</td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr class="inherited" id="setContent()">
+        <td><a href="yii-httpclient-message.html#setContent()-detail">setContent()</a></td>
+        <td>Sets the HTTP message raw content.</td>
+        <td><a href="yii-httpclient-message.html">yii\httpclient\Message</a></td>
+    </tr>
+            <tr class="inherited" id="setCookies()">
+        <td><a href="yii-httpclient-message.html#setCookies()-detail">setCookies()</a></td>
+        <td>Sets the cookies associated with HTTP message.</td>
+        <td><a href="yii-httpclient-message.html">yii\httpclient\Message</a></td>
+    </tr>
+            <tr id="setData()">
+        <td><a href="yii-httpclient-request.html#setData()-detail">setData()</a></td>
+        <td>Sets the data fields, which composes message content.</td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr class="inherited" id="setFormat()">
+        <td><a href="yii-httpclient-message.html#setFormat()-detail">setFormat()</a></td>
+        <td>Sets body format.</td>
+        <td><a href="yii-httpclient-message.html">yii\httpclient\Message</a></td>
+    </tr>
+            <tr id="setFullUrl()">
+        <td><a href="yii-httpclient-request.html#setFullUrl()-detail">setFullUrl()</a></td>
+        <td>Sets full target URL.</td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr class="inherited" id="setHeaders()">
+        <td><a href="yii-httpclient-message.html#setHeaders()-detail">setHeaders()</a></td>
+        <td>Sets the HTTP headers associated with HTTP message.</td>
+        <td><a href="yii-httpclient-message.html">yii\httpclient\Message</a></td>
+    </tr>
+            <tr id="setMethod()">
+        <td><a href="yii-httpclient-request.html#setMethod()-detail">setMethod()</a></td>
+        <td></td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr id="setOptions()">
+        <td><a href="yii-httpclient-request.html#setOptions()-detail">setOptions()</a></td>
+        <td>Following options are supported:
+- timeout: int, the maximum number of seconds to allow request to be executed.</td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr id="setOutputFile()">
+        <td><a href="yii-httpclient-request.html#setOutputFile()-detail">setOutputFile()</a></td>
+        <td>Used with <a href="yii-httpclient-curltransport.html">yii\httpclient\CurlTransport</a> to set the file that the transfer should be written to</td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr id="setUrl()">
+        <td><a href="yii-httpclient-request.html#setUrl()-detail">setUrl()</a></td>
+        <td>Sets target URL.</td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr id="toString()">
+        <td><a href="yii-httpclient-request.html#toString()-detail">toString()</a></td>
+        <td>Returns string representation of this HTTP message.</td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+            <tr class="inherited" id="trigger()">
+        <td><a href="yii-base-component.html#trigger()-detail">trigger()</a></td>
+        <td>Triggers an event.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+    </table>
+</div>
+
+<div class="summary doc-method">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+                                                                                                        <tr class="inherited" id="defaultFormat()">
+        <td><a href="yii-httpclient-message.html#defaultFormat()-detail">defaultFormat()</a></td>
+        <td>Returns default format name.</td>
+        <td><a href="yii-httpclient-message.html">yii\httpclient\Message</a></td>
+    </tr>
+                                                                                                                                                                </table>
+</div>
+
+<a id="events"></a>
+<div class="summary doc-event">
+    <h2>Events</h2>
+
+    <p><a href="#" class="toggle">Hide inherited events</a></p>
+
+    <table class="summary-table table table-striped table-bordered table-hover">
+    <colgroup>
+        <col class="col-event" />
+        <col class="col-type" />
+        <col class="col-description" />
+        <col class="col-defined" />
+    </colgroup>
+    <tr>
+        <th>Event</th><th>Type</th><th>Description</th><th>Defined By</th>
+    </tr>
+        <tr id="EVENT_AFTER_SEND">
+        <td><a href="yii-httpclient-request.html#EVENT_AFTER_SEND-detail">EVENT_AFTER_SEND</a></td>
+        <td><a href="yii-httpclient-requestevent.html">yii\httpclient\RequestEvent</a></td>
+        <td>
+            An event raised right after request has been sent.                    </td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+        <tr id="EVENT_BEFORE_SEND">
+        <td><a href="yii-httpclient-request.html#EVENT_BEFORE_SEND-detail">EVENT_BEFORE_SEND</a></td>
+        <td><a href="yii-httpclient-requestevent.html">yii\httpclient\RequestEvent</a></td>
+        <td>
+            An event raised right before sending request.                    </td>
+        <td><a href="yii-httpclient-request.html">yii\httpclient\Request</a></td>
+    </tr>
+        </table>
+</div>
+
+<a id="constants"></a>
+
+<h2>Property Details</h2>
+
+<div class="property-doc">
+
+    <div class="detail-header h3" id="$data-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#$data-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $data        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>Content data fields.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="yii-httpclient-message.html#getData()-detail">getData</a></strong> ( )<br /><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-httpclient-request.html">$this</a></span> <strong><a href="yii-httpclient-request.html#setData()-detail">setData</a></strong> ( <span style="color: #0000BB">$data</span> )</div>
+
+
+    <div class="detail-header h3" id="$fullUrl-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#$fullUrl-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $fullUrl        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>Full target URL.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="yii-httpclient-request.html#getFullUrl()-detail">getFullUrl</a></strong> ( )<br /><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-httpclient-request.html">$this</a></span> <strong><a href="yii-httpclient-request.html#setFullUrl()-detail">setFullUrl</a></strong> ( <span style="color: #0000BB">$fullUrl</span> )</div>
+
+
+    <div class="detail-header h3" id="$method-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#$method-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $method        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>Request method</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="yii-httpclient-request.html#getMethod()-detail">getMethod</a></strong> ( )<br /><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-httpclient-request.html">$this</a></span> <strong><a href="yii-httpclient-request.html#setMethod()-detail">setMethod</a></strong> ( <span style="color: #0000BB">$method</span> )</div>
+
+
+    <div class="detail-header h3" id="$options-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#$options-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $options        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>Request options.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-httpclient-request.html#getOptions()-detail">getOptions</a></strong> ( )<br /><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-httpclient-request.html">$this</a></span> <strong><a href="yii-httpclient-request.html#setOptions()-detail">setOptions</a></strong> ( <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <span style="color: #0000BB">$options</span> )</div>
+
+
+    <div class="detail-header h3" id="$outputFile-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#$outputFile-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $outputFile        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.resource">resource</a></span> <strong><a href="yii-httpclient-request.html#getOutputFile()-detail">getOutputFile</a></strong> ( )<br /><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-httpclient-request.html">$this</a></span> <strong><a href="yii-httpclient-request.html#setOutputFile()-detail">setOutputFile</a></strong> ( <span style="color: #0000BB">$file</span> )</div>
+
+
+    <div class="detail-header h3" id="$url-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#$url-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $url        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>Use a string to represent a URL (e.g. <code>http://some-domain.com</code>, <code>item/list</code>),
+or an array to represent a URL with query parameters (e.g. <code>['item/list', 'param1' =&gt; 'value1']</code>).</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-httpclient-request.html#getUrl()-detail">getUrl</a></strong> ( )<br /><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-httpclient-request.html">$this</a></span> <strong><a href="yii-httpclient-request.html#setUrl()-detail">setUrl</a></strong> ( <span style="color: #0000BB">$url</span> )</div>
+
+</div>
+<h2>Method Details</h2>
+
+<div class="method-doc">
+
+    <div class="detail-header h3" id="addContent()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#addContent()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php#L228" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php#L228" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        addContent()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Adds a content part for multi-part content request.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-httpclient-request.html">$this</a></span> <strong><a href="yii-httpclient-request.html#addContent()-detail">addContent</a></strong> ( <span style="color: #0000BB">$name</span>, <span style="color: #0000BB">$content</span>, <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Part (form input) name.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$content</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Content.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Content part options, valid options are:</p>
+<ul>
+<li>contentType - string, part content type</li>
+<li>fileName - string, name of the uploading file</li>
+<li>mimeType - string, part content type in case of file uploading</li>
+</ul>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-httpclient-request.html">$this</a></td>
+                  <td class="param-desc-col"><p>Self reference.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="addData()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#addData()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php#L208" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php#L208" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        addData()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Adds data fields to the existing ones.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-httpclient-request.html">$this</a></span> <strong><a href="yii-httpclient-request.html#addData()-detail">addData</a></strong> ( <span style="color: #0000BB">$data</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$data</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Additional content data fields.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-httpclient-request.html">$this</a></td>
+                  <td class="param-desc-col"><p>Self reference.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="addFile()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#addFile()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php#L253" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php#L253" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        addFile()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Adds a file for upload as multi-part content.</strong></p>
+
+        
+        <p>See also <a href="yii-httpclient-request.html#addContent()-detail">addContent()</a>.</p>    </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-httpclient-request.html">$this</a></span> <strong><a href="yii-httpclient-request.html#addFile()-detail">addFile</a></strong> ( <span style="color: #0000BB">$name</span>, <span style="color: #0000BB">$fileName</span>, <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Part (form input) name</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$fileName</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Full name of the source file.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Content part options, valid options are:</p>
+<ul>
+<li>fileName - string, base name of the uploading file, if not set it base name of the source file will be used.</li>
+<li>mimeType - string, file mime type, if not set it will be determine automatically from source file.</li>
+</ul>
+</td>
+                </tr>
+                                                    <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="yii-base-invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="addFileContent()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#addFileContent()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php#L275" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php#L275" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        addFileContent()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Adds a string as a file upload.</strong></p>
+
+        
+        <p>See also <a href="yii-httpclient-request.html#addContent()-detail">addContent()</a>.</p>    </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-httpclient-request.html">$this</a></span> <strong><a href="yii-httpclient-request.html#addFileContent()-detail">addFileContent</a></strong> ( <span style="color: #0000BB">$name</span>, <span style="color: #0000BB">$content</span>, <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Part (form input) name</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$content</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>File content.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Content part options, valid options are:</p>
+<ul>
+<li>fileName - string, base name of the uploading file.</li>
+<li>mimeType - string, file mime type, if not set it 'application/octet-stream' will be used.</li>
+</ul>
+</td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="addOptions()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#addOptions()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php#L179" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php#L179" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        addOptions()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Adds more options to already defined ones.</strong></p>
+
+        <p>Please refer to <a href="yii-httpclient-request.html#setOptions()-detail">setOptions()</a> on how to specify options.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-httpclient-request.html">$this</a></span> <strong><a href="yii-httpclient-request.html#addOptions()-detail">addOptions</a></strong> ( <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <span style="color: #0000BB">$options</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Additional options</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-httpclient-request.html">$this</a></td>
+                  <td class="param-desc-col"><p>Self reference.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="afterSend()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#afterSend()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php#L468" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php#L468" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        afterSend()
+        <span class="detail-header-tag small">
+            public                                    method
+                            (available since version 2.0.1)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>This method is invoked right after this request is sent.</strong></p>
+
+        <p>The method will invoke <a href="yii-httpclient-client.html#afterSend()-detail">yii\httpclient\Client::afterSend()</a> and trigger the <a href="yii-httpclient-request.html#EVENT_AFTER_SEND-detail">EVENT_AFTER_SEND</a> event.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-httpclient-request.html#afterSend()-detail">afterSend</a></strong> ( <span style="color: #0000BB">$response</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$response</span></td>
+                  <td class="param-type-col"><a href="yii-httpclient-response.html">yii\httpclient\Response</a></td>
+                  <td class="param-desc-col"><p>Received response instance.</p>
+</td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="beforeSend()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#beforeSend()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php#L452" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php#L452" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        beforeSend()
+        <span class="detail-header-tag small">
+            public                                    method
+                            (available since version 2.0.1)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>This method is invoked right before this request is sent.</strong></p>
+
+        <p>The method will invoke <a href="yii-httpclient-client.html#beforeSend()-detail">yii\httpclient\Client::beforeSend()</a> and trigger the <a href="yii-httpclient-request.html#EVENT_BEFORE_SEND-detail">EVENT_BEFORE_SEND</a> event.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-httpclient-request.html#beforeSend()-detail">beforeSend</a></strong> ( )</td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="composeHeaderLines()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#composeHeaderLines()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php#L428" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php#L428" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        composeHeaderLines()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Composes raw header lines from <a href="yii-httpclient-message.html#$headers-detail">$headers</a>.</strong></p>
+
+        <p>Each line will be a string in format: 'header-name: value'.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-httpclient-request.html#composeHeaderLines()-detail">composeHeaderLines</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Raw header lines.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getFullUrl()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#getFullUrl()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php#L114" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php#L114" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getFullUrl()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns full target URL, including <a href="yii-httpclient-client.html#$baseUrl-detail">yii\httpclient\Client::$baseUrl</a> as a string.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="yii-httpclient-request.html#getFullUrl()-detail">getFullUrl</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Full target URL.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getMethod()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#getMethod()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php#L135" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php#L135" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getMethod()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong></strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="yii-httpclient-request.html#getMethod()-detail">getMethod</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Request method</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getOptions()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#getOptions()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php#L168" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php#L168" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getOptions()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong></strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-httpclient-request.html#getOptions()-detail">getOptions</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Request options.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getOutputFile()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#getOutputFile()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php#L535" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php#L535" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getOutputFile()
+        <span class="detail-header-tag small">
+            public                                    method
+                            (available since version 2.0.9)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Gets the outputFile property</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.resource">resource</a></span> <strong><a href="yii-httpclient-request.html#getOutputFile()-detail">getOutputFile</a></strong> ( )</td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getUrl()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#getUrl()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php#L91" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php#L91" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getUrl()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns target URL.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-httpclient-request.html#getUrl()-detail">getUrl</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Target URL or URL parameters</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="prepare()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#prepare()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php#L292" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php#L292" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        prepare()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Prepares this request instance for sending.</strong></p>
+
+        <p>This method should be invoked by transport before sending a request.
+Do not call this method unless you know what you are doing.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-httpclient-request.html">$this</a></span> <strong><a href="yii-httpclient-request.html#prepare()-detail">prepare</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-httpclient-request.html">$this</a></td>
+                  <td class="param-desc-col"><p>Self reference.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="responseTime()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#responseTime()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php#L485" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php#L485" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        responseTime()
+        <span class="detail-header-tag small">
+            public                                    method
+                            (available since version 2.0.12)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Return the response time in seconds</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.float">float</a></span> <strong><a href="yii-httpclient-request.html#responseTime()-detail">responseTime</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.float">float</a></td>
+                  <td class="param-desc-col"><p>The seconds elapsed from request to response</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="send()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#send()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php#L442" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php#L442" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        send()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Sends this request.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-httpclient-response.html">yii\httpclient\Response</a></span> <strong><a href="yii-httpclient-request.html#send()-detail">send</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-httpclient-response.html">yii\httpclient\Response</a></td>
+                  <td class="param-desc-col"><p>Response instance.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="yii-httpclient-exception.html">yii\httpclient\Exception</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="setData()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#setData()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php#L195" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php#L195" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        setData()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Sets the data fields, which composes message content.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-httpclient-request.html">$this</a></span> <strong><a href="yii-httpclient-request.html#setData()-detail">setData</a></strong> ( <span style="color: #0000BB">$data</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$data</span></td>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"><p>Content data fields.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-httpclient-request.html">$this</a></td>
+                  <td class="param-desc-col"><p>Self reference.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="setFullUrl()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#setFullUrl()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php#L104" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php#L104" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        setFullUrl()
+        <span class="detail-header-tag small">
+            public                                    method
+                            (available since version 2.0.3)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Sets full target URL.</strong></p>
+
+        <p>This method can be used during request formatting and preparation.
+Do not use it for the target URL specification, use <a href="yii-httpclient-request.html#setUrl()-detail">setUrl()</a> instead.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-httpclient-request.html">$this</a></span> <strong><a href="yii-httpclient-request.html#setFullUrl()-detail">setFullUrl</a></strong> ( <span style="color: #0000BB">$fullUrl</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$fullUrl</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Full target URL.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-httpclient-request.html">$this</a></td>
+                  <td class="param-desc-col"><p>Self reference.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="setMethod()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#setMethod()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php#L126" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php#L126" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        setMethod()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong></strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-httpclient-request.html">$this</a></span> <strong><a href="yii-httpclient-request.html#setMethod()-detail">setMethod</a></strong> ( <span style="color: #0000BB">$method</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$method</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Request method</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-httpclient-request.html">$this</a></td>
+                  <td class="param-desc-col"><p>Self reference.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="setOptions()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#setOptions()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php#L159" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php#L159" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        setOptions()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Following options are supported:
+- timeout: int, the maximum number of seconds to allow request to be executed.</strong></p>
+
+        <ul>
+<li>proxy: string, URI specifying address of proxy server. (e.g. tcp://proxy.example.com:5100).</li>
+<li>userAgent: string, the contents of the "User-Agent: " header to be used in a HTTP request.</li>
+<li>followLocation: bool, whether to follow any "Location: " header that the server sends as part of the HTTP header.</li>
+<li>maxRedirects: int, the max number of redirects to follow.</li>
+<li>protocolVersion: float|string, HTTP protocol version.</li>
+<li>sslVerifyPeer: bool, whether verification of the peer's certificate should be performed.</li>
+<li>sslCafile: string, location of Certificate Authority file on local filesystem which should be used with
+the 'sslVerifyPeer' option to authenticate the identity of the remote peer.</li>
+<li>sslCapath: string, a directory that holds multiple CA certificates.</li>
+</ul>
+<p>You may set options using keys, which are specific to particular transport, like <code>[CURLOPT_VERBOSE =&gt; true]</code> in case
+there is a necessity for it.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-httpclient-request.html">$this</a></span> <strong><a href="yii-httpclient-request.html#setOptions()-detail">setOptions</a></strong> ( <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <span style="color: #0000BB">$options</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Request options.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-httpclient-request.html">$this</a></td>
+                  <td class="param-desc-col"><p>Self reference.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="setOutputFile()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#setOutputFile()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php#L547" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php#L547" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        setOutputFile()
+        <span class="detail-header-tag small">
+            public                                    method
+                            (available since version 2.0.9)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Used with <a href="yii-httpclient-curltransport.html">yii\httpclient\CurlTransport</a> to set the file that the transfer should be written to</strong></p>
+
+        
+        <p>See also <span class="broken-link">\yii\httpclient\CURLOPT_FILE</span>.</p>    </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-httpclient-request.html">$this</a></span> <strong><a href="yii-httpclient-request.html#setOutputFile()-detail">setOutputFile</a></strong> ( <span style="color: #0000BB">$file</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$file</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.resource">resource</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-httpclient-request.html">$this</a></td>
+                  <td class="param-desc-col"><p>Self reference.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="setUrl()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#setUrl()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php#L80" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php#L80" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        setUrl()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Sets target URL.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-httpclient-request.html">$this</a></span> <strong><a href="yii-httpclient-request.html#setUrl()-detail">setUrl</a></strong> ( <span style="color: #0000BB">$url</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$url</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Use a string to represent a URL (e.g. <code>http://some-domain.com</code>, <code>item/list</code>),
+or an array to represent a URL with query parameters (e.g. <code>['item/list', 'param1' =&gt; 'value1']</code>).</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-httpclient-request.html">$this</a></td>
+                  <td class="param-desc-col"><p>Self reference.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="toString()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#toString()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php#L493" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php#L493" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        toString()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns string representation of this HTTP message.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="yii-httpclient-request.html#toString()-detail">toString</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The string representation of this HTTP message.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+</div>
+    <h2>Event Details</h2>
+
+<div class="event-doc">
+    <div class="detail-header h3" id="EVENT_AFTER_SEND-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#EVENT_AFTER_SEND-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php#L33" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php#L33" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        EVENT_AFTER_SEND        <span class="detail-header-tag small">
+        event
+        of type <a href="yii-httpclient-requestevent.html">yii\httpclient\RequestEvent</a>                </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>An event raised right after request has been sent.</p>
+
+            </div>
+
+    <div class="detail-header h3" id="EVENT_BEFORE_SEND-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-httpclient-request.html#EVENT_BEFORE_SEND-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-httpclient/edit/master/Request.php#L29" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-httpclient/blob/master/Request.php#L29" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        EVENT_BEFORE_SEND        <span class="detail-header-tag small">
+        event
+        of type <a href="yii-httpclient-requestevent.html">yii\httpclient\RequestEvent</a>                </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>An event raised right before sending request.</p>
+
+            </div>
+
+</div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    /*<![CDATA[*/
+    $("a.toggle").on('click', function () {
+        var $this = $(this);
+        if ($this.hasClass('properties-hidden')) {
+            $this.text($this.text().replace(/Show/,'Hide'));
+            $this.parents(".summary").find(".inherited").show();
+            $this.removeClass('properties-hidden');
+        } else {
+            $this.text($this.text().replace(/Hide/,'Show'));
+            $this.parents(".summary").find(".inherited").hide();
+            $this.addClass('properties-hidden');
+        }
+
+        return false;
+    });
+    /*
+     $(".sourceCode a.show").toggle(function () {
+     $(this).text($(this).text().replace(/show/,'hide'));
+     $(this).parents(".sourceCode").find("div.code").show();
+     },function () {
+     $(this).text($(this).text().replace(/hide/,'show'));
+     $(this).parents(".sourceCode").find("div.code").hide();
+     });
+     $("a.sourceLink").click(function () {
+     $(this).attr('target','_blank');
+     });
+     */
+    /*]]>*/
+</script>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:32 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

@@ -1,0 +1,4259 @@
+Array
+(
+    [0] => Array
+        (
+            [line] => 31
+            [file] => data/yii-2.0/extensions/apidoc/helpers/ApiMarkdown.php
+            [message] => No short description for element '$renderer'
+        )
+
+    [1] => Array
+        (
+            [line] => 38
+            [file] => data/yii-2.0/extensions/apidoc/helpers/ApiMarkdown.php
+            [message] => No docblock for element '$renderingContext'
+        )
+
+    [2] => Array
+        (
+            [line] => 38
+            [file] => data/yii-2.0/extensions/apidoc/helpers/ApiMarkdown.php
+            [message] => No short description for element '$renderingContext'
+        )
+
+    [3] => Array
+        (
+            [line] => 39
+            [file] => data/yii-2.0/extensions/apidoc/helpers/ApiMarkdown.php
+            [message] => No docblock for element '$headings'
+        )
+
+    [4] => Array
+        (
+            [line] => 39
+            [file] => data/yii-2.0/extensions/apidoc/helpers/ApiMarkdown.php
+            [message] => No short description for element '$headings'
+        )
+
+    [5] => Array
+        (
+            [line] => 60
+            [file] => data/yii-2.0/extensions/apidoc/helpers/ApiMarkdown.php
+            [message] => No docblock for element 'parse'
+        )
+
+    [6] => Array
+        (
+            [line] => 31
+            [file] => data/yii-2.0/extensions/apidoc/helpers/ApiMarkdown.php
+            [message] => No short description for element '$renderer'
+        )
+
+    [7] => Array
+        (
+            [line] => 38
+            [file] => data/yii-2.0/extensions/apidoc/helpers/ApiMarkdown.php
+            [message] => No docblock for element '$renderingContext'
+        )
+
+    [8] => Array
+        (
+            [line] => 38
+            [file] => data/yii-2.0/extensions/apidoc/helpers/ApiMarkdown.php
+            [message] => No short description for element '$renderingContext'
+        )
+
+    [9] => Array
+        (
+            [line] => 39
+            [file] => data/yii-2.0/extensions/apidoc/helpers/ApiMarkdown.php
+            [message] => No docblock for element '$headings'
+        )
+
+    [10] => Array
+        (
+            [line] => 39
+            [file] => data/yii-2.0/extensions/apidoc/helpers/ApiMarkdown.php
+            [message] => No short description for element '$headings'
+        )
+
+    [11] => Array
+        (
+            [line] => 60
+            [file] => data/yii-2.0/extensions/apidoc/helpers/ApiMarkdown.php
+            [message] => No docblock for element 'parse'
+        )
+
+    [12] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/apidoc/helpers/ApiMarkdownLaTeX.php
+            [message] => No short description for element '$renderer'
+        )
+
+    [13] => Array
+        (
+            [line] => 30
+            [file] => data/yii-2.0/extensions/apidoc/helpers/ApiMarkdownLaTeX.php
+            [message] => No docblock for element '$renderingContext'
+        )
+
+    [14] => Array
+        (
+            [line] => 30
+            [file] => data/yii-2.0/extensions/apidoc/helpers/ApiMarkdownLaTeX.php
+            [message] => No short description for element '$renderingContext'
+        )
+
+    [15] => Array
+        (
+            [line] => 17
+            [file] => data/yii-2.0/extensions/apidoc/helpers/IndexFileAnalyzer.php
+            [message] => No docblock for element '$title'
+        )
+
+    [16] => Array
+        (
+            [line] => 17
+            [file] => data/yii-2.0/extensions/apidoc/helpers/IndexFileAnalyzer.php
+            [message] => No short description for element '$title'
+        )
+
+    [17] => Array
+        (
+            [line] => 18
+            [file] => data/yii-2.0/extensions/apidoc/helpers/IndexFileAnalyzer.php
+            [message] => No docblock for element '$introduction'
+        )
+
+    [18] => Array
+        (
+            [line] => 18
+            [file] => data/yii-2.0/extensions/apidoc/helpers/IndexFileAnalyzer.php
+            [message] => No short description for element '$introduction'
+        )
+
+    [19] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/apidoc/models/BaseDoc.php
+            [message] => No short description for element '$phpDocContext'
+        )
+
+    [20] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/apidoc/models/BaseDoc.php
+            [message] => No docblock for element '$name'
+        )
+
+    [21] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/apidoc/models/BaseDoc.php
+            [message] => No short description for element '$name'
+        )
+
+    [22] => Array
+        (
+            [line] => 29
+            [file] => data/yii-2.0/extensions/apidoc/models/BaseDoc.php
+            [message] => No docblock for element '$sourceFile'
+        )
+
+    [23] => Array
+        (
+            [line] => 29
+            [file] => data/yii-2.0/extensions/apidoc/models/BaseDoc.php
+            [message] => No short description for element '$sourceFile'
+        )
+
+    [24] => Array
+        (
+            [line] => 30
+            [file] => data/yii-2.0/extensions/apidoc/models/BaseDoc.php
+            [message] => No docblock for element '$startLine'
+        )
+
+    [25] => Array
+        (
+            [line] => 30
+            [file] => data/yii-2.0/extensions/apidoc/models/BaseDoc.php
+            [message] => No short description for element '$startLine'
+        )
+
+    [26] => Array
+        (
+            [line] => 31
+            [file] => data/yii-2.0/extensions/apidoc/models/BaseDoc.php
+            [message] => No docblock for element '$endLine'
+        )
+
+    [27] => Array
+        (
+            [line] => 31
+            [file] => data/yii-2.0/extensions/apidoc/models/BaseDoc.php
+            [message] => No short description for element '$endLine'
+        )
+
+    [28] => Array
+        (
+            [line] => 32
+            [file] => data/yii-2.0/extensions/apidoc/models/BaseDoc.php
+            [message] => No docblock for element '$shortDescription'
+        )
+
+    [29] => Array
+        (
+            [line] => 32
+            [file] => data/yii-2.0/extensions/apidoc/models/BaseDoc.php
+            [message] => No short description for element '$shortDescription'
+        )
+
+    [30] => Array
+        (
+            [line] => 33
+            [file] => data/yii-2.0/extensions/apidoc/models/BaseDoc.php
+            [message] => No docblock for element '$description'
+        )
+
+    [31] => Array
+        (
+            [line] => 33
+            [file] => data/yii-2.0/extensions/apidoc/models/BaseDoc.php
+            [message] => No short description for element '$description'
+        )
+
+    [32] => Array
+        (
+            [line] => 34
+            [file] => data/yii-2.0/extensions/apidoc/models/BaseDoc.php
+            [message] => No docblock for element '$since'
+        )
+
+    [33] => Array
+        (
+            [line] => 34
+            [file] => data/yii-2.0/extensions/apidoc/models/BaseDoc.php
+            [message] => No short description for element '$since'
+        )
+
+    [34] => Array
+        (
+            [line] => 35
+            [file] => data/yii-2.0/extensions/apidoc/models/BaseDoc.php
+            [message] => No docblock for element '$deprecatedSince'
+        )
+
+    [35] => Array
+        (
+            [line] => 35
+            [file] => data/yii-2.0/extensions/apidoc/models/BaseDoc.php
+            [message] => No short description for element '$deprecatedSince'
+        )
+
+    [36] => Array
+        (
+            [line] => 36
+            [file] => data/yii-2.0/extensions/apidoc/models/BaseDoc.php
+            [message] => No docblock for element '$deprecatedReason'
+        )
+
+    [37] => Array
+        (
+            [line] => 36
+            [file] => data/yii-2.0/extensions/apidoc/models/BaseDoc.php
+            [message] => No short description for element '$deprecatedReason'
+        )
+
+    [38] => Array
+        (
+            [line] => 40
+            [file] => data/yii-2.0/extensions/apidoc/models/BaseDoc.php
+            [message] => No short description for element '$tags'
+        )
+
+    [39] => Array
+        (
+            [line] => 23
+            [file] => data/yii-2.0/extensions/apidoc/models/ClassDoc.php
+            [message] => No short description for element '$parentClass'
+        )
+
+    [40] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/apidoc/models/ClassDoc.php
+            [message] => No short description for element '$isAbstract'
+        )
+
+    [41] => Array
+        (
+            [line] => 31
+            [file] => data/yii-2.0/extensions/apidoc/models/ClassDoc.php
+            [message] => No short description for element '$isFinal'
+        )
+
+    [42] => Array
+        (
+            [line] => 35
+            [file] => data/yii-2.0/extensions/apidoc/models/ClassDoc.php
+            [message] => No short description for element '$interfaces'
+        )
+
+    [43] => Array
+        (
+            [line] => 39
+            [file] => data/yii-2.0/extensions/apidoc/models/ClassDoc.php
+            [message] => No short description for element '$traits'
+        )
+
+    [44] => Array
+        (
+            [line] => 44
+            [file] => data/yii-2.0/extensions/apidoc/models/ClassDoc.php
+            [message] => No short description for element '$subclasses'
+        )
+
+    [45] => Array
+        (
+            [line] => 48
+            [file] => data/yii-2.0/extensions/apidoc/models/ClassDoc.php
+            [message] => No short description for element '$events'
+        )
+
+    [46] => Array
+        (
+            [line] => 52
+            [file] => data/yii-2.0/extensions/apidoc/models/ClassDoc.php
+            [message] => No short description for element '$constants'
+        )
+
+    [47] => Array
+        (
+            [line] => 18
+            [file] => data/yii-2.0/extensions/apidoc/models/ConstDoc.php
+            [message] => No docblock for element '$definedBy'
+        )
+
+    [48] => Array
+        (
+            [line] => 18
+            [file] => data/yii-2.0/extensions/apidoc/models/ConstDoc.php
+            [message] => No short description for element '$definedBy'
+        )
+
+    [49] => Array
+        (
+            [line] => 19
+            [file] => data/yii-2.0/extensions/apidoc/models/ConstDoc.php
+            [message] => No docblock for element '$value'
+        )
+
+    [50] => Array
+        (
+            [line] => 19
+            [file] => data/yii-2.0/extensions/apidoc/models/ConstDoc.php
+            [message] => No short description for element '$value'
+        )
+
+    [51] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/apidoc/models/Context.php
+            [message] => No short description for element '$classes'
+        )
+
+    [52] => Array
+        (
+            [line] => 31
+            [file] => data/yii-2.0/extensions/apidoc/models/Context.php
+            [message] => No short description for element '$interfaces'
+        )
+
+    [53] => Array
+        (
+            [line] => 35
+            [file] => data/yii-2.0/extensions/apidoc/models/Context.php
+            [message] => No short description for element '$traits'
+        )
+
+    [54] => Array
+        (
+            [line] => 39
+            [file] => data/yii-2.0/extensions/apidoc/models/Context.php
+            [message] => No short description for element '$errors'
+        )
+
+    [55] => Array
+        (
+            [line] => 44
+            [file] => data/yii-2.0/extensions/apidoc/models/Context.php
+            [message] => No short description for element '$warnings'
+        )
+
+    [56] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/apidoc/models/Context.php
+            [message] => No short description for element '$classes'
+        )
+
+    [57] => Array
+        (
+            [line] => 31
+            [file] => data/yii-2.0/extensions/apidoc/models/Context.php
+            [message] => No short description for element '$interfaces'
+        )
+
+    [58] => Array
+        (
+            [line] => 35
+            [file] => data/yii-2.0/extensions/apidoc/models/Context.php
+            [message] => No short description for element '$traits'
+        )
+
+    [59] => Array
+        (
+            [line] => 39
+            [file] => data/yii-2.0/extensions/apidoc/models/Context.php
+            [message] => No short description for element '$errors'
+        )
+
+    [60] => Array
+        (
+            [line] => 44
+            [file] => data/yii-2.0/extensions/apidoc/models/Context.php
+            [message] => No short description for element '$warnings'
+        )
+
+    [61] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/apidoc/models/EventDoc.php
+            [message] => No docblock for element '$type'
+        )
+
+    [62] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/apidoc/models/EventDoc.php
+            [message] => No short description for element '$type'
+        )
+
+    [63] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/apidoc/models/EventDoc.php
+            [message] => No docblock for element '$types'
+        )
+
+    [64] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/apidoc/models/EventDoc.php
+            [message] => No short description for element '$types'
+        )
+
+    [65] => Array
+        (
+            [line] => 26
+            [file] => data/yii-2.0/extensions/apidoc/models/FunctionDoc.php
+            [message] => No short description for element '$params'
+        )
+
+    [66] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/apidoc/models/FunctionDoc.php
+            [message] => No docblock for element '$exceptions'
+        )
+
+    [67] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/apidoc/models/FunctionDoc.php
+            [message] => No short description for element '$exceptions'
+        )
+
+    [68] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/apidoc/models/FunctionDoc.php
+            [message] => No docblock for element '$return'
+        )
+
+    [69] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/apidoc/models/FunctionDoc.php
+            [message] => No short description for element '$return'
+        )
+
+    [70] => Array
+        (
+            [line] => 29
+            [file] => data/yii-2.0/extensions/apidoc/models/FunctionDoc.php
+            [message] => No docblock for element '$returnType'
+        )
+
+    [71] => Array
+        (
+            [line] => 29
+            [file] => data/yii-2.0/extensions/apidoc/models/FunctionDoc.php
+            [message] => No short description for element '$returnType'
+        )
+
+    [72] => Array
+        (
+            [line] => 30
+            [file] => data/yii-2.0/extensions/apidoc/models/FunctionDoc.php
+            [message] => No docblock for element '$returnTypes'
+        )
+
+    [73] => Array
+        (
+            [line] => 30
+            [file] => data/yii-2.0/extensions/apidoc/models/FunctionDoc.php
+            [message] => No short description for element '$returnTypes'
+        )
+
+    [74] => Array
+        (
+            [line] => 31
+            [file] => data/yii-2.0/extensions/apidoc/models/FunctionDoc.php
+            [message] => No docblock for element '$isReturnByReference'
+        )
+
+    [75] => Array
+        (
+            [line] => 31
+            [file] => data/yii-2.0/extensions/apidoc/models/FunctionDoc.php
+            [message] => No short description for element '$isReturnByReference'
+        )
+
+    [76] => Array
+        (
+            [line] => 18
+            [file] => data/yii-2.0/extensions/apidoc/models/InterfaceDoc.php
+            [message] => No docblock for element '$parentInterfaces'
+        )
+
+    [77] => Array
+        (
+            [line] => 18
+            [file] => data/yii-2.0/extensions/apidoc/models/InterfaceDoc.php
+            [message] => No short description for element '$parentInterfaces'
+        )
+
+    [78] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/apidoc/models/InterfaceDoc.php
+            [message] => No docblock for element '$implementedBy'
+        )
+
+    [79] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/apidoc/models/InterfaceDoc.php
+            [message] => No short description for element '$implementedBy'
+        )
+
+    [80] => Array
+        (
+            [line] => 18
+            [file] => data/yii-2.0/extensions/apidoc/models/InterfaceDoc.php
+            [message] => No docblock for element '$parentInterfaces'
+        )
+
+    [81] => Array
+        (
+            [line] => 18
+            [file] => data/yii-2.0/extensions/apidoc/models/InterfaceDoc.php
+            [message] => No short description for element '$parentInterfaces'
+        )
+
+    [82] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/apidoc/models/InterfaceDoc.php
+            [message] => No docblock for element '$implementedBy'
+        )
+
+    [83] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/apidoc/models/InterfaceDoc.php
+            [message] => No short description for element '$implementedBy'
+        )
+
+    [84] => Array
+        (
+            [line] => 18
+            [file] => data/yii-2.0/extensions/apidoc/models/MethodDoc.php
+            [message] => No docblock for element '$isAbstract'
+        )
+
+    [85] => Array
+        (
+            [line] => 18
+            [file] => data/yii-2.0/extensions/apidoc/models/MethodDoc.php
+            [message] => No short description for element '$isAbstract'
+        )
+
+    [86] => Array
+        (
+            [line] => 19
+            [file] => data/yii-2.0/extensions/apidoc/models/MethodDoc.php
+            [message] => No docblock for element '$isFinal'
+        )
+
+    [87] => Array
+        (
+            [line] => 19
+            [file] => data/yii-2.0/extensions/apidoc/models/MethodDoc.php
+            [message] => No short description for element '$isFinal'
+        )
+
+    [88] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/apidoc/models/MethodDoc.php
+            [message] => No docblock for element '$isStatic'
+        )
+
+    [89] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/apidoc/models/MethodDoc.php
+            [message] => No short description for element '$isStatic'
+        )
+
+    [90] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/apidoc/models/MethodDoc.php
+            [message] => No docblock for element '$visibility'
+        )
+
+    [91] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/apidoc/models/MethodDoc.php
+            [message] => No short description for element '$visibility'
+        )
+
+    [92] => Array
+        (
+            [line] => 23
+            [file] => data/yii-2.0/extensions/apidoc/models/MethodDoc.php
+            [message] => No docblock for element '$definedBy'
+        )
+
+    [93] => Array
+        (
+            [line] => 23
+            [file] => data/yii-2.0/extensions/apidoc/models/MethodDoc.php
+            [message] => No short description for element '$definedBy'
+        )
+
+    [94] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/apidoc/models/ParamDoc.php
+            [message] => No docblock for element '$name'
+        )
+
+    [95] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/apidoc/models/ParamDoc.php
+            [message] => No short description for element '$name'
+        )
+
+    [96] => Array
+        (
+            [line] => 22
+            [file] => data/yii-2.0/extensions/apidoc/models/ParamDoc.php
+            [message] => No docblock for element '$typeHint'
+        )
+
+    [97] => Array
+        (
+            [line] => 22
+            [file] => data/yii-2.0/extensions/apidoc/models/ParamDoc.php
+            [message] => No short description for element '$typeHint'
+        )
+
+    [98] => Array
+        (
+            [line] => 23
+            [file] => data/yii-2.0/extensions/apidoc/models/ParamDoc.php
+            [message] => No docblock for element '$isOptional'
+        )
+
+    [99] => Array
+        (
+            [line] => 23
+            [file] => data/yii-2.0/extensions/apidoc/models/ParamDoc.php
+            [message] => No short description for element '$isOptional'
+        )
+
+    [100] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/extensions/apidoc/models/ParamDoc.php
+            [message] => No docblock for element '$defaultValue'
+        )
+
+    [101] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/extensions/apidoc/models/ParamDoc.php
+            [message] => No short description for element '$defaultValue'
+        )
+
+    [102] => Array
+        (
+            [line] => 25
+            [file] => data/yii-2.0/extensions/apidoc/models/ParamDoc.php
+            [message] => No docblock for element '$isPassedByReference'
+        )
+
+    [103] => Array
+        (
+            [line] => 25
+            [file] => data/yii-2.0/extensions/apidoc/models/ParamDoc.php
+            [message] => No short description for element '$isPassedByReference'
+        )
+
+    [104] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/apidoc/models/ParamDoc.php
+            [message] => No docblock for element '$description'
+        )
+
+    [105] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/apidoc/models/ParamDoc.php
+            [message] => No short description for element '$description'
+        )
+
+    [106] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/apidoc/models/ParamDoc.php
+            [message] => No docblock for element '$type'
+        )
+
+    [107] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/apidoc/models/ParamDoc.php
+            [message] => No short description for element '$type'
+        )
+
+    [108] => Array
+        (
+            [line] => 29
+            [file] => data/yii-2.0/extensions/apidoc/models/ParamDoc.php
+            [message] => No docblock for element '$types'
+        )
+
+    [109] => Array
+        (
+            [line] => 29
+            [file] => data/yii-2.0/extensions/apidoc/models/ParamDoc.php
+            [message] => No short description for element '$types'
+        )
+
+    [110] => Array
+        (
+            [line] => 30
+            [file] => data/yii-2.0/extensions/apidoc/models/ParamDoc.php
+            [message] => No docblock for element '$sourceFile'
+        )
+
+    [111] => Array
+        (
+            [line] => 30
+            [file] => data/yii-2.0/extensions/apidoc/models/ParamDoc.php
+            [message] => No short description for element '$sourceFile'
+        )
+
+    [112] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/extensions/apidoc/models/PropertyDoc.php
+            [message] => No docblock for element '$visibility'
+        )
+
+    [113] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/extensions/apidoc/models/PropertyDoc.php
+            [message] => No short description for element '$visibility'
+        )
+
+    [114] => Array
+        (
+            [line] => 25
+            [file] => data/yii-2.0/extensions/apidoc/models/PropertyDoc.php
+            [message] => No docblock for element '$isStatic'
+        )
+
+    [115] => Array
+        (
+            [line] => 25
+            [file] => data/yii-2.0/extensions/apidoc/models/PropertyDoc.php
+            [message] => No short description for element '$isStatic'
+        )
+
+    [116] => Array
+        (
+            [line] => 26
+            [file] => data/yii-2.0/extensions/apidoc/models/PropertyDoc.php
+            [message] => No docblock for element '$type'
+        )
+
+    [117] => Array
+        (
+            [line] => 26
+            [file] => data/yii-2.0/extensions/apidoc/models/PropertyDoc.php
+            [message] => No short description for element '$type'
+        )
+
+    [118] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/apidoc/models/PropertyDoc.php
+            [message] => No docblock for element '$types'
+        )
+
+    [119] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/apidoc/models/PropertyDoc.php
+            [message] => No short description for element '$types'
+        )
+
+    [120] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/apidoc/models/PropertyDoc.php
+            [message] => No docblock for element '$defaultValue'
+        )
+
+    [121] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/apidoc/models/PropertyDoc.php
+            [message] => No short description for element '$defaultValue'
+        )
+
+    [122] => Array
+        (
+            [line] => 30
+            [file] => data/yii-2.0/extensions/apidoc/models/PropertyDoc.php
+            [message] => No docblock for element '$getter'
+        )
+
+    [123] => Array
+        (
+            [line] => 30
+            [file] => data/yii-2.0/extensions/apidoc/models/PropertyDoc.php
+            [message] => No short description for element '$getter'
+        )
+
+    [124] => Array
+        (
+            [line] => 31
+            [file] => data/yii-2.0/extensions/apidoc/models/PropertyDoc.php
+            [message] => No docblock for element '$setter'
+        )
+
+    [125] => Array
+        (
+            [line] => 31
+            [file] => data/yii-2.0/extensions/apidoc/models/PropertyDoc.php
+            [message] => No short description for element '$setter'
+        )
+
+    [126] => Array
+        (
+            [line] => 33
+            [file] => data/yii-2.0/extensions/apidoc/models/PropertyDoc.php
+            [message] => No docblock for element '$definedBy'
+        )
+
+    [127] => Array
+        (
+            [line] => 33
+            [file] => data/yii-2.0/extensions/apidoc/models/PropertyDoc.php
+            [message] => No short description for element '$definedBy'
+        )
+
+    [128] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/apidoc/models/TraitDoc.php
+            [message] => No docblock for element '$usedBy'
+        )
+
+    [129] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/apidoc/models/TraitDoc.php
+            [message] => No short description for element '$usedBy'
+        )
+
+    [130] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/apidoc/models/TraitDoc.php
+            [message] => No docblock for element '$traits'
+        )
+
+    [131] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/apidoc/models/TraitDoc.php
+            [message] => No short description for element '$traits'
+        )
+
+    [132] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/apidoc/models/TypeDoc.php
+            [message] => No docblock for element '$authors'
+        )
+
+    [133] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/apidoc/models/TypeDoc.php
+            [message] => No short description for element '$authors'
+        )
+
+    [134] => Array
+        (
+            [line] => 32
+            [file] => data/yii-2.0/extensions/apidoc/models/TypeDoc.php
+            [message] => No short description for element '$methods'
+        )
+
+    [135] => Array
+        (
+            [line] => 36
+            [file] => data/yii-2.0/extensions/apidoc/models/TypeDoc.php
+            [message] => No short description for element '$properties'
+        )
+
+    [136] => Array
+        (
+            [line] => 37
+            [file] => data/yii-2.0/extensions/apidoc/models/TypeDoc.php
+            [message] => No docblock for element '$namespace'
+        )
+
+    [137] => Array
+        (
+            [line] => 37
+            [file] => data/yii-2.0/extensions/apidoc/models/TypeDoc.php
+            [message] => No short description for element '$namespace'
+        )
+
+    [138] => Array
+        (
+            [line] => 39
+            [file] => data/yii-2.0/extensions/apidoc/renderers/BaseRenderer.php
+            [message] => No docblock for element '$guidePrefix'
+        )
+
+    [139] => Array
+        (
+            [line] => 39
+            [file] => data/yii-2.0/extensions/apidoc/renderers/BaseRenderer.php
+            [message] => No short description for element '$guidePrefix'
+        )
+
+    [140] => Array
+        (
+            [line] => 40
+            [file] => data/yii-2.0/extensions/apidoc/renderers/BaseRenderer.php
+            [message] => No docblock for element '$apiUrl'
+        )
+
+    [141] => Array
+        (
+            [line] => 40
+            [file] => data/yii-2.0/extensions/apidoc/renderers/BaseRenderer.php
+            [message] => No short description for element '$apiUrl'
+        )
+
+    [142] => Array
+        (
+            [line] => 53
+            [file] => data/yii-2.0/extensions/apidoc/renderers/BaseRenderer.php
+            [message] => No docblock for element '$guideUrl'
+        )
+
+    [143] => Array
+        (
+            [line] => 53
+            [file] => data/yii-2.0/extensions/apidoc/renderers/BaseRenderer.php
+            [message] => No short description for element '$guideUrl'
+        )
+
+    [144] => Array
+        (
+            [line] => 56
+            [file] => data/yii-2.0/extensions/apidoc/renderers/BaseRenderer.php
+            [message] => No docblock for element 'init'
+        )
+
+    [145] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/ApiRenderer.php
+            [message] => No docblock for element '$layout'
+        )
+
+    [146] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/ApiRenderer.php
+            [message] => No short description for element '$layout'
+        )
+
+    [147] => Array
+        (
+            [line] => 25
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/ApiRenderer.php
+            [message] => No docblock for element '$indexView'
+        )
+
+    [148] => Array
+        (
+            [line] => 25
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/ApiRenderer.php
+            [message] => No short description for element '$indexView'
+        )
+
+    [149] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/GuideRenderer.php
+            [message] => No docblock for element '$layout'
+        )
+
+    [150] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/GuideRenderer.php
+            [message] => No short description for element '$layout'
+        )
+
+    [151] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/assets/AssetBundle.php
+            [message] => No docblock for element '$sourcePath'
+        )
+
+    [152] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/assets/AssetBundle.php
+            [message] => No short description for element '$sourcePath'
+        )
+
+    [153] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/assets/AssetBundle.php
+            [message] => No docblock for element '$css'
+        )
+
+    [154] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/assets/AssetBundle.php
+            [message] => No short description for element '$css'
+        )
+
+    [155] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/assets/AssetBundle.php
+            [message] => No docblock for element '$depends'
+        )
+
+    [156] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/assets/AssetBundle.php
+            [message] => No short description for element '$depends'
+        )
+
+    [157] => Array
+        (
+            [line] => 30
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/assets/AssetBundle.php
+            [message] => No docblock for element '$jsOptions'
+        )
+
+    [158] => Array
+        (
+            [line] => 30
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/assets/AssetBundle.php
+            [message] => No short description for element '$jsOptions'
+        )
+
+    [159] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/assets/HighlightBundle.php
+            [message] => No docblock for element '$sourcePath'
+        )
+
+    [160] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/assets/HighlightBundle.php
+            [message] => No short description for element '$sourcePath'
+        )
+
+    [161] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/assets/HighlightBundle.php
+            [message] => No docblock for element '$css'
+        )
+
+    [162] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/assets/HighlightBundle.php
+            [message] => No short description for element '$css'
+        )
+
+    [163] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/assets/JsSearchAsset.php
+            [message] => No docblock for element '$sourcePath'
+        )
+
+    [164] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/assets/JsSearchAsset.php
+            [message] => No short description for element '$sourcePath'
+        )
+
+    [165] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/assets/JsSearchAsset.php
+            [message] => No docblock for element '$js'
+        )
+
+    [166] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/assets/JsSearchAsset.php
+            [message] => No short description for element '$js'
+        )
+
+    [167] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/assets/JsSearchAsset.php
+            [message] => No docblock for element '$depends'
+        )
+
+    [168] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/assets/JsSearchAsset.php
+            [message] => No short description for element '$depends'
+        )
+
+    [169] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/assets/JsSearchAsset.php
+            [message] => No docblock for element '$jsOptions'
+        )
+
+    [170] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/assets/JsSearchAsset.php
+            [message] => No short description for element '$jsOptions'
+        )
+
+    [171] => Array
+        (
+            [line] => 30
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/assets/JsSearchAsset.php
+            [message] => No docblock for element '$publishOptions'
+        )
+
+    [172] => Array
+        (
+            [line] => 30
+            [file] => data/yii-2.0/extensions/apidoc/templates/bootstrap/assets/JsSearchAsset.php
+            [message] => No short description for element '$publishOptions'
+        )
+
+    [173] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/apidoc/templates/html/GuideRenderer.php
+            [message] => No docblock for element '$layout'
+        )
+
+    [174] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/apidoc/templates/html/GuideRenderer.php
+            [message] => No short description for element '$layout'
+        )
+
+    [175] => Array
+        (
+            [line] => 148
+            [file] => data/yii-2.0/extensions/apidoc/templates/html/GuideRenderer.php
+            [message] => No docblock for element 'getGuideReferences'
+        )
+
+    [176] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/apidoc/templates/online/ApiRenderer.php
+            [message] => No docblock for element '$layout'
+        )
+
+    [177] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/apidoc/templates/online/ApiRenderer.php
+            [message] => No short description for element '$layout'
+        )
+
+    [178] => Array
+        (
+            [line] => 22
+            [file] => data/yii-2.0/extensions/apidoc/templates/online/ApiRenderer.php
+            [message] => No docblock for element '$indexView'
+        )
+
+    [179] => Array
+        (
+            [line] => 22
+            [file] => data/yii-2.0/extensions/apidoc/templates/online/ApiRenderer.php
+            [message] => No short description for element '$indexView'
+        )
+
+    [180] => Array
+        (
+            [line] => 54
+            [file] => data/yii-2.0/extensions/authclient/src/OAuthToken.php
+            [message] => No docblock for element '__construct'
+        )
+
+    [181] => Array
+        (
+            [line] => 22
+            [file] => data/yii-2.0/extensions/authclient/src/widgets/AuthChoiceAsset.php
+            [message] => No docblock for element '$sourcePath'
+        )
+
+    [182] => Array
+        (
+            [line] => 22
+            [file] => data/yii-2.0/extensions/authclient/src/widgets/AuthChoiceAsset.php
+            [message] => No short description for element '$sourcePath'
+        )
+
+    [183] => Array
+        (
+            [line] => 23
+            [file] => data/yii-2.0/extensions/authclient/src/widgets/AuthChoiceAsset.php
+            [message] => No docblock for element '$js'
+        )
+
+    [184] => Array
+        (
+            [line] => 23
+            [file] => data/yii-2.0/extensions/authclient/src/widgets/AuthChoiceAsset.php
+            [message] => No short description for element '$js'
+        )
+
+    [185] => Array
+        (
+            [line] => 26
+            [file] => data/yii-2.0/extensions/authclient/src/widgets/AuthChoiceAsset.php
+            [message] => No docblock for element '$depends'
+        )
+
+    [186] => Array
+        (
+            [line] => 26
+            [file] => data/yii-2.0/extensions/authclient/src/widgets/AuthChoiceAsset.php
+            [message] => No short description for element '$depends'
+        )
+
+    [187] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/authclient/src/widgets/AuthChoiceStyleAsset.php
+            [message] => No docblock for element '$sourcePath'
+        )
+
+    [188] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/authclient/src/widgets/AuthChoiceStyleAsset.php
+            [message] => No short description for element '$sourcePath'
+        )
+
+    [189] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/authclient/src/widgets/AuthChoiceStyleAsset.php
+            [message] => No docblock for element '$css'
+        )
+
+    [190] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/authclient/src/widgets/AuthChoiceStyleAsset.php
+            [message] => No short description for element '$css'
+        )
+
+    [191] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/bootstrap/src/BootstrapAsset.php
+            [message] => No docblock for element '$sourcePath'
+        )
+
+    [192] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/bootstrap/src/BootstrapAsset.php
+            [message] => No short description for element '$sourcePath'
+        )
+
+    [193] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/bootstrap/src/BootstrapAsset.php
+            [message] => No docblock for element '$css'
+        )
+
+    [194] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/bootstrap/src/BootstrapAsset.php
+            [message] => No short description for element '$css'
+        )
+
+    [195] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/bootstrap/src/BootstrapPluginAsset.php
+            [message] => No docblock for element '$sourcePath'
+        )
+
+    [196] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/bootstrap/src/BootstrapPluginAsset.php
+            [message] => No short description for element '$sourcePath'
+        )
+
+    [197] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/bootstrap/src/BootstrapPluginAsset.php
+            [message] => No docblock for element '$js'
+        )
+
+    [198] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/bootstrap/src/BootstrapPluginAsset.php
+            [message] => No short description for element '$js'
+        )
+
+    [199] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/extensions/bootstrap/src/BootstrapPluginAsset.php
+            [message] => No docblock for element '$depends'
+        )
+
+    [200] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/extensions/bootstrap/src/BootstrapPluginAsset.php
+            [message] => No short description for element '$depends'
+        )
+
+    [201] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/bootstrap/src/BootstrapThemeAsset.php
+            [message] => No docblock for element '$sourcePath'
+        )
+
+    [202] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/bootstrap/src/BootstrapThemeAsset.php
+            [message] => No short description for element '$sourcePath'
+        )
+
+    [203] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/bootstrap/src/BootstrapThemeAsset.php
+            [message] => No docblock for element '$css'
+        )
+
+    [204] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/bootstrap/src/BootstrapThemeAsset.php
+            [message] => No short description for element '$css'
+        )
+
+    [205] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/extensions/bootstrap/src/BootstrapThemeAsset.php
+            [message] => No docblock for element '$depends'
+        )
+
+    [206] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/extensions/bootstrap/src/BootstrapThemeAsset.php
+            [message] => No short description for element '$depends'
+        )
+
+    [207] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/extensions/debug/src/FlattenException.php
+            [message] => No short description for element '$message'
+        )
+
+    [208] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/debug/src/FlattenException.php
+            [message] => No short description for element '$code'
+        )
+
+    [209] => Array
+        (
+            [line] => 32
+            [file] => data/yii-2.0/extensions/debug/src/FlattenException.php
+            [message] => No short description for element '$file'
+        )
+
+    [210] => Array
+        (
+            [line] => 36
+            [file] => data/yii-2.0/extensions/debug/src/FlattenException.php
+            [message] => No short description for element '$line'
+        )
+
+    [211] => Array
+        (
+            [line] => 26
+            [file] => data/yii-2.0/extensions/debug/src/LogTarget.php
+            [message] => No short description for element '$module'
+        )
+
+    [212] => Array
+        (
+            [line] => 30
+            [file] => data/yii-2.0/extensions/debug/src/LogTarget.php
+            [message] => No short description for element '$tag'
+        )
+
+    [213] => Array
+        (
+            [line] => 26
+            [file] => data/yii-2.0/extensions/debug/src/LogTarget.php
+            [message] => No short description for element '$module'
+        )
+
+    [214] => Array
+        (
+            [line] => 30
+            [file] => data/yii-2.0/extensions/debug/src/LogTarget.php
+            [message] => No short description for element '$tag'
+        )
+
+    [215] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/debug/src/LogTarget.php
+            [message] => No short description for element '$module'
+        )
+
+    [216] => Array
+        (
+            [line] => 31
+            [file] => data/yii-2.0/extensions/debug/src/LogTarget.php
+            [message] => No short description for element '$tag'
+        )
+
+    [217] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/debug/src/LogTarget.php
+            [message] => No short description for element '$module'
+        )
+
+    [218] => Array
+        (
+            [line] => 31
+            [file] => data/yii-2.0/extensions/debug/src/LogTarget.php
+            [message] => No short description for element '$tag'
+        )
+
+    [219] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/debug/src/LogTarget.php
+            [message] => No short description for element '$module'
+        )
+
+    [220] => Array
+        (
+            [line] => 31
+            [file] => data/yii-2.0/extensions/debug/src/LogTarget.php
+            [message] => No short description for element '$tag'
+        )
+
+    [221] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/debug/src/LogTarget.php
+            [message] => No short description for element '$module'
+        )
+
+    [222] => Array
+        (
+            [line] => 31
+            [file] => data/yii-2.0/extensions/debug/src/LogTarget.php
+            [message] => No short description for element '$tag'
+        )
+
+    [223] => Array
+        (
+            [line] => 62
+            [file] => data/yii-2.0/extensions/debug/src/Module.php
+            [message] => No short description for element '$logTarget'
+        )
+
+    [224] => Array
+        (
+            [line] => 62
+            [file] => data/yii-2.0/extensions/debug/src/Module.php
+            [message] => No short description for element '$logTarget'
+        )
+
+    [225] => Array
+        (
+            [line] => 62
+            [file] => data/yii-2.0/extensions/debug/src/Module.php
+            [message] => No short description for element '$logTarget'
+        )
+
+    [226] => Array
+        (
+            [line] => 62
+            [file] => data/yii-2.0/extensions/debug/src/Module.php
+            [message] => No short description for element '$logTarget'
+        )
+
+    [227] => Array
+        (
+            [line] => 62
+            [file] => data/yii-2.0/extensions/debug/src/Module.php
+            [message] => No short description for element '$logTarget'
+        )
+
+    [228] => Array
+        (
+            [line] => 62
+            [file] => data/yii-2.0/extensions/debug/src/Module.php
+            [message] => No short description for element '$logTarget'
+        )
+
+    [229] => Array
+        (
+            [line] => 41
+            [file] => data/yii-2.0/extensions/debug/src/Panel.php
+            [message] => No short description for element '$module'
+        )
+
+    [230] => Array
+        (
+            [line] => 42
+            [file] => data/yii-2.0/extensions/debug/src/Panel.php
+            [message] => No short description for element '$module'
+        )
+
+    [231] => Array
+        (
+            [line] => 43
+            [file] => data/yii-2.0/extensions/debug/src/Panel.php
+            [message] => No short description for element '$module'
+        )
+
+    [232] => Array
+        (
+            [line] => 42
+            [file] => data/yii-2.0/extensions/debug/src/Panel.php
+            [message] => No short description for element '$module'
+        )
+
+    [233] => Array
+        (
+            [line] => 43
+            [file] => data/yii-2.0/extensions/debug/src/Panel.php
+            [message] => No short description for element '$module'
+        )
+
+    [234] => Array
+        (
+            [line] => 43
+            [file] => data/yii-2.0/extensions/debug/src/Panel.php
+            [message] => No short description for element '$module'
+        )
+
+    [235] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/debug/src/actions/db/ExplainAction.php
+            [message] => No short description for element '$panel'
+        )
+
+    [236] => Array
+        (
+            [line] => 49
+            [file] => data/yii-2.0/extensions/debug/src/models/Router.php
+            [message] => No short description for element '$hasMatch'
+        )
+
+    [237] => Array
+        (
+            [line] => 57
+            [file] => data/yii-2.0/extensions/debug/src/models/Router.php
+            [message] => No short description for element '$hasMatch'
+        )
+
+    [238] => Array
+        (
+            [line] => 25
+            [file] => data/yii-2.0/extensions/debug/src/models/search/Event.php
+            [message] => No docblock for element '$name'
+        )
+
+    [239] => Array
+        (
+            [line] => 25
+            [file] => data/yii-2.0/extensions/debug/src/models/search/Event.php
+            [message] => No short description for element '$name'
+        )
+
+    [240] => Array
+        (
+            [line] => 26
+            [file] => data/yii-2.0/extensions/debug/src/models/search/Event.php
+            [message] => No docblock for element '$class'
+        )
+
+    [241] => Array
+        (
+            [line] => 26
+            [file] => data/yii-2.0/extensions/debug/src/models/search/Event.php
+            [message] => No short description for element '$class'
+        )
+
+    [242] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/debug/src/models/search/Event.php
+            [message] => No docblock for element '$senderClass'
+        )
+
+    [243] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/debug/src/models/search/Event.php
+            [message] => No short description for element '$senderClass'
+        )
+
+    [244] => Array
+        (
+            [line] => 26
+            [file] => data/yii-2.0/extensions/debug/src/models/timeline/DataProvider.php
+            [message] => No short description for element '$panel'
+        )
+
+    [245] => Array
+        (
+            [line] => 64
+            [file] => data/yii-2.0/extensions/debug/src/models/timeline/Svg.php
+            [message] => No short description for element '$panel'
+        )
+
+    [246] => Array
+        (
+            [line] => 15
+            [file] => data/yii-2.0/extensions/debug/src/widgets/NavigationButton.php
+            [message] => No short description for element '$manifest'
+        )
+
+    [247] => Array
+        (
+            [line] => 18
+            [file] => data/yii-2.0/extensions/debug/src/widgets/NavigationButton.php
+            [message] => No short description for element '$tag'
+        )
+
+    [248] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/debug/src/widgets/NavigationButton.php
+            [message] => No short description for element '$button'
+        )
+
+    [249] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/extensions/debug/src/widgets/NavigationButton.php
+            [message] => No short description for element '$panel'
+        )
+
+    [250] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/debug/src/widgets/NavigationButton.php
+            [message] => No short description for element '$manifest'
+        )
+
+    [251] => Array
+        (
+            [line] => 23
+            [file] => data/yii-2.0/extensions/debug/src/widgets/NavigationButton.php
+            [message] => No short description for element '$tag'
+        )
+
+    [252] => Array
+        (
+            [line] => 25
+            [file] => data/yii-2.0/extensions/debug/src/widgets/NavigationButton.php
+            [message] => No short description for element '$button'
+        )
+
+    [253] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/debug/src/widgets/NavigationButton.php
+            [message] => No short description for element '$panel'
+        )
+
+    [254] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/elasticsearch/BulkCommand.php
+            [message] => No short description for element '$db'
+        )
+
+    [255] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/elasticsearch/Command.php
+            [message] => No short description for element '$db'
+        )
+
+    [256] => Array
+        (
+            [line] => 105
+            [file] => data/yii-2.0/extensions/elasticsearch/Connection.php
+            [message] => No docblock for element 'init'
+        )
+
+    [257] => Array
+        (
+            [line] => 592
+            [file] => data/yii-2.0/extensions/elasticsearch/Connection.php
+            [message] => No docblock for element 'getNodeInfo'
+        )
+
+    [258] => Array
+        (
+            [line] => 597
+            [file] => data/yii-2.0/extensions/elasticsearch/Connection.php
+            [message] => No docblock for element 'getClusterState'
+        )
+
+    [259] => Array
+        (
+            [line] => 32
+            [file] => data/yii-2.0/extensions/elasticsearch/DebugAction.php
+            [message] => No short description for element '$panel'
+        )
+
+    [260] => Array
+        (
+            [line] => 36
+            [file] => data/yii-2.0/extensions/elasticsearch/DebugAction.php
+            [message] => No short description for element '$controller'
+        )
+
+    [261] => Array
+        (
+            [line] => 39
+            [file] => data/yii-2.0/extensions/elasticsearch/DebugAction.php
+            [message] => No docblock for element 'run'
+        )
+
+    [262] => Array
+        (
+            [line] => 25
+            [file] => data/yii-2.0/extensions/elasticsearch/DebugPanel.php
+            [message] => No docblock for element '$db'
+        )
+
+    [263] => Array
+        (
+            [line] => 25
+            [file] => data/yii-2.0/extensions/elasticsearch/DebugPanel.php
+            [message] => No short description for element '$db'
+        )
+
+    [264] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/elasticsearch/DebugPanel.php
+            [message] => No docblock for element 'init'
+        )
+
+    [265] => Array
+        (
+            [line] => 155
+            [file] => data/yii-2.0/extensions/elasticsearch/DebugPanel.php
+            [message] => No docblock for element 'calculateTimings'
+        )
+
+    [266] => Array
+        (
+            [line] => 25
+            [file] => data/yii-2.0/extensions/elasticsearch/DebugPanel.php
+            [message] => No docblock for element '$db'
+        )
+
+    [267] => Array
+        (
+            [line] => 25
+            [file] => data/yii-2.0/extensions/elasticsearch/DebugPanel.php
+            [message] => No short description for element '$db'
+        )
+
+    [268] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/elasticsearch/DebugPanel.php
+            [message] => No docblock for element 'init'
+        )
+
+    [269] => Array
+        (
+            [line] => 158
+            [file] => data/yii-2.0/extensions/elasticsearch/DebugPanel.php
+            [message] => No docblock for element 'calculateTimings'
+        )
+
+    [270] => Array
+        (
+            [line] => 26
+            [file] => data/yii-2.0/extensions/elasticsearch/DebugPanel.php
+            [message] => No docblock for element '$db'
+        )
+
+    [271] => Array
+        (
+            [line] => 26
+            [file] => data/yii-2.0/extensions/elasticsearch/DebugPanel.php
+            [message] => No short description for element '$db'
+        )
+
+    [272] => Array
+        (
+            [line] => 29
+            [file] => data/yii-2.0/extensions/elasticsearch/DebugPanel.php
+            [message] => No docblock for element 'init'
+        )
+
+    [273] => Array
+        (
+            [line] => 159
+            [file] => data/yii-2.0/extensions/elasticsearch/DebugPanel.php
+            [message] => No docblock for element 'calculateTimings'
+        )
+
+    [274] => Array
+        (
+            [line] => 414
+            [file] => data/yii-2.0/extensions/elasticsearch/QueryBuilder.php
+            [message] => No docblock for element 'buildCompositeInCondition'
+        )
+
+    [275] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/gii/src/GiiAsset.php
+            [message] => No docblock for element '$sourcePath'
+        )
+
+    [276] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/gii/src/GiiAsset.php
+            [message] => No short description for element '$sourcePath'
+        )
+
+    [277] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/gii/src/GiiAsset.php
+            [message] => No docblock for element '$css'
+        )
+
+    [278] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/gii/src/GiiAsset.php
+            [message] => No short description for element '$css'
+        )
+
+    [279] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/extensions/gii/src/GiiAsset.php
+            [message] => No docblock for element '$js'
+        )
+
+    [280] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/extensions/gii/src/GiiAsset.php
+            [message] => No short description for element '$js'
+        )
+
+    [281] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/gii/src/GiiAsset.php
+            [message] => No docblock for element '$depends'
+        )
+
+    [282] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/gii/src/GiiAsset.php
+            [message] => No short description for element '$depends'
+        )
+
+    [283] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/gii/src/components/ActiveField.php
+            [message] => No short description for element '$model'
+        )
+
+    [284] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/gii/src/console/GenerateAction.php
+            [message] => No short description for element '$generator'
+        )
+
+    [285] => Array
+        (
+            [line] => 25
+            [file] => data/yii-2.0/extensions/gii/src/console/GenerateAction.php
+            [message] => No short description for element '$controller'
+        )
+
+    [286] => Array
+        (
+            [line] => 42
+            [file] => data/yii-2.0/extensions/gii/src/console/GenerateAction.php
+            [message] => No docblock for element 'displayValidationErrors'
+        )
+
+    [287] => Array
+        (
+            [line] => 51
+            [file] => data/yii-2.0/extensions/gii/src/console/GenerateAction.php
+            [message] => No docblock for element 'generateCode'
+        )
+
+    [288] => Array
+        (
+            [line] => 33
+            [file] => data/yii-2.0/extensions/gii/src/console/GenerateController.php
+            [message] => No short description for element '$module'
+        )
+
+    [289] => Array
+        (
+            [line] => 106
+            [file] => data/yii-2.0/extensions/gii/src/console/GenerateController.php
+            [message] => No docblock for element 'actionIndex'
+        )
+
+    [290] => Array
+        (
+            [line] => 202
+            [file] => data/yii-2.0/extensions/gii/src/console/GenerateController.php
+            [message] => No docblock for element 'formatHint'
+        )
+
+    [291] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/gii/src/controllers/DefaultController.php
+            [message] => No docblock for element '$layout'
+        )
+
+    [292] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/extensions/gii/src/controllers/DefaultController.php
+            [message] => No short description for element '$layout'
+        )
+
+    [293] => Array
+        (
+            [line] => 25
+            [file] => data/yii-2.0/extensions/gii/src/controllers/DefaultController.php
+            [message] => No short description for element '$module'
+        )
+
+    [294] => Array
+        (
+            [line] => 29
+            [file] => data/yii-2.0/extensions/gii/src/controllers/DefaultController.php
+            [message] => No short description for element '$generator'
+        )
+
+    [295] => Array
+        (
+            [line] => 42
+            [file] => data/yii-2.0/extensions/gii/src/controllers/DefaultController.php
+            [message] => No docblock for element 'actionIndex'
+        )
+
+    [296] => Array
+        (
+            [line] => 49
+            [file] => data/yii-2.0/extensions/gii/src/controllers/DefaultController.php
+            [message] => No docblock for element 'actionView'
+        )
+
+    [297] => Array
+        (
+            [line] => 75
+            [file] => data/yii-2.0/extensions/gii/src/controllers/DefaultController.php
+            [message] => No docblock for element 'actionPreview'
+        )
+
+    [298] => Array
+        (
+            [line] => 92
+            [file] => data/yii-2.0/extensions/gii/src/controllers/DefaultController.php
+            [message] => No docblock for element 'actionDiff'
+        )
+
+    [299] => Array
+        (
+            [line] => 35
+            [file] => data/yii-2.0/extensions/gii/src/generators/crud/Generator.php
+            [message] => No docblock for element '$modelClass'
+        )
+
+    [300] => Array
+        (
+            [line] => 35
+            [file] => data/yii-2.0/extensions/gii/src/generators/crud/Generator.php
+            [message] => No short description for element '$modelClass'
+        )
+
+    [301] => Array
+        (
+            [line] => 36
+            [file] => data/yii-2.0/extensions/gii/src/generators/crud/Generator.php
+            [message] => No docblock for element '$controllerClass'
+        )
+
+    [302] => Array
+        (
+            [line] => 36
+            [file] => data/yii-2.0/extensions/gii/src/generators/crud/Generator.php
+            [message] => No short description for element '$controllerClass'
+        )
+
+    [303] => Array
+        (
+            [line] => 37
+            [file] => data/yii-2.0/extensions/gii/src/generators/crud/Generator.php
+            [message] => No docblock for element '$viewPath'
+        )
+
+    [304] => Array
+        (
+            [line] => 37
+            [file] => data/yii-2.0/extensions/gii/src/generators/crud/Generator.php
+            [message] => No short description for element '$viewPath'
+        )
+
+    [305] => Array
+        (
+            [line] => 38
+            [file] => data/yii-2.0/extensions/gii/src/generators/crud/Generator.php
+            [message] => No docblock for element '$baseControllerClass'
+        )
+
+    [306] => Array
+        (
+            [line] => 38
+            [file] => data/yii-2.0/extensions/gii/src/generators/crud/Generator.php
+            [message] => No short description for element '$baseControllerClass'
+        )
+
+    [307] => Array
+        (
+            [line] => 39
+            [file] => data/yii-2.0/extensions/gii/src/generators/crud/Generator.php
+            [message] => No docblock for element '$indexWidgetType'
+        )
+
+    [308] => Array
+        (
+            [line] => 39
+            [file] => data/yii-2.0/extensions/gii/src/generators/crud/Generator.php
+            [message] => No short description for element '$indexWidgetType'
+        )
+
+    [309] => Array
+        (
+            [line] => 40
+            [file] => data/yii-2.0/extensions/gii/src/generators/crud/Generator.php
+            [message] => No docblock for element '$searchModelClass'
+        )
+
+    [310] => Array
+        (
+            [line] => 40
+            [file] => data/yii-2.0/extensions/gii/src/generators/crud/Generator.php
+            [message] => No short description for element '$searchModelClass'
+        )
+
+    [311] => Array
+        (
+            [line] => 35
+            [file] => data/yii-2.0/extensions/gii/src/generators/crud/Generator.php
+            [message] => No docblock for element '$modelClass'
+        )
+
+    [312] => Array
+        (
+            [line] => 35
+            [file] => data/yii-2.0/extensions/gii/src/generators/crud/Generator.php
+            [message] => No short description for element '$modelClass'
+        )
+
+    [313] => Array
+        (
+            [line] => 36
+            [file] => data/yii-2.0/extensions/gii/src/generators/crud/Generator.php
+            [message] => No docblock for element '$controllerClass'
+        )
+
+    [314] => Array
+        (
+            [line] => 36
+            [file] => data/yii-2.0/extensions/gii/src/generators/crud/Generator.php
+            [message] => No short description for element '$controllerClass'
+        )
+
+    [315] => Array
+        (
+            [line] => 37
+            [file] => data/yii-2.0/extensions/gii/src/generators/crud/Generator.php
+            [message] => No docblock for element '$viewPath'
+        )
+
+    [316] => Array
+        (
+            [line] => 37
+            [file] => data/yii-2.0/extensions/gii/src/generators/crud/Generator.php
+            [message] => No short description for element '$viewPath'
+        )
+
+    [317] => Array
+        (
+            [line] => 38
+            [file] => data/yii-2.0/extensions/gii/src/generators/crud/Generator.php
+            [message] => No docblock for element '$baseControllerClass'
+        )
+
+    [318] => Array
+        (
+            [line] => 38
+            [file] => data/yii-2.0/extensions/gii/src/generators/crud/Generator.php
+            [message] => No short description for element '$baseControllerClass'
+        )
+
+    [319] => Array
+        (
+            [line] => 39
+            [file] => data/yii-2.0/extensions/gii/src/generators/crud/Generator.php
+            [message] => No docblock for element '$indexWidgetType'
+        )
+
+    [320] => Array
+        (
+            [line] => 39
+            [file] => data/yii-2.0/extensions/gii/src/generators/crud/Generator.php
+            [message] => No short description for element '$indexWidgetType'
+        )
+
+    [321] => Array
+        (
+            [line] => 40
+            [file] => data/yii-2.0/extensions/gii/src/generators/crud/Generator.php
+            [message] => No docblock for element '$searchModelClass'
+        )
+
+    [322] => Array
+        (
+            [line] => 40
+            [file] => data/yii-2.0/extensions/gii/src/generators/crud/Generator.php
+            [message] => No short description for element '$searchModelClass'
+        )
+
+    [323] => Array
+        (
+            [line] => 25
+            [file] => data/yii-2.0/extensions/gii/src/generators/extension/Generator.php
+            [message] => No docblock for element '$vendorName'
+        )
+
+    [324] => Array
+        (
+            [line] => 25
+            [file] => data/yii-2.0/extensions/gii/src/generators/extension/Generator.php
+            [message] => No short description for element '$vendorName'
+        )
+
+    [325] => Array
+        (
+            [line] => 26
+            [file] => data/yii-2.0/extensions/gii/src/generators/extension/Generator.php
+            [message] => No docblock for element '$packageName'
+        )
+
+    [326] => Array
+        (
+            [line] => 26
+            [file] => data/yii-2.0/extensions/gii/src/generators/extension/Generator.php
+            [message] => No short description for element '$packageName'
+        )
+
+    [327] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/gii/src/generators/extension/Generator.php
+            [message] => No docblock for element '$namespace'
+        )
+
+    [328] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/gii/src/generators/extension/Generator.php
+            [message] => No short description for element '$namespace'
+        )
+
+    [329] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/gii/src/generators/extension/Generator.php
+            [message] => No docblock for element '$type'
+        )
+
+    [330] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/gii/src/generators/extension/Generator.php
+            [message] => No short description for element '$type'
+        )
+
+    [331] => Array
+        (
+            [line] => 29
+            [file] => data/yii-2.0/extensions/gii/src/generators/extension/Generator.php
+            [message] => No docblock for element '$keywords'
+        )
+
+    [332] => Array
+        (
+            [line] => 29
+            [file] => data/yii-2.0/extensions/gii/src/generators/extension/Generator.php
+            [message] => No short description for element '$keywords'
+        )
+
+    [333] => Array
+        (
+            [line] => 30
+            [file] => data/yii-2.0/extensions/gii/src/generators/extension/Generator.php
+            [message] => No docblock for element '$title'
+        )
+
+    [334] => Array
+        (
+            [line] => 30
+            [file] => data/yii-2.0/extensions/gii/src/generators/extension/Generator.php
+            [message] => No short description for element '$title'
+        )
+
+    [335] => Array
+        (
+            [line] => 31
+            [file] => data/yii-2.0/extensions/gii/src/generators/extension/Generator.php
+            [message] => No docblock for element '$description'
+        )
+
+    [336] => Array
+        (
+            [line] => 31
+            [file] => data/yii-2.0/extensions/gii/src/generators/extension/Generator.php
+            [message] => No short description for element '$description'
+        )
+
+    [337] => Array
+        (
+            [line] => 32
+            [file] => data/yii-2.0/extensions/gii/src/generators/extension/Generator.php
+            [message] => No docblock for element '$outputPath'
+        )
+
+    [338] => Array
+        (
+            [line] => 32
+            [file] => data/yii-2.0/extensions/gii/src/generators/extension/Generator.php
+            [message] => No short description for element '$outputPath'
+        )
+
+    [339] => Array
+        (
+            [line] => 33
+            [file] => data/yii-2.0/extensions/gii/src/generators/extension/Generator.php
+            [message] => No docblock for element '$license'
+        )
+
+    [340] => Array
+        (
+            [line] => 33
+            [file] => data/yii-2.0/extensions/gii/src/generators/extension/Generator.php
+            [message] => No short description for element '$license'
+        )
+
+    [341] => Array
+        (
+            [line] => 34
+            [file] => data/yii-2.0/extensions/gii/src/generators/extension/Generator.php
+            [message] => No docblock for element '$authorName'
+        )
+
+    [342] => Array
+        (
+            [line] => 34
+            [file] => data/yii-2.0/extensions/gii/src/generators/extension/Generator.php
+            [message] => No short description for element '$authorName'
+        )
+
+    [343] => Array
+        (
+            [line] => 35
+            [file] => data/yii-2.0/extensions/gii/src/generators/extension/Generator.php
+            [message] => No docblock for element '$authorEmail'
+        )
+
+    [344] => Array
+        (
+            [line] => 35
+            [file] => data/yii-2.0/extensions/gii/src/generators/extension/Generator.php
+            [message] => No short description for element '$authorEmail'
+        )
+
+    [345] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/extensions/gii/src/generators/form/Generator.php
+            [message] => No docblock for element '$modelClass'
+        )
+
+    [346] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/extensions/gii/src/generators/form/Generator.php
+            [message] => No short description for element '$modelClass'
+        )
+
+    [347] => Array
+        (
+            [line] => 25
+            [file] => data/yii-2.0/extensions/gii/src/generators/form/Generator.php
+            [message] => No docblock for element '$viewPath'
+        )
+
+    [348] => Array
+        (
+            [line] => 25
+            [file] => data/yii-2.0/extensions/gii/src/generators/form/Generator.php
+            [message] => No short description for element '$viewPath'
+        )
+
+    [349] => Array
+        (
+            [line] => 26
+            [file] => data/yii-2.0/extensions/gii/src/generators/form/Generator.php
+            [message] => No docblock for element '$viewName'
+        )
+
+    [350] => Array
+        (
+            [line] => 26
+            [file] => data/yii-2.0/extensions/gii/src/generators/form/Generator.php
+            [message] => No short description for element '$viewName'
+        )
+
+    [351] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/gii/src/generators/form/Generator.php
+            [message] => No docblock for element '$scenarioName'
+        )
+
+    [352] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/gii/src/generators/form/Generator.php
+            [message] => No short description for element '$scenarioName'
+        )
+
+    [353] => Array
+        (
+            [line] => 33
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$db'
+        )
+
+    [354] => Array
+        (
+            [line] => 33
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$db'
+        )
+
+    [355] => Array
+        (
+            [line] => 34
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$ns'
+        )
+
+    [356] => Array
+        (
+            [line] => 34
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$ns'
+        )
+
+    [357] => Array
+        (
+            [line] => 35
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$tableName'
+        )
+
+    [358] => Array
+        (
+            [line] => 35
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$tableName'
+        )
+
+    [359] => Array
+        (
+            [line] => 36
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$modelClass'
+        )
+
+    [360] => Array
+        (
+            [line] => 36
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$modelClass'
+        )
+
+    [361] => Array
+        (
+            [line] => 37
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$baseClass'
+        )
+
+    [362] => Array
+        (
+            [line] => 37
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$baseClass'
+        )
+
+    [363] => Array
+        (
+            [line] => 38
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$generateRelations'
+        )
+
+    [364] => Array
+        (
+            [line] => 38
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$generateRelations'
+        )
+
+    [365] => Array
+        (
+            [line] => 39
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$generateRelationsFromCurrentSchema'
+        )
+
+    [366] => Array
+        (
+            [line] => 39
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$generateRelationsFromCurrentSchema'
+        )
+
+    [367] => Array
+        (
+            [line] => 40
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$generateLabelsFromComments'
+        )
+
+    [368] => Array
+        (
+            [line] => 40
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$generateLabelsFromComments'
+        )
+
+    [369] => Array
+        (
+            [line] => 41
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$useTablePrefix'
+        )
+
+    [370] => Array
+        (
+            [line] => 41
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$useTablePrefix'
+        )
+
+    [371] => Array
+        (
+            [line] => 42
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$standardizeCapitals'
+        )
+
+    [372] => Array
+        (
+            [line] => 42
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$standardizeCapitals'
+        )
+
+    [373] => Array
+        (
+            [line] => 43
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$useSchemaName'
+        )
+
+    [374] => Array
+        (
+            [line] => 43
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$useSchemaName'
+        )
+
+    [375] => Array
+        (
+            [line] => 44
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$generateQuery'
+        )
+
+    [376] => Array
+        (
+            [line] => 44
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$generateQuery'
+        )
+
+    [377] => Array
+        (
+            [line] => 45
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$queryNs'
+        )
+
+    [378] => Array
+        (
+            [line] => 45
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$queryNs'
+        )
+
+    [379] => Array
+        (
+            [line] => 46
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$queryClass'
+        )
+
+    [380] => Array
+        (
+            [line] => 46
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$queryClass'
+        )
+
+    [381] => Array
+        (
+            [line] => 47
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$queryBaseClass'
+        )
+
+    [382] => Array
+        (
+            [line] => 47
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$queryBaseClass'
+        )
+
+    [383] => Array
+        (
+            [line] => 805
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$tableNames'
+        )
+
+    [384] => Array
+        (
+            [line] => 805
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$tableNames'
+        )
+
+    [385] => Array
+        (
+            [line] => 806
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$classNames'
+        )
+
+    [386] => Array
+        (
+            [line] => 806
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$classNames'
+        )
+
+    [387] => Array
+        (
+            [line] => 32
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$db'
+        )
+
+    [388] => Array
+        (
+            [line] => 32
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$db'
+        )
+
+    [389] => Array
+        (
+            [line] => 33
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$ns'
+        )
+
+    [390] => Array
+        (
+            [line] => 33
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$ns'
+        )
+
+    [391] => Array
+        (
+            [line] => 34
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$tableName'
+        )
+
+    [392] => Array
+        (
+            [line] => 34
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$tableName'
+        )
+
+    [393] => Array
+        (
+            [line] => 35
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$modelClass'
+        )
+
+    [394] => Array
+        (
+            [line] => 35
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$modelClass'
+        )
+
+    [395] => Array
+        (
+            [line] => 36
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$baseClass'
+        )
+
+    [396] => Array
+        (
+            [line] => 36
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$baseClass'
+        )
+
+    [397] => Array
+        (
+            [line] => 37
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$generateRelations'
+        )
+
+    [398] => Array
+        (
+            [line] => 37
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$generateRelations'
+        )
+
+    [399] => Array
+        (
+            [line] => 38
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$generateRelationsFromCurrentSchema'
+        )
+
+    [400] => Array
+        (
+            [line] => 38
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$generateRelationsFromCurrentSchema'
+        )
+
+    [401] => Array
+        (
+            [line] => 39
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$generateLabelsFromComments'
+        )
+
+    [402] => Array
+        (
+            [line] => 39
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$generateLabelsFromComments'
+        )
+
+    [403] => Array
+        (
+            [line] => 40
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$useTablePrefix'
+        )
+
+    [404] => Array
+        (
+            [line] => 40
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$useTablePrefix'
+        )
+
+    [405] => Array
+        (
+            [line] => 41
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$standardizeCapitals'
+        )
+
+    [406] => Array
+        (
+            [line] => 41
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$standardizeCapitals'
+        )
+
+    [407] => Array
+        (
+            [line] => 42
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$singularize'
+        )
+
+    [408] => Array
+        (
+            [line] => 42
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$singularize'
+        )
+
+    [409] => Array
+        (
+            [line] => 43
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$useSchemaName'
+        )
+
+    [410] => Array
+        (
+            [line] => 43
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$useSchemaName'
+        )
+
+    [411] => Array
+        (
+            [line] => 44
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$generateQuery'
+        )
+
+    [412] => Array
+        (
+            [line] => 44
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$generateQuery'
+        )
+
+    [413] => Array
+        (
+            [line] => 45
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$queryNs'
+        )
+
+    [414] => Array
+        (
+            [line] => 45
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$queryNs'
+        )
+
+    [415] => Array
+        (
+            [line] => 46
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$queryClass'
+        )
+
+    [416] => Array
+        (
+            [line] => 46
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$queryClass'
+        )
+
+    [417] => Array
+        (
+            [line] => 47
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$queryBaseClass'
+        )
+
+    [418] => Array
+        (
+            [line] => 47
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$queryBaseClass'
+        )
+
+    [419] => Array
+        (
+            [line] => 808
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$tableNames'
+        )
+
+    [420] => Array
+        (
+            [line] => 808
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$tableNames'
+        )
+
+    [421] => Array
+        (
+            [line] => 809
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$classNames'
+        )
+
+    [422] => Array
+        (
+            [line] => 809
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$classNames'
+        )
+
+    [423] => Array
+        (
+            [line] => 32
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$db'
+        )
+
+    [424] => Array
+        (
+            [line] => 32
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$db'
+        )
+
+    [425] => Array
+        (
+            [line] => 33
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$ns'
+        )
+
+    [426] => Array
+        (
+            [line] => 33
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$ns'
+        )
+
+    [427] => Array
+        (
+            [line] => 34
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$tableName'
+        )
+
+    [428] => Array
+        (
+            [line] => 34
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$tableName'
+        )
+
+    [429] => Array
+        (
+            [line] => 35
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$modelClass'
+        )
+
+    [430] => Array
+        (
+            [line] => 35
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$modelClass'
+        )
+
+    [431] => Array
+        (
+            [line] => 36
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$baseClass'
+        )
+
+    [432] => Array
+        (
+            [line] => 36
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$baseClass'
+        )
+
+    [433] => Array
+        (
+            [line] => 37
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$generateRelations'
+        )
+
+    [434] => Array
+        (
+            [line] => 37
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$generateRelations'
+        )
+
+    [435] => Array
+        (
+            [line] => 38
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$generateRelationsFromCurrentSchema'
+        )
+
+    [436] => Array
+        (
+            [line] => 38
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$generateRelationsFromCurrentSchema'
+        )
+
+    [437] => Array
+        (
+            [line] => 39
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$generateLabelsFromComments'
+        )
+
+    [438] => Array
+        (
+            [line] => 39
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$generateLabelsFromComments'
+        )
+
+    [439] => Array
+        (
+            [line] => 40
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$useTablePrefix'
+        )
+
+    [440] => Array
+        (
+            [line] => 40
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$useTablePrefix'
+        )
+
+    [441] => Array
+        (
+            [line] => 41
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$standardizeCapitals'
+        )
+
+    [442] => Array
+        (
+            [line] => 41
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$standardizeCapitals'
+        )
+
+    [443] => Array
+        (
+            [line] => 42
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$singularize'
+        )
+
+    [444] => Array
+        (
+            [line] => 42
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$singularize'
+        )
+
+    [445] => Array
+        (
+            [line] => 43
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$useSchemaName'
+        )
+
+    [446] => Array
+        (
+            [line] => 43
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$useSchemaName'
+        )
+
+    [447] => Array
+        (
+            [line] => 44
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$generateQuery'
+        )
+
+    [448] => Array
+        (
+            [line] => 44
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$generateQuery'
+        )
+
+    [449] => Array
+        (
+            [line] => 45
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$queryNs'
+        )
+
+    [450] => Array
+        (
+            [line] => 45
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$queryNs'
+        )
+
+    [451] => Array
+        (
+            [line] => 46
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$queryClass'
+        )
+
+    [452] => Array
+        (
+            [line] => 46
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$queryClass'
+        )
+
+    [453] => Array
+        (
+            [line] => 47
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$queryBaseClass'
+        )
+
+    [454] => Array
+        (
+            [line] => 47
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$queryBaseClass'
+        )
+
+    [455] => Array
+        (
+            [line] => 829
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$tableNames'
+        )
+
+    [456] => Array
+        (
+            [line] => 829
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$tableNames'
+        )
+
+    [457] => Array
+        (
+            [line] => 830
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No docblock for element '$classNames'
+        )
+
+    [458] => Array
+        (
+            [line] => 830
+            [file] => data/yii-2.0/extensions/gii/src/generators/model/Generator.php
+            [message] => No short description for element '$classNames'
+        )
+
+    [459] => Array
+        (
+            [line] => 26
+            [file] => data/yii-2.0/extensions/gii/src/generators/module/Generator.php
+            [message] => No docblock for element '$moduleClass'
+        )
+
+    [460] => Array
+        (
+            [line] => 26
+            [file] => data/yii-2.0/extensions/gii/src/generators/module/Generator.php
+            [message] => No short description for element '$moduleClass'
+        )
+
+    [461] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/gii/src/generators/module/Generator.php
+            [message] => No docblock for element '$moduleID'
+        )
+
+    [462] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/gii/src/generators/module/Generator.php
+            [message] => No short description for element '$moduleID'
+        )
+
+    [463] => Array
+        (
+            [line] => 12
+            [file] => data/yii-2.0/extensions/httpclient/src/MockTransport.php
+            [message] => No docblock for element 'yii\httpclient\MockTransport'
+        )
+
+    [464] => Array
+        (
+            [line] => 25
+            [file] => data/yii-2.0/extensions/httpclient/src/debug/RequestExecuteAction.php
+            [message] => No short description for element '$panel'
+        )
+
+    [465] => Array
+        (
+            [line] => 33
+            [file] => data/yii-2.0/extensions/jui/src/Slider.php
+            [message] => No short description for element '$clientEventMap'
+        )
+
+    [466] => Array
+        (
+            [line] => 67
+            [file] => data/yii-2.0/extensions/jui/src/SliderInput.php
+            [message] => No short description for element '$clientEventMap'
+        )
+
+    [467] => Array
+        (
+            [line] => 52
+            [file] => data/yii-2.0/extensions/jui/src/Spinner.php
+            [message] => No short description for element '$clientEventMap'
+        )
+
+    [468] => Array
+        (
+            [line] => 311
+            [file] => data/yii-2.0/extensions/mongodb/src/QueryBuilder.php
+            [message] => No docblock for element 'group'
+        )
+
+    [469] => Array
+        (
+            [line] => 25
+            [file] => data/yii-2.0/extensions/mongodb/src/gii/model/Generator.php
+            [message] => No docblock for element '$db'
+        )
+
+    [470] => Array
+        (
+            [line] => 25
+            [file] => data/yii-2.0/extensions/mongodb/src/gii/model/Generator.php
+            [message] => No short description for element '$db'
+        )
+
+    [471] => Array
+        (
+            [line] => 26
+            [file] => data/yii-2.0/extensions/mongodb/src/gii/model/Generator.php
+            [message] => No docblock for element '$ns'
+        )
+
+    [472] => Array
+        (
+            [line] => 26
+            [file] => data/yii-2.0/extensions/mongodb/src/gii/model/Generator.php
+            [message] => No short description for element '$ns'
+        )
+
+    [473] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/mongodb/src/gii/model/Generator.php
+            [message] => No docblock for element '$collectionName'
+        )
+
+    [474] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/mongodb/src/gii/model/Generator.php
+            [message] => No short description for element '$collectionName'
+        )
+
+    [475] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/mongodb/src/gii/model/Generator.php
+            [message] => No docblock for element '$databaseName'
+        )
+
+    [476] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/mongodb/src/gii/model/Generator.php
+            [message] => No short description for element '$databaseName'
+        )
+
+    [477] => Array
+        (
+            [line] => 29
+            [file] => data/yii-2.0/extensions/mongodb/src/gii/model/Generator.php
+            [message] => No docblock for element '$attributeList'
+        )
+
+    [478] => Array
+        (
+            [line] => 29
+            [file] => data/yii-2.0/extensions/mongodb/src/gii/model/Generator.php
+            [message] => No short description for element '$attributeList'
+        )
+
+    [479] => Array
+        (
+            [line] => 30
+            [file] => data/yii-2.0/extensions/mongodb/src/gii/model/Generator.php
+            [message] => No docblock for element '$modelClass'
+        )
+
+    [480] => Array
+        (
+            [line] => 30
+            [file] => data/yii-2.0/extensions/mongodb/src/gii/model/Generator.php
+            [message] => No short description for element '$modelClass'
+        )
+
+    [481] => Array
+        (
+            [line] => 31
+            [file] => data/yii-2.0/extensions/mongodb/src/gii/model/Generator.php
+            [message] => No docblock for element '$baseClass'
+        )
+
+    [482] => Array
+        (
+            [line] => 31
+            [file] => data/yii-2.0/extensions/mongodb/src/gii/model/Generator.php
+            [message] => No short description for element '$baseClass'
+        )
+
+    [483] => Array
+        (
+            [line] => 210
+            [file] => data/yii-2.0/extensions/redis/src/Cache.php
+            [message] => No docblock for element 'buildKey'
+        )
+
+    [484] => Array
+        (
+            [line] => 404
+            [file] => data/yii-2.0/extensions/redis/src/LuaScriptBuilder.php
+            [message] => No docblock for element 'buildCompositeInCondition'
+        )
+
+    [485] => Array
+        (
+            [line] => 424
+            [file] => data/yii-2.0/extensions/redis/src/LuaScriptBuilder.php
+            [message] => No docblock for element 'buildCompareCondition'
+        )
+
+    [486] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/smarty/src/Extension.php
+            [message] => No short description for element '$viewRenderer'
+        )
+
+    [487] => Array
+        (
+            [line] => 32
+            [file] => data/yii-2.0/extensions/smarty/src/Extension.php
+            [message] => No short description for element '$smarty'
+        )
+
+    [488] => Array
+        (
+            [line] => 29
+            [file] => data/yii-2.0/extensions/smarty/src/Extension.php
+            [message] => No short description for element '$viewRenderer'
+        )
+
+    [489] => Array
+        (
+            [line] => 33
+            [file] => data/yii-2.0/extensions/smarty/src/Extension.php
+            [message] => No short description for element '$smarty'
+        )
+
+    [490] => Array
+        (
+            [line] => 25
+            [file] => data/yii-2.0/extensions/sphinx/src/gii/model/Generator.php
+            [message] => No docblock for element '$db'
+        )
+
+    [491] => Array
+        (
+            [line] => 25
+            [file] => data/yii-2.0/extensions/sphinx/src/gii/model/Generator.php
+            [message] => No short description for element '$db'
+        )
+
+    [492] => Array
+        (
+            [line] => 26
+            [file] => data/yii-2.0/extensions/sphinx/src/gii/model/Generator.php
+            [message] => No docblock for element '$ns'
+        )
+
+    [493] => Array
+        (
+            [line] => 26
+            [file] => data/yii-2.0/extensions/sphinx/src/gii/model/Generator.php
+            [message] => No short description for element '$ns'
+        )
+
+    [494] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/sphinx/src/gii/model/Generator.php
+            [message] => No docblock for element '$indexName'
+        )
+
+    [495] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/sphinx/src/gii/model/Generator.php
+            [message] => No short description for element '$indexName'
+        )
+
+    [496] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/sphinx/src/gii/model/Generator.php
+            [message] => No docblock for element '$modelClass'
+        )
+
+    [497] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/extensions/sphinx/src/gii/model/Generator.php
+            [message] => No short description for element '$modelClass'
+        )
+
+    [498] => Array
+        (
+            [line] => 29
+            [file] => data/yii-2.0/extensions/sphinx/src/gii/model/Generator.php
+            [message] => No docblock for element '$baseClass'
+        )
+
+    [499] => Array
+        (
+            [line] => 29
+            [file] => data/yii-2.0/extensions/sphinx/src/gii/model/Generator.php
+            [message] => No short description for element '$baseClass'
+        )
+
+    [500] => Array
+        (
+            [line] => 30
+            [file] => data/yii-2.0/extensions/sphinx/src/gii/model/Generator.php
+            [message] => No docblock for element '$useIndexPrefix'
+        )
+
+    [501] => Array
+        (
+            [line] => 30
+            [file] => data/yii-2.0/extensions/sphinx/src/gii/model/Generator.php
+            [message] => No short description for element '$useIndexPrefix'
+        )
+
+    [502] => Array
+        (
+            [line] => 10
+            [file] => data/yii-2.0/extensions/twig/src/GetAttr.php
+            [message] => No docblock for element 'yii\twig\GetAttr'
+        )
+
+    [503] => Array
+        (
+            [line] => 13
+            [file] => data/yii-2.0/extensions/twig/src/Profile.php
+            [message] => No docblock for element 'yii\twig\Profile'
+        )
+
+    [504] => Array
+        (
+            [line] => 15
+            [file] => data/yii-2.0/extensions/twig/src/Profile.php
+            [message] => No docblock for element '$view'
+        )
+
+    [505] => Array
+        (
+            [line] => 15
+            [file] => data/yii-2.0/extensions/twig/src/Profile.php
+            [message] => No short description for element '$view'
+        )
+
+    [506] => Array
+        (
+            [line] => 16
+            [file] => data/yii-2.0/extensions/twig/src/Profile.php
+            [message] => No docblock for element '$profiler'
+        )
+
+    [507] => Array
+        (
+            [line] => 16
+            [file] => data/yii-2.0/extensions/twig/src/Profile.php
+            [message] => No short description for element '$profiler'
+        )
+
+    [508] => Array
+        (
+            [line] => 19
+            [file] => data/yii-2.0/extensions/twig/src/Profile.php
+            [message] => No docblock for element '__construct'
+        )
+
+    [509] => Array
+        (
+            [line] => 114
+            [file] => data/yii-2.0/extensions/twig/src/ViewRenderer.php
+            [message] => No docblock for element 'init'
+        )
+
+    [510] => Array
+        (
+            [line] => 10
+            [file] => data/yii-2.0/extensions/twig/src/html/BaseClassNode.php
+            [message] => No docblock for element 'yii\twig\html\BaseClassNode'
+        )
+
+    [511] => Array
+        (
+            [line] => 12
+            [file] => data/yii-2.0/extensions/twig/src/html/BaseClassNode.php
+            [message] => No docblock for element 'compile'
+        )
+
+    [512] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/extensions/twig/src/html/BaseClassNode.php
+            [message] => No docblock for element 'getHelperMethod'
+        )
+
+    [513] => Array
+        (
+            [line] => 12
+            [file] => data/yii-2.0/extensions/twig/src/html/BaseCss_TokenParser.php
+            [message] => No docblock for element 'yii\twig\html\BaseCss_TokenParser'
+        )
+
+    [514] => Array
+        (
+            [line] => 14
+            [file] => data/yii-2.0/extensions/twig/src/html/BaseCss_TokenParser.php
+            [message] => No docblock for element 'parse'
+        )
+
+    [515] => Array
+        (
+            [line] => 27
+            [file] => data/yii-2.0/extensions/twig/src/html/BaseCss_TokenParser.php
+            [message] => No docblock for element 'getNodeClass'
+        )
+
+    [516] => Array
+        (
+            [line] => 10
+            [file] => data/yii-2.0/extensions/twig/src/html/CssClassNode.php
+            [message] => No docblock for element 'yii\twig\html\CssClassNode'
+        )
+
+    [517] => Array
+        (
+            [line] => 12
+            [file] => data/yii-2.0/extensions/twig/src/html/CssClassNode.php
+            [message] => No docblock for element '__construct'
+        )
+
+    [518] => Array
+        (
+            [line] => 17
+            [file] => data/yii-2.0/extensions/twig/src/html/CssClassNode.php
+            [message] => No docblock for element 'getHelperMethod'
+        )
+
+    [519] => Array
+        (
+            [line] => 10
+            [file] => data/yii-2.0/extensions/twig/src/html/CssClass_TokenParser.php
+            [message] => No docblock for element 'yii\twig\html\CssClass_TokenParser'
+        )
+
+    [520] => Array
+        (
+            [line] => 12
+            [file] => data/yii-2.0/extensions/twig/src/html/CssClass_TokenParser.php
+            [message] => No docblock for element 'getNodeClass'
+        )
+
+    [521] => Array
+        (
+            [line] => 17
+            [file] => data/yii-2.0/extensions/twig/src/html/CssClass_TokenParser.php
+            [message] => No docblock for element 'getTag'
+        )
+
+    [522] => Array
+        (
+            [line] => 10
+            [file] => data/yii-2.0/extensions/twig/src/html/CssStyle_TokenParser.php
+            [message] => No docblock for element 'yii\twig\html\CssStyle_TokenParser'
+        )
+
+    [523] => Array
+        (
+            [line] => 12
+            [file] => data/yii-2.0/extensions/twig/src/html/CssStyle_TokenParser.php
+            [message] => No docblock for element 'getNodeClass'
+        )
+
+    [524] => Array
+        (
+            [line] => 17
+            [file] => data/yii-2.0/extensions/twig/src/html/CssStyle_TokenParser.php
+            [message] => No docblock for element 'getTag'
+        )
+
+    [525] => Array
+        (
+            [line] => 10
+            [file] => data/yii-2.0/extensions/twig/src/html/HtmlHelperExtension.php
+            [message] => No docblock for element 'yii\twig\html\HtmlHelperExtension'
+        )
+
+    [526] => Array
+        (
+            [line] => 12
+            [file] => data/yii-2.0/extensions/twig/src/html/HtmlHelperExtension.php
+            [message] => No docblock for element 'getTokenParsers'
+        )
+
+    [527] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/extensions/twig/src/html/HtmlHelperExtension.php
+            [message] => No docblock for element 'getGlobals'
+        )
+
+    [528] => Array
+        (
+            [line] => 10
+            [file] => data/yii-2.0/extensions/twig/src/html/StyleClassNode.php
+            [message] => No docblock for element 'yii\twig\html\StyleClassNode'
+        )
+
+    [529] => Array
+        (
+            [line] => 12
+            [file] => data/yii-2.0/extensions/twig/src/html/StyleClassNode.php
+            [message] => No docblock for element '__construct'
+        )
+
+    [530] => Array
+        (
+            [line] => 17
+            [file] => data/yii-2.0/extensions/twig/src/html/StyleClassNode.php
+            [message] => No docblock for element 'getHelperMethod'
+        )
+
+    [531] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/framework/captcha/CaptchaAsset.php
+            [message] => No docblock for element '$sourcePath'
+        )
+
+    [532] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/framework/captcha/CaptchaAsset.php
+            [message] => No short description for element '$sourcePath'
+        )
+
+    [533] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/framework/captcha/CaptchaAsset.php
+            [message] => No docblock for element '$js'
+        )
+
+    [534] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/framework/captcha/CaptchaAsset.php
+            [message] => No short description for element '$js'
+        )
+
+    [535] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/framework/captcha/CaptchaAsset.php
+            [message] => No docblock for element '$depends'
+        )
+
+    [536] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/framework/captcha/CaptchaAsset.php
+            [message] => No short description for element '$depends'
+        )
+
+    [537] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/framework/console/UnknownCommandException.php
+            [message] => No short description for element '$application'
+        )
+
+    [538] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/framework/console/UnknownCommandException.php
+            [message] => No short description for element '$application'
+        )
+
+    [539] => Array
+        (
+            [line] => 28
+            [file] => data/yii-2.0/framework/console/UnknownCommandException.php
+            [message] => No short description for element '$application'
+        )
+
+    [540] => Array
+        (
+            [line] => 200
+            [file] => data/yii-2.0/framework/data/ActiveDataProvider.php
+            [message] => No docblock for element '__clone'
+        )
+
+    [541] => Array
+        (
+            [line] => 200
+            [file] => data/yii-2.0/framework/data/ActiveDataProvider.php
+            [message] => No docblock for element '__clone'
+        )
+
+    [542] => Array
+        (
+            [line] => 22
+            [file] => data/yii-2.0/framework/db/ExpressionBuilderTrait.php
+            [message] => No short description for element '$queryBuilder'
+        )
+
+    [543] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/framework/db/conditions/ConjunctionCondition.php
+            [message] => No short description for element '$expressions'
+        )
+
+    [544] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/framework/grid/GridViewAsset.php
+            [message] => No docblock for element '$sourcePath'
+        )
+
+    [545] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/framework/grid/GridViewAsset.php
+            [message] => No short description for element '$sourcePath'
+        )
+
+    [546] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/framework/grid/GridViewAsset.php
+            [message] => No docblock for element '$js'
+        )
+
+    [547] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/framework/grid/GridViewAsset.php
+            [message] => No short description for element '$js'
+        )
+
+    [548] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/framework/grid/GridViewAsset.php
+            [message] => No docblock for element '$depends'
+        )
+
+    [549] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/framework/grid/GridViewAsset.php
+            [message] => No short description for element '$depends'
+        )
+
+    [550] => Array
+        (
+            [line] => 30
+            [file] => data/yii-2.0/framework/helpers/BaseJson.php
+            [message] => No short description for element '$jsonErrorMessages'
+        )
+
+    [551] => Array
+        (
+            [line] => 30
+            [file] => data/yii-2.0/framework/helpers/BaseJson.php
+            [message] => No short description for element '$jsonErrorMessages'
+        )
+
+    [552] => Array
+        (
+            [line] => 37
+            [file] => data/yii-2.0/framework/i18n/GettextMessageSource.php
+            [message] => No short description for element '$basePath'
+        )
+
+    [553] => Array
+        (
+            [line] => 41
+            [file] => data/yii-2.0/framework/i18n/GettextMessageSource.php
+            [message] => No short description for element '$catalog'
+        )
+
+    [554] => Array
+        (
+            [line] => 45
+            [file] => data/yii-2.0/framework/i18n/GettextMessageSource.php
+            [message] => No short description for element '$useMoFile'
+        )
+
+    [555] => Array
+        (
+            [line] => 49
+            [file] => data/yii-2.0/framework/i18n/GettextMessageSource.php
+            [message] => No short description for element '$useBigEndian'
+        )
+
+    [556] => Array
+        (
+            [line] => 977
+            [file] => data/yii-2.0/framework/rbac/DbManager.php
+            [message] => No docblock for element 'invalidateCache'
+        )
+
+    [557] => Array
+        (
+            [line] => 988
+            [file] => data/yii-2.0/framework/rbac/DbManager.php
+            [message] => No docblock for element 'loadFromCache'
+        )
+
+    [558] => Array
+        (
+            [line] => 977
+            [file] => data/yii-2.0/framework/rbac/DbManager.php
+            [message] => No docblock for element 'invalidateCache'
+        )
+
+    [559] => Array
+        (
+            [line] => 988
+            [file] => data/yii-2.0/framework/rbac/DbManager.php
+            [message] => No docblock for element 'loadFromCache'
+        )
+
+    [560] => Array
+        (
+            [line] => 977
+            [file] => data/yii-2.0/framework/rbac/DbManager.php
+            [message] => No docblock for element 'invalidateCache'
+        )
+
+    [561] => Array
+        (
+            [line] => 988
+            [file] => data/yii-2.0/framework/rbac/DbManager.php
+            [message] => No docblock for element 'loadFromCache'
+        )
+
+    [562] => Array
+        (
+            [line] => 67
+            [file] => data/yii-2.0/framework/rbac/PhpManager.php
+            [message] => No short description for element '$items'
+        )
+
+    [563] => Array
+        (
+            [line] => 71
+            [file] => data/yii-2.0/framework/rbac/PhpManager.php
+            [message] => No short description for element '$children'
+        )
+
+    [564] => Array
+        (
+            [line] => 75
+            [file] => data/yii-2.0/framework/rbac/PhpManager.php
+            [message] => No short description for element '$assignments'
+        )
+
+    [565] => Array
+        (
+            [line] => 79
+            [file] => data/yii-2.0/framework/rbac/PhpManager.php
+            [message] => No short description for element '$rules'
+        )
+
+    [566] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/framework/validators/PunycodeAsset.php
+            [message] => No docblock for element '$sourcePath'
+        )
+
+    [567] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/framework/validators/PunycodeAsset.php
+            [message] => No short description for element '$sourcePath'
+        )
+
+    [568] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/framework/validators/PunycodeAsset.php
+            [message] => No docblock for element '$js'
+        )
+
+    [569] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/framework/validators/PunycodeAsset.php
+            [message] => No short description for element '$js'
+        )
+
+    [570] => Array
+        (
+            [line] => 86
+            [file] => data/yii-2.0/framework/validators/UniqueValidator.php
+            [message] => No short description for element '$comboNotUnique'
+        )
+
+    [571] => Array
+        (
+            [line] => 86
+            [file] => data/yii-2.0/framework/validators/UniqueValidator.php
+            [message] => No short description for element '$comboNotUnique'
+        )
+
+    [572] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/framework/validators/ValidationAsset.php
+            [message] => No docblock for element '$sourcePath'
+        )
+
+    [573] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/framework/validators/ValidationAsset.php
+            [message] => No short description for element '$sourcePath'
+        )
+
+    [574] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/framework/validators/ValidationAsset.php
+            [message] => No docblock for element '$js'
+        )
+
+    [575] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/framework/validators/ValidationAsset.php
+            [message] => No short description for element '$js'
+        )
+
+    [576] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/framework/validators/ValidationAsset.php
+            [message] => No docblock for element '$depends'
+        )
+
+    [577] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/framework/validators/ValidationAsset.php
+            [message] => No short description for element '$depends'
+        )
+
+    [578] => Array
+        (
+            [line] => 262
+            [file] => data/yii-2.0/framework/validators/Validator.php
+            [message] => No docblock for element 'getValidationAttributes'
+        )
+
+    [579] => Array
+        (
+            [line] => 262
+            [file] => data/yii-2.0/framework/validators/Validator.php
+            [message] => No docblock for element 'getValidationAttributes'
+        )
+
+    [580] => Array
+        (
+            [line] => 18
+            [file] => data/yii-2.0/framework/web/JqueryAsset.php
+            [message] => No docblock for element '$sourcePath'
+        )
+
+    [581] => Array
+        (
+            [line] => 18
+            [file] => data/yii-2.0/framework/web/JqueryAsset.php
+            [message] => No short description for element '$sourcePath'
+        )
+
+    [582] => Array
+        (
+            [line] => 19
+            [file] => data/yii-2.0/framework/web/JqueryAsset.php
+            [message] => No docblock for element '$js'
+        )
+
+    [583] => Array
+        (
+            [line] => 19
+            [file] => data/yii-2.0/framework/web/JqueryAsset.php
+            [message] => No short description for element '$js'
+        )
+
+    [584] => Array
+        (
+            [line] => 18
+            [file] => data/yii-2.0/framework/web/YiiAsset.php
+            [message] => No docblock for element '$sourcePath'
+        )
+
+    [585] => Array
+        (
+            [line] => 18
+            [file] => data/yii-2.0/framework/web/YiiAsset.php
+            [message] => No short description for element '$sourcePath'
+        )
+
+    [586] => Array
+        (
+            [line] => 19
+            [file] => data/yii-2.0/framework/web/YiiAsset.php
+            [message] => No docblock for element '$js'
+        )
+
+    [587] => Array
+        (
+            [line] => 19
+            [file] => data/yii-2.0/framework/web/YiiAsset.php
+            [message] => No short description for element '$js'
+        )
+
+    [588] => Array
+        (
+            [line] => 22
+            [file] => data/yii-2.0/framework/web/YiiAsset.php
+            [message] => No docblock for element '$depends'
+        )
+
+    [589] => Array
+        (
+            [line] => 22
+            [file] => data/yii-2.0/framework/web/YiiAsset.php
+            [message] => No short description for element '$depends'
+        )
+
+    [590] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/framework/widgets/ActiveFormAsset.php
+            [message] => No docblock for element '$sourcePath'
+        )
+
+    [591] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/framework/widgets/ActiveFormAsset.php
+            [message] => No short description for element '$sourcePath'
+        )
+
+    [592] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/framework/widgets/ActiveFormAsset.php
+            [message] => No docblock for element '$js'
+        )
+
+    [593] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/framework/widgets/ActiveFormAsset.php
+            [message] => No short description for element '$js'
+        )
+
+    [594] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/framework/widgets/ActiveFormAsset.php
+            [message] => No docblock for element '$depends'
+        )
+
+    [595] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/framework/widgets/ActiveFormAsset.php
+            [message] => No short description for element '$depends'
+        )
+
+    [596] => Array
+        (
+            [line] => 22
+            [file] => data/yii-2.0/framework/widgets/MaskedInputAsset.php
+            [message] => No docblock for element '$sourcePath'
+        )
+
+    [597] => Array
+        (
+            [line] => 22
+            [file] => data/yii-2.0/framework/widgets/MaskedInputAsset.php
+            [message] => No short description for element '$sourcePath'
+        )
+
+    [598] => Array
+        (
+            [line] => 23
+            [file] => data/yii-2.0/framework/widgets/MaskedInputAsset.php
+            [message] => No docblock for element '$js'
+        )
+
+    [599] => Array
+        (
+            [line] => 23
+            [file] => data/yii-2.0/framework/widgets/MaskedInputAsset.php
+            [message] => No short description for element '$js'
+        )
+
+    [600] => Array
+        (
+            [line] => 26
+            [file] => data/yii-2.0/framework/widgets/MaskedInputAsset.php
+            [message] => No docblock for element '$depends'
+        )
+
+    [601] => Array
+        (
+            [line] => 26
+            [file] => data/yii-2.0/framework/widgets/MaskedInputAsset.php
+            [message] => No short description for element '$depends'
+        )
+
+    [602] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/framework/widgets/PjaxAsset.php
+            [message] => No docblock for element '$sourcePath'
+        )
+
+    [603] => Array
+        (
+            [line] => 20
+            [file] => data/yii-2.0/framework/widgets/PjaxAsset.php
+            [message] => No short description for element '$sourcePath'
+        )
+
+    [604] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/framework/widgets/PjaxAsset.php
+            [message] => No docblock for element '$js'
+        )
+
+    [605] => Array
+        (
+            [line] => 21
+            [file] => data/yii-2.0/framework/widgets/PjaxAsset.php
+            [message] => No short description for element '$js'
+        )
+
+    [606] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/framework/widgets/PjaxAsset.php
+            [message] => No docblock for element '$depends'
+        )
+
+    [607] => Array
+        (
+            [line] => 24
+            [file] => data/yii-2.0/framework/widgets/PjaxAsset.php
+            [message] => No short description for element '$depends'
+        )
+
+)

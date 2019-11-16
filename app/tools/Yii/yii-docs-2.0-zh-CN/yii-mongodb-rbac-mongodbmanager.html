@@ -1,0 +1,2592 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>MongoDbManager, yii\mongodb\rbac\MongoDbManager - Yii Framework 2.0 API Documentation</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w16559" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w16559-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Yii Framework 2.0 API Documentation</a></div><div id="w16559-collapse" class="collapse navbar-collapse"><ul id="w16560" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w16561" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-3">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-16550" data-toggle="collapse" data-parent="#navigation">yii\mongodb <b class="caret"></b></a><div id="navigation-16550" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-activefixture.html">ActiveFixture</a>
+<a class="list-group-item" href="./yii-mongodb-activequery.html">ActiveQuery</a>
+<a class="list-group-item" href="./yii-mongodb-activerecord.html">ActiveRecord</a>
+<a class="list-group-item" href="./yii-mongodb-batchqueryresult.html">BatchQueryResult</a>
+<a class="list-group-item" href="./yii-mongodb-cache.html">Cache</a>
+<a class="list-group-item" href="./yii-mongodb-collection.html">Collection</a>
+<a class="list-group-item" href="./yii-mongodb-command.html">Command</a>
+<a class="list-group-item" href="./yii-mongodb-connection.html">Connection</a>
+<a class="list-group-item" href="./yii-mongodb-database.html">Database</a>
+<a class="list-group-item" href="./yii-mongodb-exception.html">Exception</a>
+<a class="list-group-item" href="./yii-mongodb-logbuilder.html">LogBuilder</a>
+<a class="list-group-item" href="./yii-mongodb-migration.html">Migration</a>
+<a class="list-group-item" href="./yii-mongodb-query.html">Query</a>
+<a class="list-group-item" href="./yii-mongodb-querybuilder.html">QueryBuilder</a>
+<a class="list-group-item" href="./yii-mongodb-session.html">Session</a></div>
+<a class="list-group-item" href="#navigation-16551" data-toggle="collapse" data-parent="#navigation">yii\mongodb\console\controllers <b class="caret"></b></a><div id="navigation-16551" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-console-controllers-migratecontroller.html">MigrateController</a></div>
+<a class="list-group-item" href="#navigation-16552" data-toggle="collapse" data-parent="#navigation">yii\mongodb\debug <b class="caret"></b></a><div id="navigation-16552" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-debug-explainaction.html">ExplainAction</a>
+<a class="list-group-item" href="./yii-mongodb-debug-mongodbpanel.html">MongoDbPanel</a></div>
+<a class="list-group-item" href="#navigation-16553" data-toggle="collapse" data-parent="#navigation">yii\mongodb\file <b class="caret"></b></a><div id="navigation-16553" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-file-activequery.html">ActiveQuery</a>
+<a class="list-group-item" href="./yii-mongodb-file-activerecord.html">ActiveRecord</a>
+<a class="list-group-item" href="./yii-mongodb-file-collection.html">Collection</a>
+<a class="list-group-item" href="./yii-mongodb-file-cursor.html">Cursor</a>
+<a class="list-group-item" href="./yii-mongodb-file-download.html">Download</a>
+<a class="list-group-item" href="./yii-mongodb-file-query.html">Query</a>
+<a class="list-group-item" href="./yii-mongodb-file-streamwrapper.html">StreamWrapper</a>
+<a class="list-group-item" href="./yii-mongodb-file-upload.html">Upload</a></div>
+<a class="list-group-item" href="#navigation-16554" data-toggle="collapse" data-parent="#navigation">yii\mongodb\gii\model <b class="caret"></b></a><div id="navigation-16554" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-gii-model-generator.html">Generator</a></div>
+<a class="list-group-item" href="#navigation-16555" data-toggle="collapse" data-parent="#navigation">yii\mongodb\i18n <b class="caret"></b></a><div id="navigation-16555" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-i18n-mongodbmessagesource.html">MongoDbMessageSource</a></div>
+<a class="list-group-item" href="#navigation-16556" data-toggle="collapse" data-parent="#navigation">yii\mongodb\log <b class="caret"></b></a><div id="navigation-16556" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-log-mongodbtarget.html">MongoDbTarget</a></div>
+<a class="list-group-item active" href="#navigation-16557" data-toggle="collapse" data-parent="#navigation">yii\mongodb\rbac <b class="caret"></b></a><div id="navigation-16557" class="submenu panel-collapse collapse in"><a class="list-group-item active" href="./yii-mongodb-rbac-mongodbmanager.html">MongoDbManager</a>
+<a class="list-group-item" href="./yii-mongodb-rbac-permission.html">Permission</a>
+<a class="list-group-item" href="./yii-mongodb-rbac-role.html">Role</a></div>
+<a class="list-group-item" href="#navigation-16558" data-toggle="collapse" data-parent="#navigation">yii\mongodb\validators <b class="caret"></b></a><div id="navigation-16558" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-validators-mongodatevalidator.html">MongoDateValidator</a>
+<a class="list-group-item" href="./yii-mongodb-validators-mongoidvalidator.html">MongoIdValidator</a></div></div>    </div>
+    <div class="col-md-9 api-content" role="main">
+        <h1>Class yii\mongodb\rbac\MongoDbManager</h1>
+<div class="top-nav">
+    <a href="index.html">All Classes</a>
+            | <a href="#properties">Properties</a>
+                | <a href="#methods">Methods</a>
+            </div>
+
+<table class="summaryTable docClass table table-bordered">
+    <colgroup>
+        <col class="col-name" />
+        <col class="col-value" />
+    </colgroup>
+            <tr><th>Inheritance</th><td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a> &raquo;
+<a href="yii-rbac-basemanager.html">yii\rbac\BaseManager</a> &raquo;
+<a href="yii-base-component.html">yii\base\Component</a> &raquo;
+<a href="yii-base-baseobject.html">yii\base\BaseObject</a></td></tr>
+                <tr><th>Implements</th><td><a href="yii-base-configurable.html">yii\base\Configurable</a>, <a href="yii-rbac-managerinterface.html">yii\rbac\ManagerInterface</a></td></tr>
+                                    <tr><th>Available since version</th><td>2.0.5</td></tr>
+                    <tr>
+          <th>Source Code</th>
+          <td><a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php">https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php</a></td>
+        </tr>
+    </table>
+
+<div class="class-description">
+    <p><strong>MongoDbManager represents an authorization manager that stores authorization information in MongoDB.</strong></p>
+    <p>Manager uses 3 collections for the RBAC data storage:</p>
+<ul>
+<li><a href="yii-mongodb-rbac-mongodbmanager.html#$itemCollection-detail">$itemCollection</a> - stores item data and item parents list</li>
+<li><a href="yii-mongodb-rbac-mongodbmanager.html#$assignmentCollection-detail">$assignmentCollection</a> - stores assignments info</li>
+<li><a href="yii-mongodb-rbac-mongodbmanager.html#$ruleCollection-detail">$ruleCollection</a> - stores rule data</li>
+</ul>
+<p>These collection are better to be pre-created with search fields indexed.</p>
+
+    </div>
+
+<a id="properties"></a>
+
+<div class="summary doc-property">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-property" />
+    <col class="col-type" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr id="$assignmentCollection">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#$assignmentCollection-detail">$assignmentCollection</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.array">array</a></td>
+        <td>The name of the collection storing authorization item assignments.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr class="inherited" id="$behaviors">
+        <td><a href="yii-base-component.html#$behaviors-detail">$behaviors</a></td>
+        <td><a href="yii-base-behavior.html">yii\base\Behavior</a>[]</td>
+        <td>List of behaviors attached to this component</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr id="$cache">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#$cache-detail">$cache</a></td>
+        <td><a href="yii-caching-cache.html">yii\caching\Cache</a>|<a href="http://www.php.net/language.types.array">array</a>|<a href="http://www.php.net/language.types.string">string</a></td>
+        <td>The cache used to improve RBAC performance.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr id="$cacheKey">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#$cacheKey-detail">$cacheKey</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>The key used to store RBAC data in cache</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr id="$db">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#$db-detail">$db</a></td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a>|<a href="http://www.php.net/language.types.array">array</a>|<a href="http://www.php.net/language.types.string">string</a></td>
+        <td>The MongoDB connection object or the application component ID of the MongoDB connection.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr class="inherited" id="$defaultRoleInstances">
+        <td><a href="yii-rbac-basemanager.html#$defaultRoleInstances-detail">$defaultRoleInstances</a></td>
+        <td><a href="yii-rbac-role.html">yii\rbac\Role</a>[]</td>
+        <td>Default roles.</td>
+        <td><a href="yii-rbac-basemanager.html">yii\rbac\BaseManager</a></td>
+    </tr>
+                <tr id="$itemCollection">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#$itemCollection-detail">$itemCollection</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.array">array</a></td>
+        <td>The name of the collection storing authorization items.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+                <tr class="inherited" id="$permissions">
+        <td><a href="yii-rbac-basemanager.html#$permissions-detail">$permissions</a></td>
+        <td><a href="yii-rbac-permission.html">yii\rbac\Permission</a>[]</td>
+        <td>All permissions in the system.</td>
+        <td><a href="yii-rbac-basemanager.html">yii\rbac\BaseManager</a></td>
+    </tr>
+            <tr class="inherited" id="$roles">
+        <td><a href="yii-rbac-basemanager.html#$roles-detail">$roles</a></td>
+        <td><a href="yii-rbac-role.html">yii\rbac\Role</a>[]</td>
+        <td>All roles in the system.</td>
+        <td><a href="yii-rbac-basemanager.html">yii\rbac\BaseManager</a></td>
+    </tr>
+            <tr id="$ruleCollection">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#$ruleCollection-detail">$ruleCollection</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.array">array</a></td>
+        <td>The name of the collection storing rules.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+        </table>
+</div>
+
+<div class="summary doc-property">
+<h2>Protected Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-property" />
+    <col class="col-type" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+                                <tr class="inherited" id="$defaultRoles">
+        <td><a href="yii-rbac-basemanager.html#$defaultRoles-detail">$defaultRoles</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>A list of role names that are assigned to every user automatically without calling <a href="yii-rbac-managerinterface.html#assign()-detail">assign()</a>.</td>
+        <td><a href="yii-rbac-basemanager.html">yii\rbac\BaseManager</a></td>
+    </tr>
+                <tr id="$items">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#$items-detail">$items</a></td>
+        <td><a href="yii-rbac-item.html">yii\rbac\Item</a>[]</td>
+        <td>All auth items (name =&gt; Item)</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+                        <tr id="$rules">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#$rules-detail">$rules</a></td>
+        <td><a href="yii-rbac-rule.html">yii\rbac\Rule</a>[]</td>
+        <td>All auth rules (name =&gt; Rule)</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+    </table>
+</div>
+
+<a id="methods"></a>
+
+<div class="summary doc-method">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr class="inherited" id="__call()">
+        <td><a href="yii-base-component.html#__call()-detail">__call()</a></td>
+        <td>Calls the named method which is not a class method.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="__clone()">
+        <td><a href="yii-base-component.html#__clone()-detail">__clone()</a></td>
+        <td>This method is called after the object is created by cloning an existing one.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="__construct()">
+        <td><a href="yii-base-baseobject.html#__construct()-detail">__construct()</a></td>
+        <td>Constructor.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr class="inherited" id="__get()">
+        <td><a href="yii-base-component.html#__get()-detail">__get()</a></td>
+        <td>Returns the value of a component property.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="__isset()">
+        <td><a href="yii-base-component.html#__isset()-detail">__isset()</a></td>
+        <td>Checks if a property is set, i.e. defined and not null.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="__set()">
+        <td><a href="yii-base-component.html#__set()-detail">__set()</a></td>
+        <td>Sets the value of a component property.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="__unset()">
+        <td><a href="yii-base-component.html#__unset()-detail">__unset()</a></td>
+        <td>Sets a component property to be null.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="add()">
+        <td><a href="yii-rbac-basemanager.html#add()-detail">add()</a></td>
+        <td>Adds a role, permission or rule to the RBAC system.</td>
+        <td><a href="yii-rbac-basemanager.html">yii\rbac\BaseManager</a></td>
+    </tr>
+            <tr id="addChild()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#addChild()-detail">addChild()</a></td>
+        <td>Adds an item as a child of another item.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+                    <tr id="assign()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#assign()-detail">assign()</a></td>
+        <td>Assigns a role to a user.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr class="inherited" id="attachBehavior()">
+        <td><a href="yii-base-component.html#attachBehavior()-detail">attachBehavior()</a></td>
+        <td>Attaches a behavior to this component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="attachBehaviors()">
+        <td><a href="yii-base-component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+        <td>Attaches a list of behaviors to the component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="behaviors()">
+        <td><a href="yii-base-component.html#behaviors()-detail">behaviors()</a></td>
+        <td>Returns a list of behaviors that this component should behave as.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr id="canAddChild()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#canAddChild()-detail">canAddChild()</a></td>
+        <td>Checks the possibility of adding a child to parent.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr class="inherited" id="canGetProperty()">
+        <td><a href="yii-base-component.html#canGetProperty()-detail">canGetProperty()</a></td>
+        <td>Returns a value indicating whether a property can be read.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="canSetProperty()">
+        <td><a href="yii-base-component.html#canSetProperty()-detail">canSetProperty()</a></td>
+        <td>Returns a value indicating whether a property can be set.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr id="checkAccess()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#checkAccess()-detail">checkAccess()</a></td>
+        <td></td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+                    <tr class="inherited" id="className()">
+        <td><a href="yii-base-baseobject.html#className()-detail">className()</a></td>
+        <td>Returns the fully qualified name of this class.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr class="inherited" id="createPermission()">
+        <td><a href="yii-rbac-basemanager.html#createPermission()-detail">createPermission()</a></td>
+        <td>Creates a new Permission object.</td>
+        <td><a href="yii-rbac-basemanager.html">yii\rbac\BaseManager</a></td>
+    </tr>
+            <tr class="inherited" id="createRole()">
+        <td><a href="yii-rbac-basemanager.html#createRole()-detail">createRole()</a></td>
+        <td>Creates a new Role object.</td>
+        <td><a href="yii-rbac-basemanager.html">yii\rbac\BaseManager</a></td>
+    </tr>
+            <tr class="inherited" id="detachBehavior()">
+        <td><a href="yii-base-component.html#detachBehavior()-detail">detachBehavior()</a></td>
+        <td>Detaches a behavior from the component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="detachBehaviors()">
+        <td><a href="yii-base-component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+        <td>Detaches all behaviors from the component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+                <tr class="inherited" id="ensureBehaviors()">
+        <td><a href="yii-base-component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+        <td>Makes sure that the behaviors declared in <a href="yii-base-component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+                <tr id="getAssignment()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#getAssignment()-detail">getAssignment()</a></td>
+        <td>Returns the assignment information regarding a role and a user.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr id="getAssignments()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#getAssignments()-detail">getAssignments()</a></td>
+        <td>Returns all role assignment information for the specified user.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr class="inherited" id="getBehavior()">
+        <td><a href="yii-base-component.html#getBehavior()-detail">getBehavior()</a></td>
+        <td>Returns the named behavior object.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="getBehaviors()">
+        <td><a href="yii-base-component.html#getBehaviors()-detail">getBehaviors()</a></td>
+        <td>Returns all behaviors attached to this component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr id="getChildRoles()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#getChildRoles()-detail">getChildRoles()</a></td>
+        <td>Returns child roles of the role specified. Depth isn't limited.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr id="getChildren()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#getChildren()-detail">getChildren()</a></td>
+        <td>Returns the child permissions and/or roles.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+                    <tr class="inherited" id="getDefaultRoleInstances()">
+        <td><a href="yii-rbac-basemanager.html#getDefaultRoleInstances()-detail">getDefaultRoleInstances()</a></td>
+        <td>Returns defaultRoles as array of Role objects.</td>
+        <td><a href="yii-rbac-basemanager.html">yii\rbac\BaseManager</a></td>
+    </tr>
+            <tr class="inherited" id="getDefaultRoles()">
+        <td><a href="yii-rbac-basemanager.html#getDefaultRoles()-detail">getDefaultRoles()</a></td>
+        <td>Get default roles</td>
+        <td><a href="yii-rbac-basemanager.html">yii\rbac\BaseManager</a></td>
+    </tr>
+                    <tr class="inherited" id="getPermission()">
+        <td><a href="yii-rbac-basemanager.html#getPermission()-detail">getPermission()</a></td>
+        <td>Returns the named permission.</td>
+        <td><a href="yii-rbac-basemanager.html">yii\rbac\BaseManager</a></td>
+    </tr>
+            <tr class="inherited" id="getPermissions()">
+        <td><a href="yii-rbac-basemanager.html#getPermissions()-detail">getPermissions()</a></td>
+        <td>Returns all permissions in the system.</td>
+        <td><a href="yii-rbac-basemanager.html">yii\rbac\BaseManager</a></td>
+    </tr>
+            <tr id="getPermissionsByRole()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#getPermissionsByRole()-detail">getPermissionsByRole()</a></td>
+        <td>Returns all permissions that the specified role represents.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr id="getPermissionsByUser()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#getPermissionsByUser()-detail">getPermissionsByUser()</a></td>
+        <td>Returns all permissions that the user has.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr class="inherited" id="getRole()">
+        <td><a href="yii-rbac-basemanager.html#getRole()-detail">getRole()</a></td>
+        <td>Returns the named role.</td>
+        <td><a href="yii-rbac-basemanager.html">yii\rbac\BaseManager</a></td>
+    </tr>
+            <tr class="inherited" id="getRoles()">
+        <td><a href="yii-rbac-basemanager.html#getRoles()-detail">getRoles()</a></td>
+        <td>Returns all roles in the system.</td>
+        <td><a href="yii-rbac-basemanager.html">yii\rbac\BaseManager</a></td>
+    </tr>
+            <tr id="getRolesByUser()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#getRolesByUser()-detail">getRolesByUser()</a></td>
+        <td>Returns the roles that are assigned to the user via <a href="yii-mongodb-rbac-mongodbmanager.html#assign()-detail">assign()</a>.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr id="getRule()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#getRule()-detail">getRule()</a></td>
+        <td>Returns the rule of the specified name.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr id="getRules()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#getRules()-detail">getRules()</a></td>
+        <td>Returns all rules available in the system.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr id="getUserIdsByRole()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#getUserIdsByRole()-detail">getUserIdsByRole()</a></td>
+        <td>Returns all user IDs assigned to the role specified.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr id="hasChild()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#hasChild()-detail">hasChild()</a></td>
+        <td>Returns a value indicating whether the child already exists for the parent.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr class="inherited" id="hasEventHandlers()">
+        <td><a href="yii-base-component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+        <td>Returns a value indicating whether there is any handler attached to the named event.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="hasMethod()">
+        <td><a href="yii-base-component.html#hasMethod()-detail">hasMethod()</a></td>
+        <td>Returns a value indicating whether a method is defined.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+                <tr class="inherited" id="hasProperty()">
+        <td><a href="yii-base-component.html#hasProperty()-detail">hasProperty()</a></td>
+        <td>Returns a value indicating whether a property is defined for this component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr id="init()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#init()-detail">init()</a></td>
+        <td>Initializes the application component.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr id="invalidateCache()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#invalidateCache()-detail">invalidateCache()</a></td>
+        <td>Invalidates RBAC related cache</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr id="loadFromCache()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#loadFromCache()-detail">loadFromCache()</a></td>
+        <td>Loads data from cache</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr class="inherited" id="off()">
+        <td><a href="yii-base-component.html#off()-detail">off()</a></td>
+        <td>Detaches an existing event handler from this component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="on()">
+        <td><a href="yii-base-component.html#on()-detail">on()</a></td>
+        <td>Attaches an event handler to an event.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+                <tr class="inherited" id="remove()">
+        <td><a href="yii-rbac-basemanager.html#remove()-detail">remove()</a></td>
+        <td>Removes a role, permission or rule from the RBAC system.</td>
+        <td><a href="yii-rbac-basemanager.html">yii\rbac\BaseManager</a></td>
+    </tr>
+            <tr id="removeAll()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#removeAll()-detail">removeAll()</a></td>
+        <td>Removes all authorization data, including roles, permissions, rules, and assignments.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr id="removeAllAssignments()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#removeAllAssignments()-detail">removeAllAssignments()</a></td>
+        <td>Removes all role assignments.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+                <tr id="removeAllPermissions()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#removeAllPermissions()-detail">removeAllPermissions()</a></td>
+        <td>Removes all permissions.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr id="removeAllRoles()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#removeAllRoles()-detail">removeAllRoles()</a></td>
+        <td>Removes all roles.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr id="removeAllRules()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#removeAllRules()-detail">removeAllRules()</a></td>
+        <td>Removes all rules.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr id="removeChild()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#removeChild()-detail">removeChild()</a></td>
+        <td>Removes a child from its parent.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr id="removeChildren()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#removeChildren()-detail">removeChildren()</a></td>
+        <td>Removed all children form their parent.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+                    <tr id="revoke()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#revoke()-detail">revoke()</a></td>
+        <td>Revokes a role from a user.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr id="revokeAll()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#revokeAll()-detail">revokeAll()</a></td>
+        <td>Revokes all roles from a user.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr class="inherited" id="setDefaultRoles()">
+        <td><a href="yii-rbac-basemanager.html#setDefaultRoles()-detail">setDefaultRoles()</a></td>
+        <td>Set default roles</td>
+        <td><a href="yii-rbac-basemanager.html">yii\rbac\BaseManager</a></td>
+    </tr>
+            <tr class="inherited" id="trigger()">
+        <td><a href="yii-base-component.html#trigger()-detail">trigger()</a></td>
+        <td>Triggers an event.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="update()">
+        <td><a href="yii-rbac-basemanager.html#update()-detail">update()</a></td>
+        <td>Updates the specified role, permission or rule in the system.</td>
+        <td><a href="yii-rbac-basemanager.html">yii\rbac\BaseManager</a></td>
+    </tr>
+            </table>
+</div>
+
+<div class="summary doc-method">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+                                            <tr id="addItem()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#addItem()-detail">addItem()</a></td>
+        <td>Adds an auth item to the RBAC system.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr id="addRule()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#addRule()-detail">addRule()</a></td>
+        <td>Adds a rule to the RBAC system.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+                                            <tr id="checkAccessFromCache()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#checkAccessFromCache()-detail">checkAccessFromCache()</a></td>
+        <td>Performs access check for the specified user based on the data loaded from cache.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr id="checkAccessRecursive()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#checkAccessRecursive()-detail">checkAccessRecursive()</a></td>
+        <td>Performs access check for the specified user.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+                                <tr id="detectLoop()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#detectLoop()-detail">detectLoop()</a></td>
+        <td>Checks whether there is a loop in the authorization item hierarchy.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+                <tr class="inherited" id="executeRule()">
+        <td><a href="yii-rbac-basemanager.html#executeRule()-detail">executeRule()</a></td>
+        <td>Executes the rule associated with the specified auth item.</td>
+        <td><a href="yii-rbac-basemanager.html">yii\rbac\BaseManager</a></td>
+    </tr>
+                                    <tr id="getChildrenList()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#getChildrenList()-detail">getChildrenList()</a></td>
+        <td>Returns the children for every parent.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr id="getChildrenRecursive()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#getChildrenRecursive()-detail">getChildrenRecursive()</a></td>
+        <td>Recursively finds all children and grand children of the specified item.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+                    <tr id="getItem()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#getItem()-detail">getItem()</a></td>
+        <td>Returns the named auth item.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr id="getItems()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#getItems()-detail">getItems()</a></td>
+        <td>Returns the items of the specified type.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+                                                                <tr class="inherited" id="hasNoAssignments()">
+        <td><a href="yii-rbac-basemanager.html#hasNoAssignments()-detail">hasNoAssignments()</a></td>
+        <td>Checks whether array of $assignments is empty and <a href="yii-rbac-basemanager.html#$defaultRoles-detail">$defaultRoles</a> property is empty as well.</td>
+        <td><a href="yii-rbac-basemanager.html">yii\rbac\BaseManager</a></td>
+    </tr>
+                                    <tr id="populateItem()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#populateItem()-detail">populateItem()</a></td>
+        <td>Populates an auth item with the data fetched from collection</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+                        <tr id="removeAllItems()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#removeAllItems()-detail">removeAllItems()</a></td>
+        <td>Removes all auth items of the specified type.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+                                <tr id="removeItem()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#removeItem()-detail">removeItem()</a></td>
+        <td>Removes an auth item from the RBAC system.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr id="removeRule()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#removeRule()-detail">removeRule()</a></td>
+        <td>Removes a rule from the RBAC system.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+                                <tr id="updateItem()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#updateItem()-detail">updateItem()</a></td>
+        <td>Updates an auth item in the RBAC system.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+            <tr id="updateRule()">
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html#updateRule()-detail">updateRule()</a></td>
+        <td>Updates a rule to the RBAC system.</td>
+        <td><a href="yii-mongodb-rbac-mongodbmanager.html">yii\mongodb\rbac\MongoDbManager</a></td>
+    </tr>
+    </table>
+</div>
+
+<a id="events"></a>
+
+<a id="constants"></a>
+
+<h2>Property Details</h2>
+
+<div class="property-doc">
+
+    <div class="detail-header h3" id="$assignmentCollection-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#$assignmentCollection-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L75" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L75" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $assignmentCollection        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>The name of the collection storing authorization item assignments. Defaults to "auth_assignment".</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.array">array</a></span> <a href="yii-mongodb-rbac-mongodbmanager.html#$assignmentCollection-detail">$assignmentCollection</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'auth_assignment'</span></div>
+
+
+    <div class="detail-header h3" id="$cache-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#$cache-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L62" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L62" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $cache        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>The cache used to improve RBAC performance. This can be one of the following:</p>
+<ul>
+<li>an application component ID (e.g. <code>cache</code>)</li>
+<li>a configuration array</li>
+<li>a <a href="yii-caching-cache.html">yii\caching\Cache</a> object</li>
+</ul>
+<p>When this is not set, it means caching is not enabled.</p>
+<p>Note that by enabling RBAC cache, all auth items, rules and auth item parent-child relationships will
+be cached and loaded into memory. This will improve the performance of RBAC permission check. However,
+it does require extra memory and as a result may not be appropriate if your RBAC system contains too many
+auth items. You should seek other RBAC implementations (e.g. RBAC based on Redis storage) in this case.</p>
+<p>Also note that if you modify RBAC items, rules or parent-child relationships from outside of this component,
+you have to manually call <a href="yii-mongodb-rbac-mongodbmanager.html#invalidateCache()-detail">invalidateCache()</a> to ensure data consistency.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-caching-cache.html">yii\caching\Cache</a>|<a href="http://www.php.net/language.types.array">array</a>|<a href="http://www.php.net/language.types.string">string</a></span> <a href="yii-mongodb-rbac-mongodbmanager.html#$cache-detail">$cache</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+
+
+    <div class="detail-header h3" id="$cacheKey-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#$cacheKey-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L67" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L67" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $cacheKey        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>The key used to store RBAC data in cache</p>
+
+        <p>See also <a href="yii-mongodb-rbac-mongodbmanager.html#$cache-detail">$cache</a>.</p>    </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="yii-mongodb-rbac-mongodbmanager.html#$cacheKey-detail">$cacheKey</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'rbac'</span></div>
+
+
+    <div class="detail-header h3" id="$db-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#$db-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L44" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L44" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $db        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>The MongoDB connection object or the application component ID of the MongoDB connection.
+After the MongoDbManager object is created, if you want to change this property, you should only assign it
+with a MongoDB connection object.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a>|<a href="http://www.php.net/language.types.array">array</a>|<a href="http://www.php.net/language.types.string">string</a></span> <a href="yii-mongodb-rbac-mongodbmanager.html#$db-detail">$db</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'mongodb'</span></div>
+
+
+    <div class="detail-header h3" id="$itemCollection-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#$itemCollection-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L71" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L71" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $itemCollection        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>The name of the collection storing authorization items. Defaults to "auth_item".</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.array">array</a></span> <a href="yii-mongodb-rbac-mongodbmanager.html#$itemCollection-detail">$itemCollection</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'auth_item'</span></div>
+
+
+    <div class="detail-header h3" id="$items-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#$items-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L84" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L84" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $items        <span class="detail-header-tag small">
+            protected                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>All auth items (name =&gt; Item)</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="yii-rbac-item.html">yii\rbac\Item</a>[]</span> <a href="yii-mongodb-rbac-mongodbmanager.html#$items-detail">$items</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+
+
+    <div class="detail-header h3" id="$ruleCollection-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#$ruleCollection-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L79" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L79" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $ruleCollection        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>The name of the collection storing rules. Defaults to "auth_rule".</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.array">array</a></span> <a href="yii-mongodb-rbac-mongodbmanager.html#$ruleCollection-detail">$ruleCollection</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'auth_rule'</span></div>
+
+
+    <div class="detail-header h3" id="$rules-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#$rules-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L88" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L88" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $rules        <span class="detail-header-tag small">
+            protected                         <em>read-only</em>                         property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>All auth rules (name =&gt; Rule)</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-rbac-rule.html">yii\rbac\Rule</a>[]</span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#getRules()-detail">getRules</a></strong> ( )</div>
+
+</div>
+<h2>Method Details</h2>
+
+<div class="method-doc">
+
+    <div class="detail-header h3" id="addChild()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#addChild()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L613" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L613" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        addChild()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Adds an item as a child of another item.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#addChild()-detail">addChild</a></strong> ( <span style="color: #0000BB">$parent</span>, <span style="color: #0000BB">$child</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$parent</span></td>
+                  <td class="param-type-col"><a href="yii-rbac-item.html">yii\rbac\Item</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$child</span></td>
+                  <td class="param-type-col"><a href="yii-rbac-item.html">yii\rbac\Item</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>Whether the child successfully added</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="yii-base-exception.html">yii\base\Exception</a></td>
+                  <td class="param-desc-col"><p>if the parent-child relationship already exists or if a loop has been detected.</p>
+</td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="addItem()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#addItem()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L240" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L240" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        addItem()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Adds an auth item to the RBAC system.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#addItem()-detail">addItem</a></strong> ( <span style="color: #0000BB">$item</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$item</span></td>
+                  <td class="param-type-col"><a href="yii-rbac-item.html">yii\rbac\Item</a></td>
+                  <td class="param-desc-col"><p>The item to add</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>Whether the auth item is successfully added to the system</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="http://www.php.net/class.exception">Exception</a></td>
+                  <td class="param-desc-col"><p>if data validation or saving fails (such as the name of the role or permission is not unique)</p>
+</td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="addRule()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#addRule()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L269" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L269" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        addRule()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Adds a rule to the RBAC system.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#addRule()-detail">addRule</a></strong> ( <span style="color: #0000BB">$rule</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$rule</span></td>
+                  <td class="param-type-col"><a href="yii-rbac-rule.html">yii\rbac\Rule</a></td>
+                  <td class="param-desc-col"><p>The rule to add</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>Whether the rule is successfully added to the system</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="http://www.php.net/class.exception">Exception</a></td>
+                  <td class="param-desc-col"><p>if data validation or saving fails (such as the name of the rule is not unique)</p>
+</td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="assign()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#assign()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L741" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L741" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        assign()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Assigns a role to a user.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-rbac-assignment.html">yii\rbac\Assignment</a></span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#assign()-detail">assign</a></strong> ( <span style="color: #0000BB">$role</span>, <span style="color: #0000BB">$userId</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$role</span></td>
+                  <td class="param-type-col"><a href="yii-rbac-role.html">yii\rbac\Role</a>|<a href="yii-rbac-permission.html">yii\rbac\Permission</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$userId</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>The user ID (see <a href="yii-web-user.html#$id-detail">yii\web\User::$id</a>)</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-rbac-assignment.html">yii\rbac\Assignment</a></td>
+                  <td class="param-desc-col"><p>The role assignment information.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="http://www.php.net/class.exception">Exception</a></td>
+                  <td class="param-desc-col"><p>if the role has already been assigned to the user</p>
+</td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="canAddChild()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#canAddChild()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L605" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L605" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        canAddChild()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Checks the possibility of adding a child to parent.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#canAddChild()-detail">canAddChild</a></strong> ( <span style="color: #0000BB">$parent</span>, <span style="color: #0000BB">$child</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$parent</span></td>
+                  <td class="param-type-col"><a href="yii-rbac-item.html">yii\rbac\Item</a></td>
+                  <td class="param-desc-col"><p>The parent item</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$child</span></td>
+                  <td class="param-type-col"><a href="yii-rbac-item.html">yii\rbac\Item</a></td>
+                  <td class="param-desc-col"><p>The child item to be added to the hierarchy</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>Possibility of adding</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="checkAccess()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#checkAccess()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L107" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L107" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        checkAccess()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong></strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#checkAccess()-detail">checkAccess</a></strong> ( <span style="color: #0000BB">$userId</span>, <span style="color: #0000BB">$permissionName</span>, <span style="color: #0000BB">$params&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$userId</span></td>
+                  <td class="param-type-col"></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$permissionName</span></td>
+                  <td class="param-type-col"></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$params</span></td>
+                  <td class="param-type-col"></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="checkAccessFromCache()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#checkAccessFromCache()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L128" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L128" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        checkAccessFromCache()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Performs access check for the specified user based on the data loaded from cache.</strong></p>
+
+        <p>This method is internally called by <a href="yii-mongodb-rbac-mongodbmanager.html#checkAccess()-detail">checkAccess()</a> when <a href="yii-mongodb-rbac-mongodbmanager.html#$cache-detail">$cache</a> is enabled.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#checkAccessFromCache()-detail">checkAccessFromCache</a></strong> ( <span style="color: #0000BB">$user</span>, <span style="color: #0000BB">$itemName</span>, <span style="color: #0000BB">$params</span>, <span style="color: #0000BB">$assignments</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$user</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>The user ID. This should can be either an integer or a string representing
+the unique identifier of a user. See <a href="yii-web-user.html#$id-detail">yii\web\User::$id</a>.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$itemName</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The name of the operation that need access check</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$params</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Name-value pairs that would be passed to rules associated
+with the tasks and roles assigned to the user. A param with name 'user' is added to this array,
+which holds the value of <code>$userId</code>.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$assignments</span></td>
+                  <td class="param-type-col"><a href="yii-rbac-assignment.html">yii\rbac\Assignment</a>[]</td>
+                  <td class="param-desc-col"><p>The assignments to the specified user</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>Whether the operations can be performed by the user.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="checkAccessRecursive()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#checkAccessRecursive()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L169" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L169" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        checkAccessRecursive()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Performs access check for the specified user.</strong></p>
+
+        <p>This method is internally called by <a href="yii-mongodb-rbac-mongodbmanager.html#checkAccess()-detail">checkAccess()</a>.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#checkAccessRecursive()-detail">checkAccessRecursive</a></strong> ( <span style="color: #0000BB">$user</span>, <span style="color: #0000BB">$itemName</span>, <span style="color: #0000BB">$params</span>, <span style="color: #0000BB">$assignments</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$user</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>The user ID. This should can be either an integer or a string representing
+the unique identifier of a user. See <a href="yii-web-user.html#$id-detail">yii\web\User::$id</a>.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$itemName</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The name of the operation that need access check</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$params</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Name-value pairs that would be passed to rules associated
+with the tasks and roles assigned to the user. A param with name 'user' is added to this array,
+which holds the value of <code>$userId</code>.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$assignments</span></td>
+                  <td class="param-type-col"><a href="yii-rbac-assignment.html">yii\rbac\Assignment</a>[]</td>
+                  <td class="param-desc-col"><p>The assignments to the specified user</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>Whether the operations can be performed by the user.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="detectLoop()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#detectLoop()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L1050" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L1050" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        detectLoop()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Checks whether there is a loop in the authorization item hierarchy.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#detectLoop()-detail">detectLoop</a></strong> ( <span style="color: #0000BB">$parent</span>, <span style="color: #0000BB">$child</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$parent</span></td>
+                  <td class="param-type-col"><a href="yii-rbac-item.html">yii\rbac\Item</a></td>
+                  <td class="param-desc-col"><p>The parent item</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$child</span></td>
+                  <td class="param-type-col"><a href="yii-rbac-item.html">yii\rbac\Item</a></td>
+                  <td class="param-desc-col"><p>The child item to be added to the hierarchy</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>Whether a loop exists</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getAssignment()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#getAssignment()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L788" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L788" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getAssignment()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns the assignment information regarding a role and a user.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.null">null</a>|<a href="yii-rbac-assignment.html">yii\rbac\Assignment</a></span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#getAssignment()-detail">getAssignment</a></strong> ( <span style="color: #0000BB">$roleName</span>, <span style="color: #0000BB">$userId</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$roleName</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The role name</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$userId</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>The user ID (see <a href="yii-web-user.html#$id-detail">yii\web\User::$id</a>)</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.null">null</a>|<a href="yii-rbac-assignment.html">yii\rbac\Assignment</a></td>
+                  <td class="param-desc-col"><p>The assignment information. Null is returned if
+the role is not assigned to the user.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getAssignments()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#getAssignments()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L812" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L812" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getAssignments()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns all role assignment information for the specified user.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-rbac-assignment.html">yii\rbac\Assignment</a>[]</span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#getAssignments()-detail">getAssignments</a></strong> ( <span style="color: #0000BB">$userId</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$userId</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>The user ID (see <a href="yii-web-user.html#$id-detail">yii\web\User::$id</a>)</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-rbac-assignment.html">yii\rbac\Assignment</a>[]</td>
+                  <td class="param-desc-col"><p>The assignments indexed by role names. An empty array will be
+returned if there is no role assigned to the user.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getChildRoles()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#getChildRoles()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L477" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L477" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getChildRoles()
+        <span class="detail-header-tag small">
+            public                                    method
+                            (available since version 2.1.2)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns child roles of the role specified. Depth isn't limited.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-rbac-role.html">yii\rbac\Role</a>[]</span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#getChildRoles()-detail">getChildRoles</a></strong> ( <span style="color: #0000BB">$roleName</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$roleName</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Name of the role to file child roles for</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-rbac-role.html">yii\rbac\Role</a>[]</td>
+                  <td class="param-desc-col"><p>Child roles. The array is indexed by the role names.
+First element is an instance of the parent Role itself.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="yii-base-invalidparamexception.html">yii\base\InvalidParamException</a></td>
+                  <td class="param-desc-col"><p>if Role was not found that are getting by $roleName</p>
+</td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getChildren()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#getChildren()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L720" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L720" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getChildren()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns the child permissions and/or roles.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-rbac-item.html">yii\rbac\Item</a>[]</span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#getChildren()-detail">getChildren</a></strong> ( <span style="color: #0000BB">$name</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The parent name</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-rbac-item.html">yii\rbac\Item</a>[]</td>
+                  <td class="param-desc-col"><p>The child permissions and/or roles</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getChildrenList()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#getChildrenList()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L1012" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L1012" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getChildrenList()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns the children for every parent.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#getChildrenList()-detail">getChildrenList</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The children list. Each array key is a parent item name,
+and the corresponding array value is a list of child item names.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getChildrenRecursive()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#getChildrenRecursive()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L1034" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L1034" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getChildrenRecursive()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Recursively finds all children and grand children of the specified item.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#getChildrenRecursive()-detail">getChildrenRecursive</a></strong> ( <span style="color: #0000BB">$name</span>, <span style="color: #0000BB">$childrenList</span>, <b>&</b><span style="color: #0000BB">$result</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The name of the item whose children are to be looked for.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$childrenList</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The child list built via <a href="yii-mongodb-rbac-mongodbmanager.html#getChildrenList()-detail">getChildrenList()</a></p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$result</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The children and grand children (in array keys)</p>
+</td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getItem()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#getItem()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L199" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L199" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getItem()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns the named auth item.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="yii-rbac-item.html">yii\rbac\Item</a></span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#getItem()-detail">getItem</a></strong> ( <span style="color: #0000BB">$name</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The auth item name.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-rbac-item.html">yii\rbac\Item</a></td>
+                  <td class="param-desc-col"><p>The auth item corresponding to the specified name. Null is returned if no such item.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getItems()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#getItems()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L223" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L223" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getItems()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns the items of the specified type.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="yii-rbac-item.html">yii\rbac\Item</a>[]</span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#getItems()-detail">getItems</a></strong> ( <span style="color: #0000BB">$type</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$type</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>The auth item type (either <a href="yii-rbac-item.html#TYPE_ROLE-detail">yii\rbac\Item::TYPE_ROLE</a> or <a href="yii-rbac-item.html#TYPE_PERMISSION-detail">yii\rbac\Item::TYPE_PERMISSION</a></p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-rbac-item.html">yii\rbac\Item</a>[]</td>
+                  <td class="param-desc-col"><p>The auth items of the specified type.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getPermissionsByRole()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#getPermissionsByRole()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L500" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L500" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getPermissionsByRole()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns all permissions that the specified role represents.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-rbac-permission.html">yii\rbac\Permission</a>[]</span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#getPermissionsByRole()-detail">getPermissionsByRole</a></strong> ( <span style="color: #0000BB">$roleName</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$roleName</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The role name</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-rbac-permission.html">yii\rbac\Permission</a>[]</td>
+                  <td class="param-desc-col"><p>All permissions that the role represents. The array is indexed by the permission names.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getPermissionsByUser()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#getPermissionsByUser()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L525" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L525" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getPermissionsByUser()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns all permissions that the user has.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-rbac-permission.html">yii\rbac\Permission</a>[]</span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#getPermissionsByUser()-detail">getPermissionsByUser</a></strong> ( <span style="color: #0000BB">$userId</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$userId</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>The user ID (see <a href="yii-web-user.html#$id-detail">yii\web\User::$id</a>)</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-rbac-permission.html">yii\rbac\Permission</a>[]</td>
+                  <td class="param-desc-col"><p>All permissions that the user has. The array is indexed by the permission names.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getRolesByUser()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#getRolesByUser()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L441" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L441" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getRolesByUser()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns the roles that are assigned to the user via <a href="yii-mongodb-rbac-mongodbmanager.html#assign()-detail">assign()</a>.</strong></p>
+
+        <p>Note that child roles that are not assigned directly to the user will not be returned.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-rbac-role.html">yii\rbac\Role</a>[]</span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#getRolesByUser()-detail">getRolesByUser</a></strong> ( <span style="color: #0000BB">$userId</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$userId</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>The user ID (see <a href="yii-web-user.html#$id-detail">yii\web\User::$id</a>)</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-rbac-role.html">yii\rbac\Role</a>[]</td>
+                  <td class="param-desc-col"><p>All roles directly assigned to the user. The array is indexed by the role names.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getRule()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#getRule()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L570" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L570" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getRule()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns the rule of the specified name.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.null">null</a>|<a href="yii-rbac-rule.html">yii\rbac\Rule</a></span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#getRule()-detail">getRule</a></strong> ( <span style="color: #0000BB">$name</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The rule name</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.null">null</a>|<a href="yii-rbac-rule.html">yii\rbac\Rule</a></td>
+                  <td class="param-desc-col"><p>The rule object, or null if the specified name does not correspond to a rule.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getRules()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#getRules()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L586" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L586" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getRules()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns all rules available in the system.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-rbac-rule.html">yii\rbac\Rule</a>[]</span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#getRules()-detail">getRules</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-rbac-rule.html">yii\rbac\Rule</a>[]</td>
+                  <td class="param-desc-col"><p>The rules indexed by the rule names</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getUserIdsByRole()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#getUserIdsByRole()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L837" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L837" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getUserIdsByRole()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns all user IDs assigned to the role specified.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#getUserIdsByRole()-detail">getUserIdsByRole</a></strong> ( <span style="color: #0000BB">$roleName</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$roleName</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Array of user ID strings</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="hasChild()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#hasChild()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L702" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L702" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        hasChild()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns a value indicating whether the child already exists for the parent.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#hasChild()-detail">hasChild</a></strong> ( <span style="color: #0000BB">$parent</span>, <span style="color: #0000BB">$child</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$parent</span></td>
+                  <td class="param-type-col"><a href="yii-rbac-item.html">yii\rbac\Item</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$child</span></td>
+                  <td class="param-type-col"><a href="yii-rbac-item.html">yii\rbac\Item</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>Whether <code>$child</code> is already a child of <code>$parent</code></p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="init()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#init()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L95" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L95" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        init()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Initializes the application component.</strong></p>
+
+        <p>This method overrides the parent implementation by establishing the MongoDB connection.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#init()-detail">init</a></strong> ( )</td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="invalidateCache()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#invalidateCache()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L902" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L902" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        invalidateCache()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Invalidates RBAC related cache</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#invalidateCache()-detail">invalidateCache</a></strong> ( )</td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="loadFromCache()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#loadFromCache()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L980" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L980" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        loadFromCache()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Loads data from cache</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#loadFromCache()-detail">loadFromCache</a></strong> ( )</td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="populateItem()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#populateItem()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L916" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L916" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        populateItem()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Populates an auth item with the data fetched from collection</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="yii-rbac-item.html">yii\rbac\Item</a></span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#populateItem()-detail">populateItem</a></strong> ( <span style="color: #0000BB">$row</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$row</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The data from the auth item collection</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-rbac-item.html">yii\rbac\Item</a></td>
+                  <td class="param-desc-col"><p>The populated auth item instance (either Role or Permission)</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="removeAll()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#removeAll()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L854" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L854" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        removeAll()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Removes all authorization data, including roles, permissions, rules, and assignments.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#removeAll()-detail">removeAll</a></strong> ( )</td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="removeAllAssignments()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#removeAllAssignments()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L894" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L894" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        removeAllAssignments()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Removes all role assignments.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#removeAllAssignments()-detail">removeAllAssignments</a></strong> ( )</td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="removeAllItems()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#removeAllItems()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L940" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L940" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        removeAllItems()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Removes all auth items of the specified type.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#removeAllItems()-detail">removeAllItems</a></strong> ( <span style="color: #0000BB">$type</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$type</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>The auth item type (either Item::TYPE_PERMISSION or Item::TYPE_ROLE)</p>
+</td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="removeAllPermissions()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#removeAllPermissions()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L865" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L865" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        removeAllPermissions()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Removes all permissions.</strong></p>
+
+        <p>All parent child relations will be adjusted accordingly.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#removeAllPermissions()-detail">removeAllPermissions</a></strong> ( )</td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="removeAllRoles()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#removeAllRoles()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L873" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L873" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        removeAllRoles()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Removes all roles.</strong></p>
+
+        <p>All parent child relations will be adjusted accordingly.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#removeAllRoles()-detail">removeAllRoles</a></strong> ( )</td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="removeAllRules()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#removeAllRules()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L881" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L881" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        removeAllRules()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Removes all rules.</strong></p>
+
+        <p>All roles and permissions which have rules will be adjusted accordingly.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#removeAllRules()-detail">removeAllRules</a></strong> ( )</td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="removeChild()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#removeChild()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L650" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L650" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        removeChild()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Removes a child from its parent.</strong></p>
+
+        <p>Note, the child item is not deleted. Only the parent-child relationship is removed.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#removeChild()-detail">removeChild</a></strong> ( <span style="color: #0000BB">$parent</span>, <span style="color: #0000BB">$child</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$parent</span></td>
+                  <td class="param-type-col"><a href="yii-rbac-item.html">yii\rbac\Item</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$child</span></td>
+                  <td class="param-type-col"><a href="yii-rbac-item.html">yii\rbac\Item</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>Whether the removal is successful</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="removeChildren()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#removeChildren()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L677" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L677" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        removeChildren()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Removed all children form their parent.</strong></p>
+
+        <p>Note, the children items are not deleted. Only the parent-child relationships are removed.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#removeChildren()-detail">removeChildren</a></strong> ( <span style="color: #0000BB">$parent</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$parent</span></td>
+                  <td class="param-type-col"><a href="yii-rbac-item.html">yii\rbac\Item</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>Whether the removal is successful</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="removeItem()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#removeItem()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L294" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L294" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        removeItem()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Removes an auth item from the RBAC system.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#removeItem()-detail">removeItem</a></strong> ( <span style="color: #0000BB">$item</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$item</span></td>
+                  <td class="param-type-col"><a href="yii-rbac-item.html">yii\rbac\Item</a></td>
+                  <td class="param-desc-col"><p>The item to remove</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>Whether the role or permission is successfully removed</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="http://www.php.net/class.exception">Exception</a></td>
+                  <td class="param-desc-col"><p>if data validation or saving fails (such as the name of the role or permission is not unique)</p>
+</td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="removeRule()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#removeRule()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L329" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L329" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        removeRule()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Removes a rule from the RBAC system.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#removeRule()-detail">removeRule</a></strong> ( <span style="color: #0000BB">$rule</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$rule</span></td>
+                  <td class="param-type-col"><a href="yii-rbac-rule.html">yii\rbac\Rule</a></td>
+                  <td class="param-desc-col"><p>The rule to remove</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>Whether the rule is successfully removed</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="http://www.php.net/class.exception">Exception</a></td>
+                  <td class="param-desc-col"><p>if data validation or saving fails (such as the name of the rule is not unique)</p>
+</td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="revoke()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#revoke()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L762" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L762" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        revoke()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Revokes a role from a user.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#revoke()-detail">revoke</a></strong> ( <span style="color: #0000BB">$role</span>, <span style="color: #0000BB">$userId</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$role</span></td>
+                  <td class="param-type-col"><a href="yii-rbac-role.html">yii\rbac\Role</a>|<a href="yii-rbac-permission.html">yii\rbac\Permission</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$userId</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>The user ID (see <a href="yii-web-user.html#$id-detail">yii\web\User::$id</a>)</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>Whether the revoking is successful</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="revokeAll()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#revokeAll()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L775" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L775" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        revokeAll()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Revokes all roles from a user.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#revokeAll()-detail">revokeAll</a></strong> ( <span style="color: #0000BB">$userId</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$userId</span></td>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"><p>The user ID (see <a href="yii-web-user.html#$id-detail">yii\web\User::$id</a>)</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>Whether the revoking is successful</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="updateItem()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#updateItem()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L345" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L345" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        updateItem()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Updates an auth item in the RBAC system.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#updateItem()-detail">updateItem</a></strong> ( <span style="color: #0000BB">$name</span>, <span style="color: #0000BB">$item</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The name of the item being updated</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$item</span></td>
+                  <td class="param-type-col"><a href="yii-rbac-item.html">yii\rbac\Item</a></td>
+                  <td class="param-desc-col"><p>The updated item</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>Whether the auth item is successfully updated</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="http://www.php.net/class.exception">Exception</a></td>
+                  <td class="param-desc-col"><p>if data validation or saving fails (such as the name of the role or permission is not unique)</p>
+</td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="updateRule()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-rbac-mongodbmanager.html#updateRule()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/rbac/MongoDbManager.php#L412" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/rbac/MongoDbManager.php#L412" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        updateRule()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Updates a rule to the RBAC system.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-mongodb-rbac-mongodbmanager.html#updateRule()-detail">updateRule</a></strong> ( <span style="color: #0000BB">$name</span>, <span style="color: #0000BB">$rule</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The name of the rule being updated</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$rule</span></td>
+                  <td class="param-type-col"><a href="yii-rbac-rule.html">yii\rbac\Rule</a></td>
+                  <td class="param-desc-col"><p>The updated rule</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>Whether the rule is successfully updated</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="http://www.php.net/class.exception">Exception</a></td>
+                  <td class="param-desc-col"><p>if data validation or saving fails (such as the name of the rule is not unique)</p>
+</td>
+                </tr>
+                        </table>
+
+<!--	-->
+</div>
+        </div>
+</div>
+
+<script type="text/javascript">
+    /*<![CDATA[*/
+    $("a.toggle").on('click', function () {
+        var $this = $(this);
+        if ($this.hasClass('properties-hidden')) {
+            $this.text($this.text().replace(/Show/,'Hide'));
+            $this.parents(".summary").find(".inherited").show();
+            $this.removeClass('properties-hidden');
+        } else {
+            $this.text($this.text().replace(/Hide/,'Show'));
+            $this.parents(".summary").find(".inherited").hide();
+            $this.addClass('properties-hidden');
+        }
+
+        return false;
+    });
+    /*
+     $(".sourceCode a.show").toggle(function () {
+     $(this).text($(this).text().replace(/show/,'hide'));
+     $(this).parents(".sourceCode").find("div.code").show();
+     },function () {
+     $(this).text($(this).text().replace(/hide/,'show'));
+     $(this).parents(".sourceCode").find("div.code").hide();
+     });
+     $("a.sourceLink").click(function () {
+     $(this).attr('target','_blank');
+     });
+     */
+    /*]]>*/
+</script>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:30 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

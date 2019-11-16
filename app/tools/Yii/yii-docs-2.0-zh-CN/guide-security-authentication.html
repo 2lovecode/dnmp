@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>认证（Authentication） - 安全（Security） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1802" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1802-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1802-collapse" class="collapse navbar-collapse"><ul id="w1803" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1804" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1786" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-1786" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-1787" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-1787" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-1788" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-1788" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-1789" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-1789" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-1790" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-1790" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-1791" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-1791" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-zh-CN/README.md">Sphinx</a>
+<a class="list-group-item" href="./guide-yii2-redis.html">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-zh-CN/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-zh-CN/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1792" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-1792" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-1793" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-1793" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item active" href="#navigation-1794" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-1794" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item active" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-1795" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-1795" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-1796" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-1796" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-1797" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-1797" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-1798" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-1798" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-1799" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-1799" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-1800" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-1800" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1801" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-1801" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>认证 <span id="ren-zheng"></span><a href="#ren-zheng" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#configuring-user">配置 yii\web\User</a></li>
+<li><a href="#implementing-identity">认证接口 yii\web\IdentityInterface 的实现</a></li>
+<li><a href="#using-user">使用用户组件 yii\web\User</a></li>
+<li><a href="#auth-events">认证事件</a></li></ol></div>
+<p>认证是鉴定用户身份的过程。它通常使用一个标识符
+（如用户名或电子邮件地址）和一个加密令牌（比如密码或者存取令牌）来
+鉴别用户身份。认证是登录功能的基础。</p>
+<p>Yii提供了一个认证框架，它连接了不同的组件以支持登录。欲使用这个框架，
+你主要需要做以下工作：</p>
+<ul>
+<li>设置用户组件 <a href="./yii-web-user.html">user</a> ;</li>
+<li>创建一个类实现 <a href="./yii-web-identityinterface.html">yii\web\IdentityInterface</a> 接口。</li>
+</ul>
+<h2>配置 <a href="./yii-web-user.html">yii\web\User</a>  <span id="configuring-user"></span><a href="#configuring-user" class="hashlink">&para;</a></h2><p>用户组件 <a href="./yii-web-user.html">user</a> 用来管理用户的认证状态。这需要你
+指定一个含有实际认证逻辑的认证类 <a href="./yii-web-user.html#$identityClass-detail">identity class</a>。
+在以下web应用的配置项中，将用户用户组件 <a href="./yii-web-user.html">user</a> 的
+认证类 <a href="./yii-web-user.html#$identityClass-detail">identity class</a> 配置成
+模型类 <code>app\models\User</code>， 它的实现将在下一节中讲述。 </p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'user'</span> =&gt; [
+            <span class="hljs-string">'identityClass'</span> =&gt; <span class="hljs-string">'app\models\User'</span>,
+        ],
+    ],
+];
+</code></pre>
+<h2>认证接口 <a href="./yii-web-identityinterface.html">yii\web\IdentityInterface</a> 的实现  <span id="implementing-identity"></span><a href="#implementing-identity" class="hashlink">&para;</a></h2><p>认证类 <a href="./yii-web-user.html#$identityClass-detail">identity class</a> 必须实现包含以下方法的
+认证接口 <a href="./yii-web-identityinterface.html">yii\web\IdentityInterface</a>：</p>
+<ul>
+<li><a href="./yii-web-identityinterface.html#findIdentity()-detail">findIdentity()</a>：根据指定的用户ID查找
+认证模型类的实例，当你需要使用session来维持登录状态的时候会用到这个方法。</li>
+<li><a href="./yii-web-identityinterface.html#findIdentityByAccessToken()-detail">findIdentityByAccessToken()</a>：根据指定的存取令牌查找
+认证模型类的实例，该方法用于
+通过单个加密令牌认证用户的时候（比如无状态的RESTful应用）。</li>
+<li><a href="./yii-web-identityinterface.html#getId()-detail">getId()</a>：获取该认证实例表示的用户的ID。</li>
+<li><a href="./yii-web-identityinterface.html#getAuthKey()-detail">getAuthKey()</a>：获取基于 cookie 登录时使用的认证密钥。
+认证密钥储存在 cookie 里并且将来会与服务端的版本进行比较以确保
+cookie的有效性。</li>
+<li><a href="./yii-web-identityinterface.html#validateAuthKey()-detail">validateAuthKey()</a> ：是基于 cookie 登录密钥的
+验证的逻辑的实现。</li>
+</ul>
+<p>用不到的方法可以空着，例如，你的项目只是一个
+无状态的 RESTful 应用，只需实现 <a href="./yii-web-identityinterface.html#findIdentityByAccessToken()-detail">findIdentityByAccessToken()</a>
+和 <a href="./yii-web-identityinterface.html#getId()-detail">getId()</a> ，其他的方法的函数体留空即可。</p>
+<p>下面的例子是一个通过结合了 <code>user</code> 数据表的 
+AR 模型 <a href="guide-db-active-record.html">Active Record</a> 实现的一个认证类 <a href="./yii-web-user.html#$identityClass-detail">identity class</a>。</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">IdentityInterface</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">IdentityInterface</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">tableName</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'user'</span>;
+    }
+
+    <span class="hljs-comment">/**
+     * 根据给到的ID查询身份。
+     *
+     * <span class="hljs-doctag">@param</span> string|integer $id 被查询的ID
+     * <span class="hljs-doctag">@return</span> IdentityInterface|null 通过ID匹配到的身份对象
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">findIdentity</span><span class="hljs-params">(<span class="hljs-variable">$id</span>)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">static</span>::findOne(<span class="hljs-variable">$id</span>);
+    }
+
+    <span class="hljs-comment">/**
+     * 根据 token 查询身份。
+     *
+     * <span class="hljs-doctag">@param</span> string $token 被查询的 token
+     * <span class="hljs-doctag">@return</span> IdentityInterface|null 通过 token 得到的身份对象
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">findIdentityByAccessToken</span><span class="hljs-params">(<span class="hljs-variable">$token</span>, <span class="hljs-variable">$type</span> = null)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">static</span>::findOne([<span class="hljs-string">'access_token'</span> =&gt; <span class="hljs-variable">$token</span>]);
+    }
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@return</span> int|string 当前用户ID
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getId</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;id;
+    }
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@return</span> string 当前用户的（cookie）认证密钥
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAuthKey</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;auth_key;
+    }
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@param</span> string $authKey
+     * <span class="hljs-doctag">@return</span> boolean if auth key is valid for current user
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validateAuthKey</span><span class="hljs-params">(<span class="hljs-variable">$authKey</span>)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;getAuthKey() === <span class="hljs-variable">$authKey</span>;
+    }
+}
+</code></pre>
+<p>如上所述，如果你的应用利用 cookie 登录，
+你只需要实现 <code>getAuthKey()</code> 和 <code>validateAuthKey()</code> 方法。这样的话，你可以使用下面的代码在 
+<code>user</code> 表中生成和存储每个用户的认证密钥。</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">IdentityInterface</span>
+</span>{
+    ......
+    
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">beforeSave</span><span class="hljs-params">(<span class="hljs-variable">$insert</span>)</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">parent</span>::beforeSave(<span class="hljs-variable">$insert</span>)) {
+            <span class="hljs-keyword">if</span> (<span class="hljs-variable">$this</span>-&gt;isNewRecord) {
+                <span class="hljs-variable">$this</span>-&gt;auth_key = \Yii::<span class="hljs-variable">$app</span>-&gt;security-&gt;generateRandomString();
+            }
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    }
+}
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>不要混淆 <code>user</code> 认证类和用户组件 <a href="./yii-web-user.html">yii\web\User</a>。前者是实现
+  认证逻辑的类，通常用关联了
+  持久性存储的用户信息的AR模型 <a href="guide-db-active-record.html">Active Record</a> 实现。后者是负责管理用户认证状态的
+  应用组件。</p>
+</blockquote>
+<h2>使用用户组件 <a href="./yii-web-user.html">yii\web\User</a>  <span id="using-user"></span><a href="#using-user" class="hashlink">&para;</a></h2><p>在 <code>user</code> 应用组件方面，你主要用到 <a href="./yii-web-user.html">yii\web\User</a> 。</p>
+<p>你可以使用表达式 <code>Yii::$app-&gt;user-&gt;identity</code> 检测当前用户身份。它返回
+一个表示当前登录用户的认证类 <a href="./yii-web-user.html#$identityClass-detail">identity class</a> 的实例，
+未认证用户（游客）则返回 null。下面的代码展示了如何从 <a href="./yii-web-user.html">yii\web\User</a> 
+获取其他认证相关信息：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 当前用户的身份实例。未认证用户则为 Null 。</span>
+<span class="hljs-variable">$identity</span> = Yii::<span class="hljs-variable">$app</span>-&gt;user-&gt;identity;
+
+<span class="hljs-comment">// 当前用户的ID。 未认证用户则为 Null 。</span>
+<span class="hljs-variable">$id</span> = Yii::<span class="hljs-variable">$app</span>-&gt;user-&gt;id;
+
+<span class="hljs-comment">// 判断当前用户是否是游客（未认证的）</span>
+<span class="hljs-variable">$isGuest</span> = Yii::<span class="hljs-variable">$app</span>-&gt;user-&gt;isGuest;
+</code></pre>
+<p>你可以使用下面的代码登录用户：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 使用指定用户名获取用户身份实例。</span>
+<span class="hljs-comment">// 请注意，如果需要的话您可能要检验密码</span>
+<span class="hljs-variable">$identity</span> = User::findOne([<span class="hljs-string">'username'</span> =&gt; <span class="hljs-variable">$username</span>]);
+
+<span class="hljs-comment">// 登录用户</span>
+Yii::<span class="hljs-variable">$app</span>-&gt;user-&gt;login(<span class="hljs-variable">$identity</span>);
+</code></pre>
+<p><a href="./yii-web-user.html#login()-detail">yii\web\User::login()</a> 方法将当前用户的身份登记到 <a href="./yii-web-user.html">yii\web\User</a>。如果 session 设置为 
+<a href="./yii-web-user.html#$enableSession-detail">enabled</a>，则使用 session 记录用户身份，用户的
+认证状态将在整个会话中得以维持。如果开启自动登录 <a href="./yii-web-user.html#$enableAutoLogin-detail">enabled</a> 
+则基于 cookie 登录（如：记住登录状态），它将使用 cookie 保存用户身份，这样
+只要 cookie 有效就可以恢复登录状态。</p>
+<p>为了使用 cookie 登录，你需要在应用配置文件中将 <a href="./yii-web-user.html#$enableAutoLogin-detail">yii\web\User::$enableAutoLogin</a> 
+设为 true。你还需要在 <a href="./yii-web-user.html#login()-detail">yii\web\User::login()</a> 方法中
+传递有效期（记住登录状态的时长）参数。</p>
+<p>注销用户：</p>
+<pre><code class="hljs php language-php">Yii::<span class="hljs-variable">$app</span>-&gt;user-&gt;logout();
+</code></pre>
+<p>请注意，启用 session 时注销用户才有意义。该方法将从内存和 session 中
+同时清理用户认证状态。默认情况下，它还会注销所有的
+用户会话数据。如果你希望保留这些会话数据，可以换成 <code>Yii::$app-&gt;user-&gt;logout(false)</code> 。</p>
+<h2>认证事件  <span id="auth-events"></span><a href="#auth-events" class="hashlink">&para;</a></h2><p><a href="./yii-web-user.html">yii\web\User</a> 类在登录和注销流程引发一些事件。</p>
+<ul>
+<li><a href="./yii-web-user.html#EVENT_BEFORE_LOGIN-detail">EVENT_BEFORE_LOGIN</a>：在登录 <a href="./yii-web-user.html#login()-detail">yii\web\User::login()</a> 时引发。
+如果事件句柄将事件对象的 <a href="./yii-web-userevent.html#$isValid-detail">isValid</a> 属性设为 false，
+登录流程将会被取消。</li>
+<li><a href="./yii-web-user.html#EVENT_AFTER_LOGIN-detail">EVENT_AFTER_LOGIN</a>：登录成功后引发。</li>
+<li><a href="./yii-web-user.html#EVENT_BEFORE_LOGOUT-detail">EVENT_BEFORE_LOGOUT</a>：注销 <a href="./yii-web-user.html#logout()-detail">yii\web\User::logout()</a> 前引发。
+如果事件句柄将事件对象的 <a href="./yii-web-userevent.html#$isValid-detail">isValid</a> 属性设为 false，
+注销流程将会被取消。</li>
+<li><a href="./yii-web-user.html#EVENT_AFTER_LOGOUT-detail">EVENT_AFTER_LOGOUT</a>：成功注销后引发。</li>
+</ul>
+<p>你可以通过响应这些事件来实现一些类似登录统计、在线人数统计的功能。例如,
+在登录后 <a href="./yii-web-user.html#EVENT_AFTER_LOGIN-detail">EVENT_AFTER_LOGIN</a> 的处理程序，你可以将用户的登录时间和IP记录到
+<code>user</code> 表中。</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:19 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

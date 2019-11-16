@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>响应（Responses） - 请求处理（Handling Requests） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1384" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1384-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1384-collapse" class="collapse navbar-collapse"><ul id="w1385" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1386" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1368" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-1368" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-1369" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-1369" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-1370" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-1370" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item active" href="#navigation-1371" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-1371" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item active" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-1372" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-1372" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-1373" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-1373" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-zh-CN/README.md">Sphinx</a>
+<a class="list-group-item" href="./guide-yii2-redis.html">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-zh-CN/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-zh-CN/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1374" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-1374" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-1375" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-1375" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-1376" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-1376" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-1377" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-1377" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-1378" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-1378" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-1379" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-1379" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-1380" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-1380" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-1381" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-1381" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-1382" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-1382" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1383" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-1383" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>响应 <span id="xiang-ying"></span><a href="#xiang-ying" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#status-code">状态码</a></li>
+<li><a href="#http-headers">HTTP 头部</a></li>
+<li><a href="#response-body">响应主体</a></li>
+<li><a href="#browser-redirection">浏览器跳转</a></li>
+<li><a href="#sending-files">发送文件</a></li>
+<li><a href="#sending-response">发送响应</a></li></ol></div>
+<p>当一个应用在处理完一个<a href="guide-runtime-requests.html">请求</a>后, 这个应用会生成一个 <a href="./yii-web-response.html">response</a> 响应对象并把这个响应对象发送给终端用户
+这个响应对象包含的信息有 HTTP 状态码，HTTP 头和主体内容等, 
+从本质上说，网页应用开发最终的目标就是根据不同的请求去构建这些响应对象。</p>
+<p>在大多数实际应用情况下，你应该主要地去处理 <code>response</code> 这个 <a href="guide-structure-application-components.html">应用组件</a>，
+在默认情况下，它是一个继承自 <a href="./yii-web-response.html">yii\web\Response</a> 的实例
+然而，Yii 也允许你创建自己的响应对象并发送给终端用户，这方面在后续会阐述。</p>
+<p>在本节，我们将会讲述如何组装和构建响应并把它发送给终端用户。</p>
+<h2>状态码  <span id="status-code"></span><a href="#status-code" class="hashlink">&para;</a></h2><p>构建响应要做的第一件事就是声明请求是否被成功处理，我们可通过设置
+<a href="./yii-web-response.html#$statusCode-detail">yii\web\Response::$statusCode</a> 这个属性来做到这一点，该属性接受一个有效的
+<a href="https://tools.ietf.org/html/rfc2616#section-10">HTTP 状态码</a>。例如，表明该请求已被成功处理，
+可以设置状态码为 200，如下所示：</p>
+<pre><code class="hljs php language-php">Yii::<span class="hljs-variable">$app</span>-&gt;response-&gt;statusCode = <span class="hljs-number">200</span>;
+</code></pre>
+<p>尽管如此，大多数情况下不需要明确设置状态码，
+因为 <a href="./yii-web-response.html#$statusCode-detail">yii\web\Response::$statusCode</a> 状态码默认为 200，
+如果需要指定请求失败，可抛出对应的 HTTP 异常，如下所示：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> \yii\web\NotFoundHttpException;
+</code></pre>
+<p>当<a href="guide-runtime-handling-errors.html">错误处理器</a> 捕获到一个异常，会从异常中提取状态码并赋值到响应，
+对于上述的 <a href="./yii-web-notfoundhttpexception.html">yii\web\NotFoundHttpException</a> 对应 HTTP 404 状态码，
+以下为 Yii 预定义的 HTTP 异常：</p>
+<ul>
+<li><a href="./yii-web-badrequesthttpexception.html">yii\web\BadRequestHttpException</a>：状态码 400。</li>
+<li><a href="./yii-web-conflicthttpexception.html">yii\web\ConflictHttpException</a>：状态码 409。</li>
+<li><a href="./yii-web-forbiddenhttpexception.html">yii\web\ForbiddenHttpException</a>：状态码 403。</li>
+<li><a href="./yii-web-gonehttpexception.html">yii\web\GoneHttpException</a>：状态码 410。</li>
+<li><a href="./yii-web-methodnotallowedhttpexception.html">yii\web\MethodNotAllowedHttpException</a>：状态码 405。</li>
+<li><a href="./yii-web-notacceptablehttpexception.html">yii\web\NotAcceptableHttpException</a>：状态码 406。</li>
+<li><a href="./yii-web-notfoundhttpexception.html">yii\web\NotFoundHttpException</a>：状态码 404。</li>
+<li><a href="./yii-web-servererrorhttpexception.html">yii\web\ServerErrorHttpException</a>：状态码 500。</li>
+<li><a href="./yii-web-toomanyrequestshttpexception.html">yii\web\TooManyRequestsHttpException</a>：状态码 429。</li>
+<li><a href="./yii-web-unauthorizedhttpexception.html">yii\web\UnauthorizedHttpException</a>：状态码 401。</li>
+<li><a href="./yii-web-unsupportedmediatypehttpexception.html">yii\web\UnsupportedMediaTypeHttpException</a>：状态码 415。</li>
+</ul>
+<p>如果想抛出的异常不在如上列表中，可创建一个 <a href="./yii-web-httpexception.html">yii\web\HttpException</a> 异常，
+带上状态码抛出，如下：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> \yii\web\HttpException(<span class="hljs-number">402</span>);
+</code></pre>
+<h2>HTTP 头部  <span id="http-headers"></span><a href="#http-headers" class="hashlink">&para;</a></h2><p>可在 <code>response</code> 组件中操控 <a href="./yii-web-response.html#$headers-detail">header collection</a> 来发送 HTTP 头部信息，
+例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$headers</span> = Yii::<span class="hljs-variable">$app</span>-&gt;response-&gt;headers;
+
+<span class="hljs-comment">// 增加一个 Pragma 头，已存在的Pragma 头不会被覆盖。</span>
+<span class="hljs-variable">$headers</span>-&gt;add(<span class="hljs-string">'Pragma'</span>, <span class="hljs-string">'no-cache'</span>);
+
+<span class="hljs-comment">// 设置一个Pragma 头. 任何已存在的Pragma 头都会被丢弃</span>
+<span class="hljs-variable">$headers</span>-&gt;set(<span class="hljs-string">'Pragma'</span>, <span class="hljs-string">'no-cache'</span>);
+
+<span class="hljs-comment">// 删除Pragma 头并返回删除的Pragma 头的值到数组</span>
+<span class="hljs-variable">$values</span> = <span class="hljs-variable">$headers</span>-&gt;remove(<span class="hljs-string">'Pragma'</span>);
+</code></pre>
+<blockquote class="info"><p><strong>信息： </strong>头名称是大小写敏感的，在 <a href="./yii-web-response.html#send()-detail">yii\web\Response::send()</a> 方法
+  调用前新注册的头信息并不会发送给用户。</p>
+</blockquote>
+<h2>响应主体  <span id="response-body"></span><a href="#response-body" class="hashlink">&para;</a></h2><p>大多是响应应有一个主体存放你想要显示给终端用户的内容。</p>
+<p>如果已有格式化好的主体字符串，可赋值到响应的 <a href="./yii-web-response.html#$content-detail">yii\web\Response::$content</a> 属性，
+例如：</p>
+<pre><code class="hljs php language-php">Yii::<span class="hljs-variable">$app</span>-&gt;response-&gt;content = <span class="hljs-string">'hello world!'</span>;
+</code></pre>
+<p>如果在发送给终端用户之前需要格式化，应设置
+<a href="./yii-web-response.html#$format-detail">format</a> 和 <a href="./yii-web-response.html#$data-detail">data</a> 属性，<a href="./yii-web-response.html#$format-detail">format</a>
+属性指定 <a href="./yii-web-response.html#$data-detail">data</a>中数据格式化后的样式，例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$response</span> = Yii::<span class="hljs-variable">$app</span>-&gt;response;
+<span class="hljs-variable">$response</span>-&gt;format = \yii\web\Response::FORMAT_JSON;
+<span class="hljs-variable">$response</span>-&gt;data = [<span class="hljs-string">'message'</span> =&gt; <span class="hljs-string">'hello world'</span>];
+</code></pre>
+<p>Yii支持以下可直接使用的格式，每个实现了<a href="./yii-web-responseformatterinterface.html">formatter</a> 类，
+可自定义这些格式器或通过配置 <a href="./yii-web-response.html#$formatters-detail">yii\web\Response::$formatters</a> 属性来增加格式器。</p>
+<ul>
+<li><a href="./yii-web-response.html#FORMAT_HTML-detail">HTML</a>：通过 <a href="./yii-web-htmlresponseformatter.html">yii\web\HtmlResponseFormatter</a> 来实现。</li>
+<li><a href="./yii-web-response.html#FORMAT_XML-detail">XML</a>：通过 <a href="./yii-web-xmlresponseformatter.html">yii\web\XmlResponseFormatter</a> 来实现。</li>
+<li><a href="./yii-web-response.html#FORMAT_JSON-detail">JSON</a>：通过 <a href="./yii-web-jsonresponseformatter.html">yii\web\JsonResponseFormatter</a> 来实现。</li>
+<li><a href="./yii-web-response.html#FORMAT_JSONP-detail">JSONP</a>：通过 <a href="./yii-web-jsonresponseformatter.html">yii\web\JsonResponseFormatter</a> 来实现。</li>
+<li><a href="./yii-web-response.html#FORMAT_RAW-detail">RAW</a>：如果要直接发送响应而不应用任何格式，请使用此格式。</li>
+</ul>
+<p>上述响应主体可明确地被设置，但是在大多数情况下是通过<a href="guide-structure-controllers.html">操作</a> 
+方法的返回值隐式地设置，常用场景如下所示：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionIndex</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;render(<span class="hljs-string">'index'</span>);
+}
+</code></pre>
+<p>上述的 <code>index</code> 操作返回 <code>index</code> 视图渲染结果，
+返回值会被 <code>response</code> 组件格式化后发送给终端用户。</p>
+<p>因为响应格式默认为 <a href="./yii-web-response.html#FORMAT_HTML-detail">HTML</a>，只需要在操作方法中返回一个字符串，
+如果想使用其他响应格式，应在返回数据前先设置格式，
+例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionInfo</span><span class="hljs-params">()</span>
+</span>{
+    \Yii::<span class="hljs-variable">$app</span>-&gt;response-&gt;format = \yii\web\Response::FORMAT_JSON;
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-string">'message'</span> =&gt; <span class="hljs-string">'hello world'</span>,
+        <span class="hljs-string">'code'</span> =&gt; <span class="hljs-number">100</span>,
+    ];
+}
+</code></pre>
+<p>如上所述，除了使用默认的 <code>response</code> 应用组件，也可创建自己的响应对象并发送给终端用户，
+可在操作方法中返回该响应对象，如下所示：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionInfo</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> \Yii::createObject([
+        <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\web\Response'</span>,
+        <span class="hljs-string">'format'</span> =&gt; \yii\web\Response::FORMAT_JSON,
+        <span class="hljs-string">'data'</span> =&gt; [
+            <span class="hljs-string">'message'</span> =&gt; <span class="hljs-string">'hello world'</span>,
+            <span class="hljs-string">'code'</span> =&gt; <span class="hljs-number">100</span>,
+        ],
+    ]);
+}
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>如果创建你自己的响应对象，将不能在应用配置中设置 <code>response</code> 组件，尽管如此，
+  可使用 <a href="guide-concept-di-container.html">依赖注入</a> 
+  应用通用配置到你新的响应对象。</p>
+</blockquote>
+<h2>浏览器跳转  <span id="browser-redirection"></span><a href="#browser-redirection" class="hashlink">&para;</a></h2><p>浏览器跳转依赖于发送一个 <code>Location</code> HTTP 头，因为该功能通常被使用，
+Yii提供对它提供了特别的支持。</p>
+<p>可调用<a href="./yii-web-response.html#redirect()-detail">yii\web\Response::redirect()</a> 方法将用户浏览器跳转到一个 URL 地址，该方法设置合适的
+带指定 URL 的 <code>Location</code> 头并返回它自己为响应对象，在操作的方法中，
+可调用缩写版 <a href="./yii-web-controller.html#redirect()-detail">yii\web\Controller::redirect()</a>，例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionOld</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;redirect(<span class="hljs-string">'http://example.com/new'</span>, <span class="hljs-number">301</span>);
+}
+</code></pre>
+<p>在如上代码中，操作的方法返回 <code>redirect()</code> 方法的结果，如前所述，
+操作的方法返回的响应对象会被当总响应发送给终端用户。</p>
+<p>除了动作方法外，可直接调用<a href="./yii-web-response.html#redirect()-detail">yii\web\Response::redirect()</a> 再调用
+<a href="./yii-web-response.html#send()-detail">yii\web\Response::send()</a> 方法来确保没有其他内容追加到响应中。</p>
+<pre><code class="hljs php language-php">\Yii::<span class="hljs-variable">$app</span>-&gt;response-&gt;redirect(<span class="hljs-string">'http://example.com/new'</span>, <span class="hljs-number">301</span>)-&gt;send();
+</code></pre>
+<blockquote class="info"><p><strong>信息： </strong><a href="./yii-web-response.html#redirect()-detail">yii\web\Response::redirect()</a> 方法默认会设置响应状态码为 302，该状态码会告诉浏览器请求的资源
+  <em>临时</em> 放在另一个 URI 地址上，可传递一个 301 状态码告知浏览器请求
+  的资源已经 <em>永久</em> 重定向到新的 URId 地址。</p>
+</blockquote>
+<p>如果当前请求为 AJAX 请求，发送一个 <code>Location</code> 头不会自动使浏览器跳转，为解决这个问题，
+<a href="./yii-web-response.html#redirect()-detail">yii\web\Response::redirect()</a> 方法设置一个值为要跳转的URL的 <code>X-Redirect</code> 头，
+在客户端可编写 JavaScript 
+代码读取该头部值然后让浏览器跳转对应的 URL。</p>
+<blockquote class="info"><p><strong>信息： </strong>Yii 配备了一个 <code>yii.js</code> JavaScript 文件提供常用 JavaScript 功能，
+  包括基于 <code>X-Redirect</code> 头的浏览器跳转，
+  因此，如果你使用该 JavaScript 文件（通过 <a href="./yii-web-yiiasset.html">yii\web\YiiAsset</a> 资源包注册），
+  就不需要编写 AJAX 跳转的代码。</p>
+</blockquote>
+<h2>发送文件  <span id="sending-files"></span><a href="#sending-files" class="hashlink">&para;</a></h2><p>和浏览器跳转类似，文件发送是另一个依赖指定 HTTP 头的功能，
+Yii 提供方法集合来支持各种文件发送需求，它们对 HTTP 头都有内置的支持。</p>
+<ul>
+<li><a href="./yii-web-response.html#sendFile()-detail">yii\web\Response::sendFile()</a>：发送一个已存在的文件到客户端</li>
+<li><a href="./yii-web-response.html#sendContentAsFile()-detail">yii\web\Response::sendContentAsFile()</a>：发送一个文本字符串作为文件到客户端</li>
+<li><a href="./yii-web-response.html#sendStreamAsFile()-detail">yii\web\Response::sendStreamAsFile()</a>：发送一个已存在的文件流作为文件到客户端</li>
+</ul>
+<p>这些方法都将响应对象作为返回值，如果要发送的文件非常大，应考虑使用
+<a href="./yii-web-response.html#sendStreamAsFile()-detail">yii\web\Response::sendStreamAsFile()</a> 因为它更节约内存，
+以下示例显示在控制器操作中如何发送文件：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionDownload</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> \Yii::<span class="hljs-variable">$app</span>-&gt;response-&gt;sendFile(<span class="hljs-string">'path/to/file.txt'</span>);
+}
+</code></pre>
+<p>如果不是在操作方法中调用文件发送方法，在后面还应调用 
+<a href="./yii-web-response.html#send()-detail">yii\web\Response::send()</a> 没有其他内容追加到响应中。</p>
+<pre><code class="hljs php language-php">\Yii::<span class="hljs-variable">$app</span>-&gt;response-&gt;sendFile(<span class="hljs-string">'path/to/file.txt'</span>)-&gt;send();
+</code></pre>
+<p>一些浏览器提供特殊的名为 <em>X-Sendfile</em> 的文件发送功能，
+原理为将请求跳转到服务器上的文件，
+Web 应用可在服务器发送文件前结束，为使用该功能，
+可调用 <a href="./yii-web-response.html#xSendFile()-detail">yii\web\Response::xSendFile()</a>，
+如下简要列出一些常用 Web 服务器如何启用 <code>X-Sendfile</code> 功能：</p>
+<ul>
+<li>Apache: <a href="http://tn123.org/mod_xsendfile">X-Sendfile</a></li>
+<li>Lighttpd v1.4: <a href="http://redmine.lighttpd.net/projects/lighttpd/wiki/X-LIGHTTPD-send-file">X-LIGHTTPD-send-file</a></li>
+<li>Lighttpd v1.5: <a href="http://redmine.lighttpd.net/projects/lighttpd/wiki/X-LIGHTTPD-send-file">X-Sendfile</a></li>
+<li>Nginx: <a href="http://wiki.nginx.org/XSendfile">X-Accel-Redirect</a></li>
+<li>Cherokee: <a href="http://www.cherokee-project.com/doc/other_goodies.html#x-sendfile">X-Sendfile and X-Accel-Redirect</a></li>
+</ul>
+<h2>发送响应  <span id="sending-response"></span><a href="#sending-response" class="hashlink">&para;</a></h2><p>在 <a href="./yii-web-response.html#send()-detail">yii\web\Response::send()</a> 方法调用前响应中的内容不会发送给用户，
+该方法默认在 <a href="./yii-base-application.html#run()-detail">yii\base\Application::run()</a>
+结尾自动调用，尽管如此，可以明确调用该方法强制立即发送响应。</p>
+<p><a href="./yii-web-response.html#send()-detail">yii\web\Response::send()</a> 方法使用以下步骤来发送响应：</p>
+<ol>
+<li>触发 <a href="./yii-web-response.html#EVENT_BEFORE_SEND-detail">yii\web\Response::EVENT_BEFORE_SEND</a> 事件。</li>
+<li>调用 <a href="./yii-web-response.html#prepare()-detail">yii\web\Response::prepare()</a> 来格式化 <a href="./yii-web-response.html#$data-detail">response data</a> 为 
+<a href="./yii-web-response.html#$content-detail">response content</a>。</li>
+<li>触发 <a href="./yii-web-response.html#EVENT_AFTER_PREPARE-detail">yii\web\Response::EVENT_AFTER_PREPARE</a> 事件。</li>
+<li>调用 <a href="./yii-web-response.html#sendHeaders()-detail">yii\web\Response::sendHeaders()</a> 来发送注册的HTTP头</li>
+<li>调用 <a href="./yii-web-response.html#sendContent()-detail">yii\web\Response::sendContent()</a> 来发送响应主体内容</li>
+<li>触发 <a href="./yii-web-response.html#EVENT_AFTER_SEND-detail">yii\web\Response::EVENT_AFTER_SEND</a> 事件。</li>
+</ol>
+<p>一旦 <a href="./yii-web-response.html#send()-detail">yii\web\Response::send()</a> 方法被执行后，其他地方调用该方法会被忽略，
+这意味着一旦响应发出后，就不能再追加其他内容。</p>
+<p>如你所见 <a href="./yii-web-response.html#send()-detail">yii\web\Response::send()</a> 触发了几个实用的事件，
+通过响应这些事件可调整或包装响应。</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

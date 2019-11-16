@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>核心验证器（Core Validators） - 高级专题（Special Topics） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w35" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w35-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w35-collapse" class="collapse navbar-collapse"><ul id="w36" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w37" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-19" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-19" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-20" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-20" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-21" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-21" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-22" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-22" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-23" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-23" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-24" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-24" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-zh-CN/README.md">Sphinx</a>
+<a class="list-group-item" href="./guide-yii2-redis.html">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-zh-CN/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-zh-CN/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-25" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-25" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-26" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-26" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-27" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-27" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-28" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-28" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-29" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-29" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-30" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-30" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-31" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-31" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item active" href="#navigation-32" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-32" class="submenu panel-collapse collapse in"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item active" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-33" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-33" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-34" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-34" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>核心验证器（Core Validators） <span id="he-xin-yan-zheng-qi-core-validators"></span><a href="#he-xin-yan-zheng-qi-core-validators" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#boolean">boolean（布尔型）</a></li>
+<li><a href="#captcha">captcha（验证码）</a></li>
+<li><a href="#compare">compare（比对）</a></li>
+<li><a href="#date">date（日期）</a></li>
+<li><a href="#default">default（默认值）</a></li>
+<li><a href="#double">double（双精度浮点型）</a></li>
+<li><a href="#each">each（循环验证）</a></li>
+<li><a href="#email">email（电子邮件）</a></li>
+<li><a href="#exist">exist（存在性）</a></li>
+<li><a href="#file">file（文件）</a></li>
+<li><a href="#filter">filter（过滤器）</a></li>
+<li><a href="#image">image（图片）</a></li>
+<li><a href="#ip">ip（IP地址）</a></li>
+<li><a href="#in">in（范围）</a></li>
+<li><a href="#integer">integer（整数）</a></li>
+<li><a href="#match">match（正则表达式）</a></li>
+<li><a href="#number">number（数字）</a></li>
+<li><a href="#required">required（必填）</a></li>
+<li><a href="#safe">safe（安全）</a></li>
+<li><a href="#string">string（字符串）</a></li>
+<li><a href="#trim">trim（译为修剪/裁边）</a></li>
+<li><a href="#unique">unique（唯一性）</a></li>
+<li><a href="#url">url（网址）</a></li></ol></div>
+<p>Yii 提供一系列常用的核心验证器，位于 <code>yii\validators</code> 命名空间之下。
+为了避免使用冗长的类名，你可以直接用<strong>别名</strong>来指定相应的核心验证器。
+比如你可以用 <code>required</code> 别名代指 <a href="./yii-validators-requiredvalidator.html">yii\validators\RequiredValidator</a> 类：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        [[<span class="hljs-string">'email'</span>, <span class="hljs-string">'password'</span>], <span class="hljs-string">'required'</span>],
+    ];
+}
+</code></pre>
+<p><a href="./yii-validators-validator.html#$builtInValidators-detail">yii\validators\Validator::$builtInValidators</a> 属性声明了所有被支持的验证器别名。</p>
+<p>下面，我们将详细介绍每一款验证器的主要用法和属性。</p>
+<h2><a href="./yii-validators-booleanvalidator.html">boolean（布尔型）</a>  <span id="boolean"></span><a href="#boolean" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// 检查 "selected" 是否为 0 或 1，无视数据类型</span>
+    [<span class="hljs-string">'selected'</span>, <span class="hljs-string">'boolean'</span>],
+
+    <span class="hljs-comment">// 检查 "deleted" 是否为布尔类型，即 true 或 false</span>
+    [<span class="hljs-string">'deleted'</span>, <span class="hljs-string">'boolean'</span>, <span class="hljs-string">'trueValue'</span> =&gt; <span class="hljs-keyword">true</span>, <span class="hljs-string">'falseValue'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-string">'strict'</span> =&gt; <span class="hljs-keyword">true</span>],
+]
+</code></pre>
+<p>该验证器检查输入值是否为一个布尔值。</p>
+<ul>
+<li><code>trueValue</code>： 代表<strong>真</strong>的值。默认为 <code>'1'</code>。</li>
+<li><code>falseValue</code>：代表<strong>假</strong>的值。默认为 <code>'0'</code>。</li>
+<li><code>strict</code>：是否要求待测输入必须严格匹配 <code>trueValue</code> 或 <code>falseValue</code>。默认为 <code>false</code>。</li>
+</ul>
+<blockquote class="note"><p><strong>注意： </strong>因为通过 HTML 表单传递的输入数据都是字符串类型，所以一般情况下你都需要保持
+  <a href="./yii-validators-booleanvalidator.html#$strict-detail">strict</a> 属性为假。</p>
+</blockquote>
+<h2><a href="./yii-captcha-captchavalidator.html">captcha（验证码）</a>  <span id="captcha"></span><a href="#captcha" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    [<span class="hljs-string">'verificationCode'</span>, <span class="hljs-string">'captcha'</span>],
+]
+</code></pre>
+<p>该验证器通常配合 <a href="./yii-captcha-captchaaction.html">yii\captcha\CaptchaAction</a> 以及 <a href="./yii-captcha-captcha.html">yii\captcha\Captcha</a>
+使用，以确保某一输入与 <a href="./yii-captcha-captcha.html">CAPTCHA</a> 小部件所显示的验证代码（verification code）相同。</p>
+<ul>
+<li><code>caseSensitive</code>：对验证码的比对是否要求大小写敏感。默认为 false。</li>
+<li><code>captchaAction</code>：指向用于渲染 CAPTCHA 图片的 <a href="./yii-captcha-captchaaction.html">CAPTCHA action</a> 
+的 <a href="guide-structure-controllers.html#routes">路由</a>。默认为 <code>'site/captcha'</code>。</li>
+<li><code>skipOnEmpty</code>：当输入为空时，是否跳过验证。
+默认为 false，也就是输入值为必需项。</li>
+</ul>
+<h2><a href="./yii-validators-comparevalidator.html">compare（比对）</a>  <span id="compare"></span><a href="#compare" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// 检查 "password" 属性的值是否与 "password_repeat" 的值相同</span>
+    [<span class="hljs-string">'password'</span>, <span class="hljs-string">'compare'</span>],
+
+    <span class="hljs-comment">// 和上一个相同，只是明确指定了需要对比的属性字段</span>
+    [<span class="hljs-string">'password'</span>, <span class="hljs-string">'compare'</span>, <span class="hljs-string">'compareAttribute'</span> =&gt; <span class="hljs-string">'password_repeat'</span>],
+    
+    <span class="hljs-comment">// 检查年龄是否大于等于 30</span>
+    [<span class="hljs-string">'age'</span>, <span class="hljs-string">'compare'</span>, <span class="hljs-string">'compareValue'</span> =&gt; <span class="hljs-number">30</span>, <span class="hljs-string">'operator'</span> =&gt; <span class="hljs-string">'&gt;='</span>],
+]
+</code></pre>
+<p>该验证器比对两个特定输入值之间的关系
+是否与 <code>operator</code> 属性所指定的相同。</p>
+<ul>
+<li><code>compareAttribute</code>：用于与原属性相比对的属性名称。
+当该验证器被用于验证某目标属性时，
+该属性会默认为目标属性加后缀 <code>_repeat</code>。
+举例来说，若目标属性为 <code>password</code>，则该属性默认为 <code>password_repeat</code>。</li>
+<li><code>compareValue</code>：用于与输入值相比对的常量值。
+当该属性与 <code>compareAttribute</code> 属性同时被指定时，该属性优先被使用。</li>
+<li><code>operator</code>：比对操作符。默认为 <code>==</code>，意味着检查输入值是否与 <code>compareAttribute</code> 或 <code>compareValue</code> 的值相等。
+该属性支持如下操作符：<ul>
+<li><code>==</code>：检查两值是否相等。比对为非严格模式。</li>
+<li><code>===</code>：检查两值是否全等。比对为严格模式。</li>
+<li><code>!=</code>：检查两值是否不等。比对为非严格模式。</li>
+<li><code>!==</code>：检查两值是否不全等。比对为严格模式。</li>
+<li><code>&gt;</code>：检查待测目标值是否大于给定被测值。</li>
+<li><code>&gt;=</code>：检查待测目标值是否大于等于给定被测值。</li>
+<li><code>&lt;</code>：检查待测目标值是否小于给定被测值。</li>
+<li><code>&lt;=</code>：检查待测目标值是否小于等于给定被测值。</li>
+</ul>
+</li>
+<li><code>type</code>: 默认的比对类型是'<a href="./yii-validators-comparevalidator.html#TYPE_STRING-detail">string</a>'，此时将按照字节逐个对比。
+当需要比对的值是数字时，需要设置类型<a href="./yii-validators-comparevalidator.html#$type-detail">$type</a>为
+'<a href="./yii-validators-comparevalidator.html#TYPE_NUMBER-detail">number</a>'，启用数字对比模式。</li>
+</ul>
+<h3>比对日期值 <span id="bi-dui-ri-qi-zhi"></span><a href="#bi-dui-ri-qi-zhi" class="hashlink">&para;</a></h3><p>比对验证器只能用来对比字符串和数字。如果你需要比对日期，有两种方式。
+如果需要比对一个固定的日期值，只需要使用
+<a href="./yii-validators-datevalidator.html">date</a>验证器并设置对应的属性
+<a href="./yii-validators-datevalidator.html#$min-detail">$min</a> 或 <a href="./yii-validators-datevalidator.html#$max-detail">$max</a> 。
+如果需要比对如表单提交的两个日期，比如一个<code>fromDate</code>和一个<code>toDate</code>项，
+你可以结合比对验证器和日期验证器同时使用，如下所示：</p>
+<pre><code class="hljs php language-php">[<span class="hljs-string">'fromDate'</span>, <span class="hljs-string">'date'</span>, <span class="hljs-string">'timestampAttribute'</span> =&gt; <span class="hljs-string">'fromDate'</span>],
+[<span class="hljs-string">'toDate'</span>, <span class="hljs-string">'date'</span>, <span class="hljs-string">'timestampAttribute'</span> =&gt; <span class="hljs-string">'toDate'</span>],
+[<span class="hljs-string">'fromDate'</span>, <span class="hljs-string">'compare'</span>, <span class="hljs-string">'compareAttribute'</span> =&gt; <span class="hljs-string">'toDate'</span>, <span class="hljs-string">'operator'</span> =&gt; <span class="hljs-string">'&lt;'</span>, <span class="hljs-string">'enableClientValidation'</span> =&gt; <span class="hljs-keyword">false</span>],
+</code></pre>
+<p>因为验证器会按照顺序执行，
+将首先验证 <code>fromDate</code> 和 <code>toDate</code> 字段是一个有效的日期值，最终将被转换成一个系统可识别的格式。
+此后这两个值将使用比对验证器进行比对。
+因日期验证器只提供服务端使用，当前不提供客户端验证，
+故 <a href="./yii-validators-validator.html#$enableClientValidation-detail">$enableClientValidation</a>
+在比对验证器将同样被设置为 <code>false</code> 。</p>
+<h2><a href="./yii-validators-datevalidator.html">date（日期）</a>  <span id="date"></span><a href="#date" class="hashlink">&para;</a></h2><p>此日期 <a href="./yii-validators-datevalidator.html">date</a> 验证器有三种不同的使用方式：</p>
+<pre><code class="hljs php language-php">[
+    [[<span class="hljs-string">'from_date'</span>, <span class="hljs-string">'to_date'</span>], <span class="hljs-string">'date'</span>],
+    [[<span class="hljs-string">'from_datetime'</span>, <span class="hljs-string">'to_datetime'</span>], <span class="hljs-string">'datetime'</span>],
+    [[<span class="hljs-string">'some_time'</span>], <span class="hljs-string">'time'</span>],
+]
+</code></pre>
+<p>该验证器检查输入值是否为适当格式的 date，time，或者 datetime。
+另外，它还可以帮你把输入值转换为一个 UNIX 时间戳并保存到 
+<a href="./yii-validators-datevalidator.html#$timestampAttribute-detail">timestampAttribute</a> 所指定的属性里。</p>
+<ul>
+<li><p><code>format</code>：被验证值的日期/时间格式。
+ 这里的值可以是 <a href="http://userguide.icu-project.org/formatparse/datetime#TOC-Date-Time-Format-Syntax">ICU manual</a> 中定义的日期时间格式。
+ 另外还可以设置以 <code>php:</code> 开头的字符串，用来表示PHP可以识别的日期时间格式。
+ <code>Datetime</code> 日期时间类。请参考 <a href="https://secure.php.net/manual/en/datetime.createfromformat.php">https://secure.php.net/manual/en/datetime.createfromformat.php</a> 获取更多支持的格式。
+ 如果没有设置，默认值将使用 <code>Yii::$app-&gt;formatter-&gt;dateFormat</code> 中的值。
+ 请参考 <a href="./yii-validators-datevalidator.html#$format-detail">API 文档</a> 以获取更详细的说明。</p>
+</li>
+<li><p><code>timestampAttribute</code>：输入的日期时间将被转换为时间戳后设置到的属性的名称。
+可以设置为和被验证的属性相同。如果相同，
+原始值将在验证结束后被时间戳覆盖。
+请参考 <a href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide/topics-date-picker.md">"Handling date input with the DatePicker"</a> 以获取更多使用事例。</p>
+<p>从版本 2.0.4 开始，支持
+使用 <a href="./yii-validators-datevalidator.html#$timestampAttributeFormat-detail">$timestampAttributeFormat</a> 设置日期时间格式
+和使用 <a href="./yii-validators-datevalidator.html#$timestampAttributeTimeZone-detail">$timestampAttributeTimeZone</a> 设置时区。</p>
+<p>注意，如果使用 <code>timestampAttribute</code>，被验证的值将被转换为UTC标准的时间戳，
+所以使用 <a href="./yii-validators-datevalidator.html#$timeZone-detail">input time zone</a> 输入的时区将被转换为UTC时间。</p>
+</li>
+<li><p>自版本 2.0.4 开始支持
+直接对 <a href="./yii-validators-datevalidator.html#$min-detail">minimum</a> 和 <a href="./yii-validators-datevalidator.html#$max-detail">maximum</a> 设置时间戳。</p>
+</li>
+</ul>
+<p>如果输入的值是可选的，可以设置一个 <a href="#default">默认值验证器</a> 来确保空值通过验证器验证后的值是 <code>null</code>，
+否则数据库可能会保存类似 <code>0000-00-00</code> 的值，
+或表单日期选择器会显示 <code>1970-01-01</code> 。</p>
+<pre><code class="hljs php language-php">[
+    [[<span class="hljs-string">'from_date'</span>, <span class="hljs-string">'to_date'</span>], <span class="hljs-string">'default'</span>, <span class="hljs-string">'value'</span> =&gt; <span class="hljs-keyword">null</span>],
+    [[<span class="hljs-string">'from_date'</span>, <span class="hljs-string">'to_date'</span>], <span class="hljs-string">'date'</span>],
+],
+</code></pre>
+<h2><a href="./yii-validators-defaultvaluevalidator.html">default（默认值）</a>  <span id="default"></span><a href="#default" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// 若 "age" 为空，则将其设为 null</span>
+    [<span class="hljs-string">'age'</span>, <span class="hljs-string">'default'</span>, <span class="hljs-string">'value'</span> =&gt; <span class="hljs-keyword">null</span>],
+
+    <span class="hljs-comment">// 若 "country" 为空，则将其设为 "USA"</span>
+    [<span class="hljs-string">'country'</span>, <span class="hljs-string">'default'</span>, <span class="hljs-string">'value'</span> =&gt; <span class="hljs-string">'USA'</span>],
+
+    <span class="hljs-comment">// 若 "from" 和 "to" 为空，则分别给他们分配自今天起，3 天后和 6 天后的日期。</span>
+    [[<span class="hljs-string">'from'</span>, <span class="hljs-string">'to'</span>], <span class="hljs-string">'default'</span>, <span class="hljs-string">'value'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$model</span>, <span class="hljs-variable">$attribute</span>)</span> </span>{
+        <span class="hljs-keyword">return</span> date(<span class="hljs-string">'Y-m-d'</span>, strtotime(<span class="hljs-variable">$attribute</span> === <span class="hljs-string">'to'</span> ? <span class="hljs-string">'+3 days'</span> ：<span class="hljs-string">'+6 days'</span>));
+    }],
+]
+</code></pre>
+<p>该验证器并不进行数据验证。
+而是，给为空的待测属性分配默认值。</p>
+<ul>
+<li><code>value</code>：默认值，或一个返回默认值的 PHP Callable 对象（即回调函数）。
+它们会分配给检测为空的待测属性。PHP 回调方法的样式如下：</li>
+</ul>
+<pre><code class="hljs php language-php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span><span class="hljs-params">(<span class="hljs-variable">$model</span>, <span class="hljs-variable">$attribute</span>)</span> </span>{
+    <span class="hljs-comment">// ... 计算 $value ...</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$value</span>;
+}
+</code></pre>
+<blockquote class="info"><p><strong>信息： </strong>如何判断待测值是否为空，
+  被写在另外一个话题的
+  <a href="guide-input-validation.html#handling-empty-inputs">处理空输入</a>章节。</p>
+</blockquote>
+<h2><a href="./yii-validators-numbervalidator.html">double（双精度浮点型）</a>  <span id="double"></span><a href="#double" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// 检查 "salary" 是否为浮点数</span>
+    [<span class="hljs-string">'salary'</span>, <span class="hljs-string">'double'</span>],
+]
+</code></pre>
+<p>该验证器检查输入值是否为双精度浮点数。等效于 <a href="#number">number</a> 验证器。</p>
+<ul>
+<li><code>max</code>：上限值（含界点）。若不设置，则验证器不检查上限。</li>
+<li><code>min</code>：下限值（含界点）。若不设置，则验证器不检查下限。</li>
+</ul>
+<h2><a href="./yii-validators-eachvalidator.html">each（循环验证）</a>  <span id="each"></span><a href="#each" class="hashlink">&para;</a></h2><blockquote class="info"><p><strong>信息： </strong>此验证器自版本 2.0.4 后可用。</p>
+</blockquote>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// 检查是否每个分类编号都是一个整数</span>
+    [<span class="hljs-string">'categoryIDs'</span>, <span class="hljs-string">'each'</span>, <span class="hljs-string">'rule'</span> =&gt; [<span class="hljs-string">'integer'</span>]],
+]
+</code></pre>
+<p>此验证器只能验证数组格式的属性。此验证器将判断数组中的 <em>每个</em> 元素是否都符合验证规则。
+在上面的例子中，<code>categoryIDs</code> 属性必须是一个数组
+且每个元素将被使用 <code>integer</code> 验证器进行验证。</p>
+<ul>
+<li><code>rule</code>：保存验证规则的数组。数组中第一个元素表示验证器类名或
+验证器的别名。数组中其余键值对将被用来配置此验证器规则。</li>
+<li><code>allowMessageFromRule</code>：是否使用规则中指定的验证器返回的错误信息。默认值为 <code>true</code>。
+如果设置为 <code>false</code>，将使用 <code>message</code> 作为错误信息。</li>
+</ul>
+<blockquote class="note"><p><strong>注意： </strong>如果被验证的值不是一个数组，将被认为验证失败，
+  并且返回 <code>message</code> 设定的错误信息。</p>
+</blockquote>
+<h2><a href="./yii-validators-emailvalidator.html">email（电子邮件）</a>  <span id="email"></span><a href="#email" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// 检查 "email" 是否为有效的邮箱地址</span>
+    [<span class="hljs-string">'email'</span>, <span class="hljs-string">'email'</span>],
+]
+</code></pre>
+<p>该验证器检查输入值是否为有效的邮箱地址。</p>
+<ul>
+<li><code>allowName</code>：检查是否允许带名称的电子邮件地址 (e.g. <code>张三 &lt;John.san@example.com&gt;</code>)。 默认为 false。</li>
+<li><code>checkDNS</code>：检查邮箱域名是否存在，且有没有对应的 A 或 MX 记录。
+不过要知道，有的时候该项检查可能会因为临时性 DNS 故障而失败，
+哪怕它其实是有效的。默认为 false。</li>
+<li><code>enableIDN</code>：验证过程是否应该考虑 IDN（internationalized domain names，国际化域名，也称多语种域名，比如中文域名）。
+默认为 false。要注意但是为使用 IDN 验证功能，
+请先确保安装并开启 <code>intl</code> PHP 扩展，不然会导致抛出异常。</li>
+</ul>
+<h2><a href="./yii-validators-existvalidator.html">exist（存在性）</a>  <span id="exist"></span><a href="#exist" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// a1 需要在 "a1" 属性所代表的字段内存在</span>
+    [<span class="hljs-string">'a1'</span>, <span class="hljs-string">'exist'</span>],
+
+    <span class="hljs-comment">// a1 必需存在，但检验的是 a1 的值在字段 a2 中的存在性</span>
+    [<span class="hljs-string">'a1'</span>, <span class="hljs-string">'exist'</span>, <span class="hljs-string">'targetAttribute'</span> =&gt; <span class="hljs-string">'a2'</span>],
+
+    <span class="hljs-comment">// a1 和 a2 的值都需要存在，且它们都能收到错误提示</span>
+    [[<span class="hljs-string">'a1'</span>, <span class="hljs-string">'a2'</span>], <span class="hljs-string">'exist'</span>, <span class="hljs-string">'targetAttribute'</span> =&gt; [<span class="hljs-string">'a1'</span>, <span class="hljs-string">'a2'</span>]],
+
+    <span class="hljs-comment">// a1 和 a2 的值都需要存在，只有 a1 能接收到错误信息</span>
+    [<span class="hljs-string">'a1'</span>, <span class="hljs-string">'exist'</span>, <span class="hljs-string">'targetAttribute'</span> =&gt; [<span class="hljs-string">'a1'</span>, <span class="hljs-string">'a2'</span>]],
+
+    <span class="hljs-comment">// 通过同时在 a2 和 a3 字段中检查 a2 和 a1 的值来确定 a1 的存在性</span>
+    [<span class="hljs-string">'a1'</span>, <span class="hljs-string">'exist'</span>, <span class="hljs-string">'targetAttribute'</span> =&gt; [<span class="hljs-string">'a2'</span>, <span class="hljs-string">'a1'</span> =&gt; <span class="hljs-string">'a3'</span>]],
+
+    <span class="hljs-comment">// a1 必需存在，若 a1 为数组，则其每个子元素都必须存在。</span>
+    [<span class="hljs-string">'a1'</span>, <span class="hljs-string">'exist'</span>, <span class="hljs-string">'allowArray'</span> =&gt; <span class="hljs-keyword">true</span>],
+    
+    <span class="hljs-comment">// type_id 需要存在于 ProductType 类中定义的表中的“id”列中</span>
+    [<span class="hljs-string">'type_id'</span>, <span class="hljs-string">'exist'</span>, <span class="hljs-string">'targetClass'</span> =&gt; ProductType::class, <span class="hljs-string">'targetAttribute'</span> =&gt; [<span class="hljs-string">'type_id'</span> =&gt; <span class="hljs-string">'id'</span>]],    
+    
+    <span class="hljs-comment">// 与前一个相同，但使用已定义的关联“type”</span>
+    [<span class="hljs-string">'type_id'</span>, <span class="hljs-string">'exist'</span>, <span class="hljs-string">'targetRelation'</span> =&gt; <span class="hljs-string">'type'</span>],
+]
+</code></pre>
+<p>该验证器检查输入值是否在某表字段中存在。
+它只对<a href="guide-db-active-record.html">活动记录</a>
+类型的模型类属性起作用，
+能支持对一个或多过字段的验证。</p>
+<p>可以使用此验证器验证单个数据列或多个数据列
+（如多个列不同的组合是否存在）。</p>
+<ul>
+<li><code>targetClass</code>：用于查找输入值的目标 <a href="guide-db-active-record.html">AR</a> 类。
+若不设置，则会使用正在进行验证的当前模型类。</li>
+<li><code>targetAttribute</code>：用于检查输入值存在性的 <code>targetClass</code> 的模型属性。
+若不设置，它会直接使用待测属性名（整个参数数组的首元素）。
+除了指定为字符串以外，你也可以用数组的形式，同时指定多个用于验证的表字段，
+数组的键和值都是代表字段的属性名，值表示 <code>targetClass</code> 的待测数据源字段，而键表示当前模型的待测属性名。
+若键和值相同，你可以只指定值。（如:<code>['a2']</code> 就代表 <code>['a2'=&gt;'a2']</code>）</li>
+<li><code>targetRelation</code>: since version 2.0.14 you can use convenient attribute <code>targetRelation</code>, which overrides the <code>targetClass</code> and <code>targetAttribute</code> attributes using specs from the requested relation.  </li>
+<li><code>filter</code>：用于检查输入值存在性必然会进行数据库查询，而该属性为用于进一步筛选该查询的过滤条件。
+可以为代表额外查询条件的字符串或数组（关于查询条件的格式，请参考 <a href="./yii-db-query.html#where()-detail">yii\db\Query::where()</a>）；
+或者样式为 <code>function ($query)</code> 的匿名函数，
+<code>$query</code> 参数为你希望在该函数内进行修改的 <a href="./yii-db-query.html">Query</a> 对象。</li>
+<li><code>allowArray</code>：是否允许输入值为数组。默认为 false。
+若该属性为 true 且输入值为数组，则数组的每个元素都必须在目标字段中存在。
+值得注意的是，若用吧 <code>targetAttribute</code> 设为多元素数组来验证被测值在多字段中的存在性时，该属性不能设置为 true。</li>
+</ul>
+<h2><a href="./yii-validators-filevalidator.html">file（文件）</a>  <span id="file"></span><a href="#file" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// 检查 "primaryImage" 是否为 PNG, JPG 或 GIF 格式的上传图片。</span>
+    <span class="hljs-comment">// 文件大小必须小于  1MB</span>
+    [<span class="hljs-string">'primaryImage'</span>, <span class="hljs-string">'file'</span>, <span class="hljs-string">'extensions'</span> =&gt; [<span class="hljs-string">'png'</span>, <span class="hljs-string">'jpg'</span>, <span class="hljs-string">'gif'</span>], <span class="hljs-string">'maxSize'</span> =&gt; <span class="hljs-number">1024</span>*<span class="hljs-number">1024</span>*<span class="hljs-number">1024</span>],
+]
+</code></pre>
+<p>该验证器检查输入值是否为一个有效的上传文件。</p>
+<ul>
+<li><code>extensions</code>：可接受上传的文件扩展名列表。它可以是数组，
+也可以是用空格或逗号分隔各个扩展名的字符串 (如 "gif, jpg")。
+扩展名大小写不敏感。默认为 null，
+意味着所有扩展名都被接受。</li>
+<li><code>mimeTypes</code>：可接受上传的 MIME 类型列表。
+它可以是数组，也可以是用空格或逗号分隔各个 
+MIME 的字符串 (如 "image/jpeg, image/png")。
+Mime 类型名是大小写不敏感的。默认为 null，
+意味着所有 MIME 类型都被接受。
+请参考 <a href="http://en.wikipedia.org/wiki/Internet_media_type#List_of_common_media_types">common media types</a> 获取更多详细内容。</li>
+<li><code>minSize</code>：上传文件所需最少多少 Byte 的大小。默认为 null，代表没有下限。</li>
+<li><code>maxSize</code>：上传文件所需最多多少 Byte 的大小。默认为 null，代表没有上限。</li>
+<li><code>maxFiles</code>：给定属性最多能承载多少个文件。
+默认为 1，代表只允许单文件上传。
+若值大于一，那么输入值必须为包含最多 <code>maxFiles</code> 个上传文件元素的数组。</li>
+<li><code>checkExtensionByMimeType</code>：是否通过文件的 MIME 类型来判断其文件扩展。
+若由 MIME 判定的文件扩展与给定文件的扩展不一样，则文件会被认为无效。
+默认为 true，代表执行上述检测。</li>
+</ul>
+<p><code>FileValidator</code> 通常与 <a href="./yii-web-uploadedfile.html">yii\web\UploadedFile</a> 共同使用。
+请参考 <a href="guide-input-file-upload.html">文件上传</a>章节来了解有关文件上传与上传文件的检验的全部内容。</p>
+<h2><a href="./yii-validators-filtervalidator.html">filter（过滤器）</a>  <span id="filter"></span><a href="#filter" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// trim 掉 "username" 和 "email" 输入</span>
+    [[<span class="hljs-string">'username'</span>, <span class="hljs-string">'email'</span>], <span class="hljs-string">'filter'</span>, <span class="hljs-string">'filter'</span> =&gt; <span class="hljs-string">'trim'</span>, <span class="hljs-string">'skipOnArray'</span> =&gt; <span class="hljs-keyword">true</span>],
+
+    <span class="hljs-comment">// 标准化 "phone" 输入</span>
+    [<span class="hljs-string">'phone'</span>, <span class="hljs-string">'filter'</span>, <span class="hljs-string">'filter'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$value</span>)</span> </span>{
+        <span class="hljs-comment">// 在此处标准化输入的电话号码</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$value</span>;
+    }],
+    
+    <span class="hljs-comment">// 标准化 "phone" 使用方法 "normalizePhone"</span>
+    [<span class="hljs-string">'phone'</span>, <span class="hljs-string">'filter'</span>, <span class="hljs-string">'filter'</span> =&gt; [<span class="hljs-variable">$this</span>, <span class="hljs-string">'normalizePhone'</span>]],
+    
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">normalizePhone</span><span class="hljs-params">(<span class="hljs-variable">$value</span>)</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$value</span>;
+    }
+]
+</code></pre>
+<p>该验证器并不进行数据验证。而是给输入值应用一个过滤器，
+并在验证后把它赋值回原属性变量。</p>
+<ul>
+<li><code>filter</code>：用于定义过滤器的 PHP 回调函数。可以为全局函数名，匿名函数，或其他。
+该函数的样式必须是 <code>function ($value) { return $newValue; }</code>。该属性不能省略，必须设置。</li>
+<li><code>skipOnArray</code>：是否在输入值为数组时跳过过滤器。默认为 false。
+请注意如果过滤器不能处理数组输入，你就应该把该属性设为 true。
+否则可能会导致 PHP Error 的发生。</li>
+</ul>
+<blockquote class="tip"><p><strong>提示： </strong>如果你只是想要用 trim 处理下输入值，你可以直接用 <a href="#trim">trim</a> 验证器的。</p>
+</blockquote>
+<blockquote class="tip"><p><strong>提示： </strong>有许多的PHP方法结构和 <code>filter</code> 需要的结构一致。
+比如使用类型转换方法 (<a href="https://secure.php.net/manual/en/function.intval.php">intval</a>，
+<a href="https://secure.php.net/manual/en/function.boolval.php">boolval</a>, ...) 来确保属性为指定的类型，
+你可以简单的设置这些方法名而不是重新定义一个匿名函数：</p>
+<pre><code class="hljs php language-php">[<span class="hljs-string">'property'</span>, <span class="hljs-string">'filter'</span>, <span class="hljs-string">'filter'</span> =&gt; <span class="hljs-string">'boolval'</span>],
+[<span class="hljs-string">'property'</span>, <span class="hljs-string">'filter'</span>, <span class="hljs-string">'filter'</span> =&gt; <span class="hljs-string">'intval'</span>],
+</code></pre>
+</blockquote>
+<h2><a href="./yii-validators-imagevalidator.html">image（图片）</a>  <span id="image"></span><a href="#image" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// 检查 "primaryImage" 是否为适当尺寸的有效图片</span>
+    [<span class="hljs-string">'primaryImage'</span>, <span class="hljs-string">'image'</span>, <span class="hljs-string">'extensions'</span> =&gt; <span class="hljs-string">'png, jpg'</span>,
+        <span class="hljs-string">'minWidth'</span> =&gt; <span class="hljs-number">100</span>, <span class="hljs-string">'maxWidth'</span> =&gt; <span class="hljs-number">1000</span>,
+        <span class="hljs-string">'minHeight'</span> =&gt; <span class="hljs-number">100</span>, <span class="hljs-string">'maxHeight'</span> =&gt; <span class="hljs-number">1000</span>,
+    ],
+]
+</code></pre>
+<p>该验证器检查输入值是否为代表有效的图片文件。它继承自 <a href="#file">file</a> 验证器，
+并因此继承有其全部属性。除此之外，
+它还支持以下为图片检验而设的额外属性：</p>
+<ul>
+<li><code>minWidth</code>：图片的最小宽度。默认为 null，代表无下限。</li>
+<li><code>maxWidth</code>：图片的最大宽度。默认为 null，代表无上限。</li>
+<li><code>minHeight</code>：图片的最小高度。 默认为 null，代表无下限。</li>
+<li><code>maxHeight</code>：图片的最大高度。默认为 null，代表无上限。</li>
+</ul>
+<h2><a href="./yii-validators-ipvalidator.html">ip（IP地址）</a>  <span id="ip"></span><a href="#ip" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// 检查 "ip_address" 是否为一个有效的 IPv4 或 IPv6 地址</span>
+    [<span class="hljs-string">'ip_address'</span>, <span class="hljs-string">'ip'</span>],
+
+    <span class="hljs-comment">// 检查 "ip_address" 是否为一个有效的 IPv6 地址或子网地址，</span>
+    <span class="hljs-comment">// 被检查的值将被展开成为一个完整的 IPv6 表示方法。</span>
+    [<span class="hljs-string">'ip_address'</span>, <span class="hljs-string">'ip'</span>, <span class="hljs-string">'ipv4'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-string">'subnet'</span> =&gt; <span class="hljs-keyword">null</span>, <span class="hljs-string">'expandIPv6'</span> =&gt; <span class="hljs-keyword">true</span>],
+
+    <span class="hljs-comment">// 检查 "ip_address" 是否为一个有效的 IPv4 或 IPv6 地址，</span>
+    <span class="hljs-comment">// 允许地址存在一个表示非的字符 `!`</span>
+    [<span class="hljs-string">'ip_address'</span>, <span class="hljs-string">'ip'</span>, <span class="hljs-string">'negation'</span> =&gt; <span class="hljs-keyword">true</span>],
+]
+</code></pre>
+<p>此验证器检查属性的值是否是一个有效的 IPv4/IPv6 地址或子网地址。
+如果标准记法或 IPv6 扩展记法被启用，原始值将被改变。</p>
+<p>此验证器有以下参数：</p>
+<ul>
+<li><code>ipv4</code>: 是否启用 IPv4 地址检测。默认为 true 。</li>
+<li><code>ipv6</code>: 是否启用 IPv6 地址检测。默认为 true。</li>
+<li><p><code>subnet</code>: 是否启用 CIDR 子网检测，类似 <code>192.168.10.0/24</code></p>
+<ul>
+<li><code>true</code> - 子网是必须的，如果不是标准 CIDR 格式将被拒绝</li>
+<li><code>false</code> - 地址不能有 CIDR</li>
+<li><code>null</code> - CIDR 是可选的</li>
+</ul>
+<p>  默认值为 false。</p>
+</li>
+<li><p><code>normalize</code>: 是否在地址没有 CIDR 时添加 CIDR 最小值作为后缀 (IPv4 为 32、IPv6 为 128)
+仅当 <code>subnet</code> 不为 <code>false</code>时使用。例如：</p>
+<ul>
+<li><code>10.0.1.5</code> 将被转换为标准的<code>10.0.1.5/32</code></li>
+<li><code>2008:db0::1</code> 将被转换为标准的 <code>2008:db0::1/128</code></li>
+</ul>
+<p>  默认为 false。</p>
+</li>
+<li><code>negation</code>: 是否允许被检测地址在首位存在代表非的字符 <code>!</code> 。默认为 false。</li>
+<li><code>expandIPv6</code>: 是否将简化的 IPv6 地址扩展为标准记法格式。
+例如， <code>2008:db0::1</code> 将被扩展成 <code>2008:0db0:0000:0000:0000:0000:0000:0001</code>。默认为 false。</li>
+<li><p><code>ranges</code>: 允许或禁止的 IPv4 或 IPv6 范围的数组。</p>
+<p>  当此数组为空或此参数没有设置时，所有IP地址都被允许。
+  否则，将逐个对比此规则，当找到第一条适用时停止。
+  如果没有任何规则适用待验证的IP地址，IP地址将被禁止。</p>
+<p>  例如：
+  <code>`</code>php
+  [</p>
+<pre><code class="hljs php">   <span class="hljs-string">'client_ip'</span>, <span class="hljs-string">'ip'</span>, <span class="hljs-string">'ranges'</span> =&gt; [
+       <span class="hljs-string">'192.168.10.128'</span>
+       <span class="hljs-string">'!192.168.10.0/24'</span>,
+       <span class="hljs-string">'any'</span> <span class="hljs-comment">// 允许任何其它IP地址</span>
+   ]
+</code></pre>
+<p>  ]
+  <code>`</code>
+在这个例子中，除了 <code>192.168.10.0/24</code> 子网之外的所有 IPv4 和 IPv6 地址都被允许。
+IPv4 地址 <code>192.168.10.128</code> 同样时允许的，因为这条规则在约束规则之前适用。</p>
+</li>
+<li><p><code>networks</code>: 网络别名数组， 可以用在 <code>ranges</code> 中。数组格式：</p>
+<ul>
+<li>key - 别名</li>
+<li>value - 一组字符串。每个子字符串可以是一个范围，IP地址或另一个别名。子字符串也可以
+  设置一个表示非的字符 <code>!</code> (和 <code>negation</code> 不相关)。</li>
+</ul>
+<p>  下列别名为默认定义：</p>
+<ul>
+<li><code>*</code>: <code>any</code></li>
+<li><code>any</code>: <code>0.0.0.0/0, ::/0</code></li>
+<li><code>private</code>: <code>10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, fd00::/8</code></li>
+<li><code>multicast</code>: <code>224.0.0.0/4, ff00::/8</code></li>
+<li><code>linklocal</code>: <code>169.254.0.0/16, fe80::/10</code></li>
+<li><code>localhost</code>: <code>127.0.0.0/8', ::1</code></li>
+<li><code>documentation</code>: <code>192.0.2.0/24, 198.51.100.0/24, 203.0.113.0/24, 2001:db8::/32</code></li>
+<li><code>system</code>: <code>multicast, linklocal, localhost, documentation</code></li>
+</ul>
+</li>
+</ul>
+<blockquote class="info"><p><strong>信息： </strong>此验证器自版本 2.0.7 后可用。</p>
+</blockquote>
+<h2><a href="./yii-validators-rangevalidator.html">in（范围）</a>  <span id="in"></span><a href="#in" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// 检查 "level" 是否为 1、2 或 3 中的一个</span>
+    [<span class="hljs-string">'level'</span>, <span class="hljs-string">'in'</span>, <span class="hljs-string">'range'</span> =&gt; [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]],
+]
+</code></pre>
+<p>该验证器检查输入值是否存在于给定列表的范围之中。</p>
+<ul>
+<li><code>range</code>：用于检查输入值的给定值列表。</li>
+<li><code>strict</code>：输入值与给定值直接的比较是否为严格模式（也就是类型与值都要相同，即全等）。
+默认为 false。</li>
+<li><code>not</code>：是否对验证的结果取反。默认为 false。当该属性被设置为 true，
+验证器检查输入值是否<strong>不在</strong>给定列表内。</li>
+<li><code>allowArray</code>：是否接受输入值为数组。当该值为 true 且输入值为数组时，
+数组内的每一个元素都必须在给定列表内存在，否则返回验证失败。</li>
+</ul>
+<h2><a href="./yii-validators-numbervalidator.html">integer（整数）</a>  <span id="integer"></span><a href="#integer" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// 检查 "age" 是否为整数</span>
+    [<span class="hljs-string">'age'</span>, <span class="hljs-string">'integer'</span>],
+]
+</code></pre>
+<p>该验证器检查输入值是否为整形。</p>
+<ul>
+<li><code>max</code>：上限值（含界点）。若不设置，则验证器不检查上限。</li>
+<li><code>min</code>：下限值（含界点）。若不设置，则验证器不检查下限。</li>
+</ul>
+<h2><a href="./yii-validators-regularexpressionvalidator.html">match（正则表达式）</a>  <span id="match"></span><a href="#match" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// 检查 "username" 是否由字母开头，且只包含单词字符</span>
+    [<span class="hljs-string">'username'</span>, <span class="hljs-string">'match'</span>, <span class="hljs-string">'pattern'</span> =&gt; <span class="hljs-string">'/^[a-z]\w*$/i'</span>]
+]
+</code></pre>
+<p>该验证器检查输入值是否匹配指定正则表达式。</p>
+<ul>
+<li><code>pattern</code>：用于检测输入值的正则表达式。该属性是必须的，
+若不设置则会抛出异常。</li>
+<li><code>not</code>：是否对验证的结果取反。默认为 false，
+代表输入值匹配正则表达式时验证成功。如果设为 true，
+则输入值不匹配正则时返回匹配成功。</li>
+</ul>
+<h2><a href="./yii-validators-numbervalidator.html">number（数字）</a>  <span id="number"></span><a href="#number" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// 检查 "salary" 是否为数字</span>
+    [<span class="hljs-string">'salary'</span>, <span class="hljs-string">'number'</span>],
+]
+</code></pre>
+<p>该验证器检查输入值是否为数字。他等效于 <a href="#double">double</a> 验证器。</p>
+<ul>
+<li><code>max</code>：上限值（含界点）。若不设置，则验证器不检查上限。</li>
+<li><code>min</code>：下限值（含界点）。若不设置，则验证器不检查下限。</li>
+</ul>
+<h2><a href="./yii-validators-requiredvalidator.html">required（必填）</a>  <span id="required"></span><a href="#required" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// 检查 "username" 与 "password" 是否为空</span>
+    [[<span class="hljs-string">'username'</span>, <span class="hljs-string">'password'</span>], <span class="hljs-string">'required'</span>],
+]
+</code></pre>
+<p>该验证器检查输入值是否为空，还是已经提供了。</p>
+<ul>
+<li><code>requiredValue</code>：所期望的输入值。若没设置，意味着输入不能为空。</li>
+<li><code>strict</code>：检查输入值时是否检查类型。默认为 false。
+当没有设置 <code>requiredValue</code> 属性时，若该属性为 true，
+验证器会检查输入值是否严格为 null；若该属性设为 false，
+该验证器会用一个更加宽松的规则检验输入值是否为空。
+当设置了 <code>requiredValue</code> 属性时，若该属性为 true，输入值与 <code>requiredValue</code> 的比对会同时检查数据类型。</li>
+</ul>
+<blockquote class="note"><p><strong>注意： </strong>如何判断待测值是否为空，被写在另外一个话题的
+  <a href="guide-input-validation.html#handling-empty-inputs">处理空输入</a>章节。</p>
+</blockquote>
+<h2><a href="./yii-validators-safevalidator.html">safe（安全）</a>  <span id="safe"></span><a href="#safe" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// 标记 "description" 为安全属性</span>
+    [<span class="hljs-string">'description'</span>, <span class="hljs-string">'safe'</span>],
+]
+</code></pre>
+<p>该验证器并不进行数据验证。而是把一个属性标记为
+<a href="guide-structure-models.html#safe-attributes">安全属性</a>。</p>
+<h2><a href="./yii-validators-stringvalidator.html">string（字符串）</a>  <span id="string"></span><a href="#string" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// 检查 "username" 是否为长度 4 到 24 之间的字符串</span>
+    [<span class="hljs-string">'username'</span>, <span class="hljs-string">'string'</span>, <span class="hljs-string">'length'</span> =&gt; [<span class="hljs-number">4</span>, <span class="hljs-number">24</span>]],
+]
+</code></pre>
+<p>该验证器检查输入值是否为特定长度的字符串。并检查属性的值是否为某个特定长度。</p>
+<ul>
+<li><code>length</code>：指定待测输入字符串的长度限制。
+该属性可以被指定为以下格式之一：<ul>
+<li>证书：the exact length that the string should be of;</li>
+<li>单元素数组：代表输入字符串的最小长度 (e.g. <code>[8]</code>)。这会重写 <code>min</code> 属性。</li>
+<li>包含两个元素的数组：代表输入字符串的最小和最大长度(e.g. <code>[8, 128]</code>)。
+   这会同时重写 <code>min</code> 和 <code>max</code> 属性。</li>
+</ul>
+</li>
+<li><code>min</code>：输入字符串的最小长度。若不设置，则代表不设下限。</li>
+<li><code>max</code>：输入字符串的最大长度。若不设置，则代表不设上限。</li>
+<li><code>encoding</code>：待测字符串的编码方式。若不设置，则使用应用自身的 <a href="./yii-base-application.html#$charset-detail">charset</a> 属性值，
+该值默认为 <code>UTF-8</code>。</li>
+</ul>
+<h2><a href="./yii-validators-filtervalidator.html">trim（译为修剪/裁边）</a>  <span id="trim"></span><a href="#trim" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// trim 掉 "username" 和 "email" 两侧的多余空格</span>
+    [[<span class="hljs-string">'username'</span>, <span class="hljs-string">'email'</span>], <span class="hljs-string">'trim'</span>],
+]
+</code></pre>
+<p>该验证器并不进行数据验证。而是，trim 掉输入值两侧的多余空格。
+注意若该输入值为数组，那它会忽略掉该验证器。</p>
+<h2><a href="./yii-validators-uniquevalidator.html">unique（唯一性）</a>  <span id="unique"></span><a href="#unique" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// a1 需要在 "a1" 属性所代表的字段内唯一</span>
+    [<span class="hljs-string">'a1'</span>, <span class="hljs-string">'unique'</span>],
+
+    <span class="hljs-comment">// a1 需要唯一，但检验的是 a1 的值在字段 a2 中的唯一性</span>
+    [<span class="hljs-string">'a1'</span>, <span class="hljs-string">'unique'</span>, <span class="hljs-string">'targetAttribute'</span> =&gt; <span class="hljs-string">'a2'</span>],
+
+    <span class="hljs-comment">// a1 和 a2 的组合需要唯一，且它们都能收到错误提示</span>
+    [[<span class="hljs-string">'a1'</span>, <span class="hljs-string">'a2'</span>], <span class="hljs-string">'unique'</span>, <span class="hljs-string">'targetAttribute'</span> =&gt; [<span class="hljs-string">'a1'</span>, <span class="hljs-string">'a2'</span>]],
+
+    <span class="hljs-comment">// a1 和 a2 的组合需要唯一，只有 a1 能接收错误提示</span>
+    [<span class="hljs-string">'a1'</span>, <span class="hljs-string">'unique'</span>, <span class="hljs-string">'targetAttribute'</span> =&gt; [<span class="hljs-string">'a1'</span>, <span class="hljs-string">'a2'</span>]],
+
+    <span class="hljs-comment">// 通过同时在 a2 和 a3 字段中检查 a2 和 a3 的值来确定 a1 的唯一性</span>
+    [<span class="hljs-string">'a1'</span>, <span class="hljs-string">'unique'</span>, <span class="hljs-string">'targetAttribute'</span> =&gt; [<span class="hljs-string">'a2'</span>, <span class="hljs-string">'a1'</span> =&gt; <span class="hljs-string">'a3'</span>]],
+]
+</code></pre>
+<p>该验证器检查输入值是否在某表字段中唯一。
+它只对<a href="guide-db-active-record.html">活动记录</a>类型的模型类属性起作用，
+能支持对一个或多过字段的验证。</p>
+<ul>
+<li><code>targetClass</code>：用于查找输入值的目标 <a href="guide-db-active-record.html">AR</a> 类。
+若不设置，则会使用正在进行验证的当前模型类。</li>
+<li><code>targetAttribute</code>：用于检查输入值唯一性的 <code>targetClass</code> 的模型属性。
+若不设置，它会直接使用待测属性名（整个参数数组的首元素）。
+除了指定为字符串以外，你也可以用数组的形式，同时指定多个用于验证的表字段，数组的键和值都是代表字段的属性名，
+值表示 <code>targetClass</code> 的待测数据源字段，而键表示当前模型的待测属性名。
+若键和值相同，你可以只指定值。（如:<code>['a2']</code> 就代表 <code>['a2'=&gt;'a2']</code>）</li>
+<li><code>filter</code>：用于检查输入值唯一性必然会进行数据库查询，
+而该属性为用于进一步筛选该查询的过滤条件。可以为代表额外查询条件的字符串或数组
+（关于查询条件的格式，请参考 <a href="./yii-db-query.html#where()-detail">yii\db\Query::where()</a>）；或者样式为 <code>function ($query)</code> 的匿名函数，
+<code>$query</code> 参数为你希望在该函数内进行修改的 <a href="./yii-db-query.html">Query</a> 对象。</li>
+</ul>
+<h2><a href="./yii-validators-urlvalidator.html">url（网址）</a>  <span id="url"></span><a href="#url" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// 检查 "website" 是否为有效的 URL。若没有 URI 方案，</span>
+    <span class="hljs-comment">// 则给 "website" 属性加 "http://" 前缀</span>
+    [<span class="hljs-string">'website'</span>, <span class="hljs-string">'url'</span>, <span class="hljs-string">'defaultScheme'</span> =&gt; <span class="hljs-string">'http'</span>],
+]
+</code></pre>
+<p>该验证器检查输入值是否为有效 URL。</p>
+<ul>
+<li><code>validSchemes</code>：用于指定那些 URI 方案会被视为有效的数组。默认为 <code>['http', 'https']</code>，
+代表 <code>http</code> 和 <code>https</code> URLs 会被认为有效。</li>
+<li><code>defaultScheme</code>：若输入值没有对应的方案前缀，会使用的默认 URI 方案前缀。
+默认为 null，代表不修改输入值本身。</li>
+<li><code>enableIDN</code>：验证过程是否应该考虑 IDN（internationalized domain names，国际化域名，也称多语种域名，比如中文域名）。
+默认为 false。要注意但是为使用 IDN 验证功能，
+请先确保安装并开启 <code>intl</code> PHP 扩展，不然会导致抛出异常。</li>
+</ul>
+<blockquote class="note"><p><strong>注意： </strong>验证器检查 URL 结构和主机部分是否正确。
+  它不会检查URL的其余部分，也不是为防止XSS或任何其他攻击而设计的。请参阅 <a href="guide-security-best-practices.html">安全最佳实践</a>
+  有关开发应用程序时威胁防范的更多信息的文章。</p>
+</blockquote>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

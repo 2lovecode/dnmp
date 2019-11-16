@@ -1,0 +1,1988 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>QueryBuilder, yii\mongodb\QueryBuilder - Yii Framework 2.0 API Documentation</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w16463" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w16463-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Yii Framework 2.0 API Documentation</a></div><div id="w16463-collapse" class="collapse navbar-collapse"><ul id="w16464" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w16465" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-3">
+                <div id="navigation" class="list-group"><a class="list-group-item active" href="#navigation-16454" data-toggle="collapse" data-parent="#navigation">yii\mongodb <b class="caret"></b></a><div id="navigation-16454" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./yii-mongodb-activefixture.html">ActiveFixture</a>
+<a class="list-group-item" href="./yii-mongodb-activequery.html">ActiveQuery</a>
+<a class="list-group-item" href="./yii-mongodb-activerecord.html">ActiveRecord</a>
+<a class="list-group-item" href="./yii-mongodb-batchqueryresult.html">BatchQueryResult</a>
+<a class="list-group-item" href="./yii-mongodb-cache.html">Cache</a>
+<a class="list-group-item" href="./yii-mongodb-collection.html">Collection</a>
+<a class="list-group-item" href="./yii-mongodb-command.html">Command</a>
+<a class="list-group-item" href="./yii-mongodb-connection.html">Connection</a>
+<a class="list-group-item" href="./yii-mongodb-database.html">Database</a>
+<a class="list-group-item" href="./yii-mongodb-exception.html">Exception</a>
+<a class="list-group-item" href="./yii-mongodb-logbuilder.html">LogBuilder</a>
+<a class="list-group-item" href="./yii-mongodb-migration.html">Migration</a>
+<a class="list-group-item" href="./yii-mongodb-query.html">Query</a>
+<a class="list-group-item active" href="./yii-mongodb-querybuilder.html">QueryBuilder</a>
+<a class="list-group-item" href="./yii-mongodb-session.html">Session</a></div>
+<a class="list-group-item" href="#navigation-16455" data-toggle="collapse" data-parent="#navigation">yii\mongodb\console\controllers <b class="caret"></b></a><div id="navigation-16455" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-console-controllers-migratecontroller.html">MigrateController</a></div>
+<a class="list-group-item" href="#navigation-16456" data-toggle="collapse" data-parent="#navigation">yii\mongodb\debug <b class="caret"></b></a><div id="navigation-16456" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-debug-explainaction.html">ExplainAction</a>
+<a class="list-group-item" href="./yii-mongodb-debug-mongodbpanel.html">MongoDbPanel</a></div>
+<a class="list-group-item" href="#navigation-16457" data-toggle="collapse" data-parent="#navigation">yii\mongodb\file <b class="caret"></b></a><div id="navigation-16457" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-file-activequery.html">ActiveQuery</a>
+<a class="list-group-item" href="./yii-mongodb-file-activerecord.html">ActiveRecord</a>
+<a class="list-group-item" href="./yii-mongodb-file-collection.html">Collection</a>
+<a class="list-group-item" href="./yii-mongodb-file-cursor.html">Cursor</a>
+<a class="list-group-item" href="./yii-mongodb-file-download.html">Download</a>
+<a class="list-group-item" href="./yii-mongodb-file-query.html">Query</a>
+<a class="list-group-item" href="./yii-mongodb-file-streamwrapper.html">StreamWrapper</a>
+<a class="list-group-item" href="./yii-mongodb-file-upload.html">Upload</a></div>
+<a class="list-group-item" href="#navigation-16458" data-toggle="collapse" data-parent="#navigation">yii\mongodb\gii\model <b class="caret"></b></a><div id="navigation-16458" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-gii-model-generator.html">Generator</a></div>
+<a class="list-group-item" href="#navigation-16459" data-toggle="collapse" data-parent="#navigation">yii\mongodb\i18n <b class="caret"></b></a><div id="navigation-16459" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-i18n-mongodbmessagesource.html">MongoDbMessageSource</a></div>
+<a class="list-group-item" href="#navigation-16460" data-toggle="collapse" data-parent="#navigation">yii\mongodb\log <b class="caret"></b></a><div id="navigation-16460" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-log-mongodbtarget.html">MongoDbTarget</a></div>
+<a class="list-group-item" href="#navigation-16461" data-toggle="collapse" data-parent="#navigation">yii\mongodb\rbac <b class="caret"></b></a><div id="navigation-16461" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-rbac-mongodbmanager.html">MongoDbManager</a>
+<a class="list-group-item" href="./yii-mongodb-rbac-permission.html">Permission</a>
+<a class="list-group-item" href="./yii-mongodb-rbac-role.html">Role</a></div>
+<a class="list-group-item" href="#navigation-16462" data-toggle="collapse" data-parent="#navigation">yii\mongodb\validators <b class="caret"></b></a><div id="navigation-16462" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-validators-mongodatevalidator.html">MongoDateValidator</a>
+<a class="list-group-item" href="./yii-mongodb-validators-mongoidvalidator.html">MongoIdValidator</a></div></div>    </div>
+    <div class="col-md-9 api-content" role="main">
+        <h1>Class yii\mongodb\QueryBuilder</h1>
+<div class="top-nav">
+    <a href="index.html">All Classes</a>
+            | <a href="#properties">Properties</a>
+                | <a href="#methods">Methods</a>
+            </div>
+
+<table class="summaryTable docClass table table-bordered">
+    <colgroup>
+        <col class="col-name" />
+        <col class="col-value" />
+    </colgroup>
+            <tr><th>Inheritance</th><td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a> &raquo;
+<a href="yii-base-baseobject.html">yii\base\BaseObject</a></td></tr>
+                <tr><th>Implements</th><td><a href="yii-base-configurable.html">yii\base\Configurable</a></td></tr>
+                                    <tr><th>Available since version</th><td>2.1</td></tr>
+                    <tr>
+          <th>Source Code</th>
+          <td><a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php">https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php</a></td>
+        </tr>
+    </table>
+
+<div class="class-description">
+    <p><strong>QueryBuilder builds a MongoDB command statements.</strong></p>
+    <p>It is used by <a href="yii-mongodb-command.html">yii\mongodb\Command</a> for particular commands and queries composition.</p>
+<p>MongoDB uses JSON format to specify query conditions with quite specific syntax.
+However <a href="yii-mongodb-querybuilder.html#buildCondition()-detail">buildCondition()</a> method provides the ability of "translating" common condition format used "yii\db*"
+into MongoDB condition.
+For example:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$condition</span> = [
+    [
+        <span class="hljs-string">'OR'</span>,
+        [<span class="hljs-string">'AND'</span>, [<span class="hljs-string">'first_name'</span> =&gt; <span class="hljs-string">'John'</span>], [<span class="hljs-string">'last_name'</span> =&gt; <span class="hljs-string">'Smith'</span>]],
+        [<span class="hljs-string">'status'</span> =&gt; [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]]
+    ],
+];
+print_r(Yii::<span class="hljs-variable">$app</span>-&gt;mongodb-&gt;getQueryBuilder()-&gt;buildCondition(<span class="hljs-variable">$condition</span>));
+<span class="hljs-comment">// outputs :</span>
+[
+    <span class="hljs-string">'$or'</span> =&gt; [
+        [
+            <span class="hljs-string">'first_name'</span> =&gt; <span class="hljs-string">'John'</span>,
+            <span class="hljs-string">'last_name'</span> =&gt; <span class="hljs-string">'John'</span>,
+        ],
+        [
+            <span class="hljs-string">'status'</span> =&gt; [<span class="hljs-string">'$in'</span> =&gt; [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]],
+        ]
+    ]
+]
+</code></pre>
+<p>Note: condition values for the key '_id' will be automatically cast to <span class="broken-link">\MongoDB\BSON\ObjectID</span> instance,
+even if they are plain strings. However, if you have other columns, containing <span class="broken-link">\MongoDB\BSON\ObjectID</span>, you
+should take care of possible typecast on your own.</p>
+
+    </div>
+
+<a id="properties"></a>
+
+<div class="summary doc-property">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-property" />
+    <col class="col-type" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr id="$db">
+        <td><a href="yii-mongodb-querybuilder.html#$db-detail">$db</a></td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+        <td>The MongoDB connection.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+    </table>
+</div>
+
+<a id="methods"></a>
+
+<div class="summary doc-method">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr class="inherited" id="__call()">
+        <td><a href="yii-base-baseobject.html#__call()-detail">__call()</a></td>
+        <td>Calls the named method which is not a class method.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr id="__construct()">
+        <td><a href="yii-mongodb-querybuilder.html#__construct()-detail">__construct()</a></td>
+        <td>Constructor.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr class="inherited" id="__get()">
+        <td><a href="yii-base-baseobject.html#__get()-detail">__get()</a></td>
+        <td>Returns the value of an object property.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr class="inherited" id="__isset()">
+        <td><a href="yii-base-baseobject.html#__isset()-detail">__isset()</a></td>
+        <td>Checks if a property is set, i.e. defined and not null.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr class="inherited" id="__set()">
+        <td><a href="yii-base-baseobject.html#__set()-detail">__set()</a></td>
+        <td>Sets value of an object property.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr class="inherited" id="__unset()">
+        <td><a href="yii-base-baseobject.html#__unset()-detail">__unset()</a></td>
+        <td>Sets an object property to null.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr id="aggregate()">
+        <td><a href="yii-mongodb-querybuilder.html#aggregate()-detail">aggregate()</a></td>
+        <td>Generates 'aggregate' command.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr id="buildAndCondition()">
+        <td><a href="yii-mongodb-querybuilder.html#buildAndCondition()-detail">buildAndCondition()</a></td>
+        <td>Connects two or more conditions with the <code>AND</code> operator.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr id="buildBetweenCondition()">
+        <td><a href="yii-mongodb-querybuilder.html#buildBetweenCondition()-detail">buildBetweenCondition()</a></td>
+        <td>Creates an Mongo condition, which emulates the <code>BETWEEN</code> operator.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr id="buildCondition()">
+        <td><a href="yii-mongodb-querybuilder.html#buildCondition()-detail">buildCondition()</a></td>
+        <td>Parses the condition specification and generates the corresponding Mongo condition.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr id="buildHashCondition()">
+        <td><a href="yii-mongodb-querybuilder.html#buildHashCondition()-detail">buildHashCondition()</a></td>
+        <td>Creates a condition based on column-value pairs.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr id="buildInCondition()">
+        <td><a href="yii-mongodb-querybuilder.html#buildInCondition()-detail">buildInCondition()</a></td>
+        <td>Creates an Mongo condition with the <code>IN</code> operator.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr id="buildLikeCondition()">
+        <td><a href="yii-mongodb-querybuilder.html#buildLikeCondition()-detail">buildLikeCondition()</a></td>
+        <td>Creates a Mongo condition, which emulates the <code>LIKE</code> operator.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr id="buildNotCondition()">
+        <td><a href="yii-mongodb-querybuilder.html#buildNotCondition()-detail">buildNotCondition()</a></td>
+        <td>Composes <code>NOT</code> condition.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr id="buildOrCondition()">
+        <td><a href="yii-mongodb-querybuilder.html#buildOrCondition()-detail">buildOrCondition()</a></td>
+        <td>Connects two or more conditions with the <code>OR</code> operator.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr id="buildRegexCondition()">
+        <td><a href="yii-mongodb-querybuilder.html#buildRegexCondition()-detail">buildRegexCondition()</a></td>
+        <td>Creates a Mongo regular expression condition.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr id="buildSelectFields()">
+        <td><a href="yii-mongodb-querybuilder.html#buildSelectFields()-detail">buildSelectFields()</a></td>
+        <td>Normalizes fields list for the MongoDB select composition.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr id="buildSimpleCondition()">
+        <td><a href="yii-mongodb-querybuilder.html#buildSimpleCondition()-detail">buildSimpleCondition()</a></td>
+        <td>Creates an Mongo condition like <code>{$operator:{field:value}}</code>.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr id="buildSortFields()">
+        <td><a href="yii-mongodb-querybuilder.html#buildSortFields()-detail">buildSortFields()</a></td>
+        <td>Normalizes fields list for the MongoDB sort composition.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr class="inherited" id="canGetProperty()">
+        <td><a href="yii-base-baseobject.html#canGetProperty()-detail">canGetProperty()</a></td>
+        <td>Returns a value indicating whether a property can be read.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr class="inherited" id="canSetProperty()">
+        <td><a href="yii-base-baseobject.html#canSetProperty()-detail">canSetProperty()</a></td>
+        <td>Returns a value indicating whether a property can be set.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr class="inherited" id="className()">
+        <td><a href="yii-base-baseobject.html#className()-detail">className()</a></td>
+        <td>Returns the fully qualified name of this class.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr id="count()">
+        <td><a href="yii-mongodb-querybuilder.html#count()-detail">count()</a></td>
+        <td>Generates count command</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr id="createCollection()">
+        <td><a href="yii-mongodb-querybuilder.html#createCollection()-detail">createCollection()</a></td>
+        <td>Generates 'create collection' command.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr id="createIndexes()">
+        <td><a href="yii-mongodb-querybuilder.html#createIndexes()-detail">createIndexes()</a></td>
+        <td>Generates create indexes command.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr id="distinct()">
+        <td><a href="yii-mongodb-querybuilder.html#distinct()-detail">distinct()</a></td>
+        <td>Generates 'distinct' command.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr id="dropCollection()">
+        <td><a href="yii-mongodb-querybuilder.html#dropCollection()-detail">dropCollection()</a></td>
+        <td>Generates drop collection command.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr id="dropDatabase()">
+        <td><a href="yii-mongodb-querybuilder.html#dropDatabase()-detail">dropDatabase()</a></td>
+        <td>Generates drop database command.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr id="dropIndexes()">
+        <td><a href="yii-mongodb-querybuilder.html#dropIndexes()-detail">dropIndexes()</a></td>
+        <td>Generates drop indexes command.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+                <tr id="explain()">
+        <td><a href="yii-mongodb-querybuilder.html#explain()-detail">explain()</a></td>
+        <td>Generates 'explain' command.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr id="findAndModify()">
+        <td><a href="yii-mongodb-querybuilder.html#findAndModify()-detail">findAndModify()</a></td>
+        <td>Generates 'find and modify' command.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr id="generateIndexName()">
+        <td><a href="yii-mongodb-querybuilder.html#generateIndexName()-detail">generateIndexName()</a></td>
+        <td>Generates index name for the given column orders.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr id="group()">
+        <td><a href="yii-mongodb-querybuilder.html#group()-detail">group()</a></td>
+        <td></td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr class="inherited" id="hasMethod()">
+        <td><a href="yii-base-baseobject.html#hasMethod()-detail">hasMethod()</a></td>
+        <td>Returns a value indicating whether a method is defined.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr class="inherited" id="hasProperty()">
+        <td><a href="yii-base-baseobject.html#hasProperty()-detail">hasProperty()</a></td>
+        <td>Returns a value indicating whether a property is defined.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr class="inherited" id="init()">
+        <td><a href="yii-base-baseobject.html#init()-detail">init()</a></td>
+        <td>Initializes the object.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr id="listCollections()">
+        <td><a href="yii-mongodb-querybuilder.html#listCollections()-detail">listCollections()</a></td>
+        <td>Generates 'listCollections' command.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr id="listDatabases()">
+        <td><a href="yii-mongodb-querybuilder.html#listDatabases()-detail">listDatabases()</a></td>
+        <td>Generates 'listDatabases' command.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr id="listIndexes()">
+        <td><a href="yii-mongodb-querybuilder.html#listIndexes()-detail">listIndexes()</a></td>
+        <td>Generates list indexes command.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+            <tr id="mapReduce()">
+        <td><a href="yii-mongodb-querybuilder.html#mapReduce()-detail">mapReduce()</a></td>
+        <td>Generates 'map-reduce' command.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+        </table>
+</div>
+
+<div class="summary doc-method">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+                                                                                                                            <tr id="ensureMongoId()">
+        <td><a href="yii-mongodb-querybuilder.html#ensureMongoId()-detail">ensureMongoId()</a></td>
+        <td>Converts given value into <span class="broken-link">\MongoDB\BSON\ObjectID</span> instance.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+                                                        <tr id="normalizeConditionKeyword()">
+        <td><a href="yii-mongodb-querybuilder.html#normalizeConditionKeyword()-detail">normalizeConditionKeyword()</a></td>
+        <td>Converts "\yii\db*" quick condition keyword into actual Mongo condition keyword.</td>
+        <td><a href="yii-mongodb-querybuilder.html">yii\mongodb\QueryBuilder</a></td>
+    </tr>
+    </table>
+</div>
+
+<a id="events"></a>
+
+<a id="constants"></a>
+
+<h2>Property Details</h2>
+
+<div class="property-doc">
+
+    <div class="detail-header h3" id="$db-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#$db-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L62" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L62" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $db        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>The MongoDB connection.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></span> <a href="yii-mongodb-querybuilder.html#$db-detail">$db</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+
+</div>
+<h2>Method Details</h2>
+
+<div class="method-doc">
+
+    <div class="detail-header h3" id="__construct()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#__construct()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L70" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L70" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        __construct()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Constructor.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-querybuilder.html#__construct()-detail">__construct</a></strong> ( <span style="color: #0000BB">$connection</span>, <span style="color: #0000BB">$config&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$connection</span></td>
+                  <td class="param-type-col"><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a></td>
+                  <td class="param-desc-col"><p>The database connection.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$config</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Name-value pairs that will be used to initialize the object properties</p>
+</td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="aggregate()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#aggregate()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L411" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L411" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        aggregate()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Generates 'aggregate' command.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-querybuilder.html#aggregate()-detail">aggregate</a></strong> ( <span style="color: #0000BB">$collectionName</span>, <span style="color: #0000BB">$pipelines</span>, <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$collectionName</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Collection name</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$pipelines</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>List of pipeline operators.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Optional parameters.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Command document.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="buildAndCondition()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#buildAndCondition()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L693" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L693" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        buildAndCondition()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Connects two or more conditions with the <code>AND</code> operator.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-querybuilder.html#buildAndCondition()-detail">buildAndCondition</a></strong> ( <span style="color: #0000BB">$operator</span>, <span style="color: #0000BB">$operands</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$operator</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The operator to use for connecting the given operands</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$operands</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The Mongo conditions to connect.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The generated Mongo condition.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="buildBetweenCondition()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#buildBetweenCondition()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L729" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L729" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        buildBetweenCondition()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Creates an Mongo condition, which emulates the <code>BETWEEN</code> operator.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-querybuilder.html#buildBetweenCondition()-detail">buildBetweenCondition</a></strong> ( <span style="color: #0000BB">$operator</span>, <span style="color: #0000BB">$operands</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$operator</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The operator to use</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$operands</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The first operand is the column name. The second and third operands
+describe the interval that column value should be in.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The generated Mongo condition.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="yii-base-invalidparamexception.html">yii\base\InvalidParamException</a></td>
+                  <td class="param-desc-col"><p>if wrong number of operands have been given.</p>
+</td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="buildCondition()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#buildCondition()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L591" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L591" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        buildCondition()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Parses the condition specification and generates the corresponding Mongo condition.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-querybuilder.html#buildCondition()-detail">buildCondition</a></strong> ( <span style="color: #0000BB">$condition</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$condition</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The condition specification. Please refer to <a href="yii-db-querytrait.html#where()-detail">yii\mongodb\Query::where()</a>
+on how to specify a condition.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The generated Mongo condition</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="yii-base-invalidparamexception.html">yii\base\InvalidParamException</a></td>
+                  <td class="param-desc-col"><p>if the condition is in bad format</p>
+</td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="buildHashCondition()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#buildHashCondition()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L630" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L630" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        buildHashCondition()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Creates a condition based on column-value pairs.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-querybuilder.html#buildHashCondition()-detail">buildHashCondition</a></strong> ( <span style="color: #0000BB">$condition</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$condition</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The condition specification.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The generated Mongo condition.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="buildInCondition()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#buildInCondition()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L761" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L761" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        buildInCondition()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Creates an Mongo condition with the <code>IN</code> operator.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-querybuilder.html#buildInCondition()-detail">buildInCondition</a></strong> ( <span style="color: #0000BB">$operator</span>, <span style="color: #0000BB">$operands</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$operator</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The operator to use (e.g. <code>IN</code> or <code>NOT IN</code>)</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$operands</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The first operand is the column name. If it is an array
+a composite IN condition will be generated.
+The second operand is an array of values that column value should be among.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The generated Mongo condition.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="yii-base-invalidparamexception.html">yii\base\InvalidParamException</a></td>
+                  <td class="param-desc-col"><p>if wrong number of operands have been given.</p>
+</td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="buildLikeCondition()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#buildLikeCondition()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L866" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L866" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        buildLikeCondition()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Creates a Mongo condition, which emulates the <code>LIKE</code> operator.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-querybuilder.html#buildLikeCondition()-detail">buildLikeCondition</a></strong> ( <span style="color: #0000BB">$operator</span>, <span style="color: #0000BB">$operands</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$operator</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The operator to use</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$operands</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The first operand is the column name.
+The second operand is a single value that column value should be compared with.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The generated Mongo condition.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="yii-base-invalidparamexception.html">yii\base\InvalidParamException</a></td>
+                  <td class="param-desc-col"><p>if wrong number of operands have been given.</p>
+</td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="buildNotCondition()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#buildNotCondition()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L666" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L666" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        buildNotCondition()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Composes <code>NOT</code> condition.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-querybuilder.html#buildNotCondition()-detail">buildNotCondition</a></strong> ( <span style="color: #0000BB">$operator</span>, <span style="color: #0000BB">$operands</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$operator</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The operator to use for connecting the given operands</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$operands</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The Mongo conditions to connect.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The generated Mongo condition.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="yii-base-invalidparamexception.html">yii\base\InvalidParamException</a></td>
+                  <td class="param-desc-col"><p>if wrong number of operands have been given.</p>
+</td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="buildOrCondition()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#buildOrCondition()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L710" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L710" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        buildOrCondition()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Connects two or more conditions with the <code>OR</code> operator.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-querybuilder.html#buildOrCondition()-detail">buildOrCondition</a></strong> ( <span style="color: #0000BB">$operator</span>, <span style="color: #0000BB">$operands</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$operator</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The operator to use for connecting the given operands</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$operands</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The Mongo conditions to connect.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The generated Mongo condition.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="buildRegexCondition()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#buildRegexCondition()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L841" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L841" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        buildRegexCondition()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Creates a Mongo regular expression condition.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-querybuilder.html#buildRegexCondition()-detail">buildRegexCondition</a></strong> ( <span style="color: #0000BB">$operator</span>, <span style="color: #0000BB">$operands</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$operator</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The operator to use</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$operands</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The first operand is the column name.
+The second operand is a single value that column value should be compared with.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The generated Mongo condition.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="yii-base-invalidparamexception.html">yii\base\InvalidParamException</a></td>
+                  <td class="param-desc-col"><p>if wrong number of operands have been given.</p>
+</td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="buildSelectFields()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#buildSelectFields()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L496" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L496" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        buildSelectFields()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Normalizes fields list for the MongoDB select composition.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-querybuilder.html#buildSelectFields()-detail">buildSelectFields</a></strong> ( <span style="color: #0000BB">$fields</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$fields</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a>|<a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Raw fields.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Normalized select fields.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="buildSimpleCondition()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#buildSimpleCondition()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L888" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L888" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        buildSimpleCondition()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Creates an Mongo condition like <code>{$operator:{field:value}}</code>.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="yii-mongodb-querybuilder.html#buildSimpleCondition()-detail">buildSimpleCondition</a></strong> ( <span style="color: #0000BB">$operator</span>, <span style="color: #0000BB">$operands</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$operator</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The operator to use. Besides regular MongoDB operators, aliases like <code>&gt;</code>, <code>&lt;=</code>,
+and so on, can be used here.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$operands</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The first operand is the column name.
+The second operand is a single value that column value should be compared with.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The generated Mongo condition.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="yii-base-invalidparamexception.html">yii\base\InvalidParamException</a></td>
+                  <td class="param-desc-col"><p>if wrong number of operands have been given.</p>
+</td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="buildSortFields()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#buildSortFields()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L514" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L514" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        buildSortFields()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Normalizes fields list for the MongoDB sort composition.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-querybuilder.html#buildSortFields()-detail">buildSortFields</a></strong> ( <span style="color: #0000BB">$fields</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$fields</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a>|<a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Raw fields.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Normalized sort fields.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="count()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#count()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L223" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L223" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        count()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Generates count command</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-querybuilder.html#count()-detail">count</a></strong> ( <span style="color: #0000BB">$collectionName</span>, <span style="color: #0000BB">$condition&nbsp;</span><span style="color: #007700">=&nbsp;[]</span>, <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$collectionName</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$condition</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Command document.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="createCollection()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#createCollection()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L85" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L85" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        createCollection()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Generates 'create collection' command.</strong></p>
+
+        <p><a href="https://docs.mongodb.com/manual/reference/method/db.createCollection/">https://docs.mongodb.com/manual/reference/method/db.createCollection/</a></p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-querybuilder.html#createCollection()-detail">createCollection</a></strong> ( <span style="color: #0000BB">$collectionName</span>, <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$collectionName</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Collection name.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Collection options in format: "name" =&gt; "value"</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Command document.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="createIndexes()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#createIndexes()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L141" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L141" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        createIndexes()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Generates create indexes command.</strong></p>
+
+        
+        <p>See also <a href="https://docs.mongodb.com/manual/reference/method/db.collection.createIndex/">https://docs.mongodb.com/manual/reference/method/db.collection.createIndex/</a>.</p>    </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-querybuilder.html#createIndexes()-detail">createIndexes</a></strong> ( <span style="color: #0000BB">$databaseName</span>, <span style="color: #0000BB">$collectionName</span>, <span style="color: #0000BB">$indexes</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$databaseName</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.null">null</a></td>
+                  <td class="param-desc-col"><p>Database name.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$collectionName</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Collection name.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$indexes</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a>[]</td>
+                  <td class="param-desc-col"><p>Indexes specification. Each specification should be an array in format: optionName =&gt; value
+The main options are:</p>
+<ul>
+<li>keys: array, column names with sort order, to be indexed. This option is mandatory.</li>
+<li>unique: bool, whether to create unique index.</li>
+<li>name: string, the name of the index, if not set it will be generated automatically.</li>
+<li>background: bool, whether to bind index in the background.</li>
+<li>sparse: bool, whether index should reference only documents with the specified field.</li>
+</ul>
+<p>See [[<a href="https://docs.mongodb.com/manual/reference/method/db.collection.createIndex/#options-for-all-index-types]]">https://docs.mongodb.com/manual/reference/method/db.collection.createIndex/#options-for-all-index-types]]</a>
+for the full list of options.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Command document.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="distinct()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#distinct()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L279" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L279" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        distinct()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Generates 'distinct' command.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-querybuilder.html#distinct()-detail">distinct</a></strong> ( <span style="color: #0000BB">$collectionName</span>, <span style="color: #0000BB">$fieldName</span>, <span style="color: #0000BB">$condition&nbsp;</span><span style="color: #007700">=&nbsp;[]</span>, <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$collectionName</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Collection name.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$fieldName</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Target field name.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$condition</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Filter condition</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>List of options in format: optionName =&gt; optionValue.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Command document.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="dropCollection()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#dropCollection()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L118" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L118" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        dropCollection()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Generates drop collection command.</strong></p>
+
+        <p><a href="https://docs.mongodb.com/manual/reference/method/db.collection.drop/">https://docs.mongodb.com/manual/reference/method/db.collection.drop/</a></p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-querybuilder.html#dropCollection()-detail">dropCollection</a></strong> ( <span style="color: #0000BB">$collectionName</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$collectionName</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Name of the collection to be dropped.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Command document.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="dropDatabase()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#dropDatabase()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L107" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L107" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        dropDatabase()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Generates drop database command.</strong></p>
+
+        <p><a href="https://docs.mongodb.com/manual/reference/method/db.dropDatabase/">https://docs.mongodb.com/manual/reference/method/db.dropDatabase/</a></p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-querybuilder.html#dropDatabase()-detail">dropDatabase</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Command document.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="dropIndexes()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#dropIndexes()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L193" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L193" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        dropIndexes()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Generates drop indexes command.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-querybuilder.html#dropIndexes()-detail">dropIndexes</a></strong> ( <span style="color: #0000BB">$collectionName</span>, <span style="color: #0000BB">$index</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$collectionName</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Collection name</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$index</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Index name or pattern, use <code>*</code> in order to drop all indexes.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Command document.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="ensureMongoId()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#ensureMongoId()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L558" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L558" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        ensureMongoId()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Converts given value into <span class="broken-link">\MongoDB\BSON\ObjectID</span> instance.</strong></p>
+
+        <p>If array given, each element of it will be processed.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a>|\MongoDB\BSON\ObjectID</span> <strong><a href="yii-mongodb-querybuilder.html#ensureMongoId()-detail">ensureMongoId</a></strong> ( <span style="color: #0000BB">$rawId</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$rawId</span></td>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"><p>Raw id(s).</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a>|\MongoDB\BSON\ObjectID</td>
+                  <td class="param-desc-col"><p>Normalized id(s).</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="explain()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#explain()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L437" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L437" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        explain()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Generates 'explain' command.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-querybuilder.html#explain()-detail">explain</a></strong> ( <span style="color: #0000BB">$collectionName</span>, <span style="color: #0000BB">$query</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$collectionName</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Collection name.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$query</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Query options.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Command document.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="findAndModify()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#findAndModify()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L242" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L242" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        findAndModify()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Generates 'find and modify' command.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-querybuilder.html#findAndModify()-detail">findAndModify</a></strong> ( <span style="color: #0000BB">$collectionName</span>, <span style="color: #0000BB">$condition&nbsp;</span><span style="color: #007700">=&nbsp;[]</span>, <span style="color: #0000BB">$update&nbsp;</span><span style="color: #007700">=&nbsp;[]</span>, <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$collectionName</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Collection name</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$condition</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Filter condition</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$update</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Update criteria</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>List of options in format: optionName =&gt; optionValue.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Command document.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="generateIndexName()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#generateIndexName()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L178" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L178" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        generateIndexName()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Generates index name for the given column orders.</strong></p>
+
+        <p>Columns should be normalized using <a href="yii-mongodb-querybuilder.html#buildSortFields()-detail">buildSortFields()</a> before being passed to this method.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="yii-mongodb-querybuilder.html#generateIndexName()-detail">generateIndexName</a></strong> ( <span style="color: #0000BB">$columns</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$columns</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Columns with sort order.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Index name.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="group()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#group()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L311" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L311" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        group()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong></strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-querybuilder.html#group()-detail">group</a></strong> ( <span style="color: #0000BB">$collectionName</span>, <span style="color: #0000BB">$keys</span>, <span style="color: #0000BB">$initial</span>, <span style="color: #0000BB">$reduce</span>, <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$collectionName</span></td>
+                  <td class="param-type-col"></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$keys</span></td>
+                  <td class="param-type-col"></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$initial</span></td>
+                  <td class="param-type-col"></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$reduce</span></td>
+                  <td class="param-type-col"></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="listCollections()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#listCollections()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L480" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L480" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        listCollections()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Generates 'listCollections' command.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-querybuilder.html#listCollections()-detail">listCollections</a></strong> ( <span style="color: #0000BB">$condition&nbsp;</span><span style="color: #007700">=&nbsp;[]</span>, <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$condition</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Filter condition.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Command options.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Command document.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="listDatabases()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#listDatabases()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L465" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L465" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        listDatabases()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Generates 'listDatabases' command.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-querybuilder.html#listDatabases()-detail">listDatabases</a></strong> ( <span style="color: #0000BB">$condition&nbsp;</span><span style="color: #007700">=&nbsp;[]</span>, <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$condition</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Filter condition.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Command options.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Command document.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="listIndexes()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#listIndexes()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L211" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L211" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        listIndexes()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Generates list indexes command.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-querybuilder.html#listIndexes()-detail">listIndexes</a></strong> ( <span style="color: #0000BB">$collectionName</span>, <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$collectionName</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Collection name</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Command options.
+Available options are:</p>
+<ul>
+<li>maxTimeMS: int, max execution time in ms.</li>
+</ul>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Command document.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="mapReduce()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#mapReduce()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L377" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L377" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        mapReduce()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Generates 'map-reduce' command.</strong></p>
+
+        
+        <p>See also <a href="https://docs.mongodb.com/manual/core/map-reduce/">https://docs.mongodb.com/manual/core/map-reduce/</a>.</p>    </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-querybuilder.html#mapReduce()-detail">mapReduce</a></strong> ( <span style="color: #0000BB">$collectionName</span>, <span style="color: #0000BB">$map</span>, <span style="color: #0000BB">$reduce</span>, <span style="color: #0000BB">$out</span>, <span style="color: #0000BB">$condition&nbsp;</span><span style="color: #007700">=&nbsp;[]</span>, <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$collectionName</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Collection name.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$map</span></td>
+                  <td class="param-type-col">\MongoDB\BSON\Javascript|<a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Function, which emits map data from collection.
+Argument will be automatically cast to <span class="broken-link">\MongoDB\BSON\Javascript</span>.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$reduce</span></td>
+                  <td class="param-type-col">\MongoDB\BSON\Javascript|<a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Function that takes two arguments (the map key
+and the map values) and does the aggregation.
+Argument will be automatically cast to <span class="broken-link">\MongoDB\BSON\Javascript</span>.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$out</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Output collection name. It could be a string for simple output
+('outputCollection'), or an array for parametrized output (['merge' => 'outputCollection']).
+You can pass ['inline' => true] to fetch the result at once without temporary collection usage.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$condition</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Filter condition for including a document in the aggregation.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Additional optional parameters to the mapReduce command. Valid options include:</p>
+<ul>
+<li>sort: array, key to sort the input documents. The sort key must be in an existing index for this collection.</li>
+<li>limit: int, the maximum number of documents to return in the collection.</li>
+<li>finalize: \MongoDB\BSON\Javascript|string, function, which follows the reduce method and modifies the output.</li>
+<li>scope: array, specifies global variables that are accessible in the map, reduce and finalize functions.</li>
+<li>jsMode: bool, specifies whether to convert intermediate data into BSON format between the execution of the map and reduce functions.</li>
+<li>verbose: bool, specifies whether to include the timing information in the result information.</li>
+</ul>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Command document.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="normalizeConditionKeyword()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-querybuilder.html#normalizeConditionKeyword()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/QueryBuilder.php#L537" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/QueryBuilder.php#L537" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        normalizeConditionKeyword()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Converts "\yii\db*" quick condition keyword into actual Mongo condition keyword.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="yii-mongodb-querybuilder.html#normalizeConditionKeyword()-detail">normalizeConditionKeyword</a></strong> ( <span style="color: #0000BB">$key</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$key</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Raw condition key.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Actual key.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+</div>
+        </div>
+</div>
+
+<script type="text/javascript">
+    /*<![CDATA[*/
+    $("a.toggle").on('click', function () {
+        var $this = $(this);
+        if ($this.hasClass('properties-hidden')) {
+            $this.text($this.text().replace(/Show/,'Hide'));
+            $this.parents(".summary").find(".inherited").show();
+            $this.removeClass('properties-hidden');
+        } else {
+            $this.text($this.text().replace(/Hide/,'Show'));
+            $this.parents(".summary").find(".inherited").hide();
+            $this.addClass('properties-hidden');
+        }
+
+        return false;
+    });
+    /*
+     $(".sourceCode a.show").toggle(function () {
+     $(this).text($(this).text().replace(/show/,'hide'));
+     $(this).parents(".sourceCode").find("div.code").show();
+     },function () {
+     $(this).text($(this).text().replace(/hide/,'show'));
+     $(this).parents(".sourceCode").find("div.code").hide();
+     });
+     $("a.sourceLink").click(function () {
+     $(this).attr('target','_blank');
+     });
+     */
+    /*]]>*/
+</script>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:30 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

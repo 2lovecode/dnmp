@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>Image, yii\imagine\Image - Yii Framework 2.0 API Documentation</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w16147" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w16147-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Yii Framework 2.0 API Documentation</a></div><div id="w16147-collapse" class="collapse navbar-collapse"><ul id="w16148" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w16149" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-3">
+                <div id="navigation" class="list-group"><a class="list-group-item active" href="#navigation-16146" data-toggle="collapse" data-parent="#navigation">yii\imagine <b class="caret"></b></a><div id="navigation-16146" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./yii-imagine-baseimage.html">BaseImage</a>
+<a class="list-group-item active" href="./yii-imagine-image.html">Image</a></div></div>    </div>
+    <div class="col-md-9 api-content" role="main">
+        <h1>Class yii\imagine\Image</h1>
+<div class="top-nav">
+    <a href="index.html">All Classes</a>
+            | <a href="#properties">Properties</a>
+                | <a href="#methods">Methods</a>
+                    | <a href="#constants">Constants</a>
+    </div>
+
+<table class="summaryTable docClass table table-bordered">
+    <colgroup>
+        <col class="col-name" />
+        <col class="col-value" />
+    </colgroup>
+            <tr><th>Inheritance</th><td><a href="yii-imagine-image.html">yii\imagine\Image</a> &raquo;
+<a href="yii-imagine-baseimage.html">yii\imagine\BaseImage</a></td></tr>
+                                        <tr><th>Available since version</th><td>2.0</td></tr>
+                    <tr>
+          <th>Source Code</th>
+          <td><a href="https://github.com/yiisoft/yii2-imagine/blob/master/Image.php">https://github.com/yiisoft/yii2-imagine/blob/master/Image.php</a></td>
+        </tr>
+    </table>
+
+<div class="class-description">
+    <p><strong>Image implements most commonly used image manipulation functions using the <a href="http://imagine.readthedocs.org/">Imagine library</a>.</strong></p>
+    <p>Example of use:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// generate a thumbnail image</span>
+Image::thumbnail(<span class="hljs-string">'@webroot/img/test-image.jpg'</span>, <span class="hljs-number">120</span>, <span class="hljs-number">120</span>)
+    -&gt;save(Yii::getAlias(<span class="hljs-string">'@runtime/thumb-test-image.jpg'</span>), [<span class="hljs-string">'quality'</span> =&gt; <span class="hljs-number">50</span>]);
+</code></pre>
+
+    </div>
+
+<a id="properties"></a>
+
+<div class="summary doc-property">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-property" />
+    <col class="col-type" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr class="inherited" id="$driver">
+        <td><a href="yii-imagine-baseimage.html#$driver-detail">$driver</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a>|<a href="http://www.php.net/language.types.string">string</a></td>
+        <td>The driver to use.</td>
+        <td><a href="yii-imagine-baseimage.html">yii\imagine\BaseImage</a></td>
+    </tr>
+            <tr class="inherited" id="$thumbnailBackgroundAlpha">
+        <td><a href="yii-imagine-baseimage.html#$thumbnailBackgroundAlpha-detail">$thumbnailBackgroundAlpha</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>Background alpha (transparency) to use when creating thumbnails in <code>ImageInterface::THUMBNAIL_INSET</code>
+mode with both width and height specified.</td>
+        <td><a href="yii-imagine-baseimage.html">yii\imagine\BaseImage</a></td>
+    </tr>
+            <tr class="inherited" id="$thumbnailBackgroundColor">
+        <td><a href="yii-imagine-baseimage.html#$thumbnailBackgroundColor-detail">$thumbnailBackgroundColor</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>Background color to use when creating thumbnails in <code>ImageInterface::THUMBNAIL_INSET</code> mode with
+both width and height specified.</td>
+        <td><a href="yii-imagine-baseimage.html">yii\imagine\BaseImage</a></td>
+    </tr>
+    </table>
+</div>
+
+<a id="methods"></a>
+
+<div class="summary doc-method">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr class="inherited" id="autorotate()">
+        <td><a href="yii-imagine-baseimage.html#autorotate()-detail">autorotate()</a></td>
+        <td>Rotates an image automatically based on EXIF information.</td>
+        <td><a href="yii-imagine-baseimage.html">yii\imagine\BaseImage</a></td>
+    </tr>
+                <tr class="inherited" id="crop()">
+        <td><a href="yii-imagine-baseimage.html#crop()-detail">crop()</a></td>
+        <td>Crops an image.</td>
+        <td><a href="yii-imagine-baseimage.html">yii\imagine\BaseImage</a></td>
+    </tr>
+                <tr class="inherited" id="frame()">
+        <td><a href="yii-imagine-baseimage.html#frame()-detail">frame()</a></td>
+        <td>Adds a frame around of the image. Please note that the image size will increase by <code>$margin</code> x 2.</td>
+        <td><a href="yii-imagine-baseimage.html">yii\imagine\BaseImage</a></td>
+    </tr>
+                <tr class="inherited" id="getImagine()">
+        <td><a href="yii-imagine-baseimage.html#getImagine()-detail">getImagine()</a></td>
+        <td>Returns the <code>Imagine</code> object that supports various image manipulations.</td>
+        <td><a href="yii-imagine-baseimage.html">yii\imagine\BaseImage</a></td>
+    </tr>
+                    <tr class="inherited" id="resize()">
+        <td><a href="yii-imagine-baseimage.html#resize()-detail">resize()</a></td>
+        <td>Resizes an image.</td>
+        <td><a href="yii-imagine-baseimage.html">yii\imagine\BaseImage</a></td>
+    </tr>
+            <tr class="inherited" id="setImagine()">
+        <td><a href="yii-imagine-baseimage.html#setImagine()-detail">setImagine()</a></td>
+        <td></td>
+        <td><a href="yii-imagine-baseimage.html">yii\imagine\BaseImage</a></td>
+    </tr>
+            <tr class="inherited" id="text()">
+        <td><a href="yii-imagine-baseimage.html#text()-detail">text()</a></td>
+        <td>Draws a text string on an existing image.</td>
+        <td><a href="yii-imagine-baseimage.html">yii\imagine\BaseImage</a></td>
+    </tr>
+            <tr class="inherited" id="thumbnail()">
+        <td><a href="yii-imagine-baseimage.html#thumbnail()-detail">thumbnail()</a></td>
+        <td>Creates a thumbnail image.</td>
+        <td><a href="yii-imagine-baseimage.html">yii\imagine\BaseImage</a></td>
+    </tr>
+            <tr class="inherited" id="watermark()">
+        <td><a href="yii-imagine-baseimage.html#watermark()-detail">watermark()</a></td>
+        <td>Adds a watermark to an existing image.</td>
+        <td><a href="yii-imagine-baseimage.html">yii\imagine\BaseImage</a></td>
+    </tr>
+    </table>
+</div>
+
+<div class="summary doc-method">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+            <tr class="inherited" id="createImagine()">
+        <td><a href="yii-imagine-baseimage.html#createImagine()-detail">createImagine()</a></td>
+        <td>Creates an <code>Imagine</code> object based on the specified <a href="yii-imagine-baseimage.html#$driver-detail">$driver</a>.</td>
+        <td><a href="yii-imagine-baseimage.html">yii\imagine\BaseImage</a></td>
+    </tr>
+                <tr class="inherited" id="ensureImageInterfaceInstance()">
+        <td><a href="yii-imagine-baseimage.html#ensureImageInterfaceInstance()-detail">ensureImageInterfaceInstance()</a></td>
+        <td>Takes either file path or ImageInterface. In case of file path, creates an instance of ImageInterface from it.</td>
+        <td><a href="yii-imagine-baseimage.html">yii\imagine\BaseImage</a></td>
+    </tr>
+                <tr class="inherited" id="getBox()">
+        <td><a href="yii-imagine-baseimage.html#getBox()-detail">getBox()</a></td>
+        <td>Returns box for an image to be created.</td>
+        <td><a href="yii-imagine-baseimage.html">yii\imagine\BaseImage</a></td>
+    </tr>
+                <tr class="inherited" id="getThumbnailBox()">
+        <td><a href="yii-imagine-baseimage.html#getThumbnailBox()-detail">getThumbnailBox()</a></td>
+        <td>Returns box for a thumbnail to be created. If one of the dimensions is set to <code>null</code>, another one is calculated
+automatically based on width to height ratio of original image box.</td>
+        <td><a href="yii-imagine-baseimage.html">yii\imagine\BaseImage</a></td>
+    </tr>
+            <tr class="inherited" id="isUpscaling()">
+        <td><a href="yii-imagine-baseimage.html#isUpscaling()-detail">isUpscaling()</a></td>
+        <td>Checks if upscaling is going to happen</td>
+        <td><a href="yii-imagine-baseimage.html">yii\imagine\BaseImage</a></td>
+    </tr>
+                        </table>
+</div>
+
+<a id="events"></a>
+
+<a id="constants"></a>
+<div class="summary doc-const">
+    <h2>Constants</h2>
+
+    <p><a href="#" class="toggle">Hide inherited constants</a></p>
+
+    <table class="summary-table table table-striped table-bordered table-hover">
+    <colgroup>
+        <col class="col-const" />
+        <col class="col-value" />
+        <col class="col-description" />
+        <col class="col-defined" />
+    </colgroup>
+    <tr>
+        <th>Constant</th><th>Value</th><th>Description</th><th>Defined By</th>
+    </tr>
+            <tr class="inherited" id="DRIVER_GD2">
+          <td id="DRIVER_GD2-detail">DRIVER_GD2</td>
+          <td>'gd2'</td>
+          <td>GD2 driver definition for Imagine implementation using the GD library.
+                        </td>
+          <td><a href="yii-imagine-baseimage.html">yii\imagine\BaseImage</a></td>
+        </tr>
+            <tr class="inherited" id="DRIVER_GMAGICK">
+          <td id="DRIVER_GMAGICK-detail">DRIVER_GMAGICK</td>
+          <td>'gmagick'</td>
+          <td>Gmagick driver definition.
+                        </td>
+          <td><a href="yii-imagine-baseimage.html">yii\imagine\BaseImage</a></td>
+        </tr>
+            <tr class="inherited" id="DRIVER_IMAGICK">
+          <td id="DRIVER_IMAGICK-detail">DRIVER_IMAGICK</td>
+          <td>'imagick'</td>
+          <td>Imagick driver definition.
+                        </td>
+          <td><a href="yii-imagine-baseimage.html">yii\imagine\BaseImage</a></td>
+        </tr>
+        </table>
+</div>
+
+        </div>
+</div>
+
+<script type="text/javascript">
+    /*<![CDATA[*/
+    $("a.toggle").on('click', function () {
+        var $this = $(this);
+        if ($this.hasClass('properties-hidden')) {
+            $this.text($this.text().replace(/Show/,'Hide'));
+            $this.parents(".summary").find(".inherited").show();
+            $this.removeClass('properties-hidden');
+        } else {
+            $this.text($this.text().replace(/Hide/,'Show'));
+            $this.parents(".summary").find(".inherited").hide();
+            $this.addClass('properties-hidden');
+        }
+
+        return false;
+    });
+    /*
+     $(".sourceCode a.show").toggle(function () {
+     $(this).text($(this).text().replace(/show/,'hide'));
+     $(this).parents(".sourceCode").find("div.code").show();
+     },function () {
+     $(this).text($(this).text().replace(/hide/,'show'));
+     $(this).parents(".sourceCode").find("div.code").hide();
+     });
+     $("a.sourceLink").click(function () {
+     $(this).attr('target','_blank');
+     });
+     */
+    /*]]>*/
+</script>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:29 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

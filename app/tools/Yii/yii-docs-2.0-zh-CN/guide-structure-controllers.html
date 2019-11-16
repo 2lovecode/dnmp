@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>控制器（Controllers） - 应用结构（Application Structure） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w833" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w833-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w833-collapse" class="collapse navbar-collapse"><ul id="w834" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w835" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-817" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-817" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-818" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-818" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item active" href="#navigation-819" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-819" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item active" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-820" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-820" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-821" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-821" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-822" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-822" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-zh-CN/README.md">Sphinx</a>
+<a class="list-group-item" href="./guide-yii2-redis.html">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-zh-CN/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-zh-CN/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-823" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-823" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-824" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-824" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-825" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-825" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-826" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-826" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-827" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-827" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-828" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-828" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-829" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-829" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-830" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-830" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-831" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-831" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-832" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-832" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>控制器 <span id="kong-zhi-qi"></span><a href="#kong-zhi-qi" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#actions">动作</a></li>
+<li><a href="#routes">路由</a></li>
+<li><a href="#creating-controllers">创建控制器</a></li>
+<li><a href="#creating-actions">创建动作</a></li>
+<li><a href="#controller-lifecycle">控制器生命周期</a></li>
+<li><a href="#best-practices">最佳实践</a></li></ol></div>
+<p>控制器是 <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC</a> 模式中的一部分，
+是继承<a href="./yii-base-controller.html">yii\base\Controller</a>类的对象，负责处理请求和生成响应。
+具体来说，控制器从<a href="guide-structure-applications.html">应用主体</a>
+接管控制后会分析请求数据并传送到<a href="guide-structure-models.html">模型</a>，
+传送模型结果到<a href="guide-structure-views.html">视图</a>，最后生成输出响应信息。</p>
+<h2>动作  <span id="actions"></span><a href="#actions" class="hashlink">&para;</a></h2><p>控制器由 <em>操作</em> 组成，它是执行终端用户请求的最基础的单元，
+一个控制器可有一个或多个操作。</p>
+<p>如下示例显示包含两个动作<code>view</code> and <code>create</code> 的控制器<code>post</code>：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>\<span class="hljs-title">Post</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">NotFoundHttpException</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PostController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionView</span><span class="hljs-params">(<span class="hljs-variable">$id</span>)</span>
+    </span>{
+        <span class="hljs-variable">$model</span> = Post::findOne(<span class="hljs-variable">$id</span>);
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$model</span> === <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> NotFoundHttpException;
+        }
+
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;render(<span class="hljs-string">'view'</span>, [
+            <span class="hljs-string">'model'</span> =&gt; <span class="hljs-variable">$model</span>,
+        ]);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionCreate</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$model</span> = <span class="hljs-keyword">new</span> Post;
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$model</span>-&gt;load(Yii::<span class="hljs-variable">$app</span>-&gt;request-&gt;post()) &amp;&amp; <span class="hljs-variable">$model</span>-&gt;save()) {
+            <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;redirect([<span class="hljs-string">'view'</span>, <span class="hljs-string">'id'</span> =&gt; <span class="hljs-variable">$model</span>-&gt;id]);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;render(<span class="hljs-string">'create'</span>, [
+                <span class="hljs-string">'model'</span> =&gt; <span class="hljs-variable">$model</span>,
+            ]);
+        }
+    }
+}
+</code></pre>
+<p>在操作 <code>view</code> (定义为 <code>actionView()</code> 方法)中， 
+代码首先根据请求模型ID加载 <a href="guide-structure-models.html">模型</a>，
+如果加载成功，会渲染名称为<code>view</code>的<a href="guide-structure-views.html">视图</a>并显示，否则会抛出一个异常。</p>
+<p>在操作 <code>create</code> (定义为 <code>actionCreate()</code> 方法)中, 代码相似. 
+先将请求数据填入<a href="guide-structure-models.html">模型</a>，
+然后保存模型，如果两者都成功，会跳转到ID为新创建的模型的<code>view</code>操作，
+否则显示提供用户输入的<code>create</code>视图。</p>
+<h2>路由  <span id="routes"></span><a href="#routes" class="hashlink">&para;</a></h2><p>终端用户通过所谓的<em>路由</em>寻找到动作，路由是包含以下部分的字符串：</p>
+<ul>
+<li>模块ID: 仅存在于控制器属于非应用的<a href="guide-structure-modules.html">模块</a>;</li>
+<li>控制器ID: 同应用（或同模块如果为模块下的控制器）
+下唯一标识控制器的字符串;</li>
+<li>操作ID: 同控制器下唯一标识操作的字符串。</li>
+</ul>
+<p>路由使用如下格式:</p>
+<pre><code class="hljs ">ControllerID/ActionID
+</code></pre>
+<p>如果属于模块下的控制器，使用如下格式：</p>
+<pre><code class="hljs php language-php">ModuleID/ControllerID/ActionID
+</code></pre>
+<p>如果用户的请求地址为 <code>http://hostname/index.php?r=site/index</code>, 
+会执行<code>site</code> 控制器的<code>index</code> 操作。
+更多关于处理路由的详情请参阅 <a href="guide-runtime-routing.html">路由</a> 一节。</p>
+<h2>创建控制器  <span id="creating-controllers"></span><a href="#creating-controllers" class="hashlink">&para;</a></h2><p>在<a href="./yii-web-application.html">Web applications</a>网页应用中，控制器应继承<a href="./yii-web-controller.html">yii\web\Controller</a> 或它的子类。
+同理在<a href="./yii-console-application.html">console applications</a>控制台应用中，控制器继承<a href="./yii-console-controller.html">yii\console\Controller</a> 或它的子类。
+如下代码定义一个 <code>site</code> 控制器:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SiteController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+}
+</code></pre>
+<h3>控制器ID  <span id="controller-ids"></span><a href="#controller-ids" class="hashlink">&para;</a></h3><p>通常情况下，控制器用来处理请求有关的资源类型，
+因此控制器ID通常为和资源有关的名词。
+例如使用<code>article</code>作为处理文章的控制器ID。</p>
+<p>控制器ID应仅包含英文小写字母、数字、下划线、中横杠和正斜杠，
+例如 <code>article</code> 和 <code>post-comment</code> 是真是的控制器ID，
+<code>article?</code>, <code>PostComment</code>, <code>admin\post</code>不是控制器ID。</p>
+<p>控制器Id可包含子目录前缀，例如 <code>admin/article</code> 代表
+<a href="./yii-base-application.html#$controllerNamespace-detail">controller namespace</a>
+控制器命名空间下 <code>admin</code>子目录中 <code>article</code> 控制器。
+子目录前缀可为英文大小写字母、数字、下划线、正斜杠，其中正斜杠用来区分多级子目录(如 <code>panels/admin</code>)。</p>
+<h3>控制器类命名  <span id="controller-class-naming"></span><a href="#controller-class-naming" class="hashlink">&para;</a></h3><p>控制器ID遵循以下规则衍生控制器类名：</p>
+<ol>
+<li>将用正斜杠区分的每个单词第一个字母转为大写。注意如果控制器ID包含正斜杠，
+只将最后的正斜杠后的部分第一个字母转为大写；</li>
+<li>去掉中横杠，将正斜杠替换为反斜杠;</li>
+<li>增加<code>Controller</code>后缀;</li>
+<li>在前面增加<a href="./yii-base-application.html#$controllerNamespace-detail">controller namespace</a>控制器命名空间.</li>
+</ol>
+<p>下面为一些示例，假设<a href="./yii-base-application.html#$controllerNamespace-detail">controller namespace</a>
+控制器命名空间为 <code>app\controllers</code>:</p>
+<ul>
+<li><code>article</code> 对应 <code>app\controllers\ArticleController</code>;</li>
+<li><code>post-comment</code> 对应 <code>app\controllers\PostCommentController</code>;</li>
+<li><code>admin/post-comment</code> 对应 <code>app\controllers\admin\PostCommentController</code>;</li>
+<li><code>adminPanels/post-comment</code> 对应 <code>app\controllers\adminPanels\PostCommentController</code>.</li>
+</ul>
+<p>控制器类必须能被 <a href="guide-concept-autoloading.html">自动加载</a>，所以在上面的例子中，
+控制器<code>article</code> 类应在 <a href="guide-concept-aliases.html">别名</a> 
+为<code>@app/controllers/ArticleController.php</code>的文件中定义，
+控制器<code>admin/post-comment</code>应在<code>@app/controllers/admin/PostCommentController.php</code>文件中。</p>
+<blockquote class="info"><p><strong>信息： </strong>最后一个示例 <code>admin/post-comment</code> 表示你可以将控制器放在
+  <a href="./yii-base-application.html#$controllerNamespace-detail">controller namespace</a>控制器命名空间下的子目录中，
+  在你不想用 <a href="guide-structure-modules.html">模块</a> 的情况下给控制器分类，这种方式很有用。</p>
+</blockquote>
+<h3>控制器部署  <span id="controller-map"></span><a href="#controller-map" class="hashlink">&para;</a></h3><p>可通过配置 <a href="./yii-base-module.html#$controllerMap-detail">controller map</a> 
+来强制上述的控制器ID和类名对应，
+通常用在使用第三方不能掌控类名的控制器上。</p>
+<p>配置 <a href="guide-structure-applications.html#application-configurations">应用配置</a> 
+中的<a href="guide-structure-applications.html#application-configurations">application configuration</a>，如下所示：</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'controllerMap'</span> =&gt; [
+        <span class="hljs-comment">// 用类名申明 "account" 控制器</span>
+        <span class="hljs-string">'account'</span> =&gt; <span class="hljs-string">'app\controllers\UserController'</span>,
+
+        <span class="hljs-comment">// 用配置数组申明 "article" 控制器</span>
+        <span class="hljs-string">'article'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'app\controllers\PostController'</span>,
+            <span class="hljs-string">'enableCsrfValidation'</span> =&gt; <span class="hljs-keyword">false</span>,
+        ],
+    ],
+]
+</code></pre>
+<h3>默认控制器  <span id="default-controller"></span><a href="#default-controller" class="hashlink">&para;</a></h3><p>每个应用有一个由<a href="./yii-base-module.html#$defaultRoute-detail">yii\base\Application::$defaultRoute</a>属性指定的默认控制器；
+当请求没有指定 <a href="#ids-routes">路由</a>，该属性值作为路由使用。
+对于<a href="./yii-web-application.html">Web applications</a>网页应用，它的值为 <code>'site'</code>，对于 <a href="./yii-console-application.html">console applications</a>
+控制台应用，它的值为 <code>help</code>，所以URL为 <code>http://hostname/index.php</code> 表示由 <code>site</code> 控制器来处理。</p>
+<p>可以在 <a href="guide-structure-applications.html#application-configurations">应用配置</a> 中修改默认控制器，如下所示：</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'defaultRoute'</span> =&gt; <span class="hljs-string">'main'</span>,
+]
+</code></pre>
+<h2>创建动作  <span id="creating-actions"></span><a href="#creating-actions" class="hashlink">&para;</a></h2><p>创建操作可简单地在控制器类中定义所谓的 <em>操作方法</em> 来完成，操作方法必须是以<code>action</code>开头的公有方法。
+操作方法的返回值会作为响应数据发送给终端用户，
+如下代码定义了两个操作 <code>index</code> 和 <code>hello-world</code>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SiteController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionIndex</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;render(<span class="hljs-string">'index'</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionHelloWorld</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'Hello World'</span>;
+    }
+}
+</code></pre>
+<h3>动作ID  <span id="action-ids"></span><a href="#action-ids" class="hashlink">&para;</a></h3><p>操作通常是用来执行资源的特定操作，因此，
+操作ID通常为动词，如<code>view</code>, <code>update</code>等。</p>
+<p>操作ID应仅包含英文小写字母、数字、下划线和中横杠，操作ID中的中横杠用来分隔单词。
+例如<code>view</code>, <code>update2</code>, <code>comment-post</code>是真实的操作ID，
+<code>view?</code>, <code>Update</code>不是操作ID.</p>
+<p>可通过两种方式创建操作ID，内联操作和独立操作. An inline action is
+内联操作在控制器类中定义为方法；独立操作是继承<a href="./yii-base-action.html">yii\base\Action</a>或它的子类的类。
+内联操作容易创建，在无需重用的情况下优先使用；
+独立操作相反，主要用于多个控制器重用，
+或重构为<a href="guide-structure-extensions.html">扩展</a>。</p>
+<h3>内联动作  <span id="inline-actions"></span><a href="#inline-actions" class="hashlink">&para;</a></h3><p>内联动作指的是根据我们刚描述的操作方法。</p>
+<p>动作方法的名字是根据操作ID遵循如下规则衍生：</p>
+<ol>
+<li>将每个单词的第一个字母转为大写;</li>
+<li>去掉中横杠;</li>
+<li>增加<code>action</code>前缀.</li>
+</ol>
+<p>例如<code>index</code> 转成 <code>actionIndex</code>, <code>hello-world</code> 转成 <code>actionHelloWorld</code>。</p>
+<blockquote class="note"><p><strong>注意： </strong>操作方法的名字<em>大小写敏感</em>，如果方法名称为<code>ActionIndex</code>不会认为是操作方法，
+  所以请求<code>index</code>操作会返回一个异常，
+  也要注意操作方法必须是公有的，
+  私有或者受保护的方法不能定义成内联操作。</p>
+</blockquote>
+<p>因为容易创建，内联操作是最常用的操作，
+但是如果你计划在不同地方重用相同的操作，
+或者你想重新分配一个操作，需要考虑定义它为<em>独立操作</em>。</p>
+<h3>独立动作  <span id="standalone-actions"></span><a href="#standalone-actions" class="hashlink">&para;</a></h3><p>独立操作通过继承<a href="./yii-base-action.html">yii\base\Action</a>或它的子类来定义。
+例如Yii发布的<a href="./yii-web-viewaction.html">yii\web\ViewAction</a>
+和<a href="./yii-web-erroraction.html">yii\web\ErrorAction</a>都是独立操作。</p>
+<p>要使用独立操作，需要通过控制器中覆盖<a href="./yii-base-controller.html#actions()-detail">yii\base\Controller::actions()</a>方法在<em>action map</em>中申明，
+如下例所示：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actions</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-comment">// 用类来申明"error" 动作</span>
+        <span class="hljs-string">'error'</span> =&gt; <span class="hljs-string">'yii\web\ErrorAction'</span>,
+
+        <span class="hljs-comment">// 用配置数组申明 "view" 动作</span>
+        <span class="hljs-string">'view'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\web\ViewAction'</span>,
+            <span class="hljs-string">'viewPrefix'</span> =&gt; <span class="hljs-string">''</span>,
+        ],
+    ];
+}
+</code></pre>
+<p>如上所示， <code>actions()</code> 方法返回键为操作ID、值为对应操作类名
+或数组<a href="guide-concept-configurations.html">configurations</a> 的数组。
+和内联操作不同，独立操作ID可包含任意字符，只要在<code>actions()</code> 方法中申明.</p>
+<p>为创建一个独立操作类，需要继承<a href="./yii-base-action.html">yii\base\Action</a> 或它的子类，并实现公有的名称为<code>run()</code>的方法,
+<code>run()</code> 方法的角色和操作方法类似，例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Action</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloWorldAction</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Action</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"Hello World"</span>;
+    }
+}
+</code></pre>
+<h3>动作结果  <span id="action-results"></span><a href="#action-results" class="hashlink">&para;</a></h3><p>操作方法或独立操作的<code>run()</code>方法的返回值非常重要，
+它表示对应操作结果。</p>
+<p>返回值可为 <a href="guide-runtime-responses.html">响应</a> 对象，作为响应发送给终端用户。</p>
+<ul>
+<li>对于<a href="./yii-web-application.html">Web applications</a>网页应用，返回值可为任意数据, 它赋值给<a href="./yii-web-response.html#$data-detail">yii\web\Response::$data</a>，
+最终转换为字符串来展示响应内容。</li>
+<li>对于<a href="./yii-console-application.html">console applications</a>控制台应用，返回值可为整数，
+表示命令行下执行的 <a href="./yii-base-response.html#$exitStatus-detail">exit status</a> 退出状态。</li>
+</ul>
+<p>在上面的例子中，操作结果都为字符串，作为响应数据发送给终端用户，
+下例显示一个操作通过
+返回响应对象（因为<a href="./yii-web-controller.html#redirect()-detail">redirect()</a>方法返回一个响应对象）
+可将用户浏览器跳转到新的URL。</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionForward</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// 用户浏览器跳转到 http://example.com</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;redirect(<span class="hljs-string">'http://example.com'</span>);
+}
+</code></pre>
+<h3>动作参数  <span id="action-parameters"></span><a href="#action-parameters" class="hashlink">&para;</a></h3><p>内联动作的操作方法和独立动作的 <code>run()</code> 方法可以带参数，称为<em>动作参数</em>。
+参数值从请求中获取，对于<a href="./yii-web-application.html">Web applications</a>网页应用，
+每个动作参数的值从<code>$_GET</code>中获得，参数名作为键；
+对于<a href="./yii-console-application.html">console applications</a>控制台应用, 动作参数对应命令行参数。</p>
+<p>如下例，动作<code>view</code> (内联动作) 申明了两个参数 <code>$id</code> 和 <code>$version</code>。</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PostController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionView</span><span class="hljs-params">(<span class="hljs-variable">$id</span>, <span class="hljs-variable">$version</span> = null)</span>
+    </span>{
+        <span class="hljs-comment">// ...</span>
+    }
+}
+</code></pre>
+<p>动作参数会被不同的参数填入，如下所示：</p>
+<ul>
+<li><code>http://hostname/index.php?r=post/view&amp;id=123</code>: <code>$id</code> 会填入<code>'123'</code>，
+<code>$version</code> 仍为 null 空因为没有<code>version</code>请求参数;</li>
+<li><code>http://hostname/index.php?r=post/view&amp;id=123&amp;version=2</code>: 
+$id<code> 和 </code>$version<code> 分别填入 </code>'123'<code> 和 </code>'2'`；</li>
+<li><code>http://hostname/index.php?r=post/view</code>: 会抛出<a href="./yii-web-badrequesthttpexception.html">yii\web\BadRequestHttpException</a> 异常
+因为请求没有提供参数给必须赋值参数<code>$id</code>；</li>
+<li><code>http://hostname/index.php?r=post/view&amp;id[]=123</code>: 会抛出<a href="./yii-web-badrequesthttpexception.html">yii\web\BadRequestHttpException</a> 异常
+因为 <code>$id</code> 参数收到数组值 <code>['123']</code> 而不是字符串.</li>
+</ul>
+<p>如果你想要一个动作参数来接受数组值，你应该使用 <code>array</code> 来提示它，如下所示：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionView</span><span class="hljs-params">(array <span class="hljs-variable">$id</span>, <span class="hljs-variable">$version</span> = null)</span>
+</span>{
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>现在如果请求为 <code>http://hostname/index.php?r=post/view&amp;id[]=123</code>, 参数 <code>$id</code> 会使用数组值 <code>['123']</code>，
+如果请求为 <code>http://hostname/index.php?r=post/view&amp;id=123</code>，
+参数 <code>$id</code> 会获取相同数组值，因为无类型的 <code>'123'</code> 会自动转成数组。</p>
+<p>上述例子主要描述网页应用的操作参数，对于控制台应用，
+更多详情请参阅<a href="guide-tutorial-console.html">控制台命令</a>。</p>
+<h3>默认动作  <span id="default-action"></span><a href="#default-action" class="hashlink">&para;</a></h3><p>每个控制器都有一个由 <a href="./yii-base-controller.html#$defaultAction-detail">yii\base\Controller::$defaultAction</a> 属性指定的默认操作，
+当<a href="#ids-routes">路由</a> 只包含控制器ID，
+会使用所请求的控制器的默认操作。</p>
+<p>默认操作默认为 <code>index</code>，如果想修改默认操作，只需简单地在控制器类中覆盖这个属性，
+如下所示：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SiteController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$defaultAction</span> = <span class="hljs-string">'home'</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionHome</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;render(<span class="hljs-string">'home'</span>);
+    }
+}
+</code></pre>
+<h2>控制器生命周期  <span id="controller-lifecycle"></span><a href="#controller-lifecycle" class="hashlink">&para;</a></h2><p>处理一个请求时，<a href="guide-structure-applications.html">应用主体</a> 会根据请求
+<a href="#routes">路由</a>创建一个控制器，
+控制器经过以下生命周期来完成请求：</p>
+<ol>
+<li>在控制器创建和配置后，<a href="./yii-base-baseobject.html#init()-detail">yii\base\Controller::init()</a> 方法会被调用。</li>
+<li>控制器根据请求操作ID创建一个操作对象:<ul>
+<li>如果操作ID没有指定，会使用<a href="./yii-base-controller.html#$defaultAction-detail">default action ID</a>默认操作ID；</li>
+<li>如果在<a href="./yii-base-controller.html#actions()-detail">action map</a>找到操作ID，
+会创建一个独立操作；</li>
+<li>如果操作ID对应操作方法，会创建一个内联操作；</li>
+<li>否则会抛出<a href="./yii-base-invalidrouteexception.html">yii\base\InvalidRouteException</a>异常。</li>
+</ul>
+</li>
+<li>控制器按顺序调用应用主体、模块（如果控制器属于模块）、
+控制器的 <code>beforeAction()</code> 方法；<ul>
+<li>如果任意一个调用返回false，后面未调用的<code>beforeAction()</code>会跳过并且操作执行会被取消；
+action execution will be cancelled.</li>
+<li>默认情况下每个 <code>beforeAction()</code> 方法会触发一个 <code>beforeAction</code> 事件，在事件中你可以追加事件处理操作；</li>
+</ul>
+</li>
+<li>控制器执行操作:<ul>
+<li>请求数据解析和填入到操作参数；</li>
+</ul>
+</li>
+<li>控制器按顺序调用控制器、模块（如果控制器属于模块）、应用主体的 <code>afterAction()</code> 方法；<ul>
+<li>默认情况下每个 <code>afterAction()</code> 方法会触发一个 <code>afterAction</code> 事件，
+在事件中你可以追加事件处理操作；</li>
+</ul>
+</li>
+<li>应用主体获取操作结果并赋值给<a href="guide-runtime-responses.html">响应</a>.</li>
+</ol>
+<h2>最佳实践  <span id="best-practices"></span><a href="#best-practices" class="hashlink">&para;</a></h2><p>在设计良好的应用中，控制器很精练，包含的操作代码简短；
+如果你的控制器很复杂，通常意味着需要重构，
+转移一些代码到其他类中。</p>
+<p>归纳起来，控制器</p>
+<ul>
+<li>可访问 <a href="guide-runtime-requests.html">请求</a> 数据;</li>
+<li>可根据请求数据调用 <a href="guide-structure-models.html">模型</a> 的方法和其他服务组件;</li>
+<li>可使用 <a href="guide-structure-views.html">视图</a> 构造响应;</li>
+<li>不应处理应被<a href="guide-structure-models.html">模型</a>处理的请求数据;</li>
+<li>应避免嵌入HTML或其他展示代码，这些代码最好在 <a href="guide-structure-views.html">视图</a>中处理.</li>
+</ul>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

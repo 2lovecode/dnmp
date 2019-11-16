@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>国际化（Internationalization） - 高级专题（Special Topics） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1517" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1517-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1517-collapse" class="collapse navbar-collapse"><ul id="w1518" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1519" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1501" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-1501" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-1502" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-1502" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-1503" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-1503" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-1504" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-1504" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-1505" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-1505" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-1506" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-1506" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-zh-CN/README.md">Sphinx</a>
+<a class="list-group-item" href="./guide-yii2-redis.html">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-zh-CN/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-zh-CN/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1507" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-1507" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-1508" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-1508" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-1509" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-1509" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-1510" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-1510" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-1511" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-1511" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-1512" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-1512" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-1513" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-1513" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item active" href="#navigation-1514" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-1514" class="submenu panel-collapse collapse in"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item active" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-1515" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-1515" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1516" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-1516" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>国际化（Internationalization） <span id="guo-ji-hua-internationalization"></span><a href="#guo-ji-hua-internationalization" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#locale-language">区域和语言（Locale and Language）</a></li>
+<li><a href="#message-translation">消息翻译（Message Translation）</a></li>
+<li><a href="#message-formatting">消息格式化（Message Formatting）</a></li>
+<li><a href="#view-translation">视图的翻译（View Translation）</a></li>
+<li><a href="#date-number">格式化日期和数字值（Formatting Date and Number Values）</a></li>
+<li><a href="#setup-environment">设置 PHP 环境（Setting Up PHP Environment）</a></li></ol></div>
+<p>国际化（I18N）是指在设计软件时，使它可以无需做大的改变就能够适应不同的语言和地区的需要。对于 Web 应用程序，
+这有着特别重要的意义，因为潜在的用户可能会在全球范围内。
+Yii 提供的国际化功能支持全方位信息翻译，
+视图翻译，日期和数字格式化。</p>
+<h2>区域和语言（Locale and Language）  <span id="locale-language"></span><a href="#locale-language" class="hashlink">&para;</a></h2><h3>区域（Locale） <span id="qu-yu-locale"></span><a href="#qu-yu-locale" class="hashlink">&para;</a></h3><p>区域设置是一组参数以定义用户希望能在他们的用户界面所看到用户的语言，
+国家和任何特殊的偏好。
+它通常是由语言 ID 和区域 ID 组成。</p>
+<p>例如，ID “en-US” 代表英语和美国的语言环境。为了保持一致性，</p>
+<p>在 Yii 应用程序中使用的所有区域 ID 应该规范化为 <code>ll-CC</code>，
+其中 <code>ll</code> 是根据两个或三个字母的小写字母语言代码
+<a href="http://www.loc.gov/standards/iso639-2/">ISO-639</a> 和 <code>CC</code> 是两个字母的国别代码
+<a href="http://www.iso.org/iso/en/prods-services/iso3166ma/02iso-3166-code-lists/list-en1.html">ISO-3166</a>。
+有关区域设置的更多细节可以看
+<a href="http://userguide.icu-project.org/locale#TOC-The-Locale-Concept">ICU 项目文档</a>。</p>
+<h3>语言（Language） <span id="yu-yan-language"></span><a href="#yu-yan-language" class="hashlink">&para;</a></h3><p>在 Yii中，我们经常用 “language” 来代表一个区域。</p>
+<p>Yii 应用程序使用两种语言：</p>
+<ul>
+<li><a href="./yii-base-application.html#$sourceLanguage-detail">源语言</a>：前者指的是写在代码中的语言，后者是向最终用户显示内容的语言。</li>
+<li><a href="./yii-base-application.html#$language-detail">目标语言</a>：而信息翻译服务主要是将文本消息从原语言翻译到目标语言。</li>
+</ul>
+<p>所谓的消息翻译服务主要将文本消息从源语言转换为目标语言。</p>
+<h3>配置（Configuration） <span id="pei-zhi-configuration"></span><a href="#pei-zhi-configuration" class="hashlink">&para;</a></h3><p>可以用类似下面的应用程序配置来配置应用程序语言：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// 设置目标语言为俄语</span>
+    <span class="hljs-string">'language'</span> =&gt; <span class="hljs-string">'ru-RU'</span>,
+    
+    <span class="hljs-comment">// 设置源语言为英语</span>
+    <span class="hljs-string">'sourceLanguage'</span> =&gt; <span class="hljs-string">'en-US'</span>,
+    
+    ......
+];
+</code></pre>
+<p>默认的 <a href="./yii-base-application.html#$sourceLanguage-detail">源语言</a> 值是 <code>en-US</code>，即美国英语。
+建议你保留此默认值不变，
+因为通常让人将英语翻译成其它语言要比将其它语言翻译成其它语言容易得多。</p>
+<p>你经常需要根据不同的因素来动态地设置 <a href="./yii-base-application.html#$language-detail">目标语言</a> ，
+如最终用户的语言首选项。要在应用程序配置中配置它，
+你可以使用下面的语句来更改目标语言：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 改变目标语言为中文</span>
+\Yii::<span class="hljs-variable">$app</span>-&gt;language = <span class="hljs-string">'zh-CN'</span>;
+</code></pre>
+<blockquote class="tip"><p><strong>提示： </strong>如果您的源语言在代码的不同部分中有所不同，那么您可以覆盖不同消息源的源语言，
+这将在下一节中介绍。</p>
+</blockquote>
+<h2>消息翻译（Message Translation）  <span id="message-translation"></span><a href="#message-translation" class="hashlink">&para;</a></h2><h3>从源语言到目标语言（From source language to target language） <span id="cong-yuan-yu-yan-dao-mu-biao-yu-yan-from-source-language-to-target-language"></span><a href="#cong-yuan-yu-yan-dao-mu-biao-yu-yan-from-source-language-to-target-language" class="hashlink">&para;</a></h3><p>消息翻译服务用于将一条文本信息从一种语言（通常是 <a href="./yii-base-application.html#$sourceLanguage-detail">源语言</a> ）
+翻译成另一种语言（通常是 <a href="./yii-base-application.html#$language-detail">目标语言</a>）。</p>
+<p>它的翻译原理是通过在语言文件中查找要翻译的信息以及翻译的结果。如果要翻译的信息可以在语言文件中找到，会返回相应的翻译结果；
+否则会返回原始未翻译的信息。</p>
+<h3>如何实现（How to implement） <span id="ru-he-shi-xian-how-to-implement"></span><a href="#ru-he-shi-xian-how-to-implement" class="hashlink">&para;</a></h3><p>为了使用消息翻译服务，需要做如下工作：</p>
+<ol>
+<li>调用 <a href="./yii-baseyii.html#t()-detail">Yii::t()</a> 方法且在其中包含每一条要翻译的消息；</li>
+<li>配置一个或多个消息来源，能在其中找得到要翻译的消息和翻译结果；</li>
+<li>让译者翻译信息并将它们存储在消息来源。</li>
+</ol>
+<h4>1. 包裹一条消息（Wrap a text message） <span id="1-bao-guo-yi-tiao-xiao-xi-wrap-a-text-message"></span><a href="#1-bao-guo-yi-tiao-xiao-xi-wrap-a-text-message" class="hashlink">&para;</a></h4><p>这个 <a href="./yii-baseyii.html#t()-detail">Yii::t()</a> 方法的用法如下，</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'This is a string to translate!'</span>);
+</code></pre>
+<p>第一个参数指储存消息来源的类别名称，
+第二个参数指需要被翻译的消息。</p>
+<h4>2. 配置一个或多个消息源（Configure one or multiple message sources） <span id="2-pei-zhi-yi-ge-huo-duo-ge-xiao-xi-yuan-configure-one-or-multiple-message-sources"></span><a href="#2-pei-zhi-yi-ge-huo-duo-ge-xiao-xi-yuan-configure-one-or-multiple-message-sources" class="hashlink">&para;</a></h4><p>这个 <a href="./yii-baseyii.html#t()-detail">Yii::t()</a> 方法会调用 <code>i18n</code> <a href="guide-structure-application-components.html">应用组件</a> 
+来实现翻译工作。这个组件可以在应用程序中按下面的代码来配置，</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'components'</span> =&gt; [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'i18n'</span> =&gt; [
+        <span class="hljs-string">'translations'</span> =&gt; [
+            <span class="hljs-string">'app*'</span> =&gt; [
+                <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\i18n\PhpMessageSource'</span>,
+                <span class="hljs-comment">//'basePath' =&gt; '@app/messages',</span>
+                <span class="hljs-comment">//'sourceLanguage' =&gt; 'en-US',</span>
+                <span class="hljs-string">'fileMap'</span> =&gt; [
+                    <span class="hljs-string">'app'</span> =&gt; <span class="hljs-string">'app.php'</span>,
+                    <span class="hljs-string">'app/error'</span> =&gt; <span class="hljs-string">'error.php'</span>,
+                ],
+            ],
+        ],
+    ],
+],
+</code></pre>
+<p>在上面的代码中，正在配置 <a href="./yii-i18n-phpmessagesource.html">yii\i18n\PhpMessageSource</a> 支持的消息源。</p>
+<h5>带 <code>*</code> 符号的类别通配符（Category wildcards with <code>*</code> symbol） <span id="dai-fu-hao-de-lei-bie-tong-pei-fu-category-wildcards-with-symbol"></span><a href="#dai-fu-hao-de-lei-bie-tong-pei-fu-category-wildcards-with-symbol" class="hashlink">&para;</a></h5><p>在上面的代码中，配置了由 <a href="./yii-i18n-phpmessagesource.html">yii\i18n\PhpMessageSource</a> 所支持的消息来源。模式 <code>app*</code> 表示所有以 <code>app</code>
+开头的消息类别名称都使用这个翻译的消息来源。</p>
+<h4>3. 让译员翻译消息并将它们存储在消息源中（Let the translators translate messages and store them in the message source(s)） <span id="3-rang-yi-yuan-fan-yi-xiao-xi-bing-jiang-ta-men-cun-chu-zai-xiao-xi-yuan-zhong-let-the-translators-translate-messages-and-store-them-in-the-message-sources"></span><a href="#3-rang-yi-yuan-fan-yi-xiao-xi-bing-jiang-ta-men-cun-chu-zai-xiao-xi-yuan-zhong-let-the-translators-translate-messages-and-store-them-in-the-message-sources" class="hashlink">&para;</a></h4><p><a href="./yii-i18n-phpmessagesource.html">yii\i18n\PhpMessageSource</a> 类使用PHP文件和一个简单的 PHP 数组来存储消息转换。
+这些文件包含 <code>源语言</code> 中的消息到 <code>目标语言</code> 中的翻译的映射。</p>
+<blockquote class="info"><p><strong>信息： </strong>您可以使用 <a href="#message-command"><code>message</code> 命令</a> 自动生成这些 PHP 文件，
+这将在本章后面介绍。</p>
+</blockquote>
+<p>每个PHP文件对应于单个类别的消息。 默认情况下，文件名应与类别名称相同。
+<code>app/messages/nl-NL/main.php</code> 的例子：</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-comment">/**
+* Translation map for nl-NL
+*/</span>
+<span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'welcome'</span> =&gt; <span class="hljs-string">'welkom'</span>
+];
+
+</code></pre>
+<h5>文件映射（File mapping） <span id="wen-jian-ying-she-file-mapping"></span><a href="#wen-jian-ying-she-file-mapping" class="hashlink">&para;</a></h5><p><a href="./yii-i18n-phpmessagesource.html#$fileMap-detail">fileMap</a> 来映射一个类别到不同名称的 PHP 文件。 </p>
+<p>在上面的例子中，类别 <code>app/error</code> 被映射到PHP文件 <code>@app/messages/ru-RU/error.php</code>（假设 <code>ru-RU</code> 为目标语言）。
+如果没有此配置，
+该类别将被映射到 <code>@app/messages/ru-RU/app/error.php</code> 。</p>
+<h5>其他存储类型（Other storage types） <span id="qi-ta-cun-chu-lei-xing-other-storage-types"></span><a href="#qi-ta-cun-chu-lei-xing-other-storage-types" class="hashlink">&para;</a></h5><p>除了在PHP文件中存储消息来源，
+也可以使用下面的消息来源在不同的存储来存储翻译的消息：</p>
+<ul>
+<li><a href="./yii-i18n-gettextmessagesource.html">yii\i18n\GettextMessageSource</a> 使用 GNU Gettext 的 MO 或 PO 文件保存翻译的消息。</li>
+<li><a href="./yii-i18n-dbmessagesource.html">yii\i18n\DbMessageSource</a> 使用一个数据库表来存储翻译的消息。</li>
+</ul>
+<h2>消息格式化（Message Formatting）  <span id="message-formatting"></span><a href="#message-formatting" class="hashlink">&para;</a></h2><p>在要翻译的消息里，你可以嵌入一些占位符，并让它们通过动态的参数值来代替。
+你甚至可以根据目标语言格式的参数值来使用特殊的占位符。
+在本节中，我们将介绍如何用不同的方式来格式化消息。</p>
+<h3>消息参数（Message Parameters）  <span id="message-parameters"></span><a href="#message-parameters" class="hashlink">&para;</a></h3><p>在待翻译的消息，可以嵌入一个或多个占位符，以便它们可以由给定的参数值取代。
+通过给不同的参数值，可以动态地改变翻译内容的消息。
+在下面的例子中，
+占位符 <code>{username}</code> 在 <code>“Hello, {username}！”</code> 中将分别被 <code>'Alexander'</code>和<code>'Qiang'</code> 所替换。</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$username</span> = <span class="hljs-string">'Alexander'</span>;
+<span class="hljs-comment">// 输出：“Hello, Alexander”</span>
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Hello, {username}!'</span>, [
+    <span class="hljs-string">'username'</span> =&gt; <span class="hljs-variable">$username</span>,
+]);
+
+<span class="hljs-variable">$username</span> = <span class="hljs-string">'Qiang'</span>;
+<span class="hljs-comment">// 输出：“Hello, Qiang”</span>
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Hello, {username}!'</span>, [
+    <span class="hljs-string">'username'</span> =&gt; <span class="hljs-variable">$username</span>,
+]);
+</code></pre>
+<p>当翻译的消息包含占位符时，应该让占位符保留原样。
+这是因为调用 <code>Yii::t()</code> 时，占位符将被实际参数值代替。</p>
+<p>你可以使用 <em>名称占位符</em> 或者 <em>位置占位符</em>，但不能两者都用在同一个消息里。</p>
+<p>前面的例子说明了如何使用名称占位符。即每个占位符的格式为 <code>{参数名称}</code> ，你所提供的参数作为关联数组，
+其中数组的键是参数名称（没有大括号），
+数组的值是对应的参数值。</p>
+<p>位置占位符是使用基于零的整数序列，在调用 <code>Yii::t()</code> 时会参数值根据它们出现位置的顺序分别进行替换。
+在下面的例子中，位置占位符 <code>{0}</code>，<code>{1}</code> 和 <code>{2}</code> 
+将分别被 <code>$price</code>，<code>$count</code> 和 <code>$subtotal</code> 所替换。</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$price</span> = <span class="hljs-number">100</span>;
+<span class="hljs-variable">$count</span> = <span class="hljs-number">2</span>;
+<span class="hljs-variable">$subtotal</span> = <span class="hljs-number">200</span>;
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Price: {0}, Count: {1}, Subtotal: {2}'</span>, <span class="hljs-variable">$price</span>, <span class="hljs-variable">$count</span>, <span class="hljs-variable">$subtotal</span>);
+</code></pre>
+<p>在单个位置参数的情况下，它的值可以被指定而不包含在数组中：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Price: {0}'</span>, <span class="hljs-variable">$price</span>);
+</code></pre>
+<blockquote class="tip"><p><strong>提示： </strong>大多数情况下你应该使用名称占位符。
+这是因为参数名称可以让翻译者更好的理解要被翻译的消息。</p>
+</blockquote>
+<h3>格式化参数  <span id="parameter-formatting"></span><a href="#parameter-formatting" class="hashlink">&para;</a></h3><p>你可以在消息的占位符指定附加格式的规则，
+这样的参数值可在替换占位符之前格式化它们。在下面的例子中，
+价格参数值将视为一个数并格式化为货币值：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$price</span> = <span class="hljs-number">100</span>;
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Price: {0, number, currency}'</span>, <span class="hljs-variable">$price</span>);
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>参数的格式化需要安装 <a href="https://secure.php.net/manual/en/intro.intl.php">intl PHP 扩展</a>。</p>
+</blockquote>
+<p>可以使用缩写的形式或完整的形式来格式化占位符：</p>
+<pre><code class="hljs ">short form: {PlaceholderName, ParameterType}
+full form: {PlaceholderName, ParameterType, ParameterStyle}
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>如果您需要使用特殊字符（如 <code>{</code>，<code>}</code>，<code>'</code>，<code>#</code>，请使用 <code>'</code>：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">"Example of string with ''-escaped characters'': '{' '}' '{test}' {count,plural,other{''count'' value is # '#{}'}}"</span>, [<span class="hljs-string">'count'</span> =&gt; <span class="hljs-number">3</span>]);
+</code></pre>
+</blockquote>
+<p>请参阅 <a href="http://icu-project.org/apiref/icu4c/classMessageFormat.html">ICU 文档</a>
+关于如何指定这样的占位符的说明。接下来我们会展示一些常用的使用方法。</p>
+<h4>数字（Number）  <span id="number"></span><a href="#number" class="hashlink">&para;</a></h4><p>参数值应该被格式化为一个数。例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$sum</span> = <span class="hljs-number">42</span>;
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Balance: {0, number}'</span>, <span class="hljs-variable">$sum</span>);
+</code></pre>
+<p>你可以指定参数的格式为 <code>integer</code>（整型），<code>currency</code> （货币），或者 <code>percent</code> （百分数）：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$sum</span> = <span class="hljs-number">42</span>;
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Balance: {0, number, currency}'</span>, <span class="hljs-variable">$sum</span>);
+</code></pre>
+<p>你也可以指定一个自定义模式来格式化数字。 例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$sum</span> = <span class="hljs-number">42</span>;
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Balance: {0, number, ,000,000000}'</span>, <span class="hljs-variable">$sum</span>);
+</code></pre>
+<p>自定义格式中使用的字符可以在“特殊模式字符”一节的
+<a href="http://icu-project.org/apiref/icu4c/classicu_1_1DecimalFormat.html">ICU API 参考</a>
+中找到。</p>
+<p>该值始终根据您翻译的区域设置进行格式设置，即无需更改翻译区域设置即可更改小数或千位分隔符，货币符号等。 
+如果你需要定制这些，你可以使用
+<a href="./yii-i18n-formatter.html#asDecimal()-detail">yii\i18n\Formatter::asDecimal()</a> 和 <a href="./yii-i18n-formatter.html#asCurrency()-detail">yii\i18n\Formatter::asCurrency()</a>。</p>
+<h4>日期（Date）  <span id="date"></span><a href="#date" class="hashlink">&para;</a></h4><p>该参数值应该被格式化为一个日期。 例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Today is {0, date}'</span>, time());
+</code></pre>
+<p>你可以指定一个可选的参数格式 <code>short</code> ，<code>medium</code> ，<code>long</code> ，或 <code>full</code> ：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Today is {0, date, short}'</span>, time());
+</code></pre>
+<p>你还可以指定一个自定义模式来格式化日期：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Today is {0, date, yyyy-MM-dd}'</span>, time());
+</code></pre>
+<p><a href="http://icu-project.org/apiref/icu4c/classicu_1_1SimpleDateFormat.html#details">格式化参考</a>。</p>
+<h4>时间（Time）  <span id="time"></span><a href="#time" class="hashlink">&para;</a></h4><p>参数值应该被格式化为一个时间。 例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'It is {0, time}'</span>, time());
+</code></pre>
+<p>你可以指定一个可选的参数格式 <code>short</code> ，<code>medium</code> ，<code>long</code> ，或 <code>full</code> ：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'It is {0, time, short}'</span>, time());
+</code></pre>
+<p>你还可以指定一个自定义模式来格式化时间：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'It is {0, date, HH:mm}'</span>, time());
+</code></pre>
+<p><a href="http://icu-project.org/apiref/icu4c/classicu_1_1SimpleDateFormat.html#details">格式化参考</a>。</p>
+<h4>拼写（Spellout）  <span id="spellout"></span><a href="#spellout" class="hashlink">&para;</a></h4><p>参数值为一个数并被格式化为它的字母拼写形式。 例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 输出："42 is spelled as forty-two"</span>
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'{n,number} is spelled as {n, spellout}'</span>, [<span class="hljs-string">'n'</span> =&gt; <span class="hljs-number">42</span>]);
+</code></pre>
+<p>默认情况下，该数字拼写为基数。 它可以改变：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// may produce "I am forty-seventh agent"</span>
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'I am {n,spellout,%spellout-ordinal} agent'</span>, [<span class="hljs-string">'n'</span> =&gt; <span class="hljs-number">47</span>]);
+</code></pre>
+<p>请注意，在 <code>spellout,</code> 之后和 <code>%</code> 之前不应该有空格。</p>
+<p>要获取可用于您正在使用的语言环境的选项列表，请查看
+<a href="http://intl.rmcreative.ru/">http://intl.rmcreative.ru/</a> 上的“编号模式，拼写”。</p>
+<h4>序数词（Ordinal）  <span id="ordinal"></span><a href="#ordinal" class="hashlink">&para;</a></h4><p>参数值为一个数并被格式化为一个序数词。 例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 输出："You are the 42nd visitor here!"</span>
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'You are the {n, ordinal} visitor here!'</span>, [<span class="hljs-string">'n'</span> =&gt; <span class="hljs-number">42</span>]);
+</code></pre>
+<p>Ordinal 支持更多格式化西班牙语等语言的方式：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// may produce 471ª</span>
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'{n,ordinal,%digits-ordinal-feminine}'</span>, [<span class="hljs-string">'n'</span> =&gt; <span class="hljs-number">471</span>]);
+</code></pre>
+<p>请注意，在 <code>ordinal,</code> 之后和 <code>%</code> 之前不应该有空格。</p>
+<p>要获取可用于您正在使用的语言环境的选项列表，请查看
+<a href="http://intl.rmcreative.ru/">http://intl.rmcreative.ru/</a> 上的“编号模式，序号”。</p>
+<h4>持续时间（Duration）  <span id="duration"></span><a href="#duration" class="hashlink">&para;</a></h4><p>参数值为秒数并被格式化为持续的时间段。 例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 输出："You are here for 47 sec. already!"</span>
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'You are here for {n, duration} already!'</span>, [<span class="hljs-string">'n'</span> =&gt; <span class="hljs-number">47</span>]);
+</code></pre>
+<p>持续时间支持更多格式化方法：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// may produce 130:53:47</span>
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'{n,duration,%in-numerals}'</span>, [<span class="hljs-string">'n'</span> =&gt; <span class="hljs-number">471227</span>]);
+</code></pre>
+<p>请注意，在 <code>duration,</code> 之后和 <code>%</code> 之前不应该有空格。</p>
+<p>要获取您正在使用的区域设置的可用选项列表，请查看
+<a href="http://intl.rmcreative.ru/">http://intl.rmcreative.ru/</a> 上的“编号模式，持续时间”。</p>
+<h4>复数（Plural）  <span id="plural"></span><a href="#plural" class="hashlink">&para;</a></h4><p>不同的语言有不同的方式来表示复数。 Yii 提供一个便捷的途径，
+即使是非常复杂的规则也使翻译消息时不同的复数形式行之有效。
+取之以直接处理词形变化规则，它是足以面对某些词形变化语言的翻译。 例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 当 $n = 0 时，输出："There are no cats!"</span>
+<span class="hljs-comment">// 当 $n = 1 时，输出："There is one cat!"</span>
+<span class="hljs-comment">// 当 $n = 42 时，输出："There are 42 cats!"</span>
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'There {n, plural, =0{are no cats} =1{is one cat} other{are # cats}}!'</span>, [<span class="hljs-string">'n'</span> =&gt; <span class="hljs-variable">$n</span>]);
+</code></pre>
+<p>在上面的多个规则的参数中， <code>=0</code> 意味着 <code>n</code> 的值是 0 ，<code>=1</code> 意味着 <code>n</code> 的值是 1 ， 而 <code>other</code> 则是对于其它值，
+<code>#</code> 会被 <code>n</code> 中的值给替代。 </p>
+<p>复数形式可以是某些非常复杂的语言。下面以俄罗斯为例，<code>=1</code> 完全匹配 <code>n = 1</code>，
+而 <code>one</code> 匹配 <code>21</code> 或 <code>101</code>：</p>
+<pre><code class="hljs bash">Здесь {n, plural, =<span class="hljs-number">0</span>{котов нет} =<span class="hljs-number">1</span>{есть один кот} one{<span class="hljs-comment"># кот} few{# кота} many{# котов} other{# кота}}!</span>
+</code></pre>
+<p>注意，上述信息主要是作为一个翻译的信息，
+而不是一个原始消息，除非设置应用程序的
+<a href="./yii-base-application.html#$sourceLanguage-detail">源语言</a> 为 <code>ru-RU</code>。</p>
+<blockquote class="note"><p><strong>注意： </strong>除非您将应用程序的 <a href="./yii-base-application.html#$sourceLanguage-detail">源语言</a> 
+设置为“RU-RU”，并且从以下语言转换而来，上面的示例俄语消息主要用作翻译的消息，而不是原始消息俄语。</p>
+<p>当在 <code>Yii::t()</code> 调用中指定的原始消息未找到翻译时，
+<a href="./yii-base-application.html#$sourceLanguage-detail">源语言</a> 复数规则将应用于原始消息。</p>
+</blockquote>
+<p>对于字符串如下所示的情况，有一个 <code>offset</code> 参数：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$likeCount</span> = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">echo</span> Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'You {likeCount,plural,
+    offset: 1
+    =0{did not like this}
+    =1{liked this}
+    one{and one other person liked this}
+    other{and # others liked this}
+}'</span>, [
+    <span class="hljs-string">'likeCount'</span> =&gt; <span class="hljs-variable">$likeCount</span>
+]);
+
+<span class="hljs-comment">// You and one other person liked this</span>
+</code></pre>
+<h4>序数选择（Ordinal selection） <span id="ordinal-selection"> <span id="xu-shu-xuan-ze-ordinal-selection"></span><a href="#xu-shu-xuan-ze-ordinal-selection" class="hashlink">&para;</a></h4><p><code>selectordinal</code> 的参数类型旨在为您所翻译的语言环境选择一个基于语序规则的字符串：
+一个基于语序规则的字符串：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$n</span> = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">echo</span> Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'You are the {n,selectordinal,one{#st} two{#nd} few{#rd} other{#th}} visitor'</span>, [<span class="hljs-string">'n'</span> =&gt; <span class="hljs-variable">$n</span>]);
+<span class="hljs-comment">// For English it outputs:</span>
+<span class="hljs-comment">// You are the 3rd visitor</span>
+
+<span class="hljs-comment">// Translation</span>
+<span class="hljs-string">'You are the {n,selectordinal,one{#st} two{#nd} few{#rd} other{#th}} visitor'</span> =&gt; <span class="hljs-string">'Вы {n,selectordinal,other{#-й}} посетитель'</span>,
+
+<span class="hljs-comment">// For Russian translation it outputs:</span>
+<span class="hljs-comment">// Вы 3-й посетитель</span>
+</code></pre>
+<p>格式与复数使用的格式非常接近。 要了解您应为特定语言环境指定哪些参数，请参阅
+<a href="http://intl.rmcreative.ru/">http://intl.rmcreative.ru/</a> 上的“复数规则，序数”。
+或者，您可以参考 <a href="http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html">unicode.org上的规则参考</a>。</p>
+<h4>选择（Selection）  <span id="selection"></span><a href="#selection" class="hashlink">&para;</a></h4><p>可以使用 <code>select</code> 参数类型来选择基于参数值的短语。例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 输出："Snoopy is a dog and it loves Yii!"</span>
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'{name} is a {gender} and {gender, select, female{she} male{he} other{it}} loves Yii!'</span>, [
+    <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'Snoopy'</span>,
+    <span class="hljs-string">'gender'</span> =&gt; <span class="hljs-string">'dog'</span>,
+]);
+</code></pre>
+<p>在上面的表达中， <code>female</code> 和 <code>male</code> 是可能的参数值，
+而 <code>other</code> 用于处理不与它们中任何一个相匹配的值。对于每一个可能的参数值，
+应指定一个短语并把它放在在一对大括号中。</p>
+<h3>指定默认翻译（Specifying default message source）  <span id="default-message-source"></span><a href="#default-message-source" class="hashlink">&para;</a></h3><p>你可以指定使用默认的翻译，该翻译将作为一个类别，用于不匹配任何其他翻译的后备。
+这种翻译应标有 <code>*</code> 。
+为了做到这一点以下内容需要添加到应用程序的配置：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">//配置 i18n 组件</span>
+
+<span class="hljs-string">'i18n'</span> =&gt; [
+    <span class="hljs-string">'translations'</span> =&gt; [
+        <span class="hljs-string">'*'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\i18n\PhpMessageSource'</span>
+        ],
+    ],
+],
+</code></pre>
+<p>现在，你可以使用每一个还没有配置的类别，这跟 Yii 1.1 的行为有点类似。该类别的消息将来自在默认翻译 <code>basePath</code> 中的一个文件，
+该文件在 <code>@app/messages</code> ：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> Yii::t(<span class="hljs-string">'not_specified_category'</span>, <span class="hljs-string">'message from unspecified category'</span>);
+</code></pre>
+<p>该消息将来自 <code>@app/messages/&lt;LanguageCode&gt;/not_specified_category.php</code> 。</p>
+<h3>翻译模块消息（Translating module messages）  <span id="module-translation"></span><a href="#module-translation" class="hashlink">&para;</a></h3><p>如果你想翻译一个模块的消息，并避免使用单一翻译文件的所有信息，你可以按照下面的方式来翻译：</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">modules</span>\<span class="hljs-title">users</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Module</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Module</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$controllerNamespace</span> = <span class="hljs-string">'app\modules\users\controllers'</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">parent</span>::init();
+        <span class="hljs-variable">$this</span>-&gt;registerTranslations();
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">registerTranslations</span><span class="hljs-params">()</span>
+    </span>{
+        Yii::<span class="hljs-variable">$app</span>-&gt;i18n-&gt;translations[<span class="hljs-string">'modules/users/*'</span>] = [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\i18n\PhpMessageSource'</span>,
+            <span class="hljs-string">'sourceLanguage'</span> =&gt; <span class="hljs-string">'en-US'</span>,
+            <span class="hljs-string">'basePath'</span> =&gt; <span class="hljs-string">'@app/modules/users/messages'</span>,
+            <span class="hljs-string">'fileMap'</span> =&gt; [
+                <span class="hljs-string">'modules/users/validation'</span> =&gt; <span class="hljs-string">'validation.php'</span>,
+                <span class="hljs-string">'modules/users/form'</span> =&gt; <span class="hljs-string">'form.php'</span>,
+                ...
+            ],
+        ];
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">t</span><span class="hljs-params">(<span class="hljs-variable">$category</span>, <span class="hljs-variable">$message</span>, <span class="hljs-variable">$params</span> = [], <span class="hljs-variable">$language</span> = null)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> Yii::t(<span class="hljs-string">'modules/users/'</span> . <span class="hljs-variable">$category</span>, <span class="hljs-variable">$message</span>, <span class="hljs-variable">$params</span>, <span class="hljs-variable">$language</span>);
+    }
+
+}
+</code></pre>
+<p>在上面的例子中，我们使用通配符匹配，然后过滤了所需的文件中的每个类别。取之使用 <code>fileMap</code> ，你可以简单地使用类映射的同名文件。
+现在你可以直接使用 <code>Module::t('validation', 'your custom validation message')</code> 
+或 <code>Module::t('form', 'some form label')</code>。</p>
+<h3>翻译小部件消息（Translating widgets messages）  <span id="widget-translation"></span><a href="#widget-translation" class="hashlink">&para;</a></h3><p>上述模块的翻译规则也同样适用于小部件的翻译规则，例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">widgets</span>\<span class="hljs-title">menu</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Widget</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Menu</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Widget</span>
+</span>{
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">parent</span>::init();
+        <span class="hljs-variable">$this</span>-&gt;registerTranslations();
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">registerTranslations</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$i18n</span> = Yii::<span class="hljs-variable">$app</span>-&gt;i18n;
+        <span class="hljs-variable">$i18n</span>-&gt;translations[<span class="hljs-string">'widgets/menu/*'</span>] = [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\i18n\PhpMessageSource'</span>,
+            <span class="hljs-string">'sourceLanguage'</span> =&gt; <span class="hljs-string">'en-US'</span>,
+            <span class="hljs-string">'basePath'</span> =&gt; <span class="hljs-string">'@app/widgets/menu/messages'</span>,
+            <span class="hljs-string">'fileMap'</span> =&gt; [
+                <span class="hljs-string">'widgets/menu/messages'</span> =&gt; <span class="hljs-string">'messages.php'</span>,
+            ],
+        ];
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">echo</span> <span class="hljs-variable">$this</span>-&gt;render(<span class="hljs-string">'index'</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">t</span><span class="hljs-params">(<span class="hljs-variable">$category</span>, <span class="hljs-variable">$message</span>, <span class="hljs-variable">$params</span> = [], <span class="hljs-variable">$language</span> = null)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> Yii::t(<span class="hljs-string">'widgets/menu/'</span> . <span class="hljs-variable">$category</span>, <span class="hljs-variable">$message</span>, <span class="hljs-variable">$params</span>, <span class="hljs-variable">$language</span>);
+    }
+
+}
+</code></pre>
+<p>你可以简单地使用类映射的同名文件而不是使用 <code>fileMap</code> 。
+现在你直接可以使用 <code>Menu::t('messages', 'new messages {messages}', ['{messages}' =&gt; 10])</code> 。</p>
+<blockquote class="tip"><p><strong>提示： </strong>对于小部件也可以使用 i18n 视图，并一样以控制器的规则来应用它们。</p>
+</blockquote>
+<h3>翻译框架信息（Translating framework messages）  <span id="framework-translation"></span><a href="#framework-translation" class="hashlink">&para;</a></h3><p>Yii 自带了一些默认的信息验证错误和其他一些字符串的翻译。
+这些信息都是在 <code>yii</code> 类别中。有时候你想纠正应用程序的默认信息翻译。
+为了做到这一点，需配置 <code>i18n</code> <a href="guide-structure-application-components.html">应用组件</a> 如下：</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'i18n'</span> =&gt; [
+    <span class="hljs-string">'translations'</span> =&gt; [
+        <span class="hljs-string">'yii'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\i18n\PhpMessageSource'</span>,
+            <span class="hljs-string">'sourceLanguage'</span> =&gt; <span class="hljs-string">'en-US'</span>,
+            <span class="hljs-string">'basePath'</span> =&gt; <span class="hljs-string">'@app/messages'</span>
+        ],
+    ],
+],
+</code></pre>
+<p>现在可以把你修改过的翻译放在 <code>@app/messages/&lt;language&gt;/yii.php</code>。</p>
+<h3>处理缺少的翻译（Handling missing translations）  <span id="missing-translations"></span><a href="#missing-translations" class="hashlink">&para;</a></h3><p>如果翻译的消息在消息源文件里找不到，Yii 将直接显示该消息内容。这样一来当你的原始消息是一个有效的冗长的文字时会很方便。
+然而，有时它是不能实现我们的需求。你可能需要执行一些自定义处理的情况，
+这时请求的翻译可能在消息翻译源文件找不到。
+这可通过使用 <a href="./yii-i18n-messagesource.html#EVENT_MISSING_TRANSLATION-detail">missingTranslation</a> - <a href="./yii-i18n-messagesource.html">yii\i18n\MessageSource</a> 的事件来完成。</p>
+<p>例如，你可能想要将所有缺失的翻译做一个明显的标记，这样它们就可以很容易地在页面中找到。
+为此，你需要先设置一个事件处理程序。这可以在应用程序配置中进行：</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'components'</span> =&gt; [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'i18n'</span> =&gt; [
+        <span class="hljs-string">'translations'</span> =&gt; [
+            <span class="hljs-string">'app*'</span> =&gt; [
+                <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\i18n\PhpMessageSource'</span>,
+                <span class="hljs-string">'fileMap'</span> =&gt; [
+                    <span class="hljs-string">'app'</span> =&gt; <span class="hljs-string">'app.php'</span>,
+                    <span class="hljs-string">'app/error'</span> =&gt; <span class="hljs-string">'error.php'</span>,
+                ],
+                <span class="hljs-string">'on missingTranslation'</span> =&gt; [<span class="hljs-string">'app\components\TranslationEventHandler'</span>, <span class="hljs-string">'handleMissingTranslation'</span>]
+            ],
+        ],
+    ],
+],
+</code></pre>
+<p>现在，你需要实现自己的事件处理程序：</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">i18n</span>\<span class="hljs-title">MissingTranslationEvent</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TranslationEventHandler</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleMissingTranslation</span><span class="hljs-params">(MissingTranslationEvent <span class="hljs-variable">$event</span>)</span>
+    </span>{
+        <span class="hljs-variable">$event</span>-&gt;translatedMessage = <span class="hljs-string">"@MISSING: {$event-&gt;category}.{$event-&gt;message} FOR LANGUAGE {$event-&gt;language} @"</span>;
+    }
+}
+</code></pre>
+<p>如果 <a href="./yii-i18n-missingtranslationevent.html#$translatedMessage-detail">yii\i18n\MissingTranslationEvent::$translatedMessage</a> 是由事件处理程序设置，它将显示翻译结果。</p>
+<blockquote class="note"><p><strong>注意： </strong>每个消息源会单独处理它缺少的翻译。如果是使用多个消息源，并希望他们把缺少的翻译以同样的方式来处理，
+你应该给它们每一个消息源指定相应的事件处理程序。</p>
+</blockquote>
+<h3>使用 <code>message</code> 命令（Using the <code>message</code> command）  <span id="message-command"></span><a href="#message-command" class="hashlink">&para;</a></h3><p>翻译储存在 <a href="./yii-i18n-phpmessagesource.html">php 文件</a>，[[yii\i18n\GettextMessageSource|.po 文件] 或者 <a href="./yii-i18n-dbmessagesource.html">数据库</a>。具体见类的附加选项。</p>
+<p>首先，你需要创建一个配置文件。确定应该保存在哪里，然后执行命令</p>
+<pre><code class="hljs bash language-bash">./yii message/config path/to/config.php
+</code></pre>
+<p>打开创建的文件，并按照需求来调整参数。特别注意：</p>
+<ul>
+<li><code>languages</code>: 代表你的应用程序应该被翻译成什么语言的一个数组;</li>
+<li><code>messagePath</code>: 存储消息文件的路径，这应与配置中 <code>i18n</code> 的 <code>basePath</code> 参数一致。</li>
+</ul>
+<p>您也可以使用 './yii message/config' 命令通过 cli 动态生成带有指定选项的配置文件。
+例如，你可以像下面这样设置 <code>languages</code> 和 <code>messagePath</code> 参数：</p>
+<pre><code class="hljs bash language-bash">./yii message/config --languages=de,ja --messagePath=messages path/to/config.php
+</code></pre>
+<p>要获取可用选项列表，请执行下一个命令：</p>
+<pre><code class="hljs bash language-bash">./yii <span class="hljs-built_in">help</span> message/config
+</code></pre>
+<p>一旦你完成了配置文件，你最终可以用命令提取你的消息：</p>
+<pre><code class="hljs bash language-bash">./yii message path/to/config.php
+</code></pre>
+<p>另外，您可以使用选项来动态更改提取参数。</p>
+<p>然后你会发现你的文件（如果你已经选择基于文件的翻译）在 <code>messagePath</code> 目录。</p>
+<h2>视图的翻译（View Translation）  <span id="view-translation"></span><a href="#view-translation" class="hashlink">&para;</a></h2><p>有时你可能想要翻译一个完整的视图文件，而不是翻译单条文本消息。为了达到这一目的，
+只需简单的翻译视图并在它子目录下保存一个名称一样的目标语言文件。
+例如，如果你想要翻译的视图文件为 <code>views/site/index.php</code> 且目标语言是 <code>ru-RU</code>，
+你可以将视图翻译并保存为 <code>views/site/ru-RU/index.php</code>。现在
+每当你调用 <a href="./yii-base-view.html#renderFile()-detail">yii\base\View::renderFile()</a> 或任何其它方法 (如 <a href="./yii-base-controller.html#render()-detail">yii\base\Controller::render()</a>) 来渲染 <code>views/site/index.php</code> 视图，
+它最终会使用所翻译的 <code>views/site/ru-RU/index.php</code>。</p>
+<blockquote class="note"><p><strong>注意： </strong>如果 <a href="./yii-base-application.html#$language-detail">目标语言</a> 跟 <a href="./yii-base-application.html#$sourceLanguage-detail">源语言</a> 相同，
+在翻译视图的存在下，将呈现原始视图。</p>
+</blockquote>
+<h2>格式化日期和数字值（Formatting Date and Number Values）  <span id="date-number"></span><a href="#date-number" class="hashlink">&para;</a></h2><p>在 <a href="guide-output-formatting.html">格式化输出数据</a> 一节可获取详细信息。</p>
+<h2>设置 PHP 环境（Setting Up PHP Environment）  <span id="setup-environment"></span><a href="#setup-environment" class="hashlink">&para;</a></h2><p>Yii 使用 <a href="https://secure.php.net/manual/en/book.intl.php">PHP intl 扩展</a> 来提供大多数 I18N 的功能，
+如日期和数字格式的 <a href="./yii-i18n-formatter.html">yii\i18n\Formatter</a> 类和消息格式的 <a href="./yii-i18n-messageformatter.html">yii\i18n\MessageFormatter</a> 类。
+当 <code>intl</code> 扩展没有安装时，两者会提供一个回调机制。然而，该回调机制只适用于目标语言是英语的情况下。
+因此，当 I18N 对你来说必不可少时，强烈建议你安装 <code>intl</code>。</p>
+<p><a href="https://secure.php.net/manual/en/book.intl.php">PHP intl 扩展</a> 是基于对于所有不同的语言环境
+提供格式化规则的 <a href="http://site.icu-project.org/">ICU库</a>。
+不同版本的 ICU 中可能会产生不同日期和数值格式的结果。
+为了确保你的网站在所有环境产生相同的结果，
+建议你安装与 <code>intl</code> 扩展相同的版本（和 ICU 同一版本）。</p>
+<p>要找出所使用的 PHP 是哪个版本的 ICU ，你可以运行下面的脚本，它会给出你所使用的 PHP 和 ICU 的版本。</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-string">"PHP: "</span> . PHP_VERSION . <span class="hljs-string">"\n"</span>;
+<span class="hljs-keyword">echo</span> <span class="hljs-string">"ICU: "</span> . INTL_ICU_VERSION . <span class="hljs-string">"\n"</span>;
+<span class="hljs-keyword">echo</span> <span class="hljs-string">"ICU Data: "</span> . INTL_ICU_DATA_VERSION . <span class="hljs-string">"\n"</span>;
+</code></pre>
+<p>此外，还建议你所使用的 ICU 版本应等于或大于 49 的版本。这确保了可以使用本文档描述的所有功能。例如，
+低于 49 版本的 ICU 不支持使用 <code>#</code> 占位符来实现复数规则。
+请参阅 <a href="http://site.icu-project.org/download">http://site.icu-project.org/download</a> 获取可用 ICU 版本的完整列表。
+注意，版本编号在 4.8 之后发生了变化（如 ICU4.8，ICU49，50 ICU 等）。</p>
+<p>另外，ICU 库中时区数据库的信息可能过时。要更新时区数据库时详情请参阅
+<a href="http://userguide.icu-project.org/datetime/timezone#TOC-Updating-the-Time-Zone-Data">ICU 手册</a> 。
+而对于 ICU 输出格式使用的时区数据库，PHP 用的时区数据库可能跟它有关。
+你可以通过安装 <a href="https://pecl.php.net/package/timezonedb">pecl package <code>timezonedb</code></a> 的最新版本来更新它。</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:19 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

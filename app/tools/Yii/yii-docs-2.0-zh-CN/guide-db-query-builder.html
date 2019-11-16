@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>查询生成器（Query Builder） - 配合数据库工作（Working with Databases） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1783" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1783-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1783-collapse" class="collapse navbar-collapse"><ul id="w1784" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1785" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1767" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-1767" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-1768" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-1768" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-1769" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-1769" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-1770" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-1770" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-1771" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-1771" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item active" href="#navigation-1772" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-1772" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item active" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-zh-CN/README.md">Sphinx</a>
+<a class="list-group-item" href="./guide-yii2-redis.html">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-zh-CN/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-zh-CN/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1773" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-1773" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-1774" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-1774" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-1775" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-1775" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-1776" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-1776" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-1777" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-1777" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-1778" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-1778" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-1779" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-1779" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-1780" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-1780" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-1781" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-1781" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1782" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-1782" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>查询构建器 <span id="cha-xun-gou-jian-qi"></span><a href="#cha-xun-gou-jian-qi" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#building-queries">创建查询</a></li>
+<li><a href="#query-methods">查询方法</a></li></ol></div>
+<p>查询构建器建立在 <a href="guide-db-dao.html">Database Access Objects</a> 基础之上，可让你创建
+程序化的、DBMS无关的SQL语句。相比于原生的SQL语句，查询构建器可以帮你
+写出可读性更强的SQL相关的代码，并生成安全性更强的SQL语句。</p>
+<p>使用查询构建器通常包含以下两个步骤：</p>
+<ol>
+<li>创建一个 <a href="./yii-db-query.html">yii\db\Query</a> 对象来代表一条 SELECT SQL 语句的不同子句（例如 <code>SELECT</code>, <code>FROM</code>）。</li>
+<li>执行 <a href="./yii-db-query.html">yii\db\Query</a> 的一个查询方法（例如：<code>all()</code>）从数据库当中检索数据。</li>
+</ol>
+<p>如下所示代码是查询构造器的一个典型用法：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$rows</span> = (<span class="hljs-keyword">new</span> \yii\db\Query())
+    -&gt;select([<span class="hljs-string">'id'</span>, <span class="hljs-string">'email'</span>])
+    -&gt;from(<span class="hljs-string">'user'</span>)
+    -&gt;where([<span class="hljs-string">'last_name'</span> =&gt; <span class="hljs-string">'Smith'</span>])
+    -&gt;limit(<span class="hljs-number">10</span>)
+    -&gt;all();
+</code></pre>
+<p>上面的代码将会生成并执行如下的SQL语句，其中 <code>:last_name</code> 参数绑定了
+字符串 <code>'Smith'</code>。</p>
+<pre><code class="hljs sql language-sql"><span class="hljs-operator"><span class="hljs-keyword">SELECT</span> <span class="hljs-string">`id`</span>, <span class="hljs-string">`email`</span> 
+<span class="hljs-keyword">FROM</span> <span class="hljs-string">`user`</span>
+<span class="hljs-keyword">WHERE</span> <span class="hljs-string">`last_name`</span> = :last_name
+<span class="hljs-keyword">LIMIT</span> <span class="hljs-number">10</span>
+</span></code></pre>
+<blockquote class="tip"><p><strong>提示： </strong>你平时更多的时候会使用 <a href="./yii-db-query.html">yii\db\Query</a> 而不是 <a href="./yii-db-querybuilder.html">yii\db\QueryBuilder</a>。
+  当你调用其中一个查询方法时，后者将会被前者隐式的调用。<a href="./yii-db-querybuilder.html">yii\db\QueryBuilder</a>主要负责将
+  DBMS 不相关的 <a href="./yii-db-query.html">yii\db\Query</a> 对象转换成 DBMS 相关的 SQL 语句（例如，
+  以不同的方式引用表或字段名称）。</p>
+</blockquote>
+<h2>创建查询  <span id="building-queries"></span><a href="#building-queries" class="hashlink">&para;</a></h2><p>为了创建一个 <a href="./yii-db-query.html">yii\db\Query</a> 对象，你需要调用不同的查询构建方法来代表SQL语句的不同子句。
+这些方法的名称集成了在SQL语句相应子句中使用的关键字。例如，为了指定 SQL 语句当中的
+<code>FROM</code> 子句，你应该调用 <code>from()</code> 方法。所有的查询构建器方法返回的是查询对象本身，
+也就是说，你可以把多个方法的调用串联起来。</p>
+<p>接下来，我们会对这些查询构建器方法进行一一讲解：</p>
+<h3><a href="./yii-db-query.html#select()-detail">select()</a>  <span id="select"></span><a href="#select" class="hashlink">&para;</a></h3><p><a href="./yii-db-query.html#select()-detail">select()</a> 方法用来指定 SQL 语句当中的 <code>SELECT</code> 子句。
+你可以像下面的例子一样使用一个数组或者字符串来定义需要查询的字段。当 SQL 语句
+是由查询对象生成的时候，被查询的字段名称将会自动的被引号括起来。</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$query</span>-&gt;select([<span class="hljs-string">'id'</span>, <span class="hljs-string">'email'</span>]);
+
+<span class="hljs-comment">// 等同于：</span>
+
+<span class="hljs-variable">$query</span>-&gt;select(<span class="hljs-string">'id, email'</span>);
+</code></pre>
+<p>就像写原生 SQL 语句一样，被选取的字段可以包含表前缀，以及/或者字段别名。
+例如： </p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$query</span>-&gt;select([<span class="hljs-string">'user.id AS user_id'</span>, <span class="hljs-string">'email'</span>]);
+
+<span class="hljs-comment">// 等同于：</span>
+
+<span class="hljs-variable">$query</span>-&gt;select(<span class="hljs-string">'user.id AS user_id, email'</span>);
+</code></pre>
+<p>如果使用数组格式来指定字段，你可以使用数组的键值来表示字段的别名。
+例如，上面的代码可以被重写为如下形式：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$query</span>-&gt;select([<span class="hljs-string">'user_id'</span> =&gt; <span class="hljs-string">'user.id'</span>, <span class="hljs-string">'email'</span>]);
+</code></pre>
+<p>如果你在组建查询时没有调用 <a href="./yii-db-query.html#select()-detail">select()</a> 方法，那么选择的将是 <code>'*'</code> ，
+也即选取的是所有的字段。</p>
+<p>除了字段名称以外，你还可以选择数据库的表达式。当你使用到包含逗号的数据库表达式的时候，
+你必须使用数组的格式，以避免自动的错误的引号添加。例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$query</span>-&gt;select([<span class="hljs-string">"CONCAT(first_name, ' ', last_name) AS full_name"</span>, <span class="hljs-string">'email'</span>]); 
+</code></pre>
+<p>与所有涉及原始 SQL 的地方一样，当在 select 中编写 DB 表达式时，可以对表名和列名使用
+<a href="guide-db-dao.html#quoting-table-and-column-names">与 DBMS 无关的引用语法</a>。</p>
+<p>从 2.0.1 的版本开始你就可以使用子查询了。在定义每一个子查询的时候，
+你应该使用 <a href="./yii-db-query.html">yii\db\Query</a> 对象。例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$subQuery</span> = (<span class="hljs-keyword">new</span> Query())-&gt;select(<span class="hljs-string">'COUNT(*)'</span>)-&gt;from(<span class="hljs-string">'user'</span>);
+
+<span class="hljs-comment">// SELECT `id`, (SELECT COUNT(*) FROM `user`) AS `count` FROM `post`</span>
+<span class="hljs-variable">$query</span> = (<span class="hljs-keyword">new</span> Query())-&gt;select([<span class="hljs-string">'id'</span>, <span class="hljs-string">'count'</span> =&gt; <span class="hljs-variable">$subQuery</span>])-&gt;from(<span class="hljs-string">'post'</span>);
+</code></pre>
+<p>你应该调用 <a href="./yii-db-query.html#distinct()-detail">distinct()</a> 方法来去除重复行，如下所示：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// SELECT DISTINCT `user_id` ...</span>
+<span class="hljs-variable">$query</span>-&gt;select(<span class="hljs-string">'user_id'</span>)-&gt;distinct();
+</code></pre>
+<p>你可以调用 <a href="./yii-db-query.html#addSelect()-detail">addSelect()</a> 方法来选取附加字段，例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$query</span>-&gt;select([<span class="hljs-string">'id'</span>, <span class="hljs-string">'username'</span>])
+    -&gt;addSelect([<span class="hljs-string">'email'</span>]);
+</code></pre>
+<h3><a href="./yii-db-query.html#from()-detail">from()</a>  <span id="from"></span><a href="#from" class="hashlink">&para;</a></h3><p><a href="./yii-db-query.html#from()-detail">from()</a> 方法指定了 SQL 语句当中的 <code>FROM</code> 子句。例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// SELECT * FROM `user`</span>
+<span class="hljs-variable">$query</span>-&gt;from(<span class="hljs-string">'user'</span>);
+</code></pre>
+<p>你可以通过字符串或者数组的形式来定义被查询的表名称。就像你写原生的 SQL 语句一样，
+表名称里面可包含数据库前缀，以及/或者表别名。例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$query</span>-&gt;from([<span class="hljs-string">'public.user u'</span>, <span class="hljs-string">'public.post p'</span>]);
+
+<span class="hljs-comment">// 等同于：</span>
+
+<span class="hljs-variable">$query</span>-&gt;from(<span class="hljs-string">'public.user u, public.post p'</span>);
+</code></pre>
+<p>如果你使用的是数组的格式，那么你同样可以用数组的键值来定义表别名，如下所示：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$query</span>-&gt;from([<span class="hljs-string">'u'</span> =&gt; <span class="hljs-string">'public.user'</span>, <span class="hljs-string">'p'</span> =&gt; <span class="hljs-string">'public.post'</span>]);
+</code></pre>
+<p>除了表名以外，你还可以从子查询中再次查询，这里的子查询是由 <a href="./yii-db-query.html">yii\db\Query</a> 创建的对象。
+例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$subQuery</span> = (<span class="hljs-keyword">new</span> Query())-&gt;select(<span class="hljs-string">'id'</span>)-&gt;from(<span class="hljs-string">'user'</span>)-&gt;where(<span class="hljs-string">'status=1'</span>);
+
+<span class="hljs-comment">// SELECT * FROM (SELECT `id` FROM `user` WHERE status=1) u </span>
+<span class="hljs-variable">$query</span>-&gt;from([<span class="hljs-string">'u'</span> =&gt; <span class="hljs-variable">$subQuery</span>]);
+</code></pre>
+<h4>前缀 <span id="qian-zhui"></span><a href="#qian-zhui" class="hashlink">&para;</a></h4><p><code>from</code> 还可以应用默认的 <a href="./yii-db-connection.html#$tablePrefix-detail">tablePrefix</a> 前缀，实现细节请参考
+<a href="guide-db-dao.html#quoting-table-and-column-names">“数据库访问对象指南”的“Quoting Tables”章节</a>.</p>
+<h3><a href="./yii-db-query.html#where()-detail">where()</a>  <span id="where"></span><a href="#where" class="hashlink">&para;</a></h3><p><a href="./yii-db-query.html#where()-detail">where()</a> 方法定义了 SQL 语句当中的 <code>WHERE</code> 子句。
+你可以使用如下四种格式来定义 <code>WHERE</code> 条件：</p>
+<ul>
+<li>字符串格式，例如：<code>'status=1'</code></li>
+<li>哈希格式，例如： <code>['status' =&gt; 1, 'type' =&gt; 2]</code></li>
+<li>操作符格式，例如：<code>['like', 'name', 'test']</code></li>
+<li>对象格式，例如：<code>new LikeCondition('name', 'LIKE', 'test')</code></li>
+</ul>
+<h4>字符串格式  <span id="string-format"></span><a href="#string-format" class="hashlink">&para;</a></h4><p>在定义非常简单的查询条件的时候，字符串格式是最合适的。
+它看起来和原生 SQL 语句差不多。例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$query</span>-&gt;where(<span class="hljs-string">'status=1'</span>);
+
+<span class="hljs-comment">// 或使用参数绑定来绑定动态参数值</span>
+<span class="hljs-variable">$query</span>-&gt;where(<span class="hljs-string">'status=:status'</span>, [<span class="hljs-string">':status'</span> =&gt; <span class="hljs-variable">$status</span>]);
+
+<span class="hljs-comment">// 原生 SQL 在日期字段上使用 MySQL YEAR() 函数</span>
+<span class="hljs-variable">$query</span>-&gt;where(<span class="hljs-string">'YEAR(somedate) = 2015'</span>);
+</code></pre>
+<p>千万不要像如下的例子一样直接在条件语句当中嵌入变量，特别是当这些变量来源于终端用户输入的时候，
+因为这样我们的软件将很容易受到 SQL 注入的攻击。</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 危险！千万别这样干，除非你非常的确定 $status 是一个整型数值。</span>
+<span class="hljs-variable">$query</span>-&gt;where(<span class="hljs-string">"status=$status"</span>);
+</code></pre>
+<p>当使用 <code>参数绑定</code> 的时候，你可以调用 <a href="./yii-db-query.html#params()-detail">params()</a> 或者 <a href="./yii-db-query.html#addParams()-detail">addParams()</a> 方法
+来分别绑定不同的参数。</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$query</span>-&gt;where(<span class="hljs-string">'status=:status'</span>)
+    -&gt;addParams([<span class="hljs-string">':status'</span> =&gt; <span class="hljs-variable">$status</span>]);
+</code></pre>
+<p>与涉及原生 SQL 的所有地方一样，在以字符串格式写入条件时，可以对表名和列名使用 
+<a href="guide-db-dao.html#quoting-table-and-column-names">与 DBMS 无关的引用语法</a>。</p>
+<h4>哈希格式  <span id="hash-format"></span><a href="#hash-format" class="hashlink">&para;</a></h4><p>哈希格式最适合用来指定多个 <code>AND</code> 串联起来的简单的"等于断言"子条件。
+它是以数组的形式来书写的，数组的键表示字段的名称，而数组的值则表示
+这个字段需要匹配的值。例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// ...WHERE (`status` = 10) AND (`type` IS NULL) AND (`id` IN (4, 8, 15))</span>
+<span class="hljs-variable">$query</span>-&gt;where([
+    <span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">10</span>,
+    <span class="hljs-string">'type'</span> =&gt; <span class="hljs-keyword">null</span>,
+    <span class="hljs-string">'id'</span> =&gt; [<span class="hljs-number">4</span>, <span class="hljs-number">8</span>, <span class="hljs-number">15</span>],
+]);
+</code></pre>
+<p>就像你所看到的一样，查询构建器非常的智能，能恰当地处理数值当中的空值和数组。</p>
+<p>你也可以像下面那样在子查询当中使用哈希格式： </p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$userQuery</span> = (<span class="hljs-keyword">new</span> Query())-&gt;select(<span class="hljs-string">'id'</span>)-&gt;from(<span class="hljs-string">'user'</span>);
+
+<span class="hljs-comment">// ...WHERE `id` IN (SELECT `id` FROM `user`)</span>
+<span class="hljs-variable">$query</span>-&gt;where([<span class="hljs-string">'id'</span> =&gt; <span class="hljs-variable">$userQuery</span>]);
+</code></pre>
+<p>使用哈希格式，Yii 在内部对相应的值进行参数绑定，与 <a href="#string-format">字符串格式</a> 相比，
+此处你不需要手动添加参数绑定。但请注意，Yii 不会帮你转义列名，所以如果你
+从用户端获得的变量作为列名而没有进行任何额外的检查，对于 SQL 注入攻击，
+你的程序将变得很脆弱。为了保证应用程序的安全，请不要将变量用作列名
+或者你必须用白名单过滤变量。如果你实在需要从用户获取列名，请阅读 <a href="guide-output-data-widgets.html#filtering-data">过滤数据</a>
+章节。例如，以下代码易受攻击：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 易受攻击的代码：</span>
+<span class="hljs-variable">$column</span> = <span class="hljs-variable">$request</span>-&gt;get(<span class="hljs-string">'column'</span>);
+<span class="hljs-variable">$value</span> = <span class="hljs-variable">$request</span>-&gt;get(<span class="hljs-string">'value'</span>);
+<span class="hljs-variable">$query</span>-&gt;where([<span class="hljs-variable">$column</span> =&gt; <span class="hljs-variable">$value</span>]);
+<span class="hljs-comment">// $value 是安全的，但是 $column 名不会被转义处理！</span>
+</code></pre>
+<h4>操作符格式  <span id="operator-format"></span><a href="#operator-format" class="hashlink">&para;</a></h4><p>操作符格式允许你指定类程序风格的任意条件语句，如下所示：</p>
+<pre><code class="hljs php language-php">[操作符, 操作数1, 操作数2, ...]
+</code></pre>
+<p>其中每个操作数可以是字符串格式、哈希格式或者嵌套的操作符格式，
+而操作符可以是如下列表中的一个：</p>
+<ul>
+<li><p><code>and</code>：操作数会被 <code>AND</code> 关键字串联起来。例如，<code>['and', 'id=1', 'id=2']</code> 
+将会生成 <code>id=1 AND id=2</code>。如果操作数是一个数组，它也会按上述规则转换成
+字符串。例如，<code>['and', 'type=1', ['or', 'id=1', 'id=2']]</code> 
+将会生成 <code>type=1 AND (id=1 OR id=2)</code>。
+这个方法不会自动加引号或者转义。</p>
+</li>
+<li><p><code>or</code>：用法和 <code>and</code> 操作符类似，这里就不再赘述。</p>
+</li>
+<li><p><code>not</code>：只需要操作数 1，它将包含在 <code>NOT()</code> 中。例如，<code>['not'，'id = 1']</code> 将生成 <code>['not', 'id=1']</code>。操作数 1 也可以是个描述多个表达式的数组。例如 <code>['not', ['status' =&gt; 'draft', 'name' =&gt; 'example']]</code> 将生成 <code>NOT ((status='draft') AND (name='example'))</code>。</p>
+</li>
+<li><p><code>between</code>：第一个操作数为字段名称，第二个和第三个操作数代表的是这个字段
+的取值范围。例如，<code>['between', 'id', 1, 10]</code> 将会生成
+<code>id BETWEEN 1 AND 10</code>。
+如果你需要建立一个值在两列之间的查询条件（比如 <code>11 BETWEEN min_id AND max_id</code>），
+你应该使用 <a href="./yii-db-conditions-betweencolumnscondition.html">BetweenColumnsCondition</a>。
+请参阅 <a href="#object-format">条件-对象格式</a> 一章以了解有关条件的对象定义的更多信息。</p>
+</li>
+<li><p><code>not between</code>：与 <code>between</code> 类似，除了 <code>BETWEEN</code> 被 <code>NOT BETWEEN</code> 替换
+在生成条件时。</p>
+</li>
+<li><p><code>in</code>：第一个操作数应为字段名称或者 DB 表达式。第二个操作符既可以是一个数组，
+也可以是一个  <code>Query</code> 对象。它会转换成<code>IN</code> 条件语句。如果第二个操作数是一个
+数组，那么它代表的是字段或 DB 表达式的取值范围。如果第二个操作数是 <code>Query</code> 
+对象，那么这个子查询的结果集将会作为第一个操作符的字段或者 DB 表达式的取值范围。
+例如， <code>['in', 'id', [1, 2, 3]]</code> 将生成 <code>id IN (1, 2, 3)</code>。
+该方法将正确地为字段名加引号以及为取值范围转义。<code>in</code> 操作符还支持组合字段，此时，
+操作数1应该是一个字段名数组，而操作数2应该是一个数组或者 <code>Query</code> 对象，
+代表这些字段的取值范围。</p>
+</li>
+<li><p><code>not in</code>：用法和 <code>in</code> 操作符类似，这里就不再赘述。</p>
+</li>
+<li><p><code>like</code>：第一个操作数应为一个字段名称或 DB 表达式，
+第二个操作数可以使字符串或数组，
+代表第一个操作数需要模糊查询的值。比如，<code>['like', 'name', 'tester']</code> 会生成
+<code>name LIKE '%tester%'</code>。 如果范围值是一个数组，那么将会生成用 <code>AND</code> 串联起来的
+多个 <code>like</code> 语句。例如，<code>['like', 'name', ['test', 'sample']]</code> 将会生成
+<code>name LIKE '%test%' AND name LIKE '%sample%'</code>。
+你也可以提供第三个可选的操作数来指定应该如何转义数值当中的特殊字符。
+该操作数是一个从需要被转义的特殊字符到转义副本的数组映射。
+如果没有提供这个操作数，将会使用默认的转义映射。如果需要禁用转义的功能，
+只需要将参数设置为 <code>false</code> 或者传入一个空数组即可。需要注意的是，
+当使用转义映射（又或者没有提供第三个操作数的时候），第二个操作数的值的前后
+将会被加上百分号。</p>
+</li>
+</ul>
+<blockquote class="note"><p><strong>注意： </strong>当使用 PostgreSQL 的时候你还可以使用 <a href="http://www.postgresql.org/docs/8.3/static/functions-matching.html#FUNCTIONS-LIKE"><code>ilike</code></a>，
+该方法对大小写不敏感。</p>
+</blockquote>
+<ul>
+<li><p><code>or like</code>：用法和 <code>like</code> 操作符类似，区别在于当第二个操作数为数组时，
+会使用 <code>OR</code> 来串联多个 <code>LIKE</code> 条件语句。</p>
+</li>
+<li><p><code>not like</code>：用法和 <code>like</code> 操作符类似，区别在于会使用 <code>NOT LIKE</code>
+来生成条件语句。</p>
+</li>
+<li><p><code>or not like</code>：用法和 <code>not like</code> 操作符类似，区别在于会使用 <code>OR</code> 
+来串联多个 <code>NOT LIKE</code> 条件语句。</p>
+</li>
+<li><p><code>exists</code>：需要一个操作数，该操作数必须是代表子查询 <a href="./yii-db-query.html">yii\db\Query</a> 的一个实例，
+它将会构建一个 <code>EXISTS (sub-query)</code> 表达式。</p>
+</li>
+<li><p><code>not exists</code>：用法和 <code>exists</code> 操作符类似，它将创建一个 <code>NOT EXISTS (sub-query)</code> 表达式。</p>
+</li>
+<li><p><code>&gt;</code>，<code>&lt;=</code> 或者其他包含两个操作数的合法 DB 操作符：第一个操作数必须为字段的名称，
+而第二个操作数则应为一个值。例如，<code>['&gt;', 'age', 10]</code> 将会生成 <code>age&gt;10</code>。</p>
+</li>
+</ul>
+<p>使用操作符格式，Yii 在内部对相应的值进行参数绑定，因此与 <a href="#string-format">字符串格式</a> 相比，
+此处你不需要手动添加参数。但请注意，Yii 不会帮你转义列名，所以如果你
+从用户端获得的变量作为列名而没有进行任何额外的检查，对于 SQL 注入攻击，
+你的程序将变得很脆弱。为了保证应用程序的安全，请不要将变量用作列名
+或者你必须用白名单过滤变量。如果你实在需要从用户获取列名，请阅读 <a href="guide-output-data-widgets.html#filtering-data">过滤数据</a>
+章节。例如，以下代码易受攻击：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 易受攻击的代码：</span>
+<span class="hljs-variable">$column</span> = <span class="hljs-variable">$request</span>-&gt;get(<span class="hljs-string">'column'</span>);
+<span class="hljs-variable">$value</span> = <span class="hljs-variable">$request</span>-&gt;get(<span class="hljs-string">'value'</span>);
+<span class="hljs-variable">$query</span>-&gt;where([<span class="hljs-string">'='</span>, <span class="hljs-variable">$column</span>, <span class="hljs-variable">$value</span>]);
+<span class="hljs-comment">// $value 是安全的，但是 $column 名不会被转义处理！</span>
+</code></pre>
+<h4>对象格式（Object Form）  <span id="object-format"></span><a href="#object-format" class="hashlink">&para;</a></h4><p>对象格式自 2.0.14 开始提供，是定义条件的最强大和最复杂的方法。
+如果你要在查询构建器上构建自己的抽象方法或者如果你要实现自己的复杂条件，
+你需要它（Object Form）</p>
+<p>条件类的实例是不可变的。他们唯一的用途是存储条件数据
+并为条件构建器提供 getters 属性。条件构建器是一个包含转换逻辑的类，
+它将存储的条件数据转换为 SQL 表达式。</p>
+<p>在内部，上面描述的格式在构建 SQL 之前被隐式转换为对象格式，
+因此可以在单一条件语句下组合适合的格式：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$query</span>-&gt;andWhere(<span class="hljs-keyword">new</span> OrCondition([
+    <span class="hljs-keyword">new</span> InCondition(<span class="hljs-string">'type'</span>, <span class="hljs-string">'in'</span>, <span class="hljs-variable">$types</span>),
+    [<span class="hljs-string">'like'</span>, <span class="hljs-string">'name'</span>, <span class="hljs-string">'%good%'</span>],
+    <span class="hljs-string">'disabled=false'</span>
+]))
+</code></pre>
+<p>操作符格式与对象格式的对应关系是在
+<a href="./yii-db-querybuilder.html#$conditionClasses-detail">QueryBuilder::conditionClasses</a> 属性中定义，
+这里列举一些比较有代表性的映射关系：</p>
+<ul>
+<li><code>AND</code>, <code>OR</code> -&gt; <code>yii\db\conditions\ConjunctionCondition</code></li>
+<li><code>NOT</code> -&gt; <code>yii\db\conditions\NotCondition</code></li>
+<li><code>IN</code>, <code>NOT IN</code> -&gt; <code>yii\db\conditions\InCondition</code></li>
+<li><code>BETWEEN</code>, <code>NOT BETWEEN</code> -&gt; <code>yii\db\conditions\BetweenCondition</code></li>
+</ul>
+<p>等等</p>
+<p>使用对象格式可以定义自己的条件集，并且可以更容易维护别人定义的条件集。（注：这里是说对象比数组更可靠）
+更多细节请参考 <a href="#adding-custom-conditions-and-expressions">Adding Custom Conditions and Expressions</a> 章节。</p>
+<h4>附加条件  <span id="appending-conditions"></span><a href="#appending-conditions" class="hashlink">&para;</a></h4><p>你可以使用 <a href="./yii-db-query.html#andWhere()-detail">andWhere()</a> 或者 <a href="./yii-db-query.html#orWhere()-detail">orWhere()</a> 在原有条件的基础上
+附加额外的条件。你可以多次调用这些方法来分别追加不同的条件。
+例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$status</span> = <span class="hljs-number">10</span>;
+<span class="hljs-variable">$search</span> = <span class="hljs-string">'yii'</span>;
+
+<span class="hljs-variable">$query</span>-&gt;where([<span class="hljs-string">'status'</span> =&gt; <span class="hljs-variable">$status</span>]);
+
+<span class="hljs-keyword">if</span> (!<span class="hljs-keyword">empty</span>(<span class="hljs-variable">$search</span>)) {
+    <span class="hljs-variable">$query</span>-&gt;andWhere([<span class="hljs-string">'like'</span>, <span class="hljs-string">'title'</span>, <span class="hljs-variable">$search</span>]);
+}
+</code></pre>
+<p>如果 <code>$search</code> 不为空，那么将会生成如下 SQL 语句：</p>
+<pre><code class="hljs sql language-sql">... WHERE (`status` = 10) AND (`title` LIKE '%yii%')
+</code></pre>
+<h4>过滤条件  <span id="filter-conditions"></span><a href="#filter-conditions" class="hashlink">&para;</a></h4><p>当 <code>WHERE</code> 条件来自于用户的输入时，你通常需要忽略用户输入的空值。
+例如，在一个可以通过用户名或者邮箱搜索的表单当中，用户名或者邮箱
+输入框没有输入任何东西，这种情况下你想要忽略掉对应的搜索条件，
+那么你就可以使用 <a href="./yii-db-querytrait.html#filterWhere()-detail">filterWhere()</a> 方法来实现这个目的：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// $username 和 $email 来自于用户的输入</span>
+<span class="hljs-variable">$query</span>-&gt;filterWhere([
+    <span class="hljs-string">'username'</span> =&gt; <span class="hljs-variable">$username</span>,
+    <span class="hljs-string">'email'</span> =&gt; <span class="hljs-variable">$email</span>,		
+]);
+</code></pre>
+<p><a href="./yii-db-querytrait.html#filterWhere()-detail">filterWhere()</a> 和 <a href="./yii-db-query.html#where()-detail">where()</a> 唯一的不同就在于，前者
+将忽略在条件当中的<a href="#hash-format">hash format</a>的空值。所以如果 <code>$email</code> 为空而 <code>$username</code> 
+不为空，那么上面的代码最终将生产如下 SQL <code>...WHERE username=:username</code>。 </p>
+<blockquote class="tip"><p><strong>提示： </strong>当一个值为 <code>null</code>、空数组、空字符串或者一个只包含空格的字符串时，那么它将被判定为空值。</p>
+</blockquote>
+<p>类似于 <a href="./yii-db-query.html#andWhere()-detail">andWhere()</a> 和 <a href="./yii-db-query.html#orWhere()-detail">orWhere()</a>，
+你可以使用 <a href="./yii-db-querytrait.html#andFilterWhere()-detail">andFilterWhere()</a> 和 <a href="./yii-db-querytrait.html#orFilterWhere()-detail">orFilterWhere()</a> 方法
+来追加额外的过滤条件。</p>
+<p>此外，<a href="./yii-db-query.html#andFilterCompare()-detail">yii\db\Query::andFilterCompare()</a>
+可以根据值中的内容智能地确定运算符：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$query</span>-&gt;andFilterCompare(<span class="hljs-string">'name'</span>, <span class="hljs-string">'John Doe'</span>);
+<span class="hljs-variable">$query</span>-&gt;andFilterCompare(<span class="hljs-string">'rating'</span>, <span class="hljs-string">'&gt;9'</span>);
+<span class="hljs-variable">$query</span>-&gt;andFilterCompare(<span class="hljs-string">'value'</span>, <span class="hljs-string">'&lt;=100'</span>);
+</code></pre>
+<p>您还可以显式指定运算符：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$query</span>-&gt;andFilterCompare(<span class="hljs-string">'name'</span>, <span class="hljs-string">'Doe'</span>, <span class="hljs-string">'like'</span>);
+</code></pre>
+<p>Yii 自 2.0.11 版起 ，提供了 <code>HAVING</code> 条件的一些构建方法：</p>
+<ul>
+<li><a href="./yii-db-query.html#filterHaving()-detail">filterHaving()</a></li>
+<li><a href="./yii-db-query.html#andFilterHaving()-detail">andFilterHaving()</a></li>
+<li><a href="./yii-db-query.html#orFilterHaving()-detail">orFilterHaving()</a></li>
+</ul>
+<h3><a href="./yii-db-querytrait.html#orderBy()-detail">orderBy()</a>  <span id="order-by"></span><a href="#order-by" class="hashlink">&para;</a></h3><p><a href="./yii-db-querytrait.html#orderBy()-detail">orderBy()</a> 方法是用来指定 SQL 语句当中的 <code>ORDER BY</code> 子句的。例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// ... ORDER BY `id` ASC, `name` DESC</span>
+<span class="hljs-variable">$query</span>-&gt;orderBy([
+    <span class="hljs-string">'id'</span> =&gt; SORT_ASC,
+    <span class="hljs-string">'name'</span> =&gt; SORT_DESC,
+]);
+</code></pre>
+<p>如上所示，数组当中的键指代的是字段名称，而数组当中的值则表示的是排序的方式。
+PHP 的常量 <code>SORT_ASC</code> 指的是升序排列，<code>SORT_DESC</code> 指的则是降序排列。</p>
+<p>如果 <code>ORDER BY</code> 仅仅包含简单的字段名称，你可以使用字符串来声明它，
+就像写原生的 SQL 语句一样。例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$query</span>-&gt;orderBy(<span class="hljs-string">'id ASC, name DESC'</span>);
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>当 <code>ORDER BY</code> 语句包含一些 DB 表达式的时候，你应该使用数组的格式。</p>
+</blockquote>
+<p>你可以调用 <a href="./yii-db-querytrait.html#addOrderBy()-detail">addOrderBy()</a> 来为 <code>ORDER BY</code> 片断添加额外的子句。
+例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$query</span>-&gt;orderBy(<span class="hljs-string">'id ASC'</span>)
+    -&gt;addOrderBy(<span class="hljs-string">'name DESC'</span>);
+</code></pre>
+<h3><a href="./yii-db-query.html#groupBy()-detail">groupBy()</a>  <span id="group-by"></span><a href="#group-by" class="hashlink">&para;</a></h3><p><a href="./yii-db-query.html#groupBy()-detail">groupBy()</a> 方法是用来指定 SQL 语句当中的 <code>GROUP BY</code> 片断的。例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// ... GROUP BY `id`, `status`</span>
+<span class="hljs-variable">$query</span>-&gt;groupBy([<span class="hljs-string">'id'</span>, <span class="hljs-string">'status'</span>]);
+</code></pre>
+<p>如果 <code>GROUP BY</code> 仅仅包含简单的字段名称，你可以使用字符串来声明它，
+就像写原生的 SQL 语句一样。例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$query</span>-&gt;groupBy(<span class="hljs-string">'id, status'</span>);
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>当 <code>GROUP BY</code> 语句包含一些 DB 表达式的时候，你应该使用数组的格式。</p>
+</blockquote>
+<p>你可以调用 <a href="./yii-db-querytrait.html#addOrderBy()-detail">addOrderBy()</a> 来为 <code>GROUP BY</code> 
+子句添加额外的字段。例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$query</span>-&gt;groupBy([<span class="hljs-string">'id'</span>, <span class="hljs-string">'status'</span>])
+    -&gt;addGroupBy(<span class="hljs-string">'age'</span>);
+</code></pre>
+<h3><a href="./yii-db-query.html#having()-detail">having()</a>  <span id="having"></span><a href="#having" class="hashlink">&para;</a></h3><p><a href="./yii-db-query.html#having()-detail">having()</a> 方法是用来指定 SQL 语句当中的 <code>HAVING</code> 子句。它带有一个条件，
+和 <a href="#where">where()</a> 中指定条件的方法一样。例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// ... HAVING `status` = 1</span>
+<span class="hljs-variable">$query</span>-&gt;having([<span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">1</span>]);
+</code></pre>
+<p>请查阅 <a href="#where">where()</a> 的文档来获取更多有关于如何指定一个条件的细节。</p>
+<p>你可以调用 <a href="./yii-db-query.html#andHaving()-detail">andHaving()</a> 或者 <a href="./yii-db-query.html#orHaving()-detail">orHaving()</a> 
+方法来为 <code>HAVING</code> 子句追加额外的条件，例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// ... HAVING (`status` = 1) AND (`age` &gt; 30)</span>
+<span class="hljs-variable">$query</span>-&gt;having([<span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">1</span>])
+    -&gt;andHaving([<span class="hljs-string">'&gt;'</span>, <span class="hljs-string">'age'</span>, <span class="hljs-number">30</span>]);
+</code></pre>
+<h3><a href="./yii-db-querytrait.html#limit()-detail">limit()</a> 和 <a href="./yii-db-querytrait.html#offset()-detail">offset()</a>  <span id="limit-offset"></span><a href="#limit-offset" class="hashlink">&para;</a></h3><p><a href="./yii-db-querytrait.html#limit()-detail">limit()</a> 和 <a href="./yii-db-querytrait.html#offset()-detail">offset()</a> 是用来指定 SQL 语句当中
+的 <code>LIMIT</code> 和 <code>OFFSET</code> 子句的。例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// ... LIMIT 10 OFFSET 20</span>
+<span class="hljs-variable">$query</span>-&gt;limit(<span class="hljs-number">10</span>)-&gt;offset(<span class="hljs-number">20</span>);
+</code></pre>
+<p>如果你指定了一个无效的 limit 或者 offset（例如，一个负数），那么它将会被忽略掉。</p>
+<blockquote class="tip"><p><strong>提示： </strong>在不支持 <code>LIMIT</code> 和 <code>OFFSET</code> 的 DBMS 中（例如，MSSQL），
+  查询构建器将生成一条模拟 <code>LIMIT</code>/<code>OFFSET</code> 行为的 SQL 语句。</p>
+</blockquote>
+<h3><a href="./yii-db-query.html#join()-detail">join()</a>  <span id="join"></span><a href="#join" class="hashlink">&para;</a></h3><table class="table table-bordered table-striped">
+<thead>
+<tr><th><a href="./yii-db-query.html#join()-detail">join()</a> 是用来指定 SQL 语句当中的 <code>JOIN</code> 子句的。例如，</th></tr>
+</thead>
+<tbody>
+<tr><td><code>`</code>php</td></tr>
+<tr><td>// ... LEFT JOIN <code>post</code> ON <code>post</code>.<code>user_id</code> = <code>user</code>.<code>id</code></td></tr>
+<tr><td>$query-&gt;join('LEFT JOIN', 'post', 'post.user_id = user.id');</td></tr>
+<tr><td><code>`</code></td></tr>
+</tbody>
+</table>
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><a href="./yii-db-query.html#join()-detail">join()</a> 带有四个参数：</th></tr>
+</thead>
+<tbody>
+<tr><td>- <code>$type</code>：连接类型，例如，<code>'INNER JOIN'</code>，<code>'LEFT JOIN'</code>。</td></tr>
+<tr><td>- <code>$table</code>：将要连接的表名称。</td></tr>
+<tr><td>- <code>$on</code>：可选的，连接条件，即 <code>ON</code> 片段。有关指定条件的详细信息，请参阅 <a href="#where">where()</a>。</td></tr>
+<tr><td>请注意，数组语法 <strong>不能</strong> 用于指定基于列的条件，</td></tr>
+<tr><td>例如，<code>['user.id' =&gt; 'comment.userId']</code> 将导致用户 id 必须等于字符串</td></tr>
+<tr><td><code>'comment.userId'</code> 的情况。您应该使用字符串语法，并将条件指定为</td></tr>
+<tr><td><code>'user.id = comment.userId'</code>。</td></tr>
+<tr><td>- <code>$params</code>：可选参数，与连接条件绑定的参数。</td></tr>
+</tbody>
+</table>
+<p>你可以分别调用如下的快捷方法来指定 <code>INNER JOIN</code>, <code>LEFT JOIN</code> 和 <code>RIGHT JOIN</code>。</p>
+<ul>
+<li><a href="./yii-db-query.html#innerJoin()-detail">innerJoin()</a></li>
+<li><a href="./yii-db-query.html#leftJoin()-detail">leftJoin()</a></li>
+<li><a href="./yii-db-query.html#rightJoin()-detail">rightJoin()</a></li>
+</ul>
+<p>例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$query</span>-&gt;leftJoin(<span class="hljs-string">'post'</span>, <span class="hljs-string">'post.user_id = user.id'</span>);
+</code></pre>
+<p>可以通过多次调用如上所述的连接方法来连接多张表，每连接一张表调用一次。</p>
+<p>除了连接表以外，你还可以连接子查询。方法如下，将需要被连接的子查询指定
+为一个 <a href="./yii-db-query.html">yii\db\Query</a> 对象，例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$subQuery</span> = (<span class="hljs-keyword">new</span> \yii\db\Query())-&gt;from(<span class="hljs-string">'post'</span>);
+<span class="hljs-variable">$query</span>-&gt;leftJoin([<span class="hljs-string">'u'</span> =&gt; <span class="hljs-variable">$subQuery</span>], <span class="hljs-string">'u.id = author_id'</span>);
+</code></pre>
+<p>在这个例子当中，你应该将子查询放到一个数组当中，而数组当中的键，则为这个子查询的别名。</p>
+<h3><a href="./yii-db-query.html#union()-detail">union()</a>  <span id="union"></span><a href="#union" class="hashlink">&para;</a></h3><p><a href="./yii-db-query.html#union()-detail">union()</a> 方法是用来指定 SQL 语句当中的 <code>UNION</code> 子句的。例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$query1</span> = (<span class="hljs-keyword">new</span> \yii\db\Query())
+    -&gt;select(<span class="hljs-string">"id, category_id AS type, name"</span>)
+    -&gt;from(<span class="hljs-string">'post'</span>)
+    -&gt;limit(<span class="hljs-number">10</span>);
+
+<span class="hljs-variable">$query2</span> = (<span class="hljs-keyword">new</span> \yii\db\Query())
+    -&gt;select(<span class="hljs-string">'id, type, name'</span>)
+    -&gt;from(<span class="hljs-string">'user'</span>)
+    -&gt;limit(<span class="hljs-number">10</span>);
+
+<span class="hljs-variable">$query1</span>-&gt;union(<span class="hljs-variable">$query2</span>);
+</code></pre>
+<p>你可以通过多次调用 <a href="./yii-db-query.html#union()-detail">union()</a> 方法来追加更多的 <code>UNION</code> 子句。</p>
+<h2>查询方法  <span id="query-methods"></span><a href="#query-methods" class="hashlink">&para;</a></h2><p><a href="./yii-db-query.html">yii\db\Query</a> 提供了一整套的用于不同查询目的的方法。</p>
+<ul>
+<li><a href="./yii-db-query.html#all()-detail">all()</a>：将返回一个由行组成的数组，每一行是一个由名称和值构成的关联数组（译者注：省略键的数组称为索引数组）。</li>
+<li><a href="./yii-db-query.html#one()-detail">one()</a>：返回结果集的第一行。</li>
+<li><a href="./yii-db-query.html#column()-detail">column()</a>：返回结果集的第一列。</li>
+<li><a href="./yii-db-query.html#scalar()-detail">scalar()</a>：返回结果集的第一行第一列的标量值。</li>
+<li><a href="./yii-db-query.html#exists()-detail">exists()</a>：返回一个表示该查询是否包结果集的值。</li>
+<li><a href="./yii-db-query.html#count()-detail">count()</a>：返回 <code>COUNT</code> 查询的结果。</li>
+<li>其它集合查询方法：包括 <a href="./yii-db-query.html#sum()-detail">sum($q)</a>, <a href="./yii-db-query.html#average()-detail">average($q)</a>,
+<a href="./yii-db-query.html#max()-detail">max($q)</a>, <a href="./yii-db-query.html#min()-detail">min($q)</a> 等。<code>$q</code> 是一个必选参数，
+既可以是一个字段名称，又可以是一个 DB 表达式。</li>
+</ul>
+<p>例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// SELECT `id`, `email` FROM `user`</span>
+<span class="hljs-variable">$rows</span> = (<span class="hljs-keyword">new</span> \yii\db\Query())
+    -&gt;select([<span class="hljs-string">'id'</span>, <span class="hljs-string">'email'</span>])
+    -&gt;from(<span class="hljs-string">'user'</span>)
+    -&gt;all();
+    
+<span class="hljs-comment">// SELECT * FROM `user` WHERE `username` LIKE `%test%`</span>
+<span class="hljs-variable">$row</span> = (<span class="hljs-keyword">new</span> \yii\db\Query())
+    -&gt;from(<span class="hljs-string">'user'</span>)
+    -&gt;where([<span class="hljs-string">'like'</span>, <span class="hljs-string">'username'</span>, <span class="hljs-string">'test'</span>])
+    -&gt;one();
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong><a href="./yii-db-query.html#one()-detail">one()</a> 方法只返回查询结果当中的第一条数据，
+  条件语句中不会加上 <code>LIMIT 1</code> 条件。如果你清楚的知道查询将会只返回一行或几行数据
+  （例如， 如果你是通过某些主键来查询的），这很好也提倡这样做。但是，如果查询结果
+  有机会返回大量的数据时，那么你应该显示调用 <code>limit(1)</code> 方法，以改善性能。
+  例如，<code>(new \yii\db\Query())-&gt;from('user')-&gt;limit(1)-&gt;one()</code>。</p>
+</blockquote>
+<p>所有的这些查询方法都有一个可选的参数 <code>$db</code>, 该参数指代的是 <a href="./yii-db-connection.html">DB connection</a>，
+执行一个 DB 查询时会用到。如果你省略了这个参数，那么 <code>db</code> <a href="guide-structure-application-components.html">application component</a> 将会被用作
+默认的 DB 连接。 如下是另外一个使用 <code>count()</code> 查询的例子：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 执行 SQL: SELECT COUNT(*) FROM `user` WHERE `last_name`=:last_name</span>
+<span class="hljs-variable">$count</span> = (<span class="hljs-keyword">new</span> \yii\db\Query())
+    -&gt;from(<span class="hljs-string">'user'</span>)
+    -&gt;where([<span class="hljs-string">'last_name'</span> =&gt; <span class="hljs-string">'Smith'</span>])
+    -&gt;count();
+</code></pre>
+<p>当你调用 <a href="./yii-db-query.html">yii\db\Query</a> 当中的一个查询方法的时候，实际上内在的运作机制如下： </p>
+<ul>
+<li>在当前 <a href="./yii-db-query.html">yii\db\Query</a> 的构造基础之上，调用 <a href="./yii-db-querybuilder.html">yii\db\QueryBuilder</a> 来生成一条 SQL 语句；</li>
+<li>利用生成的 SQL 语句创建一个 <a href="./yii-db-command.html">yii\db\Command</a> 对象； </li>
+<li>调用 <a href="./yii-db-command.html">yii\db\Command</a> 的查询方法（例如，<code>queryAll()</code>）来执行这条 SQL 语句，并检索数据。</li>
+</ul>
+<p>有时候，你也许想要测试或者使用一个由 <a href="./yii-db-query.html">yii\db\Query</a> 对象创建的 SQL 语句。
+你可以使用以下的代码来达到目的：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$command</span> = (<span class="hljs-keyword">new</span> \yii\db\Query())
+    -&gt;select([<span class="hljs-string">'id'</span>, <span class="hljs-string">'email'</span>])
+    -&gt;from(<span class="hljs-string">'user'</span>)
+    -&gt;where([<span class="hljs-string">'last_name'</span> =&gt; <span class="hljs-string">'Smith'</span>])
+    -&gt;limit(<span class="hljs-number">10</span>)
+    -&gt;createCommand();
+    
+<span class="hljs-comment">// 打印 SQL 语句</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$command</span>-&gt;sql;
+<span class="hljs-comment">// 打印被绑定的参数</span>
+print_r(<span class="hljs-variable">$command</span>-&gt;params);
+
+<span class="hljs-comment">// 返回查询结果的所有行</span>
+<span class="hljs-variable">$rows</span> = <span class="hljs-variable">$command</span>-&gt;queryAll();
+</code></pre>
+<h3>索引查询结果  <span id="indexing-query-results"></span><a href="#indexing-query-results" class="hashlink">&para;</a></h3><p>当你在调用 <a href="./yii-db-query.html#all()-detail">all()</a> 方法时，它将返回一个以连续的整型数值为索引的数组。
+而有时候你可能希望使用一个特定的字段或者表达式的值来作为索引结果集数组。那么你可以在调用 <a href="./yii-db-query.html#all()-detail">all()</a> 
+之前使用 <a href="./yii-db-querytrait.html#indexBy()-detail">indexBy()</a> 方法来达到这个目的。
+例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 返回 [100 =&gt; ['id' =&gt; 100, 'username' =&gt; '...', ...], 101 =&gt; [...], 103 =&gt; [...], ...]</span>
+<span class="hljs-variable">$query</span> = (<span class="hljs-keyword">new</span> \yii\db\Query())
+    -&gt;from(<span class="hljs-string">'user'</span>)
+    -&gt;limit(<span class="hljs-number">10</span>)
+    -&gt;indexBy(<span class="hljs-string">'id'</span>)
+    -&gt;all();
+</code></pre>
+<p>如需使用表达式的值做为索引，那么只需要传递一个匿名函数给 <a href="./yii-db-querytrait.html#indexBy()-detail">indexBy()</a> 方法即可：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$query</span> = (<span class="hljs-keyword">new</span> \yii\db\Query())
+    -&gt;from(<span class="hljs-string">'user'</span>)
+    -&gt;indexBy(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$row</span>)</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$row</span>[<span class="hljs-string">'id'</span>] . <span class="hljs-variable">$row</span>[<span class="hljs-string">'username'</span>];
+    })-&gt;all();
+</code></pre>
+<p>该匿名函数将带有一个包含了当前行的数据的 <code>$row</code> 参数，并且返回用作当前行索引的
+标量值（译者注：就是简单的数值或者字符串，而不是其他复杂结构，例如数组）。</p>
+<blockquote class="note"><p><strong>注意： </strong>与 <a href="./yii-db-query.html#groupBy()-detail">groupBy()</a> 或者 <a href="./yii-db-querytrait.html#orderBy()-detail">orderBy()</a> 等查询方法不同，
+他们将转换为 SQL 查询语句的一部分，而这个方法（indexBy）在从数据库取回数据后才生效执行的。
+这意味着只能使用那些在你的 SELECT 查询中的列名。
+此外，你用表名连接取列名的时候，比如 <code>customer.id</code>，结果中将只包含 <code>id</code> 列，因此你必须调用
+<code>-&gt;indexBy('id')</code> 不要带表名前缀。</p>
+</blockquote>
+<h3>批处理查询  <span id="batch-query"></span><a href="#batch-query" class="hashlink">&para;</a></h3><p>当需要处理大数据的时候，像 <a href="./yii-db-query.html#all()-detail">yii\db\Query::all()</a> 这样的方法就不太合适了，
+因为它们会把所有查询的数据都读取到客户端内存上。为了解决这个问题，
+Yii 提供了批处理查询的支持。服务端先保存查询结果，然后客户端使用游标（cursor）
+每次迭代出固定的一批结果集回来。</p>
+<blockquote class="warning"><p><strong>警告： </strong>MySQL 批处理查询的实现存在已知的局限性和变通方法。见下文。</p>
+</blockquote>
+<p>批处理查询的用法如下：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Query</span>;
+
+<span class="hljs-variable">$query</span> = (<span class="hljs-keyword">new</span> Query())
+    -&gt;from(<span class="hljs-string">'user'</span>)
+    -&gt;orderBy(<span class="hljs-string">'id'</span>);
+
+<span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$query</span>-&gt;batch() <span class="hljs-keyword">as</span> <span class="hljs-variable">$users</span>) {
+    <span class="hljs-comment">// $users 是一个包含100条或小于100条用户表数据的数组</span>
+}
+
+<span class="hljs-comment">// or to iterate the row one by one</span>
+<span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$query</span>-&gt;each() <span class="hljs-keyword">as</span> <span class="hljs-variable">$user</span>) {
+    <span class="hljs-comment">// 数据从服务端中以 100 个为一组批量获取，</span>
+    <span class="hljs-comment">// 但是 $user 代表 user 表里的一行数据</span>
+}
+</code></pre>
+<p><a href="./yii-db-query.html#batch()-detail">yii\db\Query::batch()</a> 和 <a href="./yii-db-query.html#each()-detail">yii\db\Query::each()</a> 方法将会返回一个实现了<code>Iterator</code> 
+接口 <a href="./yii-db-batchqueryresult.html">yii\db\BatchQueryResult</a>  的对象，可以用在 <code>foreach</code> 结构当中使用。在第一次迭代取数据的时候，
+数据库会执行一次 SQL 查询，然后在剩下的迭代中，将直接从结果集中批量获取数据。默认情况下，
+一批的大小为 100，也就意味着一批获取的数据是 100 行。你可以通过给 <code>batch()</code> 
+或者 <code>each()</code> 方法的第一个参数传值来改变每批行数的大小。</p>
+<p>相对于 <a href="./yii-db-query.html#all()-detail">yii\db\Query::all()</a> 方法，批处理查询每次只读取 100 行的数据到内存。</p>
+<p>如果你通过 <a href="./yii-db-querytrait.html#indexBy()-detail">yii\db\Query::indexBy()</a> 方法为查询结果指定了索引字段，
+那么批处理查询将仍然保持相对应的索引方案，
+例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$query</span> = (<span class="hljs-keyword">new</span> \yii\db\Query())
+    -&gt;from(<span class="hljs-string">'user'</span>)
+    -&gt;indexBy(<span class="hljs-string">'username'</span>);
+
+<span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$query</span>-&gt;batch() <span class="hljs-keyword">as</span> <span class="hljs-variable">$users</span>) {
+    <span class="hljs-comment">// $users 的 “username” 字段将会成为索引</span>
+}
+
+<span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$query</span>-&gt;each() <span class="hljs-keyword">as</span> <span class="hljs-variable">$username</span> =&gt; <span class="hljs-variable">$user</span>) {
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<h4>MySQL中批量查询的局限性（Limitations of batch query in MySQL）  <span id="batch-query-mysql"></span><a href="#batch-query-mysql" class="hashlink">&para;</a></h4><p>MySQL 是通过 PDO 驱动库实现批量查询的。默认情况下，MySQL 查询是 <a href="https://secure.php.net/manual/en/mysqlinfo.concepts.buffering.php"><code>带缓存的</code></a>，
+这违背了使用游标（cursor）获取数据的目的，
+因为它不阻止驱动程序将整个结果集加载到客户端的内存中。</p>
+<blockquote class="note"><p><strong>注意： </strong>当使用 <code>libmysqlclient</code> 时（PHP5 的标配），计算 PHP 的内存限制时，用于数据结果集的内存不会计算在内。
+  看上去批量查询是正确运行的，实际上整个数据集都被加载到了客户端的内存中，
+  而且这个使用量可能还会再增长。</p>
+</blockquote>
+<p>要禁用缓存并减少客户端内存的需求量，PDO 连接属性 <code>PDO::MYSQL_ATTR_USE_BUFFERED_QUERY</code> 必须设置为 <code>false</code>。
+这样，直到整个数据集被处理完毕前，通过此连接是无法创建其他查询的。
+这样的操作可能会阻碍 <code>ActiveRecord</code> 执行表结构查询。
+如果这不构成问题（表结构已被缓存过了），
+我们可以通过切换原本的连接到非缓存模式，然后在批量查询完成后再切换回来。</p>
+<pre><code class="hljs php language-php">Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;pdo-&gt;setAttribute(\PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, <span class="hljs-keyword">false</span>);
+
+<span class="hljs-comment">// 执行批量查询</span>
+
+Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;pdo-&gt;setAttribute(\PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, <span class="hljs-keyword">true</span>);
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>对于 MyISAM，在执行批量查询的过程中，表可能将被锁，
+  将延迟或拒绝其他连接的写入操作。
+  当使用非缓存查询时，尽量缩短游标打开的时间。</p>
+</blockquote>
+<p>如果表结构没有被缓存，或在批量查询被处理过程中需要执行其他查询，
+你可以创建一个单独的非缓存链接到数据库：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$unbufferedDb</span> = <span class="hljs-keyword">new</span> \yii\db\Connection([
+    <span class="hljs-string">'dsn'</span> =&gt; Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;dsn,
+    <span class="hljs-string">'username'</span> =&gt; Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;username,
+    <span class="hljs-string">'password'</span> =&gt; Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;password,
+    <span class="hljs-string">'charset'</span> =&gt; Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;charset,
+]);
+<span class="hljs-variable">$unbufferedDb</span>-&gt;open();
+<span class="hljs-variable">$unbufferedDb</span>-&gt;pdo-&gt;setAttribute(\PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, <span class="hljs-keyword">false</span>);
+</code></pre>
+<p>如果你除了 <code>PDO::MYSQL_ATTR_USE_BUFFERED_QUERY</code> 是 <code>false</code> 之外，
+要确保 <code>$unbufferedDb</code> 拥有和原来缓存 <code>$db</code> 完全一样的属性，
+请参阅<a href="https://github.com/yiisoft/yii2/issues/8420#issuecomment-301423833">实现 <code>$db</code> 的深度拷贝</a>，
+手动方法将它设置为 false 即可。</p>
+<p>然后使用此连接正常创建查询，新连接用于运行批量查询，
+逐条或批量进行结果处理：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 获取 1000 为一组的批量数据</span>
+<span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$query</span>-&gt;batch(<span class="hljs-number">1000</span>, <span class="hljs-variable">$unbufferedDb</span>) <span class="hljs-keyword">as</span> <span class="hljs-variable">$users</span>) {
+    <span class="hljs-comment">// ...</span>
+}
+
+
+<span class="hljs-comment">// 每次从服务端批量获取1000个数据，但是逐个遍历进行处理</span>
+<span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$query</span>-&gt;each(<span class="hljs-number">1000</span>, <span class="hljs-variable">$unbufferedDb</span>) <span class="hljs-keyword">as</span> <span class="hljs-variable">$user</span>) {
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>当结果集已处理完毕不再需要连接时，可以关闭它：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$unbufferedDb</span>-&gt;close();
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>非缓存查询在 PHP 端使用更少的缓存，但会增加 MySQL 服务器端的负载。
+  建议您使用生产实践设计自己的代码以获取额外的海量数据，<a href="https://github.com/yiisoft/yii2/issues/8420#issuecomment-296109257">例如，将数字键分段，使用非缓存的查询遍历</a>。</p>
+</blockquote>
+<h3>添加自定义查询条件和表达式（Adding custom Conditions and Expressions）  <span id="adding-custom-conditions-and-expressions"></span><a href="#adding-custom-conditions-and-expressions" class="hashlink">&para;</a></h3><p>我们在 <a href="#object-format">查询条件-对象格式</a> 章节中提到过，可以创建自定义的查询条件类。
+举个栗子，我们需要创建一个查询条件，它可以检查某些字段小于特定值的情况。
+当使用操作符格式时，代码如下：</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'and'</span>,
+    <span class="hljs-string">'&gt;'</span>, <span class="hljs-string">'posts'</span>, <span class="hljs-variable">$minLimit</span>,
+    <span class="hljs-string">'&gt;'</span>, <span class="hljs-string">'comments'</span>, <span class="hljs-variable">$minLimit</span>,
+    <span class="hljs-string">'&gt;'</span>, <span class="hljs-string">'reactions'</span>, <span class="hljs-variable">$minLimit</span>,
+    <span class="hljs-string">'&gt;'</span>, <span class="hljs-string">'subscriptions'</span>, <span class="hljs-variable">$minLimit</span>
+]
+</code></pre>
+<p>当这样的查询条件仅被应用一次，没什么问题。当它在一个查询语句中被多次使用时，就有很多优化点了。
+我们创建一个自定义查询条件对象来证实它。</p>
+<p>Yii 有 <a href="./yii-db-conditions-conditioninterface.html">ConditionInterface</a> 接口类，必须用它来标识这是一个表示查询条件的类。
+它需要实现 <code>fromArrayDefinition()</code> 方法，用来从数组格式创建查询条件。
+如果我们不需要它，抛出一个异常来完成此方法即可。</p>
+<p>创建自定义查询条件类，我们就可以构建最适合当前需求的 API。</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">db</span>\<span class="hljs-title">conditions</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AllGreaterCondition</span> <span class="hljs-keyword">implements</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">conditions</span>\<span class="hljs-title">ConditionInterface</span>
+</span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-variable">$columns</span>;
+    <span class="hljs-keyword">private</span> <span class="hljs-variable">$value</span>;
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@param</span> string[] $columns 要大于 $value 的字段名数组
+     * <span class="hljs-doctag">@param</span> mixed $value 每个 $column 要比较的数值
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(array <span class="hljs-variable">$columns</span>, <span class="hljs-variable">$value</span>)</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;columns = <span class="hljs-variable">$columns</span>;
+        <span class="hljs-variable">$this</span>-&gt;value = <span class="hljs-variable">$value</span>;
+    }
+    
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fromArrayDefinition</span><span class="hljs-params">(<span class="hljs-variable">$operator</span>, <span class="hljs-variable">$operands</span>)</span>
+    </span>{
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> InvalidArgumentException(<span class="hljs-string">'Not implemented yet, but we will do it later'</span>);
+    }
+    
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getColumns</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;columns; }
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getValue</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;vaule; }
+}
+</code></pre>
+<p>我们现在创建了一个查询条件对象：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$conditon</span> = <span class="hljs-keyword">new</span> AllGreaterCondition([<span class="hljs-string">'col1'</span>, <span class="hljs-string">'col2'</span>], <span class="hljs-number">42</span>);
+</code></pre>
+<p>但是 <code>QueryBuilder</code> 还不知道怎样从此对象生成 SQL 查询条件。
+因此我们还需要为这个条件对象创建一个构建器（Builder）。
+这个构建器必须实现 <a href="./yii-db-expressionbuilderinterface.html">yii\db\ExpressionBuilderInterface</a> 接口和 <code>build()</code> 方法。</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">db</span>\<span class="hljs-title">conditions</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AllGreaterConditionBuilder</span> <span class="hljs-keyword">implements</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ExpressionBuilderInterface</span>
+</span>{
+    <span class="hljs-keyword">use</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ExpressionBuilderTrait</span>; <span class="hljs-comment">// Contains constructor and `queryBuilder` property.</span>
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@param</span> ExpressionInterface $condition 要构建的查询条件对象
+     * <span class="hljs-doctag">@param</span> array $params 绑定的参数
+     * <span class="hljs-doctag">@return</span> AllGreaterCondition
+     */</span> 
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">build</span><span class="hljs-params">(ExpressionInterface <span class="hljs-variable">$expression</span>, array &amp;<span class="hljs-variable">$params</span> = [])</span>
+    </span>{
+        <span class="hljs-variable">$value</span> = <span class="hljs-variable">$condition</span>-&gt;getValue();
+        
+        <span class="hljs-variable">$conditions</span> = [];
+        <span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$expression</span>-&gt;getColumns() <span class="hljs-keyword">as</span> <span class="hljs-variable">$column</span>) {
+            <span class="hljs-variable">$conditions</span>[] = <span class="hljs-keyword">new</span> SimpleCondition(<span class="hljs-variable">$column</span>, <span class="hljs-string">'&gt;'</span>, <span class="hljs-variable">$value</span>);
+        }
+
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;queryBuilder-&gt;buildCondition(<span class="hljs-keyword">new</span> AndCondition(<span class="hljs-variable">$conditions</span>), <span class="hljs-variable">$params</span>);
+    }
+}
+</code></pre>
+<p>接下来，让 <a href="./yii-db-querybuilder.html">QueryBuilder</a> ]知道我们的新查询条件对象 – 添加一个映射到
+<code>expressionBuilders</code> 数组中，在应用配置（application config）中完成即可：</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'db'</span> =&gt; [
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\db\mysql\Connection'</span>,
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'queryBuilder'</span> =&gt; [
+        <span class="hljs-string">'expressionBuilders'</span> =&gt; [
+            <span class="hljs-string">'app\db\conditions\AllGreaterCondition'</span> =&gt; <span class="hljs-string">'app\db\conditions\AllGreaterConditionBuilder'</span>,
+        ],
+    ],
+],
+</code></pre>
+<p>现在我们可以在 <code>where()</code> 中使用此查询条件对象了：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$query</span>-&gt;andWhere(<span class="hljs-keyword">new</span> AllGreaterCondition([<span class="hljs-string">'posts'</span>, <span class="hljs-string">'comments'</span>, <span class="hljs-string">'reactions'</span>, <span class="hljs-string">'subscriptions'</span>], <span class="hljs-variable">$minValue</span>));
+</code></pre>
+<p>如果我们想要自定义操作符查询条件，可以在 <a href="./yii-db-querybuilder.html#$conditionClasses-detail">QueryBuilder::conditionClasses</a> 中
+这样声明：</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'db'</span> =&gt; [
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\db\mysql\Connection'</span>,
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'queryBuilder'</span> =&gt; [
+        <span class="hljs-string">'expressionBuilders'</span> =&gt; [
+            <span class="hljs-string">'app\db\conditions\AllGreaterCondition'</span> =&gt; <span class="hljs-string">'app\db\conditions\AllGreaterConditionBuilder'</span>,
+        ],
+        <span class="hljs-string">'conditionClasses'</span> =&gt; [
+            <span class="hljs-string">'ALL&gt;'</span> =&gt; <span class="hljs-string">'app\db\conditions\AllGreaterCondition'</span>,
+        ],
+    ],
+],
+</code></pre>
+<p>并在 <code>app\db\conditions\AllGreaterCondition</code> 对象中实现 <code>AllGreaterCondition::fromArrayDefinition()</code>方法：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">db</span>\<span class="hljs-title">conditions</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AllGreaterCondition</span> <span class="hljs-keyword">implements</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">conditions</span>\<span class="hljs-title">ConditionInterface</span>
+</span>{
+    <span class="hljs-comment">// ... 这里省略其他方法的实现</span>
+     
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fromArrayDefinition</span><span class="hljs-params">(<span class="hljs-variable">$operator</span>, <span class="hljs-variable">$operands</span>)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">static</span>(<span class="hljs-variable">$operands</span>[<span class="hljs-number">0</span>], <span class="hljs-variable">$operands</span>[<span class="hljs-number">1</span>]);
+    }
+}
+</code></pre>
+<p>然后呢，我们就可以使用更简短的操作符格式来创建自定义查询条件了：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$query</span>-&gt;andWhere([<span class="hljs-string">'ALL&gt;'</span>, [<span class="hljs-string">'posts'</span>, <span class="hljs-string">'comments'</span>, <span class="hljs-string">'reactions'</span>, <span class="hljs-string">'subscriptions'</span>], <span class="hljs-variable">$minValue</span>]);
+</code></pre>
+<p>你可能注意到了，这里使用到了两个概念：表达式对象和条件对象。表达式对象实现了 <a href="./yii-db-expressioninterface.html">yii\db\ExpressionInterface</a> 接口，
+它还依赖于一个表达式构建器（Expression Builder）来执行构建逻辑，而表达式构建器实现了 <a href="./yii-db-expressionbuilderinterface.html">yii\db\ExpressionBuilderInterface</a> 接口。
+而条件对象实现了 <span class="broken-link">yii\db\condition\ConditionInterface</span> 接口，它是继承了 <a href="./yii-db-expressioninterface.html">ExpressionInterface</a> 接口，
+如上面的栗子所写的，它用于数组定义的条件的场景，当然条件对象也需要构建器。</p>
+<p>总结起来就是:</p>
+<ul>
+<li><p>Expression – 表达式对象，是数据集的数据转换对象（DTO），它可以被编译为一些特定 SQL 语句 （操作符、字符串、数组、JSON等等）。</p>
+</li>
+<li><p>Condition – 条件对象，是表达式对象超集，它可以聚合多个表达式对象（或标量值），然后编译成一条 SQL 查询条件。</p>
+</li>
+</ul>
+<p>你可以创建自己的类来实现 <a href="./yii-db-expressioninterface.html">ExpressionInterface</a> 接口，达到封装的目的：隐藏复杂的 SQL 语句拼装过程。
+想学习到更多关于表达式对象的实践
+请听 <a href="guide-db-active-record.html">下回分解</a>；</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:19 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

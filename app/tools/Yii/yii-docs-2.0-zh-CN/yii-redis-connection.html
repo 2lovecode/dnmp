@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>Connection, yii\redis\Connection - Yii Framework 2.0 API Documentation</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w17313" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w17313-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Yii Framework 2.0 API Documentation</a></div><div id="w17313-collapse" class="collapse navbar-collapse"><ul id="w17314" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w17315" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-3">
+                <div id="navigation" class="list-group"><a class="list-group-item active" href="#navigation-17312" data-toggle="collapse" data-parent="#navigation">yii\redis <b class="caret"></b></a><div id="navigation-17312" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./yii-redis-activequery.html">ActiveQuery</a>
+<a class="list-group-item" href="./yii-redis-activerecord.html">ActiveRecord</a>
+<a class="list-group-item" href="./yii-redis-cache.html">Cache</a>
+<a class="list-group-item active" href="./yii-redis-connection.html">Connection</a>
+<a class="list-group-item" href="./yii-redis-luascriptbuilder.html">LuaScriptBuilder</a>
+<a class="list-group-item" href="./yii-redis-mutex.html">Mutex</a>
+<a class="list-group-item" href="./yii-redis-session.html">Session</a>
+<a class="list-group-item" href="./yii-redis-socketexception.html">SocketException</a></div></div>    </div>
+    <div class="col-md-9 api-content" role="main">
+        <h1>Class yii\redis\Connection</h1>
+<div class="top-nav">
+    <a href="index.html">All Classes</a>
+            | <a href="#properties">Properties</a>
+                | <a href="#methods">Methods</a>
+                | <a href="#events">Events</a>
+        </div>
+
+<table class="summaryTable docClass table table-bordered">
+    <colgroup>
+        <col class="col-name" />
+        <col class="col-value" />
+    </colgroup>
+            <tr><th>Inheritance</th><td><a href="yii-redis-connection.html">yii\redis\Connection</a> &raquo;
+<a href="yii-base-component.html">yii\base\Component</a> &raquo;
+<a href="yii-base-baseobject.html">yii\base\BaseObject</a></td></tr>
+                <tr><th>Implements</th><td><a href="yii-base-configurable.html">yii\base\Configurable</a></td></tr>
+                                    <tr><th>Available since version</th><td>2.0</td></tr>
+                    <tr>
+          <th>Source Code</th>
+          <td><a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php">https://github.com/yiisoft/yii2-redis/blob/master/Connection.php</a></td>
+        </tr>
+    </table>
+
+<div class="class-description">
+    <p><strong>The redis connection class is used to establish a connection to a <a href="http://redis.io/">redis</a> server.</strong></p>
+    <p>By default it assumes there is a redis server running on localhost at port 6379 and uses the database number 0.</p>
+<p>It is possible to connect to a redis server using <a href="yii-redis-connection.html#$hostname-detail">$hostname</a> and <a href="yii-redis-connection.html#$port-detail">$port</a> or using a <a href="yii-redis-connection.html#$unixSocket-detail">$unixSocket</a>.</p>
+<p>It also supports <a href="http://redis.io/commands/auth">the AUTH command</a> of redis.
+When the server needs authentication, you can set the <a href="yii-redis-connection.html#$password-detail">$password</a> property to
+authenticate with the server after connect.</p>
+<p>The execution of <a href="http://redis.io/commands">redis commands</a> is possible with via <a href="yii-redis-connection.html#executeCommand()-detail">executeCommand()</a>.</p>
+
+    </div>
+
+<a id="properties"></a>
+
+<div class="summary doc-property">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-property" />
+    <col class="col-type" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr class="inherited" id="$behaviors">
+        <td><a href="yii-base-component.html#$behaviors-detail">$behaviors</a></td>
+        <td><a href="yii-base-behavior.html">yii\base\Behavior</a>[]</td>
+        <td>List of behaviors attached to this component</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr id="$connectionString">
+        <td><a href="yii-redis-connection.html#$connectionString-detail">$connectionString</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>Socket connection string</td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+            <tr id="$connectionTimeout">
+        <td><a href="yii-redis-connection.html#$connectionTimeout-detail">$connectionTimeout</a></td>
+        <td><a href="http://www.php.net/language.types.float">float</a></td>
+        <td>Timeout to use for connection to redis.</td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+            <tr id="$dataTimeout">
+        <td><a href="yii-redis-connection.html#$dataTimeout-detail">$dataTimeout</a></td>
+        <td><a href="http://www.php.net/language.types.float">float</a></td>
+        <td>Timeout to use for redis socket when reading and writing data.</td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+            <tr id="$database">
+        <td><a href="yii-redis-connection.html#$database-detail">$database</a></td>
+        <td><a href="http://www.php.net/language.types.integer">integer</a></td>
+        <td>The redis database to use.</td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+            <tr id="$driverName">
+        <td><a href="yii-redis-connection.html#$driverName-detail">$driverName</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>Name of the DB driver</td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+            <tr id="$hostname">
+        <td><a href="yii-redis-connection.html#$hostname-detail">$hostname</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>The hostname or ip address to use for connecting to the redis server.</td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+            <tr id="$isActive">
+        <td><a href="yii-redis-connection.html#$isActive-detail">$isActive</a></td>
+        <td><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+        <td>Whether the DB connection is established</td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+            <tr id="$luaScriptBuilder">
+        <td><a href="yii-redis-connection.html#$luaScriptBuilder-detail">$luaScriptBuilder</a></td>
+        <td><a href="yii-redis-luascriptbuilder.html">yii\redis\LuaScriptBuilder</a></td>
+        <td></td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+            <tr id="$password">
+        <td><a href="yii-redis-connection.html#$password-detail">$password</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>The password for establishing DB connection.</td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+            <tr id="$port">
+        <td><a href="yii-redis-connection.html#$port-detail">$port</a></td>
+        <td><a href="http://www.php.net/language.types.integer">integer</a></td>
+        <td>The port to use for connecting to the redis server.</td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+            <tr id="$redirectConnectionString">
+        <td><a href="yii-redis-connection.html#$redirectConnectionString-detail">$redirectConnectionString</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>If the query gets redirected, use this as the temporary new hostname</td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+            <tr id="$redisCommands">
+        <td><a href="yii-redis-connection.html#$redisCommands-detail">$redisCommands</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>List of available redis commands.</td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+            <tr id="$retries">
+        <td><a href="yii-redis-connection.html#$retries-detail">$retries</a></td>
+        <td><a href="http://www.php.net/language.types.integer">integer</a></td>
+        <td>The number of times a command execution should be retried when a connection failure occurs.</td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+            <tr id="$retryInterval">
+        <td><a href="yii-redis-connection.html#$retryInterval-detail">$retryInterval</a></td>
+        <td><a href="http://www.php.net/language.types.integer">integer</a></td>
+        <td>The retry interval in microseconds to wait between retry.</td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+            <tr id="$socket">
+        <td><a href="yii-redis-connection.html#$socket-detail">$socket</a></td>
+        <td><a href="http://www.php.net/language.types.resource">resource</a>|<a href="http://www.php.net/language.types.boolean">false</a></td>
+        <td></td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+            <tr id="$socketClientFlags">
+        <td><a href="yii-redis-connection.html#$socketClientFlags-detail">$socketClientFlags</a></td>
+        <td><a href="http://www.php.net/language.types.integer">integer</a></td>
+        <td>Bitmask field which may be set to any combination of connection flags passed to [stream_socket_client()](<a href="http://php">http://php</a>.</td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+            <tr id="$unixSocket">
+        <td><a href="yii-redis-connection.html#$unixSocket-detail">$unixSocket</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>The unix socket path (e.g. `/var/run/redis/redis.</td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+    </table>
+</div>
+
+<a id="methods"></a>
+
+<div class="summary doc-method">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr id="__call()">
+        <td><a href="yii-redis-connection.html#__call()-detail">__call()</a></td>
+        <td>Allows issuing all supported commands via magic methods.</td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+            <tr class="inherited" id="__clone()">
+        <td><a href="yii-base-component.html#__clone()-detail">__clone()</a></td>
+        <td>This method is called after the object is created by cloning an existing one.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="__construct()">
+        <td><a href="yii-base-baseobject.html#__construct()-detail">__construct()</a></td>
+        <td>Constructor.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr class="inherited" id="__get()">
+        <td><a href="yii-base-component.html#__get()-detail">__get()</a></td>
+        <td>Returns the value of a component property.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="__isset()">
+        <td><a href="yii-base-component.html#__isset()-detail">__isset()</a></td>
+        <td>Checks if a property is set, i.e. defined and not null.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="__set()">
+        <td><a href="yii-base-component.html#__set()-detail">__set()</a></td>
+        <td>Sets the value of a component property.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr id="__sleep()">
+        <td><a href="yii-redis-connection.html#__sleep()-detail">__sleep()</a></td>
+        <td>Closes the connection when this component is being serialized.</td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+            <tr class="inherited" id="__unset()">
+        <td><a href="yii-base-component.html#__unset()-detail">__unset()</a></td>
+        <td>Sets a component property to be null.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="attachBehavior()">
+        <td><a href="yii-base-component.html#attachBehavior()-detail">attachBehavior()</a></td>
+        <td>Attaches a behavior to this component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="attachBehaviors()">
+        <td><a href="yii-base-component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+        <td>Attaches a list of behaviors to the component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="behaviors()">
+        <td><a href="yii-base-component.html#behaviors()-detail">behaviors()</a></td>
+        <td>Returns a list of behaviors that this component should behave as.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="canGetProperty()">
+        <td><a href="yii-base-component.html#canGetProperty()-detail">canGetProperty()</a></td>
+        <td>Returns a value indicating whether a property can be read.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="canSetProperty()">
+        <td><a href="yii-base-component.html#canSetProperty()-detail">canSetProperty()</a></td>
+        <td>Returns a value indicating whether a property can be set.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="className()">
+        <td><a href="yii-base-baseobject.html#className()-detail">className()</a></td>
+        <td>Returns the fully qualified name of this class.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr id="close()">
+        <td><a href="yii-redis-connection.html#close()-detail">close()</a></td>
+        <td>Closes the currently active DB connection.</td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+            <tr class="inherited" id="detachBehavior()">
+        <td><a href="yii-base-component.html#detachBehavior()-detail">detachBehavior()</a></td>
+        <td>Detaches a behavior from the component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="detachBehaviors()">
+        <td><a href="yii-base-component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+        <td>Detaches all behaviors from the component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="ensureBehaviors()">
+        <td><a href="yii-base-component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+        <td>Makes sure that the behaviors declared in <a href="yii-base-component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr id="executeCommand()">
+        <td><a href="yii-redis-connection.html#executeCommand()-detail">executeCommand()</a></td>
+        <td>Executes a redis command.</td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+            <tr class="inherited" id="getBehavior()">
+        <td><a href="yii-base-component.html#getBehavior()-detail">getBehavior()</a></td>
+        <td>Returns the named behavior object.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="getBehaviors()">
+        <td><a href="yii-base-component.html#getBehaviors()-detail">getBehaviors()</a></td>
+        <td>Returns all behaviors attached to this component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr id="getConnectionString()">
+        <td><a href="yii-redis-connection.html#getConnectionString()-detail">getConnectionString()</a></td>
+        <td>Return the connection string used to open a socket connection. During a redirect (cluster mode) this will be the
+target of the redirect.</td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+            <tr id="getDriverName()">
+        <td><a href="yii-redis-connection.html#getDriverName()-detail">getDriverName()</a></td>
+        <td>Returns the name of the DB driver for the current <span class="broken-link">\yii\redis\dsn</span>.</td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+            <tr id="getIsActive()">
+        <td><a href="yii-redis-connection.html#getIsActive()-detail">getIsActive()</a></td>
+        <td>Returns a value indicating whether the DB connection is established.</td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+            <tr id="getLuaScriptBuilder()">
+        <td><a href="yii-redis-connection.html#getLuaScriptBuilder()-detail">getLuaScriptBuilder()</a></td>
+        <td></td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+            <tr id="getSocket()">
+        <td><a href="yii-redis-connection.html#getSocket()-detail">getSocket()</a></td>
+        <td>Return the connection resource if a connection to the target has been established before, <code>false</code> otherwise.</td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+            <tr class="inherited" id="hasEventHandlers()">
+        <td><a href="yii-base-component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+        <td>Returns a value indicating whether there is any handler attached to the named event.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="hasMethod()">
+        <td><a href="yii-base-component.html#hasMethod()-detail">hasMethod()</a></td>
+        <td>Returns a value indicating whether a method is defined.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="hasProperty()">
+        <td><a href="yii-base-component.html#hasProperty()-detail">hasProperty()</a></td>
+        <td>Returns a value indicating whether a property is defined for this component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="init()">
+        <td><a href="yii-base-baseobject.html#init()-detail">init()</a></td>
+        <td>Initializes the object.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+                <tr class="inherited" id="off()">
+        <td><a href="yii-base-component.html#off()-detail">off()</a></td>
+        <td>Detaches an existing event handler from this component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="on()">
+        <td><a href="yii-base-component.html#on()-detail">on()</a></td>
+        <td>Attaches an event handler to an event.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr id="open()">
+        <td><a href="yii-redis-connection.html#open()-detail">open()</a></td>
+        <td>Establishes a DB connection.</td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+            <tr class="inherited" id="trigger()">
+        <td><a href="yii-base-component.html#trigger()-detail">trigger()</a></td>
+        <td>Triggers an event.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+    </table>
+</div>
+
+<div class="summary doc-method">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+                                                                                                                                <tr id="initConnection()">
+        <td><a href="yii-redis-connection.html#initConnection()-detail">initConnection()</a></td>
+        <td>Initializes the DB connection.</td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+                    </table>
+</div>
+
+<a id="events"></a>
+<div class="summary doc-event">
+    <h2>Events</h2>
+
+    <p><a href="#" class="toggle">Hide inherited events</a></p>
+
+    <table class="summary-table table table-striped table-bordered table-hover">
+    <colgroup>
+        <col class="col-event" />
+        <col class="col-type" />
+        <col class="col-description" />
+        <col class="col-defined" />
+    </colgroup>
+    <tr>
+        <th>Event</th><th>Type</th><th>Description</th><th>Defined By</th>
+    </tr>
+        <tr id="EVENT_AFTER_OPEN">
+        <td><a href="yii-redis-connection.html#EVENT_AFTER_OPEN-detail">EVENT_AFTER_OPEN</a></td>
+        <td>\yii\redis\Event</td>
+        <td>
+            An event that is triggered after a DB connection is established                    </td>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+    </tr>
+        </table>
+</div>
+
+<a id="constants"></a>
+
+<h2>Property Details</h2>
+
+<div class="property-doc">
+
+    <div class="detail-header h3" id="$connectionString-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#$connectionString-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $connectionString        <span class="detail-header-tag small">
+            public                         <em>read-only</em>                         property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>Socket connection string</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="yii-redis-connection.html#getConnectionString()-detail">getConnectionString</a></strong> ( )</div>
+
+
+    <div class="detail-header h3" id="$connectionTimeout-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#$connectionTimeout-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php#L279" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php#L279" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $connectionTimeout        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>Timeout to use for connection to redis. If not set the timeout set in php.ini will be used: <code>ini_get("default_socket_timeout")</code>.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.float">float</a></span> <a href="yii-redis-connection.html#$connectionTimeout-detail">$connectionTimeout</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+
+
+    <div class="detail-header h3" id="$dataTimeout-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#$dataTimeout-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php#L283" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php#L283" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $dataTimeout        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>Timeout to use for redis socket when reading and writing data. If not set the php default value will be used.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.float">float</a></span> <a href="yii-redis-connection.html#$dataTimeout-detail">$dataTimeout</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+
+
+    <div class="detail-header h3" id="$database-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#$database-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php#L275" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php#L275" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $database        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>The redis database to use. This is an integer value starting from 0. Defaults to 0.
+Since version 2.0.6 you can disable the SELECT command sent after connection by setting this property to <code>null</code>.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.integer">integer</a></span> <a href="yii-redis-connection.html#$database-detail">$database</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span></div>
+
+
+    <div class="detail-header h3" id="$driverName-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#$driverName-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $driverName        <span class="detail-header-tag small">
+            public                         <em>read-only</em>                         property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>Name of the DB driver</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="yii-redis-connection.html#getDriverName()-detail">getDriverName</a></strong> ( )</div>
+
+
+    <div class="detail-header h3" id="$hostname-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#$hostname-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php#L248" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php#L248" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $hostname        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>The hostname or ip address to use for connecting to the redis server. Defaults to 'localhost'.
+If <a href="yii-redis-connection.html#$unixSocket-detail">$unixSocket</a> is specified, hostname and <a href="yii-redis-connection.html#$port-detail">$port</a> will be ignored.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="yii-redis-connection.html#$hostname-detail">$hostname</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'localhost'</span></div>
+
+
+    <div class="detail-header h3" id="$isActive-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#$isActive-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $isActive        <span class="detail-header-tag small">
+            public                         <em>read-only</em>                         property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>Whether the DB connection is established</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-redis-connection.html#getIsActive()-detail">getIsActive</a></strong> ( )</div>
+
+
+    <div class="detail-header h3" id="$luaScriptBuilder-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#$luaScriptBuilder-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $luaScriptBuilder        <span class="detail-header-tag small">
+            public                         <em>read-only</em>                         property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-redis-luascriptbuilder.html">yii\redis\LuaScriptBuilder</a></span> <strong><a href="yii-redis-connection.html#getLuaScriptBuilder()-detail">getLuaScriptBuilder</a></strong> ( )</div>
+
+
+    <div class="detail-header h3" id="$password-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#$password-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php#L270" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php#L270" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $password        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>The password for establishing DB connection. Defaults to null meaning no AUTH command is sent.
+See <a href="http://redis.io/commands/auth">http://redis.io/commands/auth</a></p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="yii-redis-connection.html#$password-detail">$password</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+
+
+    <div class="detail-header h3" id="$port-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#$port-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php#L258" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php#L258" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $port        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>The port to use for connecting to the redis server. Default port is 6379.
+If <a href="yii-redis-connection.html#$unixSocket-detail">$unixSocket</a> is specified, <a href="yii-redis-connection.html#$hostname-detail">$hostname</a> and port will be ignored.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.integer">integer</a></span> <a href="yii-redis-connection.html#$port-detail">$port</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">6379</span></div>
+
+
+    <div class="detail-header h3" id="$redirectConnectionString-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#$redirectConnectionString-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php#L253" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php#L253" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $redirectConnectionString        <span class="detail-header-tag small">
+            public                                                property
+                            (available since version 2.0.11)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>If the query gets redirected, use this as the temporary new hostname</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="yii-redis-connection.html#$redirectConnectionString-detail">$redirectConnectionString</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+
+
+    <div class="detail-header h3" id="$redisCommands-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#$redisCommands-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php#L322" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php#L322" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $redisCommands        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>List of available redis commands.</p>
+
+        <p>See also <a href="http://redis.io/commands">http://redis.io/commands</a>.</p>    </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <a href="yii-redis-connection.html#$redisCommands-detail">$redisCommands</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[</span><span style="color: #DD0000">'APPEND'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'AUTH'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'BGREWRITEAOF'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'BGSAVE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'BITCOUNT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'BITFIELD'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'BITOP'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'BITPOS'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'BLPOP'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'BRPOP'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'BRPOPLPUSH'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CLIENT&nbsp;KILL'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CLIENT&nbsp;LIST'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CLIENT&nbsp;GETNAME'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CLIENT&nbsp;PAUSE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CLIENT&nbsp;REPLY'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CLIENT&nbsp;SETNAME'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CLUSTER&nbsp;ADDSLOTS'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CLUSTER&nbsp;COUNTKEYSINSLOT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CLUSTER&nbsp;DELSLOTS'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CLUSTER&nbsp;FAILOVER'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CLUSTER&nbsp;FORGET'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CLUSTER&nbsp;GETKEYSINSLOT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CLUSTER&nbsp;INFO'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CLUSTER&nbsp;KEYSLOT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CLUSTER&nbsp;MEET'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CLUSTER&nbsp;NODES'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CLUSTER&nbsp;REPLICATE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CLUSTER&nbsp;RESET'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CLUSTER&nbsp;SAVECONFIG'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CLUSTER&nbsp;SETSLOT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CLUSTER&nbsp;SLAVES'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CLUSTER&nbsp;SLOTS'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'COMMAND'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'COMMAND&nbsp;COUNT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'COMMAND&nbsp;GETKEYS'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'COMMAND&nbsp;INFO'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CONFIG&nbsp;GET'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CONFIG&nbsp;REWRITE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CONFIG&nbsp;SET'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CONFIG&nbsp;RESETSTAT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'DBSIZE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'DEBUG&nbsp;OBJECT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'DEBUG&nbsp;SEGFAULT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'DECR'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'DECRBY'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'DEL'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'DISCARD'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'DUMP'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ECHO'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'EVAL'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'EVALSHA'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'EXEC'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'EXISTS'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'EXPIRE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'EXPIREAT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'FLUSHALL'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'FLUSHDB'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'GEOADD'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'GEOHASH'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'GEOPOS'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'GEODIST'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'GEORADIUS'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'GEORADIUSBYMEMBER'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'GET'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'GETBIT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'GETRANGE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'GETSET'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'HDEL'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'HEXISTS'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'HGET'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'HGETALL'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'HINCRBY'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'HINCRBYFLOAT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'HKEYS'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'HLEN'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'HMGET'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'HMSET'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'HSET'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'HSETNX'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'HSTRLEN'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'HVALS'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'INCR'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'INCRBY'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'INCRBYFLOAT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'INFO'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'KEYS'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'LASTSAVE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'LINDEX'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'LINSERT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'LLEN'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'LPOP'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'LPUSH'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'LPUSHX'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'LRANGE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'LREM'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'LSET'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'LTRIM'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'MGET'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'MIGRATE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'MONITOR'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'MOVE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'MSET'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'MSETNX'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'MULTI'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'OBJECT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'PERSIST'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'PEXPIRE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'PEXPIREAT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'PFADD'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'PFCOUNT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'PFMERGE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'PING'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'PSETEX'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'PSUBSCRIBE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'PUBSUB'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'PTTL'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'PUBLISH'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'PUNSUBSCRIBE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'QUIT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'RANDOMKEY'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'READONLY'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'READWRITE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'RENAME'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'RENAMENX'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'RESTORE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ROLE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'RPOP'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'RPOPLPUSH'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'RPUSH'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'RPUSHX'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SADD'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SAVE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SCARD'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SCRIPT&nbsp;DEBUG'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SCRIPT&nbsp;EXISTS'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SCRIPT&nbsp;FLUSH'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SCRIPT&nbsp;KILL'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SCRIPT&nbsp;LOAD'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SDIFF'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SDIFFSTORE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SELECT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SET'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SETBIT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SETEX'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SETNX'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SETRANGE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SHUTDOWN'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SINTER'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SINTERSTORE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SISMEMBER'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SLAVEOF'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SLOWLOG'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SMEMBERS'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SMOVE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SORT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SPOP'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SRANDMEMBER'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SREM'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'STRLEN'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SUBSCRIBE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SUNION'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SUNIONSTORE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SWAPDB'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SYNC'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'TIME'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'TOUCH'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'TTL'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'TYPE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'UNSUBSCRIBE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'UNLINK'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'UNWATCH'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'WAIT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'WATCH'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ZADD'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ZCARD'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ZCOUNT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ZINCRBY'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ZINTERSTORE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ZLEXCOUNT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ZRANGE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ZRANGEBYLEX'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ZREVRANGEBYLEX'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ZRANGEBYSCORE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ZRANK'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ZREM'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ZREMRANGEBYLEX'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ZREMRANGEBYRANK'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ZREMRANGEBYSCORE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ZREVRANGE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ZREVRANGEBYSCORE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ZREVRANK'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ZSCORE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ZUNIONSTORE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SCAN'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SSCAN'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'HSCAN'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ZSCAN'</span><span style="color: #007700">]</span></div>
+
+
+    <div class="detail-header h3" id="$retries-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#$retries-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php#L310" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php#L310" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $retries        <span class="detail-header-tag small">
+            public                                                property
+                            (available since version 2.0.7)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>The number of times a command execution should be retried when a connection failure occurs.
+This is used in <a href="yii-redis-connection.html#executeCommand()-detail">executeCommand()</a> when a <a href="yii-redis-socketexception.html">yii\redis\SocketException</a> is thrown.
+Defaults to 0 meaning no retries on failure.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.integer">integer</a></span> <a href="yii-redis-connection.html#$retries-detail">$retries</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span></div>
+
+
+    <div class="detail-header h3" id="$retryInterval-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#$retryInterval-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php#L317" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php#L317" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $retryInterval        <span class="detail-header-tag small">
+            public                                                property
+                            (available since version 2.0.10)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>The retry interval in microseconds to wait between retry.
+This is used in <a href="yii-redis-connection.html#executeCommand()-detail">executeCommand()</a> when a <a href="yii-redis-socketexception.html">yii\redis\SocketException</a> is thrown.
+Defaults to 0 meaning no wait.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.integer">integer</a></span> <a href="yii-redis-connection.html#$retryInterval-detail">$retryInterval</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span></div>
+
+
+    <div class="detail-header h3" id="$socket-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#$socket-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $socket        <span class="detail-header-tag small">
+            public                         <em>read-only</em>                         property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.resource">resource</a>|<a href="http://www.php.net/language.types.boolean">false</a></span> <strong><a href="yii-redis-connection.html#getSocket()-detail">getSocket</a></strong> ( )</div>
+
+
+    <div class="detail-header h3" id="$socketClientFlags-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#$socketClientFlags-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php#L303" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php#L303" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $socketClientFlags        <span class="detail-header-tag small">
+            public                                                property
+                            (available since version 2.0.5)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>Bitmask field which may be set to any combination of connection flags passed to <a href="http://php.net/manual/en/function.stream-socket-client.php">stream_socket_client()</a>.
+Currently the select of connection flags is limited to <code>STREAM_CLIENT_CONNECT</code> (default), <code>STREAM_CLIENT_ASYNC_CONNECT</code> and <code>STREAM_CLIENT_PERSISTENT</code>.</p>
+<blockquote class="warning"><p><strong>Warning: </strong><code>STREAM_CLIENT_PERSISTENT</code> will make PHP reuse connections to the same server. If you are using multiple
+connection objects to refer to different redis <a href="yii-redis-connection.html#$database-detail">databases</a> on the same <a href="yii-redis-connection.html#$port-detail">$port</a>, redis commands may
+get executed on the wrong database. <code>STREAM_CLIENT_PERSISTENT</code> is only safe to use if you use only one database.</p>
+<p>You may still use persistent connections in this case when disambiguating ports as described
+in <a href="http://php.net/manual/en/function.stream-socket-client.php#105393">a comment on the PHP manual</a>
+e.g. on the connection used for session storage, specify the port as:</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'port'</span> =&gt; <span class="hljs-string">'6379/session'</span>
+</code></pre>
+</blockquote>
+
+        <p>See also <a href="http://php.net/manual/en/function.stream-socket-client.php">http://php.net/manual/en/function.stream-socket-client.php</a>.</p>    </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.integer">integer</a></span> <a href="yii-redis-connection.html#$socketClientFlags-detail">$socketClientFlags</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">STREAM_CLIENT_CONNECT</span></div>
+
+
+    <div class="detail-header h3" id="$unixSocket-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#$unixSocket-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php#L265" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php#L265" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $unixSocket        <span class="detail-header-tag small">
+            public                                                property
+                            (available since version 2.0.1)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>The unix socket path (e.g. <code>/var/run/redis/redis.sock</code>) to use for connecting to the redis server.
+This can be used instead of <a href="yii-redis-connection.html#$hostname-detail">$hostname</a> and <a href="yii-redis-connection.html#$port-detail">$port</a> to connect to the server using a unix socket.
+If a unix socket path is specified, <a href="yii-redis-connection.html#$hostname-detail">$hostname</a> and <a href="yii-redis-connection.html#$port-detail">$port</a> will be ignored.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="yii-redis-connection.html#$unixSocket-detail">$unixSocket</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+
+</div>
+<h2>Method Details</h2>
+
+<div class="method-doc">
+
+    <div class="detail-header h3" id="__call()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#__call()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php#L671" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php#L671" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        __call()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Allows issuing all supported commands via magic methods.</strong></p>
+
+        <pre><code class="hljs php language-php"><span class="hljs-variable">$redis</span>-&gt;hmset(<span class="hljs-string">'test_collection'</span>, <span class="hljs-string">'key1'</span>, <span class="hljs-string">'val1'</span>, <span class="hljs-string">'key2'</span>, <span class="hljs-string">'val2'</span>)
+</code></pre>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="yii-redis-connection.html#__call()-detail">__call</a></strong> ( <span style="color: #0000BB">$name</span>, <span style="color: #0000BB">$params</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Name of the missing method to execute</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$params</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Method call arguments</p>
+</td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="__sleep()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#__sleep()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php#L533" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php#L533" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        __sleep()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Closes the connection when this component is being serialized.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-redis-connection.html#__sleep()-detail">__sleep</a></strong> ( )</td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="close()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#close()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php#L617" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php#L617" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        close()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Closes the currently active DB connection.</strong></p>
+
+        <p>It does nothing if the connection is already closed.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-redis-connection.html#close()-detail">close</a></strong> ( )</td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="executeCommand()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#executeCommand()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php#L708" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php#L708" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        executeCommand()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Executes a redis command.</strong></p>
+
+        <p>For a list of available commands and their parameters see <a href="http://redis.io/commands">http://redis.io/commands</a>.</p>
+<p>The params array should contain the params separated by white space, e.g. to execute
+<code>SET mykey somevalue NX</code> call the following:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$redis</span>-&gt;executeCommand(<span class="hljs-string">'SET'</span>, [<span class="hljs-string">'mykey'</span>, <span class="hljs-string">'somevalue'</span>, <span class="hljs-string">'NX'</span>]);
+</code></pre>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a>|<a href="http://www.php.net/language.types.boolean">boolean</a>|<a href="http://www.php.net/language.types.null">null</a>|<a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="yii-redis-connection.html#executeCommand()-detail">executeCommand</a></strong> ( <span style="color: #0000BB">$name</span>, <span style="color: #0000BB">$params&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The name of the command</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$params</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>List of parameters for the command</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a>|<a href="http://www.php.net/language.types.boolean">boolean</a>|<a href="http://www.php.net/language.types.null">null</a>|<a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Dependent on the executed command this method
+will return different data types:</p>
+<ul>
+<li><code>true</code> for commands that return "status reply" with the message <code>'OK'</code> or <code>'PONG'</code>.</li>
+<li><code>string</code> for commands that return "status reply" that does not have the message <code>OK</code> (since version 2.0.1).</li>
+<li><code>string</code> for commands that return "integer reply"
+as the value is in the range of a signed 64 bit integer.</li>
+<li><code>string</code> or <code>null</code> for commands that return "bulk reply".</li>
+<li><code>array</code> for commands that return "Multi-bulk replies".</li>
+</ul>
+<p>See <a href="http://redis.io/topics/protocol">redis protocol description</a>
+for details on the mentioned reply types.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="yii-db-exception.html">yii\db\Exception</a></td>
+                  <td class="param-desc-col"><p>for commands that return <a href="http://redis.io/topics/protocol#error-reply">error reply</a>.</p>
+</td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getConnectionString()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#getConnectionString()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php#L545" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php#L545" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getConnectionString()
+        <span class="detail-header-tag small">
+            public                                    method
+                            (available since version 2.0.11)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Return the connection string used to open a socket connection. During a redirect (cluster mode) this will be the
+target of the redirect.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="yii-redis-connection.html#getConnectionString()-detail">getConnectionString</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Socket connection string</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getDriverName()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#getDriverName()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php#L647" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php#L647" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getDriverName()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns the name of the DB driver for the current <span class="broken-link">\yii\redis\dsn</span>.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="yii-redis-connection.html#getDriverName()-detail">getDriverName</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Name of the DB driver</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getIsActive()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#getIsActive()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php#L567" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php#L567" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getIsActive()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns a value indicating whether the DB connection is established.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-redis-connection.html#getIsActive()-detail">getIsActive</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>Whether the DB connection is established</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getLuaScriptBuilder()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#getLuaScriptBuilder()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php#L655" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php#L655" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getLuaScriptBuilder()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong></strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-redis-luascriptbuilder.html">yii\redis\LuaScriptBuilder</a></span> <strong><a href="yii-redis-connection.html#getLuaScriptBuilder()-detail">getLuaScriptBuilder</a></strong> ( )</td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getSocket()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#getSocket()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php#L558" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php#L558" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getSocket()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Return the connection resource if a connection to the target has been established before, <code>false</code> otherwise.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.resource">resource</a>|<a href="http://www.php.net/language.types.boolean">false</a></span> <strong><a href="yii-redis-connection.html#getSocket()-detail">getSocket</a></strong> ( )</td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="initConnection()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#initConnection()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php#L638" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php#L638" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        initConnection()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Initializes the DB connection.</strong></p>
+
+        <p>This method is invoked right after the DB connection is established.
+The default implementation triggers an <a href="yii-redis-connection.html#EVENT_AFTER_OPEN-detail">EVENT_AFTER_OPEN</a> event.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type">void</span> <strong><a href="yii-redis-connection.html#initConnection()-detail">initConnection</a></strong> ( )</td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="open()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#open()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php#L577" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php#L577" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        open()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Establishes a DB connection.</strong></p>
+
+        <p>It does nothing if a DB connection has already been established.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-redis-connection.html#open()-detail">open</a></strong> ( )</td></tr>
+                                                            <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="yii-db-exception.html">yii\db\Exception</a></td>
+                  <td class="param-desc-col"><p>if connection fails</p>
+</td>
+                </tr>
+                        </table>
+
+<!--	-->
+</div>
+    <h2>Event Details</h2>
+
+<div class="event-doc">
+    <div class="detail-header h3" id="EVENT_AFTER_OPEN-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-redis-connection.html#EVENT_AFTER_OPEN-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-redis/edit/master/Connection.php#L242" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-redis/blob/master/Connection.php#L242" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        EVENT_AFTER_OPEN        <span class="detail-header-tag small">
+        event
+        of type \yii\redis\Event                </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>An event that is triggered after a DB connection is established</p>
+
+            </div>
+
+</div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    /*<![CDATA[*/
+    $("a.toggle").on('click', function () {
+        var $this = $(this);
+        if ($this.hasClass('properties-hidden')) {
+            $this.text($this.text().replace(/Show/,'Hide'));
+            $this.parents(".summary").find(".inherited").show();
+            $this.removeClass('properties-hidden');
+        } else {
+            $this.text($this.text().replace(/Hide/,'Show'));
+            $this.parents(".summary").find(".inherited").hide();
+            $this.addClass('properties-hidden');
+        }
+
+        return false;
+    });
+    /*
+     $(".sourceCode a.show").toggle(function () {
+     $(this).text($(this).text().replace(/show/,'hide'));
+     $(this).parents(".sourceCode").find("div.code").show();
+     },function () {
+     $(this).text($(this).text().replace(/hide/,'show'));
+     $(this).parents(".sourceCode").find("div.code").hide();
+     });
+     $("a.sourceLink").click(function () {
+     $(this).attr('target','_blank');
+     });
+     */
+    /*]]>*/
+</script>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:31 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

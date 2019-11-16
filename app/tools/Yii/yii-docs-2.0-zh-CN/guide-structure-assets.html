@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>前端资源（Assets） - 应用结构（Application Structure） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w681" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w681-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w681-collapse" class="collapse navbar-collapse"><ul id="w682" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w683" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-665" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-665" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-666" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-666" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item active" href="#navigation-667" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-667" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item active" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-668" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-668" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-669" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-669" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-670" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-670" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-zh-CN/README.md">Sphinx</a>
+<a class="list-group-item" href="./guide-yii2-redis.html">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-zh-CN/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-zh-CN/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-671" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-671" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-672" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-672" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-673" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-673" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-674" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-674" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-675" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-675" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-676" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-676" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-677" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-677" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-678" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-678" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-679" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-679" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-680" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-680" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>资源 <span id="zi-yuan"></span><a href="#zi-yuan" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#asset-bundles">资源包</a></li>
+<li><a href="#defining-asset-bundles">定义资源包</a></li>
+<li><a href="#using-asset-bundles">使用资源包</a></li>
+<li><a href="#common-asset-bundles">常用资源包</a></li>
+<li><a href="#asset-conversion">资源转换</a></li>
+<li><a href="#combining-compressing-assets">合并和压缩资源</a></li></ol></div>
+<p>Yii 中的资源是和 Web 页面相关的文件，可为 CSS 文件，JavaScript 文件，图片或视频等，
+资源放在 Web 可访问的目录下，直接被 Web 服务器调用。</p>
+<p>通过程序自动管理资源更好一点，例如，当你在页面中使用 <a href="./yii-jui-datepicker.html">yii\jui\DatePicker</a> 小部件时，
+它会自动包含需要的 CSS 和 JavaScript 文件，
+而不是要求你手工去找到这些文件并包含，
+当你升级小部件时，它会自动使用新版本的资源文件，
+在本教程中，我们会详述 Yii 提供的强大的资源管理功能。</p>
+<h2>资源包  <span id="asset-bundles"></span><a href="#asset-bundles" class="hashlink">&para;</a></h2><p>Yii 在<em>资源包</em>中管理资源，资源包简单的说就是放在一个目录下的资源集合，
+当在<a href="guide-structure-views.html">视图</a>中注册一个资源包，
+在渲染 Web 页面时会包含包中的 CSS 和 JavaScript 文件。</p>
+<h2>定义资源包  <span id="defining-asset-bundles"></span><a href="#defining-asset-bundles" class="hashlink">&para;</a></h2><p>资源包指定为继承 <a href="./yii-web-assetbundle.html">yii\web\AssetBundle</a> 的 PHP 类，
+包名为可<a href="guide-concept-autoloading.html">自动加载</a>的 PHP 类名，
+在资源包类中，要指定资源所在位置，
+包含哪些 CSS 和 JavaScript 文件以及和其他包的依赖关系。</p>
+<p>如下代码定义<a href="guide-start-installation.html">基础应用模板</a>使用的主要资源包：</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">assets</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">AssetBundle</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppAsset</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AssetBundle</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$basePath</span> = <span class="hljs-string">'@webroot'</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$baseUrl</span> = <span class="hljs-string">'@web'</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$css</span> = [
+        <span class="hljs-string">'css/site.css'</span>,
+        [<span class="hljs-string">'css/print.css'</span>, <span class="hljs-string">'media'</span> =&gt; <span class="hljs-string">'print'</span>],
+    ];
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$js</span> = [
+    ];
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$depends</span> = [
+        <span class="hljs-string">'yii\web\YiiAsset'</span>,
+        <span class="hljs-string">'yii\bootstrap\BootstrapAsset'</span>,
+    ];
+}
+</code></pre>
+<p>如上 <code>AppAsset</code> 类指定资源文件放在 <code>@webroot</code> 目录下，对应的 URL 为
+<code>@web</code>，资源包中包含一个 CSS 文件 <code>css/site.css</code>，没有 JavaScript 文件，
+依赖其他两个包 <a href="./yii-web-yiiasset.html">yii\web\YiiAsset</a> 和 <a href="./yii-bootstrap-bootstrapasset.html">yii\bootstrap\BootstrapAsset</a>，
+关于 <a href="./yii-web-assetbundle.html">yii\web\AssetBundle</a> 的属性的更多详细如下所述：</p>
+<ul>
+<li><a href="./yii-web-assetbundle.html#$sourcePath-detail">sourcePath</a>：指定包包含资源文件的根目录，
+当根目录不能被 Web 访问时该属性应设置，否则，应设置
+<a href="./yii-web-assetbundle.html#$basePath-detail">basePath</a> 属性和 <a href="./yii-web-assetbundle.html#$baseUrl-detail">baseUrl</a>。
+<a href="guide-concept-aliases.html">路径别名</a> 可在此处使用；</li>
+<li><a href="./yii-web-assetbundle.html#$basePath-detail">basePath</a>：指定包含资源包中资源文件并可Web访问的目录，
+当指定 <a href="./yii-web-assetbundle.html#$sourcePath-detail">sourcePath</a> 属性，
+<a href="#asset-manager">资源管理器</a> 会发布包的资源到一个可 Web 访问并覆盖该属性，
+如果你的资源文件在一个 Web 可访问目录下，应设置该属性，这样就不用再发布了。
+<a href="guide-concept-aliases.html">路径别名</a> 可在此处使用。</li>
+<li><a href="./yii-web-assetbundle.html#$baseUrl-detail">baseUrl</a>：指定对应到 <a href="./yii-web-assetbundle.html#$basePath-detail">basePath</a> 目录的 URL，
+和 <a href="./yii-web-assetbundle.html#$basePath-detail">basePath</a> 类似，
+如果你指定 <a href="./yii-web-assetbundle.html#$sourcePath-detail">sourcePath</a> 属性，
+<a href="#asset-manager">资源管理器</a> 会发布这些资源并覆盖该属性，<a href="guide-concept-aliases.html">路径别名</a> 可在此处使用。</li>
+<li><a href="./yii-web-assetbundle.html#$css-detail">css</a>：列出此包中包含的 CSS 文件的数组。
+请注意，只应使用正斜杠“/”作为目录分隔符。每个文件都可以单独指定为字符串，
+也可以与属性标记及其值一起指定在数组中。</li>
+<li><a href="./yii-web-assetbundle.html#$js-detail">js</a>：列出此包中包含的 JavaScript 文件的数组。
+请注意，只应使用正斜杠“/”作为目录分隔符。
+每个 JavaScript 文件可指定为以下两种格式之一：<ul>
+<li>相对路径表示为本地 JavaScript 文件 (如 <code>js/main.js</code>)，文件实际的路径在该相对路径前加上
+<a href="./yii-web-assetmanager.html#$basePath-detail">yii\web\AssetManager::$basePath</a>，文件实际的 URL
+在该路径前加上 <a href="./yii-web-assetmanager.html#$baseUrl-detail">yii\web\AssetManager::$baseUrl</a>。</li>
+<li>绝对 URL 地址表示为外部 JavaScript 文件，如
+<code>http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js</code> 或 
+<code>//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js</code>。</li>
+</ul>
+</li>
+<li><a href="./yii-web-assetbundle.html#$depends-detail">depends</a>：一个列出该资源包依赖的
+其他资源包（后两节有详细介绍）。</li>
+<li><a href="./yii-web-assetbundle.html#$jsOptions-detail">jsOptions</a>：当调用 <a href="./yii-web-view.html#registerJsFile()-detail">yii\web\View::registerJsFile()</a> 注册该包 <em>每个</em> JavaScript 文件时，
+指定传递到该方法的选项。</li>
+<li><a href="./yii-web-assetbundle.html#$cssOptions-detail">cssOptions</a>：当调用 <a href="./yii-web-view.html#registerCssFile()-detail">yii\web\View::registerCssFile()</a> 注册该包 <em>每个</em> CSS 文件时，
+指定传递到该方法的选项。</li>
+<li><a href="./yii-web-assetbundle.html#$publishOptions-detail">publishOptions</a>：当调用 <a href="./yii-web-assetmanager.html#publish()-detail">yii\web\AssetManager::publish()</a> 发布该包资源文件到 Web 目录时
+指定传递到该方法的选项，仅在指定了
+<a href="./yii-web-assetbundle.html#$sourcePath-detail">sourcePath</a> 属性时使用。</li>
+</ul>
+<h3>资源位置  <span id="asset-locations"></span><a href="#asset-locations" class="hashlink">&para;</a></h3><p>资源根据它们的位置可以分为：</p>
+<ul>
+<li>源资源: 资源文件和 PHP 源代码放在一起，不能被 Web 直接访问，为了使用这些源资源，
+它们要拷贝到一个可 Web 访问的 Web 目录中
+成为发布的资源，这个过程称为<em>发布资源</em>，随后会详细介绍。</li>
+<li>发布资源: 资源文件放在可通过 Web 直接访问的 Web 目录中；</li>
+<li>外部资源: 资源文件放在与你的 Web 应用不同的
+Web 服务器上；</li>
+</ul>
+<p>当定义资源包类时候，如果你指定了<a href="./yii-web-assetbundle.html#$sourcePath-detail">sourcePath</a> 属性，
+就表示任何使用相对路径的资源会被当作源资源；
+如果没有指定该属性，就表示这些资源为发布资源（因此应指定<a href="./yii-web-assetbundle.html#$basePath-detail">basePath</a> 和
+<a href="./yii-web-assetbundle.html#$baseUrl-detail">baseUrl</a> 让 Yii 知道它们的位置）。</p>
+<p>推荐将资源文件放到 Web 目录以避免不必要的发布资源过程，这就是之前的例子：指定
+<a href="./yii-web-assetbundle.html#$basePath-detail">basePath</a> 
+而不是 <a href="./yii-web-assetbundle.html#$sourcePath-detail">sourcePath</a>.</p>
+<p>对于<a href="guide-structure-extensions.html">扩展</a>来说，
+由于它们的资源和源代码都在不能Web访问的目录下，
+在定义资源包类时必须指定<a href="./yii-web-assetbundle.html#$sourcePath-detail">sourcePath</a>属性。</p>
+<blockquote class="note"><p><strong>注意： </strong><a href="./yii-web-assetbundle.html#$sourcePath-detail">source path</a> 属性不要用 <code>@webroot/assets</code>，该路径默认为
+  <a href="./yii-web-assetmanager.html">asset manager</a> 资源管理器将源资源发布后存储资源的路径，
+  该路径的所有内容会认为是临时文件，
+  可能会被删除。</p>
+</blockquote>
+<h3>资源依赖  <span id="asset-dependencies"></span><a href="#asset-dependencies" class="hashlink">&para;</a></h3><p>当 Web 页面包含多个 CSS 或 JavaScript 文件时，
+它们有一定的先后顺序以避免属性覆盖，
+例如，Web 页面在使用 jQuery UI 小部件前必须确保 jQuery JavaScript 文件已经被包含了，
+我们称这种资源先后次序称为资源依赖。</p>
+<p>资源依赖主要通过 <a href="./yii-web-assetbundle.html#$depends-detail">yii\web\AssetBundle::$depends</a> 属性来指定，
+在 <code>AppAsset</code> 示例中，资源包依赖其他两个资源包： 
+<a href="./yii-web-yiiasset.html">yii\web\YiiAsset</a> 和 <a href="./yii-bootstrap-bootstrapasset.html">yii\bootstrap\BootstrapAsset</a>
+也就是该资源包的 CSS 和 JavaScript 文件要在这两个依赖包的文件包含<em>之后</em>才包含。</p>
+<p>资源依赖关系是可传递，也就是说 A 依赖 B，B 依赖 C，那么 A 也依赖 C。</p>
+<h3>资源选项  <span id="asset-options"></span><a href="#asset-options" class="hashlink">&para;</a></h3><p>可指定 <a href="./yii-web-assetbundle.html#$cssOptions-detail">cssOptions</a> 和 <a href="./yii-web-assetbundle.html#$jsOptions-detail">jsOptions</a>
+属性来自定义页面包含 CSS 和 JavaScript 文件的方式，
+这些属性值会分别传递给 <a href="./yii-web-view.html#registerCssFile()-detail">yii\web\View::registerCssFile()</a> 和 <a href="./yii-web-view.html#registerJsFile()-detail">yii\web\View::registerJsFile()</a> 方法，
+在<a href="guide-structure-views.html">视图</a>调用这些方法包含 CSS 和 JavaScript 文件时。</p>
+<blockquote class="note"><p><strong>注意： </strong>在资源包类中设置的选项会应用到该包中 <em>每个</em> CSS/JavaScript 文件，
+  如果想对每个文件使用不同的选项，
+  应创建不同的资源包并在每个包中使用一个选项集。</p>
+</blockquote>
+<p>例如，只想 IE9 或更高的浏览器包含一个 CSS 文件，可以使用如下选项：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-variable">$cssOptions</span> = [<span class="hljs-string">'condition'</span> =&gt; <span class="hljs-string">'lte IE9'</span>];
+</code></pre>
+<p>这会使包中的 CSS 文件使用以下 HTML 标签包含进来：</p>
+<pre><code class="hljs xml language-html"><span class="hljs-comment">&lt;!--[if lte IE9]&gt;
+&lt;link rel="stylesheet" href="path/to/foo.css"&gt;
+&lt;![endif]--&gt;</span>
+</code></pre>
+<p>为链接标签包含 <code>&lt;noscript&gt;</code> 可使用如下代码：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-variable">$cssOptions</span> = [<span class="hljs-string">'noscript'</span> =&gt; <span class="hljs-keyword">true</span>];
+</code></pre>
+<p>为使 JavaScript 文件包含在页面 head 区域（JavaScript 文件默认包含在 body 的结束处）
+使用以下选项：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-variable">$jsOptions</span> = [<span class="hljs-string">'position'</span> =&gt; \yii\web\View::POS_HEAD];
+</code></pre>
+<p>默认情况下，当发布资源包时，所有在 <a href="./yii-web-assetbundle.html#$sourcePath-detail">yii\web\AssetBundle::$sourcePath</a> 目录里的内容都会发布。
+你可以通过配置 <a href="./yii-web-assetbundle.html#$publishOptions-detail">publishOptions</a> 属性来自定义这种行为。
+比如，为了只发布 <a href="./yii-web-assetbundle.html#$sourcePath-detail">yii\web\AssetBundle::$sourcePath</a> 其中的某些内容或子目录里的内容，
+可以在资源类中试试下面的做法：</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">assets</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">AssetBundle</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FontAwesomeAsset</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AssetBundle</span> 
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$sourcePath</span> = <span class="hljs-string">'@bower/font-awesome'</span>; 
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$css</span> = [ 
+        <span class="hljs-string">'css/font-awesome.min.css'</span>, 
+    ];
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$publishOptions</span> = [
+        <span class="hljs-string">'only'</span> =&gt; [
+            <span class="hljs-string">'fonts/'</span>,
+            <span class="hljs-string">'css/'</span>,
+        ]
+    ];
+}  
+</code></pre>
+<p>上述的代码为 <a href="http://fontawesome.io/">"fontawesome" package</a> 定义了资源包。
+通过配置发布选项的 only 下标，只有 <code>fonts</code> 和 <code>css</code> 子目录会发布。</p>
+<h3>Bower 和 NPM 资源安装  <span id="bower-npm-assets"></span><a href="#bower-npm-assets" class="hashlink">&para;</a></h3><p>大多数 JavaScript/CSS 包使用 <a href="http://bower.io/">Bower</a> 或 <a href="https://www.npmjs.org/">NPM</a> 来管理。
+在 PHP 中，我们用 Composer 来管理 PHP 依赖。像 PHP 包一样，
+也可以使用 <code>composer.json</code> 管理 Bower 和 NPM 包。</p>
+<p>要实现这一点，需要配置一下 Composer 。有两种方法：</p>
+<hr />
+<h4>使用 asset-packagist 库 <span id="shi-yong-asset-packagist-ku"></span><a href="#shi-yong-asset-packagist-ku" class="hashlink">&para;</a></h4><p>这种方式将满足大多数需要使用 NPM 或 Bower 包项目的要求。</p>
+<blockquote class="note"><p><strong>注意： </strong>从 2.0.13 开始，基本和高级应用程序模板都默认配置使用 asset-packagist ，
+  因此你可以跳过本节。</p>
+</blockquote>
+<p>在你项目 <code>composer.json</code> 文件中，添加下面几行代码：</p>
+<pre><code class="hljs json language-json"><span class="hljs-string">"repositories"</span>: [
+    {
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"composer"</span></span>,
+        "<span class="hljs-attribute">url</span>": <span class="hljs-value"><span class="hljs-string">"https://asset-packagist.org"</span>
+    </span>}
+]
+</code></pre>
+<p>在你的 <a href="guide-concept-configurations.html">配置数组</a> 中设置 <code>@npm</code> 和 <code>@bower</code> 的 <a href="guide-concept-aliases.html">别名</a>：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$config</span> = [
+    ...
+    <span class="hljs-string">'aliases'</span> =&gt; [
+        <span class="hljs-string">'@bower'</span> =&gt; <span class="hljs-string">'@vendor/bower-asset'</span>,
+        <span class="hljs-string">'@npm'</span>   =&gt; <span class="hljs-string">'@vendor/npm-asset'</span>,
+    ],
+    ...
+];
+</code></pre>
+<p>你可以访问 <a href="https://asset-packagist.org">asset-packagist.org</a> 来了解它是如何工作的。</p>
+<h4>使用 fxp/composer-asset-plugin <span id="shi-yong-fxpcomposer-asset-plugin"></span><a href="#shi-yong-fxpcomposer-asset-plugin" class="hashlink">&para;</a></h4><p>与 asset-packagist 相比，composer-asset-plugin 不需要对应用程序配置进行任何更改。 
+而是需要运行以下命令来全局安装一个特殊的 Composer 插件：</p>
+<pre><code class="hljs bash language-bash">composer global require <span class="hljs-string">"fxp/composer-asset-plugin:^1.4.1"</span>
+</code></pre>
+<p>这个命令会全局安装 <a href="https://github.com/francoispluchino/composer-asset-plugin/">composer asset plugin</a> 插件，
+以便使用 Composer 来管理对 Bower 和 NPM 包的依赖。 在这个插件安装后，
+你计算机上的每个项目都可以通过 <code>composer.json</code> 来管理 Bower 和 NPM 包。</p>
+<p>如果你想要通过 Yii 来发布它们，将以下行添加到项目的 <code>composer.json</code> 文件中，
+来调整 Bower 和 NPM 安装包的放置目录：</p>
+<pre><code class="hljs json language-json"><span class="hljs-string">"config"</span>: {
+    "<span class="hljs-attribute">asset-installer-paths</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">npm-asset-library</span>": <span class="hljs-value"><span class="hljs-string">"vendor/npm"</span></span>,
+        "<span class="hljs-attribute">bower-asset-library</span>": <span class="hljs-value"><span class="hljs-string">"vendor/bower"</span>
+    </span>}
+</span>}
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>与 asset-packagist 相比，使用 <code>fxp/composer-asset-plugin</code> 的方式，
+  会显著减慢 <code>composer update</code> 命令的速度。</p>
+</blockquote>
+<hr />
+<p>在配置好 Composer 支持使用 Bower 和 NPM 之后：</p>
+<ol>
+<li>编辑项目或扩展中的 <code>composer.json</code> 文件，在该文件的 <code>require</code> 字段中列举出相关包。 
+你应该使用 <code>bower-asset/PackageName</code>（对于 Bower 包）或者
+<code>npm-asset/PackageName</code> （对于 NPM 包）的方式来引入这些包。</li>
+<li>运行 <code>composer update</code></li>
+<li>创建资源类并列出在应用程序或扩展中所需使用的 JavaScript/CSS 文件。
+你还需要配置 <a href="./yii-web-assetbundle.html#$sourcePath-detail">sourcePath</a> 属性为 <code>@bower/PackageName</code> 或 <code>@npm/PackageName</code>。
+这是因为 Composer 会将 Bower 或 NPM 软件包安装在与此别名对应的目录中。</li>
+</ol>
+<blockquote class="note"><p><strong>注意： </strong>某些包可能会将其所有发布文件放在子目录中。在这种情况下，
+  你应该把子目录设为 <a href="./yii-web-assetbundle.html#$sourcePath-detail">sourcePath</a> 的值。例如，
+  在 <a href="./yii-web-jqueryasset.html">yii\web\JqueryAsset</a> 这个资源包中，使用 <code>@bower/jquery/dist</code> 而不是 <code>@bower/jquery</code>。</p>
+</blockquote>
+<h2>使用资源包  <span id="using-asset-bundles"></span><a href="#using-asset-bundles" class="hashlink">&para;</a></h2><p>为使用资源包，先在<a href="guide-structure-views.html">视图</a>中调用 <a href="./yii-web-assetbundle.html#register()-detail">yii\web\AssetBundle::register()</a> 方法注册资源，
+例如，在视图模板可使用如下代码注册资源包：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">assets</span>\<span class="hljs-title">AppAsset</span>;
+AppAsset::register(<span class="hljs-variable">$this</span>);  <span class="hljs-comment">// $this 代表视图对象</span>
+</code></pre>
+<blockquote class="info"><p><strong>信息： </strong><a href="./yii-web-assetbundle.html#register()-detail">yii\web\AssetBundle::register()</a> 方法返回资源包对象，该对象包含了发布资源的信息比如 
+<a href="./yii-web-assetbundle.html#$basePath-detail">basePath</a> 或 <a href="./yii-web-assetbundle.html#$baseUrl-detail">baseUrl</a>。</p>
+</blockquote>
+<p>如果在其他地方注册资源包，应提供视图对象，如在 <a href="guide-structure-widgets.html">小部件</a> 类中注册资源包，
+可以通过 <code>$this-&gt;view</code> 获取视图对象。</p>
+<p>当在视图中注册一个资源包时，在背后 Yii 会注册它所依赖的资源包，
+如果资源包是放在 Web 不可访问的目录下，会被发布到可访问的目录，
+后续当视图渲染页面时，
+会生成这些注册包包含的 CSS 和 JavaScript 文件对应的 <code>&lt;link&gt;</code> 和 <code>&lt;script&gt;</code> 标签，
+这些标签的先后顺序取决于资源包的依赖关系以及在
+<a href="./yii-web-assetbundle.html#$css-detail">yii\web\AssetBundle::$css</a> 和 <a href="./yii-web-assetbundle.html#$js-detail">yii\web\AssetBundle::$js</a> 的列出来的前后顺序。</p>
+<h3>动态资源包  <span id="dynamic-asset-bundles"></span><a href="#dynamic-asset-bundles" class="hashlink">&para;</a></h3><p>作为常规 PHP 类，资源包可以承担一些与之相关的额外逻辑，并可以动态调整其内部参数。
+比如：你也许用到某些复杂的 JavaScript 库，它提供一些用于国际化的包，并分成单独的源文件：每个文件对应于国际化中所支持的语言。
+为了让这个 JavaScript 库正常工作，你需要把这些单独的语言源文件加载到页面中。
+这可以通过覆盖 <a href="./yii-web-assetbundle.html#init()-detail">yii\web\AssetBundle::init()</a> 方法来实现：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">assets</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">AssetBundle</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SophisticatedAssetBundle</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AssetBundle</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$sourcePath</span> = <span class="hljs-string">'/path/to/sophisticated/src'</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$js</span> = [
+        <span class="hljs-string">'sophisticated.js'</span> <span class="hljs-comment">// file, which is always used</span>
+    ];
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">parent</span>::init();
+        <span class="hljs-variable">$this</span>-&gt;js[] = <span class="hljs-string">'i18n/'</span> . Yii::<span class="hljs-variable">$app</span>-&gt;language . <span class="hljs-string">'.js'</span>; <span class="hljs-comment">// dynamic file added</span>
+    }
+}
+</code></pre>
+<p>特定的资源包也可以通过 <a href="./yii-web-assetbundle.html#register()-detail">yii\web\AssetBundle::register()</a> 返回的实例进行调整。
+例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">assets</span>\<span class="hljs-title">SophisticatedAssetBundle</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+
+<span class="hljs-variable">$bundle</span> = SophisticatedAssetBundle::register(Yii::<span class="hljs-variable">$app</span>-&gt;view);
+<span class="hljs-variable">$bundle</span>-&gt;js[] = <span class="hljs-string">'i18n/'</span> . Yii::<span class="hljs-variable">$app</span>-&gt;language . <span class="hljs-string">'.js'</span>; <span class="hljs-comment">// dynamic file added</span>
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>虽然支持资源包的动态调整，但这是一种<strong>不好</strong>的做法，
+  可能导致意想不到的副作用，应尽可能避免。</p>
+</blockquote>
+<h3>自定义资源包  <span id="customizing-asset-bundles"></span><a href="#customizing-asset-bundles" class="hashlink">&para;</a></h3><p>Yii 通过配置名为 <code>assetManager</code> 的应用组件来使用 <a href="./yii-web-assetmanager.html">yii\web\AssetManager</a>，
+通过配置 <a href="./yii-web-assetmanager.html#$bundles-detail">yii\web\AssetManager::$bundles</a> 属性，可以自定义资源包的行为，
+例如，<a href="./yii-web-jqueryasset.html">yii\web\JqueryAsset</a> 资源包默认从 jquery Bower 包中使用 <code>jquery.js</code> 文件，
+为了提高可用性和性能，你可能需要从 CDN 服务器上获取 jquery 文件，
+可以在应用配置中配置 <code>assetManager</code>，如下所示：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'bundles'</span> =&gt; [
+                <span class="hljs-string">'yii\web\JqueryAsset'</span> =&gt; [
+                    <span class="hljs-string">'sourcePath'</span> =&gt; <span class="hljs-keyword">null</span>,   <span class="hljs-comment">// 一定不要发布该资源</span>
+                    <span class="hljs-string">'js'</span> =&gt; [
+                        <span class="hljs-string">'//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'</span>,
+                    ]
+                ],
+            ],
+        ],
+    ],
+];
+</code></pre>
+<p>可通过类似 <a href="./yii-web-assetmanager.html#$bundles-detail">yii\web\AssetManager::$bundles</a> 配置多个资源包，
+数组的键应为资源包的类名（最开头不要反斜杠），
+数组的值为对应的<a href="guide-concept-configurations.html">配置数组</a>.</p>
+<blockquote class="tip"><p><strong>提示： </strong>可以根据条件判断使用哪个资源，如下示例为如何在开发环境用 <code>jquery.js</code>，
+否则用<code>jquery.min.js</code>：</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'yii\web\JqueryAsset'</span> =&gt; [
+    <span class="hljs-string">'js'</span> =&gt; [
+        YII_ENV_DEV ? <span class="hljs-string">'jquery.js'</span> : <span class="hljs-string">'jquery.min.js'</span>
+    ]
+],
+</code></pre>
+</blockquote>
+<p>可以将资源包名称设置为 <code>false</code> 来禁用一个或多个资源包，
+当视图中注册一个禁用资源包，
+视图不会包含任何该包的资源以及不会注册它所依赖的包，
+例如，为禁用 <a href="./yii-web-jqueryasset.html">yii\web\JqueryAsset</a>，可以使用如下配置：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'bundles'</span> =&gt; [
+                <span class="hljs-string">'yii\web\JqueryAsset'</span> =&gt; <span class="hljs-keyword">false</span>,
+            ],
+        ],
+    ],
+];
+</code></pre>
+<p>可以设置 <a href="./yii-web-assetmanager.html#$bundles-detail">yii\web\AssetManager::$bundles</a> 为 <code>false</code> 来禁用 <em>所有</em> 的资源包。</p>
+<p>需要记住，使用 <a href="./yii-web-assetmanager.html#$bundles-detail">yii\web\AssetManager::$bundles</a> 进行自定义时，只在创建资源包时起作用，例如，在对象的构造函数阶段。
+这意味着在此之后对该资源包对象所做的任何调整都将覆盖在配置数组中 <a href="./yii-web-assetmanager.html#$bundles-detail">yii\web\AssetManager::$bundles</a> 的配置。
+特别是：在 <a href="./yii-web-assetbundle.html#init()-detail">yii\web\AssetBundle::init()</a>
+方法内或在注册的资源包对象上进行的调整优先于 <code>AssetManager</code> 配置。
+下面给个例子来说明在配置数组中对 <a href="./yii-web-assetmanager.html#$bundles-detail">yii\web\AssetManager::$bundles</a> 的配置是不起作用的：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// Program source code:</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">assets</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">AssetBundle</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LanguageAssetBundle</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AssetBundle</span>
+</span>{
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">parent</span>::init();
+        <span class="hljs-variable">$this</span>-&gt;baseUrl = <span class="hljs-string">'@web/i18n/'</span> . Yii::<span class="hljs-variable">$app</span>-&gt;language; <span class="hljs-comment">// 将不能通过 `AssetManager` 来管理！</span>
+    }
+}
+<span class="hljs-comment">// ...</span>
+
+<span class="hljs-variable">$bundle</span> = \app\assets\LargeFileAssetBundle::register(Yii::<span class="hljs-variable">$app</span>-&gt;view);
+<span class="hljs-variable">$bundle</span>-&gt;baseUrl = YII_DEBUG ? <span class="hljs-string">'@web/large-files'</span>: <span class="hljs-string">'@web/large-files/minified'</span>; <span class="hljs-comment">// 将不能通过 `AssetManager` 来管理！</span>
+
+
+<span class="hljs-comment">// Application config :</span>
+
+<span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'bundles'</span> =&gt; [
+                <span class="hljs-string">'app\assets\LanguageAssetBundle'</span> =&gt; [
+                    <span class="hljs-string">'baseUrl'</span> =&gt; <span class="hljs-string">'http://some.cdn.com/files/i18n/en'</span> <span class="hljs-comment">// 这行代码不起作用！</span>
+                ],
+                <span class="hljs-string">'app\assets\LargeFileAssetBundle'</span> =&gt; [
+                    <span class="hljs-string">'baseUrl'</span> =&gt; <span class="hljs-string">'http://some.cdn.com/files/large-files'</span> <span class="hljs-comment">// 这行代码不起作用！</span>
+                ],
+            ],
+        ],
+    ],
+];
+</code></pre>
+<h3>资源映射  <span id="asset-mapping"></span><a href="#asset-mapping" class="hashlink">&para;</a></h3><p>有时你想“修复”多个资源包中资源文件的错误或者不兼容，例如包 A 使用 1.11.1 版本的 <code>jquery.min.js</code>，
+包 B 使用 2.1.1 版本的 <code>jquery.js</code>，可自定义每个包来解决这个问题，
+但更好的方式是使用<em>资源部署</em>的特性来把不正确的资源部署为想要的，
+为此，配置 <a href="./yii-web-assetmanager.html#$assetMap-detail">yii\web\AssetManager::$assetMap</a> 属性，如下所示：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'assetMap'</span> =&gt; [
+                <span class="hljs-string">'jquery.js'</span> =&gt; <span class="hljs-string">'//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'</span>,
+            ],
+        ],
+    ],
+];
+</code></pre>
+<p><a href="./yii-web-assetmanager.html#$assetMap-detail">assetMap</a> 的键为你想要修复的资源名，值为你想要使用的资源路径，
+当视图注册资源包，在 <a href="./yii-web-assetbundle.html#$css-detail">css</a> 和
+<a href="./yii-web-assetbundle.html#$js-detail">js</a> 数组中每个相关资源文件会和该部署进行对比，
+如果数组任何键对比为资源文件的最后文件名
+（如果有的话前缀为 <a href="./yii-web-assetbundle.html#$sourcePath-detail">yii\web\AssetBundle::$sourcePath</a>），对应的值为替换原来的资源。
+例如，资源文件 <code>my/path/to/jquery.js</code> 匹配键 <code>jquery.js</code>.</p>
+<blockquote class="note"><p><strong>注意： </strong>只有相对路径指定的资源对应到资源部署，替换的资源路径可以为绝对路径，
+  也可为和 <a href="./yii-web-assetmanager.html#$basePath-detail">yii\web\AssetManager::$basePath</a> 相关的路径。</p>
+</blockquote>
+<h3>资源发布  <span id="asset-publishing"></span><a href="#asset-publishing" class="hashlink">&para;</a></h3><p>如前所述，如果资源包放在 Web 不能访问的目录，
+当视图注册资源时资源会被拷贝到一个 Web 可访问的目录中，
+这个过程称为<em>资源发布</em>，<a href="./yii-web-assetmanager.html">asset manager</a> 会自动处理该过程。</p>
+<p>资源默认会发布到 <code>@webroot/assets</code> 目录，对应的 URL 为 <code>@web/assets</code>，
+可配置 <a href="./yii-web-assetmanager.html#$basePath-detail">basePath</a> 和 
+<a href="./yii-web-assetmanager.html#$baseUrl-detail">baseUrl</a> 属性自定义发布位置。</p>
+<p>除了拷贝文件方式发布资源，如果操作系统和 Web 服务器允许可以使用符号链接，该功能可以通过设置
+<a href="./yii-web-assetmanager.html#$linkAssets-detail">linkAssets</a> 为 <code>true</code> 来启用。</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'linkAssets'</span> =&gt; <span class="hljs-keyword">true</span>,
+        ],
+    ],
+];
+</code></pre>
+<p>使用以上配置，
+资源管理器会创建一个符号链接到要发布的资源包源路径，
+这比拷贝文件方式快并能确保发布的资源一直为最新的。</p>
+<h3>清除缓存  <span id="cache-busting"></span><a href="#cache-busting" class="hashlink">&para;</a></h3><p>对于运行在生产模式的 Web 应用程序，通常会为资源包和其他静态资源开启 HTTP 缓存。
+但这种做法有个不好的地方就是，当你更新某个资源并部署到生产环境时，
+客户端可能由于 HTTP 缓存而仍然使用旧版本的资源。
+为了克服该不足，你可以试试清除缓存特性，它由 2.0.3 版本引入，只需如下配置 <a href="./yii-web-assetmanager.html">yii\web\AssetManager</a> 即可：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'appendTimestamp'</span> =&gt; <span class="hljs-keyword">true</span>,
+        ],
+    ],
+];
+</code></pre>
+<p>通过上述配置后，每个已发布资源的 URL 都会附加一个最后更新时间戳的信息。
+比如，<code>yii.js</code> 的 URL 可能是 <code>/assets/5515a87c/yii.js?v=1423448645"</code>，
+这里的参数 v 表示 <code>yii.js</code> 文件的最后更新时间戳。
+现在一旦你更新了某个资源，它的 URL 也会改变进而强制客户端获取该资源的最新版本。</p>
+<h2>常用资源包  <span id="common-asset-bundles"></span><a href="#common-asset-bundles" class="hashlink">&para;</a></h2><p>Yii框架定义许多资源包，如下资源包是最常用，
+可在你的应用或扩展代码中引用它们。</p>
+<ul>
+<li><a href="./yii-web-yiiasset.html">yii\web\YiiAsset</a>：主要包含 <code>yii.js</code> 文件，该文件完成模块 JavaScript 代码组织功能，
+也为 <code>data-method</code> 和 <code>data-confirm</code> 属性提供特别支持和其他有用的功能。
+有关 <code>yii.js</code> 的更多信息可以在 <a href="guide-output-client-scripts.html#yii.js">客户端脚本部分</a> 中找到。</li>
+<li><a href="./yii-web-jqueryasset.html">yii\web\JqueryAsset</a>：包含 jQuery Bower 包的 <code>jquery.js</code> 文件。 </li>
+<li><a href="./yii-bootstrap-bootstrapasset.html">yii\bootstrap\BootstrapAsset</a>：包含 Twitter Bootstrap 框架的 CSS 文件。</li>
+<li><a href="./yii-bootstrap-bootstrappluginasset.html">yii\bootstrap\BootstrapPluginAsset</a>：包含 Twitter Bootstrap 框架的 JavaScript 文件
+来支持 Bootstrap JavaScript 插件。</li>
+<li><a href="./yii-jui-juiasset.html">yii\jui\JuiAsset</a>：包含 jQuery UI 库的 CSS 和 JavaScript 文件。</li>
+</ul>
+<p>如果你的代码需要 jQuery，jQuery UI 或 Bootstrap，应尽量使用这些预定义资源包而非自己创建，
+如果这些包的默认配置不能满足你的需求，可以自定义配置，
+详情参考<a href="#customizing-asset-bundles">自定义资源包</a>。</p>
+<h2>资源转换  <span id="asset-conversion"></span><a href="#asset-conversion" class="hashlink">&para;</a></h2><p>除了直接编写 CSS 或 JavaScript 代码，开发人员经常使用扩展语法来编写，再使用特殊的工具将它们转换成 CSS/JavaScript。
+例如，对于 CSS 代码可使用 <a href="http://lesscss.org/">LESS</a> 或 <a href="http://sass-lang.com/">SCSS</a>，
+对于 JavaScript 可使用 <a href="http://www.typescriptlang.org/">TypeScript</a>。</p>
+<p>可将使用扩展语法的资源文件列到资源包的 <a href="./yii-web-assetbundle.html#$css-detail">css</a> 和 <a href="./yii-web-assetbundle.html#$js-detail">js</a> 中，如下所示：</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppAsset</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AssetBundle</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$basePath</span> = <span class="hljs-string">'@webroot'</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$baseUrl</span> = <span class="hljs-string">'@web'</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$css</span> = [
+        <span class="hljs-string">'css/site.less'</span>,
+    ];
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$js</span> = [
+        <span class="hljs-string">'js/site.ts'</span>,
+    ];
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$depends</span> = [
+        <span class="hljs-string">'yii\web\YiiAsset'</span>,
+        <span class="hljs-string">'yii\bootstrap\BootstrapAsset'</span>,
+    ];
+}
+</code></pre>
+<p>当在视图中注册一个这样的资源包，<a href="./yii-web-assetmanager.html">asset manager</a> 资源管理器会自动运行预处理工具将使用扩展语法
+的资源转换成 CSS/JavaScript，当视图最终渲染页面时，
+在页面中包含的是 CSS/Javascipt 文件，
+而不是原始的扩展语法代码文件。</p>
+<p>Yii 使用文件扩展名来表示资源使用哪种扩展语法，
+默认可以识别如下语法和文件扩展名：</p>
+<ul>
+<li><a href="http://lesscss.org/">LESS</a>：<code>.less</code></li>
+<li><a href="http://sass-lang.com/">SCSS</a>：<code>.scss</code></li>
+<li><a href="http://learnboost.github.io/stylus/">Stylus</a>：<code>.styl</code></li>
+<li><a href="http://coffeescript.org/">CoffeeScript</a>：<code>.coffee</code></li>
+<li><a href="http://www.typescriptlang.org/">TypeScript</a>：<code>.ts</code></li>
+</ul>
+<p>Yii 依靠安装的预处理工具来转换资源，例如，
+为使用 <a href="http://lesscss.org/">LESS</a>，应安装 <code>lessc</code> 预处理命令。</p>
+<p>可配置 <a href="./yii-web-assetmanager.html#$converter-detail">yii\web\AssetManager::$converter</a> 自定义预处理命令和支持的扩展语法，
+如下所示：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'converter'</span> =&gt; [
+                <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\web\AssetConverter'</span>,
+                <span class="hljs-string">'commands'</span> =&gt; [
+                    <span class="hljs-string">'less'</span> =&gt; [<span class="hljs-string">'css'</span>, <span class="hljs-string">'lessc {from} {to} --no-color'</span>],
+                    <span class="hljs-string">'ts'</span> =&gt; [<span class="hljs-string">'js'</span>, <span class="hljs-string">'tsc --out {to} {from}'</span>],
+                ],
+            ],
+        ],
+    ],
+];
+</code></pre>
+<p>如上所示，通过 <a href="./yii-web-assetconverter.html#$commands-detail">yii\web\AssetConverter::$commands</a> 属性指定支持的扩展语法，
+数组的键为文件扩展名（前面不需要这样的一个小点：<code>.</code>），
+数组的值为目标资源文件扩展名和执行资源转换的命令，
+命令中的标记 <code>{from}</code> 和 <code>{to}</code> 会分别被源资源文件路径和目标资源文件路径替代。</p>
+<blockquote class="info"><p><strong>信息： </strong>除了以上方式，也有其他的方式来处理扩展语法资源，
+  例如，可使用编译工具如<a href="http://gruntjs.com/">grunt</a>
+  来监控并自动转换扩展语法资源，此时，
+  应使用资源包中编译后的CSS/JavaScript文件而不是原始文件。</p>
+</blockquote>
+<h2>合并和压缩资源  <span id="combining-compressing-assets"></span><a href="#combining-compressing-assets" class="hashlink">&para;</a></h2><p>一个 Web 页面可以包含很多 CSS 和 JavaScript 文件，为减少 HTTP 请求和这些下载文件的大小，
+通常的方式是在页面中合并并压缩多个 CSS/JavaScript 文件为一个或很少的几个文件，
+并使用压缩后的文件而不是原始文件。</p>
+<blockquote class="info"><p><strong>信息： </strong>合并和压缩资源通常应用在产品上线模式，
+  在开发模式下使用原始的 CSS/JavaScript 更方便调试。</p>
+</blockquote>
+<p>接下来介绍一种合并和压缩资源文件
+而不需要修改已有代码的方式：</p>
+<ol>
+<li>找出应用中所有你想要合并和压缩的资源包，</li>
+<li>将这些包分成一个或几个组，注意每个包只能属于其中一个组，</li>
+<li>合并/压缩每个组里 CSS 文件到一个文件，同样方式处理 JavaScript 文件，</li>
+<li>为每个组定义新的资源包：<ul>
+<li>设置 <a href="./yii-web-assetbundle.html#$css-detail">css</a> 和 <a href="./yii-web-assetbundle.html#$js-detail">js</a> 
+属性分别为压缩后的 CSS 和 JavaScript 文件；</li>
+<li>自定义设置每个组内的资源包，设置资源包的 <a href="./yii-web-assetbundle.html#$css-detail">css</a> 
+和 <a href="./yii-web-assetbundle.html#$js-detail">js</a> 属性为空, 
+并设置它们的 <a href="./yii-web-assetbundle.html#$depends-detail">depends</a> 属性为每个组新创建的资源包。</li>
+</ul>
+</li>
+</ol>
+<p>使用这种方式，当在视图中注册资源包时，会自动触发原始包所属的组资源包的注册，
+然后，页面就会包含以合并/压缩的资源文件，
+而不是原始文件。</p>
+<h3>示例  <span id="example"></span><a href="#example" class="hashlink">&para;</a></h3><p>使用一个示例来解释以上这种方式：</p>
+<p>假定你的应用有两个页面 X 和 Y，页面 X 使用资源包 A，B 和 C，页面 Y 使用资源包 B，C 和 D。</p>
+<p>有两种方式划分这些资源包，一种使用一个组包含所有资源包，
+另一种是将（A，B，C）放在组 X，（B，C，D）放在组 Y，
+哪种方式更好？第一种方式优点是两个页面使用相同的已合并 CSS 和 JavaScript 文件，从而使 HTTP 缓存更高效，
+另一方面，由于单个组包含所有文件，
+已合并的 CSS 和 JavaScipt 文件会更大，因此会增加文件传输时间，在这个示例中，
+我们使用第一种方式，也就是用一个组包含所有包。</p>
+<blockquote class="info"><p><strong>信息： </strong>将资源包分组并不是无意义的，通常要求分析现实中不同页面各种资源的数据量，
+  开始时为简便使用一个组。</p>
+</blockquote>
+<p>在所有包中使用工具(例如 <a href="https://developers.google.com/closure/compiler/">Closure Compiler</a>，
+<a href="https://github.com/yui/yuicompressor/">YUI Compressor</a>) 来合并和压缩 CSS 和 JavaScript 文件，
+注意合并后的文件满足包间的先后依赖关系，
+例如，如果包 A 依赖 B，B 依赖 C 和 D，那么资源文件列表以 C 和 D 开始，
+然后为 B 最后为 A。</p>
+<p>合并和压缩之后，会得到一个 CSS 文件和一个 JavaScript 文件，
+假定它们的名称为 <code>all-xyz.css</code> 和 <code>all-xyz.js</code>，
+<code>xyz</code> 为使文件名唯一以避免HTTP缓存问题的时间戳或哈希值。</p>
+<p>现在到最后一步了，在应用配置中配置 <a href="./yii-web-assetmanager.html">asset manager</a> 
+资源管理器如下所示：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'bundles'</span> =&gt; [
+                <span class="hljs-string">'all'</span> =&gt; [
+                    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\web\AssetBundle'</span>,
+                    <span class="hljs-string">'basePath'</span> =&gt; <span class="hljs-string">'@webroot/assets'</span>,
+                    <span class="hljs-string">'baseUrl'</span> =&gt; <span class="hljs-string">'@web/assets'</span>,
+                    <span class="hljs-string">'css'</span> =&gt; [<span class="hljs-string">'all-xyz.css'</span>],
+                    <span class="hljs-string">'js'</span> =&gt; [<span class="hljs-string">'all-xyz.js'</span>],
+                ],
+                <span class="hljs-string">'A'</span> =&gt; [<span class="hljs-string">'css'</span> =&gt; [], <span class="hljs-string">'js'</span> =&gt; [], <span class="hljs-string">'depends'</span> =&gt; [<span class="hljs-string">'all'</span>]],
+                <span class="hljs-string">'B'</span> =&gt; [<span class="hljs-string">'css'</span> =&gt; [], <span class="hljs-string">'js'</span> =&gt; [], <span class="hljs-string">'depends'</span> =&gt; [<span class="hljs-string">'all'</span>]],
+                <span class="hljs-string">'C'</span> =&gt; [<span class="hljs-string">'css'</span> =&gt; [], <span class="hljs-string">'js'</span> =&gt; [], <span class="hljs-string">'depends'</span> =&gt; [<span class="hljs-string">'all'</span>]],
+                <span class="hljs-string">'D'</span> =&gt; [<span class="hljs-string">'css'</span> =&gt; [], <span class="hljs-string">'js'</span> =&gt; [], <span class="hljs-string">'depends'</span> =&gt; [<span class="hljs-string">'all'</span>]],
+            ],
+        ],
+    ],
+];
+</code></pre>
+<p>如 <a href="#customizing-asset-bundles">自定义资源包</a> 小节中所述，如上配置改变每个包的默认行为，
+特别是包 A、B、C 和 D 不再包含任何资源文件，
+都依赖包含合并后的 <code>all-xyz.css</code> 和 <code>all-xyz.js</code> 文件的包 <code>all</code>，
+因此，对于页面X会包含这两个合并后的文件而不是包 A、B、C 的原始文件，
+对于页面 Y 也是如此。</p>
+<p>最后有个方法更好地处理上述方式，除了直接修改应用配置文件，
+可将自定义包数组放到一个文件，在应用配置中根据条件包含该文件，
+例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'bundles'</span> =&gt; <span class="hljs-keyword">require</span> <span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">'/'</span> . (YII_ENV_PROD ? <span class="hljs-string">'assets-prod.php'</span> : <span class="hljs-string">'assets-dev.php'</span>),  
+        ],
+    ],
+];
+</code></pre>
+<p>如上所示，在产品上线模式下资源包数组存储在 <code>assets-prod.php</code> 文件中，
+不是产品上线模式存储在 <code>assets-dev.php</code> 文件中。</p>
+<blockquote class="note"><p><strong>注意： </strong>这种资源合并的机制是基于 <a href="./yii-web-assetmanager.html#$bundles-detail">yii\web\AssetManager::$bundles</a> 能够覆盖已经注册的资源包。
+  但是，正如前面提到的，
+  并不能覆盖到使用 <a href="./yii-web-assetbundle.html#init()-detail">yii\web\AssetBundle::init()</a> 方法或在资源包对象上进行调整的资源包。
+  你应该避免在资源合并时使用此类动态捆绑的资源包。</p>
+</blockquote>
+<h3>使用 <code>asset</code> 命令  <span id="using-asset-command"></span><a href="#using-asset-command" class="hashlink">&para;</a></h3><p>Yii 提供一个名为 <code>asset</code> 控制台命令来使上述操作自动处理。</p>
+<p>为使用该命令，应先创建一个配置文件设置哪些资源包要合并以及分组方式，
+可使用 <code>asset/template</code> 子命令来生成一个模板，
+然后修改成你想要的模板。</p>
+<pre><code class="hljs nginx"><span class="hljs-title">yii</span> asset/template assets.php
+</code></pre>
+<p>该命令在当前目录下生成一个名为 <code>assets.php</code> 的文件，文件的内容类似如下：</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-comment">/**
+ * 为控制台命令"yii asset"使用的配置文件
+ * 注意在控制台环境下，一些路径别名如 '<span class="hljs-doctag">@webroot</span>' 和 '<span class="hljs-doctag">@web</span>' 不会存在
+ * 请定义不存在的路径别名
+ */</span>
+<span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// 为JavaScript文件压缩修改 command/callback </span>
+    <span class="hljs-string">'jsCompressor'</span> =&gt; <span class="hljs-string">'java -jar compiler.jar --js {from} --js_output_file {to}'</span>,
+    <span class="hljs-comment">// 为CSS文件压缩修改command/callback </span>
+    <span class="hljs-string">'cssCompressor'</span> =&gt; <span class="hljs-string">'java -jar yuicompressor.jar --type css {from} -o {to}'</span>,
+    <span class="hljs-comment">// 是否在压缩后删除资源来源：</span>
+    <span class="hljs-string">'deleteSource'</span> =&gt; <span class="hljs-keyword">false</span>,
+    <span class="hljs-comment">// 要压缩的资源包列表</span>
+    <span class="hljs-string">'bundles'</span> =&gt; [
+        <span class="hljs-comment">// 'yii\web\YiiAsset',</span>
+        <span class="hljs-comment">// 'yii\web\JqueryAsset',</span>
+    ],
+    <span class="hljs-comment">// 资源包压缩后的输出</span>
+    <span class="hljs-string">'targets'</span> =&gt; [
+        <span class="hljs-string">'all'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\web\AssetBundle'</span>,
+            <span class="hljs-string">'basePath'</span> =&gt; <span class="hljs-string">'@webroot/assets'</span>,
+            <span class="hljs-string">'baseUrl'</span> =&gt; <span class="hljs-string">'@web/assets'</span>,
+            <span class="hljs-string">'js'</span> =&gt; <span class="hljs-string">'js/all-{hash}.js'</span>,
+            <span class="hljs-string">'css'</span> =&gt; <span class="hljs-string">'css/all-{hash}.css'</span>,
+        ],
+    ],
+    <span class="hljs-comment">// 资源管理器配置:</span>
+    <span class="hljs-string">'assetManager'</span> =&gt; [
+    ],
+];
+</code></pre>
+<p>应修改该文件的 <code>bundles</code> 的选项指定哪些包你想要合并，
+在 <code>targets</code> 选项中应指定这些包如何分组，
+如前述的可以指定一个或多个组。</p>
+<blockquote class="note"><p><strong>注意： </strong>由于在控制台应用别名 <code>@webroot</code> 和 <code>@web</code> 不可用，
+  应在配置中明确指定它们。</p>
+</blockquote>
+<p>JavaScript 文件会被合并压缩后写入到 <code>js/all-{hash}.js</code> 文件，
+其中 {hash} 会被结果文件的哈希值替换。</p>
+<p><code>jsCompressor</code> 和 <code>cssCompressor</code> 选项指定控制台命令或PHP回调函数来执行 JavaScript 和 CSS 合并和压缩，
+Yii 默认使用 <a href="https://developers.google.com/closure/compiler/">Closure Compiler</a> 来合并 JavaScript 文件， 
+使用 <a href="https://github.com/yui/yuicompressor/">YUI Compressor</a> 来合并 CSS 文件，
+你应手工安装这些工具或修改选项使用你喜欢的工具。</p>
+<p>根据配置文件，可执行 <code>asset</code> 命令来合并和压缩资源文件
+并生成一个新的资源包配置文件 <code>assets-prod.php</code>：</p>
+<pre><code class="hljs nginx"><span class="hljs-title">yii</span> asset assets.php config/assets-prod.php
+</code></pre>
+<p>生成的配置文件可以在应用配置中包含，
+如最后一小节所描述的。</p>
+<blockquote class="note"><p><strong>注意： </strong>如果你使用 <a href="./yii-web-assetmanager.html#$bundles-detail">yii\web\AssetManager::$bundles</a> 或 <a href="./yii-web-assetmanager.html#$assetMap-detail">yii\web\AssetManager::$assetMap</a>
+  来自定义应用程序的资源包，并希望将此自定义应用于压缩的源文件中，
+  你应该在 asset 命令配置文件中的 <code>assetManager</code> 部分包含这些自定义的内容。</p>
+</blockquote>
+<blockquote class="note"><p><strong>注意： </strong>在指定压缩源时，应避免使用那些根据参数动态调整的资源包（即在 <code>init()</code> 方法或注册后根据参数进行动态调整的包），
+  因为在压缩后它们可能无法正常工作。</p>
+</blockquote>
+<blockquote class="info"><p><strong>信息： </strong>使用 <code>asset</code> 命令并不是合并和压缩资源的唯一方法。
+  你也可以使用能够自动运行设定任务的项目构建工具 <a href="http://gruntjs.com/">grunt</a> 来实现同样的目的。</p>
+</blockquote>
+<h3>资源包分组  <span id="grouping-asset-bundles"></span><a href="#grouping-asset-bundles" class="hashlink">&para;</a></h3><p>上一小节，介绍了如何压缩所有的资源包到一个文件，
+减少对应用中引用资源文件的 HTTP 请求数，但是在实践中很少这样做。
+比如，应用有一个“前端”和一个“后端”，
+每一个都用了一个不同 JavaScript 和 CSS 文件集合。
+在这种情况下，把所有的资源包压缩到一个文件毫无意义，“前端”不会用到“后端”的资源文件，
+当请求“前端”页面时，“后端”的资源文件也会被发送过来，浪费网络带宽。</p>
+<p>为了解决这个问题，可以吧资源包分成若干组，每个组里面有若干个资源包。
+下面的配置展示了如何对资源包分组：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    ...
+    <span class="hljs-comment">// Specify output bundles with groups:</span>
+    <span class="hljs-string">'targets'</span> =&gt; [
+        <span class="hljs-string">'allShared'</span> =&gt; [
+            <span class="hljs-string">'js'</span> =&gt; <span class="hljs-string">'js/all-shared-{hash}.js'</span>,
+            <span class="hljs-string">'css'</span> =&gt; <span class="hljs-string">'css/all-shared-{hash}.css'</span>,
+            <span class="hljs-string">'depends'</span> =&gt; [
+                <span class="hljs-comment">// 包含由'backend' 和 'frontend' 共享的资源包</span>
+                <span class="hljs-string">'yii\web\YiiAsset'</span>,
+                <span class="hljs-string">'app\assets\SharedAsset'</span>,
+            ],
+        ],
+        <span class="hljs-string">'allBackEnd'</span> =&gt; [
+            <span class="hljs-string">'js'</span> =&gt; <span class="hljs-string">'js/all-{hash}.js'</span>,
+            <span class="hljs-string">'css'</span> =&gt; <span class="hljs-string">'css/all-{hash}.css'</span>,
+            <span class="hljs-string">'depends'</span> =&gt; [
+                <span class="hljs-comment">// 只包含 'backend' 资源:</span>
+                <span class="hljs-string">'app\assets\AdminAsset'</span>
+            ],
+        ],
+        <span class="hljs-string">'allFrontEnd'</span> =&gt; [
+            <span class="hljs-string">'js'</span> =&gt; <span class="hljs-string">'js/all-{hash}.js'</span>,
+            <span class="hljs-string">'css'</span> =&gt; <span class="hljs-string">'css/all-{hash}.css'</span>,
+            <span class="hljs-string">'depends'</span> =&gt; [], <span class="hljs-comment">// 包含所有的剩余资源</span>
+        ],
+    ],
+    ...
+];
+</code></pre>
+<p>如上所示，资源包分成了三个组：<code>allShared</code>，<code>allBackEnd</code> 和 <code>allFrontEnd</code>
+它们每个都依赖各自的资源包集合。 比如， <code>allBackEnd</code> 依赖 <code>app\assets\AdminAsset</code>。
+当对该配置运行 <code>asset</code> 命令时，将会根据各自依赖合并资源包。</p>
+<blockquote class="info"><p><strong>信息： </strong>你也可以把某个分组的 <code>depends</code> 配置留空。 这样做得话，
+  这个分组将会依赖剩余的资源包，剩余资源包是指不被其他分组依赖的那些资源包。</p>
+</blockquote>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

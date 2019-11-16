@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>格式化输出数据（Data Formatting） - 显示数据（Displaying Data） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1346" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1346-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1346-collapse" class="collapse navbar-collapse"><ul id="w1347" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1348" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1330" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-1330" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-1331" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-1331" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-1332" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-1332" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-1333" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-1333" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-1334" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-1334" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-1335" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-1335" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-zh-CN/README.md">Sphinx</a>
+<a class="list-group-item" href="./guide-yii2-redis.html">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-zh-CN/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-zh-CN/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1336" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-1336" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item active" href="#navigation-1337" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-1337" class="submenu panel-collapse collapse in"><a class="list-group-item active" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-1338" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-1338" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-1339" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-1339" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-1340" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-1340" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-1341" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-1341" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-1342" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-1342" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-1343" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-1343" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-1344" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-1344" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1345" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-1345" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>数据格式器（Data Formatting） <span id="shu-ju-ge-shi-qi-data-formatting"></span><a href="#shu-ju-ge-shi-qi-data-formatting" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#configuring-formatter">配置 Formatter（Configuring Formatter）</a></li>
+<li><a href="#date-and-time">格式化时间/日期数据（Formatting Date and Time Values）</a></li>
+<li><a href="#numbers">格式化数字（Formatting Numbers）</a></li>
+<li><a href="#other">其他的格式化（Other Formats）</a></li>
+<li><a href="#null-values">空值（Null Values）</a></li>
+<li><a href="#localizing-data-format">本地日期格式化（Localizing Data Format）</a></li></ol></div>
+<p>你可以使用 <code>formatter</code> <a href="guide-structure-application-components.html">application component</a> 来格式化数据。
+默认 <code>fomatter</code> 由 <a href="./yii-i18n-formatter.html">yii\i18n\Formatter</a> 来实现，这个组件提供了一系列关于日期/时间，数字，货币等的格式化方法。
+使用方法如下：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$formatter</span> = \Yii::<span class="hljs-variable">$app</span>-&gt;formatter;
+
+<span class="hljs-comment">// output: January 1, 2014</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$formatter</span>-&gt;asDate(<span class="hljs-string">'2014-01-01'</span>, <span class="hljs-string">'long'</span>);
+ 
+<span class="hljs-comment">// output: 12.50%</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$formatter</span>-&gt;asPercent(<span class="hljs-number">0.125</span>, <span class="hljs-number">2</span>);
+ 
+<span class="hljs-comment">// output: &lt;a href="mailto:cebe@example.com"&gt;cebe@example.com&lt;/a&gt;</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$formatter</span>-&gt;asEmail(<span class="hljs-string">'cebe@example.com'</span>); 
+
+<span class="hljs-comment">// output: Yes</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$formatter</span>-&gt;asBoolean(<span class="hljs-keyword">true</span>); 
+<span class="hljs-comment">// it also handles display of null values:</span>
+
+<span class="hljs-comment">// output: (Not set)</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$formatter</span>-&gt;asDate(<span class="hljs-keyword">null</span>); 
+</code></pre>
+<p>我们可以看到，所有的方法都形似 <code>asXyz()</code>，这个 <code>Xzy</code> 就是所支持的格式化类型。
+当然你也可以使用类方法 <a href="./yii-i18n-formatter.html#format()-detail">format()</a> 来进行格式化，通过这个类方法，你可以更自由地控制格式化的数据，这时候，类方法通常配合 <a href="./yii-grid-gridview.html">yii\grid\GridView</a> 或者 <a href="./yii-widgets-detailview.html">yii\widgets\DetailView</a> 来使用。</p>
+<p>举个例子：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// output: January 1, 2014</span>
+<span class="hljs-keyword">echo</span> Yii::<span class="hljs-variable">$app</span>-&gt;formatter-&gt;format(<span class="hljs-string">'2014-01-01'</span>, <span class="hljs-string">'date'</span>); 
+
+<span class="hljs-comment">// 你可以在第二个参数指定一个数组，这个数组提供了一些配置的参数</span>
+<span class="hljs-comment">// 例如这个 2 就是 asPercent() 方法的 $decimals 参数</span>
+<span class="hljs-comment">// output: 12.50%</span>
+<span class="hljs-keyword">echo</span> Yii::<span class="hljs-variable">$app</span>-&gt;formatter-&gt;format(<span class="hljs-number">0.125</span>, [<span class="hljs-string">'percent'</span>, <span class="hljs-number">2</span>]); 
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong><code>formatter</code> 组件用来格式化最终展示给用户的数据。 
+如果你想要将用户的输入进行格式化或者只是将一些别的日期数据进行格式化（这里的格式化说的是机器可读的格式化），
+不要使用这个组件，
+而应该使用 <a href="./yii-validators-datevalidator.html">yii\validators\DateValidator</a> 和 <a href="./yii-validators-numbervalidator.html">yii\validators\NumberValidator</a> 进行用户输入格式化
+对于机器可读的日期和时间格式之间的简单转换，
+PHP 方法 <a href="https://secure.php.net/manual/en/function.date.php">date()</a> 就足够了。</p>
+</blockquote>
+<h2>配置 Formatter（Configuring Formatter）  <span id="configuring-formatter"></span><a href="#configuring-formatter" class="hashlink">&para;</a></h2><p>可以对 <code>formatter</code> 组件在 <a href="guide-concept-configurations.html#application-configurations">application configuration</a> 中进行配置。
+例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'formatter'</span> =&gt; [
+            <span class="hljs-string">'dateFormat'</span> =&gt; <span class="hljs-string">'dd.MM.yyyy'</span>,
+            <span class="hljs-string">'decimalSeparator'</span> =&gt; <span class="hljs-string">','</span>,
+            <span class="hljs-string">'thousandSeparator'</span> =&gt; <span class="hljs-string">' '</span>,
+            <span class="hljs-string">'currencyCode'</span> =&gt; <span class="hljs-string">'EUR'</span>,
+       ],
+    ],
+];
+</code></pre>
+<p>可以参考 <a href="./yii-i18n-formatter.html">yii\i18n\Formatter</a> 的配置</p>
+<h2>格式化时间/日期数据（Formatting Date and Time Values）  <span id="date-and-time"></span><a href="#date-and-time" class="hashlink">&para;</a></h2><p>默认支持一下几种格式化格式</p>
+<ul>
+<li><a href="./yii-i18n-formatter.html#asDate()-detail">date</a>：这个变量将被格式化为日期 <code>January 01, 2014</code>。</li>
+<li><a href="./yii-i18n-formatter.html#asTime()-detail">time</a>：这个变量将被格式化为时间 <code>14:23</code>。</li>
+<li><a href="./yii-i18n-formatter.html#asDatetime()-detail">datetime</a>：这个变量将被格式化为日期+时间 <code>January 01, 2014 14:23</code>。</li>
+<li><a href="./yii-i18n-formatter.html#asTimestamp()-detail">timestamp</a>：这个变量将被格式化为 UNIX 时间戳 <a href="http://en.wikipedia.org/wiki/Unix_time">unix timestamp</a>，例如 <code>1412609982</code>。</li>
+<li><a href="./yii-i18n-formatter.html#asRelativeTime()-detail">relativeTime</a>：这个变量将被格式化为人类可读的
+当前相对时间 <code>1 hour ago</code>。</li>
+<li><a href="./yii-i18n-formatter.html#asDuration()-detail">duration</a>：这个变量将被格式化为人类可读的时长 <code>1 day, 2 minutes</code>。</li>
+</ul>
+<p>时间/日期数据默认使用 <a href="./yii-i18n-formatter.html#asDate()-detail">date</a>, <a href="./yii-i18n-formatter.html#asTime()-detail">time</a>， 
+<a href="./yii-i18n-formatter.html#asDatetime()-detail">datetime</a> 方法进行格式化,
+你可以对他们进行一些自己的配置，只需在配置文件里配置 <a href="./yii-i18n-formatter.html#$dateFormat-detail">dateFormat</a>, 
+<a href="./yii-i18n-formatter.html#$timeFormat-detail">timeFormat</a>, 和 <a href="./yii-i18n-formatter.html#$datetimeFormat-detail">datetimeFormat</a> 即可。</p>
+<p>同时，你还可以配置它使用 <a href="http://userguide.icu-project.org/formatparse/datetime">ICU syntax</a>，
+同时你也可以配置它使用 <a href="https://secure.php.net/manual/en/function.date.php">PHP date() 语法</a>，只需要加上 <code>php:</code> 前缀即可。
+例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// ICU format</span>
+<span class="hljs-keyword">echo</span> Yii::<span class="hljs-variable">$app</span>-&gt;formatter-&gt;asDate(<span class="hljs-string">'now'</span>, <span class="hljs-string">'yyyy-MM-dd'</span>); <span class="hljs-comment">// 2014-10-06</span>
+
+<span class="hljs-comment">// PHP date()-format</span>
+<span class="hljs-keyword">echo</span> Yii::<span class="hljs-variable">$app</span>-&gt;formatter-&gt;asDate(<span class="hljs-string">'now'</span>, <span class="hljs-string">'php:Y-m-d'</span>); <span class="hljs-comment">// 2014-10-06</span>
+</code></pre>
+<blockquote class="info"><p><strong>信息： </strong>ICU 不支持 PHP 格式语法的某些字母，并且这些 PHP intl 扩展名不能在 Yii 格式化程序中使用。
+大多数（<code>w</code>，<code>t</code>，<code>L</code>，<code>B</code>，<code>u</code>，<code>I</code>，<code>Z</code>）对于格式化日期并不是真的有用，而是在进行数学计算时有用。
+然而 <code>S</code> 和 <code>U</code> 可能是有用的。他们的行为可以通过以下方式实现：</p>
+<ul>
+<li><p>比如 <code>S</code>，这是当月的英文序数后缀（例如：st，nd，rd 或 th。），可以使用以下代码来替换：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$f</span> = Yii::<span class="hljs-variable">$app</span>-&gt;formatter;
+<span class="hljs-variable">$d</span> = <span class="hljs-variable">$f</span>-&gt;asOrdinal(<span class="hljs-variable">$f</span>-&gt;asDate(<span class="hljs-string">'2017-05-15'</span>, <span class="hljs-string">'php:j'</span>));
+<span class="hljs-keyword">echo</span> <span class="hljs-string">"On the $d day of the month."</span>;  <span class="hljs-comment">// 打印 "On the 15th day of the month."</span>
+</code></pre>
+</li>
+<li><p>比如 <code>U</code>，Unix 纪元，你能够使用 <a href="./yii-i18n-formatter.html#asTimestamp()-detail">timestamp</a> 来格式化。</p>
+</li>
+</ul>
+</blockquote>
+<p>当使用需要支持多种语言的应用程序时，您经常需要为不同的区域设置指定不同的日期和时间格式。
+为了简化这项操作，你可以使用格式快捷键（例如：<code>long</code>，<code>short</code>）来代替。
+格式化程序将根据当前有效的地区的 <a href="./yii-i18n-formatter.html#$locale-detail">locale</a> 将格式快捷方式转换为适当的程序。
+支持以下格式的快捷方式（示例是假设设置 locale 为 <code>en_GB</code> ）：</p>
+<ul>
+<li><code>short</code>：将输出日期 <code>06/10/2014</code> 和时间 <code>15:58</code>；</li>
+<li><code>medium</code>：将输出 <code>6 Oct 2014</code> 和 <code>15:58:42</code>；</li>
+<li><code>long</code>：将输出 <code>6 October 2014</code> 和 <code>15:58:42 GMT</code>；</li>
+<li><code>full</code>：将输出 <code>Monday, 6 October 2014</code> 和 <code>15:58:42 GMT</code>。</li>
+</ul>
+<p>版本 2.0.7 起，支持格式化日期为不同的系统时钟，
+请参阅格式化程序 <a href="./yii-i18n-formatter.html#$calendar-detail">$calendar</a> 的 API 文档 - 有关如何设置其他日历的属性。</p>
+<h3>时区（Time Zones）  <span id="time-zones"></span><a href="#time-zones" class="hashlink">&para;</a></h3><p>格式化时间/日期数据时，你会将他们转换成 <a href="./yii-i18n-formatter.html#$timeZone-detail">time zone</a>
+这个时候，默认的时区为 UTC，除非你另外指定
+<a href="./yii-i18n-formatter.html#$defaultTimeZone-detail">yii\i18n\Formatter::$defaultTimeZone</a>。</p>
+<p>下面使用 <code>Europe/Berlin</code> 作为默认 <a href="./yii-i18n-formatter.html#$timeZone-detail">time zone</a> </p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// formatting a UNIX timestamp as a time</span>
+<span class="hljs-keyword">echo</span> Yii::<span class="hljs-variable">$app</span>-&gt;formatter-&gt;asTime(<span class="hljs-number">1412599260</span>); <span class="hljs-comment">// 14:41:00</span>
+
+<span class="hljs-comment">// formatting a datetime string (in UTC) as a time </span>
+<span class="hljs-keyword">echo</span> Yii::<span class="hljs-variable">$app</span>-&gt;formatter-&gt;asTime(<span class="hljs-string">'2014-10-06 12:41:00'</span>); <span class="hljs-comment">// 14:41:00</span>
+
+<span class="hljs-comment">// formatting a datetime string (in CEST) as a time</span>
+<span class="hljs-keyword">echo</span> Yii::<span class="hljs-variable">$app</span>-&gt;formatter-&gt;asTime(<span class="hljs-string">'2014-10-06 14:41:00 CEST'</span>); <span class="hljs-comment">// 14:41:00</span>
+</code></pre>
+<p>如果 <a href="./yii-i18n-formatter.html#$timeZone-detail">time zone</a> 未在格式化组件上明确设置，
+<a href="./yii-base-application.html#$timeZone-detail">time zone configured in the application</a> 将会被使用，
+这与 PHP 配置中设置的时区相同。</p>
+<blockquote><p>不同的政府和地区政策决定不同的时区，
+你在你的时区数据库中可能拿不到最新的数据。
+这时你可以戳 <a href="http://userguide.icu-project.org/datetime/timezone#TOC-Updating-the-Time-Zone-Data">ICU manual</a> 来查看如何更新时区。
+同时，这篇也可以作为参考 <a href="guide-tutorial-i18n.html#setup-environment">Setting up your PHP environment for internationalization</a>。</p>
+</blockquote>
+<h2>格式化数字（Formatting Numbers）  <span id="numbers"></span><a href="#numbers" class="hashlink">&para;</a></h2><p><code>formatter</code> 支持如下的方法</p>
+<ul>
+<li><a href="./yii-i18n-formatter.html#asInteger()-detail">integer</a>: 这个变量将被格式化为整形 e.g. <code>42</code>.</li>
+<li><a href="./yii-i18n-formatter.html#asDecimal()-detail">decimal</a>: 这个变量将被格式化为带着逗号的指定精度的浮点型，
+  例如：<code>2,542.123</code> 或 <code>2.542,123</code>。</li>
+<li><a href="./yii-i18n-formatter.html#asPercent()-detail">percent</a>: 这个变量将被格式化为百分比 e.g. <code>42%</code>.</li>
+<li><a href="./yii-i18n-formatter.html#asScientific()-detail">scientific</a>: 这个变量将被格式化为科学计数法 e.g. <code>4.2E4</code>.</li>
+<li><a href="./yii-i18n-formatter.html#asCurrency()-detail">currency</a>: 这个变量将被格式化为货币，
+  例如：<code>£420.00</code>。
+使用这个方法前请确认是否已经正确配置 <a href="./yii-i18n-formatter.html#$locale-detail">locale</a></li>
+<li><a href="./yii-i18n-formatter.html#asSize()-detail">size</a>: 这个变量将被格式化为人类可读的字节数 e.g. <code>410 kibibytes</code>.</li>
+<li><a href="./yii-i18n-formatter.html#asShortSize()-detail">shortSize</a>: 这个变量将被格式化为人类可读的字节数（缩写） <a href="./yii-i18n-formatter.html#asSize()-detail">size</a>，例如：<code>410 KiB</code>。</li>
+</ul>
+<p>你可以使用 <a href="./yii-i18n-formatter.html#$decimalSeparator-detail">decimalSeparator</a> 和 
+<a href="./yii-i18n-formatter.html#$thousandSeparator-detail">thousandSeparator</a> 来进行调整。
+他们都会根据当前的 <a href="./yii-i18n-formatter.html#$locale-detail">locale</a> 来进行格式化.</p>
+<p>如果你想要进行更高级的配置, 可以使用 <a href="./yii-i18n-formatter.html#$numberFormatterOptions-detail">yii\i18n\Formatter::$numberFormatterOptions</a> 和 
+<a href="./yii-i18n-formatter.html#$numberFormatterTextOptions-detail">yii\i18n\Formatter::$numberFormatterTextOptions</a>，
+<a href="https://secure.php.net/manual/en/class.numberformatter.php">NumberFormatter class</a> 来进行格式化。
+例如，为了调整小数部分的最大值和最小值，你可以配置 <a href="./yii-i18n-formatter.html#$numberFormatterOptions-detail">yii\i18n\Formatter::$numberFormatterOptions</a> 如下：</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'numberFormatterOptions'</span> =&gt; [
+    NumberFormatter::MIN_FRACTION_DIGITS =&gt; <span class="hljs-number">0</span>,
+    NumberFormatter::MAX_FRACTION_DIGITS =&gt; <span class="hljs-number">2</span>,
+]
+</code></pre>
+<h2>其他的格式化（Other Formats）  <span id="other"></span><a href="#other" class="hashlink">&para;</a></h2><p>除了时间/日期和数字的格式化，Yii 还支持如下的常用格式化</p>
+<ul>
+<li><a href="./yii-i18n-formatter.html#asRaw()-detail">raw</a>：这个值会被原样输出，这是一个无效的伪格式化程序，
+除了<code>null</code> 将使用 <span class="broken-link">nullDisplay</span> 来格式化。</li>
+<li><a href="./yii-i18n-formatter.html#asText()-detail">text</a>：这个值是 HTML 来编码的。
+这是 <a href="guide-output-data-widgets.html#data-column">GridView DataColumn</a> 使用的默认格式。</li>
+<li><a href="./yii-i18n-formatter.html#asNtext()-detail">ntext</a>：这个值将会被格式化用 HTML 编码的纯文本，
+其中新的一行将用换行符来隔开。</li>
+<li><a href="./yii-i18n-formatter.html#asParagraphs()-detail">paragraphs</a>：这个值被格式化为包含在
+ <code>&lt;p&gt;</code> 标签中的 HTML 编码的文本段落。</li>
+<li><a href="./yii-i18n-formatter.html#asHtml()-detail">html</a>：这个值使用 <span class="broken-link">HtmlPurifier</span> 来格式化以避免遭受 XSS 攻击。
+你能够设置一切其他选项比如 <code>['html', ['Attr.AllowedFrameTargets' =&gt; ['_blank']]]</code>。</li>
+<li><a href="./yii-i18n-formatter.html#asEmail()-detail">email</a>：这个值被格式化为 <code>mailto</code>-链接。</li>
+<li><a href="./yii-i18n-formatter.html#asImage()-detail">image</a>：这个值被格式化为图像标签。</li>
+<li><a href="./yii-i18n-formatter.html#asUrl()-detail">url</a>：这个值被格式化为超链接。</li>
+<li><a href="./yii-i18n-formatter.html#asBoolean()-detail">boolean</a>：这个值被格式化为布尔值。
+默认情况下，转化为当前的引用程序语言，<code>true</code> 表现为 <code>Yes</code> 并且 <code>false</code> 表现为 <code>No</code>。
+您可以通过配置 <a href="./yii-i18n-formatter.html#$booleanFormat-detail">yii\i18n\Formatter::$booleanFormat</a> 的属性来调整它。</li>
+</ul>
+<h2>空值（Null Values）  <span id="null-values"></span><a href="#null-values" class="hashlink">&para;</a></h2><p>空值（<code>null</code>）会被特殊格式化。<code>fommater</code> 默认会将空值格式化为 <code>(not set)</code> 对应的当前的语言。
+你可以配置 <a href="./yii-i18n-formatter.html#$nullDisplay-detail">nullDisplay</a>
+属性来进行个性化。</p>
+<h2>本地日期格式化（Localizing Data Format）  <span id="localizing-data-format"></span><a href="#localizing-data-format" class="hashlink">&para;</a></h2><p>如上所述，格式化应用程序可以使用当前有效的 <a href="./yii-i18n-formatter.html#$locale-detail">locale</a> 来确定
+如何格式化适用于目标国家/地区的值。
+例如，对于不同的区域设置，相同的日期可能会有不同的格式：</p>
+<pre><code class="hljs php language-php">Yii::<span class="hljs-variable">$app</span>-&gt;formatter-&gt;locale = <span class="hljs-string">'en-US'</span>;
+<span class="hljs-keyword">echo</span> Yii::<span class="hljs-variable">$app</span>-&gt;formatter-&gt;asDate(<span class="hljs-string">'2014-01-01'</span>); <span class="hljs-comment">// output: January 1, 2014</span>
+
+Yii::<span class="hljs-variable">$app</span>-&gt;formatter-&gt;locale = <span class="hljs-string">'de-DE'</span>;
+<span class="hljs-keyword">echo</span> Yii::<span class="hljs-variable">$app</span>-&gt;formatter-&gt;asDate(<span class="hljs-string">'2014-01-01'</span>); <span class="hljs-comment">// output: 1. Januar 2014</span>
+
+Yii::<span class="hljs-variable">$app</span>-&gt;formatter-&gt;locale = <span class="hljs-string">'ru-RU'</span>;
+<span class="hljs-keyword">echo</span> Yii::<span class="hljs-variable">$app</span>-&gt;formatter-&gt;asDate(<span class="hljs-string">'2014-01-01'</span>); <span class="hljs-comment">// output: 1 января 2014 г.</span>
+</code></pre>
+<p>默认配置下，当前 <a href="./yii-i18n-formatter.html#$locale-detail">locale</a> 决定于 <a href="./yii-base-application.html#$language-detail">yii\base\Application::$language</a>.
+你可以覆盖 <a href="./yii-i18n-formatter.html#$locale-detail">yii\i18n\Formatter::$locale</a> 属性来满足不同的需要。</p>
+<blockquote class="note"><p><strong>注意： </strong>Yii formatter 依赖 <a href="https://secure.php.net/manual/en/book.intl.php">PHP intl extension</a> 
+来进行本地数据格式化
+因为不同的 ICU 库可能会导致不同的输出，所以请在你的所有机器上保持 ICU 库的一致性。
+请参阅 <a href="guide-tutorial-i18n.html#setup-environment">Setting up your PHP environment for internationalization</a>。</p>
+<p>如果 <code>intl</code> 扩展没有被安装，数据格式化不会考虑本地化。 </p>
+<p>在 32 位系统中，1901 年前或者 2038 年后的日期数据将不会被本地化，
+因为 ICU 使用的是 32 位的 UNIX 时间戳。</p>
+</blockquote>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

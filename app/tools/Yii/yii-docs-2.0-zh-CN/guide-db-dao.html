@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>数据库访问（Data Access Objects） - 配合数据库工作（Working with Databases） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w54" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w54-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w54-collapse" class="collapse navbar-collapse"><ul id="w55" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w56" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-38" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-38" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-39" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-39" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-40" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-40" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-41" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-41" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-42" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-42" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item active" href="#navigation-43" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-43" class="submenu panel-collapse collapse in"><a class="list-group-item active" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-zh-CN/README.md">Sphinx</a>
+<a class="list-group-item" href="./guide-yii2-redis.html">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-zh-CN/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-zh-CN/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-44" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-44" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-45" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-45" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-46" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-46" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-47" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-47" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-48" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-48" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-49" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-49" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-50" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-50" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-51" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-51" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-52" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-52" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-53" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-53" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>数据库访问对象（Database Access Objects） <span id="shu-ju-ku-fang-wen-dui-xiang-database-access-objects"></span><a href="#shu-ju-ku-fang-wen-dui-xiang-database-access-objects" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#creating-db-connections">创建数据库连接（Creating DB Connections）</a></li>
+<li><a href="#executing-sql-queries">执行 SQL 查询（Executing SQL Queries）</a></li>
+<li><a href="#quoting-table-and-column-names">引用表和列名称（Quoting Table and Column Names）</a></li>
+<li><a href="#performing-transactions">执行事务（Performing Transactions）</a></li>
+<li><a href="#read-write-splitting">复制和读写分离（Replication and Read-Write Splitting）</a></li>
+<li><a href="#database-schema">操纵数据库模式（Working with Database Schema）</a></li></ol></div>
+<p>Yii 包含了一个建立在 PHP PDO 之上的数据访问层 (DAO)。DAO为不同的数据库提供了一套统一的API。
+其中 <code>ActiveRecord</code> 提供了数据库与模型(MVC 中的 M,Model) 的交互，<code>QueryBuilder</code> 用于创建动态的查询语句。
+DAO提供了简单高效的SQL查询，可以用在与数据库交互的各个地方.</p>
+<p>使用 Yii DAO 时，你主要需要处理纯 SQL 语句和 PHP 数组。因此，这是访问数据库最高效的方法。
+然而，因为不同数据库之间的 SQL 语法往往是不同的，
+使用 Yii DAO 也意味着你必须花些额外的工夫来创建一个”数据库无关“的应用。</p>
+<p>Yii DAO 支持下列现成的数据库：</p>
+<ul>
+<li><a href="http://www.mysql.com/">MySQL</a></li>
+<li><a href="https://mariadb.com/">MariaDB</a></li>
+<li><a href="http://sqlite.org/">SQLite</a></li>
+<li><a href="http://www.postgresql.org/">PostgreSQL</a>：版本 8.4 或更高</li>
+<li><a href="http://www.cubrid.org/">CUBRID</a>：版本 9.3 或更高。</li>
+<li><a href="http://www.oracle.com/us/products/database/overview/index.html">Oracle</a></li>
+<li><a href="https://www.microsoft.com/en-us/sqlserver/default.aspx">MSSQL</a>：版本 2008 或更高。</li>
+</ul>
+<blockquote class="info"><p><strong>信息： </strong>在Yii 2.1及更高版本中，DAO 支持 CUBRID，Oracle 和 MSSQL
+  不再作为框架的内置核心组件提供。它们必须作为独离的 <a href="guide-structure-extensions.html">扩展</a> 安装。
+  <a href="https://www.yiiframework.com/extension/yiisoft/yii2-oracle">yiisoft/yii2-oracle</a> 和
+  <a href="https://www.yiiframework.com/extension/yiisoft/yii2-mssql">yiisoft/yii2-mssql</a> 都属于
+  <a href="https://www.yiiframework.com/extensions/official">官方扩展</a>。</p>
+</blockquote>
+<blockquote class="note"><p><strong>注意： </strong>供 PHP 7 使用的新版 pdo_oci 扩展目前仅发布了源代码，如果你想编译使用请参照 
+  <a href="https://github.com/yiisoft/yii2/issues/10975#issuecomment-248479268">社区用户提供的编译安装指引</a>。
+  或者你也可以在你的应用中使用 <a href="https://github.com/taq/pdooci">PDO模拟层</a>。</p>
+</blockquote>
+<h2>创建数据库连接（Creating DB Connections）  <span id="creating-db-connections"></span><a href="#creating-db-connections" class="hashlink">&para;</a></h2><p>想要访问数据库，你首先需要通过创建一个 <a href="./yii-db-connection.html">yii\db\Connection</a> 实例来与之建立连接。</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$db</span> = <span class="hljs-keyword">new</span> yii\db\Connection([
+    <span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'mysql:host=localhost;dbname=example'</span>,
+    <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'root'</span>,
+    <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">''</span>,
+    <span class="hljs-string">'charset'</span> =&gt; <span class="hljs-string">'utf8'</span>,
+]);
+</code></pre>
+<p>因为数据库连接经常需要在多个地方使用到，
+一个常见的做法是以<a href="guide-structure-application-components.html">应用组件</a>的方式来配置它，如下:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-comment">// ...</span>
+        <span class="hljs-string">'db'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\db\Connection'</span>,
+            <span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'mysql:host=localhost;dbname=example'</span>,
+            <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'root'</span>,
+            <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">''</span>,
+            <span class="hljs-string">'charset'</span> =&gt; <span class="hljs-string">'utf8'</span>,
+        ],
+    ],
+    <span class="hljs-comment">// ...</span>
+];
+</code></pre>
+<p>之后你就可以通过语句 <code>Yii::$app-&gt;db</code> 来使用数据库连接了。</p>
+<blockquote class="tip"><p><strong>提示： </strong>如果你的应用需要访问多个数据库，你可以配置多个 DB 应用组件。</p>
+</blockquote>
+<p>配置数据库连接时， 你应该总是通过 <a href="./yii-db-connection.html#$dsn-detail">dsn</a> 属性来指明它的数据源名称 (DSN) 。
+不同的数据库有着不同的 DSN 格式。
+请参考 <a href="https://secure.php.net/manual/en/function.PDO-construct.php">PHP manual</a> 来获得更多细节。下面是一些例子：</p>
+<ul>
+<li>MySQL, MariaDB: <code>mysql:host=localhost;dbname=mydatabase</code></li>
+<li>SQLite: <code>sqlite:/path/to/database/file</code></li>
+<li>PostgreSQL: <code>pgsql:host=localhost;port=5432;dbname=mydatabase</code></li>
+<li>CUBRID: <code>cubrid:dbname=demodb;host=localhost;port=33000</code></li>
+<li>MS SQL Server (via sqlsrv driver): <code>sqlsrv:Server=localhost;Database=mydatabase</code></li>
+<li>MS SQL Server (via dblib driver): <code>dblib:host=localhost;dbname=mydatabase</code></li>
+<li>MS SQL Server (via mssql driver): <code>mssql:host=localhost;dbname=mydatabase</code></li>
+<li>Oracle: <code>oci:dbname=//localhost:1521/mydatabase</code></li>
+</ul>
+<p>请注意，如果你是通过 ODBC 来连接数据库，你应该配置 <a href="./yii-db-connection.html#$driverName-detail">yii\db\Connection::$driverName</a> 属性，
+以便 Yii 能够知道实际的数据库种类。例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'db'</span> =&gt; [
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\db\Connection'</span>,
+    <span class="hljs-string">'driverName'</span> =&gt; <span class="hljs-string">'mysql'</span>,
+    <span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'odbc:Driver={MySQL};Server=localhost;Database=test'</span>,
+    <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'root'</span>,
+    <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">''</span>,
+],
+</code></pre>
+<p>除了 <a href="./yii-db-connection.html#$dsn-detail">dsn</a> 属性，
+你常常需要配置 <a href="./yii-db-connection.html#$username-detail">username</a> 和 <a href="./yii-db-connection.html#$password-detail">password</a>。请参考 <a href="./yii-db-connection.html">yii\db\Connection</a> 来获取完整的可配置属性列表。</p>
+<blockquote class="info"><p><strong>信息： </strong>当你实例化一个 DB Connection 时，直到你第一次执行 SQL 或者你明确地调用 <a href="./yii-db-connection.html#open()-detail">open()</a> 方法时，
+  才建立起实际的数据库连接。</p>
+</blockquote>
+<blockquote class="tip"><p><strong>提示： </strong>有时你可能想要在建立起数据库连接时立即执行一些语句来初始化一些环境变量 (比如设置时区或者字符集),
+你可以通过为数据库连接的 <a href="./yii-db-connection.html#EVENT_AFTER_OPEN-detail">afterOpen</a> 
+事件注册一个事件处理器来达到目的。
+你可以像这样直接在应用配置中注册处理器：</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'db'</span> =&gt; [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'on afterOpen'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(<span class="hljs-variable">$event</span>)</span> </span>{
+        <span class="hljs-comment">// $event-&gt;sender refers to the DB connection</span>
+        <span class="hljs-variable">$event</span>-&gt;sender-&gt;createCommand(<span class="hljs-string">"SET time_zone = 'UTC'"</span>)-&gt;execute();
+    }
+],
+</code></pre>
+</blockquote>
+<h2>执行 SQL 查询（Executing SQL Queries）  <span id="executing-sql-queries"></span><a href="#executing-sql-queries" class="hashlink">&para;</a></h2><p>一旦你拥有了 DB Connection 实例，你可以按照下列步骤来执行 SQL 查询：</p>
+<ol>
+<li>使用纯SQL查询来创建出 <a href="./yii-db-command.html">yii\db\Command</a>；</li>
+<li>绑定参数 (可选的)；</li>
+<li>调用 <a href="./yii-db-command.html">yii\db\Command</a> 里 SQL 执行方法中的一个。</li>
+</ol>
+<p>下列例子展示了几种不同的从数据库取得数据的方法：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 返回多行. 每行都是列名和值的关联数组.</span>
+<span class="hljs-comment">// 如果该查询没有结果则返回空数组</span>
+<span class="hljs-variable">$posts</span> = Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;createCommand(<span class="hljs-string">'SELECT * FROM post'</span>)
+            -&gt;queryAll();
+
+<span class="hljs-comment">// 返回一行 (第一行)</span>
+<span class="hljs-comment">// 如果该查询没有结果则返回 false</span>
+<span class="hljs-variable">$post</span> = Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;createCommand(<span class="hljs-string">'SELECT * FROM post WHERE id=1'</span>)
+           -&gt;queryOne();
+
+<span class="hljs-comment">// 返回一列 (第一列)</span>
+<span class="hljs-comment">// 如果该查询没有结果则返回空数组</span>
+<span class="hljs-variable">$titles</span> = Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;createCommand(<span class="hljs-string">'SELECT title FROM post'</span>)
+             -&gt;queryColumn();
+
+<span class="hljs-comment">// 返回一个标量值</span>
+<span class="hljs-comment">// 如果该查询没有结果则返回 false</span>
+<span class="hljs-variable">$count</span> = Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;createCommand(<span class="hljs-string">'SELECT COUNT(*) FROM post'</span>)
+             -&gt;queryScalar();
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>为了保持精度，即使对应的数据库列类型为数值型，
+所有从数据库取得的数据都被表现为字符串。</p>
+</blockquote>
+<h3>绑定参数（Binding Parameters）  <span id="binding-parameters"></span><a href="#binding-parameters" class="hashlink">&para;</a></h3><p>当使用带参数的 SQL 来创建数据库命令时，
+你几乎总是应该使用绑定参数的方法来防止 SQL 注入攻击，例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$post</span> = Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;createCommand(<span class="hljs-string">'SELECT * FROM post WHERE id=:id AND status=:status'</span>)
+           -&gt;bindValue(<span class="hljs-string">':id'</span>, <span class="hljs-variable">$_GET</span>[<span class="hljs-string">'id'</span>])
+           -&gt;bindValue(<span class="hljs-string">':status'</span>, <span class="hljs-number">1</span>)
+           -&gt;queryOne();
+</code></pre>
+<p>在 SQL 语句中，你可以嵌入一个或多个参数占位符(例如，上述例子中的 <code>:id</code> )。 
+一个参数占位符应该是以冒号开头的字符串。
+之后你可以调用下面绑定参数的方法来绑定参数值：</p>
+<ul>
+<li><a href="./yii-db-command.html#bindValue()-detail">bindValue()</a>：绑定一个参数值</li>
+<li><a href="./yii-db-command.html#bindValues()-detail">bindValues()</a>：在一次调用中绑定多个参数值</li>
+<li><a href="./yii-db-command.html#bindParam()-detail">bindParam()</a>：与 <a href="./yii-db-command.html#bindValue()-detail">bindValue()</a>
+相似，但是也支持绑定参数引用。</li>
+</ul>
+<p>下面的例子展示了几个可供选择的绑定参数的方法：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$params</span> = [<span class="hljs-string">':id'</span> =&gt; <span class="hljs-variable">$_GET</span>[<span class="hljs-string">'id'</span>], <span class="hljs-string">':status'</span> =&gt; <span class="hljs-number">1</span>];
+
+<span class="hljs-variable">$post</span> = Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;createCommand(<span class="hljs-string">'SELECT * FROM post WHERE id=:id AND status=:status'</span>)
+           -&gt;bindValues(<span class="hljs-variable">$params</span>)
+           -&gt;queryOne();
+           
+<span class="hljs-variable">$post</span> = Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;createCommand(<span class="hljs-string">'SELECT * FROM post WHERE id=:id AND status=:status'</span>, <span class="hljs-variable">$params</span>)
+           -&gt;queryOne();
+</code></pre>
+<p>绑定参数是通过 <a href="https://secure.php.net/manual/en/mysqli.quickstart.prepared-statements.php">预处理语句</a> 实现的。
+除了防止 SQL 注入攻击，它也可以通过一次预处理 SQL 语句，
+使用不同参数多次执行，来提升性能。例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$command</span> = Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;createCommand(<span class="hljs-string">'SELECT * FROM post WHERE id=:id'</span>);
+
+<span class="hljs-variable">$post1</span> = <span class="hljs-variable">$command</span>-&gt;bindValue(<span class="hljs-string">':id'</span>, <span class="hljs-number">1</span>)-&gt;queryOne();
+<span class="hljs-variable">$post2</span> = <span class="hljs-variable">$command</span>-&gt;bindValue(<span class="hljs-string">':id'</span>, <span class="hljs-number">2</span>)-&gt;queryOne();
+<span class="hljs-comment">// ...</span>
+</code></pre>
+<p>因为 <a href="./yii-db-command.html#bindParam()-detail">bindParam()</a> 支持通过引用来绑定参数，
+上述代码也可以像下面这样写：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$command</span> = Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;createCommand(<span class="hljs-string">'SELECT * FROM post WHERE id=:id'</span>)
+              -&gt;bindParam(<span class="hljs-string">':id'</span>, <span class="hljs-variable">$id</span>);
+
+<span class="hljs-variable">$id</span> = <span class="hljs-number">1</span>;
+<span class="hljs-variable">$post1</span> = <span class="hljs-variable">$command</span>-&gt;queryOne();
+
+<span class="hljs-variable">$id</span> = <span class="hljs-number">2</span>;
+<span class="hljs-variable">$post2</span> = <span class="hljs-variable">$command</span>-&gt;queryOne();
+<span class="hljs-comment">// ...</span>
+</code></pre>
+<p>请注意，在执行语句前你将占位符绑定到 <code>$id</code> 变量，
+然后在之后的每次执行前改变变量的值（这通常是用循环来完成的）。
+以这种方式执行查询比为每个不同的参数值执行一次新的查询要高效得多得多。</p>
+<blockquote class="info"><p><strong>信息： </strong>参数绑定仅用于需要将值插入到包含普通SQL的字符串中的地方。
+在 <a href="guide-db-query-builder.html">Query Builder</a> 和 <a href="guide-db-active-record.html">Active Record</a>
+等更高抽象层的许多地方，您经常会指定一组将被转换为 SQL 的值。
+在这些地方，参数绑定是由 Yii 内部完成的，因此不需要手动指定参数。</p>
+</blockquote>
+<h3>执行非查询语句（Executing Non-SELECT Queries）  <span id="non-select-queries"></span><a href="#non-select-queries" class="hashlink">&para;</a></h3><p>上面部分中介绍的 <code>queryXyz()</code> 方法都处理的是从数据库返回数据的查询语句。对于那些不取回数据的语句，
+你应该调用的是 <a href="./yii-db-command.html#execute()-detail">yii\db\Command::execute()</a> 方法。例如，</p>
+<pre><code class="hljs php language-php">Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;createCommand(<span class="hljs-string">'UPDATE post SET status=1 WHERE id=1'</span>)
+   -&gt;execute();
+</code></pre>
+<p><a href="./yii-db-command.html#execute()-detail">yii\db\Command::execute()</a> 方法返回执行 SQL 所影响到的行数。</p>
+<p>对于 INSERT, UPDATE 和 DELETE 语句，不再需要写纯SQL语句了， 
+你可以直接调用 <a href="./yii-db-command.html#insert()-detail">insert()</a>、<a href="./yii-db-command.html#update()-detail">update()</a>、<a href="./yii-db-command.html#delete()-detail">delete()</a>，
+来构建相应的 SQL 语句。这些方法将正确地引用表和列名称以及绑定参数值。例如,</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// INSERT (table name, column values)</span>
+Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;createCommand()-&gt;insert(<span class="hljs-string">'user'</span>, [
+    <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'Sam'</span>,
+    <span class="hljs-string">'age'</span> =&gt; <span class="hljs-number">30</span>,
+])-&gt;execute();
+
+<span class="hljs-comment">// UPDATE (table name, column values, condition)</span>
+Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;createCommand()-&gt;update(<span class="hljs-string">'user'</span>, [<span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">1</span>], <span class="hljs-string">'age &gt; 30'</span>)-&gt;execute();
+
+<span class="hljs-comment">// DELETE (table name, condition)</span>
+Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;createCommand()-&gt;delete(<span class="hljs-string">'user'</span>, <span class="hljs-string">'status = 0'</span>)-&gt;execute();
+</code></pre>
+<p>你也可以调用 <a href="./yii-db-command.html#batchInsert()-detail">batchInsert()</a> 来一次插入多行，
+这比一次插入一行要高效得多：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// table name, column names, column values</span>
+Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;createCommand()-&gt;batchInsert(<span class="hljs-string">'user'</span>, [<span class="hljs-string">'name'</span>, <span class="hljs-string">'age'</span>], [
+    [<span class="hljs-string">'Tom'</span>, <span class="hljs-number">30</span>],
+    [<span class="hljs-string">'Jane'</span>, <span class="hljs-number">20</span>],
+    [<span class="hljs-string">'Linda'</span>, <span class="hljs-number">25</span>],
+])-&gt;execute();
+</code></pre>
+<p>另一个有用的方法是 <a href="./yii-db-command.html#upsert()-detail">upsert()</a>。Upsert 是一种原子操作，如果它们不存在（匹配唯一约束），则将行插入到数据库表中，
+或者在它们执行时更新它们：</p>
+<pre><code class="hljs php language-php">Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;createCommand()-&gt;upsert(<span class="hljs-string">'pages'</span>, [
+    <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'Front page'</span>,
+    <span class="hljs-string">'url'</span> =&gt; <span class="hljs-string">'http://example.com/'</span>, <span class="hljs-comment">// url is unique</span>
+    <span class="hljs-string">'visits'</span> =&gt; <span class="hljs-number">0</span>,
+], [
+    <span class="hljs-string">'visits'</span> =&gt; <span class="hljs-keyword">new</span> \yii\db\Expression(<span class="hljs-string">'visits + 1'</span>),
+], <span class="hljs-variable">$params</span>)-&gt;execute();
+</code></pre>
+<p>上面的代码将插入一个新的页面记录或自动增加访问计数器。</p>
+<p>请注意，上述的方法只是构建出语句，
+你总是需要调用 <a href="./yii-db-command.html#execute()-detail">execute()</a> 来真正地执行它们。</p>
+<h2>引用表和列名称（Quoting Table and Column Names）  <span id="quoting-table-and-column-names"></span><a href="#quoting-table-and-column-names" class="hashlink">&para;</a></h2><p>当写与数据库无关的代码时，正确地引用表和列名称总是一件头疼的事，
+因为不同的数据库有不同的名称引用规则，为了克服这个问题，
+你可以使用下面由 Yii 提出的引用语法。</p>
+<ul>
+<li><code>[[column name]]</code>: 使用两对方括号来将列名括起来; </li>
+<li><code>{{table name}}</code>: 使用两对大括号来将表名括起来。</li>
+</ul>
+<p>Yii DAO 将自动地根据数据库的具体语法来将这些结构转化为对应的
+被引用的列或者表名称。
+例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 在 MySQL 中执行该 SQL : SELECT COUNT(`id`) FROM `employee`</span>
+<span class="hljs-variable">$count</span> = Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;createCommand(<span class="hljs-string">"SELECT COUNT([[id]]) FROM {{employee}}"</span>)
+            -&gt;queryScalar();
+</code></pre>
+<h3>使用表前缀（Using Table Prefix）  <span id="using-table-prefix"></span><a href="#using-table-prefix" class="hashlink">&para;</a></h3><p>如果你的数据库表名大多都拥有一个共同的前缀，
+你可以使用 Yii DAO 所提供的表前缀功能。</p>
+<p>首先，通过应用配置中的 <a href="./yii-db-connection.html#$tablePrefix-detail">yii\db\Connection::$tablePrefix</a> 属性来指定表前缀：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-comment">// ...</span>
+        <span class="hljs-string">'db'</span> =&gt; [
+            <span class="hljs-comment">// ...</span>
+            <span class="hljs-string">'tablePrefix'</span> =&gt; <span class="hljs-string">'tbl_'</span>,
+        ],
+    ],
+];
+</code></pre>
+<p>接着在你的代码中，当你需要涉及到一张表名中包含该前缀的表时，
+应使用语法 <code>{{%table_name}}</code>。百分号将被自动地替换为你在配置 DB 组件时指定的表前缀。
+例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 在 MySQL 中执行该 SQL: SELECT COUNT(`id`) FROM `tbl_employee`</span>
+<span class="hljs-variable">$count</span> = Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;createCommand(<span class="hljs-string">"SELECT COUNT([[id]]) FROM {{%employee}}"</span>)
+            -&gt;queryScalar();
+</code></pre>
+<h2>执行事务（Performing Transactions）  <span id="performing-transactions"></span><a href="#performing-transactions" class="hashlink">&para;</a></h2><p>当顺序地执行多个相关的语句时， 你或许需要将它们包在一个事务中来保证数据库的完整性和一致性。
+如果这些语句中的任何一个失败了，
+数据库将回滚到这些语句执行前的状态。</p>
+<p>下面的代码展示了一个使用事务的典型方法：</p>
+<pre><code class="hljs php language-php">Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;transaction(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(<span class="hljs-variable">$db</span>)</span> </span>{
+    <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-variable">$sql1</span>)-&gt;execute();
+    <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-variable">$sql2</span>)-&gt;execute();
+    <span class="hljs-comment">// ... executing other SQL statements ...</span>
+});
+</code></pre>
+<p>上述代码等价于下面的代码，但是下面的代码给予了你对于错误处理代码的更多掌控：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$db</span> = Yii::<span class="hljs-variable">$app</span>-&gt;db;
+<span class="hljs-variable">$transaction</span> = <span class="hljs-variable">$db</span>-&gt;beginTransaction();
+<span class="hljs-keyword">try</span> {
+    <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-variable">$sql1</span>)-&gt;execute();
+    <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-variable">$sql2</span>)-&gt;execute();
+    <span class="hljs-comment">// ... executing other SQL statements ...</span>
+    
+    <span class="hljs-variable">$transaction</span>-&gt;commit();
+} <span class="hljs-keyword">catch</span>(\<span class="hljs-keyword">Exception</span> <span class="hljs-variable">$e</span>) {
+    <span class="hljs-variable">$transaction</span>-&gt;rollBack();
+    <span class="hljs-keyword">throw</span> <span class="hljs-variable">$e</span>;
+} <span class="hljs-keyword">catch</span>(\Throwable <span class="hljs-variable">$e</span>) {
+    <span class="hljs-variable">$transaction</span>-&gt;rollBack();
+    <span class="hljs-keyword">throw</span> <span class="hljs-variable">$e</span>;
+}
+</code></pre>
+<p>通过调用 <a href="./yii-db-connection.html#beginTransaction()-detail">beginTransaction()</a> 方法，
+一个新事务开始了。
+事务被表示为一个存储在 <code>$transaction</code> 变量中的 <a href="./yii-db-transaction.html">yii\db\Transaction</a> 对象。
+然后，被执行的语句都被包含在一个 <code>try...catch...</code> 块中。
+如果所有的语句都被成功地执行了，
+<a href="./yii-db-transaction.html#commit()-detail">commit()</a> 将被调用来提交这个事务。
+否则， 如果异常被触发并被捕获，
+<a href="./yii-db-transaction.html#rollBack()-detail">rollBack()</a> 方法将被调用，
+来回滚事务中失败语句之前所有语句所造成的改变。
+ <code>throw $e</code> 将重新抛出该异常，
+就好像我们没有捕获它一样，
+因此正常的错误处理程序将处理它。</p>
+<h3>指定隔离级别（Specifying Isolation Levels）  <span id="specifying-isolation-levels"></span><a href="#specifying-isolation-levels" class="hashlink">&para;</a></h3><p>Yii 也支持为你的事务设置<a href="http://en.wikipedia.org/wiki/Isolation_%28database_systems%29#Isolation_levels">隔离级别</a>。默认情况下，当我们开启一个新事务，
+它将使用你的数据库所设定的隔离级别。你也可以向下面这样重载默认的隔离级别，</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$isolationLevel</span> = \yii\db\Transaction::REPEATABLE_READ;
+
+Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;transaction(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$db</span>)</span> </span>{
+    ....
+}, <span class="hljs-variable">$isolationLevel</span>);
+ 
+<span class="hljs-comment">// or alternatively</span>
+
+<span class="hljs-variable">$transaction</span> = Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;beginTransaction(<span class="hljs-variable">$isolationLevel</span>);
+</code></pre>
+<p>Yii 为四个最常用的隔离级别提供了常量：</p>
+<ul>
+<li><a href="./yii-db-transaction.html#READ_UNCOMMITTED-detail">yii\db\Transaction::READ_UNCOMMITTED</a> - 最弱的隔离级别，脏读、不可重复读以及幻读都可能发生。</li>
+<li><a href="./yii-db-transaction.html#READ_COMMITTED-detail">yii\db\Transaction::READ_COMMITTED</a> - 避免了脏读。</li>
+<li><a href="./yii-db-transaction.html#REPEATABLE_READ-detail">yii\db\Transaction::REPEATABLE_READ</a> - 避免了脏读和不可重复读。</li>
+<li><a href="./yii-db-transaction.html#SERIALIZABLE-detail">yii\db\Transaction::SERIALIZABLE</a> - 最强的隔离级别， 避免了上述所有的问题。</li>
+</ul>
+<p>除了使用上述的常量来指定隔离级别，你还可以使用你的数据库所支持的具有有效语法的字符串。
+比如，在 PostgreSQL 中，你可以使用 <code>SERIALIZABLE READ ONLY DEFERRABLE</code>。 </p>
+<p>请注意，一些数据库只允许为整个连接设置隔离级别，
+即使你之后什么也没指定，后来的事务都将获得与之前相同的隔离级别。
+使用此功能时，你需要为所有的事务明确地设置隔离级别来避免冲突的设置。
+在本文写作之时，只有 MSSQL 和 SQLite 受这些限制的影响。</p>
+<blockquote class="note"><p><strong>注意： </strong>SQLite 只支持两种隔离级别，所以你只能使用 <code>READ UNCOMMITTED</code> 和 <code>SERIALIZABLE</code>。
+使用其他级别将导致异常的抛出。</p>
+</blockquote>
+<blockquote class="note"><p><strong>注意： </strong>PostgreSQL 不支持在事务开启前设定隔离级别，
+因此，你不能在开启事务时直接指定隔离级别。
+你必须在事务开始后再调用 <a href="./yii-db-transaction.html#setIsolationLevel()-detail">yii\db\Transaction::setIsolationLevel()</a>。</p>
+</blockquote>
+<h3>嵌套事务（Nesting Transactions）  <span id="nesting-transactions"></span><a href="#nesting-transactions" class="hashlink">&para;</a></h3><p>如果你的数据库支持保存点，你可以像下面这样嵌套多个事务：</p>
+<pre><code class="hljs php language-php">Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;transaction(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$db</span>)</span> </span>{
+    <span class="hljs-comment">// outer transaction</span>
+    
+    <span class="hljs-variable">$db</span>-&gt;transaction(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$db</span>)</span> </span>{
+        <span class="hljs-comment">// inner transaction</span>
+    });
+});
+</code></pre>
+<p>或者，</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$db</span> = Yii::<span class="hljs-variable">$app</span>-&gt;db;
+<span class="hljs-variable">$outerTransaction</span> = <span class="hljs-variable">$db</span>-&gt;beginTransaction();
+<span class="hljs-keyword">try</span> {
+    <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-variable">$sql1</span>)-&gt;execute();
+
+    <span class="hljs-variable">$innerTransaction</span> = <span class="hljs-variable">$db</span>-&gt;beginTransaction();
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-variable">$sql2</span>)-&gt;execute();
+        <span class="hljs-variable">$innerTransaction</span>-&gt;commit();
+    } <span class="hljs-keyword">catch</span> (\<span class="hljs-keyword">Exception</span> <span class="hljs-variable">$e</span>) {
+        <span class="hljs-variable">$innerTransaction</span>-&gt;rollBack();
+        <span class="hljs-keyword">throw</span> <span class="hljs-variable">$e</span>;
+    } <span class="hljs-keyword">catch</span> (\Throwable <span class="hljs-variable">$e</span>) {
+        <span class="hljs-variable">$innerTransaction</span>-&gt;rollBack();
+        <span class="hljs-keyword">throw</span> <span class="hljs-variable">$e</span>;
+    }
+
+    <span class="hljs-variable">$outerTransaction</span>-&gt;commit();
+} <span class="hljs-keyword">catch</span> (\<span class="hljs-keyword">Exception</span> <span class="hljs-variable">$e</span>) {
+    <span class="hljs-variable">$outerTransaction</span>-&gt;rollBack();
+    <span class="hljs-keyword">throw</span> <span class="hljs-variable">$e</span>;
+} <span class="hljs-keyword">catch</span> (\Throwable <span class="hljs-variable">$e</span>) {
+    <span class="hljs-variable">$outerTransaction</span>-&gt;rollBack();
+    <span class="hljs-keyword">throw</span> <span class="hljs-variable">$e</span>;
+}
+</code></pre>
+<h2>复制和读写分离（Replication and Read-Write Splitting）  <span id="read-write-splitting"></span><a href="#read-write-splitting" class="hashlink">&para;</a></h2><p>许多数据库支持<a href="http://en.wikipedia.org/wiki/Replication_(computing)#Database_replication">数据库复制</a>来获得更好的数据库可用性，
+以及更快的服务器响应时间。通过数据库复制功能，
+数据从所谓的主服务器被复制到从服务器。所有的写和更新必须发生在主服务器上，
+而读可以发生在从服务器上。</p>
+<p>为了利用数据库复制并且完成读写分离，
+你可以按照下面的方法来配置 <a href="./yii-db-connection.html">yii\db\Connection</a> 组件：</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\db\Connection'</span>,
+
+    <span class="hljs-comment">// 主库的配置</span>
+    <span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'dsn for master server'</span>,
+    <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'master'</span>,
+    <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">''</span>,
+
+    <span class="hljs-comment">// 从库的通用配置</span>
+    <span class="hljs-string">'slaveConfig'</span> =&gt; [
+        <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'slave'</span>,
+        <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">''</span>,
+        <span class="hljs-string">'attributes'</span> =&gt; [
+            <span class="hljs-comment">// 使用一个更小的连接超时</span>
+            PDO::ATTR_TIMEOUT =&gt; <span class="hljs-number">10</span>,
+        ],
+    ],
+
+    <span class="hljs-comment">// 从库的配置列表</span>
+    <span class="hljs-string">'slaves'</span> =&gt; [
+        [<span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'dsn for slave server 1'</span>],
+        [<span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'dsn for slave server 2'</span>],
+        [<span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'dsn for slave server 3'</span>],
+        [<span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'dsn for slave server 4'</span>],
+    ],
+]
+</code></pre>
+<p>上述的配置指定了一主多从的设置。
+这些从库其中之一将被建立起连接并执行读操作，而主库将被用来执行写操作。
+这样的读写分离将通过上述配置自动地完成。比如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 使用上述配置来创建一个 Connection 实例</span>
+Yii::<span class="hljs-variable">$app</span>-&gt;db = Yii::createObject(<span class="hljs-variable">$config</span>);
+
+<span class="hljs-comment">// 在从库中的一个上执行语句</span>
+<span class="hljs-variable">$rows</span> = Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;createCommand(<span class="hljs-string">'SELECT * FROM user LIMIT 10'</span>)-&gt;queryAll();
+
+<span class="hljs-comment">// 在主库上执行语句</span>
+Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;createCommand(<span class="hljs-string">"UPDATE user SET username='demo' WHERE id=1"</span>)-&gt;execute();
+</code></pre>
+<blockquote class="info"><p><strong>信息： </strong>通过调用 <a href="./yii-db-command.html#execute()-detail">yii\db\Command::execute()</a> 来执行的语句都被视为写操作，
+  而其他所有通过调用 <a href="./yii-db-command.html">yii\db\Command</a> 中任一 "query" 方法来执行的语句都被视为读操作。
+  你可以通过 <code>Yii::$app-&gt;db-&gt;slave</code> 来获取当前有效的从库连接。</p>
+</blockquote>
+<p><code>Connection</code> 组件支持从库间的负载均衡和失效备援，
+当第一次执行读操作时，<code>Connection</code> 组件将随机地挑选出一个从库并尝试与之建立连接，
+如果这个从库被发现为”挂掉的“，将尝试连接另一个从库。
+如果没有一个从库是连接得上的，那么将试着连接到主库上。
+通过配置 <a href="./yii-db-connection.html#$serverStatusCache-detail">server status cache</a>，
+一个“挂掉的”服务器将会被记住，因此，在一个 yii\db\Connection::serverRetryInterval 内将不再试着连接该服务器。</p>
+<blockquote class="info"><p><strong>信息： </strong>在上面的配置中，
+  每个从库都共同地指定了 10 秒的连接超时时间，这意味着，如果一个从库在 10 秒内不能被连接上，它将被视为“挂掉的”。
+  你可以根据你的实际环境来调整该参数。</p>
+</blockquote>
+<p>你也可以配置多主多从。例如，</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\db\Connection'</span>,
+
+    <span class="hljs-comment">// 主库通用的配置</span>
+    <span class="hljs-string">'masterConfig'</span> =&gt; [
+        <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'master'</span>,
+        <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">''</span>,
+        <span class="hljs-string">'attributes'</span> =&gt; [
+            <span class="hljs-comment">// use a smaller connection timeout</span>
+            PDO::ATTR_TIMEOUT =&gt; <span class="hljs-number">10</span>,
+        ],
+    ],
+
+    <span class="hljs-comment">// 主库配置列表</span>
+    <span class="hljs-string">'masters'</span> =&gt; [
+        [<span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'dsn for master server 1'</span>],
+        [<span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'dsn for master server 2'</span>],
+    ],
+
+    <span class="hljs-comment">// 从库的通用配置</span>
+    <span class="hljs-string">'slaveConfig'</span> =&gt; [
+        <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'slave'</span>,
+        <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">''</span>,
+        <span class="hljs-string">'attributes'</span> =&gt; [
+            <span class="hljs-comment">// use a smaller connection timeout</span>
+            PDO::ATTR_TIMEOUT =&gt; <span class="hljs-number">10</span>,
+        ],
+    ],
+
+    <span class="hljs-comment">// 从库配置列表</span>
+    <span class="hljs-string">'slaves'</span> =&gt; [
+        [<span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'dsn for slave server 1'</span>],
+        [<span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'dsn for slave server 2'</span>],
+        [<span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'dsn for slave server 3'</span>],
+        [<span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'dsn for slave server 4'</span>],
+    ],
+]
+</code></pre>
+<p>上述配置指定了两个主库和两个从库。 
+<code>Connection</code> 组件在主库之间，也支持如从库间般的负载均衡和失效备援。
+唯一的差别是，如果没有主库可用，将抛出一个异常。</p>
+<blockquote class="note"><p><strong>注意： </strong>当你使用 <a href="./yii-db-connection.html#$masters-detail">masters</a> 属性来配置一个或多个主库时，
+  所有其他指定数据库连接的属性 (例如 <code>dsn</code>, <code>username</code>, <code>password</code>) 
+  与 <code>Connection</code> 对象本身将被忽略。</p>
+</blockquote>
+<p>默认情况下，事务使用主库连接，
+一个事务内，所有的数据库操作都将使用主库连接，例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$db</span> = Yii::<span class="hljs-variable">$app</span>-&gt;db;
+<span class="hljs-comment">// 在主库上启动事务</span>
+<span class="hljs-variable">$transaction</span> = <span class="hljs-variable">$db</span>-&gt;beginTransaction();
+
+<span class="hljs-keyword">try</span> {
+    <span class="hljs-comment">// 两个语句都是在主库上执行的</span>
+    <span class="hljs-variable">$rows</span> = <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-string">'SELECT * FROM user LIMIT 10'</span>)-&gt;queryAll();
+    <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-string">"UPDATE user SET username='demo' WHERE id=1"</span>)-&gt;execute();
+
+    <span class="hljs-variable">$transaction</span>-&gt;commit();
+} <span class="hljs-keyword">catch</span>(\<span class="hljs-keyword">Exception</span> <span class="hljs-variable">$e</span>) {
+    <span class="hljs-variable">$transaction</span>-&gt;rollBack();
+    <span class="hljs-keyword">throw</span> <span class="hljs-variable">$e</span>;
+} <span class="hljs-keyword">catch</span>(\Throwable <span class="hljs-variable">$e</span>) {
+    <span class="hljs-variable">$transaction</span>-&gt;rollBack();
+    <span class="hljs-keyword">throw</span> <span class="hljs-variable">$e</span>;
+}
+</code></pre>
+<p>如果你想在从库上开启事务，你应该明确地像下面这样做：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$transaction</span> = Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;slave-&gt;beginTransaction();
+</code></pre>
+<p>有时，你或许想要强制使用主库来执行读查询。
+这可以通过 <code>useMaster()</code> 方法来完成：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$rows</span> = Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;useMaster(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$db</span>)</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-string">'SELECT * FROM user LIMIT 10'</span>)-&gt;queryAll();
+});
+</code></pre>
+<p>你也可以明确地将 <code>Yii::$app-&gt;db-&gt;enableSlaves</code> 设置为 false 来将所有的读操作指向主库连接。</p>
+<h2>操纵数据库模式（Working with Database Schema）  <span id="database-schema"></span><a href="#database-schema" class="hashlink">&para;</a></h2><p>Yii DAO 提供了一套完整的方法来让你操纵数据库模式，
+如创建表、从表中删除一列，等等。这些方法罗列如下：</p>
+<ul>
+<li><a href="./yii-db-command.html#createTable()-detail">createTable()</a>：创建一张表</li>
+<li><a href="./yii-db-command.html#renameTable()-detail">renameTable()</a>：重命名一张表</li>
+<li><a href="./yii-db-command.html#dropTable()-detail">dropTable()</a>：删除一张表</li>
+<li><a href="./yii-db-command.html#truncateTable()-detail">truncateTable()</a>：删除一张表中的所有行</li>
+<li><a href="./yii-db-command.html#addColumn()-detail">addColumn()</a>：增加一列</li>
+<li><a href="./yii-db-command.html#renameColumn()-detail">renameColumn()</a>：重命名一列</li>
+<li><a href="./yii-db-command.html#dropColumn()-detail">dropColumn()</a>：删除一列</li>
+<li><a href="./yii-db-command.html#alterColumn()-detail">alterColumn()</a>：修改一列</li>
+<li><a href="./yii-db-command.html#addPrimaryKey()-detail">addPrimaryKey()</a>：增加主键</li>
+<li><a href="./yii-db-command.html#dropPrimaryKey()-detail">dropPrimaryKey()</a>：删除主键</li>
+<li><a href="./yii-db-command.html#addForeignKey()-detail">addForeignKey()</a>：增加一个外键</li>
+<li><a href="./yii-db-command.html#dropForeignKey()-detail">dropForeignKey()</a>：删除一个外键</li>
+<li><a href="./yii-db-command.html#createIndex()-detail">createIndex()</a>：增加一个索引</li>
+<li><a href="./yii-db-command.html#dropIndex()-detail">dropIndex()</a>：删除一个索引</li>
+</ul>
+<p>这些方法可以如下地使用：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// CREATE TABLE</span>
+Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;createCommand()-&gt;createTable(<span class="hljs-string">'post'</span>, [
+    <span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'pk'</span>,
+    <span class="hljs-string">'title'</span> =&gt; <span class="hljs-string">'string'</span>,
+    <span class="hljs-string">'text'</span> =&gt; <span class="hljs-string">'text'</span>,
+]);
+</code></pre>
+<p>上面的数组描述要创建的列的名称和类型。
+对于列的类型， Yii 提供了一套抽象数据类型来允许你定义出数据库无关的模式。
+这些将根据表所在数据库的种类，被转换为特定的类型定义。
+请参考 <a href="./yii-db-command.html#createTable()-detail">createTable()</a>-method 的 API 文档来获取更多信息。</p>
+<p>除了改变数据库模式，
+你也可以通过 DB Connection 的 <a href="./yii-db-connection.html#getTableSchema()-detail">getTableSchema()</a> 方法来检索某张表的定义信息。例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$table</span> = Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;getTableSchema(<span class="hljs-string">'post'</span>);
+</code></pre>
+<p>该方法返回一个 <a href="./yii-db-tableschema.html">yii\db\TableSchema</a> 对象，
+它包含了表中的列、主键、外键，等等的信息。
+所有的这些信息主要被 <a href="guide-db-query-builder.html">query builder</a> 和 <a href="guide-db-active-record.html">active record</a> 所使用，来帮助你写出数据库无关的代码。</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

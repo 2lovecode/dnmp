@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>活动记录（Active Record） - 配合数据库工作（Working with Databases） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w111" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w111-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w111-collapse" class="collapse navbar-collapse"><ul id="w112" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w113" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-95" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-95" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-96" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-96" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-97" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-97" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-98" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-98" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-99" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-99" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item active" href="#navigation-100" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-100" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item active" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-zh-CN/README.md">Sphinx</a>
+<a class="list-group-item" href="./guide-yii2-redis.html">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-zh-CN/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-zh-CN/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-101" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-101" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-102" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-102" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-103" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-103" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-104" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-104" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-105" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-105" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-106" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-106" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-107" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-107" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-108" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-108" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-109" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-109" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-110" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-110" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>活动记录（Active Record） <span id="huo-dong-ji-lu-active-record"></span><a href="#huo-dong-ji-lu-active-record" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#declaring-ar-classes">声明 Active Record 类（Declaring Active Record Classes）</a></li>
+<li><a href="#db-connection">建立数据库连接（Connecting to Databases）</a></li>
+<li><a href="#querying-data">查询数据（Querying Data）</a></li>
+<li><a href="#accessing-data">访问数据（Accessing Data）</a></li>
+<li><a href="#inserting-updating-data">保存数据（Saving Data）</a></li>
+<li><a href="#deleting-data">删除数据（Deleting Data）</a></li>
+<li><a href="#ar-life-cycles">Active Record 的生命周期（Active Record Life Cycles）</a></li>
+<li><a href="#transactional-operations">事务操作（Working with Transactions）</a></li>
+<li><a href="#optimistic-locks">乐观锁（Optimistic Locks）</a></li>
+<li><a href="#relational-data">使用关联数据（Working with Relational Data）</a></li>
+<li><a href="#saving-relations">保存关联数据（Saving Relations）</a></li>
+<li><a href="#cross-database-relations">跨数据库关联（Cross-Database Relations）</a></li>
+<li><a href="#customizing-query-classes">自定义查询类（Customizing Query Classes）</a></li>
+<li><a href="#xuan-ze-e-wai-de-zi-duan-selecting-extra-fields">选择额外的字段（Selecting extra fields）</a></li></ol></div>
+<p><a href="http://zh.wikipedia.org/wiki/Active_Record">Active Record</a> 提供了一个面向对象的接口，
+用以访问和操作数据库中的数据。Active Record 类与数据库表关联，
+Active Record 实例对应于该表的一行，
+Active Record 实例的<em>属性</em>表示该行中特定列的值。
+您可以访问 Active Record 属性并调用 Active Record 方法来访问和操作存储在数据库表中的数据，
+而不用编写原始 SQL 语句。</p>
+<p>例如，假定 <code>Customer</code> Active Record 类关联着 <code>customer</code> 表，
+且该类的 <code>name</code> 属性代表 <code>customer</code> 表的 <code>name</code> 列。
+你可以写以下代码来哉 <code>customer</code> 表里插入一行新的记录：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$customer</span> = <span class="hljs-keyword">new</span> Customer();
+<span class="hljs-variable">$customer</span>-&gt;name = <span class="hljs-string">'Qiang'</span>;
+<span class="hljs-variable">$customer</span>-&gt;save();
+</code></pre>
+<p>对于 MySQL，上面的代码和使用下面的原生 SQL 语句是等效的，但显然前者更直观，
+更不易出错，并且面对不同的数据库系统（DBMS, Database Management System）时更不容易产生兼容性问题。</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-string">'INSERT INTO `customer` (`name`) VALUES (:name)'</span>, [
+    <span class="hljs-string">':name'</span> =&gt; <span class="hljs-string">'Qiang'</span>,
+])-&gt;execute();
+</code></pre>
+<p>Yii 为以下关系数据库提供 Active Record 支持：</p>
+<ul>
+<li>MySQL 4.1 及以上：通过 <a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a> 支持</li>
+<li>PostgreSQL 7.3 及以上：通过 <a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a> 支持</li>
+<li>SQLite 2 and 3：通过 <a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a> 支持</li>
+<li>Microsoft SQL Server 2008 及以上：通过 <a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a> 支持</li>
+<li>Oracle：通过 <a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a> 支持</li>
+<li>CUBRID 9.3 及以上：通过 <a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a> 支持 (提示， 由于 CUBRID PDO 扩展的 <a href="http://jira.cubrid.org/browse/APIS-658">bug</a>，
+给变量加引用将不起作用，所以你得使用 CUBRID 9.3 客户端及服务端。</li>
+<li>Sphinx：通过 <a href="./yii-sphinx-activerecord.html">yii\sphinx\ActiveRecord</a> 支持，依赖 <code>yii2-sphinx</code> 扩展</li>
+<li>ElasticSearch：通过 <a href="./yii-elasticsearch-activerecord.html">yii\elasticsearch\ActiveRecord</a> 支持, 依赖 <code>yii2-elasticsearch</code> 扩展</li>
+</ul>
+<p>此外，Yii 的 Active Record 功能还支持以下 NoSQL 数据库：</p>
+<ul>
+<li>Redis 2.6.12 及以上：通过 <a href="./yii-redis-activerecord.html">yii\redis\ActiveRecord</a> 支持，依赖 <code>yii2-redis</code> 扩展</li>
+<li>MongoDB 1.3.0 及以上：通过 <a href="./yii-mongodb-activerecord.html">yii\mongodb\ActiveRecord</a> 支持，依赖 <code>yii2-mongodb</code> 扩展</li>
+</ul>
+<p>在本教程中，我们会主要描述对关系型数据库的 Active Record 用法。
+然而，绝大多数的内容在 NoSQL 的 Active Record 里同样适用。</p>
+<h2>声明 Active Record 类（Declaring Active Record Classes）  <span id="declaring-ar-classes"></span><a href="#declaring-ar-classes" class="hashlink">&para;</a></h2><p>要想声明一个 Active Record 类，你需要声明该类继承 <a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a>。</p>
+<h3>设置表的名称（Setting a table name） <span id="she-zhi-biao-de-ming-cheng-setting-a-table-name"></span><a href="#she-zhi-biao-de-ming-cheng-setting-a-table-name" class="hashlink">&para;</a></h3><p>默认的，每个 Active Record 类关联各自的数据库表。
+经过 <a href="./yii-helpers-baseinflector.html#camel2id()-detail">yii\helpers\Inflector::camel2id()</a> 处理，<a href="./yii-db-activerecord.html#tableName()-detail">tableName()</a> 方法默认返回的表名称是通过类名转换来得。 
+如果这个默认名称不正确，你得重写这个方法。</p>
+<p>此外，<a href="./yii-db-connection.html#$tablePrefix-detail">tablePrefix</a> 表前缀也会起作用。例如，如果
+<a href="./yii-db-connection.html#$tablePrefix-detail">tablePrefix</a> 表前缀是 <code>tbl_</code>，<code>Customer</code> 的类名将转换成 <code>tbl_customer</code> 表名，<code>OrderItem</code> 转换成 <code>tbl_order_item</code>。</p>
+<p>如果你定义的表名是 <code>{{%TableName}}</code>，百分比字符 <code>%</code> 会被替换成表前缀。
+例如，<code>{{%post}}</code> 会变成 <code>{{tbl_post}}</code>。表名两边的括号会被 <a href="guide-db-dao.html#quoting-table-and-column-names">SQL 查询引用</a> 处理。</p>
+<p>下面的例子中，我们给 <code>customer</code> 数据库表定义叫 <code>Customer</code> 的 Active Record 类。</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">const</span> STATUS_INACTIVE = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">const</span> STATUS_ACTIVE = <span class="hljs-number">1</span>;
+    
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@return</span> string Active Record 类关联的数据库表名称
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">tableName</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'{{customer}}'</span>;
+    }
+}
+</code></pre>
+<h3>将 Active Record 称为模型（Active records are called "models"） <span id="jiang-active-record-cheng-wei-mo-xing-active-records-are-called-models"></span><a href="#jiang-active-record-cheng-wei-mo-xing-active-records-are-called-models" class="hashlink">&para;</a></h3><p>Active Record 实例称为<a href="guide-structure-models.html">模型</a>。因此, 我们通常将 Active Record 类
+放在 <code>app\models</code> 命名空间下（或者其他保存模型的命名空间）。</p>
+<p>因为 <a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a> 继承了模型 <a href="./yii-base-model.html">yii\base\Model</a>，它就拥有所有<a href="guide-structure-models.html">模型</a>特性，
+比如说属性（attributes），验证规则（rules），数据序列化（data serialization），等等。</p>
+<h2>建立数据库连接（Connecting to Databases）  <span id="db-connection"></span><a href="#db-connection" class="hashlink">&para;</a></h2><p>活动记录 Active Record 默认使用 <code>db</code> <a href="guide-structure-application-components.html">组件</a> 
+作为连接器 <a href="./yii-db-connection.html">DB connection</a> 访问和操作数据库数据。 
+基于<a href="guide-db-dao.html">数据库访问</a>中的解释，你可以在系统配置中
+这样配置 <code>db</code> 组件。</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'db'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\db\Connection'</span>,
+            <span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'mysql:host=localhost;dbname=testdb'</span>,
+            <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'demo'</span>,
+            <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">'demo'</span>,
+        ],
+    ],
+];
+</code></pre>
+<p>如果你要用不同的数据库连接，而不仅仅是 <code>db</code> 组件，
+你可以重写 <a href="./yii-db-activerecord.html#getDb()-detail">getDb()</a> 方法。</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getDb</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-comment">// 使用 "db2" 组件</span>
+        <span class="hljs-keyword">return</span> \Yii::<span class="hljs-variable">$app</span>-&gt;db2;  
+    }
+}
+</code></pre>
+<h2>查询数据（Querying Data）  <span id="querying-data"></span><a href="#querying-data" class="hashlink">&para;</a></h2><p>定义 Active Record 类后，你可以从相应的数据库表中查询数据。
+查询过程大致如下三个步骤：</p>
+<ol>
+<li>通过 <a href="./yii-db-activerecord.html#find()-detail">yii\db\ActiveRecord::find()</a> 方法创建一个新的查询生成器对象；</li>
+<li>使用<a href="guide-db-query-builder.html#building-queries">查询生成器的构建方法</a>来构建你的查询；</li>
+<li>调用<a href="guide-db-query-builder.html#query-methods">查询生成器的查询方法</a>来取出数据到 Active Record 实例中。</li>
+</ol>
+<p>正如你看到的，是不是跟<a href="guide-db-query-builder.html">查询生成器</a>的步骤差不多。
+唯一有区别的地方在于你用 <a href="./yii-db-activerecord.html#find()-detail">yii\db\ActiveRecord::find()</a> 去获得一个新的查询生成器对象，这个对象是 <a href="./yii-db-activequery.html">yii\db\ActiveQuery</a>，
+而不是使用 <code>new</code> 操作符创建一个查询生成器对象。</p>
+<p>下面是一些例子，介绍如何使用 Active Query 查询数据：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 返回 ID 为 123 的客户：</span>
+<span class="hljs-comment">// SELECT * FROM `customer` WHERE `id` = 123</span>
+<span class="hljs-variable">$customer</span> = Customer::find()
+    -&gt;where([<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">123</span>])
+    -&gt;one();
+
+<span class="hljs-comment">// 取回所有活跃客户并以他们的 ID 排序：</span>
+<span class="hljs-comment">// SELECT * FROM `customer` WHERE `status` = 1 ORDER BY `id`</span>
+<span class="hljs-variable">$customers</span> = Customer::find()
+    -&gt;where([<span class="hljs-string">'status'</span> =&gt; Customer::STATUS_ACTIVE])
+    -&gt;orderBy(<span class="hljs-string">'id'</span>)
+    -&gt;all();
+
+<span class="hljs-comment">// 取回活跃客户的数量：</span>
+<span class="hljs-comment">// SELECT COUNT(*) FROM `customer` WHERE `status` = 1</span>
+<span class="hljs-variable">$count</span> = Customer::find()
+    -&gt;where([<span class="hljs-string">'status'</span> =&gt; Customer::STATUS_ACTIVE])
+    -&gt;count();
+
+<span class="hljs-comment">// 以客户 ID 索引结果集：</span>
+<span class="hljs-comment">// SELECT * FROM `customer`</span>
+<span class="hljs-variable">$customers</span> = Customer::find()
+    -&gt;indexBy(<span class="hljs-string">'id'</span>)
+    -&gt;all();
+</code></pre>
+<p>上述代码中，<code>$customer</code> 是个 <code>Customer</code> 对象，而 <code>$customers</code> 是个以 <code>Customer</code> 对象为元素的数组。
+它们两都是以 <code>customer</code> 表中取回的数据结果集填充的。</p>
+<blockquote class="tip"><p><strong>提示： </strong>由于 <a href="./yii-db-activequery.html">yii\db\ActiveQuery</a> 继承 <a href="./yii-db-query.html">yii\db\Query</a>，
+  你可以使用 <a href="guide-db-query-builder.html">Query Builder</a> 章节里所描述的<em>所有</em>查询方法。</p>
+</blockquote>
+<p>根据主键获取数据行是比较常见的操作，所以 Yii 
+提供了两个快捷方法：</p>
+<ul>
+<li><a href="./yii-db-baseactiverecord.html#findOne()-detail">yii\db\ActiveRecord::findOne()</a>：返回一个 Active Record 实例，填充于查询结果的第一行数据。</li>
+<li><a href="./yii-db-baseactiverecord.html#findAll()-detail">yii\db\ActiveRecord::findAll()</a>：返回一个 Active Record 实例的数据，填充于查询结果的全部数据。</li>
+</ul>
+<p>这两个方法的传参格式如下：</p>
+<ul>
+<li>标量值：这个值会当作主键去查询。
+Yii 会通过读取数据库模式信息来识别主键列。</li>
+<li>标量值的数组：这数组里的值都当作要查询的主键的值。</li>
+<li>关联数组：键值是表的列名，元素值是相应的要查询的条件值。
+可以到 <a href="guide-db-query-builder.html#hash-format">哈希格式</a> 查看更多信息。</li>
+</ul>
+<p>如下代码描述如何使用这些方法：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 返回 id 为 123 的客户 </span>
+<span class="hljs-comment">// SELECT * FROM `customer` WHERE `id` = 123</span>
+<span class="hljs-variable">$customer</span> = Customer::findOne(<span class="hljs-number">123</span>);
+
+<span class="hljs-comment">// 返回 id 是 100, 101, 123, 124 的客户</span>
+<span class="hljs-comment">// SELECT * FROM `customer` WHERE `id` IN (100, 101, 123, 124)</span>
+<span class="hljs-variable">$customers</span> = Customer::findAll([<span class="hljs-number">100</span>, <span class="hljs-number">101</span>, <span class="hljs-number">123</span>, <span class="hljs-number">124</span>]);
+
+<span class="hljs-comment">// 返回 id 是 123 的活跃客户</span>
+<span class="hljs-comment">// SELECT * FROM `customer` WHERE `id` = 123 AND `status` = 1</span>
+<span class="hljs-variable">$customer</span> = Customer::findOne([
+    <span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">123</span>,
+    <span class="hljs-string">'status'</span> =&gt; Customer::STATUS_ACTIVE,
+]);
+
+<span class="hljs-comment">// 返回所有不活跃的客户</span>
+<span class="hljs-comment">// SELECT * FROM `customer` WHERE `status` = 0</span>
+<span class="hljs-variable">$customers</span> = Customer::findAll([
+    <span class="hljs-string">'status'</span> =&gt; Customer::STATUS_INACTIVE,
+]);
+</code></pre>
+<blockquote class="warning"><p><strong>警告： </strong>如果你需要将用户输入传递给这些方法，请确保输入值是标量或者是
+数组条件，确保数组结构不能被外部所改变：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// yii\web\Controller 确保了 $id 是标量</span>
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionView</span><span class="hljs-params">(<span class="hljs-variable">$id</span>)</span>
+</span>{
+    <span class="hljs-variable">$model</span> = Post::findOne(<span class="hljs-variable">$id</span>);
+    <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-comment">// 明确了指定要搜索的列，在此处传递标量或数组将始终只是查找出单个记录而已</span>
+<span class="hljs-variable">$model</span> = Post::findOne([<span class="hljs-string">'id'</span> =&gt; Yii::<span class="hljs-variable">$app</span>-&gt;request-&gt;get(<span class="hljs-string">'id'</span>)]);
+
+<span class="hljs-comment">// 不要使用下面的代码！可以注入一个数组条件来匹配任意列的值！</span>
+<span class="hljs-variable">$model</span> = Post::findOne(Yii::<span class="hljs-variable">$app</span>-&gt;request-&gt;get(<span class="hljs-string">'id'</span>));
+</code></pre>
+</blockquote>
+<blockquote class="tip"><p><strong>提示： </strong><a href="./yii-db-baseactiverecord.html#findOne()-detail">yii\db\ActiveRecord::findOne()</a> 和 <a href="./yii-db-activequery.html#one()-detail">yii\db\ActiveQuery::one()</a> 都不会添加 <code>LIMIT 1</code> 到
+  生成的 SQL 语句中。如果你的查询会返回很多行的数据，
+  你明确的应该加上 <code>limit(1)</code> 来提高性能，比如 <code>Customer::find()-&gt;limit(1)-&gt;one()</code>。</p>
+</blockquote>
+<p>除了使用查询生成器的方法之外，你还可以书写原生的 SQL 语句来查询数据，并填充结果集到 Active Record 对象中。
+通过使用 <a href="./yii-db-activerecord.html#findBySql()-detail">yii\db\ActiveRecord::findBySql()</a> 方法:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 返回所有不活跃的客户</span>
+<span class="hljs-variable">$sql</span> = <span class="hljs-string">'SELECT * FROM customer WHERE status=:status'</span>;
+<span class="hljs-variable">$customers</span> = Customer::findBySql(<span class="hljs-variable">$sql</span>, [<span class="hljs-string">':status'</span> =&gt; Customer::STATUS_INACTIVE])-&gt;all();
+</code></pre>
+<p>不要在 <a href="./yii-db-activerecord.html#findBySql()-detail">findBySql()</a> 方法后加其他查询方法了，
+多余的查询方法都会被忽略。</p>
+<h2>访问数据（Accessing Data）  <span id="accessing-data"></span><a href="#accessing-data" class="hashlink">&para;</a></h2><p>如上所述，从数据库返回的数据被填充到 Active Record 实例中，
+查询结果的每一行对应于单个 Active Record 实例。
+您可以通过 Active Record 实例的属性来访问列值，例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// "id" 和 "email" 是 "customer" 表中的列名</span>
+<span class="hljs-variable">$customer</span> = Customer::findOne(<span class="hljs-number">123</span>);
+<span class="hljs-variable">$id</span> = <span class="hljs-variable">$customer</span>-&gt;id;
+<span class="hljs-variable">$email</span> = <span class="hljs-variable">$customer</span>-&gt;email;
+</code></pre>
+<blockquote class="tip"><p><strong>提示： </strong>Active Record 的属性以区分大小写的方式为相关联的表列命名的。
+  Yii 会自动为关联表的每一列定义 Active Record 中的一个属性。
+  您不应该重新声明任何属性。</p>
+</blockquote>
+<p>由于 Active Record 的属性以表的列名命名，可能你会发现你正在编写像这样的 PHP 代码：
+<code>$customer-&gt;first_name</code>，如果你的表的列名是使用下划线分隔的，那么属性名中的单词
+以这种方式命名。 如果您担心代码风格一致性的问题，那么你应当重命名相应的表列名
+（例如使用骆驼拼写法）。</p>
+<h3>数据转换（Data Transformation）  <span id="data-transformation"></span><a href="#data-transformation" class="hashlink">&para;</a></h3><p>常常遇到，要输入或显示的数据是一种格式，而要将其存储在数据库中是另一种格式。
+例如，在数据库中，您将客户的生日存储为 UNIX 时间戳（虽然这不是一个很好的设计），
+而在大多数情况下，你想以字符串 <code>'YYYY/MM/DD'</code> 的格式处理生日数据。
+为了实现这一目标，您可以在 <code>Customer</code> 中定义 <em>数据转换</em> 方法
+定义 Active Record 类如下：</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getBirthdayText</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> date(<span class="hljs-string">'Y/m/d'</span>, <span class="hljs-variable">$this</span>-&gt;birthday);
+    }
+    
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setBirthdayText</span><span class="hljs-params">(<span class="hljs-variable">$value</span>)</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;birthday = strtotime(<span class="hljs-variable">$value</span>);
+    }
+}
+</code></pre>
+<p>现在你的 PHP 代码中，你可以访问 <code>$customer-&gt;birthdayText</code>，
+来以 <code>'YYYY/MM/DD'</code> 的格式输入和显示客户生日，而不是访问 <code>$customer-&gt;birthday</code>。</p>
+<blockquote class="tip"><p><strong>提示： </strong>上述示例显示了以不同格式转换数据的通用方法。如果你正在使用
+日期值，您可以使用 <a href="guide-tutorial-core-validators.html#date">DateValidator</a> 和 <a href="./yii-jui-datepicker.html">DatePicker</a> 来操作，
+这将更易用，更强大。</p>
+</blockquote>
+<h3>以数组形式获取数据（Retrieving Data in Arrays）  <span id="data-in-arrays"></span><a href="#data-in-arrays" class="hashlink">&para;</a></h3><p>通过 Active Record 对象获取数据十分方便灵活，与此同时，当你需要返回大量的数据的时候，
+这样的做法并不令人满意，因为这将导致大量内存占用。在这种情况下，您可以
+在查询方法前调用 <a href="./yii-db-activequerytrait.html#asArray()-detail">asArray()</a> 方法，来获取 PHP 数组形式的结果：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 返回所有客户</span>
+<span class="hljs-comment">// 每个客户返回一个关联数组</span>
+<span class="hljs-variable">$customers</span> = Customer::find()
+    -&gt;asArray()
+    -&gt;all();
+</code></pre>
+<blockquote class="tip"><p><strong>提示： </strong>虽然这种方法可以节省内存并提高性能，但它更靠近较低的 DB 抽象层
+  你将失去大部分的 Active Record 提供的功能。 一个非常重要的区别在于列值的数据类型。
+  当您在 Active Record 实例中返回数据时，列值将根据实际列类型，自动类型转换；
+  然而，当您以数组返回数据时，列值将为
+  字符串（因为它们是没有处理过的 PDO 的结果），不管它们的实际列是什么类型。</p>
+</blockquote>
+<h3>批量获取数据（Retrieving Data in Batches）  <span id="data-in-batches"></span><a href="#data-in-batches" class="hashlink">&para;</a></h3><p>在 <a href="guide-db-query-builder.html">查询生成器</a> 中，我们已经解释说可以使用 <em>批处理查询</em> 来最小化你的内存使用，
+每当从数据库查询大量数据。你可以在 Active Record 中使用同样的技巧。例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 每次获取 10 条客户数据</span>
+<span class="hljs-keyword">foreach</span> (Customer::find()-&gt;batch(<span class="hljs-number">10</span>) <span class="hljs-keyword">as</span> <span class="hljs-variable">$customers</span>) {
+    <span class="hljs-comment">// $customers 是个最多拥有 10 条数据的数组</span>
+}
+
+<span class="hljs-comment">// 每次获取 10 条客户数据，然后一条一条迭代它们</span>
+<span class="hljs-keyword">foreach</span> (Customer::find()-&gt;each(<span class="hljs-number">10</span>) <span class="hljs-keyword">as</span> <span class="hljs-variable">$customer</span>) {
+    <span class="hljs-comment">// $customer 是个 `Customer` 对象</span>
+}
+
+<span class="hljs-comment">// 贪婪加载模式的批处理查询</span>
+<span class="hljs-keyword">foreach</span> (Customer::find()-&gt;with(<span class="hljs-string">'orders'</span>)-&gt;each() <span class="hljs-keyword">as</span> <span class="hljs-variable">$customer</span>) {
+    <span class="hljs-comment">// $customer 是个 `Customer` 对象，并附带关联的 `'orders'`</span>
+}
+</code></pre>
+<h2>保存数据（Saving Data）  <span id="inserting-updating-data"></span><a href="#inserting-updating-data" class="hashlink">&para;</a></h2><p>使用 Active Record，您可以通过以下步骤轻松地将数据保存到数据库：</p>
+<ol>
+<li>准备一个 Active Record 实例</li>
+<li>将新值赋给 Active Record 的属性</li>
+<li>调用 <a href="./yii-db-baseactiverecord.html#save()-detail">yii\db\ActiveRecord::save()</a> 保存数据到数据库中。</li>
+</ol>
+<p>例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 插入新记录</span>
+<span class="hljs-variable">$customer</span> = <span class="hljs-keyword">new</span> Customer();
+<span class="hljs-variable">$customer</span>-&gt;name = <span class="hljs-string">'James'</span>;
+<span class="hljs-variable">$customer</span>-&gt;email = <span class="hljs-string">'james@example.com'</span>;
+<span class="hljs-variable">$customer</span>-&gt;save();
+
+<span class="hljs-comment">// 更新已存在的记录</span>
+<span class="hljs-variable">$customer</span> = Customer::findOne(<span class="hljs-number">123</span>);
+<span class="hljs-variable">$customer</span>-&gt;email = <span class="hljs-string">'james@newexample.com'</span>;
+<span class="hljs-variable">$customer</span>-&gt;save();
+</code></pre>
+<p><a href="./yii-db-baseactiverecord.html#save()-detail">save()</a> 方法可能插入或者更新表的记录，这取决于 Active Record 实例的状态。
+如果实例通过 <code>new</code> 操作符实例化，调用 <a href="./yii-db-baseactiverecord.html#save()-detail">save()</a> 方法将插入新记录；
+如果实例是一个查询方法的结果，调用 <a href="./yii-db-baseactiverecord.html#save()-detail">save()</a> 方法
+将更新这个实例对应的表记录行。</p>
+<p>你可以通过检查 Active Record 实例的 <a href="./yii-db-baseactiverecord.html#$isNewRecord-detail">isNewRecord</a> 属性值来区分这两个状态。
+此属性也被使用在 <a href="./yii-db-baseactiverecord.html#save()-detail">save()</a> 方法内部，
+代码如下：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">save</span><span class="hljs-params">(<span class="hljs-variable">$runValidation</span> = true, <span class="hljs-variable">$attributeNames</span> = null)</span>
+</span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$this</span>-&gt;getIsNewRecord()) {
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;insert(<span class="hljs-variable">$runValidation</span>, <span class="hljs-variable">$attributeNames</span>);
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;update(<span class="hljs-variable">$runValidation</span>, <span class="hljs-variable">$attributeNames</span>) !== <span class="hljs-keyword">false</span>;
+    }
+}
+</code></pre>
+<blockquote class="tip"><p><strong>提示： </strong>你可以直接调用 <a href="./yii-db-activerecord.html#insert()-detail">insert()</a> 或者 <a href="./yii-db-activerecord.html#update()-detail">update()</a>
+  方法来插入或更新一条记录。</p>
+</blockquote>
+<h3>数据验证（Data Validation）  <span id="data-validation"></span><a href="#data-validation" class="hashlink">&para;</a></h3><p>因为 <a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a> 继承于 <a href="./yii-base-model.html">yii\base\Model</a>，它共享相同的 <a href="guide-input-validation.html">输入验证</a> 功能。
+你可以通过重写 <a href="./yii-base-model.html#rules()-detail">rules()</a> 方法声明验证规则并执行，
+通过调用 <a href="./yii-base-model.html#validate()-detail">validate()</a> 方法进行数据验证。</p>
+<p>当你调用 <a href="./yii-db-baseactiverecord.html#save()-detail">save()</a> 时，默认情况下会自动调用 <a href="./yii-base-model.html#validate()-detail">validate()</a>。
+只有当验证通过时，它才会真正地保存数据; 否则将简单地返回 <code>false</code>，
+您可以检查 <a href="./yii-base-model.html#$errors-detail">errors</a> 属性来获取验证过程的错误消息。</p>
+<blockquote class="tip"><p><strong>提示： </strong>如果你确定你的数据不需要验证（比如说数据来自可信的场景），
+  你可以调用 <code>save(false)</code> 来跳过验证过程。</p>
+</blockquote>
+<h3>块赋值（Massive Assignment）  <span id="massive-assignment"></span><a href="#massive-assignment" class="hashlink">&para;</a></h3><p>和普通的 <a href="guide-structure-models.html">模型</a> 一样，你亦可以享受 Active Record 实例的 <a href="guide-structure-models.html#massive-assignment">块赋值</a> 特性。
+使用此功能，您可以在单个 PHP 语句中，给 Active Record 实例的多个属性批量赋值，
+如下所示。 记住，只有 <a href="guide-structure-models.html#safe-attributes">安全属性</a> 才可以批量赋值。</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$values</span> = [
+    <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'James'</span>,
+    <span class="hljs-string">'email'</span> =&gt; <span class="hljs-string">'james@example.com'</span>,
+];
+
+<span class="hljs-variable">$customer</span> = <span class="hljs-keyword">new</span> Customer();
+
+<span class="hljs-variable">$customer</span>-&gt;attributes = <span class="hljs-variable">$values</span>;
+<span class="hljs-variable">$customer</span>-&gt;save();
+</code></pre>
+<h3>更新计数（Updating Counters）  <span id="updating-counters"></span><a href="#updating-counters" class="hashlink">&para;</a></h3><p>在数据库表中增加或减少一个字段的值是个常见的任务。我们将这些列称为“计数列”。
+您可以使用 <a href="./yii-db-baseactiverecord.html#updateCounters()-detail">updateCounters()</a> 更新一个或多个计数列。
+例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$post</span> = Post::findOne(<span class="hljs-number">100</span>);
+
+<span class="hljs-comment">// UPDATE `post` SET `view_count` = `view_count` + 1 WHERE `id` = 100</span>
+<span class="hljs-variable">$post</span>-&gt;updateCounters([<span class="hljs-string">'view_count'</span> =&gt; <span class="hljs-number">1</span>]);
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>如果你使用 <a href="./yii-db-baseactiverecord.html#save()-detail">yii\db\ActiveRecord::save()</a> 更新一个计数列，你最终将得到错误的结果，
+  因为可能发生这种情况，多个请求间并发读写同一个计数列。</p>
+</blockquote>
+<h3>脏属性（Dirty Attributes）  <span id="dirty-attributes"></span><a href="#dirty-attributes" class="hashlink">&para;</a></h3><p>当您调用 <a href="./yii-db-baseactiverecord.html#save()-detail">save()</a> 保存 Active Record 实例时，只有 <em>脏属性</em>
+被保存。如果一个属性的值已被修改，则会被认为是 <em>脏</em>，因为它是从 DB 加载出来的或者
+刚刚保存到 DB 。请注意，无论如何 Active Record 都会执行数据验证
+不管有没有脏属性。</p>
+<p>Active Record 自动维护脏属性列表。 它保存所有属性的旧值，
+并其与最新的属性值进行比较，就是酱紫个道理。你可以调用 <a href="./yii-db-baseactiverecord.html#getDirtyAttributes()-detail">yii\db\ActiveRecord::getDirtyAttributes()</a> 
+获取当前的脏属性。你也可以调用 <a href="./yii-db-baseactiverecord.html#markAttributeDirty()-detail">yii\db\ActiveRecord::markAttributeDirty()</a> 
+将属性显式标记为脏。</p>
+<p>如果你有需要获取属性原先的值，你可以调用
+<a href="./yii-db-baseactiverecord.html#getOldAttributes()-detail">getOldAttributes()</a> 或者 <a href="./yii-db-baseactiverecord.html#getOldAttribute()-detail">getOldAttribute()</a>。</p>
+<blockquote><p>注：属性新旧值的比较是用 <code>===</code> 操作符，所以一样的值但类型不同，
+依然被认为是脏的。当模型从 HTML 表单接收用户输入时，通常会出现这种情况，
+其中每个值都表示为一个字符串类型。
+为了确保正确的类型，比如，整型需要用<a href="guide-input-validation.html#data-filtering">过滤验证器</a>：
+<code>['attributeName', 'filter', 'filter' =&gt; 'intval']</code>。其他 PHP 类型转换函数一样适用，像
+<a href="https://secure.php.net/manual/en/function.intval.php">intval()</a>， <a href="https://secure.php.net/manual/en/function.floatval.php">floatval()</a>，
+<a href="https://secure.php.net/manual/en/function.boolval.php">boolval</a>，等等</p>
+</blockquote>
+<h3>默认属性值（Default Attribute Values）  <span id="default-attribute-values"></span><a href="#default-attribute-values" class="hashlink">&para;</a></h3><p>某些表列可能在数据库中定义了默认值。有时，你可能想预先填充
+具有这些默认值的 Active Record 实例的 Web 表单。 为了避免再次写入相同的默认值，
+您可以调用 <a href="./yii-db-activerecord.html#loadDefaultValues()-detail">loadDefaultValues()</a> 来填充 DB 定义的默认值
+进入相应的 Active Record 属性：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$customer</span> = <span class="hljs-keyword">new</span> Customer();
+<span class="hljs-variable">$customer</span>-&gt;loadDefaultValues();
+<span class="hljs-comment">// $customer-&gt;xyz 将被 “zyz” 列定义的默认值赋值</span>
+</code></pre>
+<h3>属性类型转换（Attributes Typecasting）  <span id="attributes-typecasting"></span><a href="#attributes-typecasting" class="hashlink">&para;</a></h3><p>在查询结果填充 <a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a> 时，将自动对其属性值执行类型转换，基于
+<a href="guide-db-dao.html#database-schema">数据库表模式</a> 中的信息。 这允许从数据表中获取数据，
+声明为整型的，使用 PHP 整型填充 ActiveRecord 实例，布尔值（boolean）的也用布尔值填充，等等。
+但是，类型转换机制有几个限制：</p>
+<ul>
+<li>浮点值不被转换，并且将被表示为字符串，否则它们可能会使精度降低。</li>
+<li>整型值的转换取决于您使用的操作系统的整数容量。尤其是：
+声明为“无符号整型”或“大整型”的列的值将仅转换为 64 位操作系统的 PHP 整型，
+而在 32 位操作系统中 - 它们将被表示为字符串。</li>
+</ul>
+<p>值得注意的是，只有在从查询结果填充 ActiveRecord 实例时才执行属性类型转换。
+而从 HTTP 请求加载的值或直接通过属性访问赋值的，没有自动转换。
+在准备用于在 ActiveRecord 保存时，准备 SQL 语句还使用了表模式，以确保查询时
+值绑定到具有正确类型的。但是，ActiveRecord 实例的属性值不会
+在保存过程中转换。</p>
+<blockquote class="tip"><p><strong>提示： </strong>你可以使用 <a href="./yii-behaviors-attributetypecastbehavior.html">yii\behaviors\AttributeTypecastBehavior</a> 来简化属性的类型转换
+  在 ActiveRecord 验证或者保存过程中。</p>
+</blockquote>
+<p>从 2.0.14 开始，Yii ActiveRecord 支持了更多的复杂数据类型，例如 JSON 或多维数组。</p>
+<h4>MySQL 和 PostgreSQL 中的 JSON（JSON in MySQL and PostgreSQL） <span id="mysql-he-postgresql-zhong-de-jsonjson-in-mysql-and-postgresql"></span><a href="#mysql-he-postgresql-zhong-de-jsonjson-in-mysql-and-postgresql" class="hashlink">&para;</a></h4><p>数据填充后，基于 JSON 标准解码规则，
+来自 JSON 列的值将自动解码。</p>
+<p>另一方面，为了将属性值保存到 JSON 列中，ActiveRecord 会自动创建一个 <a href="./yii-db-jsonexpression.html">JsonExpression</a> 对象，
+这对象将在 <a href="guide-db-query-builder.html">QueryBuilder</a> 层被编码成 JSON 字符串。</p>
+<h4>PostgreSQL 中的数组（Arrays in PostgreSQL） <span id="postgresql-zhong-de-shu-zu-arrays-in-postgresql"></span><a href="#postgresql-zhong-de-shu-zu-arrays-in-postgresql" class="hashlink">&para;</a></h4><p>数据填充后，来自 Array 列的值将自动从 PgSQL 的编码值解码为 一个 <a href="./yii-db-arrayexpression.html">ArrayExpression</a>
+对象。它继承于 PHP 的 <code>ArrayAccess</code> 接口，所以你可以把它当作一个数组用，或者调用 <code>-&gt;getValue()</code> 来获取数组本身。</p>
+<p>另一方面，为了将属性值保存到数组列，ActiveRecord 会自动创建一个 <a href="./yii-db-arrayexpression.html">ArrayExpression</a> 对象，
+这对象将在 <a href="guide-db-query-builder.html">QueryBuilder</a> 中被编码成数组的 PgSQL 字符串表达式。</p>
+<p>你还可以这样使用 JSON 列的条件：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$query</span>-&gt;andWhere([<span class="hljs-string">'='</span>, <span class="hljs-string">'json'</span>, <span class="hljs-keyword">new</span> ArrayExpression([<span class="hljs-string">'foo'</span> =&gt; <span class="hljs-string">'bar'</span>])
+</code></pre>
+<p>要详细了解表达式构建系统，可以访问 <a href="guide-db-query-builder.html#adding-custom-conditions-and-expressions">Query Builder – 增加自定义条件和语句</a>
+文章。</p>
+<h3>更新多个数据行（Updating Multiple Rows）  <span id="updating-multiple-rows"></span><a href="#updating-multiple-rows" class="hashlink">&para;</a></h3><p>上述方法都可以用于单个 Active Record 实例，以插入或更新单条
+表数据行。 要同时更新多个数据行，你应该调用 <a href="./yii-db-activerecord.html#updateAll()-detail">updateAll()</a>
+这是一个静态方法。</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// UPDATE `customer` SET `status` = 1 WHERE `email` LIKE `%@example.com%`</span>
+Customer::updateAll([<span class="hljs-string">'status'</span> =&gt; Customer::STATUS_ACTIVE], [<span class="hljs-string">'like'</span>, <span class="hljs-string">'email'</span>, <span class="hljs-string">'@example.com'</span>]);
+</code></pre>
+<p>同样，你可以调用 <a href="./yii-db-activerecord.html#updateAllCounters()-detail">updateAllCounters()</a> 同时更新多条记录的计数列。</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// UPDATE `customer` SET `age` = `age` + 1</span>
+Customer::updateAllCounters([<span class="hljs-string">'age'</span> =&gt; <span class="hljs-number">1</span>]);
+</code></pre>
+<h2>删除数据（Deleting Data）  <span id="deleting-data"></span><a href="#deleting-data" class="hashlink">&para;</a></h2><p>要删除单行数据，首先获取与该行对应的 Active Record 实例，然后调用
+<a href="./yii-db-activerecord.html#delete()-detail">yii\db\ActiveRecord::delete()</a> 方法。</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$customer</span> = Customer::findOne(<span class="hljs-number">123</span>);
+<span class="hljs-variable">$customer</span>-&gt;delete();
+</code></pre>
+<p>你可以调用 <a href="./yii-db-activerecord.html#deleteAll()-detail">yii\db\ActiveRecord::deleteAll()</a> 方法删除多行甚至全部的数据。例如，</p>
+<pre><code class="hljs php language-php">Customer::deleteAll([<span class="hljs-string">'status'</span> =&gt; Customer::STATUS_INACTIVE]);
+</code></pre>
+<blockquote class="tip"><p><strong>提示： </strong>调用 <a href="./yii-db-activerecord.html#deleteAll()-detail">deleteAll()</a> 时要非常小心，因为如果在指定条件时出错，
+  它可能会完全擦除表中的所有数据。</p>
+</blockquote>
+<h2>Active Record 的生命周期（Active Record Life Cycles）  <span id="ar-life-cycles"></span><a href="#ar-life-cycles" class="hashlink">&para;</a></h2><p>当你实现各种功能的时候，会发现了解 Active Record 的生命周期很重要。
+在每个生命周期中，一系列的方法将被调用执行，您可以重写这些方法
+以定制你要的生命周期。您还可以响应触发某些 Active Record 事件
+以便在生命周期中注入您的自定义代码。这些事件在开发 Active Record 的 <a href="guide-concept-behaviors.html">行为</a>时特别有用，
+通过行为可以定制 Active Record 生命周期的 。</p>
+<p>下面，我们将总结各种 Active Record 的生命周期，以及生命周期中
+所涉及的各种方法、事件。</p>
+<h3>实例化生命周期（New Instance Life Cycle）  <span id="new-instance-life-cycle"></span><a href="#new-instance-life-cycle" class="hashlink">&para;</a></h3><p>当通过 <code>new</code> 操作符新建一个 Active Record 实例时，会发生以下生命周期：</p>
+<ol>
+<li>类的构造函数调用.</li>
+<li><a href="./yii-db-baseactiverecord.html#init()-detail">init()</a>：触发 <a href="./yii-db-baseactiverecord.html#EVENT_INIT-detail">EVENT_INIT</a> 事件。</li>
+</ol>
+<h3>查询数据生命周期（Querying Data Life Cycle）  <span id="querying-data-life-cycle"></span><a href="#querying-data-life-cycle" class="hashlink">&para;</a></h3><p>当通过 <a href="#querying-data">查询方法</a> 查询数据时，每个新填充出来的 Active Record 实例
+将发生下面的生命周期：</p>
+<ol>
+<li>类的构造函数调用。</li>
+<li><a href="./yii-db-baseactiverecord.html#init()-detail">init()</a>：触发 <a href="./yii-db-baseactiverecord.html#EVENT_INIT-detail">EVENT_INIT</a> 事件。</li>
+<li><a href="./yii-db-baseactiverecord.html#afterFind()-detail">afterFind()</a>：触发 <a href="./yii-db-baseactiverecord.html#EVENT_AFTER_FIND-detail">EVENT_AFTER_FIND</a> 事件。</li>
+</ol>
+<h3>保存数据生命周期（Saving Data Life Cycle）  <span id="saving-data-life-cycle"></span><a href="#saving-data-life-cycle" class="hashlink">&para;</a></h3><p>当通过 <a href="./yii-db-baseactiverecord.html#save()-detail">save()</a> 插入或更新 Active Record 实例时
+会发生以下生命周期：</p>
+<ol>
+<li><a href="./yii-base-model.html#beforeValidate()-detail">beforeValidate()</a>：触发 
+<a href="./yii-base-model.html#EVENT_BEFORE_VALIDATE-detail">EVENT_BEFORE_VALIDATE</a> 事件。如果这方法返回 <code>false</code> 
+或者 <a href="./yii-base-modelevent.html#$isValid-detail">yii\base\ModelEvent::$isValid</a> 值为 <code>false</code>，接下来的步骤都会被跳过。</li>
+<li>执行数据验证。如果数据验证失败，步骤 3 之后的步骤将被跳过。</li>
+<li><a href="./yii-base-model.html#afterValidate()-detail">afterValidate()</a>：触发
+<a href="./yii-base-model.html#EVENT_AFTER_VALIDATE-detail">EVENT_AFTER_VALIDATE</a> 事件。</li>
+<li><a href="./yii-db-baseactiverecord.html#beforeSave()-detail">beforeSave()</a>：触发
+<a href="./yii-db-baseactiverecord.html#EVENT_BEFORE_INSERT-detail">EVENT_BEFORE_INSERT</a> 
+或者 <a href="./yii-db-baseactiverecord.html#EVENT_BEFORE_UPDATE-detail">EVENT_BEFORE_UPDATE</a> 事件。 如果这方法返回 <code>false</code> 
+或者 <a href="./yii-base-modelevent.html#$isValid-detail">yii\base\ModelEvent::$isValid</a> 值为 <code>false</code>，接下来的步骤都会被跳过。</li>
+<li>执行真正的数据插入或者更新。</li>
+<li><a href="./yii-db-baseactiverecord.html#afterSave()-detail">afterSave()</a>：触发
+<a href="./yii-db-baseactiverecord.html#EVENT_AFTER_INSERT-detail">EVENT_AFTER_INSERT</a> 
+或者 <a href="./yii-db-baseactiverecord.html#EVENT_AFTER_UPDATE-detail">EVENT_AFTER_UPDATE</a> 事件。</li>
+</ol>
+<h3>删除数据生命周期（Deleting Data Life Cycle）  <span id="deleting-data-life-cycle"></span><a href="#deleting-data-life-cycle" class="hashlink">&para;</a></h3><p>当通过 <a href="./yii-db-activerecord.html#delete()-detail">delete()</a> 删除 Active Record 实例时，
+会发生以下生命周期：</p>
+<ol>
+<li><a href="./yii-db-baseactiverecord.html#beforeDelete()-detail">beforeDelete()</a>：触发
+<a href="./yii-db-baseactiverecord.html#EVENT_BEFORE_DELETE-detail">EVENT_BEFORE_DELETE</a> 事件。 如果这方法返回 <code>false</code> 
+或者 <a href="./yii-base-modelevent.html#$isValid-detail">yii\base\ModelEvent::$isValid</a> 值为 <code>false</code>，接下来的步骤都会被跳过。</li>
+<li>执行真正的数据删除。</li>
+<li><a href="./yii-db-baseactiverecord.html#afterDelete()-detail">afterDelete()</a>：触发
+<a href="./yii-db-baseactiverecord.html#EVENT_AFTER_DELETE-detail">EVENT_AFTER_DELETE</a> 事件。</li>
+</ol>
+<blockquote class="tip"><p><strong>提示： </strong>调用以下方法则不会启动上述的任何生命周期，
+因为这些方法直接操作数据库，而不是基于 Active Record 模型：</p>
+<ul>
+<li><a href="./yii-db-activerecord.html#updateAll()-detail">yii\db\ActiveRecord::updateAll()</a> </li>
+<li><a href="./yii-db-activerecord.html#deleteAll()-detail">yii\db\ActiveRecord::deleteAll()</a></li>
+<li><a href="./yii-db-baseactiverecord.html#updateCounters()-detail">yii\db\ActiveRecord::updateCounters()</a> </li>
+<li><a href="./yii-db-activerecord.html#updateAllCounters()-detail">yii\db\ActiveRecord::updateAllCounters()</a> </li>
+</ul>
+</blockquote>
+<h3>刷新数据生命周期（Refreshing Data Life Cycle）  <span id="refreshing-data-life-cycle"></span><a href="#refreshing-data-life-cycle" class="hashlink">&para;</a></h3><p>当通过 <a href="./yii-db-activerecord.html#refresh()-detail">refresh()</a> 刷新 Active Record 实例时，
+如刷新成功方法返回 <code>true</code>，那么 <a href="./yii-db-baseactiverecord.html#EVENT_AFTER_REFRESH-detail">EVENT_AFTER_REFRESH</a> 事件将被触发。</p>
+<h2>事务操作（Working with Transactions）  <span id="transactional-operations"></span><a href="#transactional-operations" class="hashlink">&para;</a></h2><p>Active Record 有两种方式来使用<a href="guide-db-dao.html#performing-transactions">事务</a>。</p>
+<p>第一种方法是在事务块中显式地包含 Active Record 的各个方法调用，如下所示，</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$customer</span> = Customer::findOne(<span class="hljs-number">123</span>);
+
+Customer::getDb()-&gt;transaction(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(<span class="hljs-variable">$db</span>)</span> <span class="hljs-title">use</span> <span class="hljs-params">(<span class="hljs-variable">$customer</span>)</span> </span>{
+    <span class="hljs-variable">$customer</span>-&gt;id = <span class="hljs-number">200</span>;
+    <span class="hljs-variable">$customer</span>-&gt;save();
+    <span class="hljs-comment">// ...其他 DB 操作...</span>
+});
+
+<span class="hljs-comment">// 或者</span>
+
+<span class="hljs-variable">$transaction</span> = Customer::getDb()-&gt;beginTransaction();
+<span class="hljs-keyword">try</span> {
+    <span class="hljs-variable">$customer</span>-&gt;id = <span class="hljs-number">200</span>;
+    <span class="hljs-variable">$customer</span>-&gt;save();
+    <span class="hljs-comment">// ...other DB operations...</span>
+    <span class="hljs-variable">$transaction</span>-&gt;commit();
+} <span class="hljs-keyword">catch</span>(\<span class="hljs-keyword">Exception</span> <span class="hljs-variable">$e</span>) {
+    <span class="hljs-variable">$transaction</span>-&gt;rollBack();
+    <span class="hljs-keyword">throw</span> <span class="hljs-variable">$e</span>;
+} <span class="hljs-keyword">catch</span>(\Throwable <span class="hljs-variable">$e</span>) {
+    <span class="hljs-variable">$transaction</span>-&gt;rollBack();
+    <span class="hljs-keyword">throw</span> <span class="hljs-variable">$e</span>;
+}
+</code></pre>
+<blockquote class="tip"><p><strong>提示： </strong>在上面的代码中，我们有两个catch块用于兼容
+PHP 5.x 和 PHP 7.x。 <code>\Exception</code> 继承于 <a href="https://secure.php.net/manual/en/class.throwable.php"><code>\Throwable</code> interface</a>
+由于 PHP 7.0 的改动，如果您的应用程序仅使用 PHP 7.0 及更高版本，您可以跳过 <code>\Exception</code> 部分。</p>
+</blockquote>
+<p>第二种方法是在 <a href="./yii-db-activerecord.html#transactions()-detail">yii\db\ActiveRecord::transactions()</a> 方法中列出需要事务支持的 DB 操作。 
+例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transactions</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            <span class="hljs-string">'admin'</span> =&gt; <span class="hljs-keyword">self</span>::OP_INSERT,
+            <span class="hljs-string">'api'</span> =&gt; <span class="hljs-keyword">self</span>::OP_INSERT | <span class="hljs-keyword">self</span>::OP_UPDATE | <span class="hljs-keyword">self</span>::OP_DELETE,
+            <span class="hljs-comment">// 上面等价于：</span>
+            <span class="hljs-comment">// 'api' =&gt; self::OP_ALL,</span>
+        ];
+    }
+}
+</code></pre>
+<p><a href="./yii-db-activerecord.html#transactions()-detail">yii\db\ActiveRecord::transactions()</a> 方法应当返回以 <a href="guide-structure-models.html#scenarios">场景</a> 为键、
+以需要放到事务中的 DB 操作为值的数组。以下的常量
+可以表示相应的 DB 操作：</p>
+<ul>
+<li><a href="./yii-db-activerecord.html#OP_INSERT-detail">OP_INSERT</a>：插入操作用于执行 <a href="./yii-db-activerecord.html#insert()-detail">insert()</a>；</li>
+<li><a href="./yii-db-activerecord.html#OP_UPDATE-detail">OP_UPDATE</a>：更新操作用于执行 <a href="./yii-db-activerecord.html#update()-detail">update()</a>；</li>
+<li><a href="./yii-db-activerecord.html#OP_DELETE-detail">OP_DELETE</a>：删除操作用于执行 <a href="./yii-db-activerecord.html#delete()-detail">delete()</a>。</li>
+</ul>
+<p>使用 <code>|</code> 运算符连接上述常量来表明多个操作。您也可以使用
+快捷常量 <a href="./yii-db-activerecord.html#OP_ALL-detail">OP_ALL</a> 来指代上述所有的三个操作。</p>
+<p>这个事务方法的原理是：相应的事务在调用 <a href="./yii-db-baseactiverecord.html#beforeSave()-detail">beforeSave()</a> 方法时开启，
+在调用 <a href="./yii-db-baseactiverecord.html#afterSave()-detail">afterSave()</a> 方法时被提交。</p>
+<h2>乐观锁（Optimistic Locks）  <span id="optimistic-locks"></span><a href="#optimistic-locks" class="hashlink">&para;</a></h2><p>乐观锁是一种防止此冲突的方法：一行数据
+同时被多个用户更新。例如，同一时间内，用户 A 和用户 B 都在编辑
+相同的 wiki 文章。用户 A 保存他的编辑后，用户 B 也点击“保存”按钮来
+保存他的编辑。实际上，用户 B 正在处理的是过时版本的文章，
+因此最好是，想办法阻止他保存文章并向他提示一些信息。</p>
+<p>乐观锁通过使用一个字段来记录每行的版本号来解决上述问题。
+当使用过时的版本号保存一行数据时，<a href="./yii-db-staleobjectexception.html">yii\db\StaleObjectException</a> 异常
+将被抛出，这阻止了该行的保存。乐观锁只支持更新 <a href="./yii-db-activerecord.html#update()-detail">yii\db\ActiveRecord::update()</a> 
+或者删除 <a href="./yii-db-activerecord.html#delete()-detail">yii\db\ActiveRecord::delete()</a>
+已经存在的单条数据行。</p>
+<p>使用乐观锁的步骤，</p>
+<ol>
+<li>在与 Active Record 类相关联的 DB 表中创建一个列，以存储每行的版本号。
+这个列应当是长整型（在 MySQL 中是  <code>BIGINT DEFAULT 0</code>）。</li>
+<li>重写 <a href="./yii-db-baseactiverecord.html#optimisticLock()-detail">yii\db\ActiveRecord::optimisticLock()</a> 方法返回这个列的命名。</li>
+<li>在你的 Model 类里实现 <a href="./yii-behaviors-optimisticlockbehavior.html">OptimisticLockBehavior</a> 行为（注：这个行为类在 2.0.16 版本加入），以便从请求参数里自动解析这个列的值。
+然后从验证规则中删除 version 属性，因为 <a href="./yii-behaviors-optimisticlockbehavior.html">OptimisticLockBehavior</a> 已经处理它了.</li>
+<li>在用于用户填写的 Web 表单中，添加一个隐藏字段（hidden field）来存储正在更新的行的当前版本号。</li>
+<li>在使用 Active Record 更新数据的控制器动作中，要捕获（try/catch） <a href="./yii-db-staleobjectexception.html">yii\db\StaleObjectException</a> 异常。
+实现一些业务逻辑来解决冲突（例如合并更改，提示陈旧的数据等等）。</li>
+</ol>
+<p>例如，假定版本列被命名为 <code>version</code>。您可以使用下面的代码来实现乐观锁。</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// ------ 视图层代码 -------</span>
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">Html</span>;
+
+<span class="hljs-comment">// ...其他输入栏</span>
+<span class="hljs-keyword">echo</span> Html::activeHiddenInput(<span class="hljs-variable">$model</span>, <span class="hljs-string">'version'</span>);
+
+
+<span class="hljs-comment">// ------ 控制器代码 -------</span>
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">StaleObjectException</span>;
+
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionUpdate</span><span class="hljs-params">(<span class="hljs-variable">$id</span>)</span>
+</span>{
+    <span class="hljs-variable">$model</span> = <span class="hljs-variable">$this</span>-&gt;findModel(<span class="hljs-variable">$id</span>);
+
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$model</span>-&gt;load(Yii::<span class="hljs-variable">$app</span>-&gt;request-&gt;post()) &amp;&amp; <span class="hljs-variable">$model</span>-&gt;save()) {
+            <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;redirect([<span class="hljs-string">'view'</span>, <span class="hljs-string">'id'</span> =&gt; <span class="hljs-variable">$model</span>-&gt;id]);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;render(<span class="hljs-string">'update'</span>, [
+                <span class="hljs-string">'model'</span> =&gt; <span class="hljs-variable">$model</span>,
+            ]);
+        }
+    } <span class="hljs-keyword">catch</span> (StaleObjectException <span class="hljs-variable">$e</span>) {
+        <span class="hljs-comment">// 解决冲突的代码</span>
+    }
+}
+
+<span class="hljs-comment">// ------ Model 代码 -------</span>
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">behaviors</span>\<span class="hljs-title">OptimisticLockBehavior</span>;
+
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behaviors</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        OptimisticLockBehavior::className(),
+    ];
+}
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>因为 <a href="./yii-behaviors-optimisticlockbehavior.html">OptimisticLockBehavior</a> 仅仅在保存记录的时候被确认，
+如果用户提交的有效版本号被直接解析 ：<a href="./yii-web-request.html#getBodyParam()-detail">getBodyParam()</a>，
+那么你的 Model 将扩展成这样：触发在步骤 3 中子类的行为，与此同时，调用步骤 2 中的父类的定义，
+这样你在把 Model 绑定到负责接收用户输入的控制器的同时，有一个专门用于内部逻辑处理的实例，
+或者，您可以通过配置其 <a href="./yii-behaviors-optimisticlockbehavior.html#$value-detail">value</a> 的属性来实现自己的逻辑。（注：这一堆都是在解释 Behaviors 的原理）</p>
+</blockquote>
+<h2>使用关联数据（Working with Relational Data）  <span id="relational-data"></span><a href="#relational-data" class="hashlink">&para;</a></h2><p>除了处理单个数据库表之外，Active Record 还可以将相关数据集中进来，
+使其可以通过原始数据轻松访问。 例如，客户数据与订单数据相关
+因为一个客户可能已经存放了一个或多个订单。这种关系通过适当的声明，
+你可以使用 <code>$customer-&gt;orders</code> 表达式访问客户的订单信息
+这表达式将返回包含 <code>Order</code> Active Record 实例的客户订单信息的数组。</p>
+<h3>声明关联关系（Declaring Relations）  <span id="declaring-relations"></span><a href="#declaring-relations" class="hashlink">&para;</a></h3><p>你必须先在 Active Record 类中定义关联关系，才能使用 Active Record 的关联数据。
+简单地为每个需要定义关联关系声明一个 <em>关联方法</em> 即可，如下所示，</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getOrders</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;hasMany(Order::className(), [<span class="hljs-string">'customer_id'</span> =&gt; <span class="hljs-string">'id'</span>]);
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Order</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCustomer</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;hasOne(Customer::className(), [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'customer_id'</span>]);
+    }
+}
+</code></pre>
+<p>上述的代码中，我们为 <code>Customer</code> 类声明了一个 <code>orders</code> 关联，
+和为 <code>Order</code> 声明了一个 <code>customer</code> 关联。</p>
+<p>每个关联方法必须这样命名：<code>getXyz</code>。然后我们通过 <code>xyz</code>（首字母小写）调用这个关联名。
+请注意关联名是大小写敏感的。</p>
+<p>当声明一个关联关系的时候，必须指定好以下的信息：</p>
+<ul>
+<li>关联的对应关系：通过调用 <a href="./yii-db-baseactiverecord.html#hasMany()-detail">hasMany()</a>
+或者 <a href="./yii-db-baseactiverecord.html#hasOne()-detail">hasOne()</a> 指定。在上面的例子中，您可以很容易看出这样的关联声明：
+一个客户可以有很多订单，而每个订单只有一个客户。</li>
+<li>相关联 Active Record 类名：用来指定为 <a href="./yii-db-baseactiverecord.html#hasMany()-detail">hasMany()</a> 或者 
+<a href="./yii-db-baseactiverecord.html#hasOne()-detail">hasOne()</a> 方法的第一个参数。
+推荐的做法是调用 <code>Xyz::className()</code> 来获取类名称的字符串，以便您
+可以使用 IDE 的自动补全，以及让编译阶段的错误检测生效。</li>
+<li><p>两组数据的关联列：用以指定两组数据相关的列（hasOne()/hasMany() 的第二个参数）。
+数组的值填的是主数据的列（当前要声明关联的 Active Record 类为主数据），
+而数组的键要填的是相关数据的列。</p>
+<p>一个简单的口诀，先附表的主键，后主表的主键。
+正如上面的例子，<code>customer_id</code> 是 <code>Order</code> 的属性，而 <code>id</code>是 <code>Customer</code> 的属性。
+（译者注：hasMany() 的第二个参数，这个数组键值顺序不要弄反了）</p>
+</li>
+</ul>
+<h3>访问关联数据（Accessing Relational Data）  <span id="accessing-relational-data"></span><a href="#accessing-relational-data" class="hashlink">&para;</a></h3><p>定义了关联关系后，你就可以通过关联名访问相应的关联数据了。就像
+访问一个由关联方法定义的对象一样，具体概念请查看 <a href="guide-concept-properties.html">属性</a>。
+因此，现在我们可以称它为 <em>关联属性</em> 了。</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// SELECT * FROM `customer` WHERE `id` = 123</span>
+<span class="hljs-variable">$customer</span> = Customer::findOne(<span class="hljs-number">123</span>);
+
+<span class="hljs-comment">// SELECT * FROM `order` WHERE `customer_id` = 123</span>
+<span class="hljs-comment">// $orders 是由 Order 类组成的数组</span>
+<span class="hljs-variable">$orders</span> = <span class="hljs-variable">$customer</span>-&gt;orders;
+</code></pre>
+<blockquote class="tip"><p><strong>提示： </strong>当你通过 getter 方法 <code>getXyz()</code> 声明了一个叫 <code>xyz</code> 的关联属性，你就可以像
+  <a href="guide-concept-properties.html">属性</a> 那样访问 <code>xyz</code>。注意这个命名是区分大小写的。</p>
+</blockquote>
+<p>如果使用 <a href="./yii-db-baseactiverecord.html#hasMany()-detail">hasMany()</a> 声明关联关系，则访问此关联属性
+将返回相关的 Active Record 实例的数组；
+如果使用 <a href="./yii-db-baseactiverecord.html#hasOne()-detail">hasOne()</a> 声明关联关系，访问此关联属性
+将返回相关的 Active Record 实例，如果没有找到相关数据的话，则返回 <code>null</code>。</p>
+<p>当你第一次访问关联属性时，将执行 SQL 语句获取数据，如
+上面的例子所示。如果再次访问相同的属性，将返回先前的结果，而不会重新执行
+SQL 语句。要强制重新执行 SQL 语句，你应该先 unset 这个关联属性，
+如：<code>unset（$ customer-&gt; orders）</code>。</p>
+<blockquote class="tip"><p><strong>提示： </strong>虽然这个概念跟 这个 <a href="guide-concept-properties.html">属性</a> 特性很像，
+但是还是有一个很重要的区别。普通对象属性的属性值与其定义的 getter 方法的类型是相同的。
+而关联方法返回的是一个 <a href="./yii-db-activequery.html">yii\db\ActiveQuery</a> 活动查询生成器的实例。只有当访问关联属性的的时候，
+才会返回 <a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a> Active Record 实例，或者 Active Record 实例组成的数组。</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$customer</span>-&gt;orders; <span class="hljs-comment">// 获得 `Order` 对象的数组</span>
+<span class="hljs-variable">$customer</span>-&gt;getOrders(); <span class="hljs-comment">// 返回 ActiveQuery 类的实例</span>
+</code></pre>
+<p>这对于创建自定义查询很有用，下一节将对此进行描述。</p>
+</blockquote>
+<h3>动态关联查询（Dynamic Relational Query）  <span id="dynamic-relational-query"></span><a href="#dynamic-relational-query" class="hashlink">&para;</a></h3><p>由于关联方法返回 <a href="./yii-db-activequery.html">yii\db\ActiveQuery</a> 的实例，因此你可以在执行 DB 查询之前，
+使用查询构建方法进一步构建此查询。例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$customer</span> = Customer::findOne(<span class="hljs-number">123</span>);
+
+<span class="hljs-comment">// SELECT * FROM `order` WHERE `customer_id` = 123 AND `subtotal` &gt; 200 ORDER BY `id`</span>
+<span class="hljs-variable">$orders</span> = <span class="hljs-variable">$customer</span>-&gt;getOrders()
+    -&gt;where([<span class="hljs-string">'&gt;'</span>, <span class="hljs-string">'subtotal'</span>, <span class="hljs-number">200</span>])
+    -&gt;orderBy(<span class="hljs-string">'id'</span>)
+    -&gt;all();
+</code></pre>
+<p>与访问关联属性不同，每次通过关联方法执行动态关联查询时，
+都会执行 SQL 语句，即使你之前执行过相同的动态关联查询。</p>
+<p>有时你可能需要给你的关联声明传递参数，以便您能更方便地执行
+动态关系查询。例如，您可以声明一个 <code>bigOrders</code> 关联如下，</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getBigOrders</span><span class="hljs-params">(<span class="hljs-variable">$threshold</span> = <span class="hljs-number">100</span>)</span> // 老司机的提醒：$<span class="hljs-title">threshold</span> 参数一定一定要给个默认值
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;hasMany(Order::className(), [<span class="hljs-string">'customer_id'</span> =&gt; <span class="hljs-string">'id'</span>])
+            -&gt;where(<span class="hljs-string">'subtotal &gt; :threshold'</span>, [<span class="hljs-string">':threshold'</span> =&gt; <span class="hljs-variable">$threshold</span>])
+            -&gt;orderBy(<span class="hljs-string">'id'</span>);
+    }
+}
+</code></pre>
+<p>然后你就可以执行以下关联查询：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// SELECT * FROM `order` WHERE `customer_id` = 123 AND `subtotal` &gt; 200 ORDER BY `id`</span>
+<span class="hljs-variable">$orders</span> = <span class="hljs-variable">$customer</span>-&gt;getBigOrders(<span class="hljs-number">200</span>)-&gt;all();
+
+<span class="hljs-comment">// SELECT * FROM `order` WHERE `customer_id` = 123 AND `subtotal` &gt; 100 ORDER BY `id`</span>
+<span class="hljs-variable">$orders</span> = <span class="hljs-variable">$customer</span>-&gt;bigOrders;
+</code></pre>
+<h3>中间关联表（Relations via a Junction Table）  <span id="junction-table"></span><a href="#junction-table" class="hashlink">&para;</a></h3><p>在数据库建模中，当两个关联表之间的对应关系是多对多时，
+通常会引入一个<a href="https://en.wikipedia.org/wiki/Junction_table">连接表</a>。例如，<code>order</code> 表
+和 <code>item</code> 表可以通过名为 <code>order_item</code> 的连接表相关联。一个 order 将关联多个 order items，
+而一个 order item 也会关联到多个 orders。</p>
+<p>当声明这种表关联后，您可以调用 <a href="./yii-db-activerelationtrait.html#via()-detail">via()</a> 或 <a href="./yii-db-activequery.html#viaTable()-detail">viaTable()</a>
+指明连接表。<a href="./yii-db-activerelationtrait.html#via()-detail">via()</a> 和 <a href="./yii-db-activequery.html#viaTable()-detail">viaTable()</a> 之间的区别是
+前者是根据现有的关联名称来指定连接表，而后者直接使用
+连接表。例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Order</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getItems</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;hasMany(Item::className(), [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'item_id'</span>])
+            -&gt;viaTable(<span class="hljs-string">'order_item'</span>, [<span class="hljs-string">'order_id'</span> =&gt; <span class="hljs-string">'id'</span>]);
+    }
+}
+</code></pre>
+<p>或者,</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Order</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getOrderItems</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;hasMany(OrderItem::className(), [<span class="hljs-string">'order_id'</span> =&gt; <span class="hljs-string">'id'</span>]);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getItems</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;hasMany(Item::className(), [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'item_id'</span>])
+            -&gt;via(<span class="hljs-string">'orderItems'</span>);
+    }
+}
+</code></pre>
+<p>使用连接表声明的关联和正常声明的关联是等同的，例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// SELECT * FROM `order` WHERE `id` = 100</span>
+<span class="hljs-variable">$order</span> = Order::findOne(<span class="hljs-number">100</span>);
+
+<span class="hljs-comment">// SELECT * FROM `order_item` WHERE `order_id` = 100</span>
+<span class="hljs-comment">// SELECT * FROM `item` WHERE `item_id` IN (...)</span>
+<span class="hljs-comment">// 返回 Item 类组成的数组</span>
+<span class="hljs-variable">$items</span> = <span class="hljs-variable">$order</span>-&gt;items;
+</code></pre>
+<h3>通过多个表来连接关联声明（Chaining relation definitions via multiple tables）  <span id="multi-table-relations"></span><a href="#multi-table-relations" class="hashlink">&para;</a></h3><p>通过使用 <a href="./yii-db-activerelationtrait.html#via()-detail">via()</a> 方法，它还可以通过多个表来定义关联声明。
+再考虑考虑上面的例子，我们有 <code>Customer</code>，<code>Order</code> 和 <code>Item</code> 类。
+我们可以添加一个关联关系到 <code>Customer</code> 类，这个关联可以列出了 <code>Customer</code>（客户） 的订单下放置的所有 <code>Item</code>（商品），
+这个关联命名为 <code>getPurchasedItems()</code>，关联声明如下代码示例所示：</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getPurchasedItems</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-comment">// 客户的商品，将 Item 中的 'id' 列与 OrderItem 中的 'item_id' 相匹配</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;hasMany(Item::className(), [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'item_id'</span>])
+                    -&gt;via(<span class="hljs-string">'orderItems'</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getOrderItems</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-comment">// 客户订单中的商品，将 `Order` 的 'id' 列和 OrderItem 的 'order_id' 列相匹配</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;hasMany(OrderItem::className(), [<span class="hljs-string">'order_id'</span> =&gt; <span class="hljs-string">'id'</span>])
+                    -&gt;via(<span class="hljs-string">'orders'</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getOrders</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-comment">// 见上述列子</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;hasMany(Order::className(), [<span class="hljs-string">'customer_id'</span> =&gt; <span class="hljs-string">'id'</span>]);
+    }
+}
+</code></pre>
+<h3>延迟加载和即时加载（Lazy Loading and Eager Loading）  <span id="lazy-eager-loading"></span><a href="#lazy-eager-loading" class="hashlink">&para;</a></h3><p>在 <a href="#accessing-relational-data">访问关联数据</a> 中，我们解释说可以像问正常的对象属性那样
+访问 Active Record 实例的关联属性。SQL 语句仅在
+你第一次访问关联属性时执行。我们称这种关联数据访问方法为 <em>延迟加载</em>。
+例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// SELECT * FROM `customer` WHERE `id` = 123</span>
+<span class="hljs-variable">$customer</span> = Customer::findOne(<span class="hljs-number">123</span>);
+
+<span class="hljs-comment">// SELECT * FROM `order` WHERE `customer_id` = 123</span>
+<span class="hljs-variable">$orders</span> = <span class="hljs-variable">$customer</span>-&gt;orders;
+
+<span class="hljs-comment">// 没有 SQL 语句被执行</span>
+<span class="hljs-variable">$orders2</span> = <span class="hljs-variable">$customer</span>-&gt;orders;
+</code></pre>
+<p>延迟加载使用非常方便。但是，当你需要访问相同的具有多个 Active Record 实例的关联属性时，
+可能会遇到性能问题。请思考一下以下代码示例。
+有多少 SQL 语句会被执行？</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// SELECT * FROM `customer` LIMIT 100</span>
+<span class="hljs-variable">$customers</span> = Customer::find()-&gt;limit(<span class="hljs-number">100</span>)-&gt;all();
+
+<span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$customers</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$customer</span>) {
+    <span class="hljs-comment">// SELECT * FROM `order` WHERE `customer_id` = ...</span>
+    <span class="hljs-variable">$orders</span> = <span class="hljs-variable">$customer</span>-&gt;orders;
+}
+</code></pre>
+<p>你瞅瞅，上面的代码会产生 101 次 SQL 查询！
+这是因为每次你访问 for 循环中不同的 <code>Customer</code> 对象的 <code>orders</code> 关联属性时，SQL 语句
+都会被执行一次。</p>
+<p>为了解决上述的性能问题，你可以使用所谓的 <em>即时加载</em>，如下所示，</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// SELECT * FROM `customer` LIMIT 100;</span>
+<span class="hljs-comment">// SELECT * FROM `orders` WHERE `customer_id` IN (...)</span>
+<span class="hljs-variable">$customers</span> = Customer::find()
+    -&gt;with(<span class="hljs-string">'orders'</span>)
+    -&gt;limit(<span class="hljs-number">100</span>)
+    -&gt;all();
+
+<span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$customers</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$customer</span>) {
+    <span class="hljs-comment">// 没有任何的 SQL 执行</span>
+    <span class="hljs-variable">$orders</span> = <span class="hljs-variable">$customer</span>-&gt;orders;
+}
+</code></pre>
+<p>通过调用 <a href="./yii-db-activequerytrait.html#with()-detail">yii\db\ActiveQuery::with()</a> 方法，你使 Active Record 在一条 SQL 语句里就返回了这 100 位客户的订单。
+结果就是，你把要执行的 SQL 语句从 101 减少到 2 条！</p>
+<p>你可以即时加载一个或多个关联。 你甚至可以即时加载 <em>嵌套关联</em> 。嵌套关联是一种
+在相关的 Active Record 类中声明的关联。例如，<code>Customer</code> 通过 <code>orders</code> 关联属性 与 <code>Order</code> 相关联，
+<code>Order</code> 与 <code>Item</code> 通过 <code>items</code> 关联属性相关联。 当查询 <code>Customer</code> 时，您可以即时加载
+通过嵌套关联符 <code>orders.items</code> 关联的 <code>items</code>。</p>
+<p>以下代码展示了 <a href="./yii-db-activequerytrait.html#with()-detail">with()</a> 的各种用法。我们假设 <code>Customer</code> 类
+有两个关联 <code>orders</code> 和 <code>country</code>，而 <code>Order</code> 类有一个关联 <code>items</code>。</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">//  即时加载 "orders" and "country"</span>
+<span class="hljs-variable">$customers</span> = Customer::find()-&gt;with(<span class="hljs-string">'orders'</span>, <span class="hljs-string">'country'</span>)-&gt;all();
+<span class="hljs-comment">// 等同于使用数组语法 如下</span>
+<span class="hljs-variable">$customers</span> = Customer::find()-&gt;with([<span class="hljs-string">'orders'</span>, <span class="hljs-string">'country'</span>])-&gt;all();
+<span class="hljs-comment">// 没有任何的 SQL 执行</span>
+<span class="hljs-variable">$orders</span>= <span class="hljs-variable">$customers</span>[<span class="hljs-number">0</span>]-&gt;orders;
+<span class="hljs-comment">// 没有任何的 SQL 执行</span>
+<span class="hljs-variable">$country</span> = <span class="hljs-variable">$customers</span>[<span class="hljs-number">0</span>]-&gt;country;
+
+<span class="hljs-comment">// 即时加载“订单”和嵌套关系“orders.items”</span>
+<span class="hljs-variable">$customers</span> = Customer::find()-&gt;with(<span class="hljs-string">'orders.items'</span>)-&gt;all();
+<span class="hljs-comment">// 访问第一个客户的第一个订单中的商品</span>
+<span class="hljs-comment">// 没有 SQL 查询执行</span>
+<span class="hljs-variable">$items</span> = <span class="hljs-variable">$customers</span>[<span class="hljs-number">0</span>]-&gt;orders[<span class="hljs-number">0</span>]-&gt;items;
+</code></pre>
+<p>你也可以即时加载更深的嵌套关联，比如 <code>a.b.c.d</code>。所有的父关联都会被即时加载。
+那就是, 当你调用 <a href="./yii-db-activequerytrait.html#with()-detail">with()</a> 来 with <code>a.b.c.d</code>, 你将即时加载
+<code>a</code>, <code>a.b</code>, <code>a.b.c</code> and <code>a.b.c.d</code>。</p>
+<blockquote class="tip"><p><strong>提示： </strong>一般来说，当即时加载 <code>N</code> 个关联，另有 <code>M</code> 个关联
+  通过 <a href="#junction-table">连接表</a> 声明，则会有 <code>N+M+1</code> 条 SQL 语句被执行。
+  请注意这样的的嵌套关联 <code>a.b.c.d</code> 算四个关联。</p>
+</blockquote>
+<p>当即时加载一个关联，你可以通过匿名函数自定义相应的关联查询。
+例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 查找所有客户，并带上他们国家和活跃订单</span>
+<span class="hljs-comment">// SELECT * FROM `customer`</span>
+<span class="hljs-comment">// SELECT * FROM `country` WHERE `id` IN (...)</span>
+<span class="hljs-comment">// SELECT * FROM `order` WHERE `customer_id` IN (...) AND `status` = 1</span>
+<span class="hljs-variable">$customers</span> = Customer::find()-&gt;with([
+    <span class="hljs-string">'country'</span>,
+    <span class="hljs-string">'orders'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$query</span>)</span> </span>{
+        <span class="hljs-variable">$query</span>-&gt;andWhere([<span class="hljs-string">'status'</span> =&gt; Order::STATUS_ACTIVE]);
+    },
+])-&gt;all();
+</code></pre>
+<p>自定义关联查询时，应该将关联名称指定为数组的键
+并使用匿名函数作为相应的数组的值。匿名函数将接受一个 <code>$query</code> 参数
+它用于表示这个自定义的关联执行关联查询的 <a href="./yii-db-activequery.html">yii\db\ActiveQuery</a> 对象。
+在上面的代码示例中，我们通过附加一个关于订单状态的附加条件来修改关联查询。</p>
+<blockquote class="tip"><p><strong>提示： </strong>如果你在即时加载的关联中调用 <a href="./yii-db-query.html#select()-detail">select()</a> 方法，你要确保
+在关联声明中引用的列必须被 select。否则，相应的模型（Models）可能
+无法加载。例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$orders</span> = Order::find()-&gt;select([<span class="hljs-string">'id'</span>, <span class="hljs-string">'amount'</span>])-&gt;with(<span class="hljs-string">'customer'</span>)-&gt;all();
+<span class="hljs-comment">// $orders[0]-&gt;customer 会一直是 `null`。你应该这样写，以解决这个问题：</span>
+<span class="hljs-variable">$orders</span> = Order::find()-&gt;select([<span class="hljs-string">'id'</span>, <span class="hljs-string">'amount'</span>, <span class="hljs-string">'customer_id'</span>])-&gt;with(<span class="hljs-string">'customer'</span>)-&gt;all();
+</code></pre>
+</blockquote>
+<h3>关联关系的 JOIN 查询（Joining with Relations）  <span id="joining-with-relations"></span><a href="#joining-with-relations" class="hashlink">&para;</a></h3><blockquote class="tip"><p><strong>提示： </strong>这小节的内容仅仅适用于关系数据库，
+  比如 MySQL，PostgreSQL 等等。</p>
+</blockquote>
+<p>到目前为止，我们所介绍的关联查询，仅仅是使用主表列
+去查询主表数据。实际应用中，我们经常需要在关联表中使用这些列。例如，
+我们可能要取出至少有一个活跃订单的客户。为了解决这个问题，我们可以
+构建一个 join 查询，如下所示：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// SELECT `customer`.* FROM `customer`</span>
+<span class="hljs-comment">// LEFT JOIN `order` ON `order`.`customer_id` = `customer`.`id`</span>
+<span class="hljs-comment">// WHERE `order`.`status` = 1</span>
+<span class="hljs-comment">// </span>
+<span class="hljs-comment">// SELECT * FROM `order` WHERE `customer_id` IN (...)</span>
+<span class="hljs-variable">$customers</span> = Customer::find()
+    -&gt;select(<span class="hljs-string">'customer.*'</span>)
+    -&gt;leftJoin(<span class="hljs-string">'order'</span>, <span class="hljs-string">'`order`.`customer_id` = `customer`.`id`'</span>)
+    -&gt;where([<span class="hljs-string">'order.status'</span> =&gt; Order::STATUS_ACTIVE])
+    -&gt;with(<span class="hljs-string">'orders'</span>)
+    -&gt;all();
+</code></pre>
+<blockquote class="tip"><p><strong>提示： </strong>在构建涉及 JOIN SQL 语句的连接查询时，清除列名的歧义很重要。
+  通常的做法是将表名称作为前缀加到对应的列名称前。</p>
+</blockquote>
+<p>但是，更好的方法是通过调用 <a href="./yii-db-activequery.html#joinWith()-detail">yii\db\ActiveQuery::joinWith()</a> 来利用已存在的关联声明：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$customers</span> = Customer::find()
+    -&gt;joinWith(<span class="hljs-string">'orders'</span>)
+    -&gt;where([<span class="hljs-string">'order.status'</span> =&gt; Order::STATUS_ACTIVE])
+    -&gt;all();
+</code></pre>
+<p>两种方法都执行相同的 SQL 语句集。然而，后一种方法更干净、简洁。</p>
+<p>默认的，<a href="./yii-db-activequery.html#joinWith()-detail">joinWith()</a> 会使用 <code>LEFT JOIN</code> 去连接主表和关联表。
+你可以通过 <code>$joinType</code> 参数指定不同的连接类型（比如 <code>RIGHT JOIN</code>）。
+如果你想要的连接类型是 <code>INNER JOIN</code>，你可以直接用 <a href="./yii-db-activequery.html#innerJoinWith()-detail">innerJoinWith()</a> 方法代替。</p>
+<p>调用 <a href="./yii-db-activequery.html#joinWith()-detail">joinWith()</a> 方法会默认 <a href="#lazy-eager-loading">即时加载</a> 相应的关联数据。
+如果你不需要那些关联数据，你可以指定它的第二个参数 <code>$eagerLoading</code> 为 <code>false</code>。</p>
+<blockquote class="note"><p><strong>注意： </strong>即使在启用即时加载的情况下使用 <a href="./yii-db-activequery.html#joinWith()-detail">joinWith()</a> 或 <a href="./yii-db-activequery.html#innerJoinWith()-detail">innerJoinWith()</a>，
+  相应的关联数据也<strong>不会</strong>从这个 <code>JOIN</code> 查询的结果中填充。 
+  因此，每个连接关系还有一个额外的查询，正如<a href="#lazy-eager-loading">即时加载</a>部分所述。</p>
+</blockquote>
+<p>和 <a href="./yii-db-activequerytrait.html#with()-detail">with()</a> 一样，你可以 join 多个关联表；你可以动态的自定义
+你的关联查询；你可以使用嵌套关联进行 join。你也可以将 <a href="./yii-db-activequerytrait.html#with()-detail">with()</a>
+和 <a href="./yii-db-activequery.html#joinWith()-detail">joinWith()</a> 组合起来使用。例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$customers</span> = Customer::find()-&gt;joinWith([
+    <span class="hljs-string">'orders'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$query</span>)</span> </span>{
+        <span class="hljs-variable">$query</span>-&gt;andWhere([<span class="hljs-string">'&gt;'</span>, <span class="hljs-string">'subtotal'</span>, <span class="hljs-number">100</span>]);
+    },
+])-&gt;with(<span class="hljs-string">'country'</span>)
+    -&gt;all();
+</code></pre>
+<p>有时，当连接两个表时，你可能需要在 JOIN 查询的 <code>ON</code> 部分中指定一些额外的条件。
+这可以通过调用 <a href="./yii-db-activequery.html#onCondition()-detail">yii\db\ActiveQuery::onCondition()</a> 方法来完成，如下所示：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// SELECT `customer`.* FROM `customer`</span>
+<span class="hljs-comment">// LEFT JOIN `order` ON `order`.`customer_id` = `customer`.`id` AND `order`.`status` = 1 </span>
+<span class="hljs-comment">// </span>
+<span class="hljs-comment">// SELECT * FROM `order` WHERE `customer_id` IN (...)</span>
+<span class="hljs-variable">$customers</span> = Customer::find()-&gt;joinWith([
+    <span class="hljs-string">'orders'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$query</span>)</span> </span>{
+        <span class="hljs-variable">$query</span>-&gt;onCondition([<span class="hljs-string">'order.status'</span> =&gt; Order::STATUS_ACTIVE]);
+    },
+])-&gt;all();
+</code></pre>
+<p>以上查询取出 <em>所有</em> 客户，并为每个客户取回所有活跃订单。
+请注意，这与我们之前的例子不同，后者仅取出至少有一个活跃订单的客户。</p>
+<blockquote class="tip"><p><strong>提示： </strong>当通过 <a href="./yii-db-activequery.html#onCondition()-detail">onCondition()</a> 修改 <a href="./yii-db-activequery.html">yii\db\ActiveQuery</a> 时，
+  如果查询涉及到 JOIN 查询，那么条件将被放在 <code>ON</code> 部分。如果查询不涉及
+  JOIN ，条件将自动附加到查询的 <code>WHERE</code> 部分。
+  因此，它可以只包含 包含了关联表的列 的条件。（译者注：意思是 onCondition() 中可以只写关联表的列，主表的列写不写都行）</p>
+</blockquote>
+<h4>关联表别名（Relation table aliases）  <span id="relation-table-aliases"></span><a href="#relation-table-aliases" class="hashlink">&para;</a></h4><p>如前所述，当在查询中使用 JOIN 时，我们需要消除列名的歧义。因此通常为一张表定义
+一个别名。可以通过以下列方式自定义关联查询来设置关联查询的别名：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$query</span>-&gt;joinWith([
+    <span class="hljs-string">'orders'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$q</span>)</span> </span>{
+        <span class="hljs-variable">$q</span>-&gt;from([<span class="hljs-string">'o'</span> =&gt; Order::tableName()]);
+    },
+])
+</code></pre>
+<p>然而，这看起来很复杂和耦合，不管是对表名使用硬编码或是调用 <code>Order::tableName()</code>。
+从 2.0.7 版本起，Yii 为此提供了一个快捷方法。您现在可以定义和使用关联表的别名，如下所示：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 连接 `orders` 关联表并根据 `orders.id` 排序</span>
+<span class="hljs-variable">$query</span>-&gt;joinWith([<span class="hljs-string">'orders o'</span>])-&gt;orderBy(<span class="hljs-string">'o.id'</span>);
+</code></pre>
+<p>上述语法适用于简单的关联。如果在 join 嵌套关联时，
+需要用到中间表的别名，例如 <code>$query-&gt;joinWith(['orders.product'])</code>，
+你需要嵌套 joinWith 调用，如下例所示：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$query</span>-&gt;joinWith([<span class="hljs-string">'orders o'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(<span class="hljs-variable">$q</span>)</span> </span>{
+        <span class="hljs-variable">$q</span>-&gt;joinWith(<span class="hljs-string">'product p'</span>);
+    }])
+    -&gt;where(<span class="hljs-string">'o.amount &gt; 100'</span>);
+</code></pre>
+<h3>反向关联（Inverse Relations）  <span id="inverse-relations"></span><a href="#inverse-relations" class="hashlink">&para;</a></h3><p>两个 Active Record 类之间的关联声明往往是相互关联的。例如，<code>Customer</code> 是
+通过 <code>orders</code> 关联到 <code>Order</code> ，而<code>Order</code> 通过 <code>customer</code> 又关联回到了 <code>Customer</code>。</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getOrders</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;hasMany(Order::className(), [<span class="hljs-string">'customer_id'</span> =&gt; <span class="hljs-string">'id'</span>]);
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Order</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCustomer</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;hasOne(Customer::className(), [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'customer_id'</span>]);
+    }
+}
+</code></pre>
+<p>现在考虑下面的一段代码：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// SELECT * FROM `customer` WHERE `id` = 123</span>
+<span class="hljs-variable">$customer</span> = Customer::findOne(<span class="hljs-number">123</span>);
+
+<span class="hljs-comment">// SELECT * FROM `order` WHERE `customer_id` = 123</span>
+<span class="hljs-variable">$order</span> = <span class="hljs-variable">$customer</span>-&gt;orders[<span class="hljs-number">0</span>];
+
+<span class="hljs-comment">// SELECT * FROM `customer` WHERE `id` = 123</span>
+<span class="hljs-variable">$customer2</span> = <span class="hljs-variable">$order</span>-&gt;customer;
+
+<span class="hljs-comment">// 显示 "not the same"</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$customer2</span> === <span class="hljs-variable">$customer</span> ? <span class="hljs-string">'same'</span> : <span class="hljs-string">'not the same'</span>;
+</code></pre>
+<p>我们原本认为 <code>$customer</code> 和 <code>$customer2</code> 是一样的，但不是！其实他们确实包含相同的
+客户数据，但它们是不同的对象。 访问 <code>$order-&gt;customer</code> 时，需要执行额外的 SQL 语句，
+以填充出一个新对象 <code>$customer2</code>。</p>
+<p>为了避免上述例子中最后一个 SQL 语句被冗余执行，我们应该告诉 Yii 
+<code>customer</code> 是 <code>orders</code> 的 <em>反向关联</em>，可以通过调用 <a href="./yii-db-activerelationtrait.html#inverseOf()-detail">inverseOf()</a> 方法声明，
+如下所示：</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getOrders</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;hasMany(Order::className(), [<span class="hljs-string">'customer_id'</span> =&gt; <span class="hljs-string">'id'</span>])-&gt;inverseOf(<span class="hljs-string">'customer'</span>);
+    }
+}
+</code></pre>
+<p>这样修改关联声明后：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// SELECT * FROM `customer` WHERE `id` = 123</span>
+<span class="hljs-variable">$customer</span> = Customer::findOne(<span class="hljs-number">123</span>);
+
+<span class="hljs-comment">// SELECT * FROM `order` WHERE `customer_id` = 123</span>
+<span class="hljs-variable">$order</span> = <span class="hljs-variable">$customer</span>-&gt;orders[<span class="hljs-number">0</span>];
+
+<span class="hljs-comment">// No SQL will be executed</span>
+<span class="hljs-variable">$customer2</span> = <span class="hljs-variable">$order</span>-&gt;customer;
+
+<span class="hljs-comment">// 输出 "same"</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$customer2</span> === <span class="hljs-variable">$customer</span> ? <span class="hljs-string">'same'</span> : <span class="hljs-string">'not the same'</span>;
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>反向关联不能用在有 <a href="#junction-table">连接表</a> 关联声明中。
+  也就是说，如果一个关联关系通过 <a href="./yii-db-activerelationtrait.html#via()-detail">via()</a> 或 <a href="./yii-db-activequery.html#viaTable()-detail">viaTable()</a> 声明，
+  你就不能再调用 <a href="./yii-db-activerelationtrait.html#inverseOf()-detail">inverseOf()</a> 了。</p>
+</blockquote>
+<h2>保存关联数据（Saving Relations）  <span id="saving-relations"></span><a href="#saving-relations" class="hashlink">&para;</a></h2><p>在使用关联数据时，您经常需要建立不同数据之间的关联或销毁
+现有关联。这需要为定义的关联的列设置正确的值。通过使用 Active Record，
+你就可以编写如下代码：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$customer</span> = Customer::findOne(<span class="hljs-number">123</span>);
+<span class="hljs-variable">$order</span> = <span class="hljs-keyword">new</span> Order();
+<span class="hljs-variable">$order</span>-&gt;subtotal = <span class="hljs-number">100</span>;
+<span class="hljs-comment">// ...</span>
+
+<span class="hljs-comment">// 为 Order 设置属性以定义与 "customer" 的关联关系</span>
+<span class="hljs-variable">$order</span>-&gt;customer_id = <span class="hljs-variable">$customer</span>-&gt;id;
+<span class="hljs-variable">$order</span>-&gt;save();
+</code></pre>
+<p>Active Record 提供了 <a href="./yii-db-baseactiverecord.html#link()-detail">link()</a> 方法，可以更好地完成此任务：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$customer</span> = Customer::findOne(<span class="hljs-number">123</span>);
+<span class="hljs-variable">$order</span> = <span class="hljs-keyword">new</span> Order();
+<span class="hljs-variable">$order</span>-&gt;subtotal = <span class="hljs-number">100</span>;
+<span class="hljs-comment">// ...</span>
+
+<span class="hljs-variable">$order</span>-&gt;link(<span class="hljs-string">'customer'</span>, <span class="hljs-variable">$customer</span>);
+</code></pre>
+<p><a href="./yii-db-baseactiverecord.html#link()-detail">link()</a> 方法需要指定关联名
+和要建立关联的目标 Active Record 实例。该方法将修改属性的值
+以连接两个 Active Record 实例，并将其保存到数据库。在上面的例子中，它将设置 <code>Order</code> 实例的 <code>customer_id</code> 属性
+为 <code>Customer</code> 实例的 <code>id</code> 属性的值，然后保存
+到数据库。</p>
+<blockquote class="note"><p><strong>注意： </strong>你不能关联两个新的 Active Record 实例。</p>
+</blockquote>
+<p>使用 <a href="./yii-db-baseactiverecord.html#link()-detail">link()</a> 的好处在通过 <a href="#junction-table">junction table</a> 定义关系时更加明显。
+例如，你可以使用以下代码关联 <code>Order</code> 实例
+和 <code>Item</code> 实例：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$order</span>-&gt;link(<span class="hljs-string">'items'</span>, <span class="hljs-variable">$item</span>);
+</code></pre>
+<p>上述代码会自动在 <code>order_item</code> 关联表中插入一行，以关联 order 和 item 这两个数据记录。</p>
+<blockquote class="info"><p><strong>信息： </strong><a href="./yii-db-baseactiverecord.html#link()-detail">link()</a> 方法在保存相应的 Active Record 实例时，
+  将不会执行任何数据验证。在调用此方法之前，
+  您应当验证所有的输入数据。</p>
+</blockquote>
+<p><a href="./yii-db-baseactiverecord.html#link()-detail">link()</a> 方法的反向操作是 <a href="./yii-db-baseactiverecord.html#unlink()-detail">unlink()</a> 方法，
+这将可以断掉两个 Active Record 实例间的已经存在了的关联关系。例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$customer</span> = Customer::find()-&gt;with(<span class="hljs-string">'orders'</span>)-&gt;where([<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">123</span>])-&gt;one();
+<span class="hljs-variable">$customer</span>-&gt;unlink(<span class="hljs-string">'orders'</span>, <span class="hljs-variable">$customer</span>-&gt;orders[<span class="hljs-number">0</span>]);
+</code></pre>
+<p>默认情况下，<a href="./yii-db-baseactiverecord.html#unlink()-detail">unlink()</a> 方法将设置指定的外键值，
+以把现有的关联指定为 <code>null</code>。此外，你可以选择通过将 <code>$delete</code> 参数设置为<code>true</code> 传递给方法，
+删除包含此外键值的表记录行。</p>
+<p>当关联关系中有连接表时，调用 <a href="./yii-db-baseactiverecord.html#unlink()-detail">unlink()</a> 时，
+如果 <code>$delete</code> 参数是 <code>true</code> 的话，将导致
+连接表中的外键或相应的行被删除。</p>
+<h2>跨数据库关联（Cross-Database Relations）  <span id="cross-database-relations"></span><a href="#cross-database-relations" class="hashlink">&para;</a></h2><p>Active Record 允许您在不同数据库驱动的 Active Record 类之间声明关联关系。
+这些数据库可以是不同的类型（例如 MySQL 和 PostgreSQL ，或是 MS SQL 和 MongoDB），它们也可以运行在
+不同的服务器上。你可以使用相同的语法来执行关联查询。例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// Customer 对应的表是关系数据库中（比如 MySQL）的 "customer" 表</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">tableName</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'customer'</span>;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getComments</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-comment">// 一个 customer 有很多条评论（comments）</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;hasMany(Comment::className(), [<span class="hljs-string">'customer_id'</span> =&gt; <span class="hljs-string">'id'</span>]);
+    }
+}
+
+<span class="hljs-comment">// Comment 对应的是 MongoDB 数据库中的  "comment" 集合（译者注：MongoDB 中的集合相当于 MySQL 中的表）</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Comment</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">mongodb</span>\<span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">collectionName</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'comment'</span>;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCustomer</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-comment">// 一条评论对应一位 customer</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;hasOne(Customer::className(), [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'customer_id'</span>]);
+    }
+}
+
+<span class="hljs-variable">$customers</span> = Customer::find()-&gt;with(<span class="hljs-string">'comments'</span>)-&gt;all();
+</code></pre>
+<p>本节中描述的大多数关联查询功能，你都可以抄一抄。</p>
+<blockquote class="note"><p><strong>注意： </strong><a href="./yii-db-activequery.html#joinWith()-detail">joinWith()</a> 这个功能限制于某些数据库是否支持跨数据库 JOIN 查询。
+  因此，你再上述的代码里就不能用此方法了，因为 MongoDB 不支持 JOIN 查询。</p>
+</blockquote>
+<h2>自定义查询类（Customizing Query Classes）  <span id="customizing-query-classes"></span><a href="#customizing-query-classes" class="hashlink">&para;</a></h2><p>默认情况下，<a href="./yii-db-activequery.html">yii\db\ActiveQuery</a> 支持所有 Active Record 查询。要在 Active Record 类中使用自定义的查询类，
+您应该重写 <a href="./yii-db-activerecord.html#find()-detail">yii\db\ActiveRecord::find()</a> 方法并返回一个你自定义查询类的实例。 
+例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// file Comment.php</span>
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Comment</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">find</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> CommentQuery(get_called_class());
+    }
+}
+</code></pre>
+<p>现在，对于 <code>Comment</code> 类，不管你执行查询（比如 <code>find()</code>、<code>findOne()</code>），还是定义一个关联（比如 <code>hasOne()</code>），
+你都将调用到 <code>CommentQuery</code> 实例，而不再是 <code>ActiveQuery</code> 实例。</p>
+<p>现在你可以定义 <code>CommentQuery</code> 类了，发挥你的奇技淫巧，以改善查询构建体验。例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// file CommentQuery.php</span>
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveQuery</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CommentQuery</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveQuery</span>
+</span>{
+    <span class="hljs-comment">// 默认加上一些条件（可以跳过）</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;andOnCondition([<span class="hljs-string">'deleted'</span> =&gt; <span class="hljs-keyword">false</span>]);
+        <span class="hljs-keyword">parent</span>::init();
+    }
+
+    <span class="hljs-comment">// ... 在这里加上自定义的查询方法 ...</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">active</span><span class="hljs-params">(<span class="hljs-variable">$state</span> = true)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;andOnCondition([<span class="hljs-string">'active'</span> =&gt; <span class="hljs-variable">$state</span>]);
+    }
+}
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>作为 <a href="./yii-db-activequery.html#onCondition()-detail">onCondition()</a> 方法的替代方案，你应当调用
+  <a href="./yii-db-activequery.html#andOnCondition()-detail">andOnCondition()</a> 或 <a href="./yii-db-activequery.html#orOnCondition()-detail">orOnCondition()</a> 方法来附加新增的条件，
+  不然在一个新定义的查询方法，已存在的条件可能会被覆盖。</p>
+</blockquote>
+<p>然后你就可以先下面这样构建你的查询了：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$comments</span> = Comment::find()-&gt;active()-&gt;all();
+<span class="hljs-variable">$inactiveComments</span> = Comment::find()-&gt;active(<span class="hljs-keyword">false</span>)-&gt;all();
+</code></pre>
+<blockquote class="tip"><p><strong>提示： </strong>在大型项目中，建议您使用自定义查询类来容纳大多数与查询相关的代码，
+  以使 Active Record 类保持简洁。</p>
+</blockquote>
+<p>您还可以在 <code>Comment</code> 关联关系的定义中或在执行关联查询时，使用刚刚新建查询构建方法：</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getActiveComments</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;hasMany(Comment::className(), [<span class="hljs-string">'customer_id'</span> =&gt; <span class="hljs-string">'id'</span>])-&gt;active();
+    }
+}
+
+<span class="hljs-variable">$customers</span> = Customer::find()-&gt;joinWith(<span class="hljs-string">'activeComments'</span>)-&gt;all();
+
+<span class="hljs-comment">// 或者这样</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getComments</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;hasMany(Comment::className(), [<span class="hljs-string">'customer_id'</span> =&gt; <span class="hljs-string">'id'</span>]);
+    }
+}
+
+<span class="hljs-variable">$customers</span> = Customer::find()-&gt;joinWith([
+    <span class="hljs-string">'comments'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(<span class="hljs-variable">$q</span>)</span> </span>{
+        <span class="hljs-variable">$q</span>-&gt;active();
+    }
+])-&gt;all();
+</code></pre>
+<blockquote class="tip"><p><strong>提示： </strong>在 Yii 1.1 中，有个概念叫做 <em>命名范围</em>。命名范围在 Yii 2.0 中不再支持，
+  你依然可以使用自定义查询类、查询方法来达到一样的效果。</p>
+</blockquote>
+<h2>选择额外的字段（Selecting extra fields） <span id="xuan-ze-e-wai-de-zi-duan-selecting-extra-fields"></span><a href="#xuan-ze-e-wai-de-zi-duan-selecting-extra-fields" class="hashlink">&para;</a></h2><p>当 Active Record 实例从查询结果中填充时，从数据结果集中，
+其属性的值将被相应的列填充。</p>
+<p>你可以从查询中获取其他列或值，并将其存储在 Active Record 活动记录中。
+例如，假设我们有一个名为 <code>room</code> 的表，其中包含有关酒店可用房间的信息。
+每个房间使用字段 <code>length</code>，<code>width</code>，<code>height</code> 存储有关其空间大小的信息。
+想象一下，我们需要检索出所有可用房间的列表，并按照体积大小倒序排列。
+你不可能使用 PHP 来计算体积，但是，由于我们需要按照它的值对这些记录进行排序，你依然需要 <code>volume</code> （体积）
+来显示在这个列表中。
+为了达到这个目标，你需要在你的 <code>Room</code> 活动记录类中声明一个额外的字段，它将存储 <code>volume</code> 的值：</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Room</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$volume</span>;
+
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>然后，你需要撰写一个查询，它可以计算房间的大小并执行排序：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$rooms</span> = Room::find()
+    -&gt;select([
+        <span class="hljs-string">'{{room}}.*'</span>, <span class="hljs-comment">// select all columns</span>
+        <span class="hljs-string">'([[length]] * [[width]] * [[height]]) AS volume'</span>, <span class="hljs-comment">// 计算体积</span>
+    ])
+    -&gt;orderBy(<span class="hljs-string">'volume DESC'</span>) <span class="hljs-comment">// 使用排序</span>
+    -&gt;all();
+
+<span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$rooms</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$room</span>) {
+    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$room</span>-&gt;volume; <span class="hljs-comment">// 包含了由 SQL 计算出的值</span>
+}
+</code></pre>
+<p>额外字段的特性对于聚合查询非常有用。
+假设您需要显示一系列客户的订单数量。
+首先，您需要使用 <code>orders</code> 关系声明一个 <code>Customer</code> 类，并指定额外字段来存储 count 结果：</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$ordersCount</span>;
+
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getOrders</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;hasMany(Order::className(), [<span class="hljs-string">'customer_id'</span> =&gt; <span class="hljs-string">'id'</span>]);
+    }
+}
+</code></pre>
+<p>然后你可以编写一个查询来 JOIN 订单表，并计算订单的总数：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$customers</span> = Customer::find()
+    -&gt;select([
+        <span class="hljs-string">'{{customer}}.*'</span>, <span class="hljs-comment">// select customer 表所有的字段</span>
+        <span class="hljs-string">'COUNT({{order}}.id) AS ordersCount'</span> <span class="hljs-comment">// 计算订单总数</span>
+    ])
+    -&gt;joinWith(<span class="hljs-string">'orders'</span>) <span class="hljs-comment">// 连接表</span>
+    -&gt;groupBy(<span class="hljs-string">'{{customer}}.id'</span>) <span class="hljs-comment">// 分组查询，以确保聚合函数生效</span>
+    -&gt;all();
+</code></pre>
+<p>使用此方法的一个缺点是，如果数据不是从 SQL 查询上加载的，它必须再单独计算一遍。
+因此，如果你通过常规查询获取个别的数据记录时，它没有额外的 select 语句，那么它
+将无法返回额外字段的实际值。新保存的记录一样会发生这种情。</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$room</span> = <span class="hljs-keyword">new</span> Room();
+<span class="hljs-variable">$room</span>-&gt;length = <span class="hljs-number">100</span>;
+<span class="hljs-variable">$room</span>-&gt;width = <span class="hljs-number">50</span>;
+<span class="hljs-variable">$room</span>-&gt;height = <span class="hljs-number">2</span>;
+
+<span class="hljs-variable">$room</span>-&gt;volume; <span class="hljs-comment">// 为 `null`, 因为它没有被声明（赋值）</span>
+</code></pre>
+<p>通过 <a href="./yii-db-baseactiverecord.html#__get()-detail">__get()</a> 和 <a href="./yii-db-baseactiverecord.html#__set()-detail">__set()</a> 魔术方法
+我们可以将属性赋予行为特性：</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Room</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-variable">$_volume</span>;
+    
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setVolume</span><span class="hljs-params">(<span class="hljs-variable">$volume</span>)</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;_volume = (float) <span class="hljs-variable">$volume</span>;
+    }
+    
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getVolume</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">empty</span>(<span class="hljs-variable">$this</span>-&gt;length) || <span class="hljs-keyword">empty</span>(<span class="hljs-variable">$this</span>-&gt;width) || <span class="hljs-keyword">empty</span>(<span class="hljs-variable">$this</span>-&gt;height)) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+        }
+        
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$this</span>-&gt;_volume === <span class="hljs-keyword">null</span>) {
+            <span class="hljs-variable">$this</span>-&gt;setVolume(
+                <span class="hljs-variable">$this</span>-&gt;length * <span class="hljs-variable">$this</span>-&gt;width * <span class="hljs-variable">$this</span>-&gt;height
+            );
+        }
+        
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;_volume;
+    }
+
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>当 select 查询不提供 volume 体积时，这模型将能够自动计算体积的值出来，
+当访问模型的属性的时候。</p>
+<p>当定义关联关系的时候，你也可以计算聚合字段：</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-variable">$_ordersCount</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setOrdersCount</span><span class="hljs-params">(<span class="hljs-variable">$count</span>)</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;_ordersCount = (int) <span class="hljs-variable">$count</span>;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getOrdersCount</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$this</span>-&gt;isNewRecord) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>; <span class="hljs-comment">// 这样可以避免调用空主键进行查询</span>
+        }
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$this</span>-&gt;_ordersCount === <span class="hljs-keyword">null</span>) {
+            <span class="hljs-variable">$this</span>-&gt;setOrdersCount(<span class="hljs-variable">$this</span>-&gt;getOrders()-&gt;count()); <span class="hljs-comment">// 根据关联关系按需计算聚合字段</span>
+        }
+
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;_ordersCount;
+    }
+
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getOrders</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;hasMany(Order::className(), [<span class="hljs-string">'customer_id'</span> =&gt; <span class="hljs-string">'id'</span>]);
+    }
+}
+</code></pre>
+<p>使用此代码，如果 'select' 语句中存在 'ordersCount' - 它会从查询结果集获取数据填充 <code>Customer::ordersCount</code> 属性，
+否则它会在被访问的时候，使用 <code>Customer::orders</code> 关联按需计算。</p>
+<p>这种方法也适用于创建一些关联数据的快捷访问方式，特别是对于聚合。
+例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-comment">/**
+     * 为聚合数据定义一个只读的虚拟属性
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getOrdersCount</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$this</span>-&gt;isNewRecord) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>; <span class="hljs-comment">//  这样可以避免调用空主键进行查询</span>
+        }
+        
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">empty</span>(<span class="hljs-variable">$this</span>-&gt;ordersAggregation) ? <span class="hljs-number">0</span> : <span class="hljs-variable">$this</span>-&gt;ordersAggregation[<span class="hljs-number">0</span>][<span class="hljs-string">'counted'</span>];
+    }
+
+    <span class="hljs-comment">/**
+     * 声明一个常规的 'orders' 关联
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getOrders</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;hasMany(Order::className(), [<span class="hljs-string">'customer_id'</span> =&gt; <span class="hljs-string">'id'</span>]);
+    }
+
+    <span class="hljs-comment">/**
+     * 基于 'orders' 关联，声明一个用于查询聚合的新关联
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getOrdersAggregation</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;getOrders()
+            -&gt;select([<span class="hljs-string">'customer_id'</span>, <span class="hljs-string">'counted'</span> =&gt; <span class="hljs-string">'count(*)'</span>])
+            -&gt;groupBy(<span class="hljs-string">'customer_id'</span>)
+            -&gt;asArray(<span class="hljs-keyword">true</span>);
+    }
+
+    <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-keyword">foreach</span> (Customer::find()-&gt;with(<span class="hljs-string">'ordersAggregation'</span>)-&gt;all() <span class="hljs-keyword">as</span> <span class="hljs-variable">$customer</span>) {
+    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$customer</span>-&gt;ordersCount; <span class="hljs-comment">// 输出关联的聚合数据，而不需要额外的查询，因为我们用了即时加载</span>
+}
+
+<span class="hljs-variable">$customer</span> = Customer::findOne(<span class="hljs-variable">$pk</span>);
+<span class="hljs-variable">$customer</span>-&gt;ordersCount; <span class="hljs-comment">// 从延迟加载的关联中，输出聚合数据</span>
+</code></pre>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>数据库迁移（Migrations） - 配合数据库工作（Working with Databases） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1840" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1840-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1840-collapse" class="collapse navbar-collapse"><ul id="w1841" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1842" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1824" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-1824" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-1825" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-1825" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-1826" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-1826" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-1827" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-1827" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-1828" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-1828" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item active" href="#navigation-1829" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-1829" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item active" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-zh-CN/README.md">Sphinx</a>
+<a class="list-group-item" href="./guide-yii2-redis.html">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-zh-CN/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-zh-CN/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1830" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-1830" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-1831" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-1831" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-1832" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-1832" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-1833" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-1833" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-1834" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-1834" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-1835" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-1835" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-1836" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-1836" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-1837" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-1837" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-1838" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-1838" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1839" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-1839" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>数据库迁移 <span id="shu-ju-ku-qian-yi"></span><a href="#shu-ju-ku-qian-yi" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#creating-migrations">创建迁移</a></li>
+<li><a href="#generating-migrations">生成迁移</a></li>
+<li><a href="#applying-migrations">提交迁移</a></li>
+<li><a href="#reverting-migrations">还原迁移</a></li>
+<li><a href="#redoing-migrations">重做迁移</a></li>
+<li><a href="#refreshing-migrations">刷新迁移</a></li>
+<li><a href="#listing-migrations">列出迁移</a></li>
+<li><a href="#modifying-migration-history">修改迁移历史</a></li>
+<li><a href="#customizing-migrations">自定义迁移</a></li>
+<li><a href="#migrating-multiple-databases">迁移多个数据库</a></li></ol></div>
+<p>在开发和维护一个数据库驱动的应用程序时，
+数据库的结构会像代码一样不断演变。
+例如，在开发应用程序的过程中，会增加一张新表且必须得加进来；
+在应用程序被部署到生产环境后，需要建立一个索引来提高查询的性能等等。
+因为一个数据库结构发生改变的时候源代码也经常会需要做出改变，
+Yii 提供了一个 <em>数据库迁移</em> 功能，该功能可以记录数据库的变化，
+以便使数据库和源代码一起受版本控制。</p>
+<p>如下的步骤向我们展示了数据库迁移工具是如何为开发团队所使用的：</p>
+<ol>
+<li>Tim 创建了一个新的迁移对象（例如，创建一张新表，改变字段的定义等）。</li>
+<li>Tim 将这个新的迁移对象提交到代码管理系统（例如，Git，Mercurial）。</li>
+<li>Doug 从代码管理系统当中更新版本并获取到这个新的迁移对象。</li>
+<li>Doug 把这个迁移对象提交到本地的开发数据库当中，
+这样一来，Doug 同步了 Tim 所做的修改。</li>
+</ol>
+<p>如下的步骤向我们展示了如何发布一个附带数据库迁移的新版本到生产环境当中：</p>
+<ol>
+<li>Scott 为一个包含数据库迁移的项目版本创建了一个发布标签。</li>
+<li>Scott 把发布标签的源代码更新到生产环境的服务器上。</li>
+<li>Scott 把所有的增量数据库迁移提交到生产环境数据库当中。</li>
+</ol>
+<p>Yii 提供了一整套的迁移命令行工具，通过这些工具你可以：</p>
+<ul>
+<li>创建新的迁移；</li>
+<li>提交迁移；</li>
+<li>恢复迁移；</li>
+<li>重新提交迁移；</li>
+<li>展示迁移历史和状态。</li>
+</ul>
+<p>所有的这些工具都可以通过 <code>yii migrate</code> 命令来进行操作。
+在这一章节，我们将详细的介绍如何使用这些工具来完成各种各样的任务。
+你也可以通过 <code>yii help migrate</code> 命令来获取每一种工具的具体使用方法。</p>
+<blockquote class="tip"><p><strong>提示： </strong>迁移不仅仅只作用于数据库表，
+  它同样会调整现有的数据来适应新的表单、创建 RBAC 分层、又或者是清除缓存。</p>
+</blockquote>
+<blockquote class="note"><p><strong>注意： </strong>当你使用迁移来操作数据时，你会发现使用 <a href="guide-db-active-record.html">活动记录</a> 类
+很有帮助，因为一些逻辑已经在那里实现了。
+然而别忘了，相比于天生保持恒定不变的迁移类中的代码，程序逻辑是随时变化的。
+所以当你在迁移中使用活动记录类时，活动记录层中逻辑的变化可能会意外打断现有的迁移。
+基于这个原因，
+迁移代码应该保持独立于其他程序逻辑，比如活动记录类。</p>
+</blockquote>
+<h2>创建迁移  <span id="creating-migrations"></span><a href="#creating-migrations" class="hashlink">&para;</a></h2><p>使用如下命令来创建一个新的迁移：</p>
+<pre><code class="hljs sql">yii migrate/<span class="hljs-operator"><span class="hljs-keyword">create</span> &lt;<span class="hljs-keyword">name</span>&gt;
+</span></code></pre>
+<p>必填参数 <code>name</code> 的作用是对新的迁移做一个简要的描述。
+例如，如果这个迁移是用来创建一个叫做 <em>news</em> 的表，
+那么你可以使用 <code>create_news_table</code> 这个名称并运行如下命令：</p>
+<pre><code class="hljs nginx"><span class="hljs-title">yii</span> migrate/create create_news_table
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>因为 <code>name</code> 参数会被用来生成迁移的类名的一部分，
+  所以该参数应当只包含字母、数字和下划线。</p>
+</blockquote>
+<p>如上命令将会在 <code>@app/migrations</code> 目录下创建一个新的名为 <code>m150101_185401_create_news_table.php</code> 的 PHP 类文件。
+该文件包含如下的代码，它们用来声明一个迁移类 <code>m150101_185401_create_news_table</code>，
+并附有代码框架：</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Migration</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150101_185401_create_news_table</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">"m101129_185401_create_news_table cannot be reverted.\n"</span>;
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    }
+
+    <span class="hljs-comment">/*
+    // Use safeUp/safeDown to run migration code within a transaction
+    public function safeUp()
+    {
+    }
+
+    public function safeDown()
+    {
+    }
+    */</span>
+}
+</code></pre>
+<p>每个数据库迁移都会被定义为一个继承自 <a href="./yii-db-migration.html">yii\db\Migration</a> 的 PHP 类。
+类的名称按照 <code>m&lt;YYMMDD_HHMMSS&gt;_&lt;Name&gt;</code> 的格式自动生成，其中</p>
+<ul>
+<li><code>&lt;YYMMDD_HHMMSS&gt;</code> 指执行创建迁移命令的 UTC 时间。</li>
+<li><code>&lt;Name&gt;</code> 和你执行命令时所带的 <code>name</code> 参数值相同。</li>
+</ul>
+<p>在迁移类当中，你应当在 <code>up()</code> 方法中编写改变数据库结构的代码。
+你可能还需要在 <code>down()</code> 方法中编写代码来恢复由 <code>up()</code> 方法所做的改变。
+当你通过 migration 升级数据库时， <code>up()</code> 方法将会被调用，反之， <code>down()</code> 将会被调用。
+如下代码展示了如何通过迁移类来创建一张 <code>news</code> 表：</p>
+<pre><code class="hljs php language-php">
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Schema</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Migration</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150101_185401_create_news_table</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;createTable(<span class="hljs-string">'news'</span>, [
+            <span class="hljs-string">'id'</span> =&gt; Schema::TYPE_PK,
+            <span class="hljs-string">'title'</span> =&gt; Schema::TYPE_STRING . <span class="hljs-string">' NOT NULL'</span>,
+            <span class="hljs-string">'content'</span> =&gt; Schema::TYPE_TEXT,
+        ]);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;dropTable(<span class="hljs-string">'news'</span>);
+    }
+
+}
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>并不是所有迁移都是可恢复的。例如，如果 <code>up()</code> 方法删除了表中的一行数据，
+  这将无法通过 <code>down()</code>  方法来恢复这条数据。有时候，你也许只是懒得去执行 <code>down()</code> 方法了，
+  因为它在恢复数据库迁移方面并不是那么的通用。在这种情况下，
+  你应当在 <code>down()</code> 方法中返回 <code>false</code> 来表明这个 migration 是无法恢复的。</p>
+</blockquote>
+<p>migration 的基类 <a href="./yii-db-migration.html">yii\db\Migration</a> 通过 <a href="./yii-db-migration.html#$db-detail">db</a> 属性来连接数据库。
+你可以通过 <a href="guide-db-dao.html#database-schema">操作数据库模式（schema）</a>
+章节中所描述的那些方法来操作数据库模式（schema）。</p>
+<p>当你创建一张表或者一个字段的时候，你应该使用 <em>抽象类型</em> 而不是 <em>实体类型</em>，
+这样一来你的迁移对象就可以从特定的 DBMS 当中抽离出来。
+<a href="./yii-db-schema.html">yii\db\Schema</a> 类定义了一整套可用的抽象类型常量。这些常量的格式为 <code>TYPE_&lt;Name&gt;</code>。
+例如，<code>TYPE_PK</code> 指代自增主键类型；<code>TYPE_STRING</code> 指代字符串类型。
+当迁移对象被提交到某个特定的数据库的时候，这些抽象类型将会被转换成相对应的实体类型。
+以 MySQL 为例，<code>TYPE_PK</code> 将会变成 <code>int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY</code>，
+而 <code>TYPE_STRING</code> 则变成 <code>varchar(255)</code>。</p>
+<p>在使用抽象类型的时候，你可以添加额外的约束条件。在上面的例子当中，
+<code>NOT NULL</code> 被添加到 <code>Schema::TYPE_STRING</code> 当中来指定该字段不能为空。</p>
+<blockquote class="tip"><p><strong>提示： </strong>抽象类型和实体类型之间的映射关系是由每个具体的 <code>QueryBuilder</code> 
+  类当中的 <a href="./yii-db-querybuilder.html#$typeMap-detail">$typeMap</a> 属性所指定的。</p>
+</blockquote>
+<p>从 2.0.6 版本开始，你可以使用能提供更便捷的方法定义字段模式（schema）的新模式（schema）构建器。
+这样上面的迁移就可以写成这样：</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Migration</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150101_185401_create_news_table</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;createTable(<span class="hljs-string">'news'</span>, [
+            <span class="hljs-string">'id'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;primaryKey(),
+            <span class="hljs-string">'title'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;string()-&gt;notNull(),
+            <span class="hljs-string">'content'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;text(),
+        ]);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;dropTable(<span class="hljs-string">'news'</span>);
+    }
+}
+</code></pre>
+<p>所有用来定义字段类型的方法都可以到 <a href="./yii-db-schemabuildertrait.html">yii\db\SchemaBuilderTrait</a> 的 API 文档中查到。</p>
+<h2>生成迁移  <span id="generating-migrations"></span><a href="#generating-migrations" class="hashlink">&para;</a></h2><p>从 2.0.7 版本开始，迁移终端提供了一种创建迁移的便捷方法。</p>
+<p>如果迁移对象的名称遵循某种特定的格式，比如 <code>create_xxx</code> 或者 <code>drop_xxx</code>，
+那么生成的迁移代码中将包含创建/删除表的额外代码。
+在下文中将描述该特型的所有变型。</p>
+<h3>创建表 <span id="chuang-jian-biao"></span><a href="#chuang-jian-biao" class="hashlink">&para;</a></h3><pre><code class="hljs php language-php">yii migrate/create create_post
+</code></pre>
+<p>生成</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">/**
+ * Handles the creation for table `post`.
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150811_220037_create_post</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@inheritdoc</span>
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;createTable(<span class="hljs-string">'post'</span>, [
+            <span class="hljs-string">'id'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;primaryKey()
+        ]);
+    }
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@inheritdoc</span>
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;dropTable(<span class="hljs-string">'post'</span>);
+    }
+}
+</code></pre>
+<p>利用 <code>--fields</code> 选项指定字段参数，可以立即创建字段。</p>
+<pre><code class="hljs php language-php">yii migrate/create create_post --fields=<span class="hljs-string">"title:string,body:text"</span>
+</code></pre>
+<p>生成</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">/**
+ * Handles the creation for table `post`.
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150811_220037_create_post</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@inheritdoc</span>
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;createTable(<span class="hljs-string">'post'</span>, [
+            <span class="hljs-string">'id'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;primaryKey(),
+            <span class="hljs-string">'title'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;string(),
+            <span class="hljs-string">'body'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;text(),
+        ]);
+    }
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@inheritdoc</span>
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;dropTable(<span class="hljs-string">'post'</span>);
+    }
+}
+
+</code></pre>
+<p>你可以指定更多的字段参数。</p>
+<pre><code class="hljs php language-php">yii migrate/create create_post --fields=<span class="hljs-string">"title:string(12):notNull:unique,body:text"</span>
+</code></pre>
+<p>生成</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">/**
+ * Handles the creation for table `post`.
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150811_220037_create_post</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@inheritdoc</span>
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;createTable(<span class="hljs-string">'post'</span>, [
+            <span class="hljs-string">'id'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;primaryKey(),
+            <span class="hljs-string">'title'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;string(<span class="hljs-number">12</span>)-&gt;notNull()-&gt;unique(),
+            <span class="hljs-string">'body'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;text()
+        ]);
+    }
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@inheritdoc</span>
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;dropTable(<span class="hljs-string">'post'</span>);
+    }
+}
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>主键会被自动添加同时默认名称为 <code>id</code>。
+如果你想使用其他名称可以使用 <code>--fields="name:primaryKey"</code> 来指定名称。</p>
+</blockquote>
+<h4>外键 <span id="wai-jian"></span><a href="#wai-jian" class="hashlink">&para;</a></h4><p>从 2.0.8 版本开始，生成器通过使用 <code>foreignKey</code> 关键字支持外键。</p>
+<pre><code class="hljs php language-php">yii migrate/create create_post --fields=<span class="hljs-string">"author_id:integer:notNull:foreignKey(user),category_id:integer:defaultValue(1):foreignKey,title:string,body:text"</span>
+</code></pre>
+<p>生成</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">/**
+ * Handles the creation for table `post`.
+ * Has foreign keys to the tables:
+ *
+ * - `user`
+ * - `category`
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m160328_040430_create_post</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@inheritdoc</span>
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;createTable(<span class="hljs-string">'post'</span>, [
+            <span class="hljs-string">'id'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;primaryKey(),
+            <span class="hljs-string">'author_id'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;integer()-&gt;notNull(),
+            <span class="hljs-string">'category_id'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;integer()-&gt;defaultValue(<span class="hljs-number">1</span>),
+            <span class="hljs-string">'title'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;string(),
+            <span class="hljs-string">'body'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;text(),
+        ]);
+
+        <span class="hljs-comment">// creates index for column `author_id`</span>
+        <span class="hljs-variable">$this</span>-&gt;createIndex(
+            <span class="hljs-string">'idx-post-author_id'</span>,
+            <span class="hljs-string">'post'</span>,
+            <span class="hljs-string">'author_id'</span>
+        );
+
+        <span class="hljs-comment">// add foreign key for table `user`</span>
+        <span class="hljs-variable">$this</span>-&gt;addForeignKey(
+            <span class="hljs-string">'fk-post-author_id'</span>,
+            <span class="hljs-string">'post'</span>,
+            <span class="hljs-string">'author_id'</span>,
+            <span class="hljs-string">'user'</span>,
+            <span class="hljs-string">'id'</span>,
+            <span class="hljs-string">'CASCADE'</span>
+        );
+
+        <span class="hljs-comment">// creates index for column `category_id`</span>
+        <span class="hljs-variable">$this</span>-&gt;createIndex(
+            <span class="hljs-string">'idx-post-category_id'</span>,
+            <span class="hljs-string">'post'</span>,
+            <span class="hljs-string">'category_id'</span>
+        );
+
+        <span class="hljs-comment">// add foreign key for table `category`</span>
+        <span class="hljs-variable">$this</span>-&gt;addForeignKey(
+            <span class="hljs-string">'fk-post-category_id'</span>,
+            <span class="hljs-string">'post'</span>,
+            <span class="hljs-string">'category_id'</span>,
+            <span class="hljs-string">'category'</span>,
+            <span class="hljs-string">'id'</span>,
+            <span class="hljs-string">'CASCADE'</span>
+        );
+    }
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@inheritdoc</span>
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-comment">// drops foreign key for table `user`</span>
+        <span class="hljs-variable">$this</span>-&gt;dropForeignKey(
+            <span class="hljs-string">'fk-post-author_id'</span>,
+            <span class="hljs-string">'post'</span>
+        );
+
+        <span class="hljs-comment">// drops index for column `author_id`</span>
+        <span class="hljs-variable">$this</span>-&gt;dropIndex(
+            <span class="hljs-string">'idx-post-author_id'</span>,
+            <span class="hljs-string">'post'</span>
+        );
+
+        <span class="hljs-comment">// drops foreign key for table `category`</span>
+        <span class="hljs-variable">$this</span>-&gt;dropForeignKey(
+            <span class="hljs-string">'fk-post-category_id'</span>,
+            <span class="hljs-string">'post'</span>
+        );
+
+        <span class="hljs-comment">// drops index for column `category_id`</span>
+        <span class="hljs-variable">$this</span>-&gt;dropIndex(
+            <span class="hljs-string">'idx-post-category_id'</span>,
+            <span class="hljs-string">'post'</span>
+        );
+
+        <span class="hljs-variable">$this</span>-&gt;dropTable(<span class="hljs-string">'post'</span>);
+    }
+}
+</code></pre>
+<p><code>foreignKey</code> 关键字在字段描述中的位置不会影响生成的代码。
+那意味着：</p>
+<ul>
+<li><code>author_id:integer:notNull:foreignKey(user)</code></li>
+<li><code>author_id:integer:foreignKey(user):notNull</code></li>
+<li><code>author_id:foreignKey(user):integer:notNull</code></li>
+</ul>
+<p>以上都会生成相同的代码。</p>
+<p><code>foreignKey</code> 关键字可以在圆括号中间接收一个参数，
+这个参数将会成为生成外键所需的关联表的名称。
+如果不传入任何参数，那么表名将会根据字段名来生成。</p>
+<p>在上面的例子中，<code>author_id:integer:notNull:foreignKey(user)</code> 会生成一个
+带有关联 <code>user</code> 表的外键，名称为 <code>author_id</code> 的字段，
+<code>category_id:integer:defaultValue(1):foreignKey</code> 会生成一个
+带有关联 <code>category</code> 表的外键，名称为 <code>category_id</code> 的字段。</p>
+<p>从 2.0.11 版本开始，<code>foreignKey</code> 接收第二个参数，跟第一个参数用空格分开。
+这个参数表示生成的外键所关联字段的名称。
+如果不传入第二个参数，字段名将从表模式（schema）中获得。
+如果模式（schema）不存在，或者未设置主键，又或者是联合主键，字段将使用 <code>id</code> 作为默认名称。</p>
+<h3>删除表 <span id="shan-chu-biao"></span><a href="#shan-chu-biao" class="hashlink">&para;</a></h3><pre><code class="hljs php language-php">yii migrate/create drop_post --fields=<span class="hljs-string">"title:string(12):notNull:unique,body:text"</span>
+</code></pre>
+<p>生成</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150811_220037_drop_post</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;dropTable(<span class="hljs-string">'post'</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;createTable(<span class="hljs-string">'post'</span>, [
+            <span class="hljs-string">'id'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;primaryKey(),
+            <span class="hljs-string">'title'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;string(<span class="hljs-number">12</span>)-&gt;notNull()-&gt;unique(),
+            <span class="hljs-string">'body'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;text()
+        ]);
+    }
+}
+</code></pre>
+<h3>添加字段 <span id="tian-jia-zi-duan"></span><a href="#tian-jia-zi-duan" class="hashlink">&para;</a></h3><p>如果迁移的名称遵循 <code>add_xxx_to_yyy</code> 这样的格式，
+生成的类文件将会包含必要的 <code>addColumn</code> 和 <code>dropColumn</code>。</p>
+<p>添加字段：</p>
+<pre><code class="hljs php language-php">yii migrate/create add_position_to_post --fields=<span class="hljs-string">"position:integer"</span>
+</code></pre>
+<p>生成</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150811_220037_add_position_to_post</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;addColumn(<span class="hljs-string">'post'</span>, <span class="hljs-string">'position'</span>, <span class="hljs-variable">$this</span>-&gt;integer());
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;dropColumn(<span class="hljs-string">'post'</span>, <span class="hljs-string">'position'</span>);
+    }
+}
+</code></pre>
+<p>你可以像如下这样指定多个字段：</p>
+<pre><code class="hljs nginx"><span class="hljs-title">yii</span> migrate/create add_xxx_column_yyy_column_to_zzz_table --fields=<span class="hljs-string">"xxx:integer,yyy:text"</span>
+</code></pre>
+<h3>删除字段 <span id="shan-chu-zi-duan"></span><a href="#shan-chu-zi-duan" class="hashlink">&para;</a></h3><p>如果迁移的名称遵循 <code>drop_xxx_from_yyy</code> 这样的格式，
+生成的类文件将会包含必要的 <code>addColumn</code> 和 <code>dropColumn</code>。</p>
+<pre><code class="hljs php language-php">yii migrate/create drop_position_from_post --fields=<span class="hljs-string">"position:integer"</span>
+</code></pre>
+<p>生成</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150811_220037_drop_position_from_post</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;dropColumn(<span class="hljs-string">'post'</span>, <span class="hljs-string">'position'</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;addColumn(<span class="hljs-string">'post'</span>, <span class="hljs-string">'position'</span>, <span class="hljs-variable">$this</span>-&gt;integer());
+    }
+}
+</code></pre>
+<h3>添加连接表 <span id="tian-jia-lian-jie-biao"></span><a href="#tian-jia-lian-jie-biao" class="hashlink">&para;</a></h3><p>如果迁移的名称遵循 <code>create_junction_xxx_and_yyy</code> 这样的格式，
+创建连接表的必要代码将会被生成。</p>
+<pre><code class="hljs php language-php">yii migrate/create create_junction_post_and_tag --fields=<span class="hljs-string">"created_at:dateTime"</span>
+</code></pre>
+<p>生成</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">/**
+ * Handles the creation for table `post_tag`.
+ * Has foreign keys to the tables:
+ *
+ * - `post`
+ * - `tag`
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m160328_041642_create_junction_post_and_tag</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@inheritdoc</span>
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;createTable(<span class="hljs-string">'post_tag'</span>, [
+            <span class="hljs-string">'post_id'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;integer(),
+            <span class="hljs-string">'tag_id'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;integer(),
+            <span class="hljs-string">'created_at'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;dateTime(),
+            <span class="hljs-string">'PRIMARY KEY(post_id, tag_id)'</span>,
+        ]);
+
+        <span class="hljs-comment">// creates index for column `post_id`</span>
+        <span class="hljs-variable">$this</span>-&gt;createIndex(
+            <span class="hljs-string">'idx-post_tag-post_id'</span>,
+            <span class="hljs-string">'post_tag'</span>,
+            <span class="hljs-string">'post_id'</span>
+        );
+
+        <span class="hljs-comment">// add foreign key for table `post`</span>
+        <span class="hljs-variable">$this</span>-&gt;addForeignKey(
+            <span class="hljs-string">'fk-post_tag-post_id'</span>,
+            <span class="hljs-string">'post_tag'</span>,
+            <span class="hljs-string">'post_id'</span>,
+            <span class="hljs-string">'post'</span>,
+            <span class="hljs-string">'id'</span>,
+            <span class="hljs-string">'CASCADE'</span>
+        );
+
+        <span class="hljs-comment">// creates index for column `tag_id`</span>
+        <span class="hljs-variable">$this</span>-&gt;createIndex(
+            <span class="hljs-string">'idx-post_tag-tag_id'</span>,
+            <span class="hljs-string">'post_tag'</span>,
+            <span class="hljs-string">'tag_id'</span>
+        );
+
+        <span class="hljs-comment">// add foreign key for table `tag`</span>
+        <span class="hljs-variable">$this</span>-&gt;addForeignKey(
+            <span class="hljs-string">'fk-post_tag-tag_id'</span>,
+            <span class="hljs-string">'post_tag'</span>,
+            <span class="hljs-string">'tag_id'</span>,
+            <span class="hljs-string">'tag'</span>,
+            <span class="hljs-string">'id'</span>,
+            <span class="hljs-string">'CASCADE'</span>
+        );
+    }
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@inheritdoc</span>
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-comment">// drops foreign key for table `post`</span>
+        <span class="hljs-variable">$this</span>-&gt;dropForeignKey(
+            <span class="hljs-string">'fk-post_tag-post_id'</span>,
+            <span class="hljs-string">'post_tag'</span>
+        );
+
+        <span class="hljs-comment">// drops index for column `post_id`</span>
+        <span class="hljs-variable">$this</span>-&gt;dropIndex(
+            <span class="hljs-string">'idx-post_tag-post_id'</span>,
+            <span class="hljs-string">'post_tag'</span>
+        );
+
+        <span class="hljs-comment">// drops foreign key for table `tag`</span>
+        <span class="hljs-variable">$this</span>-&gt;dropForeignKey(
+            <span class="hljs-string">'fk-post_tag-tag_id'</span>,
+            <span class="hljs-string">'post_tag'</span>
+        );
+
+        <span class="hljs-comment">// drops index for column `tag_id`</span>
+        <span class="hljs-variable">$this</span>-&gt;dropIndex(
+            <span class="hljs-string">'idx-post_tag-tag_id'</span>,
+            <span class="hljs-string">'post_tag'</span>
+        );
+
+        <span class="hljs-variable">$this</span>-&gt;dropTable(<span class="hljs-string">'post_tag'</span>);
+    }
+}
+</code></pre>
+<p>从 2.0.11 版本开始，连接表的外键字段名将从表模式（schema）中获得。
+如果模式（schema）不存在，或者未设置主键，又或者是联合主键，字段将使用 <code>id</code> 作为默认名称。</p>
+<h3>事务迁移  <span id="transactional-migrations"></span><a href="#transactional-migrations" class="hashlink">&para;</a></h3><p>当需要实现复杂的数据库迁移的时候，确定每一个迁移的执行是否成功或失败就变得相当重要了，
+因为这将影响到数据库的完整性和一致性。为了达到这个目标，我们建议你把每个迁移里面的
+数据库操作都封装到一个 <a href="guide-db-dao.html#performing-transactions">transaction</a> 里面。</p>
+<p>实现事务迁移的一个更为简便的方法是把迁移的代码都放到 <code>safeUp()</code> 和 <code>safeDown()</code> 方法里面。
+它们与 <code>up()</code> 和 <code>down()</code> 的不同点就在于它们是被隐式的封装到事务当中的。
+如此一来，只要这些方法里面的任何一个操作失败了，那么所有之前的操作都会被自动的回滚。</p>
+<p>在如下的例子当中，除了创建 <code>news</code> 表以外，我们还插入了一行初始化数据到表里面。</p>
+<pre><code class="hljs php language-php">
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Schema</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Migration</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150101_185401_create_news_table</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">safeUp</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;createTable(<span class="hljs-string">'news'</span>, [
+            <span class="hljs-string">'id'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;primaryKey(),,
+            <span class="hljs-string">'title'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;string()-&gt;notNull(),
+            <span class="hljs-string">'content'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;text(),
+        ]);
+        
+        <span class="hljs-variable">$this</span>-&gt;insert(<span class="hljs-string">'news'</span>, [
+            <span class="hljs-string">'title'</span> =&gt; <span class="hljs-string">'test 1'</span>,
+            <span class="hljs-string">'content'</span> =&gt; <span class="hljs-string">'content 1'</span>,
+        ]);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">safeDown</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;delete(<span class="hljs-string">'news'</span>, [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">1</span>]);
+        <span class="hljs-variable">$this</span>-&gt;dropTable(<span class="hljs-string">'news'</span>);
+    }
+}
+</code></pre>
+<p>需要注意的是，当你在 <code>safeUp()</code> 当中执行多个数据库操作的时候，你应该在 <code>safeDown()</code> 方法当中反转它们的执行顺序。
+在上面的例子当中，我们在 <code>safeUp()</code> 方法当中首先创建了一张表，然后插入了一条数据；而在 <code>safeDown()</code> 方法当中，
+我们首先删除那一行数据，然后才删除那张表。</p>
+<blockquote class="note"><p><strong>注意： </strong>并不是所有的数据库都支持事务。有些数据库查询也是不能被放到事务里面的。
+  在 <a href="http://dev.mysql.com/doc/refman/5.7/en/implicit-commit.html">implicit commit</a> 章节当中有相关的例子可以参考。
+  如果遇到这种情况的话，那么你应该使用 <code>up()</code> 和 <code>down()</code> 方法进行替代。</p>
+</blockquote>
+<h3>访问数据库的方法  <span id="db-accessing-methods"></span><a href="#db-accessing-methods" class="hashlink">&para;</a></h3><p>迁移的基类 <a href="./yii-db-migration.html">yii\db\Migration</a> 提供了一整套访问和操作数据库的方法。
+你可能会发现这些方法的命名和 <a href="./yii-db-command.html">yii\db\Command</a> 类提供的 <a href="guide-db-dao.html">DAO 方法</a> 很类似。
+例如，<a href="./yii-db-migration.html#createTable()-detail">yii\db\Migration::createTable()</a> 方法可以创建一张新的表，
+这和 <a href="./yii-db-command.html#createTable()-detail">yii\db\Command::createTable()</a> 的功能是一模一样的。</p>
+<p>使用 <a href="./yii-db-migration.html">yii\db\Migration</a> 所提供的方法的好处在于你不需要再显式的创建 <a href="./yii-db-command.html">yii\db\Command</a> 实例，
+而且在执行每个方法的时候都会显示一些有用的信息来告诉我们数据库操作是不是都已经完成，
+还有它们完成这些操作花了多长时间等等。</p>
+<p>如下是所有这些数据库访问方法的列表：</p>
+<ul>
+<li><a href="./yii-db-migration.html#execute()-detail">execute()</a>：执行一条 SQL 语句</li>
+<li><a href="./yii-db-migration.html#insert()-detail">insert()</a>：插入单行数据</li>
+<li><a href="./yii-db-migration.html#batchInsert()-detail">batchInsert()</a>：插入多行数据</li>
+<li><a href="./yii-db-migration.html#update()-detail">update()</a>：更新数据</li>
+<li><a href="./yii-db-migration.html#delete()-detail">delete()</a>：删除数据</li>
+<li><a href="./yii-db-migration.html#createTable()-detail">createTable()</a>：创建表</li>
+<li><a href="./yii-db-migration.html#renameTable()-detail">renameTable()</a>：重命名表名</li>
+<li><a href="./yii-db-migration.html#dropTable()-detail">dropTable()</a>：删除一张表</li>
+<li><a href="./yii-db-migration.html#truncateTable()-detail">truncateTable()</a>：清空表中的所有数据</li>
+<li><a href="./yii-db-migration.html#addColumn()-detail">addColumn()</a>：加一个字段</li>
+<li><a href="./yii-db-migration.html#renameColumn()-detail">renameColumn()</a>：重命名字段名称</li>
+<li><a href="./yii-db-migration.html#dropColumn()-detail">dropColumn()</a>：删除一个字段</li>
+<li><a href="./yii-db-migration.html#alterColumn()-detail">alterColumn()</a>：修改字段</li>
+<li><a href="./yii-db-migration.html#addPrimaryKey()-detail">addPrimaryKey()</a>：添加一个主键</li>
+<li><a href="./yii-db-migration.html#dropPrimaryKey()-detail">dropPrimaryKey()</a>：删除一个主键</li>
+<li><a href="./yii-db-migration.html#addForeignKey()-detail">addForeignKey()</a>：添加一个外键</li>
+<li><a href="./yii-db-migration.html#dropForeignKey()-detail">dropForeignKey()</a>：删除一个外键</li>
+<li><a href="./yii-db-migration.html#createIndex()-detail">createIndex()</a>：创建一个索引</li>
+<li><a href="./yii-db-migration.html#dropIndex()-detail">dropIndex()</a>：删除一个索引</li>
+<li><a href="./yii-db-migration.html#addCommentOnColumn()-detail">addCommentOnColumn()</a>：添加字段的注释</li>
+<li><a href="./yii-db-migration.html#dropCommentFromColumn()-detail">dropCommentFromColumn()</a>：删除字段的注释</li>
+<li><a href="./yii-db-migration.html#addCommentOnTable()-detail">addCommentOnTable()</a>：添加表的注释</li>
+<li><a href="./yii-db-migration.html#dropCommentFromTable()-detail">dropCommentFromTable()</a>：删除表的注释</li>
+</ul>
+<blockquote class="tip"><p><strong>提示： </strong><a href="./yii-db-migration.html">yii\db\Migration</a> 并没有提供数据库的查询方法。
+这是因为通常你是不需要去数据库把数据一行一行查出来再显示出来的。
+另外一个原因是你完全可以使用强大的 <a href="guide-db-query-builder.html">Query Builder 查询构建器</a> 来构建和查询。<br />
+你可以像这样在迁移中使用查询构建器：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 更新所有用户的 status 字段</span>
+<span class="hljs-keyword">foreach</span>((<span class="hljs-keyword">new</span> Query)-&gt;from(<span class="hljs-string">'users'</span>)-&gt;each() <span class="hljs-keyword">as</span> <span class="hljs-variable">$user</span>) {
+    <span class="hljs-variable">$this</span>-&gt;update(<span class="hljs-string">'users'</span>, [<span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">1</span>], [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-variable">$user</span>[<span class="hljs-string">'id'</span>]]);
+}
+</code></pre>
+</blockquote>
+<h2>提交迁移  <span id="applying-migrations"></span><a href="#applying-migrations" class="hashlink">&para;</a></h2><p>为了将数据库升级到最新的结构，你应该使用如下命令来提交所有新的迁移：</p>
+<pre><code class="hljs nginx"><span class="hljs-title">yii</span> migrate
+</code></pre>
+<p>这条命令会列出迄今为止所有未提交的迁移。如果你确定你需要提交这些迁移，
+它将会按照类名当中的时间戳的顺序，一个接着一个的运行每个新的迁移类里面的 <code>up()</code> 或者是 <code>safeUp()</code> 方法。
+如果其中任意一个迁移提交失败了，
+那么这条命令将会退出并停止剩下的那些还未执行的迁移。</p>
+<blockquote class="tip"><p><strong>提示： </strong>如果你的服务器没有命令行，
+你可以尝试 <a href="https://github.com/samdark/yii2-webshell">web shell</a> 这个扩展。</p>
+</blockquote>
+<p>对于每一个成功提交的迁移，这条命令都会在一个叫做 <code>migration</code> 
+的数据库表中插入一条包含应用程序成功提交迁移的记录，
+该记录将帮助迁移工具判断哪些迁移已经提交，哪些还没有提交。</p>
+<blockquote class="info"><p><strong>信息： </strong>迁移工具将会自动在数据库当中创建 <code>migration</code> 表，
+  该数据库是在该命令的 <a href="./yii-console-controllers-migratecontroller.html#$db-detail">db</a> 选项当中指定的。
+  默认情况下，是由 <code>db</code> <a href="guide-structure-application-components.html">application component</a> 指定的。</p>
+</blockquote>
+<p>有时，你可能只需要提交一个或者少数的几个迁移，
+你可以使用该命令指定需要执行的条数，而不是执行所有的可用迁移。
+例如，如下命令将会尝试提交前三个可用的迁移：</p>
+<pre><code class="hljs nginx"><span class="hljs-title">yii</span> migrate <span class="hljs-number">3</span>
+</code></pre>
+<p>你也可以指定一个特定的迁移，按照如下格式使用 <code>migrate/to</code> 命令
+来指定数据库应该提交哪一个迁移：</p>
+<pre><code class="hljs nginx"><span class="hljs-title">yii</span> migrate/to 150101_185401                      <span class="hljs-comment"># using timestamp to specify the migration 使用时间戳来指定迁移</span>
+yii migrate/to <span class="hljs-string">"2015-01-01 18:54:01"</span>              <span class="hljs-comment"># using a string that can be parsed by strtotime() 使用一个可以被 strtotime() 解析的字符串</span>
+yii migrate/to m150101_185401_create_news_table   <span class="hljs-comment"># using full name 使用全名</span>
+yii migrate/to <span class="hljs-number">1392853618</span>                         <span class="hljs-comment"># using UNIX timestamp 使用 UNIX 时间戳</span>
+</code></pre>
+<p>如果在指定要提交的迁移前面还有未提交的迁移，那么在执行这个被指定的迁移之前，
+这些还未提交的迁移会先被提交。</p>
+<p>如果被指定提交的迁移在之前已经被提交过，那么在其之后的那些迁移将会被还原。</p>
+<h2>还原迁移  <span id="reverting-migrations"></span><a href="#reverting-migrations" class="hashlink">&para;</a></h2><p>你可以使用如下命令来还原其中一个或多个意见被提交过的迁移：</p>
+<pre><code class="hljs nginx"><span class="hljs-title">yii</span> migrate/down     <span class="hljs-comment"># revert the most recently applied migration 还原最近一次提交的迁移</span>
+yii migrate/down <span class="hljs-number">3</span>   <span class="hljs-comment"># revert the most 3 recently applied migrations 还原最近三次提交的迁移</span>
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>并不是所有的迁移都能被还原。
+  尝试还原这类迁移将可能导致报错甚至是终止所有的还原进程。</p>
+</blockquote>
+<h2>重做迁移  <span id="redoing-migrations"></span><a href="#redoing-migrations" class="hashlink">&para;</a></h2><p>重做迁移的意思是先还原指定的迁移，然后再次提交。
+如下所示：</p>
+<pre><code class="hljs nginx"><span class="hljs-title">yii</span> migrate/redo        <span class="hljs-comment"># 重做最近一次提交的迁移</span>
+yii migrate/redo <span class="hljs-number">3</span>      <span class="hljs-comment"># 重做最近三次提交的迁移</span>
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>如果一个迁移是不能被还原的，那么你将无法对它进行重做。</p>
+</blockquote>
+<h2>刷新迁移  <span id="refreshing-migrations"></span><a href="#refreshing-migrations" class="hashlink">&para;</a></h2><p>从 2.0.13 版本开始，你可以从数据库中删除所有的表和外键，从头开始重新提交所有迁移。</p>
+<pre><code class="hljs nginx"><span class="hljs-title">yii</span> migrate/fresh       <span class="hljs-comment"># 清空数据库并从头开始应用所有迁移。</span>
+</code></pre>
+<h2>列出迁移  <span id="listing-migrations"></span><a href="#listing-migrations" class="hashlink">&para;</a></h2><p>你可以使用如下命令列出那些提交了的或者是还未提交的迁移：</p>
+<pre><code class="hljs bash">yii migrate/<span class="hljs-built_in">history</span>     <span class="hljs-comment"># 显示最近10次提交的迁移</span>
+yii migrate/<span class="hljs-built_in">history</span> <span class="hljs-number">5</span>   <span class="hljs-comment"># 显示最近5次提交的迁移</span>
+yii migrate/<span class="hljs-built_in">history</span> all <span class="hljs-comment"># 显示所有已经提交过的迁移</span>
+
+yii migrate/new         <span class="hljs-comment"># 显示前10个还未提交的迁移</span>
+yii migrate/new <span class="hljs-number">5</span>       <span class="hljs-comment"># 显示前5个还未提交的迁移</span>
+yii migrate/new all     <span class="hljs-comment"># 显示所有还未提交的迁移</span>
+</code></pre>
+<h2>修改迁移历史  <span id="modifying-migration-history"></span><a href="#modifying-migration-history" class="hashlink">&para;</a></h2><p>有时候你也许需要简单的标记一下你的数据库已经升级到一个特定的迁移，
+而不是实际提交或者是还原迁移。
+这个经常会发生在你手动的改变数据库的一个特定状态，而又不想相应的迁移被重复提交。
+那么你可以使用如下命令来达到目的：</p>
+<pre><code class="hljs nginx"><span class="hljs-title">yii</span> migrate/mark 150101_185401                      <span class="hljs-comment"># 使用时间戳来指定迁移</span>
+yii migrate/mark <span class="hljs-string">"2015-01-01 18:54:01"</span>              <span class="hljs-comment"># 使用一个可以被 strtotime() 解析的字符串</span>
+yii migrate/mark m150101_185401_create_news_table   <span class="hljs-comment"># 使用全名</span>
+yii migrate/mark <span class="hljs-number">1392853618</span>                         <span class="hljs-comment"># 使用 UNIX 时间戳</span>
+</code></pre>
+<p>该命令将会添加或者删除 <code>migration</code> 表当中的某几行数据来表明数据库已经提交到了指定的某个迁移上。
+执行这条命令期间不会有任何的迁移会被提交或还原。</p>
+<h2>自定义迁移  <span id="customizing-migrations"></span><a href="#customizing-migrations" class="hashlink">&para;</a></h2><p>有很多方法可以自定义迁移命令。</p>
+<h3>使用命令行选项  <span id="using-command-line-options"></span><a href="#using-command-line-options" class="hashlink">&para;</a></h3><p>迁移命令附带了几个命令行选项，可以用来自定义它的行为：</p>
+<ul>
+<li><p><code>interactive</code>：boolean (默认值为 true)，指定是否以交互模式来运行迁移。
+当被设置为 true 时，在命令执行某些操作前，会提示用户。如果你希望在后台执行该命令，
+那么你应该把它设置成 false。</p>
+</li>
+<li><p><code>migrationPath</code>：string|array (默认值为 <code>@app/migrations</code>)，指定存放所有迁移类文件的目录。该选项可以是一个目录的路径，
+也可以是 <a href="guide-concept-aliases.html">路径别名</a>。需要注意的是指定的目录必选存在，
+否则将会触发一个错误。
+从 2.0.12 版本开始，可以用一个数组来指定从多个来源读取迁移类文件。</p>
+</li>
+<li><p><code>migrationTable</code>：string (默认值为 <code>migration</code>)，指定用于存储迁移历史信息的数据库表名称。
+如果这张表不存在，那么迁移命令将自动创建这张表。当然你也可以使用这样的字段结构：
+<code>version varchar(255) primary key, apply_time integer</code> 来手动创建这张表。</p>
+</li>
+<li><p><code>db</code>：string (默认值为 <code>db</code>)，指定数据库 <a href="guide-structure-application-components.html">application component</a> 的 ID。
+它指的是将会被该命令迁移的数据库。</p>
+</li>
+<li><p><code>templateFile</code>：string (默认值为 <code>@yii/views/migration.php</code>)，
+指定生产迁移框架代码类文件的模版文件路径。
+该选项即可以使用文件路径来指定，也可以使用路径 <a href="guide-concept-aliases.html">别名</a> 来指定。
+该模版文件是一个可以使用预定义变量 <code>$className</code> 来获取迁移类名称的 PHP 脚本。</p>
+</li>
+<li><p><code>generatorTemplateFiles</code>：array (defaults to `[</p>
+<pre><code class="hljs php">  <span class="hljs-string">'create_table'</span> =&gt; <span class="hljs-string">'@yii/views/createTableMigration.php'</span>,
+  <span class="hljs-string">'drop_table'</span> =&gt; <span class="hljs-string">'@yii/views/dropTableMigration.php'</span>,
+  <span class="hljs-string">'add_column'</span> =&gt; <span class="hljs-string">'@yii/views/addColumnMigration.php'</span>,
+  <span class="hljs-string">'drop_column'</span> =&gt; <span class="hljs-string">'@yii/views/dropColumnMigration.php'</span>,
+  <span class="hljs-string">'create_junction'</span> =&gt; <span class="hljs-string">'@yii/views/createJunctionMigration.php'</span>
+</code></pre>
+<p>]`)，指定生成迁移代码的模版文件，查看 "<a href="#generating-migrations">Generating Migrations</a>"
+了解更多细节。</p>
+</li>
+<li><p><code>fields</code>：由用来创建迁移代码的多个字段定义字符串所组成的数组。默认是 <code>[]</code>。
+字段定义的格式是 <code>COLUMN_NAME:COLUMN_TYPE:COLUMN_DECORATOR</code>。例如，<code>--fields=name:string(12):notNull</code> 会创建
+一个长度为 12 的，非空的，字符串类型的字段。</p>
+</li>
+</ul>
+<p>如下例子向我们展示了如何使用这些选项：</p>
+<p>例如，如果我们需要迁移一个 <code>forum</code> 模块，
+而该迁移文件放在该模块下的 <code>migrations</code> 目录当中，
+那么我们可以使用如下命令： </p>
+<pre><code class="hljs nginx"><span class="hljs-comment"># 在 forum 模块中以非交互模式进行迁移</span>
+<span class="hljs-title">yii</span> migrate --migrationPath=<span class="hljs-variable">@app</span>/modules/forum/migrations --interactive=<span class="hljs-number">0</span>
+</code></pre>
+<h3>全局配置命令  <span id="configuring-command-globally"></span><a href="#configuring-command-globally" class="hashlink">&para;</a></h3><p>为了避免运行迁移命令的时候每次都要重复的输入一些同样的参数，
+你可以选择在应用程序配置当中进行全局配置，一劳永逸：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'controllerMap'</span> =&gt; [
+        <span class="hljs-string">'migrate'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\console\controllers\MigrateController'</span>,
+            <span class="hljs-string">'migrationTable'</span> =&gt; <span class="hljs-string">'backend_migration'</span>,
+        ],
+    ],
+];
+</code></pre>
+<p>如上所示配置，在每次运行迁移命令的时候，
+<code>backend_migration</code> 表将会被用来记录迁移历史。
+你再也不需要通过 <code>migrationTable</code> 命令行参数来指定这张历史纪录表了。</p>
+<h3>使用命名空间的迁移  <span id="namespaced-migrations"></span><a href="#namespaced-migrations" class="hashlink">&para;</a></h3><p>自从 2.0.10 版本开始，你可以为迁移类使用命名空间。 
+你可以通过 <a href="./yii-console-controllers-basemigratecontroller.html#$migrationNamespaces-detail">migrationNamespaces</a> 来指定迁移会用到的命名空间。
+使用命名空间将允许你利用多个源的位置进行迁移。例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'controllerMap'</span> =&gt; [
+        <span class="hljs-string">'migrate'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\console\controllers\MigrateController'</span>,
+            <span class="hljs-string">'migrationPath'</span> =&gt; <span class="hljs-keyword">null</span>, <span class="hljs-comment">// disable non-namespaced migrations if app\migrations is listed below</span>
+            <span class="hljs-string">'migrationNamespaces'</span> =&gt; [
+                <span class="hljs-string">'app\migrations'</span>, <span class="hljs-comment">// Common migrations for the whole application</span>
+                <span class="hljs-string">'module\migrations'</span>, <span class="hljs-comment">// Migrations for the specific project's module</span>
+                <span class="hljs-string">'some\extension\migrations'</span>, <span class="hljs-comment">// Migrations for the specific extension</span>
+            ],
+        ],
+    ],
+];
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>从不同命名空间提交的迁移会创建出一份<strong>单一的</strong>迁移历史，
+  比如你不能只从某个特定的命名空间去提交或者还原迁移。</p>
+</blockquote>
+<p>当你正在操作使用命名空间的迁移时：比如创建迁移，还原迁移等，你应当在迁移名称前指明完整的命名空间。
+要注意反斜线(<code>\</code>)在 shell 中会被当成特殊字符，你应该对反斜线进行编码，
+避免 shell 报错或者产生不正确的结果。例如：</p>
+<pre><code class="hljs nginx"><span class="hljs-title">yii</span> migrate/create <span class="hljs-string">'app\\migrations\\createUserTable'</span>
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>通过 <a href="./yii-console-controllers-basemigratecontroller.html#$migrationPath-detail">migrationPath</a> 声明的迁移不能包含命名空间，
+  使用命名空间的迁移只能通过 <a href="./yii-console-controllers-basemigratecontroller.html#$migrationNamespaces-detail">yii\console\controllers\MigrateController::$migrationNamespaces</a> 
+  的属性来提交。</p>
+</blockquote>
+<p>从版本 2.0.12 开始，<a href="./yii-console-controllers-basemigratecontroller.html#$migrationPath-detail">migrationPath</a> 属性也接收一个数组作为参数,
+这个数组指明了没有使用命名空间的多个迁移的目录。
+这个参数主要用于已经从多个位置进行了迁移的现有项目。
+这些迁移主要来自外部资源，比如其他开发人员开发的 Yii 扩展，
+当使用新方法时，这些迁移很难改成使用命名空间。</p>
+<h3>分离的迁移  <span id="separated-migrations"></span><a href="#separated-migrations" class="hashlink">&para;</a></h3><p>有时候我们并不想整个项目所有的迁移都记录到同一份迁移历史中。
+例如：你可能安装了 'blog' 扩展，它有自己独立的功能和迁移，
+不会影响到用于项目主要功能的其他扩展。</p>
+<p>如果你想完全分开提交和追踪多个迁移，
+你可以同时配置使用不同命名空间和历史记录表的多条迁移命令：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'controllerMap'</span> =&gt; [
+        <span class="hljs-comment">// Common migrations for the whole application</span>
+        <span class="hljs-string">'migrate-app'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\console\controllers\MigrateController'</span>,
+            <span class="hljs-string">'migrationNamespaces'</span> =&gt; [<span class="hljs-string">'app\migrations'</span>],
+            <span class="hljs-string">'migrationTable'</span> =&gt; <span class="hljs-string">'migration_app'</span>,
+            <span class="hljs-string">'migrationPath'</span> =&gt; <span class="hljs-keyword">null</span>,
+        ],
+        <span class="hljs-comment">// Migrations for the specific project's module</span>
+        <span class="hljs-string">'migrate-module'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\console\controllers\MigrateController'</span>,
+            <span class="hljs-string">'migrationNamespaces'</span> =&gt; [<span class="hljs-string">'module\migrations'</span>],
+            <span class="hljs-string">'migrationTable'</span> =&gt; <span class="hljs-string">'migration_module'</span>,
+            <span class="hljs-string">'migrationPath'</span> =&gt; <span class="hljs-keyword">null</span>,
+        ],
+        <span class="hljs-comment">// Migrations for the specific extension</span>
+        <span class="hljs-string">'migrate-rbac'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\console\controllers\MigrateController'</span>,
+            <span class="hljs-string">'migrationPath'</span> =&gt; <span class="hljs-string">'@yii/rbac/migrations'</span>,
+            <span class="hljs-string">'migrationTable'</span> =&gt; <span class="hljs-string">'migration_rbac'</span>,
+        ],
+    ],
+];
+</code></pre>
+<p>请注意，要同步数据库，您现在需要运行多个命令而不是一个：</p>
+<pre><code class="hljs nginx"><span class="hljs-title">yii</span> migrate-app
+yii migrate-module
+yii migrate-rbac
+</code></pre>
+<h2>迁移多个数据库  <span id="migrating-multiple-databases"></span><a href="#migrating-multiple-databases" class="hashlink">&para;</a></h2><p>默认情况下，迁移将会提交到由 <code>db</code> <a href="guide-structure-application-components.html">application component</a> 所定义的同一个数据库当中。
+如果你需要提交到不同的数据库，你可以像下面那样指定 <code>db</code> 命令行选项，</p>
+<pre><code class="hljs nginx"><span class="hljs-title">yii</span> migrate --db=db2
+</code></pre>
+<p>上面的命令将会把迁移提交到 <code>db2</code> 数据库当中。</p>
+<p>有些时候你需要提交 <em>一些</em> 迁移到一个数据库，而另外一些则提交到另一个数据库。
+为了达到这个目的，你应该在实现一个迁移类的时候指定需要用到的数据库组件的 ID ，
+如下所示：</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Migration</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150101_185401_create_news_table</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;db = <span class="hljs-string">'db2'</span>;
+        <span class="hljs-keyword">parent</span>::init();
+    }
+}
+</code></pre>
+<p>即使你使用 <code>db</code> 命令行选项指定了另外一个不同的数据库，上面的迁移还是会被提交到 <code>db2</code> 当中。
+需要注意的是这个时候迁移的历史信息依然会被记录到 <code>db</code> 命令行选项所指定的数据库当中。</p>
+<p>如果有多个迁移都使用到了同一个数据库，那么建议你创建一个迁移的基类，里面包含上述的 <code>init()</code> 代码。
+然后每个迁移类都继承这个基类就可以了。</p>
+<blockquote class="tip"><p><strong>提示： </strong>除了在 <a href="./yii-db-migration.html#$db-detail">db</a> 参数当中进行设置以外， 
+  你还可以通过在迁移类中创建新的数据库连接来操作不同的数据库。
+  然后通过这些连接再使用 <a href="guide-db-dao.html">DAO 方法</a> 来操作不同的数据库。</p>
+</blockquote>
+<p>另外一个可以让你迁移多个数据库的策略是把迁移存放到不同的目录下，
+然后你可以通过如下命令分别对不同的数据库进行迁移：</p>
+<pre><code class="hljs nginx"><span class="hljs-title">yii</span> migrate --migrationPath=<span class="hljs-variable">@app</span>/migrations/db1 --db=db1
+yii migrate --migrationPath=<span class="hljs-variable">@app</span>/migrations/db2 --db=db2
+...
+</code></pre>
+<p>第一条命令将会把 <code>@app/migrations/db1</code> 目录下的迁移提交到 <code>db1</code> 数据库当中，
+第二条命令则会把 <code>@app/migrations/db2</code> 下的迁移提交到 <code>db2</code> 数据库当中，以此类推。</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:19 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

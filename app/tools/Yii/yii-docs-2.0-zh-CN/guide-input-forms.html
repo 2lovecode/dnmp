@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>创建表单（Creating Forms） - 接收用户数据（Getting Data from Users） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1080" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1080-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1080-collapse" class="collapse navbar-collapse"><ul id="w1081" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1082" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1064" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-1064" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-1065" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-1065" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-1066" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-1066" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-1067" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-1067" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-1068" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-1068" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-1069" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-1069" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-zh-CN/README.md">Sphinx</a>
+<a class="list-group-item" href="./guide-yii2-redis.html">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-zh-CN/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-zh-CN/README.md">ElasticSearch</a></div>
+<a class="list-group-item active" href="#navigation-1070" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-1070" class="submenu panel-collapse collapse in"><a class="list-group-item active" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-1071" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-1071" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-1072" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-1072" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-1073" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-1073" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-1074" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-1074" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-1075" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-1075" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-1076" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-1076" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-1077" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-1077" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-1078" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-1078" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1079" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-1079" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>创建表单 <span id="chuang-jian-biao-dan"></span><a href="#chuang-jian-biao-dan" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#ji-yu-huo-dong-ji-lu-activerecord-de-biao-danactiveform">基于活动记录（ActiveRecord）的表单：ActiveForm</a></li>
+<li><a href="#creating-activeform-dropdownlist">创建下拉列表</a></li>
+<li><a href="#working-with-pjax">与 Pjax 一起工作</a></li>
+<li><a href="#further-reading">延伸阅读</a></li></ol></div>
+<h2>基于活动记录（ActiveRecord）的表单：ActiveForm <span id="ji-yu-huo-dong-ji-lu-activerecord-de-biao-danactiveform"></span><a href="#ji-yu-huo-dong-ji-lu-activerecord-de-biao-danactiveform" class="hashlink">&para;</a></h2><p>在yii中使用表单的主要方式是通过 <a href="./yii-widgets-activeform.html">yii\widgets\ActiveForm</a>。
+当某个表单是基于一个模型时，应该首选这种方式。
+此外，在 <a href="./yii-helpers-html.html">yii\helpers\Html</a> 中有很多实用的方法为表单添加按钮和帮助文档。</p>
+<p>在客户端显示的表单，大多数情况下都有一个相应的<a href="guide-structure-models.html">模型</a>，
+用来在服务器上验证其输入的数据（可在<a href="guide-input-validation.html">输入验证</a>一节获取关于验证的细节）。
+当创建一个基于模型的表单时，第一步是定义模型本身。该模型可以是一个基于<a href="guide-db-active-record.html">活动记录</a>的类，
+表示数据库中的数据，也可以是一个基于通用模型的类（继承自<a href="./yii-base-model.html">yii\base\Model</a>），
+来获取任意的输入数据，如登录表单。</p>
+<blockquote class="tip"><p><strong>提示： </strong>如果一个表单的输入域与数据库的字段不匹配，或者它存在只适用于它的特殊的格式或者方法，
+则最好为它创建一个单独的继承自 <a href="./yii-base-model.html">yii\base\Model</a> 的模型。</p>
+</blockquote>
+<p>在接下来的例子中，我们展示了通用模型如何用于登录表单：</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LoginForm</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Model</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$username</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$password</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            <span class="hljs-comment">// 在这里定义验证规则</span>
+        ];
+    }
+}
+</code></pre>
+<p>在控制器中，我们将传递一个模型的实例到视图，其中 <a href="./yii-widgets-activeform.html">ActiveForm</a> 
+小部件用来显示表单：</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">Html</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">widgets</span>\<span class="hljs-title">ActiveForm</span>;
+
+<span class="hljs-variable">$form</span> = ActiveForm::begin([
+    <span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'login-form'</span>,
+    <span class="hljs-string">'options'</span> =&gt; [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'form-horizontal'</span>],
+]) <span class="hljs-preprocessor">?&gt;</span>
+    <span class="hljs-preprocessor">&lt;?</span>= <span class="hljs-variable">$form</span>-&gt;field(<span class="hljs-variable">$model</span>, <span class="hljs-string">'username'</span>) <span class="hljs-preprocessor">?&gt;</span>
+    <span class="hljs-preprocessor">&lt;?</span>= <span class="hljs-variable">$form</span>-&gt;field(<span class="hljs-variable">$model</span>, <span class="hljs-string">'password'</span>)-&gt;passwordInput() <span class="hljs-preprocessor">?&gt;</span>
+
+    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>="<span class="hljs-title">form</span>-<span class="hljs-title">group</span>"&gt;
+        &lt;<span class="hljs-title">div</span> <span class="hljs-title">class</span>="<span class="hljs-title">col</span>-<span class="hljs-title">lg</span>-<span class="hljs-title">offset</span>-1 <span class="hljs-title">col</span>-<span class="hljs-title">lg</span>-11"&gt;
+            &lt;?= <span class="hljs-title">Html</span>::<span class="hljs-title">submitButton</span>('<span class="hljs-title">Login</span>', ['<span class="hljs-title">class</span>' =&gt; '<span class="hljs-title">btn</span> <span class="hljs-title">btn</span>-<span class="hljs-title">primary</span>']) ?&gt;
+        &lt;/<span class="hljs-title">div</span>&gt;
+    &lt;/<span class="hljs-title">div</span>&gt;
+&lt;?<span class="hljs-title">php</span> <span class="hljs-title">ActiveForm</span>::<span class="hljs-title">end</span>() ?&gt;
+</span></code></pre>
+<h3>用 <code>begin()</code> 和 <code>end()</code> 包裹  <span id="wrapping-with-begin-and-end"></span><a href="#wrapping-with-begin-and-end" class="hashlink">&para;</a></h3><p>在上面的代码中，<a href="./yii-base-widget.html#begin()-detail">ActiveForm::begin()</a> 不仅创建了一个表单实例，同时也标志着表单的开始。
+放在 <a href="./yii-base-widget.html#begin()-detail">ActiveForm::begin()</a> 与 <a href="./yii-base-widget.html#end()-detail">ActiveForm::end()</a>
+之间的所有内容都被包裹在 HTML 的 <code>&lt;form&gt;</code> 标签中。
+与任何小部件一样，你可以指定一些选项，通过传递数组到 <code>begin</code> 方法中来配置该小部件。在这种情况下，
+一个额外的 CSS 类和 ID 会在 <code>&lt;form&gt;</code> 标签中使用。要查看所有可用的选项，
+请参阅 API 文档的 <a href="./yii-widgets-activeform.html">yii\widgets\ActiveForm</a>。</p>
+<h3>ActiveField  <span id="activefield"></span><a href="#activefield" class="hashlink">&para;</a></h3><p>为了在表单中创建表单元素与元素的标签，以及任何适用的 JavaScript 验证，<a href="./yii-widgets-activeform.html#field()-detail">ActiveForm::field()</a>
+方法在调用时，会返回一个 <a href="./yii-widgets-activefield.html">yii\widgets\ActiveField</a> 的实例。
+直接输出该方法时，结果是一个普通的（文本）输入。要自定义输出，可以附加上 <a href="./yii-widgets-activefield.html">ActiveField</a> 
+的其它方法来一起调用：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 一个密码输入框</span>
+<span class="hljs-preprocessor">&lt;?</span>= <span class="hljs-variable">$form</span>-&gt;field(<span class="hljs-variable">$model</span>, <span class="hljs-string">'password'</span>)-&gt;passwordInput() <span class="hljs-preprocessor">?&gt;</span>
+<span class="hljs-comment">// 增加一个提示标签</span>
+<span class="hljs-preprocessor">&lt;?</span>= <span class="hljs-variable">$form</span>-&gt;field(<span class="hljs-variable">$model</span>, <span class="hljs-string">'username'</span>)-&gt;textInput()-&gt;hint(<span class="hljs-string">'Please enter your name'</span>)-&gt;label(<span class="hljs-string">'Name'</span>) <span class="hljs-preprocessor">?&gt;</span>
+<span class="hljs-comment">// 创建一个 HTML5 邮箱输入框</span>
+<span class="hljs-preprocessor">&lt;?</span>= <span class="hljs-variable">$form</span>-&gt;field(<span class="hljs-variable">$model</span>, <span class="hljs-string">'email'</span>)-&gt;input(<span class="hljs-string">'email'</span>) <span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>它会通过在 <a href="./yii-widgets-activefield.html#$template-detail">template</a> 中定义的表单字段来创建 <code>&lt;label&gt;</code>，<code>&lt;input&gt;</code> 以及其它的标签。
+input 输入框的 name 属性会自动地根据 <a href="./yii-base-model.html#formName()-detail">form name</a> 以及属性名来创建。
+例如，对于在上面的例子中 <code>username</code> 输入字段的 name 属性将是 <code>LoginForm[username]</code>。
+这种命名规则使所有属性的数组的登录表单在服务器端的 <code>$_POST['LoginForm']</code> 数组中是可用的。</p>
+<blockquote class="tip"><p><strong>提示： </strong>如果在表单中只有一个模型并且想要简化输入名称，则可以通过覆盖模型的
+<a href="./yii-base-model.html#formName()-detail">formName()</a> 方法来返回一个空字符串。
+这对于 <a href="guide-output-data-widgets.html#grid-view">GridView</a> 中使用的过滤器模型来创建更好的URL很有用。</p>
+</blockquote>
+<p>指定模型的属性可以以更复杂的方式来完成。例如，当上传时，多个文件
+或选择多个项目的属性，可能需要一个数组值，你可以通过附加 <code>[]</code> 来
+指定它的属性名称：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 允许多个文件被上传：</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$form</span>-&gt;field(<span class="hljs-variable">$model</span>, <span class="hljs-string">'uploadFile[]'</span>)-&gt;fileInput([<span class="hljs-string">'multiple'</span>=&gt;<span class="hljs-string">'multiple'</span>]);
+
+<span class="hljs-comment">// 允许进行选择多个项目：</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$form</span>-&gt;field(<span class="hljs-variable">$model</span>, <span class="hljs-string">'items[]'</span>)-&gt;checkboxList([<span class="hljs-string">'a'</span> =&gt; <span class="hljs-string">'Item A'</span>, <span class="hljs-string">'b'</span> =&gt; <span class="hljs-string">'Item B'</span>, <span class="hljs-string">'c'</span> =&gt; <span class="hljs-string">'Item C'</span>]);
+</code></pre>
+<p>命名表单元素，如提交按钮时要小心。在 <a href="https://api.jquery.com/submit/">jQuery 文档</a> 
+中有一些保留的名称，可能会导致冲突：</p>
+<blockquote><p>表单和它们的子元素不应该使用与表单的属性冲突的 input name 或 id，
+例如 <code>submit</code>，<code>length</code>，或者 <code>method</code>。
+要检查你的标签是否存在这些问题，一个完整的规则列表详见 <a href="http://kangax.github.io/domlint/">DOMLint</a>。</p>
+</blockquote>
+<p>额外的 HTML 标签可以使用纯 HTML 或者 <a href="./yii-helpers-html.html">Html</a>-辅助类中的方法来添加到表单中，就如上面例子中的
+<a href="./yii-helpers-basehtml.html#submitButton()-detail">Html::submitButton()</a>。</p>
+<blockquote class="tip"><p><strong>提示： </strong>如果你正在你的应用程序中使用 Twitter Bootstrap CSS 你可以使用<a href="./yii-bootstrap-activeform.html">yii\bootstrap\ActiveForm</a> 
+来代替 <a href="./yii-widgets-activeform.html">yii\widgets\ActiveForm</a>。
+前者继承自后者并在生成表单字段时使用 Bootstrap 特有的样式。</p>
+</blockquote>
+<blockquote class="tip"><p><strong>提示： </strong>为了设计带星号的表单字段，你可以使用下面的 CSS：</p>
+<pre><code class="hljs css language-css"><span class="hljs-tag">div</span><span class="hljs-class">.required</span> <span class="hljs-tag">label</span><span class="hljs-pseudo">:after</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">" *"</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> red</span></span>;
+}</span>
+</code></pre>
+</blockquote>
+<h2>创建下拉列表  <span id="creating-activeform-dropdownlist"></span><a href="#creating-activeform-dropdownlist" class="hashlink">&para;</a></h2><p>有三种类型的列表：</p>
+<ul>
+<li>下拉列表</li>
+<li>单选列表</li>
+<li>复选框列表</li>
+</ul>
+<p>要创建一个列表，你必须准备这些项目。可以手动完成：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$items</span> = [
+    <span class="hljs-number">1</span> =&gt; <span class="hljs-string">'item 1'</span>, 
+    <span class="hljs-number">2</span> =&gt; <span class="hljs-string">'item 2'</span>
+]
+</code></pre>
+<p>或从 DB 中检索：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$items</span> = Category::find()
+        -&gt;select([<span class="hljs-string">'label'</span>])
+        -&gt;indexBy(<span class="hljs-string">'id'</span>)
+        -&gt;column();
+</code></pre>
+<p>这些 <code>$items</code> 必须由不同的列表小部件处理。
+表单域（和当前活动项目）的值将由
+<code>$model</code> 属性的当前值自动设置。</p>
+<h4>创建一个下拉列表  <span id="creating-activeform-dropdownlist"></span><a href="#creating-activeform-dropdownlist" class="hashlink">&para;</a></h4><p>我们可以使用 ActiveField <a href="./yii-widgets-activefield.html#dropDownList()-detail">yii\widgets\ActiveField::dropDownList()</a> 方法创建一个下拉列表：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">/* <span class="hljs-doctag">@var</span> $form yii\widgets\ActiveForm */</span>
+
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$form</span>-&gt;field(<span class="hljs-variable">$model</span>, <span class="hljs-string">'category'</span>)-&gt;dropdownList([
+        <span class="hljs-number">1</span> =&gt; <span class="hljs-string">'item 1'</span>, 
+        <span class="hljs-number">2</span> =&gt; <span class="hljs-string">'item 2'</span>
+    ],
+    [<span class="hljs-string">'prompt'</span>=&gt;<span class="hljs-string">'Select Category'</span>]
+);
+</code></pre>
+<h4>创建一个单选列表  <span id="creating-activeform-radioList"></span><a href="#creating-activeform-radioList" class="hashlink">&para;</a></h4><p>我们可以使用 ActiveField <a href="./yii-widgets-activefield.html#radioList()-detail">yii\widgets\ActiveField::radioList()</a> 方法创建一个单选列表：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">/* <span class="hljs-doctag">@var</span> $form yii\widgets\ActiveForm */</span>
+
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$form</span>-&gt;field(<span class="hljs-variable">$model</span>, <span class="hljs-string">'category'</span>)-&gt;radioList([
+    <span class="hljs-number">1</span> =&gt; <span class="hljs-string">'radio 1'</span>, 
+    <span class="hljs-number">2</span> =&gt; <span class="hljs-string">'radio 2'</span>
+]);
+</code></pre>
+<h4>创建一个复选框列表  <span id="creating-activeform-checkboxList"></span><a href="#creating-activeform-checkboxList" class="hashlink">&para;</a></h4><p>我们可以使用 ActiveField <a href="./yii-widgets-activefield.html#checkboxList()-detail">yii\widgets\ActiveField::checkboxList()</a> 方法创建一个复选框列表：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">/* <span class="hljs-doctag">@var</span> $form yii\widgets\ActiveForm */</span>
+
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$form</span>-&gt;field(<span class="hljs-variable">$model</span>, <span class="hljs-string">'category'</span>)-&gt;checkboxList([
+    <span class="hljs-number">1</span> =&gt; <span class="hljs-string">'checkbox 1'</span>, 
+    <span class="hljs-number">2</span> =&gt; <span class="hljs-string">'checkbox 2'</span>
+]);
+</code></pre>
+<h2>与 Pjax 一起工作  <span id="working-with-pjax"></span><a href="#working-with-pjax" class="hashlink">&para;</a></h2><p><a href="./yii-widgets-pjax.html">Pjax</a> 小部件允许您更新某个部分
+而不是重新加载整个页面。
+您可以使用它来仅更新表单并在提交后更换其内容。</p>
+<p>你可以配置 <a href="./yii-widgets-pjax.html#$formSelector-detail">$formSelector</a>
+来指定表单提交可能会触发 pjax。如果没有设置，所有封装 Pjax 内容的 <code>data-pjax</code>
+属性的表单都会触发 pjax 请求。</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">widgets</span>\<span class="hljs-title">Pjax</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">widgets</span>\<span class="hljs-title">ActiveForm</span>;
+
+Pjax::begin([
+    <span class="hljs-comment">// Pjax 配置项</span>
+]);
+    <span class="hljs-variable">$form</span> = ActiveForm::begin([
+        <span class="hljs-string">'options'</span> =&gt; [<span class="hljs-string">'data'</span> =&gt; [<span class="hljs-string">'pjax'</span> =&gt; <span class="hljs-keyword">true</span>]],
+        <span class="hljs-comment">// more ActiveForm options</span>
+    ]);
+
+        <span class="hljs-comment">// ActiveForm content</span>
+
+    ActiveForm::end();
+Pjax::end();
+</code></pre>
+<blockquote class="tip"><p><strong>提示： </strong>请小心处理 <a href="./yii-widgets-pjax.html">Pjax</a> 小部件中的链接，
+因为响应也将在小部件内呈现。为了防止这种情况，
+使用 <code>data-pjax="0"</code> HTML 属性。</p>
+</blockquote>
+<h4>提交按钮和文件上传中的值 <span id="ti-jiao-an-niu-he-wen-jian-shang-chuan-zhong-de-zhi"></span><a href="#ti-jiao-an-niu-he-wen-jian-shang-chuan-zhong-de-zhi" class="hashlink">&para;</a></h4><p>在处理 <a href="https://github.com/jquery/jquery/issues/2321">文件</a> 和
+<a href="https://github.com/jquery/jquery/issues/2321">提交按钮值</a>
+时使用 <code>jQuery.serializeArray()</code> 
+有已知的问题，这将不会被解决，而是被弃用，
+以支持 HTML5 中引入的 FormData 类。</p>
+<p>这意味着对 ajax 或使用  <a href="./yii-widgets-pjax.html">Pjax</a>
+小部件的文件和提交按钮值的唯一官方支持取决于
+<code>FormData</code> 类的
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData#Browser_compatibility">浏览器支持</a>。</p>
+<h2>延伸阅读  <span id="further-reading"></span><a href="#further-reading" class="hashlink">&para;</a></h2><p>下一节 <a href="guide-input-validation.html">输入验证</a> 处理提交的表单数据的服务器端验证，以及 ajax 和客户端验证。</p>
+<p>要学会有关表格的更复杂的用法，你可以查看以下几节：</p>
+<ul>
+<li><a href="guide-input-tabular-input.html">收集列表输入</a> 同一种类型的多个模型的采集数据。</li>
+<li><a href="guide-input-multiple-models.html">多模型同时输入</a> 在同一窗口中处理多个不同的模型。</li>
+<li><a href="guide-input-file-upload.html">文件上传</a> 如何使用表格来上传文件。</li>
+</ul>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

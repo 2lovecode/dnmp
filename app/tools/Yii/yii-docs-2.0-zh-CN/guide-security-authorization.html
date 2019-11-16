@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>授权（Authorization） - 安全（Security） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1004" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1004-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1004-collapse" class="collapse navbar-collapse"><ul id="w1005" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1006" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-988" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-988" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-989" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-989" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-990" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-990" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-991" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-991" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-992" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-992" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-993" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-993" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-zh-CN/README.md">Sphinx</a>
+<a class="list-group-item" href="./guide-yii2-redis.html">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-zh-CN/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-zh-CN/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-994" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-994" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-995" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-995" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item active" href="#navigation-996" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-996" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item active" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-997" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-997" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-998" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-998" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-999" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-999" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-1000" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-1000" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-1001" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-1001" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-1002" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-1002" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1003" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-1003" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>授权 <span id="shou-quan"></span><a href="#shou-quan" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#access-control-filter">存取控制过滤器</a></li>
+<li><a href="#rbac">基于角色的存取控制 （RBAC）</a></li>
+<li><a href="#wei-yong-hu-fen-pei-jiao-se-assigning-roles-to-users">为用户分配角色（Assigning roles to users）</a></li></ol></div>
+<p>授权是指验证用户是否允许做某件事的过程。Yii提供两种授权方法：
+存取控制过滤器（ACF）和基于角色的存取控制（RBAC）。</p>
+<h2>存取控制过滤器  <span id="access-control-filter"></span><a href="#access-control-filter" class="hashlink">&para;</a></h2><p>存取控制过滤器（ACF）是一种通过 <a href="./yii-filters-accesscontrol.html">yii\filters\AccessControl</a> 类来实现的简单授权方法，
+非常适用于仅需要简单的存取控制的应用。正如其名称所指，ACF 是一种动作过滤器
+<a href="guide-structure-filters.html">filter</a>，可在控制器或者模块中使用。当一个用户请求一个动作时，
+ACF会检查 <a href="./yii-filters-accesscontrol.html#$rules-detail">access rules</a> 列表，判断该用户是否允许执
+行所请求的动作。</p>
+<p>下述代码展示如何在 <code>site</code> 控制器中使用 ACF：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">filters</span>\<span class="hljs-title">AccessControl</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SiteController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behaviors</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            <span class="hljs-string">'access'</span> =&gt; [
+                <span class="hljs-string">'class'</span> =&gt; AccessControl::className(),
+                <span class="hljs-string">'only'</span> =&gt; [<span class="hljs-string">'login'</span>, <span class="hljs-string">'logout'</span>, <span class="hljs-string">'signup'</span>],
+                <span class="hljs-string">'rules'</span> =&gt; [
+                    [
+                        <span class="hljs-string">'allow'</span> =&gt; <span class="hljs-keyword">true</span>,
+                        <span class="hljs-string">'actions'</span> =&gt; [<span class="hljs-string">'login'</span>, <span class="hljs-string">'signup'</span>],
+                        <span class="hljs-string">'roles'</span> =&gt; [<span class="hljs-string">'?'</span>],
+                    ],
+                    [
+                        <span class="hljs-string">'allow'</span> =&gt; <span class="hljs-keyword">true</span>,
+                        <span class="hljs-string">'actions'</span> =&gt; [<span class="hljs-string">'logout'</span>],
+                        <span class="hljs-string">'roles'</span> =&gt; [<span class="hljs-string">'@'</span>],
+                    ],
+                ],
+            ],
+        ];
+    }
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>上面的代码中 ACF 以行为 (behavior) 的形式附加到 <code>site</code> 控制器。
+这就是很典型的使用行动过滤器的方法。 <code>only</code> 选项指明 ACF 应当只
+对 <code>login</code>， <code>logout</code> 和 <code>signup</code> 方法起作用。所有其它的 <code>site</code> 
+控制器中的方法不受存取控制的限制。 <code>rules</code> 选项列出了 <a href="./yii-filters-accessrule.html">存取规则 (access rules)</a>，解读如下：</p>
+<ul>
+<li>允许所有访客（还未经认证的用户）执行 <code>login</code> 和 <code>signup</code> 动作。 
+<code>roles</code> 选项包含的问号 <code>?</code> 是一个特殊的标识，代表”访客用户”。</li>
+<li>允许已认证用户执行 <code>logout</code> 动作。<code>@</code>是另一个特殊标识，
+代表”已认证用户”。</li>
+</ul>
+<p>ACF 自顶向下逐一检查存取规则，直到找到一个与当前
+欲执行的动作相符的规则。 然后该匹配规则中的 <code>allow</code> 
+选项的值用于判定该用户是否获得授权。如果没有找到匹配的规则，
+意味着该用户没有获得授权。（译者注： <code>only</code> 中没有列出的动作，将无条件获得授权）</p>
+<p>当 ACF 判定一个用户没有获得执行当前动作的授权时，它的默认处理是：</p>
+<ul>
+<li>如果该用户是访客，将调用 <a href="./yii-web-user.html#loginRequired()-detail">yii\web\User::loginRequired()</a> 将用户的浏览器重定向到登录页面。</li>
+<li>如果该用户是已认证用户，将抛出一个 <a href="./yii-web-forbiddenhttpexception.html">yii\web\ForbiddenHttpException</a> 异常。</li>
+</ul>
+<p>你可以通过配置 <a href="./yii-filters-accesscontrol.html#$denyCallback-detail">yii\filters\AccessControl::$denyCallback</a> 属性定制该行为：</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'class'</span> =&gt; AccessControl::className(),
+    ...
+    <span class="hljs-string">'denyCallback'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$rule</span>, <span class="hljs-variable">$action</span>)</span> </span>{
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> \<span class="hljs-keyword">Exception</span>(<span class="hljs-string">'You are not allowed to access this page'</span>);
+    }
+]
+</code></pre>
+<p><a href="./yii-filters-accessrule.html">Access rules</a> 支持很多的选项。下列是所支持选项的总览。
+你可以派生 <a href="./yii-filters-accessrule.html">yii\filters\AccessRule</a> 来创建自定义的存取规则类。</p>
+<ul>
+<li><p><a href="./yii-filters-accessrule.html#$allow-detail">allow</a>： 指定该规则是 "允许" 还是 "拒绝" 。（译者注：true是允许，false是拒绝）</p>
+</li>
+<li><p><a href="./yii-filters-accessrule.html#$actions-detail">actions</a>：指定该规则用于匹配哪些动作。
+它的值应该是动作方法的ID数组。匹配比较是大小写敏感的。如果该选项为空，或者不使用该选项，
+意味着当前规则适用于所有的动作。</p>
+</li>
+<li><p><a href="./yii-filters-accessrule.html#$controllers-detail">controllers</a>：指定该规则用于匹配哪些控制器。
+它的值应为控制器ID数组。匹配比较是大小写敏感的。如果该选项为空，或者不使用该选项，
+则意味着当前规则适用于所有的动作。（译者注：这个选项一般是在控制器的自定义父类中使用才有意义）</p>
+</li>
+<li><p><a href="./yii-filters-accessrule.html#$roles-detail">roles</a>：指定该规则用于匹配哪些用户角色。
+系统自带两个特殊的角色，通过 <a href="./yii-web-user.html#$isGuest-detail">yii\web\User::$isGuest</a> 来判断：</p>
+<ul>
+<li><code>?</code>： 用于匹配访客用户 （未经认证）</li>
+<li><code>@</code>： 用于匹配已认证用户</li>
+</ul>
+<p>使用其他角色名时，将触发调用 <a href="./yii-web-user.html#can()-detail">yii\web\User::can()</a>，这时要求 RBAC 的支持 （在下一节中阐述）。
+如果该选项为空或者不使用该选项，意味着该规则适用于所有角色。</p>
+</li>
+<li><p><a href="./yii-filters-accessrule.html#$roleParams-detail">roleParams</a>：指定将传递给 <a href="./yii-web-user.html#can()-detail">yii\web\User::can()</a> 的参数。
+请参阅下面描述RBAC规则的部分，了解如何使用它。 如果此选项为空或未设置，则不传递任何参数。</p>
+</li>
+<li><p><a href="./yii-filters-accessrule.html#$ips-detail">ips</a>：指定该规则用于匹配哪些 <a href="./yii-web-request.html#$userIP-detail">客户端IP地址</a> 。
+IP 地址可在其末尾包含通配符 <code>*</code> 以匹配一批前缀相同的IP地址。
+例如，<code>192.168.*</code> 匹配所有 <code>192.168.</code> 段的IP地址。
+如果该选项为空或者不使用该选项，意味着该规则适用于所有角色。</p>
+</li>
+<li><p><a href="./yii-filters-accessrule.html#$verbs-detail">verbs</a>：指定该规则用于匹配哪种请求方法（例如<code>GET</code>，<code>POST</code>）。
+这里的匹配大小写不敏感。</p>
+</li>
+<li><p><a href="./yii-filters-accessrule.html#$matchCallback-detail">matchCallback</a>：指定一个PHP回调函数用于
+判定该规则是否满足条件。（译者注：此处的回调函数是匿名函数）</p>
+</li>
+<li><p><a href="./yii-filters-accessrule.html#$denyCallback-detail">denyCallback</a>: 指定一个PHP回调函数，
+当这个规则不满足条件时该函数会被调用。（译者注：此处的回调函数是匿名函数）</p>
+</li>
+</ul>
+<p>以下例子展示了如何使用 <code>matchCallback</code> 选项，
+可使你设计任意的访问权限检查逻辑：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">filters</span>\<span class="hljs-title">AccessControl</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SiteController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behaviors</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            <span class="hljs-string">'access'</span> =&gt; [
+                <span class="hljs-string">'class'</span> =&gt; AccessControl::className(),
+                <span class="hljs-string">'only'</span> =&gt; [<span class="hljs-string">'special-callback'</span>],
+                <span class="hljs-string">'rules'</span> =&gt; [
+                    [
+                        <span class="hljs-string">'actions'</span> =&gt; [<span class="hljs-string">'special-callback'</span>],
+                        <span class="hljs-string">'allow'</span> =&gt; <span class="hljs-keyword">true</span>,
+                        <span class="hljs-string">'matchCallback'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$rule</span>, <span class="hljs-variable">$action</span>)</span> </span>{
+                            <span class="hljs-keyword">return</span> date(<span class="hljs-string">'d-m'</span>) === <span class="hljs-string">'31-10'</span>;
+                        }
+                    ],
+                ],
+            ],
+        ];
+    }
+
+    <span class="hljs-comment">// 匹配的回调函数被调用了！这个页面只有每年的10月31号能访问（译者注：原文在这里说该方法是回调函数不确切，读者不要和 `matchCallback` 的值即匿名的回调函数混淆理解）。</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionSpecialCallback</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;render(<span class="hljs-string">'happy-halloween'</span>);
+    }
+}
+</code></pre>
+<h2>基于角色的存取控制 （RBAC）  <span id="rbac"></span><a href="#rbac" class="hashlink">&para;</a></h2><p>基于角色的存取控制 （RBAC） 提供了一个简单而强大的集中式存取控制机制。
+详细的关于 RBAC 和诸多传统的存取控制方案对比的详情，请参阅
+<a href="http://en.wikipedia.org/wiki/Role-based_access_control">Wikipedia</a>。</p>
+<p>Yii 实现了通用的分层的 RBAC，遵循的模型是 <a href="http://csrc.nist.gov/rbac/sandhu-ferraiolo-kuhn-00.pdf">NIST RBAC model</a>.
+它通过 <a href="./yii-rbac-managerinterface.html">authManager</a> <a href="guide-structure-application-components.html">application component</a> 提供 RBAC 功能。</p>
+<p>使用 RBAC 涉及到两部分工作。第一部分是建立授权数据，
+而第二部分是使用这些授权数据在需要的地方执行检查。</p>
+<p>为方便后面的讲述，这里先介绍一些 RBAC 的基本概念。</p>
+<h3>基本概念  <span id="basic-concepts"></span><a href="#basic-concepts" class="hashlink">&para;</a></h3><p>角色是 <em>权限</em> 的集合 （例如：建贴、改贴）。一个角色
+可以指派给一个或者多个用户。要检查某用户是否有一个特定的权限，
+系统会检查该包含该权限的角色是否指派给了该用户。</p>
+<p>可以用一个规则 <em>rule</em> 与一个角色或者权限关联。一个规则用一段代码代表，
+规则的执行是在检查一个用户是否满足这个角色或者权限时进行的。例如，"改帖" 的权限
+可以使用一个检查该用户是否是帖子的创建者的规则。权限检查中，如果该用户
+不是帖子创建者，那么他（她）将被认为不具有 "改帖"的权限。</p>
+<p>角色和权限都可以按层次组织。特定情况下，一个角色可能由其他角色或权限构成，
+而权限又由其他的权限构成。Yii 实现了所谓的 <em>局部顺序</em> 的层次结构，包含更多的特定的 <em>树</em> 的层次。
+一个角色可以包含一个权限，反之则不行。（译者注：可理解为角色在上方，权限在下方，从上到下如果碰到权限那么再往下不能出现角色）</p>
+<h3>配置 RBAC  <span id="configuring-rbac"></span><a href="#configuring-rbac" class="hashlink">&para;</a></h3><p>在开始定义授权数据和执行存取检查之前，需要先配置应用组件 <a href="./yii-base-application.html#$authManager-detail">authManager</a> 。 
+Yii 提供了两套授权管理器： <a href="./yii-rbac-phpmanager.html">yii\rbac\PhpManager</a> 
+和 <a href="./yii-rbac-dbmanager.html">yii\rbac\DbManager</a>。前者使用 PHP 脚本存放授权数据，
+而后者使用数据库存放授权数据。 如果你的应用不要求大量的动态角色和权限管理，
+你可以考虑使用前者。</p>
+<h4>使用 <code>PhpManager</code>  <span id="using-php-manager"></span><a href="#using-php-manager" class="hashlink">&para;</a></h4><p>以下代码展示使用 <a href="./yii-rbac-phpmanager.html">yii\rbac\PhpManager</a> 时如何在应用配置文件中配置 <code>authManager</code>：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'authManager'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\rbac\PhpManager'</span>,
+        ],
+        <span class="hljs-comment">// ...</span>
+    ],
+];
+</code></pre>
+<p>现在可以通过 <code>\Yii::$app-&gt;authManager</code> 访问 <code>authManager</code> 。</p>
+<p><a href="./yii-rbac-phpmanager.html">yii\rbac\PhpManager</a> 默认将 RBAC 数据保存在 <code>@app/rbac</code> 目录下的文件中。
+如果权限层次数据在运行时会被修改，需确保WEB服务器进程对该目录和其中的文件有写权限。</p>
+<h4>使用 <code>DbManager</code>  <span id="using-db-manager"></span><a href="#using-db-manager" class="hashlink">&para;</a></h4><p>以下代码展示使用 <a href="./yii-rbac-dbmanager.html">yii\rbac\DbManager</a> 时如何在应用配置文件中配置 <code>authManager</code>：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'authManager'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\rbac\DbManager'</span>,
+            <span class="hljs-comment">// uncomment if you want to cache RBAC items hierarchy</span>
+            <span class="hljs-comment">// 'cache' =&gt; 'cache',</span>
+        ],
+        <span class="hljs-comment">// ...</span>
+    ],
+];
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>如果您使用的是 yii2-basic-app 模板，则有一个 <code>config/console.php</code> 配置文件，其中
+  <code>authManager</code> 需要另外声明在 <code>config/web.php</code>。
+在 yii2-advanced-app 的情况下，<code>authManager</code> 只能在 <code>common/config/main.php</code> 中声明一次。</p>
+</blockquote>
+<p><code>DbManager</code> 使用4个数据库表存放它的数据：</p>
+<ul>
+<li><a href="./yii-rbac-dbmanager.html#$itemTable-detail">itemTable</a>： 该表存放授权条目（译者注：即角色和权限）。默认表名为 "auth_item" 。</li>
+<li><a href="./yii-rbac-dbmanager.html#$itemChildTable-detail">itemChildTable</a>： 该表存放授权条目的层次关系。默认表名为 "auth_item_child"。</li>
+<li><a href="./yii-rbac-dbmanager.html#$assignmentTable-detail">assignmentTable</a>： 该表存放授权条目对用户的指派情况。默认表名为 "auth_assignment"。</li>
+<li><a href="./yii-rbac-dbmanager.html#$ruleTable-detail">ruleTable</a>： 该表存放规则。默认表名为 "auth_rule"。</li>
+</ul>
+<p>继续之前，你需要在数据库中创建这些表。你可以使用存放在 <code>@yii/rbac/migrations</code> 目录中的数据库迁移文件来做这件事（译者注：根据本人经验，最好是将授权数据初始化命令也写到这个 RBAC 数据库迁移文件中）：</p>
+<p><code>yii migrate --migrationPath=@yii/rbac/migrations</code></p>
+<p>阅读 <a href="guide-db-migrations.html#separated-migrations">Separated Migrations</a>
+部分中有关处理来自不同名称空间的迁移的更多信息。</p>
+<p>现在可以通过 <code>\Yii::$app-&gt;authManager</code> 访问 <code>authManager</code> 。</p>
+<h3>建立授权数据  <span id="generating-rbac-data"></span><a href="#generating-rbac-data" class="hashlink">&para;</a></h3><p>所有授权数据相关的任务如下：</p>
+<ul>
+<li>定义角色和权限；</li>
+<li>建立角色和权限的关系；</li>
+<li>定义规则；</li>
+<li>将规则与角色和权限作关联；</li>
+<li>指派角色给用户。</li>
+</ul>
+<p>根据授权灵活性要求，上述任务可以通过不同的方式完成。
+如果您的权限层次结构仅由开发人员更改，则可以使用迁移或控制台命令。
+Migration pro 是可以与其他迁移一起执行的。
+控制台命令 pro 是您可以很好地了解代码中的层次结构，
+而不是分散在多个迁移中。</p>
+<p>无论哪种方式，最终都会得到以下 RBAC 层次结构：</p>
+<p><img src="images/rbac-hierarchy-1.png" alt="Simple RBAC hierarchy" title="简单的 RBAC 层次结构示意图" /></p>
+<p>如果您需要动态形成权限层次结构，则需要 UI 或控制台命令。 用于构建层次结构的
+API 本身不会有所不同。</p>
+<h4>使用迁移（Using migrations） <span id="shi-yong-qian-yi-using-migrations"></span><a href="#shi-yong-qian-yi-using-migrations" class="hashlink">&para;</a></h4><p>您可以使用 <a href="guide-db-migrations.html">migrations</a>
+通过 <code>authManager</code> 提供的 API 初始化和修改层次结构。</p>
+<p>使用 <code>./yii migrate/create init_rbac</code> 创建新迁移，然后实现创建层次结构：</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Migration</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m170124_084304_init_rbac</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$auth</span> = Yii::<span class="hljs-variable">$app</span>-&gt;authManager;
+
+        <span class="hljs-comment">// 添加 "createPost" 权限</span>
+        <span class="hljs-variable">$createPost</span> = <span class="hljs-variable">$auth</span>-&gt;createPermission(<span class="hljs-string">'createPost'</span>);
+        <span class="hljs-variable">$createPost</span>-&gt;description = <span class="hljs-string">'Create a post'</span>;
+        <span class="hljs-variable">$auth</span>-&gt;add(<span class="hljs-variable">$createPost</span>);
+
+        <span class="hljs-comment">// 添加 "updatePost" 权限</span>
+        <span class="hljs-variable">$updatePost</span> = <span class="hljs-variable">$auth</span>-&gt;createPermission(<span class="hljs-string">'updatePost'</span>);
+        <span class="hljs-variable">$updatePost</span>-&gt;description = <span class="hljs-string">'Update post'</span>;
+        <span class="hljs-variable">$auth</span>-&gt;add(<span class="hljs-variable">$updatePost</span>);
+
+        <span class="hljs-comment">// 添加 "author" 角色并赋予 "createPost" 权限</span>
+        <span class="hljs-variable">$author</span> = <span class="hljs-variable">$auth</span>-&gt;createRole(<span class="hljs-string">'author'</span>);
+        <span class="hljs-variable">$auth</span>-&gt;add(<span class="hljs-variable">$author</span>);
+        <span class="hljs-variable">$auth</span>-&gt;addChild(<span class="hljs-variable">$author</span>, <span class="hljs-variable">$createPost</span>);
+
+        <span class="hljs-comment">// 添加 "admin" 角色并赋予 "updatePost" </span>
+		<span class="hljs-comment">// 和 "author" 权限</span>
+        <span class="hljs-variable">$admin</span> = <span class="hljs-variable">$auth</span>-&gt;createRole(<span class="hljs-string">'admin'</span>);
+        <span class="hljs-variable">$auth</span>-&gt;add(<span class="hljs-variable">$admin</span>);
+        <span class="hljs-variable">$auth</span>-&gt;addChild(<span class="hljs-variable">$admin</span>, <span class="hljs-variable">$updatePost</span>);
+        <span class="hljs-variable">$auth</span>-&gt;addChild(<span class="hljs-variable">$admin</span>, <span class="hljs-variable">$author</span>);
+
+        <span class="hljs-comment">// 为用户指派角色。其中 1 和 2 是由 IdentityInterface::getId() 返回的id</span>
+        <span class="hljs-comment">// 通常在你的 User 模型中实现这个函数。</span>
+        <span class="hljs-variable">$auth</span>-&gt;assign(<span class="hljs-variable">$author</span>, <span class="hljs-number">2</span>);
+        <span class="hljs-variable">$auth</span>-&gt;assign(<span class="hljs-variable">$admin</span>, <span class="hljs-number">1</span>);
+    }
+    
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$auth</span> = Yii::<span class="hljs-variable">$app</span>-&gt;authManager;
+
+        <span class="hljs-variable">$auth</span>-&gt;removeAll();
+    }
+}
+</code></pre>
+<blockquote><p>如果您不想硬编码哪些用户具有某些角色，请不要在迁移中使用 <code>-&gt;assign()</code> 调用。
+  相反，请创建UI或控制台命令来管理分配。</p>
+</blockquote>
+<p>迁移可以通过 <code>yii migrate</code> 使用。</p>
+<h3>使用控制台命令（Using console command） <span id="shi-yong-kong-zhi-tai-ming-ling-using-console-command"></span><a href="#shi-yong-kong-zhi-tai-ming-ling-using-console-command" class="hashlink">&para;</a></h3><p>如果您的权限层次根本没有改变，并且您拥有固定数量的用户，
+则可以创建一个<a href="guide-tutorial-console.html#create-command">控制台命令</a>，它将通过
+<code>authManager</code> 提供的 API 初始化授权数据一次：</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">commands</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">console</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RbacController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionInit</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$auth</span> = Yii::<span class="hljs-variable">$app</span>-&gt;authManager;
+        <span class="hljs-variable">$auth</span>-&gt;removeAll();
+
+        <span class="hljs-comment">// 添加 "createPost" 权限</span>
+        <span class="hljs-variable">$createPost</span> = <span class="hljs-variable">$auth</span>-&gt;createPermission(<span class="hljs-string">'createPost'</span>);
+        <span class="hljs-variable">$createPost</span>-&gt;description = <span class="hljs-string">'Create a post'</span>;
+        <span class="hljs-variable">$auth</span>-&gt;add(<span class="hljs-variable">$createPost</span>);
+
+        <span class="hljs-comment">// 添加 "updatePost" 权限</span>
+        <span class="hljs-variable">$updatePost</span> = <span class="hljs-variable">$auth</span>-&gt;createPermission(<span class="hljs-string">'updatePost'</span>);
+        <span class="hljs-variable">$updatePost</span>-&gt;description = <span class="hljs-string">'Update post'</span>;
+        <span class="hljs-variable">$auth</span>-&gt;add(<span class="hljs-variable">$updatePost</span>);
+
+        <span class="hljs-comment">// 添加 "author" 角色并赋予 "createPost" 权限</span>
+        <span class="hljs-variable">$author</span> = <span class="hljs-variable">$auth</span>-&gt;createRole(<span class="hljs-string">'author'</span>);
+        <span class="hljs-variable">$auth</span>-&gt;add(<span class="hljs-variable">$author</span>);
+        <span class="hljs-variable">$auth</span>-&gt;addChild(<span class="hljs-variable">$author</span>, <span class="hljs-variable">$createPost</span>);
+
+        <span class="hljs-comment">// 添加 "admin" 角色并赋予 "updatePost" </span>
+		<span class="hljs-comment">// 和 "author" 权限</span>
+        <span class="hljs-variable">$admin</span> = <span class="hljs-variable">$auth</span>-&gt;createRole(<span class="hljs-string">'admin'</span>);
+        <span class="hljs-variable">$auth</span>-&gt;add(<span class="hljs-variable">$admin</span>);
+        <span class="hljs-variable">$auth</span>-&gt;addChild(<span class="hljs-variable">$admin</span>, <span class="hljs-variable">$updatePost</span>);
+        <span class="hljs-variable">$auth</span>-&gt;addChild(<span class="hljs-variable">$admin</span>, <span class="hljs-variable">$author</span>);
+
+        <span class="hljs-comment">// 为用户指派角色。其中 1 和 2 是由 IdentityInterface::getId() 返回的id</span>
+        <span class="hljs-comment">// 通常在你的 User 模型中实现这个函数。</span>
+        <span class="hljs-variable">$auth</span>-&gt;assign(<span class="hljs-variable">$author</span>, <span class="hljs-number">2</span>);
+        <span class="hljs-variable">$auth</span>-&gt;assign(<span class="hljs-variable">$admin</span>, <span class="hljs-number">1</span>);
+    }
+}
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>如果您使用高级模板，则需要将 <code>RbacController</code> 放在 <code>console/controllers</code> 目录中，
+  并将命名空间更改为 <code>console/controllers</code>。</p>
+</blockquote>
+<p>上面的命令可以通过以下方式从控制台执行：</p>
+<pre><code class="hljs nginx"><span class="hljs-title">yii</span> rbac/init
+</code></pre>
+<blockquote><p>如果您不想硬编码用户具有某些角色，请不要将 <code>-&gt;assign()</code> 调用放入命令中。
+  相反，请创建UI或控制台命令来管理分配。</p>
+</blockquote>
+<h2>为用户分配角色（Assigning roles to users） <span id="wei-yong-hu-fen-pei-jiao-se-assigning-roles-to-users"></span><a href="#wei-yong-hu-fen-pei-jiao-se-assigning-roles-to-users" class="hashlink">&para;</a></h2><p>作者可以创建帖子，管理员可以更新帖子并可以做一切作者都能做的。</p>
+<p>如果您的应用程序允许用户注册，则需要为这些新用户分配一次角色。
+例如，为了让所有注册用户成为高级项目模板中的作者，您需要修改 <code>frontend\models\SignupForm::signup()</code>，
+如下所示：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">signup</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$this</span>-&gt;validate()) {
+        <span class="hljs-variable">$user</span> = <span class="hljs-keyword">new</span> User();
+        <span class="hljs-variable">$user</span>-&gt;username = <span class="hljs-variable">$this</span>-&gt;username;
+        <span class="hljs-variable">$user</span>-&gt;email = <span class="hljs-variable">$this</span>-&gt;email;
+        <span class="hljs-variable">$user</span>-&gt;setPassword(<span class="hljs-variable">$this</span>-&gt;password);
+        <span class="hljs-variable">$user</span>-&gt;generateAuthKey();
+        <span class="hljs-variable">$user</span>-&gt;save(<span class="hljs-keyword">false</span>);
+
+        <span class="hljs-comment">// 增加了以下三行：</span>
+        <span class="hljs-variable">$auth</span> = \Yii::<span class="hljs-variable">$app</span>-&gt;authManager;
+        <span class="hljs-variable">$authorRole</span> = <span class="hljs-variable">$auth</span>-&gt;getRole(<span class="hljs-string">'author'</span>);
+        <span class="hljs-variable">$auth</span>-&gt;assign(<span class="hljs-variable">$authorRole</span>, <span class="hljs-variable">$user</span>-&gt;getId());
+
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$user</span>;
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+}
+</code></pre>
+<p>对于需要动态更新授权数据的复杂访问控制的应用程序，可能需要使用
+<code>authManager</code> 提供的 API 来开发特殊的用户界面（即管理面板）。</p>
+<h3>使用规则 (Rules)  <span id="using-rules"></span><a href="#using-rules" class="hashlink">&para;</a></h3><p>如前所述，规则给角色和权限增加额外的约束条件。规则是 <a href="./yii-rbac-rule.html">yii\rbac\Rule</a> 的派生类。
+它需要实现 <a href="./yii-rbac-rule.html#execute()-detail">execute()</a> 方法。在之前我们创建的层次结构中，作者不能编辑自己的帖子，我们来修正这个问题。
+首先我们需要一个规则来认证当前用户是帖子的作者：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">rbac</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">rbac</span>\<span class="hljs-title">Rule</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>\<span class="hljs-title">Post</span>;
+
+<span class="hljs-comment">/**
+ * 检查 authorID 是否和通过参数传进来的 user 参数相符
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AuthorRule</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Rule</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$name</span> = <span class="hljs-string">'isAuthor'</span>;
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@param</span> string|integer $user 用户 ID.
+     * <span class="hljs-doctag">@param</span> Item $item 该规则相关的角色或者权限
+     * <span class="hljs-doctag">@param</span> array $params 传给 ManagerInterface::checkAccess() 的参数
+     * <span class="hljs-doctag">@return</span> boolean 代表该规则相关的角色或者权限是否被允许
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">execute</span><span class="hljs-params">(<span class="hljs-variable">$user</span>, <span class="hljs-variable">$item</span>, <span class="hljs-variable">$params</span>)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">isset</span>(<span class="hljs-variable">$params</span>[<span class="hljs-string">'post'</span>]) ? <span class="hljs-variable">$params</span>[<span class="hljs-string">'post'</span>]-&gt;createdBy == <span class="hljs-variable">$user</span> : <span class="hljs-keyword">false</span>;
+    }
+}
+</code></pre>
+<p>上述规则检查 <code>post</code> 是否是 <code>$user</code> 创建的。我们还要在之前的命令中
+创建一个特别的权限 <code>updateOwnPost</code> ：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$auth</span> = Yii::<span class="hljs-variable">$app</span>-&gt;authManager;
+
+<span class="hljs-comment">// 添加规则</span>
+<span class="hljs-variable">$rule</span> = <span class="hljs-keyword">new</span> \app\rbac\AuthorRule;
+<span class="hljs-variable">$auth</span>-&gt;add(<span class="hljs-variable">$rule</span>);
+
+<span class="hljs-comment">// 添加 "updateOwnPost" 权限并与规则关联</span>
+<span class="hljs-variable">$updateOwnPost</span> = <span class="hljs-variable">$auth</span>-&gt;createPermission(<span class="hljs-string">'updateOwnPost'</span>);
+<span class="hljs-variable">$updateOwnPost</span>-&gt;description = <span class="hljs-string">'Update own post'</span>;
+<span class="hljs-variable">$updateOwnPost</span>-&gt;ruleName = <span class="hljs-variable">$rule</span>-&gt;name;
+<span class="hljs-variable">$auth</span>-&gt;add(<span class="hljs-variable">$updateOwnPost</span>);
+
+<span class="hljs-comment">// "updateOwnPost" 权限将由 "updatePost" 权限使用</span>
+<span class="hljs-variable">$auth</span>-&gt;addChild(<span class="hljs-variable">$updateOwnPost</span>, <span class="hljs-variable">$updatePost</span>);
+
+<span class="hljs-comment">// 允许 "author" 更新自己的帖子</span>
+<span class="hljs-variable">$auth</span>-&gt;addChild(<span class="hljs-variable">$author</span>, <span class="hljs-variable">$updateOwnPost</span>);
+</code></pre>
+<p>现在我们得到如下层次结构:</p>
+<p><img src="images/rbac-hierarchy-2.png" alt="RBAC hierarchy with a rule" title="有一个规则的 RBAC 层次结构" /></p>
+<h3>存取检查  <span id="access-check"></span><a href="#access-check" class="hashlink">&para;</a></h3><p>授权数据准备好后，存取检查简单到只需要一个方法调用 <a href="./yii-rbac-checkaccessinterface.html#checkAccess()-detail">yii\rbac\ManagerInterface::checkAccess()</a>。
+因为大多数存取检查都是针对当前用户而言，为方便起见， Yii 提供了一个快捷方法
+<a href="./yii-web-user.html#can()-detail">yii\web\User::can()</a>，可以如下例所示来使用：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">if</span> (\Yii::<span class="hljs-variable">$app</span>-&gt;user-&gt;can(<span class="hljs-string">'createPost'</span>)) {
+    <span class="hljs-comment">// 建贴</span>
+}
+</code></pre>
+<p>如果当前用户是 <code>ID=1</code> 的 Jane ，我们从图中的 <code>createPost</code> 开始，并试图到达 <code>Jane</code> 。 （译者注：参照图中红色路线所示的建贴授权流程）</p>
+<p><img src="images/rbac-access-check-1.png" alt="Access check" title="Access check" /></p>
+<p>为了检查某用户是否能更新帖子，我们需要传递一个额外的参数，该参数是 <code>AuthorRule</code> 要用的：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">if</span> (\Yii::<span class="hljs-variable">$app</span>-&gt;user-&gt;can(<span class="hljs-string">'updatePost'</span>, [<span class="hljs-string">'post'</span> =&gt; <span class="hljs-variable">$post</span>])) {
+    <span class="hljs-comment">// 更新帖子</span>
+}
+</code></pre>
+<p>下图所示为当前用户是 John 时所发生的事情：</p>
+<p><img src="images/rbac-access-check-2.png" alt="Access check" title="存取权限检查" /></p>
+<p>我们从图中的 <code>updatePost</code> 开始，经过 <code>updateOwnPost</code>。为通过检查，<code>Authorrule</code> 
+规则的 <code>execute()</code> 方法应当返回 <code>true</code> 。该方法从 <code>can()</code> 方法调用接收到 <code>$params</code> 参数，
+因此它的值是 <code>['post' =&gt; $post]</code> 。如果一切顺利，我们会达到指派给 John 的 <code>author</code> 角色。</p>
+<p>对于 Jane 来说则更简单，因为她是管理员：</p>
+<p><img src="images/rbac-access-check-3.png" alt="Access check" title="Access check" /></p>
+<p>在您的控制器内部有几种实现授权的方式。
+如果您希望细化权限来分开添加和删除的访问权限，那么您需要检查每个操作的访问权限。
+您可以在每个操作方法中使用上述条件，或使用 <a href="./yii-filters-accesscontrol.html">yii\filters\AccessControl</a>：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behaviors</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-string">'access'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; AccessControl::className(),
+            <span class="hljs-string">'rules'</span> =&gt; [
+                [
+                    <span class="hljs-string">'allow'</span> =&gt; <span class="hljs-keyword">true</span>,
+                    <span class="hljs-string">'actions'</span> =&gt; [<span class="hljs-string">'index'</span>],
+                    <span class="hljs-string">'roles'</span> =&gt; [<span class="hljs-string">'managePost'</span>],
+                ],
+                [
+                    <span class="hljs-string">'allow'</span> =&gt; <span class="hljs-keyword">true</span>,
+                    <span class="hljs-string">'actions'</span> =&gt; [<span class="hljs-string">'view'</span>],
+                    <span class="hljs-string">'roles'</span> =&gt; [<span class="hljs-string">'viewPost'</span>],
+                ],
+                [
+                    <span class="hljs-string">'allow'</span> =&gt; <span class="hljs-keyword">true</span>,
+                    <span class="hljs-string">'actions'</span> =&gt; [<span class="hljs-string">'create'</span>],
+                    <span class="hljs-string">'roles'</span> =&gt; [<span class="hljs-string">'createPost'</span>],
+                ],
+                [
+                    <span class="hljs-string">'allow'</span> =&gt; <span class="hljs-keyword">true</span>,
+                    <span class="hljs-string">'actions'</span> =&gt; [<span class="hljs-string">'update'</span>],
+                    <span class="hljs-string">'roles'</span> =&gt; [<span class="hljs-string">'updatePost'</span>],
+                ],
+                [
+                    <span class="hljs-string">'allow'</span> =&gt; <span class="hljs-keyword">true</span>,
+                    <span class="hljs-string">'actions'</span> =&gt; [<span class="hljs-string">'delete'</span>],
+                    <span class="hljs-string">'roles'</span> =&gt; [<span class="hljs-string">'deletePost'</span>],
+                ],
+            ],
+        ],
+    ];
+}
+</code></pre>
+<p>如果所有的CRUD操作都是一起管理的，那么使用 <code>managePost</code> 这样的单一权限并且在
+<a href="./yii-web-controller.html#beforeAction()-detail">yii\web\Controller::beforeAction()</a> 中检查它是个好主意。</p>
+<p>在上面的例子中，没有参数与指定的访问动作的角色一起传递，但是在
+<code>updatePost</code> 权限的情况下，我们需要传递 <code>post</code> 参数才能正常工作。
+您可以通过在访问规则中指定 <a href="./yii-filters-accessrule.html#$roleParams-detail">roleParams</a> 将参数传递给
+<a href="./yii-web-user.html#can()-detail">yii\web\User::can()</a>：</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'allow'</span> =&gt; <span class="hljs-keyword">true</span>,
+    <span class="hljs-string">'actions'</span> =&gt; [<span class="hljs-string">'update'</span>],
+    <span class="hljs-string">'roles'</span> =&gt; [<span class="hljs-string">'updatePost'</span>],
+    <span class="hljs-string">'roleParams'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> [<span class="hljs-string">'post'</span> =&gt; Post::findOne([<span class="hljs-string">'id'</span> =&gt; Yii::<span class="hljs-variable">$app</span>-&gt;request-&gt;get(<span class="hljs-string">'id'</span>)])];
+    },
+],
+</code></pre>
+<p>在上面的例子中，<a href="./yii-filters-accessrule.html#$roleParams-detail">roleParams</a> 是一个 Closure，
+将在检查访问规则时进行评估，因此模型只会在需要时加载。
+如果创建角色参数是一个简单的操作，那么您可以指定一个数组，如下所示：</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'allow'</span> =&gt; <span class="hljs-keyword">true</span>,
+    <span class="hljs-string">'actions'</span> =&gt; [<span class="hljs-string">'update'</span>],
+    <span class="hljs-string">'roles'</span> =&gt; [<span class="hljs-string">'updatePost'</span>],
+    <span class="hljs-string">'roleParams'</span> =&gt; [<span class="hljs-string">'postId'</span> =&gt; Yii::<span class="hljs-variable">$app</span>-&gt;request-&gt;get(<span class="hljs-string">'id'</span>)];
+],
+</code></pre>
+<h3>使用默认角色  <span id="using-default-roles"></span><a href="#using-default-roles" class="hashlink">&para;</a></h3><p>所谓默认角色就是 <em>隐式</em> 地指派给 <em>所有</em> 用户的角色。不需要调用 
+<a href="./yii-rbac-managerinterface.html#assign()-detail">yii\rbac\ManagerInterface::assign()</a> 方法做显示指派，并且授权数据中不包含指派信息。</p>
+<p>默认角色通常与一个规则关联，用以检查该角色是否符合被检查的用户。</p>
+<p>默认角色常常用于已经确立了一些角色的指派关系的应用（译者注：指派关系指的是应用业务逻辑层面，
+并非指授权数据的结构）。比如，一个应用的 user 表中有一个 <code>group</code> 字段，代表用户属于哪个特权组。
+如果每个特权组可以映射到 RBAC 的角色，你就可以采用默认角色自动地为每个用户指派一个 RBAC 角色。
+让我们用一个例子展示如何做到这一点。</p>
+<p>假设在 user 表中，你有一个 <code>group</code> 字段，用 1 代表管理员组，用 2 表示作者组。
+你规划两个 RBAC 角色 <code>admin</code> 和 <code>author</code> 分别对应这两个组的权限。
+你可以这样设置 RBAC 数据，</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">rbac</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">rbac</span>\<span class="hljs-title">Rule</span>;
+
+<span class="hljs-comment">/**
+ * 检查是否匹配用户的组
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserGroupRule</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Rule</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$name</span> = <span class="hljs-string">'userGroup'</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">execute</span><span class="hljs-params">(<span class="hljs-variable">$user</span>, <span class="hljs-variable">$item</span>, <span class="hljs-variable">$params</span>)</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (!Yii::<span class="hljs-variable">$app</span>-&gt;user-&gt;isGuest) {
+            <span class="hljs-variable">$group</span> = Yii::<span class="hljs-variable">$app</span>-&gt;user-&gt;identity-&gt;group;
+            <span class="hljs-keyword">if</span> (<span class="hljs-variable">$item</span>-&gt;name === <span class="hljs-string">'admin'</span>) {
+                <span class="hljs-keyword">return</span> <span class="hljs-variable">$group</span> == <span class="hljs-number">1</span>;
+            } <span class="hljs-keyword">elseif</span> (<span class="hljs-variable">$item</span>-&gt;name === <span class="hljs-string">'author'</span>) {
+                <span class="hljs-keyword">return</span> <span class="hljs-variable">$group</span> == <span class="hljs-number">1</span> || <span class="hljs-variable">$group</span> == <span class="hljs-number">2</span>;
+            }
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    }
+}
+</code></pre>
+<p>然后按 <a href="#generating-rbac-data">in the previous section</a> 中的说明创建自己的 command/migration：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$auth</span> = Yii::<span class="hljs-variable">$app</span>-&gt;authManager;
+
+<span class="hljs-variable">$rule</span> = <span class="hljs-keyword">new</span> \app\rbac\UserGroupRule;
+<span class="hljs-variable">$auth</span>-&gt;add(<span class="hljs-variable">$rule</span>);
+
+<span class="hljs-variable">$author</span> = <span class="hljs-variable">$auth</span>-&gt;createRole(<span class="hljs-string">'author'</span>);
+<span class="hljs-variable">$author</span>-&gt;ruleName = <span class="hljs-variable">$rule</span>-&gt;name;
+<span class="hljs-variable">$auth</span>-&gt;add(<span class="hljs-variable">$author</span>);
+<span class="hljs-comment">// ... 添加$author角色的子项部分代码 ... （译者注：省略部分参照之前的控制台命令）</span>
+
+<span class="hljs-variable">$admin</span> = <span class="hljs-variable">$auth</span>-&gt;createRole(<span class="hljs-string">'admin'</span>);
+<span class="hljs-variable">$admin</span>-&gt;ruleName = <span class="hljs-variable">$rule</span>-&gt;name;
+<span class="hljs-variable">$auth</span>-&gt;add(<span class="hljs-variable">$admin</span>);
+<span class="hljs-variable">$auth</span>-&gt;addChild(<span class="hljs-variable">$admin</span>, <span class="hljs-variable">$author</span>);
+<span class="hljs-comment">// ... 添加$admin角色的子项部分代码 ... （译者注：省略部分参照之前的控制台命令）</span>
+</code></pre>
+<p>注意，在上述代码中，因为 "author" 作为 "admin" 的子角色，当你实现这个规则的 <code>execute()</code> 方法时， 
+你也需要遵从这个层次结构。这就是为何当角色名为 "author" 的情况下（译者注：<code>$item-&gt;name</code>就是角色名）， 
+<code>execute()</code> 方法在组为 1 或者 2 时均要返回 true 
+（意思是用户属于 "admin" 或者 "author" 组 ）。</p>
+<p>接下来，在配置 <code>authManager</code> 时指定 <a href="./yii-rbac-basemanager.html#$defaultRoles-detail">yii\rbac\BaseManager::$defaultRoles</a> 选项（译者注：在应用配置文件中的组件部分配置）：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'authManager'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\rbac\PhpManager'</span>,
+            <span class="hljs-string">'defaultRoles'</span> =&gt; [<span class="hljs-string">'admin'</span>, <span class="hljs-string">'author'</span>],
+        ],
+        <span class="hljs-comment">// ...</span>
+    ],
+];
+</code></pre>
+<p>现在如果你执行一个存取权限检查， 判定该规则时， <code>admin</code> 和 <code>author</code> 
+两个角色都将会检查。如果规则返回 true ，意思是角色符合当前用户。基于上述规则
+的实现，意味着如果某用户的 <code>group</code> 值为 1 ， <code>admin</code> 角色将赋予该用户，
+如果 <code>group</code> 值是 2 则将赋予 <code>author</code> 角色。</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

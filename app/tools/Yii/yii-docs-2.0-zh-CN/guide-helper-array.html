@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>Array 助手（ArrayHelper） - 助手类（Helpers） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1745" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1745-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1745-collapse" class="collapse navbar-collapse"><ul id="w1746" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1747" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1729" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-1729" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-1730" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-1730" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-1731" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-1731" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-1732" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-1732" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-1733" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-1733" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-1734" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-1734" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-zh-CN/README.md">Sphinx</a>
+<a class="list-group-item" href="./guide-yii2-redis.html">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-zh-CN/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-zh-CN/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1735" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-1735" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-1736" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-1736" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-1737" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-1737" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-1738" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-1738" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-1739" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-1739" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-1740" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-1740" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-1741" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-1741" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-1742" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-1742" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-1743" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-1743" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item active" href="#navigation-1744" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-1744" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item active" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>数组助手类（ArrayHelper） <span id="shu-zu-zhu-shou-lei-arrayhelper"></span><a href="#shu-zu-zhu-shou-lei-arrayhelper" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#getting-values">获取值（Getting Values）</a></li>
+<li><a href="#setting-values">设定值（Setting values）</a></li>
+<li><a href="#removing-values">从数组中获取值（Take a value from an array）</a></li>
+<li><a href="#checking-existence-of-keys">检查键名的存在（Checking Existence of Keys）</a></li>
+<li><a href="#retrieving-columns">检索列（Retrieving Columns）</a></li>
+<li><a href="#reindexing-arrays">重建数组索引（Re-indexing Arrays）</a></li>
+<li><a href="#building-maps">建立哈希表（Building Maps）</a></li>
+<li><a href="#multidimensional-sorting">多维排序（Multidimensional Sorting）</a></li>
+<li><a href="#detecting-array-types">检测数组类型（Detecting Array Types）</a></li>
+<li><a href="#html-encoding-values">HTML 编码和解码值（HTML Encoding and Decoding Values）</a></li>
+<li><a href="#merging-arrays">合并数组（Merging Arrays）</a></li>
+<li><a href="#converting-objects-to-arrays">对象转换为数组（Converting Objects to Arrays）</a></li>
+<li><a href="#testing-arrays">测试阵列（Testing against Arrays）</a></li></ol></div>
+<p>除了 <a href="https://secure.php.net/manual/zh/book.array.php">PHP 中丰富的数组函数集</a>，
+Yii 数组助手类提供了额外的静态方法，让你更高效地处理数组。</p>
+<h2>获取值（Getting Values）  <span id="getting-values"></span><a href="#getting-values" class="hashlink">&para;</a></h2><p>用原生PHP从一个对象、数组、或者包含这两者的一个复杂数据结构中获取数据是非常繁琐的。
+你首先得使用 <code>isset</code> 检查 key 是否存在, 然后如果存在你就获取它，如果不存在，
+则提供一个默认返回值：</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$name</span> = <span class="hljs-string">'Alex'</span>;
+}
+
+<span class="hljs-variable">$array</span> = [
+    <span class="hljs-string">'foo'</span> =&gt; [
+        <span class="hljs-string">'bar'</span> =&gt; <span class="hljs-keyword">new</span> User(),
+    ]
+];
+
+<span class="hljs-variable">$value</span> = <span class="hljs-keyword">isset</span>(<span class="hljs-variable">$array</span>[<span class="hljs-string">'foo'</span>][<span class="hljs-string">'bar'</span>]-&gt;name) ? <span class="hljs-variable">$array</span>[<span class="hljs-string">'foo'</span>][<span class="hljs-string">'bar'</span>]-&gt;name : <span class="hljs-keyword">null</span>;
+</code></pre>
+<p>Yii 提供了一个非常方便的方法来做这件事：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$value</span> = ArrayHelper::getValue(<span class="hljs-variable">$array</span>, <span class="hljs-string">'foo.bar.name'</span>);
+</code></pre>
+<p>方法的第一个参数是我们从哪里获取值。第二个参数指定了如何获取数据，
+它可以是下述几种类型中的一个：</p>
+<ul>
+<li>数组键名或者欲从中取值的对象的属性名称；</li>
+<li>以点号分割的数组键名或者对象属性名称组成的字符串，上例中使用的参数类型就是该类型；</li>
+<li>返回一个值的回调函数。</li>
+</ul>
+<p>回调函数如下例所示：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$fullName</span> = ArrayHelper::getValue(<span class="hljs-variable">$user</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$user</span>, <span class="hljs-variable">$defaultValue</span>)</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$user</span>-&gt;firstName . <span class="hljs-string">' '</span> . <span class="hljs-variable">$user</span>-&gt;lastName;
+});
+</code></pre>
+<p>第三个可选的参数如果没有给定值，则默认为 <code>null</code>，如下例所示：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$username</span> = ArrayHelper::getValue(<span class="hljs-variable">$comment</span>, <span class="hljs-string">'user.username'</span>, <span class="hljs-string">'Unknown'</span>);
+</code></pre>
+<h2>设定值（Setting values）  <span id="setting-values"></span><a href="#setting-values" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php"><span class="hljs-variable">$array</span> = [
+    <span class="hljs-string">'key'</span> =&gt; [
+        <span class="hljs-string">'in'</span> =&gt; [<span class="hljs-string">'k'</span> =&gt; <span class="hljs-string">'value'</span>]
+    ]
+];
+
+ArrayHelper::setValue(<span class="hljs-variable">$array</span>, <span class="hljs-string">'key.in'</span>, [<span class="hljs-string">'arr'</span> =&gt; <span class="hljs-string">'val'</span>]);
+<span class="hljs-comment">// 在 `$array` 中写入值的路径可以被指定为一个数组</span>
+ArrayHelper::setValue(<span class="hljs-variable">$array</span>, [<span class="hljs-string">'key'</span>, <span class="hljs-string">'in'</span>], [<span class="hljs-string">'arr'</span> =&gt; <span class="hljs-string">'val'</span>]);
+</code></pre>
+<p>结果，<code>$array['key']['in']</code> 的初始值将被新值覆盖</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'key'</span> =&gt; [
+        <span class="hljs-string">'in'</span> =&gt; [<span class="hljs-string">'arr'</span> =&gt; <span class="hljs-string">'val'</span>]
+    ]
+]
+</code></pre>
+<p>如果路径包含一个不存在的键，它将被创建</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 如果 `$array['key']['in']['arr0']` 不为空，则该值将被添加到数组中</span>
+ArrayHelper::setValue(<span class="hljs-variable">$array</span>, <span class="hljs-string">'key.in.arr0.arr1'</span>, <span class="hljs-string">'val'</span>);
+
+<span class="hljs-comment">// 如果你想完全覆盖值 `$array['key']['in']['arr0']`</span>
+ArrayHelper::setValue(<span class="hljs-variable">$array</span>, <span class="hljs-string">'key.in.arr0'</span>, [<span class="hljs-string">'arr1'</span> =&gt; <span class="hljs-string">'val'</span>]);
+</code></pre>
+<p>结果将是</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'key'</span> =&gt; [
+        <span class="hljs-string">'in'</span> =&gt; [
+            <span class="hljs-string">'k'</span> =&gt; <span class="hljs-string">'value'</span>,
+            <span class="hljs-string">'arr0'</span> =&gt; [<span class="hljs-string">'arr1'</span> =&gt; <span class="hljs-string">'val'</span>]
+        ]
+    ]
+]
+</code></pre>
+<h2>从数组中获取值（Take a value from an array）  <span id="removing-values"></span><a href="#removing-values" class="hashlink">&para;</a></h2><p>如果你想获得一个值，然后立即从数组中删除它，你可以使用 <code>remove</code> 方法：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$array</span> = [<span class="hljs-string">'type'</span> =&gt; <span class="hljs-string">'A'</span>, <span class="hljs-string">'options'</span> =&gt; [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]];
+<span class="hljs-variable">$type</span> = ArrayHelper::remove(<span class="hljs-variable">$array</span>, <span class="hljs-string">'type'</span>);
+</code></pre>
+<p>执行代码后，<code>$array</code> 将包含 <code>['options' =&gt; [1, 2]]</code> 且 <code>$type</code> 将包含 <code>A</code>。
+请注意，与 <code>getValue</code> 方法不同，<code>remove</code> 仅支持简单的键名称。</p>
+<h2>检查键名的存在（Checking Existence of Keys）  <span id="checking-existence-of-keys"></span><a href="#checking-existence-of-keys" class="hashlink">&para;</a></h2><p><code>ArrayHelper::keyExists</code> 工作原理和 <a href="https://secure.php.net/manual/en/function.array-key-exists.php">array_key_exists</a> 差不多，除了
+它还可支持大小写不敏感的键名比较，比如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$data1</span> = [
+    <span class="hljs-string">'userName'</span> =&gt; <span class="hljs-string">'Alex'</span>,
+];
+
+<span class="hljs-variable">$data2</span> = [
+    <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'Carsten'</span>,
+];
+
+<span class="hljs-keyword">if</span> (!ArrayHelper::keyExists(<span class="hljs-string">'username'</span>, <span class="hljs-variable">$data1</span>, <span class="hljs-keyword">false</span>) || !ArrayHelper::keyExists(<span class="hljs-string">'username'</span>, <span class="hljs-variable">$data2</span>, <span class="hljs-keyword">false</span>)) {
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"Please provide username."</span>;
+}
+</code></pre>
+<h2>检索列（Retrieving Columns）  <span id="retrieving-columns"></span><a href="#retrieving-columns" class="hashlink">&para;</a></h2><p>通常你要从多行数据或者多个对象构成的数组中获取某列的值，一个普通的例子是获取 id 值列表。</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$data</span> = [
+    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'123'</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'abc'</span>],
+    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'345'</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'def'</span>],
+];
+<span class="hljs-variable">$ids</span> = ArrayHelper::getColumn(<span class="hljs-variable">$array</span>, <span class="hljs-string">'id'</span>);
+</code></pre>
+<p>结果将是 <code>['123', '345']</code>。</p>
+<p>如果需要额外的转换或者取值的方法比较复杂，
+第二参数可以指定一个匿名函数：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$result</span> = ArrayHelper::getColumn(<span class="hljs-variable">$array</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$element</span>)</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$element</span>[<span class="hljs-string">'id'</span>];
+});
+</code></pre>
+<h2>重建数组索引（Re-indexing Arrays）  <span id="reindexing-arrays"></span><a href="#reindexing-arrays" class="hashlink">&para;</a></h2><p>按一个指定的键名重新索引一个数组，可以用 <code>index</code> 方法。输入的数组应该是多维数组或者是一个对象数组。
+键名（译者注：第二个参数）可以是子数组的键名、对象的属性名，
+也可以是一个返回给定元素数组键值的匿名函数。</p>
+<p><code>$groups</code> 属性是一个键数组，
+它将根据指定的键将输入数组分组为一个或多个子数组。</p>
+<p>如果 <code>$key</code> 属性或其特定元素的值为 null，并且未定义 <code>$groups</code>，
+则数组元素将被丢弃。否则，如果指定了 <code>$groups</code>，
+则数组元素将被添加到没有任何键的结果数组中。</p>
+<p>例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$array</span> = [
+    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'123'</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'abc'</span>, <span class="hljs-string">'device'</span> =&gt; <span class="hljs-string">'laptop'</span>],
+    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'345'</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'def'</span>, <span class="hljs-string">'device'</span> =&gt; <span class="hljs-string">'tablet'</span>],
+    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'345'</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'hgi'</span>, <span class="hljs-string">'device'</span> =&gt; <span class="hljs-string">'smartphone'</span>],
+];
+<span class="hljs-variable">$result</span> = ArrayHelper::index(<span class="hljs-variable">$array</span>, <span class="hljs-string">'id'</span>);
+</code></pre>
+<p>结果将是一个关联数组，其中键是 <code>id</code> 属性的值</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'123'</span> =&gt; [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'123'</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'abc'</span>, <span class="hljs-string">'device'</span> =&gt; <span class="hljs-string">'laptop'</span>],
+    <span class="hljs-string">'345'</span> =&gt; [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'345'</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'hgi'</span>, <span class="hljs-string">'device'</span> =&gt; <span class="hljs-string">'smartphone'</span>]
+    <span class="hljs-comment">// 原始数组的第二个元素由于相同的 ID 而被最后一个元素覆盖</span>
+]
+</code></pre>
+<p>匿名函数作为 <code>$key</code> 传递，给出了相同的结果。</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$result</span> = ArrayHelper::index(<span class="hljs-variable">$array</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$element</span>)</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$element</span>[<span class="hljs-string">'id'</span>];
+});
+</code></pre>
+<p>传递 <code>id</code> 作为第三个参数将 <code>id</code> 分配给 <code>$ array</code>：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$result</span> = ArrayHelper::index(<span class="hljs-variable">$array</span>, <span class="hljs-keyword">null</span>, <span class="hljs-string">'id'</span>);
+</code></pre>
+<p>结果将是一个多维数组，它由第一级的 <code>id</code> 分组，并且不在第二级索引：</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'123'</span> =&gt; [
+        [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'123'</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'abc'</span>, <span class="hljs-string">'device'</span> =&gt; <span class="hljs-string">'laptop'</span>]
+    ],
+    <span class="hljs-string">'345'</span> =&gt; [ <span class="hljs-comment">// all elements with this index are present in the result array</span>
+        [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'345'</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'def'</span>, <span class="hljs-string">'device'</span> =&gt; <span class="hljs-string">'tablet'</span>],
+        [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'345'</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'hgi'</span>, <span class="hljs-string">'device'</span> =&gt; <span class="hljs-string">'smartphone'</span>],
+    ]
+]
+</code></pre>
+<p>匿名函数也可用于分组数组中：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$result</span> = ArrayHelper::index(<span class="hljs-variable">$array</span>, <span class="hljs-string">'data'</span>, [<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$element</span>)</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$element</span>[<span class="hljs-string">'id'</span>];
+}, <span class="hljs-string">'device'</span>]);
+</code></pre>
+<p>结果将是一个多维数组，由第一级的 <code>id</code> 分组，第二级的 <code>device</code> 和第三级的
+<code>data</code> 索引：</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'123'</span> =&gt; [
+        <span class="hljs-string">'laptop'</span> =&gt; [
+            <span class="hljs-string">'abc'</span> =&gt; [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'123'</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'abc'</span>, <span class="hljs-string">'device'</span> =&gt; <span class="hljs-string">'laptop'</span>]
+        ]
+    ],
+    <span class="hljs-string">'345'</span> =&gt; [
+        <span class="hljs-string">'tablet'</span> =&gt; [
+            <span class="hljs-string">'def'</span> =&gt; [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'345'</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'def'</span>, <span class="hljs-string">'device'</span> =&gt; <span class="hljs-string">'tablet'</span>]
+        ],
+        <span class="hljs-string">'smartphone'</span> =&gt; [
+            <span class="hljs-string">'hgi'</span> =&gt; [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'345'</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'hgi'</span>, <span class="hljs-string">'device'</span> =&gt; <span class="hljs-string">'smartphone'</span>]
+        ]
+    ]
+]
+</code></pre>
+<h2>建立哈希表（Building Maps）  <span id="building-maps"></span><a href="#building-maps" class="hashlink">&para;</a></h2><p>为了从一个多维数组或者一个对象数组中建立一个映射表（键值对），你可以使用
+<code>map</code> 方法。<code>$from</code> 和 <code>$to</code> 参数分别指定了欲构建的映射表的键名和属性名。
+根据需要，你可以按照一个分组字段 <code>$group</code> 将映射表进行分组，例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$array</span> = [
+    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'123'</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'aaa'</span>, <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'x'</span>],
+    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'124'</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'bbb'</span>, <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'x'</span>],
+    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'345'</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'ccc'</span>, <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'y'</span>],
+];
+
+<span class="hljs-variable">$result</span> = ArrayHelper::map(<span class="hljs-variable">$array</span>, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>);
+<span class="hljs-comment">// 结果是： </span>
+<span class="hljs-comment">// [</span>
+<span class="hljs-comment">//     '123' =&gt; 'aaa',</span>
+<span class="hljs-comment">//     '124' =&gt; 'bbb',</span>
+<span class="hljs-comment">//     '345' =&gt; 'ccc',</span>
+<span class="hljs-comment">// ]</span>
+
+<span class="hljs-variable">$result</span> = ArrayHelper::map(<span class="hljs-variable">$array</span>, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>, <span class="hljs-string">'class'</span>);
+<span class="hljs-comment">// 结果是：</span>
+<span class="hljs-comment">// [</span>
+<span class="hljs-comment">//     'x' =&gt; [</span>
+<span class="hljs-comment">//         '123' =&gt; 'aaa',</span>
+<span class="hljs-comment">//         '124' =&gt; 'bbb',</span>
+<span class="hljs-comment">//     ],</span>
+<span class="hljs-comment">//     'y' =&gt; [</span>
+<span class="hljs-comment">//         '345' =&gt; 'ccc',</span>
+<span class="hljs-comment">//     ],</span>
+<span class="hljs-comment">// ]</span>
+</code></pre>
+<h2>多维排序（Multidimensional Sorting）  <span id="multidimensional-sorting"></span><a href="#multidimensional-sorting" class="hashlink">&para;</a></h2><p><code>multisort</code> 方法可用来对嵌套数组或者对象数组进行排序，可按一到多个键名排序，比如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$data</span> = [
+    [<span class="hljs-string">'age'</span> =&gt; <span class="hljs-number">30</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'Alexander'</span>],
+    [<span class="hljs-string">'age'</span> =&gt; <span class="hljs-number">30</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'Brian'</span>],
+    [<span class="hljs-string">'age'</span> =&gt; <span class="hljs-number">19</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'Barney'</span>],
+];
+ArrayHelper::multisort(<span class="hljs-variable">$data</span>, [<span class="hljs-string">'age'</span>, <span class="hljs-string">'name'</span>], [SORT_ASC, SORT_DESC]);
+</code></pre>
+<p>排序之后我们在 <code>$data</code> 中得到的值如下所示：</p>
+<pre><code class="hljs php language-php">[
+    [<span class="hljs-string">'age'</span> =&gt; <span class="hljs-number">19</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'Barney'</span>],
+    [<span class="hljs-string">'age'</span> =&gt; <span class="hljs-number">30</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'Brian'</span>],
+    [<span class="hljs-string">'age'</span> =&gt; <span class="hljs-number">30</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'Alexander'</span>],
+];
+</code></pre>
+<p>第二个参数指定排序的键名，如果是单键名的话可以是字符串，如果是多键名则是一个数组，
+或者是如下例所示的一个匿名函数：</p>
+<pre><code class="hljs php language-php">ArrayHelper::multisort(<span class="hljs-variable">$data</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(<span class="hljs-variable">$item</span>)</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">isset</span>(<span class="hljs-variable">$item</span>[<span class="hljs-string">'age'</span>]) ? [<span class="hljs-string">'age'</span>, <span class="hljs-string">'name'</span>] : <span class="hljs-string">'name'</span>;
+});
+</code></pre>
+<p>第三个参数表示增降顺序。单键排序时，它可以是 <code>SORT_ASC</code> 或者 
+<code>SORT_DESC</code> 之一。如果是按多个键名排序，你可以用一个数组为
+各个键指定不同的顺序。</p>
+<p>最后一个参数（译者注：第四个参数）是PHP的排序标识（sort flag），可使用的值和调用 PHP
+<a href="https://secure.php.net/manual/zh/function.sort.php">sort()</a> 函数时传递的值一样。</p>
+<h2>检测数组类型（Detecting Array Types）  <span id="detecting-array-types"></span><a href="#detecting-array-types" class="hashlink">&para;</a></h2><p>想知道一个数组是索引数组还是联合数组很方便，这有个例子：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 不指定键名的数组</span>
+<span class="hljs-variable">$indexed</span> = [<span class="hljs-string">'Qiang'</span>, <span class="hljs-string">'Paul'</span>];
+<span class="hljs-keyword">echo</span> ArrayHelper::isIndexed(<span class="hljs-variable">$indexed</span>);
+
+<span class="hljs-comment">// 所有键名都是字符串</span>
+<span class="hljs-variable">$associative</span> = [<span class="hljs-string">'framework'</span> =&gt; <span class="hljs-string">'Yii'</span>, <span class="hljs-string">'version'</span> =&gt; <span class="hljs-string">'2.0'</span>];
+<span class="hljs-keyword">echo</span> ArrayHelper::isAssociative(<span class="hljs-variable">$associative</span>);
+</code></pre>
+<h2>HTML 编码和解码值（HTML Encoding and Decoding Values）  <span id="html-encoding-values"></span><a href="#html-encoding-values" class="hashlink">&para;</a></h2><p>为了将字符串数组中的特殊字符做 HTML 编解码，你可以使用下列方法：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$encoded</span> = ArrayHelper::htmlEncode(<span class="hljs-variable">$data</span>);
+<span class="hljs-variable">$decoded</span> = ArrayHelper::htmlDecode(<span class="hljs-variable">$data</span>);
+</code></pre>
+<p>默认情况只会对值做编码（译者注：原文中是编码，应为编解码）。通过给第二个参数传 <code>false</code> ，你也可以对键名做编码。
+编码将默认使用应用程序的字符集，你可以通过第三个参数指定该字符集。</p>
+<h2>合并数组（Merging Arrays）  <span id="merging-arrays"></span><a href="#merging-arrays" class="hashlink">&para;</a></h2><p>您可以使用 <a href="./yii-helpers-basearrayhelper.html#merge()-detail">ArrayHelper::merge()</a> 将两个或多个数组合并成一个递归的数组。
+如果每个数组都有一个具有相同字符串键值的元素，则后者将覆盖前者
+（不同于 <a href="https://secure.php.net/manual/en/function.array-merge-recursive.php">array_merge_recursive()</a>）。
+如果两个数组都有一个数组类型的元素并且具有相同的键，则将执行递归合并。
+对于整数键的元素，来自后一个数组的元素将被附加到前一个数组。
+您可以使用 <a href="./yii-helpers-unsetarrayvalue.html">yii\helpers\UnsetArrayValue</a> 对象来取消前一个数组的值或
+<a href="./yii-helpers-replacearrayvalue.html">yii\helpers\ReplaceArrayValue</a> 以强制替换先前的值而不是递归合并。</p>
+<p>例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$array1</span> = [
+    <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'Yii'</span>,
+    <span class="hljs-string">'version'</span> =&gt; <span class="hljs-string">'1.1'</span>,
+    <span class="hljs-string">'ids'</span> =&gt; [
+        <span class="hljs-number">1</span>,
+    ],
+    <span class="hljs-string">'validDomains'</span> =&gt; [
+        <span class="hljs-string">'example.com'</span>,
+        <span class="hljs-string">'www.example.com'</span>,
+    ],
+    <span class="hljs-string">'emails'</span> =&gt; [
+        <span class="hljs-string">'admin'</span> =&gt; <span class="hljs-string">'admin@example.com'</span>,
+        <span class="hljs-string">'dev'</span> =&gt; <span class="hljs-string">'dev@example.com'</span>,
+    ],
+];
+
+<span class="hljs-variable">$array2</span> = [
+    <span class="hljs-string">'version'</span> =&gt; <span class="hljs-string">'2.0'</span>,
+    <span class="hljs-string">'ids'</span> =&gt; [
+        <span class="hljs-number">2</span>,
+    ],
+    <span class="hljs-string">'validDomains'</span> =&gt; <span class="hljs-keyword">new</span> \yii\helpers\ReplaceArrayValue([
+        <span class="hljs-string">'yiiframework.com'</span>,
+        <span class="hljs-string">'www.yiiframework.com'</span>,
+    ]),
+    <span class="hljs-string">'emails'</span> =&gt; [
+        <span class="hljs-string">'dev'</span> =&gt; <span class="hljs-keyword">new</span> \yii\helpers\UnsetArrayValue(),
+    ],
+];
+
+<span class="hljs-variable">$result</span> = ArrayHelper::merge(<span class="hljs-variable">$array1</span>, <span class="hljs-variable">$array2</span>);
+</code></pre>
+<p>结果将是：</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'Yii'</span>,
+    <span class="hljs-string">'version'</span> =&gt; <span class="hljs-string">'2.0'</span>,
+    <span class="hljs-string">'ids'</span> =&gt; [
+        <span class="hljs-number">1</span>,
+        <span class="hljs-number">2</span>,
+    ],
+    <span class="hljs-string">'validDomains'</span> =&gt; [
+        <span class="hljs-string">'yiiframework.com'</span>,
+        <span class="hljs-string">'www.yiiframework.com'</span>,
+    ],
+    <span class="hljs-string">'emails'</span> =&gt; [
+        <span class="hljs-string">'admin'</span> =&gt; <span class="hljs-string">'admin@example.com'</span>,
+    ],
+]
+</code></pre>
+<h2>对象转换为数组（Converting Objects to Arrays）  <span id="converting-objects-to-arrays"></span><a href="#converting-objects-to-arrays" class="hashlink">&para;</a></h2><p>你经常要将一个对象或者对象的数组转换成一个数组，常见的情形是，为了通过 REST API 提供数据数组（或其他使用方式），
+将 AR 模型（活动记录模型）转换成数组。如下代码可完成这个工作：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$posts</span> = Post::find()-&gt;limit(<span class="hljs-number">10</span>)-&gt;all();
+<span class="hljs-variable">$data</span> = ArrayHelper::toArray(<span class="hljs-variable">$posts</span>, [
+    <span class="hljs-string">'app\models\Post'</span> =&gt; [
+        <span class="hljs-string">'id'</span>,
+        <span class="hljs-string">'title'</span>,
+        <span class="hljs-comment">// the key name in array result =&gt; property name</span>
+        <span class="hljs-string">'createTime'</span> =&gt; <span class="hljs-string">'created_at'</span>,
+        <span class="hljs-comment">// the key name in array result =&gt; anonymous function</span>
+        <span class="hljs-string">'length'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$post</span>)</span> </span>{
+            <span class="hljs-keyword">return</span> strlen(<span class="hljs-variable">$post</span>-&gt;content);
+        },
+    ],
+]);
+</code></pre>
+<p>第一个参数包含我们想要转换的数据，在本例中，我们要转换一个叫 <code>Post</code> 的 AR 模型。</p>
+<p>第二个参数是每个类的转换映射表，我们在此设置了一个 <code>Post</code> 模型的映射。
+每个映射数组包含一组的映射，每个映射可以是：</p>
+<ul>
+<li>一个要包含的照原样的字段名（和类中属性的名称一致）；</li>
+<li>一个由你可随意取名的键名和你想从中取值的模型列名组成的键值对；</li>
+<li>一个由你可随意取名的键名和有返回值的回调函数组成的键值对；</li>
+</ul>
+<p>这上面的转换结果将会是：</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">123</span>,
+    <span class="hljs-string">'title'</span> =&gt; <span class="hljs-string">'test'</span>,
+    <span class="hljs-string">'createTime'</span> =&gt; <span class="hljs-string">'2013-01-01 12:00AM'</span>,
+    <span class="hljs-string">'length'</span> =&gt; <span class="hljs-number">301</span>,
+]
+</code></pre>
+<p>也可以在一个特定的类中实现 <a href="./yii-base-arrayable.html">Arrayable</a> 接口，
+从而为其对象提供默认的转换成数组的方法。</p>
+<h2>测试阵列（Testing against Arrays）  <span id="testing-arrays"></span><a href="#testing-arrays" class="hashlink">&para;</a></h2><p>通常你需要检查一个元素是否在数组中，或者一组元素是另一个元素的子集。
+虽然PHP提供 <code>in_array()</code>，这不支持子集或 <code>\Traversable</code> 对象。</p>
+<p>为了支持这些测试，<span class="broken-link">yii\base\ArrayHelper</span> 提供了 <span class="broken-link">yii\base\ArrayHelper::isIn()</span>
+和 <span class="broken-link">yii\base\ArrayHelper::isSubset()</span> 与 <span class="broken-link">in_array()</span> 签名相同。</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// true</span>
+ArrayHelper::isIn(<span class="hljs-string">'a'</span>, [<span class="hljs-string">'a'</span>]);
+<span class="hljs-comment">// true</span>
+ArrayHelper::isIn(<span class="hljs-string">'a'</span>, <span class="hljs-keyword">new</span>(ArrayObject[<span class="hljs-string">'a'</span>]));
+
+<span class="hljs-comment">// true </span>
+ArrayHelper::isSubset(<span class="hljs-keyword">new</span>(ArrayObject[<span class="hljs-string">'a'</span>, <span class="hljs-string">'c'</span>]), <span class="hljs-keyword">new</span>(ArrayObject[<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>])
+
+</code></pre>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:19 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

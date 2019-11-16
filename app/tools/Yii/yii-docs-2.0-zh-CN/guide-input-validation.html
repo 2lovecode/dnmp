@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>输入验证（Validating Input） - 接收用户数据（Getting Data from Users） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1308" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1308-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1308-collapse" class="collapse navbar-collapse"><ul id="w1309" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1310" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1292" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-1292" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-1293" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-1293" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-1294" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-1294" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-1295" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-1295" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-1296" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-1296" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-1297" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-1297" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-zh-CN/README.md">Sphinx</a>
+<a class="list-group-item" href="./guide-yii2-redis.html">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-zh-CN/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-zh-CN/README.md">ElasticSearch</a></div>
+<a class="list-group-item active" href="#navigation-1298" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-1298" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item active" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-1299" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-1299" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-1300" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-1300" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-1301" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-1301" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-1302" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-1302" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-1303" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-1303" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-1304" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-1304" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-1305" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-1305" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-1306" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-1306" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1307" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-1307" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>输入验证 <span id="shu-ru-yan-zheng"></span><a href="#shu-ru-yan-zheng" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#declaring-rules">声明规则（Rules）</a></li>
+<li><a href="#ad-hoc-validation">临时验证</a></li>
+<li><a href="#creating-validators">创建验证器（Validators）</a></li>
+<li><a href="#multiple-attributes-validation">多属性验证</a></li>
+<li><a href="#client-side-validation">客户端验证</a></li>
+<li><a href="#ajax-validation">AJAX 验证</a></li></ol></div>
+<p>根据经验，您永远不应该信任从最终用户收到的数据，
+并且应该在充分利用之前对其进行验证。</p>
+<p>要给 <a href="guide-structure-models.html">model</a> 填充其所需的用户输入数据，你可以调用 <a href="./yii-base-model.html#validate()-detail">yii\base\Model::validate()</a> 
+方法验证它们。该方法会返回一个布尔值，指明是否通过验证。若没有通过，你能通过 <a href="./yii-base-model.html#$errors-detail">yii\base\Model::$errors</a> 
+属性获取相应的报错信息。比如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$model</span> = <span class="hljs-keyword">new</span> \app\models\ContactForm();
+
+<span class="hljs-comment">// 根据用户的输入填充到模型的属性中</span>
+<span class="hljs-variable">$model</span>-&gt;load(\Yii::<span class="hljs-variable">$app</span>-&gt;request-&gt;post());
+<span class="hljs-comment">// 等效于下面这样：</span>
+<span class="hljs-comment">// $model-&gt;attributes = \Yii::$app-&gt;request-&gt;post('ContactForm');</span>
+
+<span class="hljs-keyword">if</span> (<span class="hljs-variable">$model</span>-&gt;validate()) {
+    <span class="hljs-comment">// 所有输入通过验证</span>
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">// 验证失败: $errors 是一个包含错误信息的数组</span>
+    <span class="hljs-variable">$errors</span> = <span class="hljs-variable">$model</span>-&gt;errors;
+}
+</code></pre>
+<h2>声明规则（Rules）  <span id="declaring-rules"></span><a href="#declaring-rules" class="hashlink">&para;</a></h2><p>要让 <code>validate()</code> 方法起作用，你需要声明与需验证模型特性相关的验证规则。
+为此，需要重写 <a href="./yii-base-model.html#rules()-detail">yii\base\Model::rules()</a> 方法。下面的例子展示了如何
+声明用于验证 <code>ContactForm</code> 模型的相关验证规则：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-comment">// name，email，subject 和 body 特性是 `require`（必填）的</span>
+        [[<span class="hljs-string">'name'</span>, <span class="hljs-string">'email'</span>, <span class="hljs-string">'subject'</span>, <span class="hljs-string">'body'</span>], <span class="hljs-string">'required'</span>],
+
+        <span class="hljs-comment">// email 特性必须是一个有效的 email 地址</span>
+        [<span class="hljs-string">'email'</span>, <span class="hljs-string">'email'</span>],
+    ];
+}
+</code></pre>
+<p><a href="./yii-base-model.html#rules()-detail">rules()</a> 方法应返回一个由规则所组成的数组，
+每一个规则都呈现为以下这类格式的小数组：</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// 必填，指出哪个属性由这个规则验证。</span>
+    <span class="hljs-comment">// 如果是一个属性，可以直接写属性的名字</span>
+    <span class="hljs-comment">// 不必写在数组里。</span>
+    [<span class="hljs-string">'attribute1'</span>, <span class="hljs-string">'attribute2'</span>, ...],
+    
+    <span class="hljs-comment">// 必填，指出规则的类型。</span>
+    <span class="hljs-comment">// 可以是一个类名，验证器别名，或者是一个验证器方法名</span>
+    <span class="hljs-string">'validator'</span>,
+
+    <span class="hljs-comment">// 可选，指出这个规则在哪个（些）场景下生效</span>
+    <span class="hljs-comment">// 如果没有给出，意味着这个规则在所有场景都生效</span>
+    <span class="hljs-comment">// 如果你希望在所有场景下生效，但是在排除的场景里不生效。</span>
+    <span class="hljs-comment">// 可以配置 "except" 选项</span>
+    <span class="hljs-string">'on'</span> =&gt; [<span class="hljs-string">'scenario1'</span>, <span class="hljs-string">'scenario2'</span>, ...],
+
+    <span class="hljs-comment">// 可选，为验证器对象指定额外的配置</span>
+    <span class="hljs-string">'property1'</span> =&gt; <span class="hljs-string">'value1'</span>, <span class="hljs-string">'property2'</span> =&gt; <span class="hljs-string">'value2'</span>, ...
+]
+</code></pre>
+<p>对于每个规则，你至少需要指定该规则适用于哪些特性，以及本规则的类型是什么。
+你可以指定以下的规则类型之一：</p>
+<ul>
+<li>核心验证器的昵称，比如 <code>required</code>、<code>in</code>、<code>date</code>，等等。请参考
+<a href="guide-tutorial-core-validators.html">核心验证器</a>章节查看完整的核心验证器列表。</li>
+<li>模型类中的某个验证方法的名称，或者一个匿名方法。
+请参考<a href="#inline-validators">行内验证器</a>小节了解更多。</li>
+<li>验证器类的名称。
+请参考<a href="#standalone-validators">独立验证器</a>小节了解更多。</li>
+</ul>
+<p>一个规则可用于验证一个或多个模型特性，且一个特性可以被一个或多个规则所验证。
+一个规则可以施用于特定<a href="guide-structure-models.html#scenarios">场景（scenario）</a>，只
+要指定 <code>on</code> 选项。如果你不指定 <code>on</code> 选项，那么该规则会适配于所有场景。</p>
+<p>当调用 <code>validate()</code> 方法时，它将运行以下几个具体的验证步骤：</p>
+<ol>
+<li>检查从声明自 <a href="./yii-base-model.html#scenarios()-detail">yii\base\Model::scenarios()</a> 方法的场景中所挑选出的当前<a href="./yii-base-model.html#$scenario-detail">场景</a>的信息，
+从而确定出那些特性需要被验证。这些特性被称为激活特性。</li>
+<li>检查从声明自 <a href="./yii-base-model.html#rules()-detail">yii\base\Model::rules()</a> 方法的众多规则中所挑选出的适用于当前<a href="./yii-base-model.html#$scenario-detail">场景</a>的规则，
+从而确定出需要验证哪些规则。这些规则被称为激活规则。</li>
+<li>用每个激活规则去验证每个
+与之关联的激活特性。</li>
+</ol>
+<p>基于以上验证步骤，有且仅有声明在 <code>scenarios()</code> 
+方法里的激活特性，且它还必须与一或多个声明自
+<code>rules()</code> 里的激活规则相关联才会被验证。</p>
+<blockquote class="note"><p><strong>注意： </strong>可以方便地给规则命名比如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-comment">// ...</span>
+        <span class="hljs-string">'password'</span> =&gt; [[<span class="hljs-string">'password'</span>], <span class="hljs-string">'string'</span>, <span class="hljs-string">'max'</span> =&gt; <span class="hljs-number">60</span>],
+    ];
+}
+</code></pre>
+<p>你可以在子模型中使用：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-variable">$rules</span> = <span class="hljs-keyword">parent</span>::rules();
+    <span class="hljs-keyword">unset</span>(<span class="hljs-variable">$rules</span>[<span class="hljs-string">'password'</span>]);
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$rules</span>;
+}
+</code></pre>
+</blockquote>
+<h3>自定义错误信息  <span id="customizing-error-messages"></span><a href="#customizing-error-messages" class="hashlink">&para;</a></h3><p>大多数的验证器都有默认的错误信息，当模型的某个特性验证失败的时候，该错误信息会被返回给模型。
+比如，用 <a href="./yii-validators-requiredvalidator.html">required</a> 验证器的规则检验 <code>username</code> 
+特性失败的话，会返还给模型 "Username cannot be blank." 信息。</p>
+<p>你可以通过在声明规则的时候同时指定 <code>message</code> 属性，
+来定制某个规则的错误信息，比如这样：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        [<span class="hljs-string">'username'</span>, <span class="hljs-string">'required'</span>, <span class="hljs-string">'message'</span> =&gt; <span class="hljs-string">'Please choose a username.'</span>],
+    ];
+}
+</code></pre>
+<p>一些验证器还支持用于针对不同原因的验证失败返回更加准确的额外错误信息。比如，<a href="./yii-validators-numbervalidator.html">number</a> 
+验证器就支持 <a href="./yii-validators-numbervalidator.html#$tooBig-detail">tooBig</a> 和 <a href="./yii-validators-numbervalidator.html#$tooSmall-detail">tooSmall</a> 
+两种错误消息用于分别返回输入值是太大还是太小。你也可以像配置验证器的
+其他属性一样配置它们俩各自的错误信息。</p>
+<h3>验证事件  <span id="validation-events"></span><a href="#validation-events" class="hashlink">&para;</a></h3><p>当调用 <a href="./yii-base-model.html#validate()-detail">yii\base\Model::validate()</a> 方法的过程里，它同时会调用两个特殊的方法，
+把它们重写掉可以实现自定义验证过程的目的：</p>
+<ul>
+<li><a href="./yii-base-model.html#beforeValidate()-detail">yii\base\Model::beforeValidate()</a>：在默认的实现中会触发 <a href="./yii-base-model.html#EVENT_BEFORE_VALIDATE-detail">yii\base\Model::EVENT_BEFORE_VALIDATE</a> 事件。
+你可以重写该方法或者响应此事件，来在验证开始之前，先进行一些预处理的工作。
+ （比如，标准化数据输入）该方法应该返回一个布尔值，用于标明验证是否通过。</li>
+<li><a href="./yii-base-model.html#afterValidate()-detail">yii\base\Model::afterValidate()</a>：在默认的实现中会触发 <a href="./yii-base-model.html#EVENT_AFTER_VALIDATE-detail">yii\base\Model::EVENT_AFTER_VALIDATE</a> 事件。
+你可以重写该方法或者响应此事件，来在验证结束之后，
+再进行一些收尾的工作。</li>
+</ul>
+<h3>条件式验证  <span id="conditional-validation"></span><a href="#conditional-validation" class="hashlink">&para;</a></h3><p>若要只在某些条件满足时，才验证相关特性，比如：是否验证某特性取决于另一特性的值，
+你可以通过<a href="./yii-validators-validator.html#$when-detail">when</a> 
+属性来定义相关条件。举例而言，</p>
+<pre><code class="hljs php language-php">    [<span class="hljs-string">'state'</span>, <span class="hljs-string">'required'</span>, <span class="hljs-string">'when'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(<span class="hljs-variable">$model</span>)</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$model</span>-&gt;country == <span class="hljs-string">'USA'</span>;
+    }]
+</code></pre>
+<p><a href="./yii-validators-validator.html#$when-detail">when</a> 属性会读入一个如下所示结构的 PHP callable 函数对象：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">/**
+ * <span class="hljs-doctag">@param</span> Model $model 要验证的模型对象
+ * <span class="hljs-doctag">@param</span> string $attribute 待测特性名
+ * <span class="hljs-doctag">@return</span> bool 返回是否启用该规则
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$model</span>, <span class="hljs-variable">$attribute</span>)</span>
+</span></code></pre>
+<p>若你需要支持客户端的条件验证，你应该配置<a href="./yii-validators-validator.html#$whenClient-detail">whenClient</a> 属性，
+它会读入一条包含有 JavaScript 函数的字符串。
+这个函数将被用于确定该客户端验证规则是否被启用。比如，</p>
+<pre><code class="hljs php language-php">    [<span class="hljs-string">'state'</span>, <span class="hljs-string">'required'</span>, <span class="hljs-string">'when'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$model</span>)</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$model</span>-&gt;country == <span class="hljs-string">'USA'</span>;
+    }, <span class="hljs-string">'whenClient'</span> =&gt; <span class="hljs-string">"function (attribute, value) {
+        return $('#country').value == 'USA';
+    }"</span>]
+</code></pre>
+<h3>数据预处理  <span id="data-filtering"></span><a href="#data-filtering" class="hashlink">&para;</a></h3><p>用户输入经常需要进行数据过滤，或者叫预处理。比如你可能会需要先去掉 <code>username</code> 输入的收尾空格。
+你可以通过使用验证规则来实现此目的。</p>
+<p>下面的例子展示了如何去掉输入信息的首尾空格，并将空输入返回为 null。具体方法为通过调用 
+<a href="guide-tutorial-core-validators.html#trim">trim</a> 和 <a href="tutorial-core-validators.md#default">default</a> 核心验证器：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    [[<span class="hljs-string">'username'</span>, <span class="hljs-string">'email'</span>], <span class="hljs-string">'trim'</span>],
+    [[<span class="hljs-string">'username'</span>, <span class="hljs-string">'email'</span>], <span class="hljs-string">'default'</span>],
+];
+</code></pre>
+<p>也还可以用更加通用的 <a href="guide-tutorial-core-validators.html#filter">filter（滤镜）</a> 
+核心验证器来执行更加复杂的数据过滤。</p>
+<p>如你所见，这些验证规则并不真的对输入数据进行任何验证。而是，对输入数据进行一些处理，
+然后把它们存回当前被验证的模型特性。</p>
+<p>下面的代码示例展示了对用户输入的完整处理，
+这将确保只将整数值存储在一个属性中：</p>
+<pre><code class="hljs php language-php">[<span class="hljs-string">'age'</span>, <span class="hljs-string">'trim'</span>],
+[<span class="hljs-string">'age'</span>, <span class="hljs-string">'default'</span>, <span class="hljs-string">'value'</span> =&gt; <span class="hljs-keyword">null</span>],
+[<span class="hljs-string">'age'</span>, <span class="hljs-string">'integer'</span>, <span class="hljs-string">'integerOnly'</span> =&gt; <span class="hljs-keyword">true</span>, <span class="hljs-string">'min'</span> =&gt; <span class="hljs-number">0</span>],
+[<span class="hljs-string">'age'</span>, <span class="hljs-string">'filter'</span>, <span class="hljs-string">'filter'</span> =&gt; <span class="hljs-string">'intval'</span>, <span class="hljs-string">'skipOnEmpty'</span> =&gt; <span class="hljs-keyword">true</span>],
+</code></pre>
+<p>以上代码将对输入执行以下操作：</p>
+<ol>
+<li>从输入值中去除前后空白。</li>
+<li>确保空输入在数据库中存储为 <code>null</code>；我们区分 <code>未设置</code> 值和实际值为 <code>0</code> 之间的区别。
+如果值不允许为 <code>null</code>，则可以在此处设置另一个默认值。</li>
+<li>如果该值不为空，则验证该值是否为大于0的整数。大多数验证器的
+<a href="./yii-validators-validator.html#$skipOnEmpty-detail">$skipOnEmpty</a> 属性都被设置为<code>true</code>。</li>
+<li>确保该值为整数类型，例如将字符串 <code>'42'</code> 转换为整数 <code>42</code>。在这里，我们将 
+<a href="./yii-validators-filtervalidator.html#$skipOnEmpty-detail">$skipOnEmpty</a> 设置为 <code>true</code>，默认情况下，在 
+<a href="./yii-validators-filtervalidator.html">filter</a> 验证器里这个属性是 <code>false</code>。</li>
+</ol>
+<h3>处理空输入  <span id="handling-empty-inputs"></span><a href="#handling-empty-inputs" class="hashlink">&para;</a></h3><p>当输入数据是通过 HTML 表单，你经常会需要给空的输入项赋默认值。你可以通过调整
+<a href="guide-tutorial-core-validators.html#default">default</a> 验证器来实现这一点。举例来说，</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// 若 "username" 和 "email" 为空，则设为 null</span>
+    [[<span class="hljs-string">'username'</span>, <span class="hljs-string">'email'</span>], <span class="hljs-string">'default'</span>],
+
+    <span class="hljs-comment">// 若 "level" 为空，则设其为 1</span>
+    [<span class="hljs-string">'level'</span>, <span class="hljs-string">'default'</span>, <span class="hljs-string">'value'</span> =&gt; <span class="hljs-number">1</span>],
+];
+</code></pre>
+<p>默认情况下，当输入项为空字符串，空数组，或 null 时，会被视为“空值”。
+你也可以通过配置<a href="./yii-validators-validator.html#isEmpty()-detail">yii\validators\Validator::isEmpty()</a> 
+属性来自定义空值的判定规则。比如，</p>
+<pre><code class="hljs php language-php">    [<span class="hljs-string">'agree'</span>, <span class="hljs-string">'required'</span>, <span class="hljs-string">'isEmpty'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$value</span>)</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">empty</span>(<span class="hljs-variable">$value</span>);
+    }]
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>对于绝大多数验证器而言，若其 <span class="broken-link">yii\base\Validator::skipOnEmpty</span> 属性为默认值
+  true，则它们不会对空值进行任何处理。也就是当他们的关联特性接收到空值时，相关验证会被直接略过。在
+  <a href="guide-tutorial-core-validators.html">核心验证器</a> 之中，只有 <code>captcha</code>（验证码），<code>default</code>（默认值），
+ <code>filter</code>（滤镜），<code>required</code>（必填），以及 <code>trim</code>（去首尾空格），这几个验证器会处理空输入。</p>
+</blockquote>
+<h2>临时验证  <span id="ad-hoc-validation"></span><a href="#ad-hoc-validation" class="hashlink">&para;</a></h2><p>有时，你需要对某些没有绑定任何模型类的值进行 <strong>临时验证</strong>。</p>
+<p>若你只需要进行一种类型的验证 (e.g. 验证邮箱地址)，你可以调用所需验证器的
+<a href="./yii-validators-validator.html#validate()-detail">validate()</a> 方法。像这样：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$email</span> = <span class="hljs-string">'test@example.com'</span>;
+<span class="hljs-variable">$validator</span> = <span class="hljs-keyword">new</span> yii\validators\EmailValidator();
+
+<span class="hljs-keyword">if</span> (<span class="hljs-variable">$validator</span>-&gt;validate(<span class="hljs-variable">$email</span>, <span class="hljs-variable">$error</span>)) {
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">'有效的 Email 地址。'</span>;
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$error</span>;
+}
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>不是所有的验证器都支持这种形式的验证。比如 <a href="guide-tutorial-core-validators.html#unique">unique（唯一性）</a> 核心验证器就就是一个例子，
+  它的设计初衷就是只作用于模型类内部的。</p>
+</blockquote>
+<p>若你需要针对一系列值执行多项验证，你可以使用 <a href="./yii-base-dynamicmodel.html">yii\base\DynamicModel</a>
+。它支持即时添加特性和验证规则的定义。它的使用规则是这样的：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionSearch</span><span class="hljs-params">(<span class="hljs-variable">$name</span>, <span class="hljs-variable">$email</span>)</span>
+</span>{
+    <span class="hljs-variable">$model</span> = DynamicModel::validateData(compact(<span class="hljs-string">'name'</span>, <span class="hljs-string">'email'</span>), [
+        [[<span class="hljs-string">'name'</span>, <span class="hljs-string">'email'</span>], <span class="hljs-string">'string'</span>, <span class="hljs-string">'max'</span> =&gt; <span class="hljs-number">128</span>],
+        [<span class="hljs-string">'email'</span>, <span class="hljs-string">'email'</span>],
+    ]);
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$model</span>-&gt;hasErrors()) {
+        <span class="hljs-comment">// 验证失败</span>
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">// 验证成功</span>
+    }
+}
+</code></pre>
+<p><a href="./yii-base-dynamicmodel.html#validateData()-detail">yii\base\DynamicModel::validateData()</a> 方法会创建一个 <code>DynamicModel</code> 的实例对象，
+并通过给定数据定义模型特性（以 <code>name</code> 和 <code>email</code> 为例），
+之后用给定规则调用 <a href="./yii-base-model.html#validate()-detail">yii\base\Model::validate()</a> 方法。</p>
+<p>除此之外呢，你也可以用如下的更加“传统”的语法来执行临时数据验证：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionSearch</span><span class="hljs-params">(<span class="hljs-variable">$name</span>, <span class="hljs-variable">$email</span>)</span>
+</span>{
+    <span class="hljs-variable">$model</span> = <span class="hljs-keyword">new</span> DynamicModel(compact(<span class="hljs-string">'name'</span>, <span class="hljs-string">'email'</span>));
+    <span class="hljs-variable">$model</span>-&gt;addRule([<span class="hljs-string">'name'</span>, <span class="hljs-string">'email'</span>], <span class="hljs-string">'string'</span>, [<span class="hljs-string">'max'</span> =&gt; <span class="hljs-number">128</span>])
+        -&gt;addRule(<span class="hljs-string">'email'</span>, <span class="hljs-string">'email'</span>)
+        -&gt;validate();
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$model</span>-&gt;hasErrors()) {
+        <span class="hljs-comment">// 验证失败</span>
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">// 验证成功</span>
+    }
+}
+</code></pre>
+<p>验证之后你可以通过调用 <a href="./yii-base-model.html#hasErrors()-detail">hasErrors()</a>
+方法来检查验证通过与否，并通过 <a href="./yii-base-model.html#$errors-detail">errors</a>
+属性获得验证的错误信息，过程与普通模型类一致。
+你也可以访问模型对象内定义的动态特性，就像：
+<code>$model-&gt;name</code> 和 <code>$model-&gt;email</code>。</p>
+<h2>创建验证器（Validators）  <span id="creating-validators"></span><a href="#creating-validators" class="hashlink">&para;</a></h2><p>除了使用 Yii 的发布版里所包含的<a href="guide-tutorial-core-validators.html">核心验证器</a>之外，你也可以创建你自己的验证器。
+自定义的验证器可以是<strong>行内验证器</strong>，也可以是<strong>独立验证器</strong>。</p>
+<h3>行内验证器（Inline Validators）  <span id="inline-validators"></span><a href="#inline-validators" class="hashlink">&para;</a></h3><p>行内验证器是一种以模型方法或匿名函数的形式定义的验证器。
+这些方法/函数的结构如下：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">/**
+ * <span class="hljs-doctag">@param</span> string $attribute 当前被验证的特性
+ * <span class="hljs-doctag">@param</span> array $params 以名-值对形式提供的额外参数
+ * <span class="hljs-doctag">@param</span> \yii\validators\InlineValidator $validator 相关的 InlineValidator 实例。
+ * 此参数自版本 2.0.11 起可用。
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$attribute</span>, <span class="hljs-variable">$params</span>)</span>
+</span></code></pre>
+<p>若某特性的验证失败了，该方法/函数应该调用 <a href="./yii-base-model.html#addError()-detail">yii\base\Model::addError()</a> 保存错误信息到模型内。
+这样这些错误就能在之后的操作中，被读取并展现给终端用户。</p>
+<p>下面是一些例子：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Model</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyForm</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Model</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$country</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$token</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            <span class="hljs-comment">// 定义为模型方法 validateCountry() 的行内验证器</span>
+            [<span class="hljs-string">'country'</span>, <span class="hljs-string">'validateCountry'</span>],
+
+            <span class="hljs-comment">// 定义为匿名函数的行内验证器</span>
+            [<span class="hljs-string">'token'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$attribute</span>, <span class="hljs-variable">$params</span>)</span> </span>{
+                <span class="hljs-keyword">if</span> (!ctype_alnum(<span class="hljs-variable">$this</span>-&gt;<span class="hljs-variable">$attribute</span>)) {
+                    <span class="hljs-variable">$this</span>-&gt;addError(<span class="hljs-variable">$attribute</span>, <span class="hljs-string">'The token must contain letters or digits.'</span>);
+                }
+            }],
+        ];
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validateCountry</span><span class="hljs-params">(<span class="hljs-variable">$attribute</span>, <span class="hljs-variable">$params</span>)</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (!in_array(<span class="hljs-variable">$this</span>-&gt;<span class="hljs-variable">$attribute</span>, [<span class="hljs-string">'USA'</span>, <span class="hljs-string">'Web'</span>])) {
+            <span class="hljs-variable">$this</span>-&gt;addError(<span class="hljs-variable">$attribute</span>, <span class="hljs-string">'The country must be either "USA" or "Web".'</span>);
+        }
+    }
+}
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>从 2.0.11 版本开始，你可以用 <a href="./yii-validators-validator.html#addError()-detail">yii\validators\InlineValidator::addError()</a> 方法添加错误信息到模型里。用这种方法
+的话，错误信息可以通过 <a href="./yii-i18n-i18n.html#format()-detail">yii\i18n\I18N::format()</a> 格式化。 你还可以在错误信息里分别用 <code>{attribute}</code> 和 <code>{value}</code> 来引用
+属性的名字（不必手动去写）和属性的值：</p>
+</blockquote>
+<blockquote><pre><code class="hljs php language-php"><span class="hljs-variable">$validator</span>-&gt;addError(<span class="hljs-variable">$this</span>, <span class="hljs-variable">$attribute</span>, <span class="hljs-string">'The value "{value}" is not acceptable for {attribute}.'</span>);
+</code></pre>
+</blockquote>
+<blockquote class="note"><p><strong>注意： </strong>缺省状态下，行内验证器不会在关联特性的输入值为空或该特性已经在其他验证中失败的情况下起效。
+  若你想要确保该验证器始终启用的话，你可以在定义规则时，酌情将 
+  <a href="./yii-validators-validator.html#$skipOnEmpty-detail">skipOnEmpty</a> 以及
+  <a href="./yii-validators-validator.html#$skipOnError-detail">skipOnError</a>属性设为 false，比如，</p>
+<pre><code class="hljs php language-php">[
+    [<span class="hljs-string">'country'</span>, <span class="hljs-string">'validateCountry'</span>, <span class="hljs-string">'skipOnEmpty'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-string">'skipOnError'</span> =&gt; <span class="hljs-keyword">false</span>],
+]
+</code></pre>
+</blockquote>
+<h3>独立验证器（Standalone Validators）  <span id="standalone-validators"></span><a href="#standalone-validators" class="hashlink">&para;</a></h3><p>独立验证器是继承自 <a href="./yii-validators-validator.html">yii\validators\Validator</a> 或其子类的类。你可以通过重写
+<a href="./yii-validators-validator.html#validateAttribute()-detail">yii\validators\Validator::validateAttribute()</a> 来实现它的验证规则。若特性验证失败，可以调用
+<a href="./yii-base-model.html#addError()-detail">yii\base\Model::addError()</a> 以保存错误信息到模型内，
+操作与 <a href="#inline-validators">inline validators</a> 所需操作完全一样。比如，</p>
+<p>比如上述行内验证器也可以转移到新的验证类 [[components/validators/CountryValidator]]。
+这种情况下，我们可以用 <a href="./yii-validators-validator.html#addError()-detail">yii\validators\Validator::addError()</a> 来给模型设置自定义的错误信息。</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">validators</span>\<span class="hljs-title">Validator</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CountryValidator</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Validator</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validateAttribute</span><span class="hljs-params">(<span class="hljs-variable">$model</span>, <span class="hljs-variable">$attribute</span>)</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (!in_array(<span class="hljs-variable">$model</span>-&gt;<span class="hljs-variable">$attribute</span>, [<span class="hljs-string">'USA'</span>, <span class="hljs-string">'Web'</span>])) {
+            <span class="hljs-variable">$this</span>-&gt;addError(<span class="hljs-variable">$model</span>, <span class="hljs-variable">$attribute</span>, <span class="hljs-string">'The country must be either "USA" or "Web".'</span>);
+        }
+    }
+}
+</code></pre>
+<p>若你想要验证器支持不使用 model 的数据验证，你还应该重写<a href="./yii-validators-validator.html#validate()-detail">yii\validators\Validator::validate()</a> 方法。
+你也可以通过重写<a href="./yii-validators-validator.html#validateValue()-detail">yii\validators\Validator::validateValue()</a> 方法替代
+<code>validateAttribute()</code> 和 <code>validate()</code>，因为默认状态下，
+后两者的实现是通过调用 <code>validateValue()</code> 实现的。</p>
+<p>下面就是一个怎样把自定义验证器在模型中使用的例子。</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Model</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>\<span class="hljs-title">validators</span>\<span class="hljs-title">CountryValidator</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EntryForm</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Model</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$name</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$email</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$country</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            [[<span class="hljs-string">'name'</span>, <span class="hljs-string">'email'</span>], <span class="hljs-string">'required'</span>],
+            [<span class="hljs-string">'country'</span>, CountryValidator::className()],
+            [<span class="hljs-string">'email'</span>, <span class="hljs-string">'email'</span>],
+        ];
+    }
+}
+</code></pre>
+<h2>多属性验证  <span id="multiple-attributes-validation"></span><a href="#multiple-attributes-validation" class="hashlink">&para;</a></h2><p>某些情况下验证器可以包含多个属性。考虑下面的情况：</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MigrationForm</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Model</span>
+</span>{
+    <span class="hljs-comment">/**
+     * 一个成年人的最少花销
+     */</span>
+    <span class="hljs-keyword">const</span> MIN_ADULT_FUNDS = <span class="hljs-number">3000</span>;
+    <span class="hljs-comment">/**
+     * 一个孩子的最小花销
+     */</span>
+    <span class="hljs-keyword">const</span> MIN_CHILD_FUNDS = <span class="hljs-number">1500</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$personalSalary</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$spouseSalary</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$childrenCount</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$description</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            [[<span class="hljs-string">'personalSalary'</span>, <span class="hljs-string">'description'</span>], <span class="hljs-string">'required'</span>],
+            [[<span class="hljs-string">'personalSalary'</span>, <span class="hljs-string">'spouseSalary'</span>], <span class="hljs-string">'integer'</span>, <span class="hljs-string">'min'</span> =&gt; <span class="hljs-keyword">self</span>::MIN_ADULT_FUNDS],
+            [<span class="hljs-string">'childrenCount'</span>, <span class="hljs-string">'integer'</span>, <span class="hljs-string">'min'</span> =&gt; <span class="hljs-number">0</span>, <span class="hljs-string">'max'</span> =&gt; <span class="hljs-number">5</span>],
+            [[<span class="hljs-string">'spouseSalary'</span>, <span class="hljs-string">'childrenCount'</span>], <span class="hljs-string">'default'</span>, <span class="hljs-string">'value'</span> =&gt; <span class="hljs-number">0</span>],
+            [<span class="hljs-string">'description'</span>, <span class="hljs-string">'string'</span>],
+        ];
+    }
+}
+</code></pre>
+<h3>创建验证器  <span id="multiple-attributes-validator"></span><a href="#multiple-attributes-validator" class="hashlink">&para;</a></h3><p>比如我们需要检查下家庭收入是否足够给孩子们花销。此时我们可以创建一个行内验证器
+<code>validateChildrenFunds</code> 来解决这个问题，它仅仅在 <code>childrenCount</code> 大于 0 的时候才去检查。</p>
+<p>请注意，我们不要把所有需要验证的属性 (<code>['personalSalary', 'spouseSalary', 'childrenCount']</code>) 都附加到
+验证器上。因为这样做同一个验证器将会对每个属性都执行一遍验证（总共三次），但是实际上我们只需要对整个属性集
+执行一次验证而已。</p>
+<p>你可以使用属性集合里的任何一个（或者使用你认为最相关的那个属性）：</p>
+<pre><code class="hljs php language-php">[<span class="hljs-string">'childrenCount'</span>, <span class="hljs-string">'validateChildrenFunds'</span>, <span class="hljs-string">'when'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$model</span>)</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$model</span>-&gt;childrenCount &gt; <span class="hljs-number">0</span>;
+}],
+</code></pre>
+<p><code>validateChildrenFunds</code> 的实现可以是下面这样的：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validateChildrenFunds</span><span class="hljs-params">(<span class="hljs-variable">$attribute</span>, <span class="hljs-variable">$params</span>)</span>
+</span>{
+    <span class="hljs-variable">$totalSalary</span> = <span class="hljs-variable">$this</span>-&gt;personalSalary + <span class="hljs-variable">$this</span>-&gt;spouseSalary;
+    <span class="hljs-comment">// Double the minimal adult funds if spouse salary is specified</span>
+    <span class="hljs-variable">$minAdultFunds</span> = <span class="hljs-variable">$this</span>-&gt;spouseSalary ? <span class="hljs-keyword">self</span>::MIN_ADULT_FUNDS * <span class="hljs-number">2</span> : <span class="hljs-keyword">self</span>::MIN_ADULT_FUNDS;
+    <span class="hljs-variable">$childFunds</span> = <span class="hljs-variable">$totalSalary</span> - <span class="hljs-variable">$minAdultFunds</span>;
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$childFunds</span> / <span class="hljs-variable">$this</span>-&gt;childrenCount &lt; <span class="hljs-keyword">self</span>::MIN_CHILD_FUNDS) {
+        <span class="hljs-variable">$this</span>-&gt;addError(<span class="hljs-string">'childrenCount'</span>, <span class="hljs-string">'Your salary is not enough for children.'</span>);
+    }
+}
+</code></pre>
+<p>你可以忽略 <code>$attribute</code> 参数，因为这个验证过程不仅仅关联一个属性。</p>
+<h3>添加错误信息  <span id="multiple-attributes-errors"></span><a href="#multiple-attributes-errors" class="hashlink">&para;</a></h3><p>在添加错误信息的时候，如果是多个属性，可以根据自己想要的格式使用多种情况：</p>
+<ul>
+<li>选择一个你认为最相关的字段把错误信息添加到它的属性里：</li>
+</ul>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$this</span>-&gt;addError(<span class="hljs-string">'childrenCount'</span>, <span class="hljs-string">'Your salary is not enough for children.'</span>);
+</code></pre>
+<ul>
+<li>选择多个相关的属性乃至所有属性给它们添加同样的错误信息。在使用 <code>addError</code> 之前我们可以先把错误信息存储到
+一个独立的变量里，这样可以减少代码重复性。</li>
+</ul>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$message</span> = <span class="hljs-string">'Your salary is not enough for children.'</span>;
+<span class="hljs-variable">$this</span>-&gt;addError(<span class="hljs-string">'personalSalary'</span>, <span class="hljs-variable">$message</span>);
+<span class="hljs-variable">$this</span>-&gt;addError(<span class="hljs-string">'wifeSalary'</span>, <span class="hljs-variable">$message</span>);
+<span class="hljs-variable">$this</span>-&gt;addError(<span class="hljs-string">'childrenCount'</span>, <span class="hljs-variable">$message</span>);
+</code></pre>
+<p>或者使用循环：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$attributes</span> = [<span class="hljs-string">'personalSalary'</span>, <span class="hljs-string">'wifeSalary'</span>, <span class="hljs-string">'childrenCount'</span>];
+<span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$attributes</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$attribute</span>) {
+    <span class="hljs-variable">$this</span>-&gt;addError(<span class="hljs-variable">$attribute</span>, <span class="hljs-string">'Your salary is not enough for children.'</span>);
+}
+</code></pre>
+<ul>
+<li>添加通用错误信息（不相关于特定的属性）。我们可以用一个不存在的属性名添加错误信息
+比如 <code>*</code>，因为这时是不检查属性的存在性的。</li>
+</ul>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$this</span>-&gt;addError(<span class="hljs-string">'*'</span>, <span class="hljs-string">'Your salary is not enough for children.'</span>);
+</code></pre>
+<p>这种情况下，我们不会在表单域里看到错误信息。为了展示这个错误信息，我们可以在视图里使用错误汇总：</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?</span>= <span class="hljs-variable">$form</span>-&gt;errorSummary(<span class="hljs-variable">$model</span>) <span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>创建一次验证多个属性的验证器的参考说明在这里 <a href="https://github.com/samdark/yii2-cookbook/blob/master/book/forms-validator-multiple-attributes.md">community cookbook</a>.</p>
+</blockquote>
+<h2>客户端验证  <span id="client-side-validation"></span><a href="#client-side-validation" class="hashlink">&para;</a></h2><p>当终端用户通过 HTML 表单提供输入数据时，基于 JavaScript 的客户端验证是可取的，
+因为它允许用户更快地找出输入错误，从而提供更好的用户体验。你可以尝试使用或者自己实现一个 <em>除了支持服务端验证</em> 之外
+还支持客户端验证的验证器。</p>
+<blockquote class="info"><p><strong>信息： </strong>尽管客户端验证是值得的，但它不是必须的。客户端验证的主要目的是给终端用户提供
+  一个较好的体验。正如 “永远不用相信终端用户的输入数据” 一样，你也不能完全信任客户端验证。
+  基于这个考虑的话，正如前文描述所说，你应该永远在服务端通过调用 <a href="./yii-base-model.html#validate()-detail">yii\base\Model::validate()</a> 方法
+  进行服务端验证。</p>
+</blockquote>
+<h3>使用客户端验证  <span id="using-client-side-validation"></span><a href="#using-client-side-validation" class="hashlink">&para;</a></h3><p>许多 <a href="guide-tutorial-core-validators.html">核心验证器</a> 支持开箱即用的客户端验证。你需要做的
+就是使用 <a href="./yii-widgets-activeform.html">yii\widgets\ActiveForm</a> 构建你的 HTML 表单。 比如，下面的 <code>LoginForm</code> 声明了两个
+规则：一个使用 <a href="guide-tutorial-core-validators.html#required">required</a> 核心验证器，它支持客户端的验证，也支持服务端的 
+验证；另一个使用 <code>validatePassword</code> 行内验证器，它只支持在服务端
+验证。</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Model</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>\<span class="hljs-title">User</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LoginForm</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Model</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$username</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$password</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            <span class="hljs-comment">// username 和 password 都是必填项</span>
+            [[<span class="hljs-string">'username'</span>, <span class="hljs-string">'password'</span>], <span class="hljs-string">'required'</span>],
+
+            <span class="hljs-comment">// password 用 validatePassword() 方法验证</span>
+            [<span class="hljs-string">'password'</span>, <span class="hljs-string">'validatePassword'</span>],
+        ];
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validatePassword</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$user</span> = User::findByUsername(<span class="hljs-variable">$this</span>-&gt;username);
+
+        <span class="hljs-keyword">if</span> (!<span class="hljs-variable">$user</span> || !<span class="hljs-variable">$user</span>-&gt;validatePassword(<span class="hljs-variable">$this</span>-&gt;password)) {
+            <span class="hljs-variable">$this</span>-&gt;addError(<span class="hljs-string">'password'</span>, <span class="hljs-string">'Incorrect username or password.'</span>);
+        }
+    }
+}
+</code></pre>
+<p>下面的代码构建了包含 <code>username</code> 和 <code>password</code> 两个表单项的 HTML 表单。
+如果不输入任何内容直接提交表单，你就会发现提示你输入内容的错误信息立刻出现，
+而这并没有和服务端交互。</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span> <span class="hljs-variable">$form</span> = yii\widgets\ActiveForm::begin(); <span class="hljs-preprocessor">?&gt;</span>
+    <span class="hljs-preprocessor">&lt;?</span>= <span class="hljs-variable">$form</span>-&gt;field(<span class="hljs-variable">$model</span>, <span class="hljs-string">'username'</span>) <span class="hljs-preprocessor">?&gt;</span>
+    <span class="hljs-preprocessor">&lt;?</span>= <span class="hljs-variable">$form</span>-&gt;field(<span class="hljs-variable">$model</span>, <span class="hljs-string">'password'</span>)-&gt;passwordInput() <span class="hljs-preprocessor">?&gt;</span>
+    <span class="hljs-preprocessor">&lt;?</span>= Html::submitButton(<span class="hljs-string">'Login'</span>) <span class="hljs-preprocessor">?&gt;</span>
+<span class="hljs-preprocessor">&lt;?php</span> yii\widgets\ActiveForm::end(); <span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>幕后的运作过程是这样的： <a href="./yii-widgets-activeform.html">yii\widgets\ActiveForm</a> 读取在模型中声明的规则，然后
+生成验证器支持客户端验证对应的 JavaScript 代码。当用户
+改变表单项或者提交整个表单的时候，客户端验证的 JavaScript 就会触发。</p>
+<p>如果你想完全关闭客户端验证，你可以设置
+<a href="./yii-widgets-activeform.html#$enableClientValidation-detail">yii\widgets\ActiveForm::$enableClientValidation</a> 属性为 <code>false</code> 。你也可以通过设置它们的
+<a href="./yii-widgets-activefield.html#$enableClientValidation-detail">yii\widgets\ActiveField::$enableClientValidation</a> 属性为 <code>false</code> 来单独关闭某一个表单项。
+当在表单项级别和表单级别都设置了 <code>enableClientValidation</code> 的时候，
+前者（表单项）的级别优先生效。</p>
+<blockquote class="info"><p><strong>信息： </strong>从 2.0.11 版本开始，所有继承 <a href="./yii-validators-validator.html">yii\validators\Validator</a> 的验证器都可以通过</p>
+<ul>
+<li><a href="./yii-validators-validator.html#getClientOptions()-detail">yii\validators\Validator::getClientOptions()</a> 这个单独的方法接收客户端选项。可以这样使用：</li>
+</ul>
+</blockquote>
+<blockquote><ul>
+<li>如果你想自己实现自定义的客户端验证但是保留服务端的
+验证器选项；</li>
+<li>继承或者自定义符合你特殊的需求：</li>
+</ul>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getClientOptions</span><span class="hljs-params">(<span class="hljs-variable">$model</span>, <span class="hljs-variable">$attribute</span>)</span>
+</span>{
+    <span class="hljs-variable">$options</span> = <span class="hljs-keyword">parent</span>::getClientOptions(<span class="hljs-variable">$model</span>, <span class="hljs-variable">$attribute</span>);
+    <span class="hljs-comment">// 修改 $options </span>
+
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$options</span>;
+}
+</code></pre>
+</blockquote>
+<h3>实现客户端验证  <span id="implementing-client-side-validation"></span><a href="#implementing-client-side-validation" class="hashlink">&para;</a></h3><p>为了创建一个支持客户端验证的验证器，你应该实现
+<a href="./yii-validators-validator.html#clientValidateAttribute()-detail">yii\validators\Validator::clientValidateAttribute()</a> 方法，该方法返回一段 JavaScript 代码
+用来在客户端执行验证。在这段 JavaScript 代码里，你可以使用下面几个
+预定义的变量：</p>
+<ul>
+<li><code>attribute</code>：被验证的属性名。</li>
+<li><code>value</code>：被验证的值。</li>
+<li><code>messages</code>：一个给属性保存验证错误信息的数组。</li>
+<li><code>deferred</code>：一个支持添加 deferred 对象的数组（下一部分再说）。</li>
+</ul>
+<p>下面的例子，我们创建了一个 <code>StatusValidator</code> 验证器，它用来验证一个输入和存在的状态相比， 
+是否是有效的状态输入。这个验证器支持服务端验证也支持客户端验证。</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">validators</span>\<span class="hljs-title">Validator</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>\<span class="hljs-title">Status</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StatusValidator</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Validator</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">parent</span>::init();
+        <span class="hljs-variable">$this</span>-&gt;message = <span class="hljs-string">'Invalid status input.'</span>;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validateAttribute</span><span class="hljs-params">(<span class="hljs-variable">$model</span>, <span class="hljs-variable">$attribute</span>)</span>
+    </span>{
+        <span class="hljs-variable">$value</span> = <span class="hljs-variable">$model</span>-&gt;<span class="hljs-variable">$attribute</span>;
+        <span class="hljs-keyword">if</span> (!Status::find()-&gt;where([<span class="hljs-string">'id'</span> =&gt; <span class="hljs-variable">$value</span>])-&gt;exists()) {
+            <span class="hljs-variable">$model</span>-&gt;addError(<span class="hljs-variable">$attribute</span>, <span class="hljs-variable">$this</span>-&gt;message);
+        }
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clientValidateAttribute</span><span class="hljs-params">(<span class="hljs-variable">$model</span>, <span class="hljs-variable">$attribute</span>, <span class="hljs-variable">$view</span>)</span>
+    </span>{
+        <span class="hljs-variable">$statuses</span> = json_encode(Status::find()-&gt;select(<span class="hljs-string">'id'</span>)-&gt;asArray()-&gt;column());
+        <span class="hljs-variable">$message</span> = json_encode(<span class="hljs-variable">$this</span>-&gt;message, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&lt;&lt;&lt;JS
+if ($.inArray(value, <span class="hljs-subst">$statuses</span>) === -1) {
+    messages.push(<span class="hljs-subst">$message</span>);
+}
+JS;</span>
+    }
+}
+</code></pre>
+<blockquote class="tip"><p><strong>提示： </strong>上面给出的代码主要展示如何支持客户端验证。在实际使用中，
+你可以使用 <a href="guide-tutorial-core-validators.html#in">in</a> 核心验证器来实现同样的目标。你也可以
+像下面那样写验证规则：</p>
+<pre><code class="hljs php language-php">[
+    [<span class="hljs-string">'status'</span>, <span class="hljs-string">'in'</span>, <span class="hljs-string">'range'</span> =&gt; Status::find()-&gt;select(<span class="hljs-string">'id'</span>)-&gt;asArray()-&gt;column()],
+]
+</code></pre>
+</blockquote>
+<blockquote class="tip"><p><strong>提示： </strong>如果你想手动调整客户端的验证，比如动态地添加表单项或者做一些自定义的 UI 逻辑，请参考
+<a href="https://github.com/samdark/yii2-cookbook/blob/master/book/forms-activeform-js.md">Working with ActiveForm via JavaScript</a>
+在 Yii 2.0 Cookbook。</p>
+</blockquote>
+<h3>Deferred 验证  <span id="deferred-validation"></span><a href="#deferred-validation" class="hashlink">&para;</a></h3><p>如果你需要执行异步客户端验证，你可以创建 <a href="http://api.jquery.com/category/deferred-object/">Deferred objects</a>。 
+比如要执行一段自定义的 AJAX 验证，可以使用下面的代码：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clientValidateAttribute</span><span class="hljs-params">(<span class="hljs-variable">$model</span>, <span class="hljs-variable">$attribute</span>, <span class="hljs-variable">$view</span>)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&lt;&lt;&lt;JS
+        deferred.push($.get("/check", {value: value}).done(function(data) {
+            if ('' !== data) {
+                messages.push(data);
+            }
+        }));
+JS;</span>
+}
+</code></pre>
+<p>上面这个 <code>deferred</code> 变量是由 Yii 提供的，它是一个 Deferred 对象的数组。这个 <code>$.get()</code>
+jQuery 方法用来产生一个 Deferred 对象然后推送到 <code>deferred</code> 数组里。</p>
+<p>你也可以明确地创建一个 <code>deferred</code> 对象，当异步回调触发的时候调用它的 <code>resolve()</code> 方法。
+下面的例子展示了如何在客户端验证一个上传图片的尺寸。</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clientValidateAttribute</span><span class="hljs-params">(<span class="hljs-variable">$model</span>, <span class="hljs-variable">$attribute</span>, <span class="hljs-variable">$view</span>)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&lt;&lt;&lt;JS
+        var def = $.Deferred();
+        var img = new Image();
+        img.onload = function() {
+            if (this.width &gt; 150) {
+                messages.push('Image too wide!!');
+            }
+            def.resolve();
+        }
+        var reader = new FileReader();
+        reader.onloadend = function() {
+            img.src = reader.result;
+        }
+        reader.readAsDataURL(file);
+
+        deferred.push(def);
+JS;</span>
+}
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong><code>resolve()</code> 方法必须在所有属性都验证完之后调用。不然表单不会
+  完成整体的验证流程。</p>
+</blockquote>
+<p>为了简单起见，<code>deferred</code> 数组封装了一个快捷方法 <code>add()</code>，它可以自动创建 Deferred 对象
+然后把它添加到 <code>deferred</code> 数组里。用这个方法，你可以简化上面的例子：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clientValidateAttribute</span><span class="hljs-params">(<span class="hljs-variable">$model</span>, <span class="hljs-variable">$attribute</span>, <span class="hljs-variable">$view</span>)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&lt;&lt;&lt;JS
+        deferred.add(function(def) {
+            var img = new Image();
+            img.onload = function() {
+                if (this.width &gt; 150) {
+                    messages.push('Image too wide!!');
+                }
+                def.resolve();
+            }
+            var reader = new FileReader();
+            reader.onloadend = function() {
+                img.src = reader.result;
+            }
+            reader.readAsDataURL(file);
+        });
+JS;</span>
+}
+</code></pre>
+<h2>AJAX 验证  <span id="ajax-validation"></span><a href="#ajax-validation" class="hashlink">&para;</a></h2><p>一些验证器只能工作在服务端，因为只有服务端才有必要的信息。
+比如，验证一个用户名是否唯一，需要在服务端检查用户表。
+这时候你可以使用基于 AJAX 的验证。它会在背后触发一个 AJAX 请求用来验证输入项而且还能
+保持和通常客户端验证一样的用户体验。</p>
+<p>给一个单独的表单项开启 AJAX 验证，你只需要设置 <a href="./yii-widgets-activefield.html#$enableAjaxValidation-detail">enableAjaxValidation</a>
+属性为 <code>true</code>，然后指定一个唯一的表单 <code>id</code>：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">widgets</span>\<span class="hljs-title">ActiveForm</span>;
+
+<span class="hljs-variable">$form</span> = ActiveForm::begin([
+    <span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'registration-form'</span>,
+]);
+
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$form</span>-&gt;field(<span class="hljs-variable">$model</span>, <span class="hljs-string">'username'</span>, [<span class="hljs-string">'enableAjaxValidation'</span> =&gt; <span class="hljs-keyword">true</span>]);
+
+<span class="hljs-comment">// ...</span>
+
+ActiveForm::end();
+</code></pre>
+<p>如果要给所有的表单项开启 AJAX 验证，可以在表单级别设置 <a href="./yii-widgets-activeform.html#$enableAjaxValidation-detail">enableAjaxValidation</a>
+属性为 <code>true</code> 就行：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$form</span> = ActiveForm::begin([
+    <span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'contact-form'</span>,
+    <span class="hljs-string">'enableAjaxValidation'</span> =&gt; <span class="hljs-keyword">true</span>,
+]);
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>当在表单项级别和表单级别都设置了 <code>enableAjaxValidation</code> 属性的时候，
+  前者（表单项级别）优先生效。</p>
+</blockquote>
+<p>你也需要在服务端准备处理这样的 AJAX 请求。
+这个可以在控制器的动作里通过如下的代码片段来实现：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">if</span> (Yii::<span class="hljs-variable">$app</span>-&gt;request-&gt;isAjax &amp;&amp; <span class="hljs-variable">$model</span>-&gt;load(Yii::<span class="hljs-variable">$app</span>-&gt;request-&gt;post())) {
+    Yii::<span class="hljs-variable">$app</span>-&gt;response-&gt;format = Response::FORMAT_JSON;
+    <span class="hljs-keyword">return</span> ActiveForm::validate(<span class="hljs-variable">$model</span>);
+}
+</code></pre>
+<p>上述代码将会检测当前的请求是否源自 AJAX。如果是的话，它将运行验证过程, 然后
+返回一段 JSON 格式的错误信息来响应这次请求。</p>
+<blockquote class="info"><p><strong>信息： </strong>你也可以用 <a href="#deferred-validation">Deferred 验证</a> 执行 AJAX 验证。 
+  话说回来，这里描述的 AJAX 验证还是比较系统并且需要较少的代码开销。</p>
+</blockquote>
+<p>当 <code>enableClientValidation</code> 和 <code>enableAjaxValidation</code> 都设置为 <code>true</code> 时，只有客户端验证成功之后
+才会触发 AJAX 的验证请求。注意，如果验证某个表单项的时候凑巧 <code>validateOnChange</code>，<code>validateOnBlur</code> 或者 <code>validateOnType</code>
+其中之一设置了 <code>true</code>,那么这个表单项在单独通过这样的客户端验证时，
+也会发起 AJAX 请求。</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

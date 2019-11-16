@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>MatchExpression, yii\sphinx\MatchExpression - Yii Framework 2.0 API Documentation</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w17104" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w17104-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Yii Framework 2.0 API Documentation</a></div><div id="w17104-collapse" class="collapse navbar-collapse"><ul id="w17105" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w17106" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-3">
+                <div id="navigation" class="list-group"><a class="list-group-item active" href="#navigation-17102" data-toggle="collapse" data-parent="#navigation">yii\sphinx <b class="caret"></b></a><div id="navigation-17102" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./yii-sphinx-activedataprovider.html">ActiveDataProvider</a>
+<a class="list-group-item" href="./yii-sphinx-activefixture.html">ActiveFixture</a>
+<a class="list-group-item" href="./yii-sphinx-activequery.html">ActiveQuery</a>
+<a class="list-group-item" href="./yii-sphinx-activerecord.html">ActiveRecord</a>
+<a class="list-group-item" href="./yii-sphinx-columnschema.html">ColumnSchema</a>
+<a class="list-group-item" href="./yii-sphinx-command.html">Command</a>
+<a class="list-group-item" href="./yii-sphinx-connection.html">Connection</a>
+<a class="list-group-item" href="./yii-sphinx-indexschema.html">IndexSchema</a>
+<a class="list-group-item" href="./yii-sphinx-matchbuilder.html">MatchBuilder</a>
+<a class="list-group-item active" href="./yii-sphinx-matchexpression.html">MatchExpression</a>
+<a class="list-group-item" href="./yii-sphinx-query.html">Query</a>
+<a class="list-group-item" href="./yii-sphinx-querybuilder.html">QueryBuilder</a>
+<a class="list-group-item" href="./yii-sphinx-schema.html">Schema</a></div>
+<a class="list-group-item" href="#navigation-17103" data-toggle="collapse" data-parent="#navigation">yii\sphinx\gii\model <b class="caret"></b></a><div id="navigation-17103" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-sphinx-gii-model-generator.html">Generator</a></div></div>    </div>
+    <div class="col-md-9 api-content" role="main">
+        <h1>Class yii\sphinx\MatchExpression</h1>
+<div class="top-nav">
+    <a href="index.html">All Classes</a>
+            | <a href="#properties">Properties</a>
+                | <a href="#methods">Methods</a>
+            </div>
+
+<table class="summaryTable docClass table table-bordered">
+    <colgroup>
+        <col class="col-name" />
+        <col class="col-value" />
+    </colgroup>
+            <tr><th>Inheritance</th><td><a href="yii-sphinx-matchexpression.html">yii\sphinx\MatchExpression</a> &raquo;
+<a href="yii-base-baseobject.html">yii\base\BaseObject</a></td></tr>
+                <tr><th>Implements</th><td><a href="yii-base-configurable.html">yii\base\Configurable</a></td></tr>
+                                    <tr><th>Available since version</th><td>2.0.6</td></tr>
+                    <tr>
+          <th>Source Code</th>
+          <td><a href="https://github.com/yiisoft/yii2-sphinx/blob/master/MatchExpression.php">https://github.com/yiisoft/yii2-sphinx/blob/master/MatchExpression.php</a></td>
+        </tr>
+    </table>
+
+<div class="class-description">
+    <p><strong>MatchExpression represents a MATCH SphinxQL expression.</strong></p>
+    <p>In conjunction with <a href="yii-sphinx-matchbuilder.html">yii\sphinx\MatchBuilder</a> this class provides ability to build sophisticated MATCH expressions.
+Instance of this class can be passed to <a href="yii-sphinx-query.html#match()-detail">yii\sphinx\Query::match()</a>.
+For example:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">sphinx</span>\<span class="hljs-title">Query</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">sphinx</span>\<span class="hljs-title">MatchExpression</span>;
+
+<span class="hljs-variable">$rows</span> = (<span class="hljs-keyword">new</span> Query())
+    -&gt;match(<span class="hljs-keyword">new</span> MatchExpression(<span class="hljs-string">'@title :title'</span>, [<span class="hljs-string">'title'</span> =&gt; <span class="hljs-string">'Yii'</span>]))
+    -&gt;all();
+</code></pre>
+<p>You may use <a href="yii-sphinx-matchexpression.html#match()-detail">match()</a>, <a href="yii-sphinx-matchexpression.html#andMatch()-detail">andMatch()</a> and <a href="yii-sphinx-matchexpression.html#orMatch()-detail">orMatch()</a> to combine several conditions.
+For example:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">sphinx</span>\<span class="hljs-title">Query</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">sphinx</span>\<span class="hljs-title">MatchExpression</span>;
+
+<span class="hljs-variable">$rows</span> = (<span class="hljs-keyword">new</span> Query())
+    -&gt;match(
+        <span class="hljs-comment">// produces '((@title "Yii") (@author "Paul")) | (@content "Sphinx")' :</span>
+        (<span class="hljs-keyword">new</span> MatchExpression())
+            -&gt;match([<span class="hljs-string">'title'</span> =&gt; <span class="hljs-string">'Yii'</span>])
+            -&gt;andMatch([<span class="hljs-string">'author'</span> =&gt; <span class="hljs-string">'Paul'</span>])
+            -&gt;orMatch([<span class="hljs-string">'content'</span> =&gt; <span class="hljs-string">'Sphinx'</span>])
+    )
+    -&gt;all();
+</code></pre>
+<p>You may as well compose expressions with special operators like 'MAYBE', 'PROXIMITY' etc.
+For example:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">sphinx</span>\<span class="hljs-title">Query</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">sphinx</span>\<span class="hljs-title">MatchExpression</span>;
+
+<span class="hljs-variable">$rows</span> = (<span class="hljs-keyword">new</span> Query())
+    -&gt;match(
+        <span class="hljs-comment">// produces '@title "Yii" MAYBE "Sphinx"' :</span>
+        (<span class="hljs-keyword">new</span> MatchExpression())-&gt;match([
+            <span class="hljs-string">'maybe'</span>,
+            <span class="hljs-string">'title'</span>,
+            <span class="hljs-string">'Yii'</span>,
+            <span class="hljs-string">'Sphinx'</span>,
+        ])
+    )
+    -&gt;all();
+
+<span class="hljs-variable">$rows</span> = (<span class="hljs-keyword">new</span> Query())
+    -&gt;match(
+        <span class="hljs-comment">// produces '@title "Yii"~10' :</span>
+        (<span class="hljs-keyword">new</span> MatchExpression())-&gt;match([
+            <span class="hljs-string">'proximity'</span>,
+            <span class="hljs-string">'title'</span>,
+            <span class="hljs-string">'Yii'</span>,
+            <span class="hljs-number">10</span>,
+        ])
+    )
+    -&gt;all();
+</code></pre>
+<p>Note: parameters passed via <a href="yii-sphinx-matchexpression.html#params()-detail">params()</a> or generated from array conditions will be automatically escaped
+using <a href="yii-sphinx-connection.html#escapeMatchValue()-detail">yii\sphinx\Connection::escapeMatchValue()</a>.</p>
+
+    <p>See also:</p><ul><li><a href="yii-sphinx-matchbuilder.html">yii\sphinx\MatchBuilder</a></li><li><a href="http://sphinxsearch.com/docs/current.html#extended-syntax">http://sphinxsearch.com/docs/current.html#extended-syntax</a></li></ul></div>
+
+<a id="properties"></a>
+
+<div class="summary doc-property">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-property" />
+    <col class="col-type" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr id="$match">
+        <td><a href="yii-sphinx-matchexpression.html#$match-detail">$match</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.array">array</a>|<a href="yii-db-expression.html">yii\db\Expression</a></td>
+        <td>MATCH expression.</td>
+        <td><a href="yii-sphinx-matchexpression.html">yii\sphinx\MatchExpression</a></td>
+    </tr>
+            <tr id="$params">
+        <td><a href="yii-sphinx-matchexpression.html#$params-detail">$params</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>List of match expression parameter values indexed by parameter placeholders.</td>
+        <td><a href="yii-sphinx-matchexpression.html">yii\sphinx\MatchExpression</a></td>
+    </tr>
+    </table>
+</div>
+
+<a id="methods"></a>
+
+<div class="summary doc-method">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr class="inherited" id="__call()">
+        <td><a href="yii-base-baseobject.html#__call()-detail">__call()</a></td>
+        <td>Calls the named method which is not a class method.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr id="__construct()">
+        <td><a href="yii-sphinx-matchexpression.html#__construct()-detail">__construct()</a></td>
+        <td>Constructor.</td>
+        <td><a href="yii-sphinx-matchexpression.html">yii\sphinx\MatchExpression</a></td>
+    </tr>
+            <tr class="inherited" id="__get()">
+        <td><a href="yii-base-baseobject.html#__get()-detail">__get()</a></td>
+        <td>Returns the value of an object property.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr class="inherited" id="__isset()">
+        <td><a href="yii-base-baseobject.html#__isset()-detail">__isset()</a></td>
+        <td>Checks if a property is set, i.e. defined and not null.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr class="inherited" id="__set()">
+        <td><a href="yii-base-baseobject.html#__set()-detail">__set()</a></td>
+        <td>Sets value of an object property.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr class="inherited" id="__unset()">
+        <td><a href="yii-base-baseobject.html#__unset()-detail">__unset()</a></td>
+        <td>Sets an object property to null.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr id="addParams()">
+        <td><a href="yii-sphinx-matchexpression.html#addParams()-detail">addParams()</a></td>
+        <td>Adds additional parameters to be parsed into the query.</td>
+        <td><a href="yii-sphinx-matchexpression.html">yii\sphinx\MatchExpression</a></td>
+    </tr>
+            <tr id="andFilterMatch()">
+        <td><a href="yii-sphinx-matchexpression.html#andFilterMatch()-detail">andFilterMatch()</a></td>
+        <td>Adds an additional MATCH condition to the existing one but ignores <a href="yii-sphinx-matchexpression.html#isEmpty()-detail">empty operands</a>.</td>
+        <td><a href="yii-sphinx-matchexpression.html">yii\sphinx\MatchExpression</a></td>
+    </tr>
+            <tr id="andMatch()">
+        <td><a href="yii-sphinx-matchexpression.html#andMatch()-detail">andMatch()</a></td>
+        <td>Adds an additional MATCH condition to the existing one.</td>
+        <td><a href="yii-sphinx-matchexpression.html">yii\sphinx\MatchExpression</a></td>
+    </tr>
+            <tr class="inherited" id="canGetProperty()">
+        <td><a href="yii-base-baseobject.html#canGetProperty()-detail">canGetProperty()</a></td>
+        <td>Returns a value indicating whether a property can be read.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr class="inherited" id="canSetProperty()">
+        <td><a href="yii-base-baseobject.html#canSetProperty()-detail">canSetProperty()</a></td>
+        <td>Returns a value indicating whether a property can be set.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr class="inherited" id="className()">
+        <td><a href="yii-base-baseobject.html#className()-detail">className()</a></td>
+        <td>Returns the fully qualified name of this class.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+                <tr id="filterMatch()">
+        <td><a href="yii-sphinx-matchexpression.html#filterMatch()-detail">filterMatch()</a></td>
+        <td>Sets the MATCH part of the query but ignores <a href="yii-sphinx-matchexpression.html#isEmpty()-detail">empty operands</a>.</td>
+        <td><a href="yii-sphinx-matchexpression.html">yii\sphinx\MatchExpression</a></td>
+    </tr>
+            <tr class="inherited" id="hasMethod()">
+        <td><a href="yii-base-baseobject.html#hasMethod()-detail">hasMethod()</a></td>
+        <td>Returns a value indicating whether a method is defined.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr class="inherited" id="hasProperty()">
+        <td><a href="yii-base-baseobject.html#hasProperty()-detail">hasProperty()</a></td>
+        <td>Returns a value indicating whether a property is defined.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr class="inherited" id="init()">
+        <td><a href="yii-base-baseobject.html#init()-detail">init()</a></td>
+        <td>Initializes the object.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+                <tr id="match()">
+        <td><a href="yii-sphinx-matchexpression.html#match()-detail">match()</a></td>
+        <td>Sets the MATCH expression.</td>
+        <td><a href="yii-sphinx-matchexpression.html">yii\sphinx\MatchExpression</a></td>
+    </tr>
+            <tr id="orFilterMatch()">
+        <td><a href="yii-sphinx-matchexpression.html#orFilterMatch()-detail">orFilterMatch()</a></td>
+        <td>Adds an additional MATCH condition to the existing one but ignores <a href="yii-sphinx-matchexpression.html#isEmpty()-detail">empty operands</a>.</td>
+        <td><a href="yii-sphinx-matchexpression.html">yii\sphinx\MatchExpression</a></td>
+    </tr>
+            <tr id="orMatch()">
+        <td><a href="yii-sphinx-matchexpression.html#orMatch()-detail">orMatch()</a></td>
+        <td>Adds an additional MATCH condition to the existing one.</td>
+        <td><a href="yii-sphinx-matchexpression.html">yii\sphinx\MatchExpression</a></td>
+    </tr>
+            <tr id="params()">
+        <td><a href="yii-sphinx-matchexpression.html#params()-detail">params()</a></td>
+        <td>Sets the parameters to be parsed into the query.</td>
+        <td><a href="yii-sphinx-matchexpression.html">yii\sphinx\MatchExpression</a></td>
+    </tr>
+    </table>
+</div>
+
+<div class="summary doc-method">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+                                                        <tr id="filterCondition()">
+        <td><a href="yii-sphinx-matchexpression.html#filterCondition()-detail">filterCondition()</a></td>
+        <td>Removes <a href="yii-sphinx-matchexpression.html#isEmpty()-detail">empty operands</a> from the given query condition.</td>
+        <td><a href="yii-sphinx-matchexpression.html">yii\sphinx\MatchExpression</a></td>
+    </tr>
+                            <tr id="isEmpty()">
+        <td><a href="yii-sphinx-matchexpression.html#isEmpty()-detail">isEmpty()</a></td>
+        <td>Returns a value indicating whether the give value is "empty".</td>
+        <td><a href="yii-sphinx-matchexpression.html">yii\sphinx\MatchExpression</a></td>
+    </tr>
+                    </table>
+</div>
+
+<a id="events"></a>
+
+<a id="constants"></a>
+
+<h2>Property Details</h2>
+
+<div class="property-doc">
+
+    <div class="detail-header h3" id="$match-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-sphinx-matchexpression.html#$match-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-sphinx/edit/master/MatchExpression.php#L96" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-sphinx/blob/master/MatchExpression.php#L96" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $match        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>MATCH expression.
+For example: <code>['title' =&gt; 'Yii', 'content' =&gt; 'Sphinx']</code>.
+Note: being specified as a plain string this value will not be quoted or escaped, do not pass
+possible unsecured values (like the ones obtained from HTTP request) as a direct value.</p>
+
+        <p>See also <a href="yii-sphinx-matchexpression.html#match()-detail">match()</a>.</p>    </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.array">array</a>|<a href="yii-db-expression.html">yii\db\Expression</a></span> <a href="yii-sphinx-matchexpression.html#$match-detail">$match</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+
+
+    <div class="detail-header h3" id="$params-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-sphinx-matchexpression.html#$params-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-sphinx/edit/master/MatchExpression.php#L103" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-sphinx/blob/master/MatchExpression.php#L103" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $params        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>List of match expression parameter values indexed by parameter placeholders.
+For example, <code>[':name' =&gt; 'Dan', ':age' =&gt; 31]</code>.
+These parameters will be automatically escaped using <a href="yii-sphinx-connection.html#escapeMatchValue()-detail">yii\sphinx\Connection::escapeMatchValue()</a> and inserted into MATCH
+expression as a quoted strings.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <a href="yii-sphinx-matchexpression.html#$params-detail">$params</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[]</span></div>
+
+</div>
+<h2>Method Details</h2>
+
+<div class="method-doc">
+
+    <div class="detail-header h3" id="__construct()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-sphinx-matchexpression.html#__construct()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-sphinx/edit/master/MatchExpression.php#L112" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-sphinx/blob/master/MatchExpression.php#L112" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        __construct()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Constructor.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-sphinx-matchexpression.html#__construct()-detail">__construct</a></strong> ( <span style="color: #0000BB">$match&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span>, <span style="color: #0000BB">$params&nbsp;</span><span style="color: #007700">=&nbsp;[]</span>, <span style="color: #0000BB">$config&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$match</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The MATCH expression</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$params</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Expression parameters.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$config</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Name-value pairs that will be used to initialize the object properties</p>
+</td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="addParams()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-sphinx-matchexpression.html#addParams()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-sphinx/edit/master/MatchExpression.php#L202" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-sphinx/blob/master/MatchExpression.php#L202" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        addParams()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Adds additional parameters to be parsed into the query.</strong></p>
+
+        
+        <p>See also <a href="yii-sphinx-matchexpression.html#params()-detail">params()</a>.</p>    </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-sphinx-matchexpression.html">$this</a></span> <strong><a href="yii-sphinx-matchexpression.html#addParams()-detail">addParams</a></strong> ( <span style="color: #0000BB">$params</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$params</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>List of expression parameter values indexed by parameter placeholders.
+For example, <code>[':name' =&gt; 'Dan', ':age' =&gt; 31]</code>.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-sphinx-matchexpression.html">$this</a></td>
+                  <td class="param-desc-col"><p>The expression object itself</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="andFilterMatch()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-sphinx-matchexpression.html#andFilterMatch()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-sphinx/edit/master/MatchExpression.php#L272" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-sphinx/blob/master/MatchExpression.php#L272" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        andFilterMatch()
+        <span class="detail-header-tag small">
+            public                                    method
+                            (available since version 2.0.7)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Adds an additional MATCH condition to the existing one but ignores <a href="yii-sphinx-matchexpression.html#isEmpty()-detail">empty operands</a>.</strong></p>
+
+        <p>The new condition and the existing one will be joined using the 'AND' operator.</p>
+<p>This method is similar to <a href="yii-sphinx-matchexpression.html#andMatch()-detail">andMatch()</a>. The main difference is that this method will
+remove <a href="yii-sphinx-matchexpression.html#isEmpty()-detail">empty query operands</a>. As a result, this method is best suited
+for building query conditions based on filter values entered by users.</p>
+
+        <p>See also:</p><ul><li><a href="yii-sphinx-matchexpression.html#filterMatch()-detail">filterMatch()</a></li><li><a href="yii-sphinx-matchexpression.html#orFilterMatch()-detail">orFilterMatch()</a></li></ul>    </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-sphinx-matchexpression.html">$this</a></span> <strong><a href="yii-sphinx-matchexpression.html#andFilterMatch()-detail">andFilterMatch</a></strong> ( <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <span style="color: #0000BB">$condition</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$condition</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The new MATCH condition. Please refer to <a href="yii-sphinx-matchexpression.html#match()-detail">match()</a>
+on how to specify this parameter.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-sphinx-matchexpression.html">$this</a></td>
+                  <td class="param-desc-col"><p>The query object itself</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="andMatch()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-sphinx-matchexpression.html#andMatch()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-sphinx/edit/master/MatchExpression.php#L150" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-sphinx/blob/master/MatchExpression.php#L150" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        andMatch()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Adds an additional MATCH condition to the existing one.</strong></p>
+
+        <p>The new condition and the existing one will be joined using the 'AND' (' ') operator.</p>
+
+        <p>See also:</p><ul><li><a href="yii-sphinx-matchexpression.html#match()-detail">match()</a></li><li><a href="yii-sphinx-matchexpression.html#orMatch()-detail">orMatch()</a></li></ul>    </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-sphinx-matchexpression.html">$this</a></span> <strong><a href="yii-sphinx-matchexpression.html#andMatch()-detail">andMatch</a></strong> ( <span style="color: #0000BB">$condition</span>, <span style="color: #0000BB">$params&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$condition</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.array">array</a>|<a href="yii-db-expression.html">yii\db\Expression</a></td>
+                  <td class="param-desc-col"><p>The new MATCH condition. Please refer to <a href="yii-sphinx-matchexpression.html#match()-detail">match()</a>
+on how to specify this parameter.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$params</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The parameters (name =&gt; value) to be parsed into the query.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-sphinx-matchexpression.html">$this</a></td>
+                  <td class="param-desc-col"><p>The expression object itself</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="filterCondition()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-sphinx-matchexpression.html#filterCondition()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-sphinx/edit/master/MatchExpression.php#L312" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-sphinx/blob/master/MatchExpression.php#L312" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        filterCondition()
+        <span class="detail-header-tag small">
+            protected                                    method
+                            (available since version 2.0.7)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Removes <a href="yii-sphinx-matchexpression.html#isEmpty()-detail">empty operands</a> from the given query condition.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-sphinx-matchexpression.html#filterCondition()-detail">filterCondition</a></strong> ( <span style="color: #0000BB">$condition</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$condition</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The original condition</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The condition with <a href="yii-sphinx-matchexpression.html#isEmpty()-detail">empty operands</a> removed.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="filterMatch()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-sphinx-matchexpression.html#filterMatch()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-sphinx/edit/master/MatchExpression.php#L248" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-sphinx/blob/master/MatchExpression.php#L248" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        filterMatch()
+        <span class="detail-header-tag small">
+            public                                    method
+                            (available since version 2.0.7)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Sets the MATCH part of the query but ignores <a href="yii-sphinx-matchexpression.html#isEmpty()-detail">empty operands</a>.</strong></p>
+
+        <p>This method is similar to <a href="yii-sphinx-matchexpression.html#match()-detail">match()</a>. The main difference is that this method will
+remove <a href="yii-sphinx-matchexpression.html#isEmpty()-detail">empty query operands</a>. As a result, this method is best suited
+for building query conditions based on filter values entered by users.</p>
+<p>The following code shows the difference between this method and <a href="yii-sphinx-matchexpression.html#match()-detail">match()</a>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// MATCH (@title :title)</span>
+<span class="hljs-variable">$query</span>-&gt;filterMatch([<span class="hljs-string">'name'</span> =&gt; <span class="hljs-keyword">null</span>, <span class="hljs-string">'title'</span> =&gt; <span class="hljs-string">'foo'</span>]);
+<span class="hljs-comment">// MATCH (@title :title)</span>
+<span class="hljs-variable">$query</span>-&gt;match([<span class="hljs-string">'title'</span> =&gt; <span class="hljs-number">20</span>]);
+<span class="hljs-comment">// MATCH (@name :name @title :title)</span>
+<span class="hljs-variable">$query</span>-&gt;match([<span class="hljs-string">'name'</span> =&gt; <span class="hljs-keyword">null</span>, <span class="hljs-string">'age'</span> =&gt; <span class="hljs-number">20</span>]);
+</code></pre>
+<p>Note that unlike <a href="yii-sphinx-matchexpression.html#match()-detail">match()</a>, you cannot pass binding parameters to this method.</p>
+
+        <p>See also:</p><ul><li><span class="broken-link">\yii\sphinx\where()</span></li><li><a href="yii-sphinx-matchexpression.html#andFilterMatch()-detail">andFilterMatch()</a></li><li><a href="yii-sphinx-matchexpression.html#orFilterMatch()-detail">orFilterMatch()</a></li></ul>    </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-sphinx-matchexpression.html">$this</a></span> <strong><a href="yii-sphinx-matchexpression.html#filterMatch()-detail">filterMatch</a></strong> ( <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <span style="color: #0000BB">$condition</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$condition</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The conditions that should be put in the MATCH part.
+See <a href="yii-sphinx-matchexpression.html#match()-detail">match()</a> on how to specify this parameter.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-sphinx-matchexpression.html">$this</a></td>
+                  <td class="param-desc-col"><p>The query object itself</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="isEmpty()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-sphinx-matchexpression.html#isEmpty()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-sphinx/edit/master/MatchExpression.php#L401" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-sphinx/blob/master/MatchExpression.php#L401" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        isEmpty()
+        <span class="detail-header-tag small">
+            protected                                    method
+                            (available since version 2.0.7)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns a value indicating whether the give value is "empty".</strong></p>
+
+        <p>The value is considered "empty", if one of the following conditions is satisfied:</p>
+<ul>
+<li>it is <code>null</code>,</li>
+<li>an empty string (<code>''</code>),</li>
+<li>a string containing only whitespace characters,</li>
+<li>or an empty array.</li>
+</ul>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-sphinx-matchexpression.html#isEmpty()-detail">isEmpty</a></strong> ( <span style="color: #0000BB">$value</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$value</span></td>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>If the value is empty</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="match()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-sphinx-matchexpression.html#match()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-sphinx/edit/master/MatchExpression.php#L133" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-sphinx/blob/master/MatchExpression.php#L133" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        match()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Sets the MATCH expression.</strong></p>
+
+        <p>The method requires a <code>$condition</code> parameter, and optionally a <code>$params</code> parameter
+specifying the values to be parsed into the expression.</p>
+<p>The <code>$condition</code> parameter should be either a string (e.g. <code>'@name "John"'</code>) or an array.</p>
+
+        <p>See also:</p><ul><li><a href="yii-sphinx-matchexpression.html#andMatch()-detail">andMatch()</a></li><li><a href="yii-sphinx-matchexpression.html#orMatch()-detail">orMatch()</a></li></ul>    </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-sphinx-matchexpression.html">$this</a></span> <strong><a href="yii-sphinx-matchexpression.html#match()-detail">match</a></strong> ( <span style="color: #0000BB">$condition</span>, <span style="color: #0000BB">$params&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$condition</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.array">array</a>|<a href="yii-db-expression.html">yii\db\Expression</a></td>
+                  <td class="param-desc-col"><p>The conditions that should be put in the MATCH expression.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$params</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The parameters (name =&gt; value) to be parsed into the query.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-sphinx-matchexpression.html">$this</a></td>
+                  <td class="param-desc-col"><p>The expression object itself</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="orFilterMatch()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-sphinx-matchexpression.html#orFilterMatch()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-sphinx/edit/master/MatchExpression.php#L296" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-sphinx/blob/master/MatchExpression.php#L296" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        orFilterMatch()
+        <span class="detail-header-tag small">
+            public                                    method
+                            (available since version 2.0.7)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Adds an additional MATCH condition to the existing one but ignores <a href="yii-sphinx-matchexpression.html#isEmpty()-detail">empty operands</a>.</strong></p>
+
+        <p>The new condition and the existing one will be joined using the 'OR' operator.</p>
+<p>This method is similar to <a href="yii-sphinx-matchexpression.html#orMatch()-detail">orMatch()</a>. The main difference is that this method will
+remove <a href="yii-sphinx-matchexpression.html#isEmpty()-detail">empty query operands</a>. As a result, this method is best suited
+for building query conditions based on filter values entered by users.</p>
+
+        <p>See also:</p><ul><li><a href="yii-sphinx-matchexpression.html#filterMatch()-detail">filterMatch()</a></li><li><a href="yii-sphinx-matchexpression.html#andFilterMatch()-detail">andFilterMatch()</a></li></ul>    </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-sphinx-matchexpression.html">$this</a></span> <strong><a href="yii-sphinx-matchexpression.html#orFilterMatch()-detail">orFilterMatch</a></strong> ( <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <span style="color: #0000BB">$condition</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$condition</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The new MATCH condition. Please refer to <a href="yii-sphinx-matchexpression.html#match()-detail">match()</a>
+on how to specify this parameter.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-sphinx-matchexpression.html">$this</a></td>
+                  <td class="param-desc-col"><p>The query object itself</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="orMatch()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-sphinx-matchexpression.html#orMatch()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-sphinx/edit/master/MatchExpression.php#L171" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-sphinx/blob/master/MatchExpression.php#L171" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        orMatch()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Adds an additional MATCH condition to the existing one.</strong></p>
+
+        <p>The new condition and the existing one will be joined using the 'OR' ('|') operator.</p>
+
+        <p>See also:</p><ul><li><a href="yii-sphinx-matchexpression.html#match()-detail">match()</a></li><li><a href="yii-sphinx-matchexpression.html#andMatch()-detail">andMatch()</a></li></ul>    </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-sphinx-matchexpression.html">$this</a></span> <strong><a href="yii-sphinx-matchexpression.html#orMatch()-detail">orMatch</a></strong> ( <span style="color: #0000BB">$condition</span>, <span style="color: #0000BB">$params&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$condition</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.array">array</a>|<a href="yii-db-expression.html">yii\db\Expression</a></td>
+                  <td class="param-desc-col"><p>The new WHERE condition. Please refer to <a href="yii-sphinx-matchexpression.html#match()-detail">match()</a>
+on how to specify this parameter.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$params</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The parameters (name =&gt; value) to be parsed into the query.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-sphinx-matchexpression.html">$this</a></td>
+                  <td class="param-desc-col"><p>The expression object itself</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="params()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-sphinx-matchexpression.html#params()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-sphinx/edit/master/MatchExpression.php#L189" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-sphinx/blob/master/MatchExpression.php#L189" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        params()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Sets the parameters to be parsed into the query.</strong></p>
+
+        
+        <p>See also <a href="yii-sphinx-matchexpression.html#addParams()-detail">addParams()</a>.</p>    </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-sphinx-matchexpression.html">$this</a></span> <strong><a href="yii-sphinx-matchexpression.html#params()-detail">params</a></strong> ( <span style="color: #0000BB">$params</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$params</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>List of expression parameter values indexed by parameter placeholders.
+For example, <code>[':name' =&gt; 'Dan', ':age' =&gt; 31]</code>.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-sphinx-matchexpression.html">$this</a></td>
+                  <td class="param-desc-col"><p>The expression object itself</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+</div>
+        </div>
+</div>
+
+<script type="text/javascript">
+    /*<![CDATA[*/
+    $("a.toggle").on('click', function () {
+        var $this = $(this);
+        if ($this.hasClass('properties-hidden')) {
+            $this.text($this.text().replace(/Show/,'Hide'));
+            $this.parents(".summary").find(".inherited").show();
+            $this.removeClass('properties-hidden');
+        } else {
+            $this.text($this.text().replace(/Hide/,'Show'));
+            $this.parents(".summary").find(".inherited").hide();
+            $this.addClass('properties-hidden');
+        }
+
+        return false;
+    });
+    /*
+     $(".sourceCode a.show").toggle(function () {
+     $(this).text($(this).text().replace(/show/,'hide'));
+     $(this).parents(".sourceCode").find("div.code").show();
+     },function () {
+     $(this).text($(this).text().replace(/hide/,'show'));
+     $(this).parents(".sourceCode").find("div.code").hide();
+     });
+     $("a.sourceLink").click(function () {
+     $(this).attr('target','_blank');
+     });
+     */
+    /*]]>*/
+</script>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:30 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

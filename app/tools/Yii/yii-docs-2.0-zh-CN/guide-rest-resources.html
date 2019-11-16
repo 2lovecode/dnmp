@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>资源（Resources） - RESTful Web 服务（RESTful Web Services） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1251" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1251-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1251-collapse" class="collapse navbar-collapse"><ul id="w1252" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1253" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1235" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-1235" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-1236" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-1236" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-1237" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-1237" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-1238" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-1238" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-1239" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-1239" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-1240" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-1240" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-zh-CN/README.md">Sphinx</a>
+<a class="list-group-item" href="./guide-yii2-redis.html">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-zh-CN/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-zh-CN/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1241" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-1241" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-1242" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-1242" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-1243" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-1243" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-1244" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-1244" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item active" href="#navigation-1245" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-1245" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item active" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-1246" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-1246" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-1247" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-1247" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-1248" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-1248" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-1249" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-1249" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1250" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-1250" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>资源 <span id="zi-yuan"></span><a href="#zi-yuan" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#fields">字段</a></li>
+<li><a href="#links">链接</a></li>
+<li><a href="#collections">集合</a></li></ol></div>
+<p>RESTful 的 API 都是关于访问和操作 <em>资源</em>，可将资源看成 MVC 模式中的
+<a href="guide-structure-models.html">模型</a></p>
+<p>在如何代表一个资源没有固定的限定，在 Yii 中通常使用 
+<a href="./yii-base-model.html">yii\base\Model</a> 或它的子类（如 <a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a>）
+代表资源，是为以下原因：</p>
+<ul>
+<li><a href="./yii-base-model.html">yii\base\Model</a> 实现了 <a href="./yii-base-arrayable.html">yii\base\Arrayable</a> 接口，
+它允许你通过 RESTful API 自定义你想要公开的资源数据。</li>
+<li><a href="./yii-base-model.html">yii\base\Model</a> 支持 <a href="guide-input-validation.html">输入验证</a>,
+在你的 RESTful API 需要支持数据输入时非常有用。</li>
+<li><a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a> 提供了强大的数据库访问和操作方面的支持，
+如资源数据需要存到数据库它提供了完美的支持。</li>
+</ul>
+<p>本节主要描述资源类如何从 <a href="./yii-base-model.html">yii\base\Model</a> (或它的子类) 继承
+并指定哪些数据可通过 RESTful API 返回，如果资源类没有
+继承 <a href="./yii-base-model.html">yii\base\Model</a> 会将它所有的公开成员变量返回。</p>
+<h2>字段  <span id="fields"></span><a href="#fields" class="hashlink">&para;</a></h2><p>当 RESTful API 响应中包含一个资源时，该资源需要序列化成一个字符串。
+Yii 将这个过程分成两步，首先，资源会被 <a href="./yii-rest-serializer.html">yii\rest\Serializer</a> 转换成数组，
+然后，该数组会通过 <a href="./yii-web-responseformatterinterface.html">response formatters</a>
+根据请求格式（如 JSON，XML）被序列化成字符串。
+当开发一个资源类时应重点关注第一步。</p>
+<p>通过覆盖 <a href="./yii-base-model.html#fields()-detail">fields()</a> 和/或
+<a href="./yii-base-arrayabletrait.html#extraFields()-detail">extraFields()</a> 方法,
+可指定资源中称为 <em>字段</em> 的数据放入展现数组中，
+两个方法的差别为前者指定默认包含到展现数组的字段集合，
+后者指定由于终端用户的请求包含 <code>expand</code> 参数哪些额外的字段应被包含到展现数组，例如，</p>
+<pre><code class="hljs less"><span class="hljs-comment">// 返回 fields() 方法中声明的所有字段</span>
+<span class="hljs-attribute">http</span>:<span class="hljs-comment">//localhost/users</span>
+
+<span class="hljs-comment">// 只返回 fields() 方法中声明的“id”和“email”字段</span>
+<span class="hljs-attribute">http</span>:<span class="hljs-comment">//localhost/users?fields=id,email</span>
+
+<span class="hljs-comment">// 返回 fields() 方法中声明的所有字段，以及 extraFields() 方法中的“profile”字段</span>
+<span class="hljs-attribute">http</span>:<span class="hljs-comment">//localhost/users?expand=profile</span>
+
+<span class="hljs-comment">// 返回 fields() 方法中声明的所有字段，以及 post 中的“author”</span>
+<span class="hljs-comment">// 如果它位于 post 模型的 extraFields() 中</span>
+<span class="hljs-attribute">http</span>:<span class="hljs-comment">//localhost/comments?expand=post.author</span>
+
+<span class="hljs-comment">// 返回 fields() 方法中的“id”，“email”，以及 extraFields() 方法中的“profile”字段</span>
+<span class="hljs-attribute">http</span>:<span class="hljs-comment">//localhost/users?fields=id,email&amp;expand=profile</span>
+</code></pre>
+<h3>覆盖 <code>fields()</code> 方法  <span id="overriding-fields"></span><a href="#overriding-fields" class="hashlink">&para;</a></h3><p><a href="./yii-base-model.html#fields()-detail">yii\base\Model::fields()</a> 默认返回模型的所有属性作为字段，
+<a href="./yii-base-arrayabletrait.html#fields()-detail">yii\db\ActiveRecord::fields()</a> 只返回和数据表关联的属性作为字段。</p>
+<p>可覆盖 <code>fields()</code> 方法来增加、删除、重命名、重定义字段，
+<code>fields()</code> 的返回值应为数组，数组的键为字段名
+数组的值为对应的字段定义，可为属性名或返回对应的字段值的匿名函数，
+特殊情况下，如果字段名和属性名相同，
+可省略数组的键，例如</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 明确列出每个字段，适用于你希望数据表或</span>
+<span class="hljs-comment">// 模型属性修改时不导致你的字段修改（保持后端API兼容性）</span>
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fields</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-comment">// 字段名和属性名相同</span>
+        <span class="hljs-string">'id'</span>,
+        <span class="hljs-comment">// 字段名为"email", 对应的属性名为"email_address"</span>
+        <span class="hljs-string">'email'</span> =&gt; <span class="hljs-string">'email_address'</span>,
+        <span class="hljs-comment">// 字段名为"name", 值由一个PHP回调函数定义</span>
+        <span class="hljs-string">'name'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$model</span>)</span> </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-variable">$model</span>-&gt;first_name . <span class="hljs-string">' '</span> . <span class="hljs-variable">$model</span>-&gt;last_name;
+        },
+    ];
+}
+
+<span class="hljs-comment">// 过滤掉一些字段，适用于你希望继承</span>
+<span class="hljs-comment">// 父类实现同时你想屏蔽掉一些敏感字段</span>
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fields</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-variable">$fields</span> = <span class="hljs-keyword">parent</span>::fields();
+
+    <span class="hljs-comment">// 删除一些包含敏感信息的字段</span>
+    <span class="hljs-keyword">unset</span>(<span class="hljs-variable">$fields</span>[<span class="hljs-string">'auth_key'</span>], <span class="hljs-variable">$fields</span>[<span class="hljs-string">'password_hash'</span>], <span class="hljs-variable">$fields</span>[<span class="hljs-string">'password_reset_token'</span>]);
+
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$fields</span>;
+}
+</code></pre>
+<blockquote class="warning"><p><strong>警告： </strong>模型的所有属性默认会被包含到 API 结果中，
+应检查数据确保没包含敏感数据，如果有敏感数据，
+应覆盖 <code>fields()</code> 过滤掉，在上述例子中，我们选择过滤掉 <code>auth_key</code>，
+<code>password_hash</code> 和 <code>password_reset_token</code>。</p>
+</blockquote>
+<h3>覆盖 <code>extraFields()</code> 方法  <span id="overriding-extra-fields"></span><a href="#overriding-extra-fields" class="hashlink">&para;</a></h3><p><a href="./yii-base-arrayabletrait.html#extraFields()-detail">yii\base\Model::extraFields()</a> 默认返回空值，
+<a href="./yii-base-arrayabletrait.html#extraFields()-detail">yii\db\ActiveRecord::extraFields()</a> 返回和数据表关联的属性。</p>
+<p><code>extraFields()</code> 返回的数据格式和 <code>fields()</code> 相同，
+一般 <code>extraFields()</code> 主要用于指定哪些值为对象的字段，
+例如，给定以下字段申明</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fields</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [<span class="hljs-string">'id'</span>, <span class="hljs-string">'email'</span>];
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">extraFields</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [<span class="hljs-string">'profile'</span>];
+}
+</code></pre>
+<p><code>http://localhost/users?fields=id,email&amp;expand=profile</code> 的请求可能返回如下 JSON 数据：</p>
+<pre><code class="hljs php language-php">[
+    {
+        <span class="hljs-string">"id"</span>: <span class="hljs-number">100</span>,
+        <span class="hljs-string">"email"</span>: <span class="hljs-string">"100@example.com"</span>,
+        <span class="hljs-string">"profile"</span>: {
+            <span class="hljs-string">"id"</span>: <span class="hljs-number">100</span>,
+            <span class="hljs-string">"age"</span>: <span class="hljs-number">30</span>,
+        }
+    },
+    ...
+]
+</code></pre>
+<h2>链接  <span id="links"></span><a href="#links" class="hashlink">&para;</a></h2><p><a href="http://en.wikipedia.org/wiki/HATEOAS">HATEOAS</a>, 
+是 Hypermedia as the Engine of Application State的缩写,
+提升 RESTful API 应返回允许终端用户访问的资源操作的信息，
+HATEOAS 的目的是在API中返回包含相关链接信息的资源数据。 </p>
+<p>资源类通过实现 <a href="./yii-web-linkable.html">yii\web\Linkable</a> 接口来支持 HATEOAS，
+该接口包含方法 <a href="./yii-web-linkable.html#getLinks()-detail">getLinks()</a> 来返回
+<a href="./yii-web-link.html">links</a> 列表，典型情况下应返回包含代表本资源对象 URL 的 <code>self</code> 链接，例如</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Model</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Link</span>; <span class="hljs-comment">// represents a link object as defined in JSON Hypermedia API Language.</span>
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Linkable</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">Url</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserResource</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Model</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Linkable</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$id</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$email</span>;
+
+    <span class="hljs-comment">//...</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fields</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [<span class="hljs-string">'id'</span>, <span class="hljs-string">'email'</span>];
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">extraFields</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [<span class="hljs-string">'profile'</span>];
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getLinks</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            Link::REL_SELF =&gt; Url::to([<span class="hljs-string">'user/view'</span>, <span class="hljs-string">'id'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;id], <span class="hljs-keyword">true</span>),
+            <span class="hljs-string">'edit'</span> =&gt; Url::to([<span class="hljs-string">'user/view'</span>, <span class="hljs-string">'id'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;id], <span class="hljs-keyword">true</span>),
+            <span class="hljs-string">'profile'</span> =&gt; Url::to([<span class="hljs-string">'user/profile/view'</span>, <span class="hljs-string">'id'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;id], <span class="hljs-keyword">true</span>),
+            <span class="hljs-string">'index'</span> =&gt; Url::to([<span class="hljs-string">'users'</span>], <span class="hljs-keyword">true</span>),
+        ];
+    }
+}
+</code></pre>
+<p>当响应中返回一个 <code>User</code> 对象，
+它会包含一个 <code>_links</code> 单元表示和用户相关的链接，例如</p>
+<pre><code class="hljs php">{
+    <span class="hljs-string">"id"</span>: <span class="hljs-number">100</span>,
+    <span class="hljs-string">"email"</span>: <span class="hljs-string">"user@example.com"</span>,
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">"_links"</span> =&gt; {
+        <span class="hljs-string">"self"</span>: {
+            <span class="hljs-string">"href"</span>: <span class="hljs-string">"https://example.com/users/100"</span>
+        },
+        <span class="hljs-string">"edit"</span>: {
+            <span class="hljs-string">"href"</span>: <span class="hljs-string">"https://example.com/users/100"</span>
+        },
+        <span class="hljs-string">"profile"</span>: {
+            <span class="hljs-string">"href"</span>: <span class="hljs-string">"https://example.com/users/profile/100"</span>
+        },
+        <span class="hljs-string">"index"</span>: {
+            <span class="hljs-string">"href"</span>: <span class="hljs-string">"https://example.com/users"</span>
+        }
+    }
+}
+</code></pre>
+<h2>集合  <span id="collections"></span><a href="#collections" class="hashlink">&para;</a></h2><p>资源对象可以组成 <em>集合</em>，
+每个集合包含一组相同类型的资源对象。</p>
+<p>集合可被展现成数组，更多情况下展现成 <a href="guide-output-data-providers.html">data providers</a>。
+因为 data providers 支持资源的排序和分页，
+这个特性在 RESTful API 返回集合时也用到，
+例如，如下操作返回 post 资源的 data provider：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">rest</span>\<span class="hljs-title">Controller</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">data</span>\<span class="hljs-title">ActiveDataProvider</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>\<span class="hljs-title">Post</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PostController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionIndex</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> ActiveDataProvider([
+            <span class="hljs-string">'query'</span> =&gt; Post::find(),
+        ]);
+    }
+}
+</code></pre>
+<p>当在 RESTful API 响应中发送 data provider 时， 
+<a href="./yii-rest-serializer.html">yii\rest\Serializer</a> 会取出资源的当前页并组装成资源对象数组，
+<a href="./yii-rest-serializer.html">yii\rest\Serializer</a> 也通过如下 HTTP 头包含页码信息：</p>
+<ul>
+<li><code>X-Pagination-Total-Count</code>：资源所有数量；</li>
+<li><code>X-Pagination-Page-Count</code>：页数；</li>
+<li><code>X-Pagination-Current-Page</code>：当前页（从 1 开始）；</li>
+<li><code>X-Pagination-Per-Page</code>：每页资源数量；</li>
+<li><code>Link</code>：允许客户端一页一页遍历资源的导航链接集合。</li>
+</ul>
+<p>由于 REST API 中的集合是 data provider，因此它共享所有 data provider 功能，即分页和排序。</p>
+<p>可在<a href="guide-rest-quick-start.html#trying-it-out">快速入门</a> 一节中找到样例。</p>
+<h3>过滤集合  <span id="filtering-collections"></span><a href="#filtering-collections" class="hashlink">&para;</a></h3><p>从 2.0.13 版本开始，Yii 提供了过滤集合的工具。一个例子可以在
+<a href="guide-rest-quick-start.html#trying-it-out">快速入门</a> 指南中找到。如果您自己实现末端，
+可以按照 Data Providers 指南的
+<a href="guide-output-data-providers.html#filtering-data-providers-using-data-filters">Filtering Data Providers using Data Filters</a>
+部分中的描述进行过滤。</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

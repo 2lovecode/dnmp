@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>应用（Applications） - 应用结构（Application Structure） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1555" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1555-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1555-collapse" class="collapse navbar-collapse"><ul id="w1556" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1557" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1539" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-1539" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-1540" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-1540" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item active" href="#navigation-1541" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-1541" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item active" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-1542" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-1542" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-1543" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-1543" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-1544" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-1544" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-zh-CN/README.md">Sphinx</a>
+<a class="list-group-item" href="./guide-yii2-redis.html">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-zh-CN/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-zh-CN/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1545" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-1545" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-1546" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-1546" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-1547" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-1547" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-1548" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-1548" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-1549" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-1549" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-1550" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-1550" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-1551" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-1551" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-1552" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-1552" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-1553" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-1553" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1554" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-1554" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>应用主体 <span id="ying-yong-zhu-ti"></span><a href="#ying-yong-zhu-ti" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#application-configurations">应用主体配置</a></li>
+<li><a href="#application-properties">应用主体属性</a></li>
+<li><a href="#application-events">应用事件</a></li>
+<li><a href="#application-lifecycle">应用主体生命周期</a></li></ol></div>
+<p>应用主体是管理 Yii 应用系统整体结构和生命周期的对象。
+每个 Yii 应用系统只能包含一个应用主体，应用主体在 
+<a href="guide-structure-entry-scripts.html">入口脚本</a> 中创建并能通过表达式 <code>\Yii::$app</code> 全局范围内访问。</p>
+<blockquote class="info"><p><strong>信息： </strong>当我们说“一个应用”，它可能是一个应用主体对象，也可能是一个应用系统，
+  是根据上下文来决定[译：中文为避免歧义，Application 翻译为应用主体]。</p>
+</blockquote>
+<p>Yii有两种应用主体: <a href="./yii-web-application.html">网页应用主体</a> 和
+<a href="./yii-console-application.html">控制台应用主体</a>， 
+如名称所示，前者主要处理网页请求，后者处理控制台请求。</p>
+<h2>应用主体配置  <span id="application-configurations"></span><a href="#application-configurations" class="hashlink">&para;</a></h2><p>如下所示，当 <a href="guide-structure-entry-scripts.html">入口脚本</a> 创建了一个应用主体，
+它会加载一个 <a href="guide-concept-configurations.html">配置</a> 文件并传给应用主体。</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">require</span> <span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">'/../vendor/autoload.php'</span>;
+<span class="hljs-keyword">require</span> <span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">'/../vendor/yiisoft/yii2/Yii.php'</span>;
+
+<span class="hljs-comment">// 加载应用主体配置</span>
+<span class="hljs-variable">$config</span> = <span class="hljs-keyword">require</span> <span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">'/../config/web.php'</span>;
+
+<span class="hljs-comment">// 实例化应用主体、配置应用主体</span>
+(<span class="hljs-keyword">new</span> yii\web\Application(<span class="hljs-variable">$config</span>))-&gt;run();
+</code></pre>
+<p>类似其他 <a href="guide-concept-configurations.html">配置</a> 文件, 
+应用主体配置文件标明如何设置应用对象初始属性。
+由于应用主体配置比较复杂，一般保存在多个类似如上web.php的 
+<a href="guide-concept-configurations.html#configuration-files">配置文件</a> 当中。</p>
+<h2>应用主体属性  <span id="application-properties"></span><a href="#application-properties" class="hashlink">&para;</a></h2><p>应用主体配置文件中有许多重要的属性要配置，这些属性指定应用主体的运行环境。
+比如，应用主体需要知道如何加载 <a href="guide-structure-controllers.html">控制器</a> ，
+临时文件保存到哪儿等等。
+以下我们简述这些属性。</p>
+<h3>必要属性  <span id="required-properties"></span><a href="#required-properties" class="hashlink">&para;</a></h3><p>在一个应用中，至少要配置2个属性: 
+<a href="./yii-base-module.html#$id-detail">id</a> 和 <a href="./yii-base-module.html#$basePath-detail">basePath</a>。</p>
+<h4><a href="./yii-base-module.html#$id-detail">id</a>  <span id="id"></span><a href="#id" class="hashlink">&para;</a></h4><p><a href="./yii-base-module.html#$id-detail">id</a> 属性用来区分其他应用的唯一标识ID。主要给程序使用。
+为了方便协作，最好使用数字作为应用主体ID，
+但不强制要求为数字。</p>
+<h4><a href="./yii-base-module.html#$basePath-detail">basePath</a>  <span id="basePath"></span><a href="#basePath" class="hashlink">&para;</a></h4><p><a href="./yii-base-module.html#$basePath-detail">basePath</a> 指定该应用的根目录。
+根目录包含应用系统所有受保护的源代码。
+在根目录下可以看到对应 MVC 设计模式的<code>models</code>，
+<code>views</code>，<code>controllers</code> 等子目录。</p>
+<p>可以使用路径或 <a href="guide-concept-aliases.html">路径别名</a> 来在配置 <a href="./yii-base-module.html#$basePath-detail">basePath</a> 属性。
+两种格式所对应的目录都必须存在，否则系统会抛出一个异常。 
+系统会使用 <code>realpath()</code> 函数规范化配置的路径。</p>
+<p><a href="./yii-base-module.html#$basePath-detail">basePath</a> 属性经常用于派生一些其他重要路径（如 runtime 路径），
+因此，系统预定义 <code>@app</code> 代表这个路径。
+派生路径可以通过这个别名组成（如<code>@app/runtime</code>代表runtime的路径）。</p>
+<h3>重要属性  <span id="important-properties"></span><a href="#important-properties" class="hashlink">&para;</a></h3><p>本小节所描述的属性通常需要设置，
+因为不同的应用属性不同。</p>
+<h4><a href="./yii-base-module.html#$aliases-detail">aliases</a>  <span id="aliases"></span><a href="#aliases" class="hashlink">&para;</a></h4><p>该属性允许你用一个数组定义多个 <a href="guide-concept-aliases.html">别名</a>。
+数组的key为别名名称，值为对应的路径。
+例如：</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'aliases'</span> =&gt; [
+        <span class="hljs-string">'@name1'</span> =&gt; <span class="hljs-string">'path/to/path1'</span>,
+        <span class="hljs-string">'@name2'</span> =&gt; <span class="hljs-string">'path/to/path2'</span>,
+    ],
+]
+</code></pre>
+<p>使用这个属性来定义别名，
+代替 <a href="./yii-baseyii.html#setAlias()-detail">Yii::setAlias()</a> 方法来设置。</p>
+<h4><a href="./yii-base-application.html#bootstrap()-detail">bootstrap</a>  <span id="bootstrap"></span><a href="#bootstrap" class="hashlink">&para;</a></h4><p>这个属性很实用，它允许你用数组指定启动阶段 <a href="./yii-base-application.html#bootstrap()-detail">bootstrapping process</a> 需要运行的组件。
+比如，如果你希望一个 <a href="guide-structure-modules.html">模块</a> 
+自定义 <a href="guide-runtime-url-handling.html">URL 规则</a>，
+你可以将模块ID加入到bootstrap数组中。</p>
+<p>属性中的每个组件需要指定以下一项:</p>
+<ul>
+<li>应用 <a href="#components">组件</a> ID.</li>
+<li><a href="#modules">模块</a> ID.</li>
+<li>类名.</li>
+<li>配置数组.</li>
+<li>创建并返回一个组件的无名称函数.</li>
+</ul>
+<p>例如：</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'bootstrap'</span> =&gt; [
+        <span class="hljs-comment">// 应用组件ID或模块ID</span>
+        <span class="hljs-string">'demo'</span>,
+
+        <span class="hljs-comment">// 类名</span>
+        <span class="hljs-string">'app\components\Profiler'</span>,
+
+        <span class="hljs-comment">// 配置数组</span>
+        [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'app\components\Profiler'</span>,
+            <span class="hljs-string">'level'</span> =&gt; <span class="hljs-number">3</span>,
+        ],
+
+        <span class="hljs-comment">// 匿名函数</span>
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> app\components\Profiler();
+        }
+    ],
+]
+</code></pre>
+<blockquote class="info"><p><strong>信息： </strong>如果模块 ID 和应用组件 ID 同名，优先使用应用组件 ID，
+如果你想用模块 ID，
+可以使用如下无名称函数返回模块 ID。</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> Yii::<span class="hljs-variable">$app</span>-&gt;getModule(<span class="hljs-string">'user'</span>);
+    },
+]
+</code></pre>
+</blockquote>
+<p>在启动阶段，每个组件都会实例化。如果组件类实现接口
+<a href="./yii-base-bootstrapinterface.html">yii\base\BootstrapInterface</a>，也会调用
+<a href="./yii-base-bootstrapinterface.html#bootstrap()-detail">bootstrap()</a> 方法。</p>
+<p>举一个实际的例子，<a href="guide-start-installation.html">Basic Application Template</a> 
+应用主体配置中，
+开发环境下会在启动阶段运行 <code>debug</code> 和 <code>gii</code> 模块。</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">if</span> (YII_ENV_DEV) {
+    <span class="hljs-comment">// configuration adjustments for 'dev' environment</span>
+    <span class="hljs-variable">$config</span>[<span class="hljs-string">'bootstrap'</span>][] = <span class="hljs-string">'debug'</span>;
+    <span class="hljs-variable">$config</span>[<span class="hljs-string">'modules'</span>][<span class="hljs-string">'debug'</span>] = <span class="hljs-string">'yii\debug\Module'</span>;
+
+    <span class="hljs-variable">$config</span>[<span class="hljs-string">'bootstrap'</span>][] = <span class="hljs-string">'gii'</span>;
+    <span class="hljs-variable">$config</span>[<span class="hljs-string">'modules'</span>][<span class="hljs-string">'gii'</span>] = <span class="hljs-string">'yii\gii\Module'</span>;
+}
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>启动太多的组件会降低系统性能，因为每次请求都需要重新运行启动组件，
+因此谨慎配置启动组件。</p>
+</blockquote>
+<h4><a href="./yii-web-application.html#$catchAll-detail">catchAll</a>  <span id="catchAll"></span><a href="#catchAll" class="hashlink">&para;</a></h4><p>该属性仅 <a href="./yii-web-application.html">Web applications</a> 网页应用支持。
+它指定一个要处理所有用户请求的 <a href="guide-structure-controllers.html">控制器方法</a>，
+通常在维护模式下使用，同一个方法处理所有用户请求。</p>
+<p>该配置为一个数组，第一项指定动作的路由，剩下的数组项(key-value 成对)指定传递给动作的参数，
+例如：</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'catchAll'</span> =&gt; [
+        <span class="hljs-string">'offline/notice'</span>,
+        <span class="hljs-string">'param1'</span> =&gt; <span class="hljs-string">'value1'</span>,
+        <span class="hljs-string">'param2'</span> =&gt; <span class="hljs-string">'value2'</span>,
+    ],
+]
+</code></pre>
+<blockquote class="info"><p><strong>信息： </strong>当开启这个属性时，开发环境下的调试面板将不能工作。</p>
+</blockquote>
+<h4><a href="./yii-di-servicelocator.html#$components-detail">components</a>  <span id="components"></span><a href="#components" class="hashlink">&para;</a></h4><p>这是最重要的属性，它允许你注册多个在其他地方使用的 <a href="guide-#structure-application-components.html">应用组件</a>。
+例如</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'cache'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\caching\FileCache'</span>,
+        ],
+        <span class="hljs-string">'user'</span> =&gt; [
+            <span class="hljs-string">'identityClass'</span> =&gt; <span class="hljs-string">'app\models\User'</span>,
+            <span class="hljs-string">'enableAutoLogin'</span> =&gt; <span class="hljs-keyword">true</span>,
+        ],
+    ],
+]
+</code></pre>
+<p>每一个应用组件指定一个key-value对的数组，key代表组件ID，
+value代表组件类名或 <a href="guide-concept-configurations.html">配置</a>。</p>
+<p>在应用中可以任意注册组件，并可以通过表达式 
+<code>\Yii::$app-&gt;ComponentID</code> 全局访问。</p>
+<p>详情请阅读 <a href="guide-structure-application-components.html">应用组件</a> 一节.</p>
+<h4><a href="./yii-base-module.html#$controllerMap-detail">controllerMap</a>  <span id="controllerMap"></span><a href="#controllerMap" class="hashlink">&para;</a></h4><p>该属性允许你指定一个控制器 ID 到任意控制器类。
+Yii 遵循一个默认的 <a href="#controllerNamespace">规则</a> 指定控制器 ID 到任意控制器类（如 <code>post</code> 对应<code>app\controllers\PostController</code>）。
+通过配置这个属性，可以打破这个默认规则，在下面的例子中，
+<code>account</code>对应到<code>app\controllers\UserController</code>，
+<code>article</code> 对应到 <code>app\controllers\PostController</code>。</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'controllerMap'</span> =&gt; [
+        <span class="hljs-string">'account'</span> =&gt; <span class="hljs-string">'app\controllers\UserController'</span>,
+        <span class="hljs-string">'article'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'app\controllers\PostController'</span>,
+            <span class="hljs-string">'enableCsrfValidation'</span> =&gt; <span class="hljs-keyword">false</span>,
+        ],
+    ],
+]
+</code></pre>
+<p>数组的键代表控制器ID，
+数组的值代表对应的类名。</p>
+<h4><a href="./yii-base-application.html#$controllerNamespace-detail">controllerNamespace</a>  <span id="controllerNamespace"></span><a href="#controllerNamespace" class="hashlink">&para;</a></h4><p>该属性指定控制器类默认的命名空间，默认为<code>app\controllers</code>。
+比如控制器ID为 <code>post</code> 默认对应 <code>PostController</code>（不带命名空间），
+类全名为 <code>app\controllers\PostController</code>。</p>
+<p>控制器类文件可能放在这个命名空间对应目录的子目录下，
+例如，控制器 ID <code>admin/post</code> 对应的控制器类全名为 
+<code>app\controllers\admin\PostController</code>。</p>
+<p>控制器类全面能被 <a href="guide-concept-autoloading.html">自动加载</a>，
+这点是非常重要的，控制器类的实际命名空间对应这个属性，
+否则，访问时你会收到“Page Not Found”。</p>
+<p>如果你想打破上述的规则，
+可以配置 <a href="#controllerMap">controllerMap</a> 属性。</p>
+<h4><a href="./yii-base-application.html#$language-detail">language</a>  <span id="language"></span><a href="#language" class="hashlink">&para;</a></h4><p>该属性指定应用展示给终端用户的语言，
+默认为 <code>en</code> 标识英文。
+如果需要之前其他语言可以配置该属性。</p>
+<p>该属性影响各种 <a href="guide-tutorial-i18n.html">国际化</a> ，
+包括信息翻译、日期格式、数字格式等。
+例如 <a href="./yii-jui-datepicker.html">yii\jui\DatePicker</a> 小部件会根据该属性
+展示对应语言的日历以及日期格式。</p>
+<p>推荐遵循 <a href="http://en.wikipedia.org/wiki/IETF_language_tag">IETF language tag</a> 来设置语言，
+例如 <code>en</code> 代表英文， <code>en-US</code> 代表英文(美国).</p>
+<p>该属性的更多信息可参考 <a href="guide-tutorial-i18n.html">国际化</a> 一节.</p>
+<h4><a href="./yii-base-module.html#$modules-detail">modules</a>  <span id="modules"></span><a href="#modules" class="hashlink">&para;</a></h4><p>该属性指定应用所包含的 <a href="guide-structure-modules.html">模块</a>。</p>
+<p>该属性使用数组包含多个模块类 <a href="guide-concept-configurations.html">配置</a>，数组的键为模块ID，
+例：</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'modules'</span> =&gt; [
+        <span class="hljs-comment">// "booking" 模块以及对应的类</span>
+        <span class="hljs-string">'booking'</span> =&gt; <span class="hljs-string">'app\modules\booking\BookingModule'</span>,
+
+        <span class="hljs-comment">// "comment" 模块以及对应的配置数组</span>
+        <span class="hljs-string">'comment'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'app\modules\comment\CommentModule'</span>,
+            <span class="hljs-string">'db'</span> =&gt; <span class="hljs-string">'db'</span>,
+        ],
+    ],
+]
+</code></pre>
+<p>更多详情请参考 <a href="guide-structure-modules.html">模块</a> 一节。</p>
+<h4><a href="./yii-base-application.html#$name-detail">name</a>  <span id="name"></span><a href="#name" class="hashlink">&para;</a></h4><p>该属性指定你可能想展示给终端用户的应用名称，
+不同于需要唯一性的 <a href="./yii-base-module.html#$id-detail">id</a> 属性，
+该属性可以不唯一，该属性用于显示应用的用途。</p>
+<p>如果其他地方的代码没有用到，可以不配置该属性。</p>
+<h4><a href="./yii-base-module.html#$params-detail">params</a>  <span id="params"></span><a href="#params" class="hashlink">&para;</a></h4><p>该属性为一个数组，指定可以全局访问的参数，
+代替程序中硬编码的数字和字符，
+应用中的参数定义到一个单独的文件并随时可以访问是一个好习惯。
+例如用参数定义缩略图的长宽如下：</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'params'</span> =&gt; [
+        <span class="hljs-string">'thumbnail.size'</span> =&gt; [<span class="hljs-number">128</span>, <span class="hljs-number">128</span>],
+    ],
+]
+</code></pre>
+<p>然后简单的使用如下代码即可获取到你需要的长宽参数：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$size</span> = \Yii::<span class="hljs-variable">$app</span>-&gt;params[<span class="hljs-string">'thumbnail.size'</span>];
+<span class="hljs-variable">$width</span> = \Yii::<span class="hljs-variable">$app</span>-&gt;params[<span class="hljs-string">'thumbnail.size'</span>][<span class="hljs-number">0</span>];
+</code></pre>
+<p>以后想修改缩略图长宽，
+只需要修改该参数而不需要相关的代码。</p>
+<h4><a href="./yii-base-application.html#$sourceLanguage-detail">sourceLanguage</a>  <span id="sourceLanguage"></span><a href="#sourceLanguage" class="hashlink">&para;</a></h4><p>该属性指定应用代码的语言，默认为 <code>'en-US'</code> 标识英文（美国），
+如果应用不是英文请修改该属性。</p>
+<p>和 <a href="#language">语言</a> 属性类似，配置该属性需遵循 
+<a href="http://en.wikipedia.org/wiki/IETF_language_tag">IETF language tag</a>.
+例如 <code>en</code> 代表英文， <code>en-US</code> 代表英文(美国)。</p>
+<p>该属性的更多信息可参考 <a href="guide-tutorial-i18n.html">国际化</a> 一节.</p>
+<h4><a href="./yii-base-application.html#$timeZone-detail">timeZone</a>  <span id="timeZone"></span><a href="#timeZone" class="hashlink">&para;</a></h4><p>该属性提供一种方式修改 PHP 运行环境中的默认时区，配置该属性本质上就是调用 PHP 函数
+<a href="https://secure.php.net/manual/en/function.date-default-timezone-set.php">date_default_timezone_set()</a>，
+例如：</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'timeZone'</span> =&gt; <span class="hljs-string">'America/Los_Angeles'</span>,
+]
+</code></pre>
+<p>有关设置时区含义的更多详细信息，请查看<a href="guide-output-formatting.html#time-zones">关于日期格式的部分</a>。</p>
+<h4><a href="./yii-base-module.html#$version-detail">version</a>  <span id="version"></span><a href="#version" class="hashlink">&para;</a></h4><p>该属性指定应用的版本，默认为 <code>'1.0'</code>，
+其他代码不使用的话可以不配置。</p>
+<h3>实用属性  <span id="useful-properties"></span><a href="#useful-properties" class="hashlink">&para;</a></h3><p>本小节描述的属性不经常设置，通常使用系统默认值。
+如果你想改变默认值，可以配置这些属性。</p>
+<h4><a href="./yii-base-application.html#$charset-detail">charset</a>  <span id="charset"></span><a href="#charset" class="hashlink">&para;</a></h4><p>该属性指定应用使用的字符集，默认值为 <code>'UTF-8'</code>，
+绝大部分应用都在使用，除非已有的系统大量使用非unicode数据才需要更改该属性。</p>
+<h4><a href="./yii-base-module.html#$defaultRoute-detail">defaultRoute</a>  <span id="defaultRoute"></span><a href="#defaultRoute" class="hashlink">&para;</a></h4><p>该属性指定未配置的请求的响应 <a href="guide-runtime-routing.html">路由</a> 规则，
+路由规则可能包含模块 ID，控制器 ID，动作 ID。
+例如 <code>help</code>，<code>post/create</code>，<code>admin/post/create</code>，如果动作 ID 没有指定，
+会使用 <a href="./yii-base-controller.html#$defaultAction-detail">yii\base\Controller::$defaultAction</a> 中指定的默认值。</p>
+<p>对于 <a href="./yii-web-application.html">Web applications</a> 网页应用，
+默认值为 <code>'site'</code> 对应 <code>SiteController</code> 控制器，并使用默认的动作。
+因此你不带路由的访问应用，默认会显示 <code>app\controllers\SiteController::actionIndex()</code> 的结果。</p>
+<p>对于 <a href="./yii-console-application.html">console applications</a> 控制台应用，
+默认值为 <code>'help'</code> 对应 <a href="./yii-console-controllers-helpcontroller.html#actionIndex()-detail">yii\console\controllers\HelpController::actionIndex()</a>。
+因此，如果执行的命令不带参数，默认会显示帮助信息。</p>
+<h4><a href="./yii-base-application.html#$extensions-detail">extensions</a>  <span id="extensions"></span><a href="#extensions" class="hashlink">&para;</a></h4><p>该属性用数组列表指定应用安装和使用的 <a href="guide-structure-extensions.html">扩展</a>，
+默认使用 <code>@vendor/yiisoft/extensions.php</code> 文件返回的数组。
+当你使用 <a href="https://getcomposer.org">Composer</a> 安装扩展，<code>extensions.php</code> 会被自动生成和维护更新。
+所以大多数情况下，不需要配置该属性。</p>
+<p>特殊情况下你想自己手动维护扩展，可以参照如下配置该属性：</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'extensions'</span> =&gt; [
+        [
+            <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'extension name'</span>,
+            <span class="hljs-string">'version'</span> =&gt; <span class="hljs-string">'version number'</span>,
+            <span class="hljs-string">'bootstrap'</span> =&gt; <span class="hljs-string">'BootstrapClassName'</span>,  <span class="hljs-comment">// 可选配，可为配置数组</span>
+            <span class="hljs-string">'alias'</span> =&gt; [  <span class="hljs-comment">// 可选配</span>
+                <span class="hljs-string">'@alias1'</span> =&gt; <span class="hljs-string">'to/path1'</span>,
+                <span class="hljs-string">'@alias2'</span> =&gt; <span class="hljs-string">'to/path2'</span>,
+            ],
+        ],
+
+        <span class="hljs-comment">// ... 更多像上面的扩展 ...</span>
+
+    ],
+]
+</code></pre>
+<p>如上所示，该属性包含一个扩展定义数组，每个扩展为一个包含 <code>name</code> 和 <code>version</code> 项的数组。
+如果扩展要在 <a href="guide-runtime-bootstrapping.html">引导启动</a> 阶段运行，
+需要配置 <code>bootstrap</code> 以及对应的引导启动类名或 <a href="guide-concept-configurations.html">configuration</a> 数组。
+扩展也可以定义 <a href="guide-concept-aliases.html">别名</a></p>
+<h4><a href="./yii-base-application.html#$layout-detail">layout</a>  <span id="layout"></span><a href="#layout" class="hashlink">&para;</a></h4><p>该属性指定渲染 <a href="guide-structure-views.html">视图</a> 默认使用的布局名字，
+默认值为 <code>'main'</code> 对应<a href="#layoutPath">布局路径</a>下的 <code>main.php</code> 文件，
+如果 <a href="#layoutPath">布局路径</a> 和 <a href="#viewPath">视图路径</a> 都是默认值，
+默认布局文件可以使用路径别名 <code>@app/views/layouts/main.php</code></p>
+<p>如果不想设置默认布局文件，可以设置该属性为 <code>false</code>，这种做法比较罕见。</p>
+<h4><a href="./yii-base-module.html#$layoutPath-detail">layoutPath</a>  <span id="layoutPath"></span><a href="#layoutPath" class="hashlink">&para;</a></h4><p>该属性指定查找布局文件的路径，默认值为 <a href="#viewPath">视图路径</a> 下的 <code>layouts</code> 子目录。
+如果 <a href="#viewPath">视图路径</a> 使用默认值，
+默认的布局路径别名为<code>@app/views/layouts</code>。</p>
+<p>该属性需要配置成一个目录或 路径 <a href="guide-concept-aliases.html">别名</a>。</p>
+<h4><a href="./yii-base-application.html#$runtimePath-detail">runtimePath</a>  <span id="runtimePath"></span><a href="#runtimePath" class="hashlink">&para;</a></h4><p>该属性指定临时文件如日志文件、缓存文件等保存路径，
+默认值为带别名的 <code>@app/runtime</code>。</p>
+<p>可以配置该属性为一个目录或者路径 <a href="guide-concept-aliases.html">别名</a>，
+注意应用运行时有对该路径的写入权限，
+以及终端用户不能访问该路径因为临时文件可能包含一些敏感信息。</p>
+<p>为了简化访问该路径，Yii 预定义别名 <code>@runtime</code> 代表该路径。</p>
+<h4><a href="./yii-base-module.html#$viewPath-detail">viewPath</a>  <span id="viewPath"></span><a href="#viewPath" class="hashlink">&para;</a></h4><p>该路径指定视图文件的根目录，默认值为带别名的 <code>@app/views</code>，
+可以配置它为一个目录或者路径 <a href="guide-concept-aliases.html">别名</a>.</p>
+<h4><a href="./yii-base-application.html#$vendorPath-detail">vendorPath</a>  <span id="vendorPath"></span><a href="#vendorPath" class="hashlink">&para;</a></h4><p>该属性指定 <a href="https://getcomposer.org">Composer</a> 管理的供应商路径，
+该路径包含应用使用的包括Yii框架在内的所有第三方库。
+默认值为带别名的 <code>@app/vendor</code> 。</p>
+<p>可以配置它为一个目录或者路径 <a href="guide-concept-aliases.html">别名</a>，
+当你修改时，务必修改对应的 Composer 配置。</p>
+<p>为了简化访问该路径，Yii 预定义别名 <code>@vendor</code> 代表该路径。</p>
+<h4><a href="./yii-console-application.html#$enableCoreCommands-detail">enableCoreCommands</a>  <span id="enableCoreCommands"></span><a href="#enableCoreCommands" class="hashlink">&para;</a></h4><p>该属性仅 <a href="./yii-console-application.html">console applications</a> 控制台应用支持， 
+用来指定是否启用 Yii 中的核心命令，默认值为 <code>true</code>。</p>
+<h2>应用事件  <span id="application-events"></span><a href="#application-events" class="hashlink">&para;</a></h2><p>应用在处理请求过程中会触发事件，可以在配置文件配置事件处理代码，
+如下所示：</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'on beforeRequest'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$event</span>)</span> </span>{
+        <span class="hljs-comment">// ...</span>
+    },
+]
+</code></pre>
+<p><code>on eventName</code> 语法的用法在 <a href="guide-concept-configurations.html#configuration-format">Configurations</a> 
+一节有详细描述.</p>
+<p>另外，在应用主体实例化后，你可以在 <a href="guide-runtime-bootstrapping.html">引导启动</a> 阶段附加事件处理代码，
+例如：</p>
+<pre><code class="hljs php language-php">\Yii::<span class="hljs-variable">$app</span>-&gt;on(\yii\base\Application::EVENT_BEFORE_REQUEST, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$event</span>)</span> </span>{
+    <span class="hljs-comment">// ...</span>
+});
+</code></pre>
+<h3><a href="./yii-base-application.html#EVENT_BEFORE_REQUEST-detail">EVENT_BEFORE_REQUEST</a>  <span id="beforeRequest"></span><a href="#beforeRequest" class="hashlink">&para;</a></h3><p>该事件在应用处理请求 <em>before</em> 之前，实际的事件名为 <code>beforeRequest</code>。</p>
+<p>在事件触发前，应用主体已经实例化并配置好了，
+所以通过事件机制将你的代码嵌入到请求处理过程中非常不错。
+例如在事件处理中根据某些参数动态设置 <a href="./yii-base-application.html#$language-detail">yii\base\Application::$language</a> 语言属性。</p>
+<h3><a href="./yii-base-application.html#EVENT_AFTER_REQUEST-detail">EVENT_AFTER_REQUEST</a>  <span id="afterRequest"></span><a href="#afterRequest" class="hashlink">&para;</a></h3><p>该事件在应用处理请求 <em>after</em> 之后但在返回响应 <em>before</em> 之前触发，
+实际的事件名为 <code>afterRequest</code>。</p>
+<p>该事件触发时，请求已经被处理完，
+可以做一些请求后处理或自定义响应。</p>
+<p>注意 <a href="./yii-web-response.html">response</a> 组件在发送响应给终端用户时也会触发一些事件，
+这些事件都在本事件 <em>after</em> 之后触发。</p>
+<h3><a href="./yii-base-module.html#EVENT_BEFORE_ACTION-detail">EVENT_BEFORE_ACTION</a>  <span id="beforeAction"></span><a href="#beforeAction" class="hashlink">&para;</a></h3><p>该事件在每个 <a href="guide-structure-controllers.html">控制器动作</a> 运行<em>before</em>之前会被触发，
+实际的事件名为 <code>beforeAction</code>.</p>
+<p>事件的参数为一个 <a href="./yii-base-actionevent.html">yii\base\ActionEvent</a> 实例，
+事件处理中可以设置<a href="./yii-base-actionevent.html#$isValid-detail">yii\base\ActionEvent::$isValid</a> 为 <code>false</code> 停止运行后续动作，
+例如：</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'on beforeAction'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$event</span>)</span> </span>{
+        <span class="hljs-keyword">if</span> (some condition) {
+            <span class="hljs-variable">$event</span>-&gt;isValid = <span class="hljs-keyword">false</span>;
+        } <span class="hljs-keyword">else</span> {
+        }
+    },
+]
+</code></pre>
+<p>注意 <a href="guide-structure-modules.html">模块</a> 和 <a href="guide-structure-controllers.html">控制器</a> 都会触发 <code>beforeAction</code> 事件。
+应用主体对象首先触发该事件，然后模块触发（如果存在模块），最后控制器触发。
+任何一个事件处理中设置 <a href="./yii-base-actionevent.html#$isValid-detail">yii\base\ActionEvent::$isValid</a> 
+设置为 <code>false</code> 会停止触发后面的事件。</p>
+<h3><a href="./yii-base-module.html#EVENT_AFTER_ACTION-detail">EVENT_AFTER_ACTION</a>  <span id="afterAction"></span><a href="#afterAction" class="hashlink">&para;</a></h3><p>该事件在每个 <a href="guide-structure-controllers.html">控制器动作</a> 运行 <em>after</em> 之后会被触发，
+实际的事件名为 <code>afterAction</code>。</p>
+<p>该事件的参数为 <a href="./yii-base-actionevent.html">yii\base\ActionEvent</a> 实例，
+通过 <a href="./yii-base-actionevent.html#$result-detail">yii\base\ActionEvent::$result</a> 属性，
+事件处理可以访问和修改动作的结果。例如：</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'on afterAction'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$event</span>)</span> </span>{
+        <span class="hljs-keyword">if</span> (some condition) {
+            <span class="hljs-comment">// 修改 $event-&gt;result</span>
+        } <span class="hljs-keyword">else</span> {
+        }
+    },
+]
+</code></pre>
+<p>注意 <a href="guide-structure-modules.html">模块</a> 和 
+<a href="guide-structure-controllers.html">控制器</a> 都会触发 <code>afterAction</code> 事件。
+这些对象的触发顺序和 <code>beforeAction</code> 相反，也就是说，
+控制器最先触发，然后是模块（如果有模块），最后为应用主体。</p>
+<h2>应用主体生命周期  <span id="application-lifecycle"></span><a href="#application-lifecycle" class="hashlink">&para;</a></h2><p><img src="images/application-lifecycle.png" alt="Application Lifecycle" /></p>
+<p>当运行 <a href="guide-structure-entry-scripts.html">入口脚本</a> 处理请求时，
+应用主体会经历以下生命周期:</p>
+<ol>
+<li>入口脚本加载应用主体配置数组。</li>
+<li>入口脚本创建一个应用主体实例：<ul>
+<li>调用 <a href="./yii-base-application.html#preInit()-detail">preInit()</a> 配置几个高级别应用主体属性，
+ 比如 <a href="./yii-base-module.html#$basePath-detail">basePath</a>。</li>
+<li>注册 <a href="./yii-base-application.html#$errorHandler-detail">error handler</a> 错误处理方法。</li>
+<li>配置应用主体属性。</li>
+<li>调用 <a href="./yii-base-application.html#init()-detail">init()</a> 初始化，该函数会调用 <a href="./yii-base-application.html#bootstrap()-detail">bootstrap()</a> 
+ 运行引导启动组件。</li>
+</ul>
+</li>
+<li>入口脚本调用 <a href="./yii-base-application.html#run()-detail">yii\base\Application::run()</a> 运行应用主体:<ul>
+<li>触发 <a href="./yii-base-application.html#EVENT_BEFORE_REQUEST-detail">EVENT_BEFORE_REQUEST</a> 事件。</li>
+<li>处理请求：解析请求 <a href="guide-runtime-routing.html">路由</a> 和相关参数；
+ 创建路由指定的模块、控制器和动作对应的类，并运行动作。</li>
+<li>触发 <a href="./yii-base-application.html#EVENT_AFTER_REQUEST-detail">EVENT_AFTER_REQUEST</a> 事件。</li>
+<li>发送响应到终端用户。</li>
+</ul>
+</li>
+<li>入口脚本接收应用主体传来的退出状态并完成请求的处理。</li>
+</ol>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:19 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>Yii Framework 2.0 API Documentation</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w20008" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w20008-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Yii Framework 2.0 API Documentation</a></div><div id="w20008-collapse" class="collapse navbar-collapse"><ul id="w20009" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w20010" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-3">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-20007" data-toggle="collapse" data-parent="#navigation">yii\redis <b class="caret"></b></a><div id="navigation-20007" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./yii-redis-activequery.html">ActiveQuery</a>
+<a class="list-group-item" href="./yii-redis-activerecord.html">ActiveRecord</a>
+<a class="list-group-item" href="./yii-redis-cache.html">Cache</a>
+<a class="list-group-item" href="./yii-redis-connection.html">Connection</a>
+<a class="list-group-item" href="./yii-redis-luascriptbuilder.html">LuaScriptBuilder</a>
+<a class="list-group-item" href="./yii-redis-mutex.html">Mutex</a>
+<a class="list-group-item" href="./yii-redis-session.html">Session</a>
+<a class="list-group-item" href="./yii-redis-socketexception.html">SocketException</a></div></div>    </div>
+    <div class="col-md-9 api-content" role="main">
+        <p align="center">
+    <a href="http://redis.io/" target="_blank" rel="external">
+        <img src="http://download.redis.io/logocontest/82.png" height="100px">
+    </a>
+    <h1 align="center">Redis Cache, Session and ActiveRecord for Yii 2</h1>
+<div class="toc"><ol><li><a href="#requirements">Requirements</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#configuration">Configuration</a></li></ol></div>
+
+    <br>
+</p>
+<p>This extension provides the <a href="http://redis.io/">redis</a> key-value store support for the <a href="http://www.yiiframework.com">Yii framework 2.0</a>.
+It includes a <code>Cache</code> and <code>Session</code> storage handler and implements the <code>ActiveRecord</code> pattern that allows
+you to store active records in redis.</p>
+<p>For license information check the <a href="LICENSE.md">LICENSE</a>-file.</p>
+<p>Documentation is at <a href="docs/guide/README.md">docs/guide/README.md</a>.</p>
+<p><a href="https://packagist.org/packages/yiisoft/yii2-redis"><img src="https://poser.pugx.org/yiisoft/yii2-redis/v/stable.png" alt="Latest Stable Version" /></a>
+<a href="https://packagist.org/packages/yiisoft/yii2-redis"><img src="https://poser.pugx.org/yiisoft/yii2-redis/downloads.png" alt="Total Downloads" /></a>
+<a href="https://travis-ci.org/yiisoft/yii2-redis"><img src="https://travis-ci.org/yiisoft/yii2-redis.svg?branch=master" alt="Build Status" /></a></p>
+<h2>Requirements <span id="requirements"></span><a href="#requirements" class="hashlink">&para;</a></h2><p>At least redis version 2.6.12 is required for all components to work properly.</p>
+<h2>Installation <span id="installation"></span><a href="#installation" class="hashlink">&para;</a></h2><p>The preferred way to install this extension is through <a href="http://getcomposer.org/download/">composer</a>.</p>
+<p>Either run</p>
+<pre><code class="hljs nginx"><span class="hljs-title">php</span> composer.phar require --prefer-dist yiisoft/yii2-redis:<span class="hljs-string">"~2.0.0"</span>
+</code></pre>
+<p>or add</p>
+<pre><code class="hljs json language-json"><span class="hljs-string">"yiisoft/yii2-redis"</span>: <span class="hljs-string">"~2.0.0"</span>
+</code></pre>
+<p>to the require section of your composer.json.</p>
+<h2>Configuration <span id="configuration"></span><a href="#configuration" class="hashlink">&para;</a></h2><p>To use this extension, you have to configure the Connection class in your application configuration:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">//....</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'redis'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\redis\Connection'</span>,
+            <span class="hljs-string">'hostname'</span> =&gt; <span class="hljs-string">'localhost'</span>,
+            <span class="hljs-string">'port'</span> =&gt; <span class="hljs-number">6379</span>,
+            <span class="hljs-string">'database'</span> =&gt; <span class="hljs-number">0</span>,
+        ],
+    ]
+];
+</code></pre>
+<h1>Class Reference</h1>
+
+<table class="summaryTable docIndex table table-bordered table-striped table-hover">
+    <colgroup>
+        <col class="col-package" />
+        <col class="col-class" />
+        <col class="col-description" />
+    </colgroup>
+    <tr>
+        <th>Class</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><a href="yii-redis-activequery.html">yii\redis\ActiveQuery</a></td>
+        <td>ActiveQuery represents a query associated with an Active Record class.</td>
+    </tr>
+    <tr>
+        <td><a href="yii-redis-activerecord.html">yii\redis\ActiveRecord</a></td>
+        <td>ActiveRecord is the base class for classes representing relational data in terms of objects.</td>
+    </tr>
+    <tr>
+        <td><a href="yii-redis-cache.html">yii\redis\Cache</a></td>
+        <td>Redis Cache implements a cache application component based on <a href="http://redis.io/">redis</a> key-value store.</td>
+    </tr>
+    <tr>
+        <td><a href="yii-redis-connection.html">yii\redis\Connection</a></td>
+        <td>The redis connection class is used to establish a connection to a <a href="http://redis.io/">redis</a> server.</td>
+    </tr>
+    <tr>
+        <td><a href="yii-redis-luascriptbuilder.html">yii\redis\LuaScriptBuilder</a></td>
+        <td>LuaScriptBuilder builds lua scripts used for retrieving data from redis.</td>
+    </tr>
+    <tr>
+        <td><a href="yii-redis-mutex.html">yii\redis\Mutex</a></td>
+        <td>Redis Mutex implements a mutex component using <a href="http://redis.io/">redis</a> as the storage medium.</td>
+    </tr>
+    <tr>
+        <td><a href="yii-redis-session.html">yii\redis\Session</a></td>
+        <td>Redis Session implements a session component using <a href="http://redis.io/">redis</a> as the storage medium.</td>
+    </tr>
+    <tr>
+        <td><a href="yii-redis-socketexception.html">yii\redis\SocketException</a></td>
+        <td>SocketException indicates a socket connection failure in <a href="yii-redis-connection.html">yii\redis\Connection</a>.</td>
+    </tr>
+</table>
+    </div>
+</div>
+
+<script type="text/javascript">
+    /*<![CDATA[*/
+    $("a.toggle").on('click', function () {
+        var $this = $(this);
+        if ($this.hasClass('properties-hidden')) {
+            $this.text($this.text().replace(/Show/,'Hide'));
+            $this.parents(".summary").find(".inherited").show();
+            $this.removeClass('properties-hidden');
+        } else {
+            $this.text($this.text().replace(/Hide/,'Show'));
+            $this.parents(".summary").find(".inherited").hide();
+            $this.addClass('properties-hidden');
+        }
+
+        return false;
+    });
+    /*
+     $(".sourceCode a.show").toggle(function () {
+     $(this).text($(this).text().replace(/show/,'hide'));
+     $(this).parents(".sourceCode").find("div.code").show();
+     },function () {
+     $(this).text($(this).text().replace(/hide/,'show'));
+     $(this).parents(".sourceCode").find("div.code").hide();
+     });
+     $("a.sourceLink").click(function () {
+     $(this).attr('target','_blank');
+     });
+     */
+    /*]]>*/
+</script>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:36 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

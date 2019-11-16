@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>事件（Events） - 关键概念（Key Concepts） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1023" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1023-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1023-collapse" class="collapse navbar-collapse"><ul id="w1024" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1025" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1007" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-1007" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-1008" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-1008" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-1009" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-1009" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-1010" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-1010" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item active" href="#navigation-1011" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-1011" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item active" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-1012" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-1012" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-zh-CN/README.md">Sphinx</a>
+<a class="list-group-item" href="./guide-yii2-redis.html">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-zh-CN/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-zh-CN/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1013" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-1013" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-1014" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-1014" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-1015" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-1015" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-1016" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-1016" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-1017" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-1017" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-1018" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-1018" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-1019" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-1019" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-1020" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-1020" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-1021" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-1021" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1022" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-1022" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>事件（Events） <span id="shi-jian-events"></span><a href="#shi-jian-events" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#event-handlers">事件处理器（Event Handlers）</a></li>
+<li><a href="#attaching-event-handlers">附加事件处理器（Attaching Event Handlers）</a></li>
+<li><a href="#shi-jian-chu-li-qi-shun-xu-event-handler-order">事件处理器顺序（Event Handler Order）</a></li>
+<li><a href="#triggering-events">触发事件（Triggering Events）</a></li>
+<li><a href="#detaching-event-handlers">移除事件处理器（Detaching Event Handlers）</a></li>
+<li><a href="#class-level-event-handlers">类级别的事件处理器（Class-Level Event Handlers）</a></li>
+<li><a href="#interface-level-event-handlers">使用接口事件（Events using interfaces）</a></li>
+<li><a href="#global-events">全局事件（Global Events）</a></li>
+<li><a href="#wildcard-events">通配符事件（Wildcard Events）</a></li></ol></div>
+<p>事件可以将自定义代码“注入”到现有代码中的特定执行点。
+附加自定义代码到某个事件，当这个事件被触发时，这些代码就会自动执行。
+例如，邮件程序对象成功发出消息时可触发 <code>messageSent</code> 事件。
+如想追踪成功发送的消息，可以附加相应追踪代码到 <code>messageSent</code> 事件。</p>
+<p>Yii 引入了名为 <a href="./yii-base-component.html">yii\base\Component</a> 的基类以支持事件。
+如果一个类需要触发事件就应该继承 <a href="./yii-base-component.html">yii\base\Component</a> 或其子类。</p>
+<h2>事件处理器（Event Handlers）  <span id="event-handlers"></span><a href="#event-handlers" class="hashlink">&para;</a></h2><p>事件处理器是一个<a href="https://secure.php.net/manual/en/language.types.callable.php">PHP 回调函数</a>，
+当它所附加到的事件被触发时它就会执行。可以使用以下回调函数之一：</p>
+<ul>
+<li>字符串形式指定的 PHP 全局函数，如 <code>'trim'</code> ；</li>
+<li>对象名和方法名数组形式指定的对象方法，如 <code>[$object, $method]</code> ；</li>
+<li>类名和方法名数组形式指定的静态类方法，如 <code>[$class, $method]</code> ；</li>
+<li>匿名函数，如 <code>function ($event) { ... }</code> 。</li>
+</ul>
+<p>事件处理器的格式是：</p>
+<pre><code class="hljs php language-php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$event</span>)</span> </span>{
+    <span class="hljs-comment">// $event 是 yii\base\Event 或其子类的对象</span>
+}
+</code></pre>
+<p>通过 <code>$event</code> 参数，事件处理器就获得了以下有关事件的信息：</p>
+<ul>
+<li><a href="./yii-base-event.html#$name-detail">event name</a>：事件名</li>
+<li><a href="./yii-base-event.html#$sender-detail">event sender</a>：调用 <code>trigger()</code> 方法的对象</li>
+<li><a href="./yii-base-event.html#$data-detail">custom data</a>：附加事件处理器时传入的数据，默认为空，后文详述</li>
+</ul>
+<h2>附加事件处理器（Attaching Event Handlers）  <span id="attaching-event-handlers"></span><a href="#attaching-event-handlers" class="hashlink">&para;</a></h2><p>调用 <a href="./yii-base-component.html#on()-detail">yii\base\Component::on()</a> 方法来附加处理器到事件上。如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$foo</span> = <span class="hljs-keyword">new</span> Foo;
+
+<span class="hljs-comment">// 处理器是全局函数</span>
+<span class="hljs-variable">$foo</span>-&gt;on(Foo::EVENT_HELLO, <span class="hljs-string">'function_name'</span>);
+
+<span class="hljs-comment">// 处理器是对象方法</span>
+<span class="hljs-variable">$foo</span>-&gt;on(Foo::EVENT_HELLO, [<span class="hljs-variable">$object</span>, <span class="hljs-string">'methodName'</span>]);
+
+<span class="hljs-comment">// 处理器是静态类方法</span>
+<span class="hljs-variable">$foo</span>-&gt;on(Foo::EVENT_HELLO, [<span class="hljs-string">'app\components\Bar'</span>, <span class="hljs-string">'methodName'</span>]);
+
+<span class="hljs-comment">// 处理器是匿名函数</span>
+<span class="hljs-variable">$foo</span>-&gt;on(Foo::EVENT_HELLO, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$event</span>)</span> </span>{
+    <span class="hljs-comment">//事件处理逻辑</span>
+});
+</code></pre>
+<p>你也可以通过 <a href="guide-concept-configurations.html">配置</a> 附加事件处理器。 请
+参考 <a href="guide-concept-configurations.html#configuration-format">配置的格式</a> 小节了解更多.</p>
+<p>附加事件处理器时可以提供额外数据作为 <a href="./yii-base-component.html#on()-detail">yii\base\Component::on()</a> 方法的第三个参数。
+数据在事件被触发和处理器被调用时能被处理器使用。如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 当事件被触发时以下代码显示 "abc"</span>
+<span class="hljs-comment">// 因为 $event-&gt;data 包括被传递到 "on" 方法的数据</span>
+<span class="hljs-variable">$foo</span>-&gt;on(Foo::EVENT_HELLO, <span class="hljs-string">'function_name'</span>, <span class="hljs-string">'abc'</span>);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">function_name</span><span class="hljs-params">(<span class="hljs-variable">$event</span>)</span> </span>{
+    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$event</span>-&gt;data;
+}
+</code></pre>
+<h2>事件处理器顺序（Event Handler Order） <span id="shi-jian-chu-li-qi-shun-xu-event-handler-order"></span><a href="#shi-jian-chu-li-qi-shun-xu-event-handler-order" class="hashlink">&para;</a></h2><p>可以附加一个或多个处理器到一个事件。当事件被触发，已附加的处理器将按附加次序依次调用。
+如果某个处理器需要停止其后的处理器调用，可以设置 <code>$event</code> 参数的 <a href="./yii-base-event.html#$handled-detail">yii\base\Event::$handled</a> 属性为真，
+如下：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$foo</span>-&gt;on(Foo::EVENT_HELLO, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$event</span>)</span> </span>{
+    <span class="hljs-variable">$event</span>-&gt;handled = <span class="hljs-keyword">true</span>;
+});
+</code></pre>
+<p>默认新附加的事件处理器排在已存在处理器队列的最后。
+因此，这个处理器将在事件被触发时最后一个调用。
+在处理器队列最前面插入新处理器将使该处理器最先调用，可以传递第四个参数 <code>$append</code> 为假并调用 <a href="./yii-base-component.html#on()-detail">yii\base\Component::on()</a> 方法实现：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$foo</span>-&gt;on(Foo::EVENT_HELLO, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$event</span>)</span> </span>{
+    <span class="hljs-comment">// 这个处理器将被插入到处理器队列的第一位...</span>
+}, <span class="hljs-variable">$data</span>, <span class="hljs-keyword">false</span>);
+</code></pre>
+<h2>触发事件（Triggering Events）  <span id="triggering-events"></span><a href="#triggering-events" class="hashlink">&para;</a></h2><p>事件通过调用 <a href="./yii-base-component.html#trigger()-detail">yii\base\Component::trigger()</a> 方法触发，此方法须传递<em>事件名</em>，
+还可以传递一个事件对象，用来传递参数到事件处理器。如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Component</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Event</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span>
+</span>{
+    <span class="hljs-keyword">const</span> EVENT_HELLO = <span class="hljs-string">'hello'</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;trigger(<span class="hljs-keyword">self</span>::EVENT_HELLO);
+    }
+}
+</code></pre>
+<p>以上代码当调用 <code>bar()</code> ，它将触发名为 <code>hello</code> 的事件。</p>
+<blockquote class="tip"><p><strong>提示： </strong>推荐使用类常量来表示事件名。上例中，常量 <code>EVENT_HELLO</code> 用来表示 <code>hello</code> 。
+  这有两个好处。第一，它可以防止拼写错误并支持 IDE 的自动完成。
+  第二，只要简单检查常量声明就能了解一个类支持哪些事件。</p>
+</blockquote>
+<p>有时想要在触发事件时同时传递一些额外信息到事件处理器。
+例如，邮件程序要传递消息信息到 <code>messageSent</code> 事件的处理器以便处理器了解哪些消息被发送了。
+为此，可以提供一个事件对象作为 <a href="./yii-base-component.html#trigger()-detail">yii\base\Component::trigger()</a> 方法的第二个参数。
+这个事件对象必须是 <a href="./yii-base-event.html">yii\base\Event</a> 类或其子类的实例。
+如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Component</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Event</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MessageEvent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Event</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$message</span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Mailer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span>
+</span>{
+    <span class="hljs-keyword">const</span> EVENT_MESSAGE_SENT = <span class="hljs-string">'messageSent'</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">send</span><span class="hljs-params">(<span class="hljs-variable">$message</span>)</span>
+    </span>{
+        <span class="hljs-comment">// ...发送 $message 的逻辑...</span>
+
+        <span class="hljs-variable">$event</span> = <span class="hljs-keyword">new</span> MessageEvent;
+        <span class="hljs-variable">$event</span>-&gt;message = <span class="hljs-variable">$message</span>;
+        <span class="hljs-variable">$this</span>-&gt;trigger(<span class="hljs-keyword">self</span>::EVENT_MESSAGE_SENT, <span class="hljs-variable">$event</span>);
+    }
+}
+</code></pre>
+<p>当 <a href="./yii-base-component.html#trigger()-detail">yii\base\Component::trigger()</a> 方法被调用时，
+它将调用所有附加到命名事件（trigger 方法第一个参数）的事件处理器。</p>
+<h2>移除事件处理器（Detaching Event Handlers）  <span id="detaching-event-handlers"></span><a href="#detaching-event-handlers" class="hashlink">&para;</a></h2><p>从事件移除处理器，调用 <a href="./yii-base-component.html#off()-detail">yii\base\Component::off()</a> 方法。如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 处理器是全局函数</span>
+<span class="hljs-variable">$foo</span>-&gt;off(Foo::EVENT_HELLO, <span class="hljs-string">'function_name'</span>);
+
+<span class="hljs-comment">// 处理器是对象方法</span>
+<span class="hljs-variable">$foo</span>-&gt;off(Foo::EVENT_HELLO, [<span class="hljs-variable">$object</span>, <span class="hljs-string">'methodName'</span>]);
+
+<span class="hljs-comment">// 处理器是静态类方法</span>
+<span class="hljs-variable">$foo</span>-&gt;off(Foo::EVENT_HELLO, [<span class="hljs-string">'app\components\Bar'</span>, <span class="hljs-string">'methodName'</span>]);
+
+<span class="hljs-comment">// 处理器是匿名函数</span>
+<span class="hljs-variable">$foo</span>-&gt;off(Foo::EVENT_HELLO, <span class="hljs-variable">$anonymousFunction</span>);
+</code></pre>
+<p>注意当匿名函数附加到事件后一般不要尝试移除匿名函数，
+除非你在某处存储了它。以上示例中，
+假设匿名函数存储为变量 <code>$anonymousFunction</code> 。</p>
+<p>移除事件的全部处理器，简单调用 <a href="./yii-base-component.html#off()-detail">yii\base\Component::off()</a> 即可，不需要第二个参数：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$foo</span>-&gt;off(Foo::EVENT_HELLO);
+</code></pre>
+<h2>类级别的事件处理器（Class-Level Event Handlers）  <span id="class-level-event-handlers"></span><a href="#class-level-event-handlers" class="hashlink">&para;</a></h2><p>以上部分，我们叙述了在<em>实例级别</em>如何附加处理器到事件。
+有时想要一个类的<em>所有</em>实例而不是一个指定的实例都响应一个被触发的事件，
+并不是一个个附加事件处理器到每个实例，
+而是通过调用静态方法 <a href="./yii-base-event.html#on()-detail">yii\base\Event::on()</a> 在<em>类级别</em>附加处理器。</p>
+<p>例如，<a href="guide-db-active-record.html">活动记录</a>对象要在每次往数据库新增一条新记录时触发一个 
+<a href="./yii-db-baseactiverecord.html#EVENT_AFTER_INSERT-detail">EVENT_AFTER_INSERT</a> 事件。
+要追踪每个<a href="guide-db-active-record.html">活动记录</a>对象的新增记录完成情况，应如下写代码：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Event</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>;
+
+Event::on(ActiveRecord::className(), ActiveRecord::EVENT_AFTER_INSERT, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$event</span>)</span> </span>{
+    Yii::debug(get_class(<span class="hljs-variable">$event</span>-&gt;sender) . <span class="hljs-string">' is inserted'</span>);
+});
+</code></pre>
+<p>每当 <a href="./yii-db-baseactiverecord.html">ActiveRecord</a> 或其子类的实例触发 
+<a href="./yii-db-baseactiverecord.html#EVENT_AFTER_INSERT-detail">EVENT_AFTER_INSERT</a> 事件时，
+这个事件处理器都会执行。在这个处理器中，可以通过 <code>$event-&gt;sender</code> 获取触发事件的对象。</p>
+<p>当对象触发事件时，它首先调用实例级别的处理器，然后才会调用类级别处理器。</p>
+<p>可调用静态方法<a href="./yii-base-event.html#trigger()-detail">yii\base\Event::trigger()</a>来触发一个<em>类级别</em>事件。
+类级别事件不与特定对象相关联。因此，它只会引起类级别事件处理器的调用。
+如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Event</span>;
+
+Event::on(Foo::className(), Foo::EVENT_HELLO, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$event</span>)</span> </span>{
+    var_dump(<span class="hljs-variable">$event</span>-&gt;sender);  <span class="hljs-comment">// 显示 "null"</span>
+});
+
+Event::trigger(Foo::className(), Foo::EVENT_HELLO);
+</code></pre>
+<p>注意这种情况下 <code>$event-&gt;sender</code> 指向触发事件的类名而不是对象实例。</p>
+<blockquote class="note"><p><strong>注意： </strong>因为类级别的处理器响应类和其子类的所有实例触发的事件，
+  必须谨慎使用，尤其是底层的基类，如 <a href="./yii-base-object.html">yii\base\Object</a>。</p>
+</blockquote>
+<p>移除类级别的事件处理器只需调用<a href="./yii-base-event.html#off()-detail">yii\base\Event::off()</a>，如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 移除 $handler</span>
+Event::off(Foo::className(), Foo::EVENT_HELLO, <span class="hljs-variable">$handler</span>);
+
+<span class="hljs-comment">// 移除 Foo::EVENT_HELLO 事件的全部处理器</span>
+Event::off(Foo::className(), Foo::EVENT_HELLO);
+</code></pre>
+<h2>使用接口事件（Events using interfaces）  <span id="interface-level-event-handlers"></span><a href="#interface-level-event-handlers" class="hashlink">&para;</a></h2><p>有更多的抽象方式来处理事件。你可以为特殊的事件创建一个独立的接口，
+然后在你需要的类中实现它。</p>
+<p>例如，我们可以先创建下面这个接口:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">interfaces</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">DanceEventInterface</span>
+</span>{
+    <span class="hljs-keyword">const</span> EVENT_DANCE = <span class="hljs-string">'dance'</span>;
+}
+</code></pre>
+<p>然后在两个类中实现:</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">DanceEventInterface</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">meetBuddy</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">"Woof!"</span>;
+        <span class="hljs-variable">$this</span>-&gt;trigger(DanceEventInterface::EVENT_DANCE);
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Developer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">DanceEventInterface</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testsPassed</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">"Yay!"</span>;
+        <span class="hljs-variable">$this</span>-&gt;trigger(DanceEventInterface::EVENT_DANCE);
+    }
+}
+</code></pre>
+<p>要处理由这些类触发的 <code>EVENT_DANCE</code> ，调用 <a href="./yii-base-event.html#on()-detail">Event::on()</a> 
+并将接口类名作为第一个参数:</p>
+<pre><code class="hljs php language-php">Event::on(<span class="hljs-string">'app\interfaces\DanceEventInterface'</span>, DanceEventInterface::EVENT_DANCE, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$event</span>)</span> </span>{
+    Yii::trace(get_class(<span class="hljs-variable">$event</span>-&gt;sender) . <span class="hljs-string">' just danced'</span>); <span class="hljs-comment">// Will log that Dog or Developer danced</span>
+});
+</code></pre>
+<p>你可以在这些类中触发这个事件：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// trigger event for Dog class</span>
+Event::trigger(Dog::className(), DanceEventInterface::EVENT_DANCE);
+
+<span class="hljs-comment">// trigger event for Developer class</span>
+Event::trigger(Developer::className(), DanceEventInterface::EVENT_DANCE);
+</code></pre>
+<p>但是请注意, 你不能让所有实现这个接口的类都触发事件：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 不会生效。实现此接口的类不会触发事件。</span>
+Event::trigger(<span class="hljs-string">'app\interfaces\DanceEventInterface'</span>, DanceEventInterface::EVENT_DANCE);
+</code></pre>
+<p>调用 <a href="./yii-base-event.html#off()-detail">Event::off()</a> 移除事件处理器。例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 移除 $handler</span>
+Event::off(<span class="hljs-string">'app\interfaces\DanceEventInterface'</span>, DanceEventInterface::EVENT_DANCE, <span class="hljs-variable">$handler</span>);
+
+<span class="hljs-comment">// 移除所有 `DanceEventInterface::EVENT_DANCE` 的处理器</span>
+Event::off(<span class="hljs-string">'app\interfaces\DanceEventInterface'</span>, DanceEventInterface::EVENT_DANCE);
+</code></pre>
+<h2>全局事件（Global Events）  <span id="global-events"></span><a href="#global-events" class="hashlink">&para;</a></h2><p>所谓<em>全局事件</em>实际上是一个基于以上叙述的事件机制的戏法。它需要一个全局可访问的单例，
+如<a href="guide-structure-applications.html">应用</a>实例。</p>
+<p>事件触发者不调用其自身的 <code>trigger()</code> 方法，而是调用单例的 <code>trigger()</code> 方法来触发全局事件。
+类似地，事件处理器被附加到单例的事件。如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Event</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>\<span class="hljs-title">Foo</span>;
+
+Yii::<span class="hljs-variable">$app</span>-&gt;on(<span class="hljs-string">'bar'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$event</span>)</span> </span>{
+    <span class="hljs-keyword">echo</span> get_class(<span class="hljs-variable">$event</span>-&gt;sender);  <span class="hljs-comment">// 显示 "app\components\Foo"</span>
+});
+
+Yii::<span class="hljs-variable">$app</span>-&gt;trigger(<span class="hljs-string">'bar'</span>, <span class="hljs-keyword">new</span> Event([<span class="hljs-string">'sender'</span> =&gt; <span class="hljs-keyword">new</span> Foo]));
+</code></pre>
+<p>全局事件的一个好处是当附加处理器到一个对象要触发的事件时，
+不需要产生该对象。相反，处理器附加和事件触发都通过单例
+（如应用实例）完成。</p>
+<p>然而，因为全局事件的命名空间由各方共享，应合理命名全局事件，
+如引入一些命名空间（例："frontend.mail.sent", "backend.mail.sent"）。</p>
+<h2>通配符事件（Wildcard Events）  <span id="wildcard-events"></span><a href="#wildcard-events" class="hashlink">&para;</a></h2><p>自 2.0.14 以来，您可以为多个匹配通配符模式的事件设置事件处理程序。
+例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+
+<span class="hljs-variable">$foo</span> = <span class="hljs-keyword">new</span> Foo();
+
+<span class="hljs-variable">$foo</span>-&gt;on(<span class="hljs-string">'foo.event.*'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$event</span>)</span> </span>{
+    <span class="hljs-comment">// 触发任何事件，该名称以 'foo.event.' 开头</span>
+    Yii::debug(<span class="hljs-string">'trigger event: '</span> . <span class="hljs-variable">$event</span>-&gt;name);
+});
+</code></pre>
+<p>通配符模式也可以用于类级别的事件。 例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Event</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+
+Event::on(<span class="hljs-string">'app\models\*'</span>, <span class="hljs-string">'before*'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$event</span>)</span> </span>{
+    <span class="hljs-comment">// 触发命名空间 'app\models' 中的任何类的任何事件，名称以 'before' 开头。</span>
+    Yii::debug(<span class="hljs-string">'trigger event: '</span> . <span class="hljs-variable">$event</span>-&gt;name . <span class="hljs-string">' for class: '</span> . get_class(<span class="hljs-variable">$event</span>-&gt;sender));
+});
+</code></pre>
+<p>这允许您使用以下代码通过单个处理程序捕获所有应用程序事件：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Event</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+
+Event::on(<span class="hljs-string">'*'</span>, <span class="hljs-string">'*'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$event</span>)</span> </span>{
+    <span class="hljs-comment">// 触发任何类的任何事件</span>
+    Yii::debug(<span class="hljs-string">'trigger event: '</span> . <span class="hljs-variable">$event</span>-&gt;name);
+});
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>事件处理程序设置的使用通配符可能会降低应用程序的性能。
+  如果可能，最好避免。</p>
+</blockquote>
+<p>为了移除由通配符模式指定的事件处理程序，您应该在
+<a href="./yii-base-component.html#off()-detail">yii\base\Component::off()</a> 或 <a href="./yii-base-event.html#off()-detail">yii\base\Event::off()</a> 调用中重复相同的模式。
+请记住，在移除事件处理程序期间传递通配符将移除为此通配符指定的处理程序，
+而为常规事件名称附加的处理程序将保留，即使它们与模式匹配。 例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+
+<span class="hljs-variable">$foo</span> = <span class="hljs-keyword">new</span> Foo();
+
+<span class="hljs-comment">// 附加常规处理</span>
+<span class="hljs-variable">$foo</span>-&gt;on(<span class="hljs-string">'event.hello'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$event</span>)</span> </span>{
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">'direct-handler'</span>
+});
+
+<span class="hljs-comment">// 附加通配符处理程序</span>
+<span class="hljs-variable">$foo</span>-&gt;on(<span class="hljs-string">'*'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$event</span>)</span> </span>{
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">'wildcard-handler'</span>
+});
+
+<span class="hljs-comment">// 仅移除通配符处理程序！</span>
+<span class="hljs-variable">$foo</span>-&gt;off(<span class="hljs-string">'*'</span>);
+
+<span class="hljs-variable">$foo</span>-&gt;trigger(<span class="hljs-string">'event.hello'</span>); <span class="hljs-comment">// 输出：'direct-handler'</span>
+</code></pre>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

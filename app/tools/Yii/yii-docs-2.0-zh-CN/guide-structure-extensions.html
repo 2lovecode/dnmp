@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>扩展（Extensions） - 应用结构（Application Structure） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1574" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1574-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1574-collapse" class="collapse navbar-collapse"><ul id="w1575" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1576" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1558" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-1558" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-1559" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-1559" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item active" href="#navigation-1560" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-1560" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item active" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-1561" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-1561" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-1562" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-1562" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-1563" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-1563" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-zh-CN/README.md">Sphinx</a>
+<a class="list-group-item" href="./guide-yii2-redis.html">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-zh-CN/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-zh-CN/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1564" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-1564" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-1565" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-1565" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-1566" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-1566" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-1567" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-1567" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-1568" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-1568" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-1569" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-1569" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-1570" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-1570" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-1571" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-1571" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-1572" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-1572" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1573" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-1573" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>扩展 <span id="kuo-zhan"></span><a href="#kuo-zhan" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#using-extensions">使用扩展</a></li>
+<li><a href="#creating-extensions">创建扩展</a></li>
+<li><a href="#core-extensions">核心扩展</a></li></ol></div>
+<p>扩展是专门设计的在 Yii 应用中随时可拿来使用的，
+并可重发布的软件包。例如， <a href="https://github.com/yiisoft/yii2-debug">yiisoft/yii2-debug</a>
+扩展在你的应用的每个页面底部添加一个方便用于调试的工具栏，
+帮助你简单地抓取页面生成的情况。
+你可以使用扩展来加速你的开发过程。</p>
+<blockquote class="info"><p><strong>信息： </strong>本文中我们使用的术语 "扩展" 特指 Yii 软件包。而用术语
+  "软件包" 和 "库" 指代非 Yii 专用的通常意义上的软件包。</p>
+</blockquote>
+<h2>使用扩展  <span id="using-extensions"></span><a href="#using-extensions" class="hashlink">&para;</a></h2><p>要使用扩展，你要先安装它。大多数扩展以 <a href="https://getcomposer.org/">Composer</a> 软件包的形式发布，
+这样的扩展可采取下述两个步骤来安装：</p>
+<ol>
+<li>修改你的应用的 <code>composer.json</code> 文件，指明你要安装的是哪个扩展 （Composer 软件包）。</li>
+<li>运行 <code>composer install</code> 来安装指定的扩展。</li>
+</ol>
+<p>注意如果你还没有安装 <a href="https://getcomposer.org/">Composer</a> ，你需要先安装。</p>
+<p>默认情况，Composer安装的是在 <a href="https://packagist.org/">Packagist</a> 中
+注册的软件包 - 最大的开源 Composer 代码库。你可以在 Packageist 中查找扩展。
+你也可以 <a href="https://getcomposer.org/doc/05-repositories.md#repository">创建你自己的代码库</a> 然后配置 Composer 来使用它。
+如果是在开发私有的扩展，并且想只在你的其他工程中共享时，这样做是很有用的。</p>
+<p>通过 Composer 安装的扩展会存放在 <code>BasePath/vendor</code> 目录下，这里的 <code>BasePath</code> 
+指你的应用的 <a href="guide-structure-applications.html#basePath">base path</a>。因为 Composer 还是一个依赖管理器，当它安装一个包时，
+也将安装这个包所依赖的所有软件包。</p>
+<p>例如想安装 <code>yiisoft/yii2-imagine</code> 扩展，可按如下示例修改你的 <code>composer.json</code> 文件：</p>
+<pre><code class="hljs json language-json">{
+    // ...
+
+    "<span class="hljs-attribute">require</span>": <span class="hljs-value">{
+        // ... other dependencies
+
+        "<span class="hljs-attribute">yiisoft/yii2-imagine</span>": <span class="hljs-value"><span class="hljs-string">"~2.0.0"</span>
+    </span>}
+</span>}
+</code></pre>
+<p>安装完成后，你应该能在 <code>BasePath/vendor</code> 目录下见到 <code>yiisoft/yii2-imagine</code> 目录。你也应该
+见到另一个 <code>imagine/imagine</code> 目录，在其中安装了所依赖的包。</p>
+<blockquote class="info"><p><strong>信息： </strong><code>yiisoft/yii2-imagine</code> 是 Yii 由开发团队维护一个核心扩展，
+  所有核心扩展均由 <a href="https://packagist.org/">Packagist</a> 集中管理，命名为
+  <code>yiisoft/yii2-xyz</code>，其中的 <code>xyz</code>， 不同扩展有不同名称。</p>
+</blockquote>
+<p>现在你可以使用安装好的扩展了，好比是应用的一部分。如下示例展示了如何使用 <code>yiisoft/yii2-imagine</code> 扩展
+提供的 <code>yii\imagine\Image</code> 类：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">imagine</span>\<span class="hljs-title">Image</span>;
+
+<span class="hljs-comment">// generate a thumbnail image</span>
+Image::thumbnail(<span class="hljs-string">'@webroot/img/test-image.jpg'</span>, <span class="hljs-number">120</span>, <span class="hljs-number">120</span>)
+    -&gt;save(Yii::getAlias(<span class="hljs-string">'@runtime/thumb-test-image.jpg'</span>), [<span class="hljs-string">'quality'</span> =&gt; <span class="hljs-number">50</span>]);
+</code></pre>
+<blockquote class="info"><p><strong>信息： </strong>扩展类由 <a href="guide-concept-autoloading.html">Yii class autoloader</a> 自动加载。</p>
+</blockquote>
+<h3>手动安装扩展  <span id="installing-extensions-manually"></span><a href="#installing-extensions-manually" class="hashlink">&para;</a></h3><p>在极少情况下，你可能需要手动安装一部分或者全部扩展，而不是依赖 Composer。
+想做到这一点，你应当：</p>
+<ol>
+<li>下载扩展压缩文件，解压到 <code>vendor</code> 目录。</li>
+<li>如果有，则安装扩展提供的自动加载器。</li>
+<li>按指导说明下载和安装所有依赖的扩展。</li>
+</ol>
+<p>如果扩展没有提供类的自动加载器，但也遵循了 <a href="http://www.php-fig.org/psr/psr-4/">PSR-4 standard</a> 
+标准，那么你可以使用 Yii 提供的类自动加载器来加载扩展类。
+你需要做的仅仅是为扩展的根目录声明一个 <a href="guide-concept-aliases.html#defining-aliases">root alias</a>。
+例如，假设在 <code>vendor/mycompany/myext</code> 目录中安装了一个扩展，并且扩展类的命名空间为 <code>myext</code> ，
+那么你可以在应用配置文件中包含如下代码：</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'aliases'</span> =&gt; [
+        <span class="hljs-string">'@myext'</span> =&gt; <span class="hljs-string">'@vendor/mycompany/myext'</span>,
+    ],
+]
+</code></pre>
+<h2>创建扩展  <span id="creating-extensions"></span><a href="#creating-extensions" class="hashlink">&para;</a></h2><p>在你需要将你的杰作分享给其他人的时候，你可能会考虑创建一个扩展。
+扩展可包括任何你喜欢的代码，例如助手类、挂件、模块，等等。</p>
+<p>建议你按照 <a href="https://getcomposer.org/">Composer package</a> 的条款创建扩展，以便其他人更容易安装和使用。
+就像上面的章节讲述的那样。</p>
+<p>以下是将扩展创建为一个 Composer 软件包的需遵循的基本步骤。</p>
+<ol>
+<li>为你的扩展建一个工程，并将它存放在版本控制代码库中，例如 <a href="https://github.com">github.com</a> 。
+扩展的开发和维护都应该在这个代码库中进行。</li>
+<li>在工程的根目录下，建一个 Composer 所需的名为 <code>composer.json</code> 的文件。
+详情请参考后面的章节。  </li>
+<li>在一个 Composer 代码库中注册你的扩展，比如在 <a href="https://packagist.org/">Packagist</a> 中，以便其他
+用户能找到以及用 Composer 安装你的扩展。</li>
+</ol>
+<h3><code>composer.json</code>  <span id="composer-json"></span><a href="#composer-json" class="hashlink">&para;</a></h3><p>每个 Composer 软件包在根目录都必须有一个 <code>composer.json</code> 文件。该文件包含软件包的元数据。
+你可以在 <a href="https://getcomposer.org/doc/01-basic-usage.md#composer-json-project-setup">Composer手册</a> 中找到完整关于该文件的规格。
+以下例子展示了 <code>yiisoft/yii2-imagine</code> 扩展的 <code>composer.json</code> 文件。</p>
+<pre><code class="hljs json language-json">{
+    // package name
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"yiisoft/yii2-imagine"</span></span>,
+
+    // package type
+    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"yii2-extension"</span></span>,
+
+    "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"The Imagine integration for the Yii framework"</span></span>,
+    "<span class="hljs-attribute">keywords</span>": <span class="hljs-value">[<span class="hljs-string">"yii2"</span>, <span class="hljs-string">"imagine"</span>, <span class="hljs-string">"image"</span>, <span class="hljs-string">"helper"</span>]</span>,
+    "<span class="hljs-attribute">license</span>": <span class="hljs-value"><span class="hljs-string">"BSD-3-Clause"</span></span>,
+    "<span class="hljs-attribute">support</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">issues</span>": <span class="hljs-value"><span class="hljs-string">"https://github.com/yiisoft/yii2/issues?labels=ext%3Aimagine"</span></span>,
+        "<span class="hljs-attribute">forum</span>": <span class="hljs-value"><span class="hljs-string">"http://www.yiiframework.com/forum/"</span></span>,
+        "<span class="hljs-attribute">wiki</span>": <span class="hljs-value"><span class="hljs-string">"http://www.yiiframework.com/wiki/"</span></span>,
+        "<span class="hljs-attribute">irc</span>": <span class="hljs-value"><span class="hljs-string">"irc://irc.freenode.net/yii"</span></span>,
+        "<span class="hljs-attribute">source</span>": <span class="hljs-value"><span class="hljs-string">"https://github.com/yiisoft/yii2"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">authors</span>": <span class="hljs-value">[
+        {
+            "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Antonio Ramirez"</span></span>,
+            "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"amigo.cobos@gmail.com"</span>
+        </span>}
+    ]</span>,
+
+    // package dependencies
+    "<span class="hljs-attribute">require</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">yiisoft/yii2</span>": <span class="hljs-value"><span class="hljs-string">"~2.0.0"</span></span>,
+        "<span class="hljs-attribute">imagine/imagine</span>": <span class="hljs-value"><span class="hljs-string">"v0.5.0"</span>
+    </span>}</span>,
+
+    // class autoloading specs
+    "<span class="hljs-attribute">autoload</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">psr-4</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">yii\\imagine\\</span>": <span class="hljs-value"><span class="hljs-string">""</span>
+        </span>}
+    </span>}
+</span>}
+</code></pre>
+<h4>包名  <span id="package-name"></span><a href="#package-name" class="hashlink">&para;</a></h4><p>每个 Composer 软件包都应当有一个唯一的包名以便能从其他的软件包中识别出来。
+包名的格式为 <code>vendorName/projectName</code> 。例如在包名 <code>yiisoft/yii2-imagine</code> 中，vendor 名和 project 名分别是
+ <code>yiisoft</code> 和 <code>yii2-imagine</code> 。</p>
+<p>不要用 <code>yiisoft</code> 作为你的 vendor 名，由于它被 Yii 的核心代码预留使用了。</p>
+<p>我们推荐你用 <code>yii2-</code> 作为你的包名的前缀，表示它是 Yii 2 的扩展，例如，<code>myname/yii2-mywidget</code>。
+这更便于用户辨别是否是 Yii 2 的扩展。</p>
+<h4>包类型  <span id="package-type"></span><a href="#package-type" class="hashlink">&para;</a></h4><p>将你的扩展指明为 <code>yii2-extension</code> 类型很重要，以便安装的时候
+能被识别出是一个 Yii 扩展。</p>
+<p>当用户运行 <code>composer install</code> 安装一个扩展时， <code>vendor/yiisoft/extensions.php</code> 
+文件会被自动更新使之包含新扩展的信息。从该文件中， Yii 应用程序就能知道安装了
+哪些扩展 (这些信息可通过 <a href="./yii-base-application.html#$extensions-detail">yii\base\Application::$extensions</a> 访问)。</p>
+<h4>依赖  <span id="dependencies"></span><a href="#dependencies" class="hashlink">&para;</a></h4><p>你的扩展依赖于 Yii （理所当然）。因此你应当在 <code>composer.json</code> 文件中列出它
+(<code>yiisoft/yii2</code>)。如果你的扩展还依赖其他的扩展或者是第三方库，你也要一并列出来。
+确定你也为每一个依赖的包列出了适当的版本约束条件 (比如 <code>1.*</code>, <code>@stable</code>) 。
+当你发布一个稳定版本时，你所依赖的包也应当使用稳定版本。</p>
+<p>大多数 JavaScript/CSS 包是用 <a href="http://bower.io/">Bower</a> 来管理的，而非 Composer。你可使用 
+<a href="https://github.com/francoispluchino/composer-asset-plugin">Composer asset 插件</a> 使之可以
+通过 Composer 来管理这类包。如果你的扩展依赖 Bower 软件包，你可以如下例所示那样简单地
+在 <code>composer.json</code> 文件的依赖中列出它。</p>
+<pre><code class="hljs json language-json">{
+    // package dependencies
+    "<span class="hljs-attribute">require</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">bower-asset/jquery</span>": <span class="hljs-value"><span class="hljs-string">"&gt;=1.11.*"</span>
+    </span>}
+</span>}
+</code></pre>
+<p>上述代码表明该扩展依赖于 <code>jquery</code> Bower 包。一般来说，你可以在 <code>composer.json</code> 
+中用 <code>bower-asset/PackageName</code> 指定 Bower 包，用 <code>npm-asset/PackageName</code> 指定 NPM 包。
+当 Compower 安装 Bower 和 NPM 软件包时，包的内容默认会分别安装到 <code>@vendor/bower/PackageName</code>
+和 <code>@vendor/npm/Packages</code> 下。这两个目录还可以分别用 <code>@bower/PackageName</code> 
+和 <code>@npm/PackageName</code> 别名指向。</p>
+<p>关于 asset 管理的详细情况，请参照 <a href="guide-structure-assets.html#bower-npm-assets">Assets</a> 章节。</p>
+<h4>类的自动加载  <span id="class-autoloading"></span><a href="#class-autoloading" class="hashlink">&para;</a></h4><p>为使你的类能够被 Yii 的类自动加载器或者 Composer 的类自动加载器自动加载，你应当在
+ <code>composer.json</code> 中指定 <code>autoload</code> 条目，如下所示：</p>
+<pre><code class="hljs json language-json">{
+    // ....
+
+    "<span class="hljs-attribute">autoload</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">psr-4</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">yii\\imagine\\</span>": <span class="hljs-value"><span class="hljs-string">""</span>
+        </span>}
+    </span>}
+</span>}
+</code></pre>
+<p>你可以列出一个或者多个根命名空间和它们的文件目录。</p>
+<p>当扩展安装到应用中后，Yii 将为每个所列出根命名空间创建一个
+<a href="guide-concept-aliases.html#extension-aliases">别名</a> 指向命名空间对应的目录。
+例如，上述的 <code>autoload</code> 条目声明将对应于别名 <code>@yii/imagine</code>。</p>
+<h3>推荐的做法  <span id="recommended-practices"></span><a href="#recommended-practices" class="hashlink">&para;</a></h3><p>扩展意味着会被其他人使用，你在开发中通常需要额外的付出。
+下面我们介绍一些通用的及推荐的做法，以创建高品质的扩展。</p>
+<h4>命名空间  <span id="namespaces"></span><a href="#namespaces" class="hashlink">&para;</a></h4><p>为避免冲突以及使你的扩展中的类能被自动加载，你的类应当使用命名空间，
+并使类的命名符合 <a href="http://www.php-fig.org/psr/psr-4/">PSR-4 standard</a> 或者
+<a href="http://www.php-fig.org/psr/psr-0/">PSR-0 standard</a> 标准。</p>
+<p>你的类的命名空间应以 <code>vendorName\extensionName</code> 起始，其中 <code>extensionName</code> 
+和项目名相同，除了它没有 <code>yii2-</code> 前缀外。例如，对 <code>yiisoft/yii2-imagine</code> 扩展
+来说，我们用 <code>yii\imagine</code> 作为它的类的命名空间。</p>
+<p>不要使用 <code>yii</code>、<code>yii2</code> 或者 <code>yiisoft</code> 作为你的 vendor 名。这些名称已由 Yii 内核代码预留使用了。</p>
+<h4>类的自举引导  <span id="bootstrapping-classes"></span><a href="#bootstrapping-classes" class="hashlink">&para;</a></h4><p>有时候，你可能想让你的扩展在应用的 <a href="guide-runtime-bootstrapping.html">自举过程</a> 中执行一些代码。
+例如，你的扩展可能想响应应用的 <code>beginRequest</code> 事件，做一些环境的设置工作。
+虽然你可以指导扩展的使用者显式地将你的扩展中的事件句柄附加（绑定）到 <code>beginRequest</code> 事件，
+但是更好的方法是自动完成。</p>
+<p>为实现该目标，你可以创建一个所谓 <em>bootstrapping class</em> （自举类）实现 <a href="./yii-base-bootstrapinterface.html">yii\base\BootstrapInterface</a> 接口。
+例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">myname</span>\<span class="hljs-title">mywidget</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">BootstrapInterface</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Application</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyBootstrapClass</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">BootstrapInterface</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bootstrap</span><span class="hljs-params">(<span class="hljs-variable">$app</span>)</span>
+    </span>{
+        <span class="hljs-variable">$app</span>-&gt;on(Application::EVENT_BEFORE_REQUEST, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+             <span class="hljs-comment">// do something here</span>
+        });
+    }
+}
+</code></pre>
+<p>然后你将这个类在 <code>composer.json</code> 文件中列出来，如下所示，</p>
+<pre><code class="hljs json language-json">{
+    // ...
+
+    "<span class="hljs-attribute">extra</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">bootstrap</span>": <span class="hljs-value"><span class="hljs-string">"myname\\mywidget\\MyBootstrapClass"</span>
+    </span>}
+</span>}
+</code></pre>
+<p>当这个扩展安装到应用后，Yii 将在每一个请求的自举过程中
+自动实例化自举类并调用其 <a href="./yii-base-bootstrapinterface.html#bootstrap()-detail">bootstrap()</a> 
+方法。</p>
+<h4>操作数据库  <span id="working-with-databases"></span><a href="#working-with-databases" class="hashlink">&para;</a></h4><p>你的扩展可能要存取数据库。不要假设使用你的扩展的应用总是用 
+<code>Yii::$db</code> 作为数据库连接。你应当在需要访问数据库的类中申明一个 <code>db</code> 属性。
+这个属性允许你的扩展的用户可定制你的扩展使用哪个 DB 连接。例如，
+你可以参考 <a href="./yii-caching-dbcache.html">yii\caching\DbCache</a> 类看一下它是如何申明和使用 <code>db</code> 属性的。</p>
+<p>如果你的扩展需要创建特定的数据库表，或者修改数据库结构，你应当</p>
+<ul>
+<li>提供 <a href="guide-db-migrations.html">数据迁移</a> 来操作数据库的结构修改，而不是使用SQL文本文件；</li>
+<li>尽量使迁移文件适用于不同的 DBMS；</li>
+<li>在迁移文件中避免使用 <a href="guide-db-active-record.html">Active Record</a>。</li>
+</ul>
+<h4>使用 Assets  <span id="using-assets"></span><a href="#using-assets" class="hashlink">&para;</a></h4><p>如果你的扩展是挂件或者模块类型，它有可能需要使用一些 <a href="guide-structure-assets.html">assets</a> 。
+例如，一个模块可能要显示一些包含图片，JavaScript 和 CSS 的页面。因为扩展的文件
+都是放在同一个目录之下，安装之后 Web 无法读取，你有两个选择使得这些 asset 文件目录
+可以通过 Web 读取：</p>
+<ul>
+<li>让扩展的用户手动将这些 asset 文件拷贝到特定的 Web 可以读取的文件夹；</li>
+<li>申明一个 <a href="guide-structure-assets.html">asset bundle</a> 并依靠 asset 发布机制自动将这些文件（asset bundle 中列出的文件）
+拷贝到 Web 可读的文件夹。</li>
+</ul>
+<p>我们推荐你使用第二种方法，以便其他人能更容易使用你的扩展。
+更详细的关于如何处理 assets ，请参照 <a href="guide-structure-assets.html">Assets</a> 章节。</p>
+<h4>国际化和本地化  <span id="i18n-l10n"></span><a href="#i18n-l10n" class="hashlink">&para;</a></h4><p>你的扩展可能会在支持不同语言的应用中使用！因此，如果你的扩展要显示内容给终端用户，
+你应当试着实现 <a href="guide-tutorial-i18n.html">国际化和本地化</a>，特别地，</p>
+<ul>
+<li>如果扩展为终端用户显示信息，这些信息应该用 <code>Yii::t()</code> 
+包装起来，以便可以进行翻译。
+只给开发者参考的信息（如内部异常信息）不需要做翻译。</li>
+<li>如果扩展显示数字、日期等，你应该用 <a href="./yii-i18n-formatter.html">yii\i18n\Formatter</a> 
+中适当的格式化规则做格式化处理。</li>
+</ul>
+<p>更详细的信息，请参照 <a href="guide-tutorial-i18n.html">Internationalization</a> 章节。</p>
+<h4>测试  <span id="testing"></span><a href="#testing" class="hashlink">&para;</a></h4><p>你一定想让你的扩展可以无暇地运行而不会给其他人带来问题和麻烦。为达到这个目的，
+你应当在公开发布前做测试。</p>
+<p>推荐你创建测试用例，做全面覆盖的测试你的扩展，而不只是依赖于手动测试。
+每次发布新版本前，你只要简单地运行这些测试用例确保一切完好。
+Yii 提供了测试支持，使你更容易写单元测试、验收测试和功能测试。
+详情请参照 <a href="guide-test-overview.html">Testing</a> 章节。</p>
+<h4>版本控制  <span id="versioning"></span><a href="#versioning" class="hashlink">&para;</a></h4><p>你应该为每一个扩展定一个版本号（如 <code>1.0.1</code>）。我们推荐你命名版本号时参照
+<a href="http://semver.org">semantic versioning</a> 决定用什么样的版本号。</p>
+<h4>发布  <span id="releasing"></span><a href="#releasing" class="hashlink">&para;</a></h4><p>为使其他人知道你的扩展，你应该公开发布。</p>
+<p>如果你首次发布一个扩展，你应该在 Composer 代码库中注册它，例如
+<a href="https://packagist.org/">Packagist</a>。之后，你所需要做的仅仅是在
+版本管理库中创建一个 tag （如<code>v1.0.1</code>），然后通知 Composer 代码库。
+其他人就能查找到这个新的发布了，并可通过 Composer 代码库安装和更新该扩展。</p>
+<p>在发布你的扩展时，除了代码文件，你还应该考虑包含如下内容
+帮助其他人了解和使用你的扩展：</p>
+<ul>
+<li>根目录下的 readme 文件：它描述你的扩展是干什么的以及如何安装和使用。
+我们推荐你用 <a href="http://daringfireball.net/projects/markdown/">Markdown</a> 的格式
+来写并将文件命名为 <code>readme.md</code>。</li>
+<li>根目录下的修改日志文件：它列举每个版本的发布做了哪些更改。该文件可以用 Markdown 根式
+编写并命名为 <code>changelog.md</code>。</li>
+<li>根目录下的升级文件：它给出如何从其他就版本升级该扩展的指导。该文件可以用 Markdown 根式
+编写并命名为 <code>changelog.md</code>。</li>
+<li>入门指南、演示代码、截屏图示等：如果你的扩展提供了许多功能，在 readme 文件中不能完整
+描述时，就要用到这些文件。</li>
+<li>API 文档：你的代码应当做好文档，让其他人更容易阅读和理解。
+你可以参照 <a href="https://github.com/yiisoft/yii2/blob/master/framework/base/Object.php">Object class file</a>
+学习如何为你的代码做文档。</li>
+</ul>
+<blockquote class="info"><p><strong>信息： </strong>你的代码注释可以写成 Markdown 格式。<code>yiisoft/yii2-apidoc</code> 扩展为你提供了一个从你的
+  代码注释生成漂亮的 API 文档。</p>
+</blockquote>
+<blockquote class="info"><p><strong>信息： </strong>虽然不做要求，我们还是建议你的扩展遵循某个编码规范。
+  你可以参照 <a href="https://github.com/yiisoft/yii2/wiki/Core-framework-code-style">core framework code style</a>。</p>
+</blockquote>
+<h2>核心扩展  <span id="core-extensions"></span><a href="#core-extensions" class="hashlink">&para;</a></h2><p>Yii 提供了下列核心扩展，由 Yii 开发团队开发和维护。这些扩展全都在
+<a href="https://packagist.org/">Packagist</a> 中注册，并像 <a href="#using-extensions">Using Extensions</a> 章节描述
+的那样容易安装。</p>
+<ul>
+<li><a href="https://github.com/yiisoft/yii2-apidoc">yiisoft/yii2-apidoc</a>：
+提供了一个可扩展的、高效的 API 文档生成器。核心框架的 API 
+文档也是用它生成的。</li>
+<li><a href="https://github.com/yiisoft/yii2-authclient">yiisoft/yii2-authclient</a>：
+提供了一套常用的认证客户端，例如 Facebook OAuth2 客户端、GitHub OAuth2 客户端。</li>
+<li><a href="https://github.com/yiisoft/yii2-bootstrap">yiisoft/yii2-bootstrap</a>：
+提供了一套挂件，封装了 <a href="http://getbootstrap.com/">Bootstrap</a> 的组件和插件。</li>
+<li><a href="https://github.com/yiisoft/yii2-codeception">yiisoft/yii2-codeception</a>：
+提供了基于 <a href="http://codeception.com/">Codeception</a> 的测试支持。</li>
+<li><a href="https://github.com/yiisoft/yii2-debug">yiisoft/yii2-debug</a>：
+提供了对 Yii 应用的调试支持。当使用该扩展是，
+在每个页面的底部将显示一个调试工具条。
+该扩展还提供了一个独立的页面，以显示更详细的调试信息。</li>
+<li><a href="https://github.com/yiisoft/yii2-elasticsearch">yiisoft/yii2-elasticsearch</a>：
+提供对 <a href="http://www.elasticsearch.org/">Elasticsearch</a> 的使用支持。它包含基本的查询/搜索支持，
+并实现了 <a href="guide-db-active-record.html">Active Record</a> 模式让你可以将活动记录
+存储在 Elasticsearch 中。</li>
+<li><a href="https://github.com/yiisoft/yii2-faker">yiisoft/yii2-faker</a>：
+提供了使用 <a href="https://github.com/fzaninotto/Faker">Faker</a> 的支持，为你生成模拟数据。</li>
+<li><a href="https://github.com/yiisoft/yii2-gii">yiisoft/yii2-gii</a>：
+提供了一个基于页面的代码生成器，具有高可扩展性，并能用来快速生成模型、
+表单、模块、CRUD 等。</li>
+<li><a href="https://github.com/yiisoft/yii2-httpclient">yiisoft/yii2-httpclient</a>：
+提供 HTTP 客户端。</li>
+<li><a href="https://github.com/yiisoft/yii2-imagine">yiisoft/yii2-imagine</a>：
+提供了基于 <a href="http://imagine.readthedocs.org/">Imagine</a> 的常用图像处理功能。</li>
+<li><a href="https://github.com/yiisoft/yii2-jui">yiisoft/yii2-jui</a>：
+提供了一套封装 <a href="http://jqueryui.com/">JQuery UI</a> 的挂件以及它们的交互。</li>
+<li><a href="https://github.com/yiisoft/yii2-mongodb">yiisoft/yii2-mongodb</a>：
+提供了对 <a href="http://www.mongodb.org/">MongoDB</a> 的使用支持。它包含基本
+的查询、活动记录、数据迁移、缓存、代码生成等特性。</li>
+<li><a href="https://www.yiiframework.com/extension/yiisoft/yii2-queue">yiisoft/yii2-queue</a>：
+通过队列异步提供运行任务的支持。
+它支持基于 DB，Redis，RabbitMQ，AMQP，Beanstalk 和 Gearman 的队列。</li>
+<li><a href="https://github.com/yiisoft/yii2-redis">yiisoft/yii2-redis</a>：
+提供了对 <a href="http://redis.io/">redis</a> 的使用支持。它包含基本的
+查询、活动记录、缓存等特性。</li>
+<li><a href="https://www.yiiframework.com/extension/yiisoft/yii2-shell">yiisoft/yii2-shell</a>：
+提供基于 <a href="http://psysh.org/">psysh</a> 的交互式 shell。</li>
+<li><a href="https://github.com/yiisoft/yii2-smarty">yiisoft/yii2-smarty</a>：
+提供了一个基于 <a href="http://www.smarty.net/">Smarty</a> 的模板引擎。</li>
+<li><a href="https://github.com/yiisoft/yii2-sphinx">yiisoft/yii2-sphinx</a>：
+提供了对 <a href="http://sphinxsearch.com">Sphinx</a> 的使用支持。它包含基本的
+查询、活动记录、代码生成等特性。</li>
+<li><a href="https://github.com/yiisoft/yii2-swiftmailer">yiisoft/yii2-swiftmailer</a>：
+提供了基于 <a href="http://swiftmailer.org/">swiftmailer</a> 的邮件发送功能。</li>
+<li><a href="https://github.com/yiisoft/yii2-twig">yiisoft/yii2-twig</a>：
+提供了一个基于 <a href="http://twig.sensiolabs.org/">Twig</a> 的模板引擎。</li>
+</ul>
+<p>以下官方扩展适用于 Yii 2.1 及以上版本。
+您不需要为 Yii 2.0 安装它们，因为它们包含在核心框架中。</p>
+<ul>
+<li><a href="https://www.yiiframework.com/extension/yiisoft/yii2-captcha">yiisoft/yii2-captcha</a>：
+提供 CAPTCHA。</li>
+<li><a href="https://www.yiiframework.com/extension/yiisoft/yii2-jquery">yiisoft/yii2-jquery</a>：
+为 <a href="https://jquery.com/">jQuery</a> 提供支持。</li>
+<li><a href="https://www.yiiframework.com/extension/yiisoft/yii2-maskedinput">yiisoft/yii2-maskedinput</a>：
+提供基于 <a href="http://robinherbots.github.io/Inputmask/">jQuery Input Mask plugin</a> 的格式化输入小部件。</li>
+<li><a href="https://www.yiiframework.com/extension/yiisoft/yii2-mssql">yiisoft/yii2-mssql</a>：
+提供对使用 <a href="https://www.microsoft.com/sql-server/">MSSQL</a> 的支持。</li>
+<li><a href="https://www.yiiframework.com/extension/yiisoft/yii2-oracle">yiisoft/yii2-oracle</a>：
+提供对使用 <a href="https://www.oracle.com/">Oracle</a> 的支持。</li>
+<li><a href="https://www.yiiframework.com/extension/yiisoft/yii2-rest">yiisoft/yii2-rest</a>：
+提供对 REST API 的支持。</li>
+</ul>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:19 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

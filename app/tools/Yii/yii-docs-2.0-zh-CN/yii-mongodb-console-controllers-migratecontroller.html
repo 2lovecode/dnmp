@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>MigrateController, yii\mongodb\console\controllers\MigrateController - Yii Framework 2.0 API Documentation</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w16415" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w16415-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Yii Framework 2.0 API Documentation</a></div><div id="w16415-collapse" class="collapse navbar-collapse"><ul id="w16416" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w16417" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-3">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-16406" data-toggle="collapse" data-parent="#navigation">yii\mongodb <b class="caret"></b></a><div id="navigation-16406" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-activefixture.html">ActiveFixture</a>
+<a class="list-group-item" href="./yii-mongodb-activequery.html">ActiveQuery</a>
+<a class="list-group-item" href="./yii-mongodb-activerecord.html">ActiveRecord</a>
+<a class="list-group-item" href="./yii-mongodb-batchqueryresult.html">BatchQueryResult</a>
+<a class="list-group-item" href="./yii-mongodb-cache.html">Cache</a>
+<a class="list-group-item" href="./yii-mongodb-collection.html">Collection</a>
+<a class="list-group-item" href="./yii-mongodb-command.html">Command</a>
+<a class="list-group-item" href="./yii-mongodb-connection.html">Connection</a>
+<a class="list-group-item" href="./yii-mongodb-database.html">Database</a>
+<a class="list-group-item" href="./yii-mongodb-exception.html">Exception</a>
+<a class="list-group-item" href="./yii-mongodb-logbuilder.html">LogBuilder</a>
+<a class="list-group-item" href="./yii-mongodb-migration.html">Migration</a>
+<a class="list-group-item" href="./yii-mongodb-query.html">Query</a>
+<a class="list-group-item" href="./yii-mongodb-querybuilder.html">QueryBuilder</a>
+<a class="list-group-item" href="./yii-mongodb-session.html">Session</a></div>
+<a class="list-group-item active" href="#navigation-16407" data-toggle="collapse" data-parent="#navigation">yii\mongodb\console\controllers <b class="caret"></b></a><div id="navigation-16407" class="submenu panel-collapse collapse in"><a class="list-group-item active" href="./yii-mongodb-console-controllers-migratecontroller.html">MigrateController</a></div>
+<a class="list-group-item" href="#navigation-16408" data-toggle="collapse" data-parent="#navigation">yii\mongodb\debug <b class="caret"></b></a><div id="navigation-16408" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-debug-explainaction.html">ExplainAction</a>
+<a class="list-group-item" href="./yii-mongodb-debug-mongodbpanel.html">MongoDbPanel</a></div>
+<a class="list-group-item" href="#navigation-16409" data-toggle="collapse" data-parent="#navigation">yii\mongodb\file <b class="caret"></b></a><div id="navigation-16409" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-file-activequery.html">ActiveQuery</a>
+<a class="list-group-item" href="./yii-mongodb-file-activerecord.html">ActiveRecord</a>
+<a class="list-group-item" href="./yii-mongodb-file-collection.html">Collection</a>
+<a class="list-group-item" href="./yii-mongodb-file-cursor.html">Cursor</a>
+<a class="list-group-item" href="./yii-mongodb-file-download.html">Download</a>
+<a class="list-group-item" href="./yii-mongodb-file-query.html">Query</a>
+<a class="list-group-item" href="./yii-mongodb-file-streamwrapper.html">StreamWrapper</a>
+<a class="list-group-item" href="./yii-mongodb-file-upload.html">Upload</a></div>
+<a class="list-group-item" href="#navigation-16410" data-toggle="collapse" data-parent="#navigation">yii\mongodb\gii\model <b class="caret"></b></a><div id="navigation-16410" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-gii-model-generator.html">Generator</a></div>
+<a class="list-group-item" href="#navigation-16411" data-toggle="collapse" data-parent="#navigation">yii\mongodb\i18n <b class="caret"></b></a><div id="navigation-16411" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-i18n-mongodbmessagesource.html">MongoDbMessageSource</a></div>
+<a class="list-group-item" href="#navigation-16412" data-toggle="collapse" data-parent="#navigation">yii\mongodb\log <b class="caret"></b></a><div id="navigation-16412" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-log-mongodbtarget.html">MongoDbTarget</a></div>
+<a class="list-group-item" href="#navigation-16413" data-toggle="collapse" data-parent="#navigation">yii\mongodb\rbac <b class="caret"></b></a><div id="navigation-16413" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-rbac-mongodbmanager.html">MongoDbManager</a>
+<a class="list-group-item" href="./yii-mongodb-rbac-permission.html">Permission</a>
+<a class="list-group-item" href="./yii-mongodb-rbac-role.html">Role</a></div>
+<a class="list-group-item" href="#navigation-16414" data-toggle="collapse" data-parent="#navigation">yii\mongodb\validators <b class="caret"></b></a><div id="navigation-16414" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-validators-mongodatevalidator.html">MongoDateValidator</a>
+<a class="list-group-item" href="./yii-mongodb-validators-mongoidvalidator.html">MongoIdValidator</a></div></div>    </div>
+    <div class="col-md-9 api-content" role="main">
+        <h1>Class yii\mongodb\console\controllers\MigrateController</h1>
+<div class="top-nav">
+    <a href="index.html">All Classes</a>
+            | <a href="#properties">Properties</a>
+                | <a href="#methods">Methods</a>
+                | <a href="#events">Events</a>
+                | <a href="#constants">Constants</a>
+    </div>
+
+<table class="summaryTable docClass table table-bordered">
+    <colgroup>
+        <col class="col-name" />
+        <col class="col-value" />
+    </colgroup>
+            <tr><th>Inheritance</th><td><a href="yii-mongodb-console-controllers-migratecontroller.html">yii\mongodb\console\controllers\MigrateController</a> &raquo;
+<a href="yii-console-controllers-basemigratecontroller.html">yii\console\controllers\BaseMigrateController</a> &raquo;
+<a href="yii-console-controller.html">yii\console\Controller</a> &raquo;
+<a href="yii-base-controller.html">yii\base\Controller</a> &raquo;
+<a href="yii-base-component.html">yii\base\Component</a> &raquo;
+<a href="yii-base-baseobject.html">yii\base\BaseObject</a></td></tr>
+                <tr><th>Implements</th><td><a href="yii-base-configurable.html">yii\base\Configurable</a>, <a href="yii-base-viewcontextinterface.html">yii\base\ViewContextInterface</a></td></tr>
+                                    <tr><th>Available since version</th><td>2.0</td></tr>
+                    <tr>
+          <th>Source Code</th>
+          <td><a href="https://github.com/yiisoft/yii2-mongodb/blob/master/console/controllers/MigrateController.php">https://github.com/yiisoft/yii2-mongodb/blob/master/console/controllers/MigrateController.php</a></td>
+        </tr>
+    </table>
+
+<div class="class-description">
+    <p><strong>Manages application MongoDB migrations.</strong></p>
+    <p>This is an analog of <a href="yii-console-controllers-migratecontroller.html">yii\console\controllers\MigrateController</a> for MongoDB.</p>
+<p>This command provides support for tracking the migration history, upgrading
+or downloading with migrations, and creating new migration skeletons.</p>
+<p>The migration history is stored in a MongoDB collection named
+as <a href="yii-mongodb-console-controllers-migratecontroller.html#$migrationCollection-detail">$migrationCollection</a>. This collection will be automatically created the first time
+this command is executed, if it does not exist.</p>
+<p>In order to enable this command you should adjust the configuration of your console application:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'controllerMap'</span> =&gt; [
+        <span class="hljs-string">'mongodb-migrate'</span> =&gt; <span class="hljs-string">'yii\mongodb\console\controllers\MigrateController'</span>
+    ],
+];
+</code></pre>
+<p>Below are some common usages of this command:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment"># creates a new migration named 'create_user_collection'</span>
+yii mongodb-migrate/create create_user_collection
+
+<span class="hljs-comment"># applies ALL new migrations</span>
+yii mongodb-migrate
+
+<span class="hljs-comment"># reverts the last applied migration</span>
+yii mongodb-migrate/down
+</code></pre>
+<p>Since 2.1.2, in case of usage Yii version &gt;= 2.0.10, you can use namespaced migrations. In order to enable this
+feature you should configure <a href="yii-console-controllers-basemigratecontroller.html#$migrationNamespaces-detail">$migrationNamespaces</a> property for the controller at application configuration:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'controllerMap'</span> =&gt; [
+        <span class="hljs-string">'mongodb-migrate'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\mongodb\console\controllers\MigrateController'</span>,
+            <span class="hljs-string">'migrationNamespaces'</span> =&gt; [
+                <span class="hljs-string">'app\migrations'</span>,
+                <span class="hljs-string">'some\extension\migrations'</span>,
+            ],
+            <span class="hljs-comment">//'migrationPath' =&gt; null, // allows to disable not namespaced migration completely</span>
+        ],
+    ],
+];
+</code></pre>
+
+    </div>
+
+<a id="properties"></a>
+
+<div class="summary doc-property">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-property" />
+    <col class="col-type" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr class="inherited" id="$action">
+        <td><a href="yii-base-controller.html#$action-detail">$action</a></td>
+        <td><a href="yii-base-action.html">yii\base\Action</a></td>
+        <td>The action that is currently being executed.</td>
+        <td><a href="yii-base-controller.html">yii\base\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="$behaviors">
+        <td><a href="yii-base-component.html#$behaviors-detail">$behaviors</a></td>
+        <td><a href="yii-base-behavior.html">yii\base\Behavior</a>[]</td>
+        <td>List of behaviors attached to this component</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="$color">
+        <td><a href="yii-console-controller.html#$color-detail">$color</a></td>
+        <td><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+        <td>Whether to enable ANSI color in the output.</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="$compact">
+        <td><a href="yii-console-controllers-basemigratecontroller.html#$compact-detail">$compact</a></td>
+        <td><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+        <td>Indicates whether the console output should be compacted.</td>
+        <td><a href="yii-console-controllers-basemigratecontroller.html">yii\console\controllers\BaseMigrateController</a></td>
+    </tr>
+            <tr id="$db">
+        <td><a href="yii-mongodb-console-controllers-migratecontroller.html#$db-detail">$db</a></td>
+        <td><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a>|<a href="http://www.php.net/language.types.string">string</a></td>
+        <td>The DB connection object or the application
+component ID of the DB connection.</td>
+        <td><a href="yii-mongodb-console-controllers-migratecontroller.html">yii\mongodb\console\controllers\MigrateController</a></td>
+    </tr>
+            <tr class="inherited" id="$defaultAction">
+        <td><a href="yii-console-controllers-basemigratecontroller.html#$defaultAction-detail">$defaultAction</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>The default command action.</td>
+        <td><a href="yii-console-controllers-basemigratecontroller.html">yii\console\controllers\BaseMigrateController</a></td>
+    </tr>
+            <tr class="inherited" id="$help">
+        <td><a href="yii-console-controller.html#$help-detail">$help</a></td>
+        <td><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+        <td>Whether to display help information about current command.</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="$helpSummary">
+        <td><a href="yii-console-controller.html#$helpSummary-detail">$helpSummary</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td></td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="$id">
+        <td><a href="yii-base-controller.html#$id-detail">$id</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>The ID of this controller.</td>
+        <td><a href="yii-base-controller.html">yii\base\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="$interactive">
+        <td><a href="yii-console-controller.html#$interactive-detail">$interactive</a></td>
+        <td><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+        <td>Whether to run the command interactively.</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="$layout">
+        <td><a href="yii-base-controller.html#$layout-detail">$layout</a></td>
+        <td><a href="http://www.php.net/language.types.null">null</a>|<a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.boolean">false</a></td>
+        <td>The name of the layout to be applied to this controller's views.</td>
+        <td><a href="yii-base-controller.html">yii\base\Controller</a></td>
+    </tr>
+            <tr id="$migrationCollection">
+        <td><a href="yii-mongodb-console-controllers-migratecontroller.html#$migrationCollection-detail">$migrationCollection</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.array">array</a></td>
+        <td>The name of the collection for keeping applied migration information.</td>
+        <td><a href="yii-mongodb-console-controllers-migratecontroller.html">yii\mongodb\console\controllers\MigrateController</a></td>
+    </tr>
+            <tr class="inherited" id="$migrationNamespaces">
+        <td><a href="yii-console-controllers-basemigratecontroller.html#$migrationNamespaces-detail">$migrationNamespaces</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>List of namespaces containing the migration classes.</td>
+        <td><a href="yii-console-controllers-basemigratecontroller.html">yii\console\controllers\BaseMigrateController</a></td>
+    </tr>
+            <tr class="inherited" id="$migrationPath">
+        <td><a href="yii-console-controllers-basemigratecontroller.html#$migrationPath-detail">$migrationPath</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.array">array</a></td>
+        <td>The directory containing the migration classes.</td>
+        <td><a href="yii-console-controllers-basemigratecontroller.html">yii\console\controllers\BaseMigrateController</a></td>
+    </tr>
+            <tr class="inherited" id="$module">
+        <td><a href="yii-base-controller.html#$module-detail">$module</a></td>
+        <td><a href="yii-base-module.html">yii\base\Module</a></td>
+        <td>The module that this controller belongs to.</td>
+        <td><a href="yii-base-controller.html">yii\base\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="$modules">
+        <td><a href="yii-base-controller.html#$modules-detail">$modules</a></td>
+        <td><a href="yii-base-module.html">yii\base\Module</a>[]</td>
+        <td>All ancestor modules that this controller is located within.</td>
+        <td><a href="yii-base-controller.html">yii\base\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="$passedOptionValues">
+        <td><a href="yii-console-controller.html#$passedOptionValues-detail">$passedOptionValues</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>The properties corresponding to the passed options</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="$passedOptions">
+        <td><a href="yii-console-controller.html#$passedOptions-detail">$passedOptions</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>The names of the options passed during execution</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="$route">
+        <td><a href="yii-base-controller.html#$route-detail">$route</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>The route (module ID, controller ID and action ID) of the current request.</td>
+        <td><a href="yii-base-controller.html">yii\base\Controller</a></td>
+    </tr>
+            <tr id="$templateFile">
+        <td><a href="yii-mongodb-console-controllers-migratecontroller.html#$templateFile-detail">$templateFile</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>The template file for generating new migrations.</td>
+        <td><a href="yii-mongodb-console-controllers-migratecontroller.html">yii\mongodb\console\controllers\MigrateController</a></td>
+    </tr>
+            <tr class="inherited" id="$uniqueId">
+        <td><a href="yii-base-controller.html#$uniqueId-detail">$uniqueId</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>The controller ID that is prefixed with the module ID (if any).</td>
+        <td><a href="yii-base-controller.html">yii\base\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="$view">
+        <td><a href="yii-base-controller.html#$view-detail">$view</a></td>
+        <td><a href="yii-base-view.html">yii\base\View</a>|<a href="yii-web-view.html">yii\web\View</a></td>
+        <td>The view object that can be used to render views or view files.</td>
+        <td><a href="yii-base-controller.html">yii\base\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="$viewPath">
+        <td><a href="yii-base-viewcontextinterface.html#$viewPath-detail">$viewPath</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>The view path that may be prefixed to a relative view name.</td>
+        <td><a href="yii-base-viewcontextinterface.html">yii\base\ViewContextInterface</a></td>
+    </tr>
+    </table>
+</div>
+
+<a id="methods"></a>
+
+<div class="summary doc-method">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr class="inherited" id="__call()">
+        <td><a href="yii-base-component.html#__call()-detail">__call()</a></td>
+        <td>Calls the named method which is not a class method.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="__clone()">
+        <td><a href="yii-base-component.html#__clone()-detail">__clone()</a></td>
+        <td>This method is called after the object is created by cloning an existing one.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="__construct()">
+        <td><a href="yii-base-controller.html#__construct()-detail">__construct()</a></td>
+        <td></td>
+        <td><a href="yii-base-controller.html">yii\base\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="__get()">
+        <td><a href="yii-base-component.html#__get()-detail">__get()</a></td>
+        <td>Returns the value of a component property.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="__isset()">
+        <td><a href="yii-base-component.html#__isset()-detail">__isset()</a></td>
+        <td>Checks if a property is set, i.e. defined and not null.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="__set()">
+        <td><a href="yii-base-component.html#__set()-detail">__set()</a></td>
+        <td>Sets the value of a component property.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="__unset()">
+        <td><a href="yii-base-component.html#__unset()-detail">__unset()</a></td>
+        <td>Sets a component property to be null.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="actionCreate()">
+        <td><a href="yii-console-controllers-basemigratecontroller.html#actionCreate()-detail">actionCreate()</a></td>
+        <td>Creates a new migration.</td>
+        <td><a href="yii-console-controllers-basemigratecontroller.html">yii\console\controllers\BaseMigrateController</a></td>
+    </tr>
+            <tr class="inherited" id="actionDown()">
+        <td><a href="yii-console-controllers-basemigratecontroller.html#actionDown()-detail">actionDown()</a></td>
+        <td>Downgrades the application by reverting old migrations.</td>
+        <td><a href="yii-console-controllers-basemigratecontroller.html">yii\console\controllers\BaseMigrateController</a></td>
+    </tr>
+            <tr class="inherited" id="actionFresh()">
+        <td><a href="yii-console-controllers-basemigratecontroller.html#actionFresh()-detail">actionFresh()</a></td>
+        <td>Truncates the whole database and starts the migration from the beginning.</td>
+        <td><a href="yii-console-controllers-basemigratecontroller.html">yii\console\controllers\BaseMigrateController</a></td>
+    </tr>
+            <tr class="inherited" id="actionHistory()">
+        <td><a href="yii-console-controllers-basemigratecontroller.html#actionHistory()-detail">actionHistory()</a></td>
+        <td>Displays the migration history.</td>
+        <td><a href="yii-console-controllers-basemigratecontroller.html">yii\console\controllers\BaseMigrateController</a></td>
+    </tr>
+            <tr class="inherited" id="actionMark()">
+        <td><a href="yii-console-controllers-basemigratecontroller.html#actionMark()-detail">actionMark()</a></td>
+        <td>Modifies the migration history to the specified version.</td>
+        <td><a href="yii-console-controllers-basemigratecontroller.html">yii\console\controllers\BaseMigrateController</a></td>
+    </tr>
+            <tr class="inherited" id="actionNew()">
+        <td><a href="yii-console-controllers-basemigratecontroller.html#actionNew()-detail">actionNew()</a></td>
+        <td>Displays the un-applied new migrations.</td>
+        <td><a href="yii-console-controllers-basemigratecontroller.html">yii\console\controllers\BaseMigrateController</a></td>
+    </tr>
+            <tr class="inherited" id="actionRedo()">
+        <td><a href="yii-console-controllers-basemigratecontroller.html#actionRedo()-detail">actionRedo()</a></td>
+        <td>Redoes the last few migrations.</td>
+        <td><a href="yii-console-controllers-basemigratecontroller.html">yii\console\controllers\BaseMigrateController</a></td>
+    </tr>
+            <tr class="inherited" id="actionTo()">
+        <td><a href="yii-console-controllers-basemigratecontroller.html#actionTo()-detail">actionTo()</a></td>
+        <td>Upgrades or downgrades till the specified version.</td>
+        <td><a href="yii-console-controllers-basemigratecontroller.html">yii\console\controllers\BaseMigrateController</a></td>
+    </tr>
+            <tr class="inherited" id="actionUp()">
+        <td><a href="yii-console-controllers-basemigratecontroller.html#actionUp()-detail">actionUp()</a></td>
+        <td>Upgrades the application by applying new migrations.</td>
+        <td><a href="yii-console-controllers-basemigratecontroller.html">yii\console\controllers\BaseMigrateController</a></td>
+    </tr>
+            <tr class="inherited" id="actions()">
+        <td><a href="yii-base-controller.html#actions()-detail">actions()</a></td>
+        <td>Declares external actions for the controller.</td>
+        <td><a href="yii-base-controller.html">yii\base\Controller</a></td>
+    </tr>
+                <tr class="inherited" id="afterAction()">
+        <td><a href="yii-base-controller.html#afterAction()-detail">afterAction()</a></td>
+        <td>This method is invoked right after an action is executed.</td>
+        <td><a href="yii-base-controller.html">yii\base\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="ansiFormat()">
+        <td><a href="yii-console-controller.html#ansiFormat()-detail">ansiFormat()</a></td>
+        <td>Formats a string with ANSI codes.</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="attachBehavior()">
+        <td><a href="yii-base-component.html#attachBehavior()-detail">attachBehavior()</a></td>
+        <td>Attaches a behavior to this component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="attachBehaviors()">
+        <td><a href="yii-base-component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+        <td>Attaches a list of behaviors to the component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr id="beforeAction()">
+        <td><a href="yii-mongodb-console-controllers-migratecontroller.html#beforeAction()-detail">beforeAction()</a></td>
+        <td>This method is invoked right before an action is to be executed (after all possible filters.)
+It checks the existence of the <a href="yii-console-controllers-basemigratecontroller.html#$migrationPath-detail">$migrationPath</a>.</td>
+        <td><a href="yii-mongodb-console-controllers-migratecontroller.html">yii\mongodb\console\controllers\MigrateController</a></td>
+    </tr>
+            <tr class="inherited" id="behaviors()">
+        <td><a href="yii-base-component.html#behaviors()-detail">behaviors()</a></td>
+        <td>Returns a list of behaviors that this component should behave as.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="bindActionParams()">
+        <td><a href="yii-console-controller.html#bindActionParams()-detail">bindActionParams()</a></td>
+        <td>Binds the parameters to the action.</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="canGetProperty()">
+        <td><a href="yii-base-component.html#canGetProperty()-detail">canGetProperty()</a></td>
+        <td>Returns a value indicating whether a property can be read.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="canSetProperty()">
+        <td><a href="yii-base-component.html#canSetProperty()-detail">canSetProperty()</a></td>
+        <td>Returns a value indicating whether a property can be set.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="className()">
+        <td><a href="yii-base-baseobject.html#className()-detail">className()</a></td>
+        <td>Returns the fully qualified name of this class.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr class="inherited" id="confirm()">
+        <td><a href="yii-console-controller.html#confirm()-detail">confirm()</a></td>
+        <td>Asks user to confirm by typing y or n.</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="createAction()">
+        <td><a href="yii-base-controller.html#createAction()-detail">createAction()</a></td>
+        <td>Creates an action based on the given action ID.</td>
+        <td><a href="yii-base-controller.html">yii\base\Controller</a></td>
+    </tr>
+                <tr class="inherited" id="detachBehavior()">
+        <td><a href="yii-base-component.html#detachBehavior()-detail">detachBehavior()</a></td>
+        <td>Detaches a behavior from the component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="detachBehaviors()">
+        <td><a href="yii-base-component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+        <td>Detaches all behaviors from the component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+                <tr class="inherited" id="ensureBehaviors()">
+        <td><a href="yii-base-component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+        <td>Makes sure that the behaviors declared in <a href="yii-base-component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="findLayoutFile()">
+        <td><a href="yii-base-controller.html#findLayoutFile()-detail">findLayoutFile()</a></td>
+        <td>Finds the applicable layout file.</td>
+        <td><a href="yii-base-controller.html">yii\base\Controller</a></td>
+    </tr>
+                <tr class="inherited" id="getActionArgsHelp()">
+        <td><a href="yii-console-controller.html#getActionArgsHelp()-detail">getActionArgsHelp()</a></td>
+        <td>Returns the help information for the anonymous arguments for the action.</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="getActionHelp()">
+        <td><a href="yii-console-controller.html#getActionHelp()-detail">getActionHelp()</a></td>
+        <td>Returns the detailed help information for the specified action.</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="getActionHelpSummary()">
+        <td><a href="yii-console-controller.html#getActionHelpSummary()-detail">getActionHelpSummary()</a></td>
+        <td>Returns a one-line short summary describing the specified action.</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+                <tr class="inherited" id="getActionOptionsHelp()">
+        <td><a href="yii-console-controller.html#getActionOptionsHelp()-detail">getActionOptionsHelp()</a></td>
+        <td>Returns the help information for the options for the action.</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="getBehavior()">
+        <td><a href="yii-base-component.html#getBehavior()-detail">getBehavior()</a></td>
+        <td>Returns the named behavior object.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="getBehaviors()">
+        <td><a href="yii-base-component.html#getBehaviors()-detail">getBehaviors()</a></td>
+        <td>Returns all behaviors attached to this component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="getHelp()">
+        <td><a href="yii-console-controller.html#getHelp()-detail">getHelp()</a></td>
+        <td>Returns help information for this controller.</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="getHelpSummary()">
+        <td><a href="yii-console-controller.html#getHelpSummary()-detail">getHelpSummary()</a></td>
+        <td>Returns one-line short summary describing this controller.</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+                    <tr class="inherited" id="getModules()">
+        <td><a href="yii-base-controller.html#getModules()-detail">getModules()</a></td>
+        <td>Returns all ancestor modules of this controller.</td>
+        <td><a href="yii-base-controller.html">yii\base\Controller</a></td>
+    </tr>
+                <tr class="inherited" id="getOptionValues()">
+        <td><a href="yii-console-controller.html#getOptionValues()-detail">getOptionValues()</a></td>
+        <td>Returns properties corresponding to the options for the action id
+Child classes may override this method to specify possible properties.</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="getPassedOptionValues()">
+        <td><a href="yii-console-controller.html#getPassedOptionValues()-detail">getPassedOptionValues()</a></td>
+        <td>Returns the properties corresponding to the passed options.</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="getPassedOptions()">
+        <td><a href="yii-console-controller.html#getPassedOptions()-detail">getPassedOptions()</a></td>
+        <td>Returns the names of valid options passed during execution.</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="getRoute()">
+        <td><a href="yii-base-controller.html#getRoute()-detail">getRoute()</a></td>
+        <td>Returns the route of the current request.</td>
+        <td><a href="yii-base-controller.html">yii\base\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="getUniqueId()">
+        <td><a href="yii-base-controller.html#getUniqueId()-detail">getUniqueId()</a></td>
+        <td>Returns the unique ID of the controller.</td>
+        <td><a href="yii-base-controller.html">yii\base\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="getView()">
+        <td><a href="yii-base-controller.html#getView()-detail">getView()</a></td>
+        <td>Returns the view object that can be used to render views or view files.</td>
+        <td><a href="yii-base-controller.html">yii\base\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="getViewPath()">
+        <td><a href="yii-base-viewcontextinterface.html#getViewPath()-detail">getViewPath()</a></td>
+        <td></td>
+        <td><a href="yii-base-viewcontextinterface.html">yii\base\ViewContextInterface</a></td>
+    </tr>
+            <tr class="inherited" id="hasEventHandlers()">
+        <td><a href="yii-base-component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+        <td>Returns a value indicating whether there is any handler attached to the named event.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="hasMethod()">
+        <td><a href="yii-base-component.html#hasMethod()-detail">hasMethod()</a></td>
+        <td>Returns a value indicating whether a method is defined.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="hasProperty()">
+        <td><a href="yii-base-component.html#hasProperty()-detail">hasProperty()</a></td>
+        <td>Returns a value indicating whether a property is defined for this component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+                <tr class="inherited" id="init()">
+        <td><a href="yii-base-baseobject.html#init()-detail">init()</a></td>
+        <td>Initializes the object.</td>
+        <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+    </tr>
+            <tr class="inherited" id="isColorEnabled()">
+        <td><a href="yii-console-controller.html#isColorEnabled()-detail">isColorEnabled()</a></td>
+        <td>Returns a value indicating whether ANSI color is enabled.</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+                            <tr class="inherited" id="off()">
+        <td><a href="yii-base-component.html#off()-detail">off()</a></td>
+        <td>Detaches an existing event handler from this component.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="on()">
+        <td><a href="yii-base-component.html#on()-detail">on()</a></td>
+        <td>Attaches an event handler to an event.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+            <tr class="inherited" id="optionAliases()">
+        <td><a href="yii-console-controller.html#optionAliases()-detail">optionAliases()</a></td>
+        <td>Returns option alias names.</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+            <tr id="options()">
+        <td><a href="yii-mongodb-console-controllers-migratecontroller.html#options()-detail">options()</a></td>
+        <td>Returns the names of valid options for the action (id)
+An option requires the existence of a public member variable whose
+name is the option name.</td>
+        <td><a href="yii-mongodb-console-controllers-migratecontroller.html">yii\mongodb\console\controllers\MigrateController</a></td>
+    </tr>
+                        <tr class="inherited" id="prompt()">
+        <td><a href="yii-console-controller.html#prompt()-detail">prompt()</a></td>
+        <td>Prompts the user for input and validates it.</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+                <tr class="inherited" id="render()">
+        <td><a href="yii-base-controller.html#render()-detail">render()</a></td>
+        <td>Renders a view and applies layout if available.</td>
+        <td><a href="yii-base-controller.html">yii\base\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="renderContent()">
+        <td><a href="yii-base-controller.html#renderContent()-detail">renderContent()</a></td>
+        <td>Renders a static string by applying a layout.</td>
+        <td><a href="yii-base-controller.html">yii\base\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="renderFile()">
+        <td><a href="yii-base-controller.html#renderFile()-detail">renderFile()</a></td>
+        <td>Renders a view file.</td>
+        <td><a href="yii-base-controller.html">yii\base\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="renderPartial()">
+        <td><a href="yii-base-controller.html#renderPartial()-detail">renderPartial()</a></td>
+        <td>Renders a view without applying layout.</td>
+        <td><a href="yii-base-controller.html">yii\base\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="run()">
+        <td><a href="yii-base-controller.html#run()-detail">run()</a></td>
+        <td>Runs a request specified in terms of a route.</td>
+        <td><a href="yii-base-controller.html">yii\base\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="runAction()">
+        <td><a href="yii-console-controller.html#runAction()-detail">runAction()</a></td>
+        <td>Runs an action with the specified action ID and parameters.</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="select()">
+        <td><a href="yii-console-controller.html#select()-detail">select()</a></td>
+        <td>Gives the user an option to choose from. Giving '?' as an input will show
+a list of options to choose from and their explanations.</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="setView()">
+        <td><a href="yii-base-controller.html#setView()-detail">setView()</a></td>
+        <td>Sets the view object to be used by this controller.</td>
+        <td><a href="yii-base-controller.html">yii\base\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="setViewPath()">
+        <td><a href="yii-base-controller.html#setViewPath()-detail">setViewPath()</a></td>
+        <td>Sets the directory that contains the view files.</td>
+        <td><a href="yii-base-controller.html">yii\base\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="stderr()">
+        <td><a href="yii-console-controller.html#stderr()-detail">stderr()</a></td>
+        <td>Prints a string to STDERR.</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="stdout()">
+        <td><a href="yii-console-controller.html#stdout()-detail">stdout()</a></td>
+        <td>Prints a string to STDOUT.</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="trigger()">
+        <td><a href="yii-base-component.html#trigger()-detail">trigger()</a></td>
+        <td>Triggers an event.</td>
+        <td><a href="yii-base-component.html">yii\base\Component</a></td>
+    </tr>
+        </table>
+</div>
+
+<div class="summary doc-method">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+                                                                            <tr id="addMigrationHistory()">
+        <td><a href="yii-mongodb-console-controllers-migratecontroller.html#addMigrationHistory()-detail">addMigrationHistory()</a></td>
+        <td>Adds new migration entry to the history.</td>
+        <td><a href="yii-mongodb-console-controllers-migratecontroller.html">yii\mongodb\console\controllers\MigrateController</a></td>
+    </tr>
+                                                            <tr id="createMigration()">
+        <td><a href="yii-mongodb-console-controllers-migratecontroller.html#createMigration()-detail">createMigration()</a></td>
+        <td>Creates a new migration instance.</td>
+        <td><a href="yii-mongodb-console-controllers-migratecontroller.html">yii\mongodb\console\controllers\MigrateController</a></td>
+    </tr>
+                    <tr id="ensureBaseMigrationHistory()">
+        <td><a href="yii-mongodb-console-controllers-migratecontroller.html#ensureBaseMigrationHistory()-detail">ensureBaseMigrationHistory()</a></td>
+        <td>Ensures migration history contains at least base migration entry.</td>
+        <td><a href="yii-mongodb-console-controllers-migratecontroller.html">yii\mongodb\console\controllers\MigrateController</a></td>
+    </tr>
+                    <tr class="inherited" id="generateMigrationSourceCode()">
+        <td><a href="yii-console-controllers-basemigratecontroller.html#generateMigrationSourceCode()-detail">generateMigrationSourceCode()</a></td>
+        <td>Generates new migration source PHP code.</td>
+        <td><a href="yii-console-controllers-basemigratecontroller.html">yii\console\controllers\BaseMigrateController</a></td>
+    </tr>
+                        <tr class="inherited" id="getActionMethodReflection()">
+        <td><a href="yii-console-controller.html#getActionMethodReflection()-detail">getActionMethodReflection()</a></td>
+        <td></td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+                                <tr id="getMigrationHistory()">
+        <td><a href="yii-mongodb-console-controllers-migratecontroller.html#getMigrationHistory()-detail">getMigrationHistory()</a></td>
+        <td>Returns the migration history.</td>
+        <td><a href="yii-mongodb-console-controllers-migratecontroller.html">yii\mongodb\console\controllers\MigrateController</a></td>
+    </tr>
+            <tr class="inherited" id="getMigrationNameLimit()">
+        <td><a href="yii-console-controllers-basemigratecontroller.html#getMigrationNameLimit()-detail">getMigrationNameLimit()</a></td>
+        <td>Return the maximum name length for a migration.</td>
+        <td><a href="yii-console-controllers-basemigratecontroller.html">yii\console\controllers\BaseMigrateController</a></td>
+    </tr>
+                <tr class="inherited" id="getNewMigrations()">
+        <td><a href="yii-console-controllers-basemigratecontroller.html#getNewMigrations()-detail">getNewMigrations()</a></td>
+        <td>Returns the migrations that are not applied.</td>
+        <td><a href="yii-console-controllers-basemigratecontroller.html">yii\console\controllers\BaseMigrateController</a></td>
+    </tr>
+                                                    <tr class="inherited" id="includeMigrationFile()">
+        <td><a href="yii-console-controllers-basemigratecontroller.html#includeMigrationFile()-detail">includeMigrationFile()</a></td>
+        <td>Includes the migration file for a given migration class name.</td>
+        <td><a href="yii-console-controllers-basemigratecontroller.html">yii\console\controllers\BaseMigrateController</a></td>
+    </tr>
+                    <tr class="inherited" id="migrateDown()">
+        <td><a href="yii-console-controllers-basemigratecontroller.html#migrateDown()-detail">migrateDown()</a></td>
+        <td>Downgrades with the specified migration class.</td>
+        <td><a href="yii-console-controllers-basemigratecontroller.html">yii\console\controllers\BaseMigrateController</a></td>
+    </tr>
+            <tr class="inherited" id="migrateToTime()">
+        <td><a href="yii-console-controllers-basemigratecontroller.html#migrateToTime()-detail">migrateToTime()</a></td>
+        <td>Migrates to the specified apply time in the past.</td>
+        <td><a href="yii-console-controllers-basemigratecontroller.html">yii\console\controllers\BaseMigrateController</a></td>
+    </tr>
+            <tr class="inherited" id="migrateToVersion()">
+        <td><a href="yii-console-controllers-basemigratecontroller.html#migrateToVersion()-detail">migrateToVersion()</a></td>
+        <td>Migrates to the certain version.</td>
+        <td><a href="yii-console-controllers-basemigratecontroller.html">yii\console\controllers\BaseMigrateController</a></td>
+    </tr>
+            <tr class="inherited" id="migrateUp()">
+        <td><a href="yii-console-controllers-basemigratecontroller.html#migrateUp()-detail">migrateUp()</a></td>
+        <td>Upgrades with the specified migration class.</td>
+        <td><a href="yii-console-controllers-basemigratecontroller.html">yii\console\controllers\BaseMigrateController</a></td>
+    </tr>
+                            <tr class="inherited" id="parseDocCommentDetail()">
+        <td><a href="yii-console-controller.html#parseDocCommentDetail()-detail">parseDocCommentDetail()</a></td>
+        <td>Returns full description from the docblock.</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="parseDocCommentSummary()">
+        <td><a href="yii-console-controller.html#parseDocCommentSummary()-detail">parseDocCommentSummary()</a></td>
+        <td>Returns the first line of docblock.</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+            <tr class="inherited" id="parseDocCommentTags()">
+        <td><a href="yii-console-controller.html#parseDocCommentTags()-detail">parseDocCommentTags()</a></td>
+        <td>Parses the comment block into tags.</td>
+        <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+    </tr>
+                <tr id="removeMigrationHistory()">
+        <td><a href="yii-mongodb-console-controllers-migratecontroller.html#removeMigrationHistory()-detail">removeMigrationHistory()</a></td>
+        <td>Removes existing migration from the history.</td>
+        <td><a href="yii-mongodb-console-controllers-migratecontroller.html">yii\mongodb\console\controllers\MigrateController</a></td>
+    </tr>
+                                                            <tr id="truncateDatabase()">
+        <td><a href="yii-mongodb-console-controllers-migratecontroller.html#truncateDatabase()-detail">truncateDatabase()</a></td>
+        <td>Truncates the database.</td>
+        <td><a href="yii-mongodb-console-controllers-migratecontroller.html">yii\mongodb\console\controllers\MigrateController</a></td>
+    </tr>
+    </table>
+</div>
+
+<a id="events"></a>
+<div class="summary doc-event">
+    <h2>Events</h2>
+
+    <p><a href="#" class="toggle">Hide inherited events</a></p>
+
+    <table class="summary-table table table-striped table-bordered table-hover">
+    <colgroup>
+        <col class="col-event" />
+        <col class="col-type" />
+        <col class="col-description" />
+        <col class="col-defined" />
+    </colgroup>
+    <tr>
+        <th>Event</th><th>Type</th><th>Description</th><th>Defined By</th>
+    </tr>
+        <tr class="inherited" id="EVENT_AFTER_ACTION">
+        <td><a href="yii-base-controller.html#EVENT_AFTER_ACTION-detail">EVENT_AFTER_ACTION</a></td>
+        <td><a href="yii-base-actionevent.html">yii\base\ActionEvent</a></td>
+        <td>
+            An event raised right after executing a controller action.                    </td>
+        <td><a href="yii-base-controller.html">yii\base\Controller</a></td>
+    </tr>
+        <tr class="inherited" id="EVENT_BEFORE_ACTION">
+        <td><a href="yii-base-controller.html#EVENT_BEFORE_ACTION-detail">EVENT_BEFORE_ACTION</a></td>
+        <td><a href="yii-base-actionevent.html">yii\base\ActionEvent</a></td>
+        <td>
+            An event raised right before executing a controller action.                    </td>
+        <td><a href="yii-base-controller.html">yii\base\Controller</a></td>
+    </tr>
+        </table>
+</div>
+
+<a id="constants"></a>
+<div class="summary doc-const">
+    <h2>Constants</h2>
+
+    <p><a href="#" class="toggle">Hide inherited constants</a></p>
+
+    <table class="summary-table table table-striped table-bordered table-hover">
+    <colgroup>
+        <col class="col-const" />
+        <col class="col-value" />
+        <col class="col-description" />
+        <col class="col-defined" />
+    </colgroup>
+    <tr>
+        <th>Constant</th><th>Value</th><th>Description</th><th>Defined By</th>
+    </tr>
+            <tr class="inherited" id="BASE_MIGRATION">
+          <td id="BASE_MIGRATION-detail">BASE_MIGRATION</td>
+          <td>'m000000_000000_base'</td>
+          <td>The name of the dummy migration that marks the beginning of the whole migration history.
+                        </td>
+          <td><a href="yii-console-controllers-basemigratecontroller.html">yii\console\controllers\BaseMigrateController</a></td>
+        </tr>
+            <tr class="inherited" id="EXIT_CODE_ERROR">
+          <td id="EXIT_CODE_ERROR-detail">EXIT_CODE_ERROR</td>
+          <td>1</td>
+          <td>
+                                <strong>Deprecated since 2.0.13. Use <span class="broken-link">\yii\mongodb\console\controllers\ExitCode::UNSPECIFIED_ERROR</span> instead.</strong>
+                        </td>
+          <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+        </tr>
+            <tr class="inherited" id="EXIT_CODE_NORMAL">
+          <td id="EXIT_CODE_NORMAL-detail">EXIT_CODE_NORMAL</td>
+          <td>0</td>
+          <td>
+                                <strong>Deprecated since 2.0.13. Use <span class="broken-link">\yii\mongodb\console\controllers\ExitCode::OK</span> instead.</strong>
+                        </td>
+          <td><a href="yii-console-controller.html">yii\console\Controller</a></td>
+        </tr>
+        </table>
+</div>
+
+<h2>Property Details</h2>
+
+<div class="property-doc">
+
+    <div class="detail-header h3" id="$db-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-console-controllers-migratecontroller.html#$db-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/console/controllers/MigrateController.php#L88" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/console/controllers/MigrateController.php#L88" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $db        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>The DB connection object or the application
+component ID of the DB connection.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-mongodb-connection.html">yii\mongodb\Connection</a>|<a href="http://www.php.net/language.types.string">string</a></span> <a href="yii-mongodb-console-controllers-migratecontroller.html#$db-detail">$db</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'mongodb'</span></div>
+
+
+    <div class="detail-header h3" id="$migrationCollection-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-console-controllers-migratecontroller.html#$migrationCollection-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/console/controllers/MigrateController.php#L79" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/console/controllers/MigrateController.php#L79" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $migrationCollection        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>The name of the collection for keeping applied migration information.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.array">array</a></span> <a href="yii-mongodb-console-controllers-migratecontroller.html#$migrationCollection-detail">$migrationCollection</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'migration'</span></div>
+
+
+    <div class="detail-header h3" id="$templateFile-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-console-controllers-migratecontroller.html#$templateFile-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/console/controllers/MigrateController.php#L83" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/console/controllers/MigrateController.php#L83" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        $templateFile        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>The template file for generating new migrations.
+This can be either a <a href="./guide-concept-aliases.html">path alias</a> (e.g. "@app/migrations/template.php")
+or a file path.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="yii-mongodb-console-controllers-migratecontroller.html#$templateFile-detail">$templateFile</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'@yii/mongodb/views/migration.php'</span></div>
+
+</div>
+<h2>Method Details</h2>
+
+<div class="method-doc">
+
+    <div class="detail-header h3" id="addMigrationHistory()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-console-controllers-migratecontroller.html#addMigrationHistory()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/console/controllers/MigrateController.php#L225" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/console/controllers/MigrateController.php#L225" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        addMigrationHistory()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Adds new migration entry to the history.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-console-controllers-migratecontroller.html#addMigrationHistory()-detail">addMigrationHistory</a></strong> ( <span style="color: #0000BB">$version</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$version</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Migration version name.</p>
+</td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="beforeAction()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-console-controllers-migratecontroller.html#beforeAction()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/console/controllers/MigrateController.php#L109" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/console/controllers/MigrateController.php#L109" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        beforeAction()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>This method is invoked right before an action is to be executed (after all possible filters.)
+It checks the existence of the <a href="yii-console-controllers-basemigratecontroller.html#$migrationPath-detail">$migrationPath</a>.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-mongodb-console-controllers-migratecontroller.html#beforeAction()-detail">beforeAction</a></strong> ( <span style="color: #0000BB">$action</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$action</span></td>
+                  <td class="param-type-col"><a href="yii-base-action.html">yii\base\Action</a></td>
+                  <td class="param-desc-col"><p>The action to be executed.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>Whether the action should continue to be executed.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="yii-console-exception.html">yii\console\Exception</a></td>
+                  <td class="param-desc-col"><p>if db component isn't configured</p>
+</td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="createMigration()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-console-controllers-migratecontroller.html#createMigration()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/console/controllers/MigrateController.php#L130" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/console/controllers/MigrateController.php#L130" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        createMigration()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Creates a new migration instance.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="yii-mongodb-migration.html">yii\mongodb\Migration</a></span> <strong><a href="yii-mongodb-console-controllers-migratecontroller.html#createMigration()-detail">createMigration</a></strong> ( <span style="color: #0000BB">$class</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$class</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The migration class name</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="yii-mongodb-migration.html">yii\mongodb\Migration</a></td>
+                  <td class="param-desc-col"><p>The migration instance</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="ensureBaseMigrationHistory()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-console-controllers-migratecontroller.html#ensureBaseMigrationHistory()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/console/controllers/MigrateController.php#L206" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/console/controllers/MigrateController.php#L206" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        ensureBaseMigrationHistory()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Ensures migration history contains at least base migration entry.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-console-controllers-migratecontroller.html#ensureBaseMigrationHistory()-detail">ensureBaseMigrationHistory</a></strong> ( )</td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getMigrationHistory()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-console-controllers-migratecontroller.html#getMigrationHistory()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/console/controllers/MigrateController.php#L150" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/console/controllers/MigrateController.php#L150" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        getMigrationHistory()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns the migration history.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-console-controllers-migratecontroller.html#getMigrationHistory()-detail">getMigrationHistory</a></strong> ( <span style="color: #0000BB">$limit</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$limit</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>The maximum number of records in the history to be returned. <code>null</code> for "no limit".</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The migration history</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="options()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-console-controllers-migratecontroller.html#options()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/console/controllers/MigrateController.php#L94" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/console/controllers/MigrateController.php#L94" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        options()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Returns the names of valid options for the action (id)
+An option requires the existence of a public member variable whose
+name is the option name.</strong></p>
+
+        <p>Child classes may override this method to specify possible options.</p>
+<p>Note that the values setting via options are not available
+until <a href="yii-mongodb-console-controllers-migratecontroller.html#beforeAction()-detail">beforeAction()</a> is being called.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a>[]</span> <strong><a href="yii-mongodb-console-controllers-migratecontroller.html#options()-detail">options</a></strong> ( <span style="color: #0000BB">$actionID</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$actionID</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The action id of the current request</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a>[]</td>
+                  <td class="param-desc-col"><p>The names of the options valid for the action</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="removeMigrationHistory()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-console-controllers-migratecontroller.html#removeMigrationHistory()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/console/controllers/MigrateController.php#L236" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/console/controllers/MigrateController.php#L236" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        removeMigrationHistory()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Removes existing migration from the history.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-console-controllers-migratecontroller.html#removeMigrationHistory()-detail">removeMigrationHistory</a></strong> ( <span style="color: #0000BB">$version</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$version</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Migration version name.</p>
+</td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="truncateDatabase()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="yii-mongodb-console-controllers-migratecontroller.html#truncateDatabase()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/console/controllers/MigrateController.php#L247" class="tool-link" title="edit on github"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/console/controllers/MigrateController.php#L247" class="tool-link" title="view source on github"><span class="glyphicon glyphicon-eye-open"></span></a>
+        
+        truncateDatabase()
+        <span class="detail-header-tag small">
+            protected                                    method
+                            (available since version 2.1.5)
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Truncates the database.</strong></p>
+
+        <p>This method should be overwritten in subclasses to implement the task of clearing the database.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-console-controllers-migratecontroller.html#truncateDatabase()-detail">truncateDatabase</a></strong> ( )</td></tr>
+                                                            <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="yii-base-notsupportedexception.html">yii\base\NotSupportedException</a></td>
+                  <td class="param-desc-col"><p>if not overridden</p>
+</td>
+                </tr>
+                        </table>
+
+<!--	-->
+</div>
+        </div>
+</div>
+
+<script type="text/javascript">
+    /*<![CDATA[*/
+    $("a.toggle").on('click', function () {
+        var $this = $(this);
+        if ($this.hasClass('properties-hidden')) {
+            $this.text($this.text().replace(/Show/,'Hide'));
+            $this.parents(".summary").find(".inherited").show();
+            $this.removeClass('properties-hidden');
+        } else {
+            $this.text($this.text().replace(/Hide/,'Show'));
+            $this.parents(".summary").find(".inherited").hide();
+            $this.addClass('properties-hidden');
+        }
+
+        return false;
+    });
+    /*
+     $(".sourceCode a.show").toggle(function () {
+     $(this).text($(this).text().replace(/show/,'hide'));
+     $(this).parents(".sourceCode").find("div.code").show();
+     },function () {
+     $(this).text($(this).text().replace(/hide/,'show'));
+     $(this).parents(".sourceCode").find("div.code").hide();
+     });
+     $("a.sourceLink").click(function () {
+     $(this).attr('target','_blank');
+     });
+     */
+    /*]]>*/
+</script>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:30 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

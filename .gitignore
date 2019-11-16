@@ -1,8 +1,10 @@
 .idea
+.DS_Store
 mysql/data
 app/*
 !app/index.php
 !app/swoole.php
+!app/tools
 nginx/conf.d/*
 !nginx/conf.d/default.conf
 php/php-fpm.d/cacerts/*

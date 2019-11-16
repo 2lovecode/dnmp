@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>Redis（yii2-redis） - 配合数据库工作（Working with Databases） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1536" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1536-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1536-collapse" class="collapse navbar-collapse"><ul id="w1537" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1538" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1520" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-1520" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-1521" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-1521" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-1522" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-1522" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-1523" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-1523" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-1524" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-1524" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item active" href="#navigation-1525" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-1525" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-zh-CN/README.md">Sphinx</a>
+<a class="list-group-item active" href="./guide-yii2-redis.html">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-zh-CN/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-zh-CN/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1526" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-1526" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-1527" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-1527" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-1528" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-1528" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-1529" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-1529" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-1530" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-1530" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-1531" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-1531" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-1532" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-1532" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-1533" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-1533" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-1534" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-1534" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1535" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-1535" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>yii2-redis 扩展详解 <span id="yii2-redis-kuo-zhan-xiang-jie"></span><a href="#yii2-redis-kuo-zhan-xiang-jie" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#jian-jie">简介</a></li>
+<li><a href="#an-zhuang-kuo-zhan">安装扩展</a></li>
+<li><a href="#ji-ben-shi-yong">基本使用</a></li>
+<li><a href="#huan-cun-zu-jian">缓存组件</a></li>
+<li><a href="#hui-hua-zu-jian">会话组件</a></li>
+<li><a href="#activerecord">ActiveRecord</a></li>
+<li><a href="#zhi-jie-shi-yong-ming-ling">直接使用命令</a></li></ol></div>
+<h2>简介 <span id="jian-jie"></span><a href="#jian-jie" class="hashlink">&para;</a></h2><p>yii2-redis 扩展为 Yii2 框架提供了 redis 键值存储支持。包括缓存（Cache）、会话存储处理（Session），并实现了 ActiveRecord 模式，允许您将活动记录存储在 redis 中。</p>
+<h4>相关链接 <span id="xiang-guan-lian-jie"></span><a href="#xiang-guan-lian-jie" class="hashlink">&para;</a></h4><ul>
+<li><a href="https://github.com/yiisoft/yii2-redis">yii2-redis 扩展网址：https://github.com/yiisoft/yii2-redis</a></li>
+</ul>
+<h2>安装扩展 <span id="an-zhuang-kuo-zhan"></span><a href="#an-zhuang-kuo-zhan" class="hashlink">&para;</a></h2><p>在 Yii2 项目根目录，执行以下命令安装：
+<code>$ composer require yiisoft/yii2-redis</code></p>
+<p>也可以先在 composer.json 文件中声明如下依赖：
+<code>"yiisoft/yii2-redis": "~2.0.0"</code></p>
+<p>再执行下面命令安装：
+<code>$ composer update</code></p>
+<h2>基本使用 <span id="ji-ben-shi-yong"></span><a href="#ji-ben-shi-yong" class="hashlink">&para;</a></h2><p>继续阅读请确保已安装并开启了 redis 服务，安装请参考<a href="http://mayanlong.com/archives/2016/359.html">《Redis 安装》</a>。</p>
+<h4>1. 配置 <span id="1-pei-zhi"></span><a href="#1-pei-zhi" class="hashlink">&para;</a></h4><p>在组件中添加如下配置：
+<code>`</code>php
+'components' =&gt; [</p>
+<pre><code class="hljs php"><span class="hljs-string">'redis'</span> =&gt; [
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\redis\Connection'</span>,
+    <span class="hljs-string">'hostname'</span> =&gt; <span class="hljs-string">'localhost'</span>,
+    <span class="hljs-string">'port'</span> =&gt; <span class="hljs-number">6379</span>,
+    <span class="hljs-string">'database'</span> =&gt; <span class="hljs-number">0</span>,
+],
+</code></pre>
+<p>]<br />
+<code>`</code></p>
+<h4>2. 示例 <span id="2-shi-li"></span><a href="#2-shi-li" class="hashlink">&para;</a></h4><p>下面代码演示了 redis 最基本的 string 类型的使用：
+<code>`</code>php
+// 获取 redis 组件
+$redis = Yii::$app-&gt;redis;</p>
+<p>// 判断 key 为 username 的是否有值，有则打印，没有则赋值
+$key = 'username';
+if ($val = $redis-&gt;get($key)) {</p>
+<pre><code class="hljs scss"><span class="hljs-function">var_dump</span>(<span class="hljs-variable">$val</span>);
+</code></pre>
+<p>} else {</p>
+<pre><code class="hljs php"><span class="hljs-variable">$redis</span>-&gt;set(<span class="hljs-variable">$key</span>, <span class="hljs-string">'marko'</span>);
+<span class="hljs-variable">$redis</span>-&gt;expire(<span class="hljs-variable">$key</span>, <span class="hljs-number">5</span>);
+</code></pre>
+<p>}
+<code>`</code></p>
+<p>这个类中（<code>yii\redis\Connection</code>）提供了操作 redis 所有的数据类型和服务（String、Hash、List、Set、SortedSet、HyperLogLog、GEO、Pub/Sub、Transaction、Script、Connection、Server）所需要的方法，并且和 redis 中的方法同名，如果不清楚可以直接到该类中查看。</p>
+<h2>缓存组件 <span id="huan-cun-zu-jian"></span><a href="#huan-cun-zu-jian" class="hashlink">&para;</a></h2><p>该扩展中的 <code>yii\redis\Cache</code> 实现了 Yii2 中的缓存相关接口，所以我们也可以用 redis 来存储缓存，且用法和原来一样。</p>
+<h4>1. 配置 <span id="1-pei-zhi"></span><a href="#1-pei-zhi" class="hashlink">&para;</a></h4><p>修改组件中 cache 的 class 为 <code>yii\redis\Cache</code> 即可，配置如下：
+<code>`</code>php
+'components' =&gt; [</p>
+<pre><code class="hljs sql">'<span class="hljs-operator"><span class="hljs-keyword">cache</span><span class="hljs-string">' =&gt; [
+    // '</span><span class="hljs-keyword">class</span><span class="hljs-string">' =&gt; '</span>yii\<span class="hljs-keyword">caching</span>\FileCache<span class="hljs-string">',
+    '</span><span class="hljs-keyword">class</span><span class="hljs-string">' =&gt; '</span>yii\redis\<span class="hljs-keyword">Cache</span><span class="hljs-string">',
+],
+</span></span></code></pre>
+<p>],
+<code>`</code></p>
+<p>如果没有配置过 redis 组件，需要在 cache 组件下配置 redis 服务相关参数，完整配置如下：
+<code>`</code>php
+'components' =&gt; [</p>
+<pre><code class="hljs php"><span class="hljs-string">'cache'</span> =&gt; [
+    <span class="hljs-comment">// 'class' =&gt; 'yii\caching\FileCache',</span>
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\redis\Cache'</span>,
+    <span class="hljs-string">'redis'</span> =&gt; [
+        <span class="hljs-string">'hostname'</span> =&gt; <span class="hljs-string">'localhost'</span>,
+        <span class="hljs-string">'port'</span> =&gt; <span class="hljs-number">6379</span>,
+        <span class="hljs-string">'database'</span> =&gt; <span class="hljs-number">0</span>,
+    ],
+],
+</code></pre>
+<p>],
+<code>`</code></p>
+<h4>2. 示例 <span id="2-shi-li"></span><a href="#2-shi-li" class="hashlink">&para;</a></h4><p>下面代码演示了缓存的基本使用：
+<code>`</code>php
+// 获取 cache 组件
+$cache = Yii::$app-&gt;cache;</p>
+<p>// 判断 key 为 username 的缓存是否存在，有则打印，没有则赋值
+$key = 'username';
+if ($cache-&gt;exists($key)) {</p>
+<pre><code class="hljs scss"><span class="hljs-function">var_dump</span>(<span class="hljs-variable">$cache</span>-&gt;<span class="hljs-function">get</span>(<span class="hljs-variable">$key</span>));
+</code></pre>
+<p>} else {</p>
+<pre><code class="hljs sql">$<span class="hljs-operator"><span class="hljs-keyword">cache</span>-&gt;<span class="hljs-keyword">set</span>($<span class="hljs-keyword">key</span>, <span class="hljs-string">'marko'</span>, <span class="hljs-number">60</span>);</span>
+</code></pre>
+<p>}
+<code>`</code></p>
+<p>使用文件缓存（FileCache）时，缓存是存储在 runtime/cache 目录下；使用 redis 缓存后，缓存将存储在 redis 数据库中，性能将大大提高。</p>
+<h2>会话组件 <span id="hui-hua-zu-jian"></span><a href="#hui-hua-zu-jian" class="hashlink">&para;</a></h2><p>该扩展中的 <code>yii\redis\Session</code> 实现了 Yii2 中的会话相关接口，所以我们也可以用 redis 来存储会话信息，且用法和原来一样。</p>
+<h4>1. 配置 <span id="1-pei-zhi"></span><a href="#1-pei-zhi" class="hashlink">&para;</a></h4><p>修改组件 session 的配置，指定 class 为 <code>yii\redis\Session</code> 即可，配置如下：
+<code>`</code>php
+'components' =&gt; [</p>
+<pre><code class="hljs php"><span class="hljs-string">'session'</span> =&gt; [
+    <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'advanced-frontend'</span>,
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\redis\Session'</span>
+],
+</code></pre>
+<p>],
+<code>`</code></p>
+<p>如果没有配置过 redis 组件，需要在 session 组件下配置 redis 服务相关参数，完整配置如下：
+<code>`</code>php
+'components' =&gt; [</p>
+<pre><code class="hljs php"><span class="hljs-string">'session'</span> =&gt; [
+    <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'advanced-frontend'</span>,
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\redis\Session'</span>,
+    <span class="hljs-string">'redis'</span> =&gt; [
+        <span class="hljs-string">'hostname'</span> =&gt; <span class="hljs-string">'localhost'</span>,
+        <span class="hljs-string">'port'</span> =&gt; <span class="hljs-number">6379</span>,
+        <span class="hljs-string">'database'</span> =&gt; <span class="hljs-number">0</span>,
+    ],
+],
+</code></pre>
+<p>],
+<code>`</code></p>
+<h4>2. 使用 <span id="2-shi-yong"></span><a href="#2-shi-yong" class="hashlink">&para;</a></h4><p>在开发过程中，切记一定不要使用 PHP 原生的 $_SESSION 去操作，而要使用 Yii 提供的 session 组件，获取方式如下：
+<code>`</code>php
+$session = Yii::$app-&gt;session;
+<code>`</code></p>
+<h2>ActiveRecord <span id="activerecord"></span><a href="#activerecord" class="hashlink">&para;</a></h2><p>该扩展中的 <code>yii\redis\ActiveRecord</code> 实现了 Yii2 中的 ActiveRecord 相关接口，所以我们可以使用 AR 的方式操作 redis 数据库。关于如何使用 Yii 的 ActiveRecord，请阅读权威指南中有关 <a href="http://www.yiichina.com/doc/guide/2.0/db-active-record">ActiveRecord</a> 的基础文档。 </p>
+<p>定义 redis ActiveRecord 类，我们的模型需要继承 <code>yii\redis\ActiveRecord</code>，并至少实现 <code>attributes()</code> 方法来定义模型的属性。 </p>
+<p>主键可以通过 <code>yii\redis\ActiveRecord::primaryKey()</code> 定义，如果未指定，则默认为 id。 primaryKey 必须在 attributes() 方法定义的属性中，如果没有指定主键，请确保 id 在属性中。</p>
+<p>下面定义一个 Customer 模型来演示：
+<code>`</code>php
+class Customer extends \yii\redis\ActiveRecord
+{</p>
+<pre><code class="hljs php"><span class="hljs-comment">/**
+ * 主键 默认为 id
+ *
+ * <span class="hljs-doctag">@return</span> array|string[]
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">primaryKey</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [<span class="hljs-string">'id'</span>];
+}
+
+<span class="hljs-comment">/**
+ * 模型对应记录的属性列表
+ *
+ * <span class="hljs-doctag">@return</span> array
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">attributes</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [<span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>, <span class="hljs-string">'age'</span>, <span class="hljs-string">'phone'</span>, <span class="hljs-string">'status'</span>, <span class="hljs-string">'created_at'</span>, <span class="hljs-string">'updated_at'</span>];
+}
+
+<span class="hljs-comment">/**
+ * 定义和其它模型的关系
+ *
+ * <span class="hljs-doctag">@return</span> \yii\db\ActiveQueryInterface
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getOrders</span><span class="hljs-params">()</span>
+</span>{
+     <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;hasMany(Order::className(), [<span class="hljs-string">'customer_id'</span> =&gt; <span class="hljs-string">'id'</span>]);
+}
+</code></pre>
+<p>}
+<code>`</code></p>
+<p>使用示例：
+<code>`</code>php
+// 使用 AR 方式新增一条记录
+$customer = new Customer();
+$customer-&gt;name = 'marko';
+$customer-&gt;age = 18;
+$customer-&gt;phone = 13888888888;
+$customer-&gt;status = 1;
+$customer-&gt;save();
+echo $customer-&gt;id;</p>
+<p>// 使用 AR 查询
+$customer = Customer::findOne($customer-&gt;id);
+$customer = Customer::find()-&gt;where(['status' => 1])-&gt;all();
+<code>`</code></p>
+<p>redis ActiveRecord 的一般用法与权威指南中数据库的 ActiveRecord 用法非常相似。它们支持相同的接口和方法，除了以下限制：</p>
+<ul>
+<li>由于 redis 不支持 sql，查询方法仅限于使用以下方法：where()，limit()，offset()，orderBy() 和 indexBy()。 【 orderBy() 尚未实现：<a href="https://github.com/yiisoft/yii2/issues/1305">＃1305</a>）】</li>
+<li>由于 redis 没有表的概念，因此不能通过表定义关联关系，只能通过其它记录来定义关系。</li>
+</ul>
+<h2>直接使用命令 <span id="zhi-jie-shi-yong-ming-ling"></span><a href="#zhi-jie-shi-yong-ming-ling" class="hashlink">&para;</a></h2><p>直接使用 redis 连接，就可以使用 redis 提供的很多有用的命令。配置好 redis 后，用以下方式获取 redis 组件：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$redis</span> = Yii::<span class="hljs-variable">$app</span>-&gt;redis;
+</code></pre>
+<p>然后就可以执行命令了，最通用的方法是使用 executeCommand 方法：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$result</span> = <span class="hljs-variable">$redis</span>-&gt;executeCommand(<span class="hljs-string">'hmset'</span>, [<span class="hljs-string">'test_collection'</span>, <span class="hljs-string">'key1'</span>, <span class="hljs-string">'val1'</span>, <span class="hljs-string">'key2'</span>, <span class="hljs-string">'val2'</span>]);
+</code></pre>
+<p>支持的每个命令都有一些快捷方式，可以按照如下方式使用：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$result</span> = <span class="hljs-variable">$redis</span>-&gt;hmset(<span class="hljs-string">'test_collection'</span>, <span class="hljs-string">'key1'</span>, <span class="hljs-string">'val1'</span>, <span class="hljs-string">'key2'</span>, <span class="hljs-string">'val2'</span>);
+</code></pre>
+<p>有关可用命令及其参数的列表，请参阅 redis 命令： </p>
+<ul>
+<li><a href="http://redis.io/commands">redis 命令英文版：http://redis.io/commands</a></li>
+<li><a href="http://redisdoc.com">redis 命令中文版：http://redisdoc.com</a></li>
+</ul>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:19 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

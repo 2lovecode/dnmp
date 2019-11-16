@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>Sessions and Cookies - 请求处理（Handling Requests） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w415" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w415-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w415-collapse" class="collapse navbar-collapse"><ul id="w416" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w417" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-399" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-399" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-400" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-400" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-401" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-401" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item active" href="#navigation-402" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-402" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item active" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-403" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-403" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-404" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-404" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-zh-CN/README.md">Sphinx</a>
+<a class="list-group-item" href="./guide-yii2-redis.html">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-zh-CN/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-zh-CN/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-405" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-405" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-406" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-406" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-407" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-407" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-408" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-408" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-409" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-409" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-410" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-410" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-411" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-411" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-412" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-412" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-413" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-413" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-414" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-414" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Sessions 和 Cookies <span id="sessions-he-cookies"></span><a href="#sessions-he-cookies" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#sessions">Sessions</a></li>
+<li><a href="#cookies">Cookies</a></li></ol></div>
+<p>Sessions 和 cookies 允许数据在多次请求中保持，
+在纯 PHP 中，可以分别使用全局变量 <code>$_SESSION</code> 和 <code>$_COOKIE</code> 来访问，Yii 将 session 和 cookie 封装成对象并增加一些功能，
+可通过面向对象方式访问它们。</p>
+<h2>Sessions  <span id="sessions"></span><a href="#sessions" class="hashlink">&para;</a></h2><p>和 <a href="guide-runtime-requests.html">请求</a> 和 <a href="guide-runtime-responses.html">响应</a>类似，
+默认可通过为 <a href="./yii-web-session.html">yii\web\Session</a> 实例的 <code>session</code> 
+<a href="guide-structure-application-components.html">应用组件</a> 来访问 sessions。</p>
+<h3>开启和关闭 Sessions  <span id="opening-closing-sessions"></span><a href="#opening-closing-sessions" class="hashlink">&para;</a></h3><p>可使用以下代码来开启和关闭 session。</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$session</span> = Yii::<span class="hljs-variable">$app</span>-&gt;session;
+
+<span class="hljs-comment">// 检查session是否开启 </span>
+<span class="hljs-keyword">if</span> (<span class="hljs-variable">$session</span>-&gt;isActive) ...
+
+<span class="hljs-comment">// 开启session</span>
+<span class="hljs-variable">$session</span>-&gt;open();
+
+<span class="hljs-comment">// 关闭session</span>
+<span class="hljs-variable">$session</span>-&gt;close();
+
+<span class="hljs-comment">// 销毁session中所有已注册的数据</span>
+<span class="hljs-variable">$session</span>-&gt;destroy();
+</code></pre>
+<p>多次调用<a href="./yii-web-session.html#open()-detail">open()</a> 和<a href="./yii-web-session.html#close()-detail">close()</a> 方法并不会产生错误，
+因为方法内部会先检查session是否已经开启。</p>
+<h3>访问 Session 数据  <span id="access-session-data"></span><a href="#access-session-data" class="hashlink">&para;</a></h3><p>可使用如下方式访问session中的数据：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$session</span> = Yii::<span class="hljs-variable">$app</span>-&gt;session;
+
+<span class="hljs-comment">// 获取session中的变量值，以下用法是相同的：</span>
+<span class="hljs-variable">$language</span> = <span class="hljs-variable">$session</span>-&gt;get(<span class="hljs-string">'language'</span>);
+<span class="hljs-variable">$language</span> = <span class="hljs-variable">$session</span>[<span class="hljs-string">'language'</span>];
+<span class="hljs-variable">$language</span> = <span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">'language'</span>]) ? <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">'language'</span>] : <span class="hljs-keyword">null</span>;
+
+<span class="hljs-comment">// 设置一个session变量，以下用法是相同的：</span>
+<span class="hljs-variable">$session</span>-&gt;set(<span class="hljs-string">'language'</span>, <span class="hljs-string">'en-US'</span>);
+<span class="hljs-variable">$session</span>[<span class="hljs-string">'language'</span>] = <span class="hljs-string">'en-US'</span>;
+<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">'language'</span>] = <span class="hljs-string">'en-US'</span>;
+
+<span class="hljs-comment">// 删除一个session变量，以下用法是相同的：</span>
+<span class="hljs-variable">$session</span>-&gt;remove(<span class="hljs-string">'language'</span>);
+<span class="hljs-keyword">unset</span>(<span class="hljs-variable">$session</span>[<span class="hljs-string">'language'</span>]);
+<span class="hljs-keyword">unset</span>(<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">'language'</span>]);
+
+<span class="hljs-comment">// 检查session变量是否已存在，以下用法是相同的：</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-variable">$session</span>-&gt;has(<span class="hljs-string">'language'</span>)) ...
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$session</span>[<span class="hljs-string">'language'</span>])) ...
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">'language'</span>])) ...
+
+<span class="hljs-comment">// 遍历所有session变量，以下用法是相同的：</span>
+<span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$session</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$name</span> =&gt; <span class="hljs-variable">$value</span>) ...
+<span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$_SESSION</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$name</span> =&gt; <span class="hljs-variable">$value</span>) ...
+</code></pre>
+<blockquote class="info"><p><strong>信息： </strong>当使用 <code>session</code> 组件访问 session 数据时候，
+  如果 session 没有开启会自动开启，
+  这和通过 <code>$_SESSION</code> 不同，<code>$_SESSION</code> 要求先执行 <code>session_start()</code>。</p>
+</blockquote>
+<p>当 session 数据为数组时，<code>session</code> 组件会限制你直接修改数据中的单元项，
+例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$session</span> = Yii::<span class="hljs-variable">$app</span>-&gt;session;
+
+<span class="hljs-comment">// 如下代码不会生效</span>
+<span class="hljs-variable">$session</span>[<span class="hljs-string">'captcha'</span>][<span class="hljs-string">'number'</span>] = <span class="hljs-number">5</span>;
+<span class="hljs-variable">$session</span>[<span class="hljs-string">'captcha'</span>][<span class="hljs-string">'lifetime'</span>] = <span class="hljs-number">3600</span>;
+
+<span class="hljs-comment">// 如下代码会生效：</span>
+<span class="hljs-variable">$session</span>[<span class="hljs-string">'captcha'</span>] = [
+    <span class="hljs-string">'number'</span> =&gt; <span class="hljs-number">5</span>,
+    <span class="hljs-string">'lifetime'</span> =&gt; <span class="hljs-number">3600</span>,
+];
+
+<span class="hljs-comment">// 如下代码也会生效：</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$session</span>[<span class="hljs-string">'captcha'</span>][<span class="hljs-string">'lifetime'</span>];
+</code></pre>
+<p>可使用以下任意一个变通方法来解决这个问题：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$session</span> = Yii::<span class="hljs-variable">$app</span>-&gt;session;
+
+<span class="hljs-comment">// 直接使用$_SESSION (确保Yii::$app-&gt;session-&gt;open() 已经调用)</span>
+<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">'captcha'</span>][<span class="hljs-string">'number'</span>] = <span class="hljs-number">5</span>;
+<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">'captcha'</span>][<span class="hljs-string">'lifetime'</span>] = <span class="hljs-number">3600</span>;
+
+<span class="hljs-comment">// 先获取session数据到一个数组，修改数组的值，然后保存数组到session中</span>
+<span class="hljs-variable">$captcha</span> = <span class="hljs-variable">$session</span>[<span class="hljs-string">'captcha'</span>];
+<span class="hljs-variable">$captcha</span>[<span class="hljs-string">'number'</span>] = <span class="hljs-number">5</span>;
+<span class="hljs-variable">$captcha</span>[<span class="hljs-string">'lifetime'</span>] = <span class="hljs-number">3600</span>;
+<span class="hljs-variable">$session</span>[<span class="hljs-string">'captcha'</span>] = <span class="hljs-variable">$captcha</span>;
+
+<span class="hljs-comment">// 使用ArrayObject 数组对象代替数组</span>
+<span class="hljs-variable">$session</span>[<span class="hljs-string">'captcha'</span>] = <span class="hljs-keyword">new</span> \ArrayObject;
+...
+<span class="hljs-variable">$session</span>[<span class="hljs-string">'captcha'</span>][<span class="hljs-string">'number'</span>] = <span class="hljs-number">5</span>;
+<span class="hljs-variable">$session</span>[<span class="hljs-string">'captcha'</span>][<span class="hljs-string">'lifetime'</span>] = <span class="hljs-number">3600</span>;
+
+<span class="hljs-comment">// 使用带通用前缀的键来存储数组</span>
+<span class="hljs-variable">$session</span>[<span class="hljs-string">'captcha.number'</span>] = <span class="hljs-number">5</span>;
+<span class="hljs-variable">$session</span>[<span class="hljs-string">'captcha.lifetime'</span>] = <span class="hljs-number">3600</span>;
+</code></pre>
+<p>为更好的性能和可读性，推荐最后一种方案，
+也就是不用存储 session 变量为数组，
+而是将每个数组项变成有相同键前缀的 session 变量。</p>
+<h3>自定义 Session 存储  <span id="custom-session-storage"></span><a href="#custom-session-storage" class="hashlink">&para;</a></h3><p><a href="./yii-web-session.html">yii\web\Session</a> 类默认存储 session 数据为文件到服务器上，
+Yii 提供以下 session 类实现不同的 session 存储方式：</p>
+<ul>
+<li><a href="./yii-web-dbsession.html">yii\web\DbSession</a>：存储 session 数据在数据表中</li>
+<li><a href="./yii-web-cachesession.html">yii\web\CacheSession</a>：存储 session 数据到缓存中，缓存和配置中的<a href="guide-caching-data.html#cache-components">缓存组件</a>相关</li>
+<li><a href="./yii-redis-session.html">yii\redis\Session</a>：存储 session 数据到以 <a href="http://redis.io/">redis</a> 作为存储媒介中</li>
+<li><a href="./yii-mongodb-session.html">yii\mongodb\Session</a>：存储 session 数据到 <a href="http://www.mongodb.org/">MongoDB</a>。</li>
+</ul>
+<p>所有这些 session 类支持相同的 API 方法集，因此，
+切换到不同的 session 存储介质不需要修改项目使用 session 的代码。</p>
+<blockquote class="note"><p><strong>注意： </strong>如果通过<code>$_SESSION</code>访问使用自定义存储介质的session，
+  需要确保session已经用<a href="./yii-web-session.html#open()-detail">yii\web\Session::open()</a> 开启，
+  这是因为在该方法中注册自定义session存储处理器。</p>
+</blockquote>
+<blockquote class="note"><p><strong>注意： </strong>如果使用自定义会话存储，则可能需要显式配置会话垃圾收集器。
+  一些安装的 PHP（例如 Debian）使用垃圾收集器概率为 0，并在计划任务中离线清理会话文件。
+  此过程不适用于您的自定义存储，
+  因此您需要配置 <span class="broken-link">yii\web\Session::$GCProbability</span> 以使用非零值。</p>
+</blockquote>
+<p>学习如何配置和使用这些组件类请参考它们的 API 文档，如下为一个示例
+显示如何在应用配置中配置 <a href="./yii-web-dbsession.html">yii\web\DbSession</a>
+将数据表作为 session 存储介质。</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'session'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\web\DbSession'</span>,
+            <span class="hljs-comment">// 'db' =&gt; 'mydb',  // 数据库连接的应用组件ID，默认为'db'.</span>
+            <span class="hljs-comment">// 'sessionTable' =&gt; 'my_session', // session 数据表名，默认为'session'.</span>
+        ],
+    ],
+];
+</code></pre>
+<p>也需要创建如下数据库表来存储 session 数据：</p>
+<pre><code class="hljs sql language-sql"><span class="hljs-operator"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">session</span>
+(
+    <span class="hljs-keyword">id</span> <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">40</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+    <span class="hljs-keyword">expire</span> <span class="hljs-built_in">INTEGER</span>,
+    <span class="hljs-keyword">data</span> <span class="hljs-built_in">BLOB</span>
+)
+</span></code></pre>
+<p>其中 'BLOB' 对应你选择的数据库管理系统的 BLOB-type 类型，以下一些常用数据库管理系统的 BLOB 类型：</p>
+<ul>
+<li>MySQL: LONGBLOB</li>
+<li>PostgreSQL: BYTEA</li>
+<li>MSSQL: BLOB</li>
+</ul>
+<blockquote class="note"><p><strong>注意： </strong>根据 php.ini 设置的 <code>session.hash_function</code>，你需要调整 <code>id</code> 列的长度，
+  例如，如果 <code>session.hash_function=sha256</code>，
+  应使用长度为 64 而不是 40 的 char 类型。</p>
+</blockquote>
+<p>或者，可以通过以下迁移完成：</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Migration</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m170529_050554_create_table_session</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;createTable(<span class="hljs-string">'{{%session}}'</span>, [
+            <span class="hljs-string">'id'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;char(<span class="hljs-number">64</span>)-&gt;notNull(),
+            <span class="hljs-string">'expire'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;integer(),
+            <span class="hljs-string">'data'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;binary()
+        ]);
+        <span class="hljs-variable">$this</span>-&gt;addPrimaryKey(<span class="hljs-string">'pk-id'</span>, <span class="hljs-string">'{{%session}}'</span>, <span class="hljs-string">'id'</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;dropTable(<span class="hljs-string">'{{%session}}'</span>);
+    }
+}
+</code></pre>
+<h3>Flash 数据  <span id="flash-data"></span><a href="#flash-data" class="hashlink">&para;</a></h3><p>Flash 数据是一种特别的 session 数据，它一旦在某个请求中设置后，
+只会在下次请求中有效，然后该数据就会自动被删除。
+常用于实现只需显示给终端用户一次的信息，
+如用户提交一个表单后显示确认信息。</p>
+<p>可通过 <code>session</code> 应用组件设置或访问 <code>session</code>，例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$session</span> = Yii::<span class="hljs-variable">$app</span>-&gt;session;
+
+<span class="hljs-comment">// 请求 #1</span>
+<span class="hljs-comment">// 设置一个名为"postDeleted" flash 信息</span>
+<span class="hljs-variable">$session</span>-&gt;setFlash(<span class="hljs-string">'postDeleted'</span>, <span class="hljs-string">'You have successfully deleted your post.'</span>);
+
+<span class="hljs-comment">// 请求 #2</span>
+<span class="hljs-comment">// 显示名为"postDeleted" flash 信息</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$session</span>-&gt;getFlash(<span class="hljs-string">'postDeleted'</span>);
+
+<span class="hljs-comment">// 请求 #3</span>
+<span class="hljs-comment">// $result 为 false，因为flash信息已被自动删除</span>
+<span class="hljs-variable">$result</span> = <span class="hljs-variable">$session</span>-&gt;hasFlash(<span class="hljs-string">'postDeleted'</span>);
+</code></pre>
+<p>和普通 session 数据类似，可将任意数据存储为 flash 数据。</p>
+<p>当调用 <a href="./yii-web-session.html#setFlash()-detail">yii\web\Session::setFlash()</a> 时, 会自动覆盖相同名的已存在的任何数据，
+为将数据追加到已存在的相同名 flash 中，可改为调用 <a href="./yii-web-session.html#addFlash()-detail">yii\web\Session::addFlash()</a>。
+例如:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$session</span> = Yii::<span class="hljs-variable">$app</span>-&gt;session;
+
+<span class="hljs-comment">// 请求 #1</span>
+<span class="hljs-comment">// 在名称为"alerts"的flash信息增加数据</span>
+<span class="hljs-variable">$session</span>-&gt;addFlash(<span class="hljs-string">'alerts'</span>, <span class="hljs-string">'You have successfully deleted your post.'</span>);
+<span class="hljs-variable">$session</span>-&gt;addFlash(<span class="hljs-string">'alerts'</span>, <span class="hljs-string">'You have successfully added a new friend.'</span>);
+<span class="hljs-variable">$session</span>-&gt;addFlash(<span class="hljs-string">'alerts'</span>, <span class="hljs-string">'You are promoted.'</span>);
+
+<span class="hljs-comment">// 请求 #2</span>
+<span class="hljs-comment">// $alerts 为名为'alerts'的flash信息，为数组格式</span>
+<span class="hljs-variable">$alerts</span> = <span class="hljs-variable">$session</span>-&gt;getFlash(<span class="hljs-string">'alerts'</span>);
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>不要在相同名称的 flash 数据中使用 <a href="./yii-web-session.html#setFlash()-detail">yii\web\Session::setFlash()</a> 的同时也使用 <a href="./yii-web-session.html#addFlash()-detail">yii\web\Session::addFlash()</a>，
+  因为后一个防范会自动将 flash 信息转换为数组以使新的 flash 数据可追加进来，因此，
+  当你调用 <a href="./yii-web-session.html#getFlash()-detail">yii\web\Session::getFlash()</a> 时，
+  会发现有时获取到一个数组，有时获取到一个字符串，
+  取决于你调用这两个方法的顺序。</p>
+</blockquote>
+<blockquote class="tip"><p><strong>提示： </strong>要显示 Flash 消息，您可以通过以下方式使用 <a href="./yii-bootstrap-alert.html">bootstrap Alert</a> 小部件：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> Alert::widget([
+   <span class="hljs-string">'options'</span> =&gt; [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'alert-info'</span>],
+   <span class="hljs-string">'body'</span> =&gt; Yii::<span class="hljs-variable">$app</span>-&gt;session-&gt;getFlash(<span class="hljs-string">'postDeleted'</span>),
+]);
+</code></pre>
+</blockquote>
+<h2>Cookies  <span id="cookies"></span><a href="#cookies" class="hashlink">&para;</a></h2><p>Yii 使用 <a href="./yii-web-cookie.html">yii\web\Cookie</a> 对象来代表每个 cookie，
+<a href="./yii-web-request.html">yii\web\Request</a> 和 <a href="./yii-web-response.html">yii\web\Response</a>
+通过名为 'cookies' 的属性维护一个 cookie 集合，前者的 cookie 集合代表请求提交的 cookies，
+后者的 cookie 集合表示发送给用户的 cookies。</p>
+<p>控制器是直接处理请求和响应的部分。 因此, 应当在控制器中读取和发送 cookie 。
+(译者注：意思在控制器中处理 cookie 是安全的。)</p>
+<h3>读取 Cookies  <span id="reading-cookies"></span><a href="#reading-cookies" class="hashlink">&para;</a></h3><p>当前请求的 cookie 信息可通过如下代码获取：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 从 "request" 组件中获取 cookie 集合(yii\web\CookieCollection)</span>
+<span class="hljs-variable">$cookies</span> = Yii::<span class="hljs-variable">$app</span>-&gt;request-&gt;cookies;
+
+<span class="hljs-comment">// 获取名为 "language" cookie 的值，如果不存在，返回默认值 "en"</span>
+<span class="hljs-variable">$language</span> = <span class="hljs-variable">$cookies</span>-&gt;getValue(<span class="hljs-string">'language'</span>, <span class="hljs-string">'en'</span>);
+
+<span class="hljs-comment">// 另一种方式获取名为 "language" cookie 的值</span>
+<span class="hljs-keyword">if</span> ((<span class="hljs-variable">$cookie</span> = <span class="hljs-variable">$cookies</span>-&gt;get(<span class="hljs-string">'language'</span>)) !== <span class="hljs-keyword">null</span>) {
+    <span class="hljs-variable">$language</span> = <span class="hljs-variable">$cookie</span>-&gt;value;
+}
+
+<span class="hljs-comment">// 可将 $cookies 当作数组使用</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$cookies</span>[<span class="hljs-string">'language'</span>])) {
+    <span class="hljs-variable">$language</span> = <span class="hljs-variable">$cookies</span>[<span class="hljs-string">'language'</span>]-&gt;value;
+}
+
+<span class="hljs-comment">// 判断是否存在名为 "language" 的 cookie</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-variable">$cookies</span>-&gt;has(<span class="hljs-string">'language'</span>)) ...
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$cookies</span>[<span class="hljs-string">'language'</span>])) ...
+</code></pre>
+<h3>发送 Cookies  <span id="sending-cookies"></span><a href="#sending-cookies" class="hashlink">&para;</a></h3><p>可使用如下代码发送 cookie 到终端用户：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// 从 "response" 组件中获取 cookie 集合(yii\web\CookieCollection)</span>
+<span class="hljs-variable">$cookies</span> = Yii::<span class="hljs-variable">$app</span>-&gt;response-&gt;cookies;
+
+<span class="hljs-comment">// 在要发送的响应中添加一个新的 cookie</span>
+<span class="hljs-variable">$cookies</span>-&gt;add(<span class="hljs-keyword">new</span> \yii\web\Cookie([
+    <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'language'</span>,
+    <span class="hljs-string">'value'</span> =&gt; <span class="hljs-string">'zh-CN'</span>,
+]));
+
+<span class="hljs-comment">// 删除一个 cookie</span>
+<span class="hljs-variable">$cookies</span>-&gt;remove(<span class="hljs-string">'language'</span>);
+<span class="hljs-comment">// 等同于以下删除代码</span>
+<span class="hljs-keyword">unset</span>(<span class="hljs-variable">$cookies</span>[<span class="hljs-string">'language'</span>]);
+</code></pre>
+<p>除了上述例子定义的 <a href="./yii-web-cookie.html#$name-detail">name</a> 和 <a href="./yii-web-cookie.html#$value-detail">value</a> 属性
+<a href="./yii-web-cookie.html">yii\web\Cookie</a> 类也定义了其他属性来实现 cookie 的各种信息，如
+<a href="./yii-web-cookie.html#$domain-detail">domain</a>，<a href="./yii-web-cookie.html#$expire-detail">expire</a>
+可配置这些属性到 cookie 中并添加到响应的 cookie 集合中。</p>
+<blockquote class="note"><p><strong>注意： </strong>为安全起见 <a href="./yii-web-cookie.html#$httpOnly-detail">yii\web\Cookie::$httpOnly</a> 被设置为 true，
+  这可减少客户端脚本访问受保护 cookie（如果浏览器支持）的风险，
+  更多详情可阅读 <a href="https://www.owasp.org/index.php/HttpOnly">httpOnly wiki article</a>。</p>
+</blockquote>
+<h3>Cookie 验证  <span id="cookie-validation"></span><a href="#cookie-validation" class="hashlink">&para;</a></h3><p>在上两节中，当通过 <code>request</code> 和 <code>response</code> 组件读取和发送 cookie 时，
+你会喜欢扩展的 cookie 验证的保障安全功能，它能
+使 cookie 不被客户端修改。该功能通过给每个 cookie 签发一个哈希字符串来告知服务端 cookie 是否在客户端被修改，
+如果被修改，通过 <code>request</code> 组件的
+<a href="./yii-web-request.html#$cookies-detail">cookie collection</a> cookie 集合访问不到该 cookie。</p>
+<blockquote class="note"><p><strong>注意： </strong>Cookie 验证只保护 cookie 值被修改，如果一个 cookie 验证失败，
+  仍然可以通过 <code>$_COOKIE</code> 来访问该 cookie，
+  因为这是第三方库对未通过 cookie 验证自定义的操作方式。</p>
+</blockquote>
+<p>Cookie 验证默认启用，可以设置 <a href="./yii-web-request.html#$enableCookieValidation-detail">yii\web\Request::$enableCookieValidation</a> 属性为 false 来禁用它，
+尽管如此，我们强烈建议启用它。</p>
+<blockquote class="note"><p><strong>注意： </strong>直接通过 <code>$_COOKIE</code> 和 <code>setcookie()</code> 读取和发送的 Cookie 不会被验证。</p>
+</blockquote>
+<p>当使用 cookie 验证时，必须指定 <a href="./yii-web-request.html#$cookieValidationKey-detail">yii\web\Request::$cookieValidationKey</a>，它是用来生成上述的哈希值，
+可通过在应用配置中配置 <code>request</code> 组件。</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'request'</span> =&gt; [
+            <span class="hljs-string">'cookieValidationKey'</span> =&gt; <span class="hljs-string">'fill in a secret key here'</span>,
+        ],
+    ],
+];
+</code></pre>
+<blockquote class="info"><p><strong>信息： </strong><a href="./yii-web-request.html#$cookieValidationKey-detail">cookieValidationKey</a> 对你的应用安全很重要，
+  应只被你信任的人知晓，请不要将它放入版本控制中。</p>
+</blockquote>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

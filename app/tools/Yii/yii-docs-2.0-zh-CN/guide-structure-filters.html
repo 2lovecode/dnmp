@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>过滤器（Filters） - 应用结构（Application Structure） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w16" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w16-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w16-collapse" class="collapse navbar-collapse"><ul id="w17" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w18" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-0" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-0" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-1" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-1" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item active" href="#navigation-2" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-2" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item active" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-3" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-3" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-4" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-4" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-5" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-5" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-zh-CN/README.md">Sphinx</a>
+<a class="list-group-item" href="./guide-yii2-redis.html">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-zh-CN/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-zh-CN/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-6" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-6" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-7" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-7" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-8" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-8" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-9" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-9" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-10" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-10" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-11" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-11" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-12" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-12" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-13" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-13" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-14" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-14" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-15" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-15" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>过滤器 <span id="guo-lu-qi"></span><a href="#guo-lu-qi" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#using-filters">使用过滤器</a></li>
+<li><a href="#creating-filters">创建过滤器</a></li>
+<li><a href="#core-filters">核心过滤器</a></li></ol></div>
+<p>过滤器是 <a href="guide-structure-controllers.html#actions">控制器动作</a> 执行之前或之后执行的对象。
+例如访问控制过滤器可在动作执行之前来控制特殊终端用户是否有权限执行动作，
+内容压缩过滤器可在动作执行之后发给终端用户之前压缩响应内容。</p>
+<p>过滤器可包含预过滤（过滤逻辑在动作<em>之前</em>）或后过滤（过滤逻辑在动作<em>之后</em>），
+也可同时包含两者。</p>
+<h2>使用过滤器  <span id="using-filters"></span><a href="#using-filters" class="hashlink">&para;</a></h2><p>过滤器本质上是一类特殊的 <a href="guide-concept-behaviors.html">行为</a>，
+所以使用过滤器和 <a href="guide-concept-behaviors.html#attaching-behaviors">使用行为</a>一样。
+可以在控制器类中覆盖它的 <a href="./yii-base-component.html#behaviors()-detail">behaviors()</a> 方法来声明过滤器，如下所示：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behaviors</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\filters\HttpCache'</span>,
+            <span class="hljs-string">'only'</span> =&gt; [<span class="hljs-string">'index'</span>, <span class="hljs-string">'view'</span>],
+            <span class="hljs-string">'lastModified'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$action</span>, <span class="hljs-variable">$params</span>)</span> </span>{
+                <span class="hljs-variable">$q</span> = <span class="hljs-keyword">new</span> \yii\db\Query();
+                <span class="hljs-keyword">return</span> <span class="hljs-variable">$q</span>-&gt;from(<span class="hljs-string">'user'</span>)-&gt;max(<span class="hljs-string">'updated_at'</span>);
+            },
+        ],
+    ];
+}
+</code></pre>
+<p>控制器类的过滤器默认应用到该类的 <em>所有</em> 动作，
+你可以配置 <a href="./yii-base-actionfilter.html#$only-detail">only</a> 属性明确指定控制器应用到哪些动作。
+在上述例子中，<code>HttpCache</code> 过滤器只应用到 <code>index</code> 和 <code>view</code> 动作。
+也可以配置 <a href="./yii-base-actionfilter.html#$except-detail">except</a> 属性
+使一些动作不执行过滤器。</p>
+<p>除了控制器外，可在 <a href="guide-structure-modules.html">模块</a>或<a href="guide-structure-applications.html">应用主体</a> 中申明过滤器。
+申明之后，过滤器会应用到所属该模块或应用主体的 <em>所有</em> 控制器动作，
+除非像上述一样配置过滤器的 <a href="./yii-base-actionfilter.html#$only-detail">only</a> 
+和 <a href="./yii-base-actionfilter.html#$except-detail">except</a> 属性。</p>
+<blockquote class="note"><p><strong>注意： </strong>在模块或应用主体中申明过滤器，在<a href="./yii-base-actionfilter.html#$only-detail">only</a> 和 <a href="./yii-base-actionfilter.html#$except-detail">except</a>
+  属性中使用<a href="guide-structure-controllers.html#routes">路由</a> 代替动作 ID，
+  因为在模块或应用主体中只用动作ID并不能唯一指定到具体动作。</p>
+</blockquote>
+<p>当一个动作有多个过滤器时，根据以下规则先后执行：</p>
+<ul>
+<li>预过滤<ul>
+<li>按顺序执行应用主体中 <code>behaviors()</code> 列出的过滤器。</li>
+<li>按顺序执行模块中 <code>behaviors()</code> 列出的过滤器。</li>
+<li>按顺序执行控制器中 <code>behaviors()</code> 列出的过滤器。</li>
+<li>如果任意过滤器终止动作执行，
+后面的过滤器（包括预过滤和后过滤）不再执行。</li>
+</ul>
+</li>
+<li>成功通过预过滤后执行动作。</li>
+<li>后过滤<ul>
+<li>倒序执行控制器中 <code>behaviors()</code> 列出的过滤器。</li>
+<li>倒序执行模块中 <code>behaviors()</code> 列出的过滤器。</li>
+<li>倒序执行应用主体中 <code>behaviors()</code> 列出的过滤器。</li>
+</ul>
+</li>
+</ul>
+<h2>创建过滤器  <span id="creating-filters"></span><a href="#creating-filters" class="hashlink">&para;</a></h2><p>继承 <a href="./yii-base-actionfilter.html">yii\base\ActionFilter</a> 类并覆盖
+<a href="./yii-base-actionfilter.html#beforeAction()-detail">beforeAction()</a> 或 <a href="./yii-base-actionfilter.html#afterAction()-detail">afterAction()</a>
+方法来创建动作的过滤器，前者在动作执行之前执行，后者在动作执行之后执行。
+<a href="./yii-base-actionfilter.html#beforeAction()-detail">beforeAction()</a> 返回值决定动作是否应该执行，
+如果为 false，之后的过滤器和动作不会继续执行。</p>
+<p>下面的例子申明一个记录动作执行时间日志的过滤器。</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">ActionFilter</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ActionTimeFilter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActionFilter</span>
+</span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-variable">$_startTime</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">beforeAction</span><span class="hljs-params">(<span class="hljs-variable">$action</span>)</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;_startTime = microtime(<span class="hljs-keyword">true</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">parent</span>::beforeAction(<span class="hljs-variable">$action</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">afterAction</span><span class="hljs-params">(<span class="hljs-variable">$action</span>, <span class="hljs-variable">$result</span>)</span>
+    </span>{
+        <span class="hljs-variable">$time</span> = microtime(<span class="hljs-keyword">true</span>) - <span class="hljs-variable">$this</span>-&gt;_startTime;
+        Yii::debug(<span class="hljs-string">"Action '{$action-&gt;uniqueId}' spent $time second."</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">parent</span>::afterAction(<span class="hljs-variable">$action</span>, <span class="hljs-variable">$result</span>);
+    }
+}
+</code></pre>
+<h2>核心过滤器  <span id="core-filters"></span><a href="#core-filters" class="hashlink">&para;</a></h2><p>Yii 提供了一组常用过滤器，在 <code>yii\filters</code> 命名空间下，
+接下来我们简要介绍这些过滤器。</p>
+<h3><a href="./yii-filters-accesscontrol.html">AccessControl</a>  <span id="access-control"></span><a href="#access-control" class="hashlink">&para;</a></h3><p>AccessControl 提供基于 <a href="./yii-filters-accesscontrol.html#$rules-detail">rules</a> 规则的访问控制。
+特别是在动作执行之前，访问控制会检测所有规则
+并找到第一个符合上下文的变量（比如用户 IP 地址、登录状态等等）的规则，
+来决定允许还是拒绝请求动作的执行，
+如果没有规则符合，访问就会被拒绝。</p>
+<p>如下示例表示表示允许已认证用户访问 <code>create</code> 和 <code>update</code> 动作，
+拒绝其他用户访问这两个动作。</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">filters</span>\<span class="hljs-title">AccessControl</span>;
+
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behaviors</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-string">'access'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; AccessControl::className(),
+            <span class="hljs-string">'only'</span> =&gt; [<span class="hljs-string">'create'</span>, <span class="hljs-string">'update'</span>],
+            <span class="hljs-string">'rules'</span> =&gt; [
+                <span class="hljs-comment">// 允许认证用户</span>
+                [
+                    <span class="hljs-string">'allow'</span> =&gt; <span class="hljs-keyword">true</span>,
+                    <span class="hljs-string">'roles'</span> =&gt; [<span class="hljs-string">'@'</span>],
+                ],
+                <span class="hljs-comment">// 默认禁止其他用户</span>
+            ],
+        ],
+    ];
+}
+</code></pre>
+<p>更多关于访问控制的详情请参阅 <a href="guide-security-authorization.html">授权</a> 一节。</p>
+<h3>认证方法过滤器  <span id="auth-method-filters"></span><a href="#auth-method-filters" class="hashlink">&para;</a></h3><p>认证方法过滤器通过 <a href="http://en.wikipedia.org/wiki/Basic_access_authentication">HTTP Basic Auth</a>
+或 <a href="http://oauth.net/2/">OAuth 2</a>
+来认证一个用户，认证方法过滤器类在 <code>yii\filters\auth</code> 命名空间下。</p>
+<p>如下示例表示可使用 <a href="./yii-filters-auth-httpbasicauth.html">yii\filters\auth\HttpBasicAuth</a> 来认证一个用户，
+它使用基于 HTTP 基础认证方法的令牌。
+注意为了可运行，<a href="./yii-web-user.html#$identityClass-detail">user identity class</a> 类必须
+实现 <a href="./yii-web-identityinterface.html#findIdentityByAccessToken()-detail">findIdentityByAccessToken()</a> 方法。</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">filters</span>\<span class="hljs-title">auth</span>\<span class="hljs-title">HttpBasicAuth</span>;
+
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behaviors</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-string">'basicAuth'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; HttpBasicAuth::className(),
+        ],
+    ];
+}
+</code></pre>
+<p>认证方法过滤器通常在实现 RESTful API中使用，
+更多关于访问控制的详情请参阅 RESTful <a href="guide-rest-authentication.html">认证</a> 一节。</p>
+<h3><a href="./yii-filters-contentnegotiator.html">ContentNegotiator</a>  <span id="content-negotiator"></span><a href="#content-negotiator" class="hashlink">&para;</a></h3><p>ContentNegotiator 支持响应内容格式处理和语言处理。
+通过检查 <code>GET</code> 参数和 <code>Accept</code> HTTP 头部来决定响应内容格式和语言。</p>
+<p>如下示例，配置 ContentNegotiator 支持 JSON 和 XML
+响应格式和英语（美国）和德语。</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">filters</span>\<span class="hljs-title">ContentNegotiator</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Response</span>;
+
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behaviors</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        [
+            <span class="hljs-string">'class'</span> =&gt; ContentNegotiator::className(),
+            <span class="hljs-string">'formats'</span> =&gt; [
+                <span class="hljs-string">'application/json'</span> =&gt; Response::FORMAT_JSON,
+                <span class="hljs-string">'application/xml'</span> =&gt; Response::FORMAT_XML,
+            ],
+            <span class="hljs-string">'languages'</span> =&gt; [
+                <span class="hljs-string">'en-US'</span>,
+                <span class="hljs-string">'de'</span>,
+            ],
+        ],
+    ];
+}
+</code></pre>
+<p>在<a href="guide-structure-applications.html#application-lifecycle">应用主体生命周期</a>过程中检测响应格式和语言简单很多，
+因此 ContentNegotiator 设计可被
+<a href="guide-structure-applications.html#bootstrap">引导启动组件</a>调用的过滤器。
+如下例所示可以将它配置在
+<a href="guide-structure-applications.html#application-configurations">应用主体配置</a>。</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">filters</span>\<span class="hljs-title">ContentNegotiator</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Response</span>;
+
+[
+    <span class="hljs-string">'bootstrap'</span> =&gt; [
+        [
+            <span class="hljs-string">'class'</span> =&gt; ContentNegotiator::className(),
+            <span class="hljs-string">'formats'</span> =&gt; [
+                <span class="hljs-string">'application/json'</span> =&gt; Response::FORMAT_JSON,
+                <span class="hljs-string">'application/xml'</span> =&gt; Response::FORMAT_XML,
+            ],
+            <span class="hljs-string">'languages'</span> =&gt; [
+                <span class="hljs-string">'en-US'</span>,
+                <span class="hljs-string">'de'</span>,
+            ],
+        ],
+    ],
+];
+</code></pre>
+<blockquote class="info"><p><strong>信息： </strong>如果请求中没有检测到内容格式和语言，
+  使用 <span class="broken-link">formats</span> 和 <span class="broken-link">languages</span> 第一个配置项。</p>
+</blockquote>
+<h3><a href="./yii-filters-httpcache.html">HttpCache</a>  <span id="http-cache"></span><a href="#http-cache" class="hashlink">&para;</a></h3><p>HttpCache 利用 <code>Last-Modified</code> 和 <code>Etag</code> HTTP 头实现客户端缓存。
+例如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">filters</span>\<span class="hljs-title">HttpCache</span>;
+
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behaviors</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        [
+            <span class="hljs-string">'class'</span> =&gt; HttpCache::className(),
+            <span class="hljs-string">'only'</span> =&gt; [<span class="hljs-string">'index'</span>],
+            <span class="hljs-string">'lastModified'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$action</span>, <span class="hljs-variable">$params</span>)</span> </span>{
+                <span class="hljs-variable">$q</span> = <span class="hljs-keyword">new</span> \yii\db\Query();
+                <span class="hljs-keyword">return</span> <span class="hljs-variable">$q</span>-&gt;from(<span class="hljs-string">'user'</span>)-&gt;max(<span class="hljs-string">'updated_at'</span>);
+            },
+        ],
+    ];
+}
+</code></pre>
+<p>更多关于使用 HttpCache 详情请参阅 <a href="guide-caching-http.html">HTTP 缓存</a> 一节。</p>
+<h3><a href="./yii-filters-pagecache.html">PageCache</a>  <span id="page-cache"></span><a href="#page-cache" class="hashlink">&para;</a></h3><p>PageCache 实现服务器端整个页面的缓存。如下示例所示，PageCache 应用在 <code>index</code> 动作，
+缓存整个页面 60 秒或 <code>post</code> 表的记录数发生变化。
+它也会根据不同应用语言保存不同的页面版本。</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">filters</span>\<span class="hljs-title">PageCache</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">caching</span>\<span class="hljs-title">DbDependency</span>;
+
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behaviors</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-string">'pageCache'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; PageCache::className(),
+            <span class="hljs-string">'only'</span> =&gt; [<span class="hljs-string">'index'</span>],
+            <span class="hljs-string">'duration'</span> =&gt; <span class="hljs-number">60</span>,
+            <span class="hljs-string">'dependency'</span> =&gt; [
+                <span class="hljs-string">'class'</span> =&gt; DbDependency::className(),
+                <span class="hljs-string">'sql'</span> =&gt; <span class="hljs-string">'SELECT COUNT(*) FROM post'</span>,
+            ],
+            <span class="hljs-string">'variations'</span> =&gt; [
+                \Yii::<span class="hljs-variable">$app</span>-&gt;language,
+            ]
+        ],
+    ];
+}
+</code></pre>
+<p>更多关于使用 PageCache 详情请参阅 <a href="guide-caching-page.html">页面缓存</a> 一节。</p>
+<h3><a href="./yii-filters-ratelimiter.html">RateLimiter</a>  <span id="rate-limiter"></span><a href="#rate-limiter" class="hashlink">&para;</a></h3><p>RateLimiter 根据 <a href="http://en.wikipedia.org/wiki/Leaky_bucket">漏桶算法</a> 来实现速率限制。
+主要用在实现 RESTful APIs，更多关于该过滤器详情请参阅
+<a href="guide-rest-rate-limiting.html">Rate Limiting</a> 一节。</p>
+<h3><a href="./yii-filters-verbfilter.html">VerbFilter</a>  <span id="verb-filter"></span><a href="#verb-filter" class="hashlink">&para;</a></h3><p>VerbFilter 检查请求动作的 HTTP 请求方式是否允许执行，
+如果不允许，会抛出 HTTP 405异常。
+如下示例，VerbFilter 指定 CRUD 动作所允许的请求方式。</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">filters</span>\<span class="hljs-title">VerbFilter</span>;
+
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behaviors</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-string">'verbs'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; VerbFilter::className(),
+            <span class="hljs-string">'actions'</span> =&gt; [
+                <span class="hljs-string">'index'</span>  =&gt; [<span class="hljs-string">'get'</span>],
+                <span class="hljs-string">'view'</span>   =&gt; [<span class="hljs-string">'get'</span>],
+                <span class="hljs-string">'create'</span> =&gt; [<span class="hljs-string">'get'</span>, <span class="hljs-string">'post'</span>],
+                <span class="hljs-string">'update'</span> =&gt; [<span class="hljs-string">'get'</span>, <span class="hljs-string">'put'</span>, <span class="hljs-string">'post'</span>],
+                <span class="hljs-string">'delete'</span> =&gt; [<span class="hljs-string">'post'</span>, <span class="hljs-string">'delete'</span>],
+            ],
+        ],
+    ];
+}
+</code></pre>
+<h3><a href="./yii-filters-cors.html">Cors</a>  <span id="cors"></span><a href="#cors" class="hashlink">&para;</a></h3><p>跨域资源共享 <a href="https://developer.mozilla.org/fr/docs/HTTP/Access_control_CORS">CORS</a> 
+机制允许一个网页的许多资源（例如字体、JavaScript等）
+这些资源可以通过其他域名访问获取。
+特别是 JavaScript 的 AJAX 调用可使用 XMLHttpRequest 机制，
+由于同源安全策略该跨域请求会被网页浏览器禁止。CORS 定义浏览器和服务器交互时哪些跨域请求允许和禁止。</p>
+<p><a href="./yii-filters-cors.html">Cors filter</a> 应在授权/认证过滤器之前定义，
+以保证 CORS 头部被发送。</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">filters</span>\<span class="hljs-title">Cors</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">ArrayHelper</span>;
+
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behaviors</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> ArrayHelper::merge([
+        [
+            <span class="hljs-string">'class'</span> =&gt; Cors::className(),
+        ],
+    ], <span class="hljs-keyword">parent</span>::behaviors());
+}
+</code></pre>
+<p>如果要将CORS过滤器添加到你的 API 中的 <a href="./yii-rest-activecontroller.html">yii\rest\ActiveController</a> 类，
+还要检查 <a href="guide-rest-controllers.html#cors">REST Controllers</a> 中的部分。</p>
+<p>CROS过滤器可以通过 <a href="./yii-filters-cors.html#$cors-detail">$cors</a> 属性进行调整。</p>
+<ul>
+<li><code>cors['Origin']</code>：定义允许来源的数组，可为 <code>['*']</code>（任何用户）或 <code>['http://www.myserver.net', 'http://www.myotherserver.com']</code>。 默认为 <code>['*']</code>。</li>
+<li><code>cors['Access-Control-Request-Method']</code>：允许动作数组如 <code>['GET', 'OPTIONS', 'HEAD']</code>。默认为 <code>['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS']</code>。</li>
+<li><code>cors['Access-Control-Request-Headers']</code>：允许请求头部数组，可为 <code>['*']</code> 所有类型头部 或 <code>['X-Request-With']</code> 指定类型头部。默认为 <code>['*']</code>。</li>
+<li><code>cors['Access-Control-Allow-Credentials']</code>：定义当前请求是否使用证书，可为 <code>true</code>，<code>false</code> 或 <code>null</code>（不设置）。默认为 <code>null</code>。</li>
+<li><code>cors['Access-Control-Max-Age']</code>: 定义请求的有效时间，默认为 <code>86400</code>。</li>
+</ul>
+<p>例如，允许来源为 <code>http://www.myserver.net</code> 和方式为 <code>GET</code>，<code>HEAD</code> 和 <code>OPTIONS</code> 的 CORS 如下：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">filters</span>\<span class="hljs-title">Cors</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">ArrayHelper</span>;
+
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behaviors</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> ArrayHelper::merge([
+        [
+            <span class="hljs-string">'class'</span> =&gt; Cors::className(),
+            <span class="hljs-string">'cors'</span> =&gt; [
+                <span class="hljs-string">'Origin'</span> =&gt; [<span class="hljs-string">'http://www.myserver.net'</span>],
+                <span class="hljs-string">'Access-Control-Request-Method'</span> =&gt; [<span class="hljs-string">'GET'</span>, <span class="hljs-string">'HEAD'</span>, <span class="hljs-string">'OPTIONS'</span>],
+            ],
+        ],
+    ], <span class="hljs-keyword">parent</span>::behaviors());
+}
+</code></pre>
+<p>可以覆盖默认参数为每个动作调整 CORS 头部。例如，为 <code>login</code> 动作
+增加 <code>Access-Control-Allow-Credentials</code> 参数如下所示：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">filters</span>\<span class="hljs-title">Cors</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">ArrayHelper</span>;
+
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behaviors</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> ArrayHelper::merge([
+        [
+            <span class="hljs-string">'class'</span> =&gt; Cors::className(),
+            <span class="hljs-string">'cors'</span> =&gt; [
+                <span class="hljs-string">'Origin'</span> =&gt; [<span class="hljs-string">'http://www.myserver.net'</span>],
+                <span class="hljs-string">'Access-Control-Request-Method'</span> =&gt; [<span class="hljs-string">'GET'</span>, <span class="hljs-string">'HEAD'</span>, <span class="hljs-string">'OPTIONS'</span>],
+            ],
+            <span class="hljs-string">'actions'</span> =&gt; [
+                <span class="hljs-string">'login'</span> =&gt; [
+                    <span class="hljs-string">'Access-Control-Allow-Credentials'</span> =&gt; <span class="hljs-keyword">true</span>,
+                ]
+            ]
+        ],
+    ], <span class="hljs-keyword">parent</span>::behaviors());
+}
+</code></pre>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

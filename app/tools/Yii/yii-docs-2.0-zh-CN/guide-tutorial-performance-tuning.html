@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>性能优化（Performance Tuning） - 高级专题（Special Topics） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1213" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1213-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1213-collapse" class="collapse navbar-collapse"><ul id="w1214" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1215" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1197" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-1197" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-1198" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-1198" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-1199" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-1199" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-1200" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-1200" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-1201" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-1201" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-1202" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-1202" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-zh-CN/README.md">Sphinx</a>
+<a class="list-group-item" href="./guide-yii2-redis.html">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-zh-CN/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-zh-CN/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1203" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-1203" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-1204" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-1204" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-1205" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-1205" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-1206" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-1206" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-1207" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-1207" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-1208" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-1208" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-1209" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-1209" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item active" href="#navigation-1210" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-1210" class="submenu panel-collapse collapse in"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item active" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-1211" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-1211" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1212" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-1212" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>性能优化 <span id="xing-neng-you-hua"></span><a href="#xing-neng-you-hua" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#optimizing-php">优化你的 PHP 环境</a></li>
+<li><a href="#disable-debug">禁用调试模式</a></li>
+<li><a href="#using-caching">使用缓存技术</a></li>
+<li><a href="#enable-schema-caching">开启 Schema 缓存</a></li>
+<li><a href="#optimizing-assets">合并和压缩资源文件</a></li>
+<li><a href="#optimizing-session">优化会话存储</a></li>
+<li><a href="#optimizing-databases">优化数据库</a></li>
+<li><a href="#using-arrays">使用普通数组</a></li>
+<li><a href="#optimizing-autoloader">优化 Composer 自动加载</a></li>
+<li><a href="#processing-data-offline">处理离线数据</a></li>
+<li><a href="#performance-profiling">性能分析</a></li>
+<li><a href="#zhun-bei-kuo-zhan-ying-yong-cheng-xu">准备扩展应用程序</a></li></ol></div>
+<p>有许多因素影响你的 Web 应用程序的性能。有些是环境，
+有些是你的代码，而其他一些与 Yii 本身有关。
+在本节中，我们将列举这些因素并解释如何通过调整这些因素来提高应用程序的性能。</p>
+<h2>优化你的 PHP 环境  <span id="optimizing-php"></span><a href="#optimizing-php" class="hashlink">&para;</a></h2><p>一个好的 PHP 环境是非常重要的。为了得到最大的性能，</p>
+<ul>
+<li>使用最新稳定版本的 PHP。 PHP 的主要版本可能带来显著的性能提升。</li>
+<li>启用字节码缓存 <a href="https://secure.php.net/opcache">Opcache</a>（PHP 5.5或更高版本）
+或 <a href="https://secure.php.net/apc">APC</a>
+（PHP 5.4或更早版本）。字节码缓存省去了每次解析和加载 PHP 脚本所带来的开销。</li>
+<li><a href="https://github.com/samdark/realpath_cache_tuner">Tune <code>realpath()</code> cache</a>.</li>
+</ul>
+<h2>禁用调试模式  <span id="disable-debug"></span><a href="#disable-debug" class="hashlink">&para;</a></h2><p>对于运行在生产环境中的应用程序，你应该禁用调试模式。
+Yii 中使用名为 <code>YII_DEBUG</code> 的常量来定义调试模式是否应被激活。
+若启用了调试模式，Yii 将需要额外的时间来产生和记录调试信息。</p>
+<p>你可以将下面的代码行放在 <a href="guide-structure-entry-scripts.html">入口脚本</a> 
+的开头来禁用调试模式：</p>
+<pre><code class="hljs php language-php">defined(<span class="hljs-string">'YII_DEBUG'</span>) <span class="hljs-keyword">or</span> define(<span class="hljs-string">'YII_DEBUG'</span>, <span class="hljs-keyword">false</span>);
+</code></pre>
+<blockquote class="tip"><p><strong>提示： </strong><code>YII_DEBUG</code> 的默认值是 false 。所以如果你确信你不在你应用程序代码中别的地方更改其默认值，
+  你可以简单地删除上述行来禁用调试模式。</p>
+</blockquote>
+<h2>使用缓存技术  <span id="using-caching"></span><a href="#using-caching" class="hashlink">&para;</a></h2><p>你可以使用各种缓存技术来提高应用程序的性能。例如，如果你的应用程序允许用户以 Markdown 格式输入文字，
+你可以考虑缓存解析后的 Markdown 内容，避免每个请求都重复解析相同的 Markdown 文本。
+请参阅 <a href="guide-caching-overview.html">缓存</a> 一节，
+了解 Yii 提供的缓存支持。</p>
+<h2>开启 Schema 缓存  <span id="enable-schema-caching"></span><a href="#enable-schema-caching" class="hashlink">&para;</a></h2><p>Schema 缓存是一个特殊的缓存功能，
+每当你使用<a href="guide-db-active-record.html">活动记录</a>时应该要开启这个缓存功能。如你所知，
+活动记录能智能检测数据库对象的集合（例如列名、列类型、约束）而不需要手动地描述它们。
+活动记录是通过执行额外的 SQL 查询来获得该信息。
+通过启用 Schema 缓存，检索到的数据库对象的集合将被保存在缓存中并在将来的请求中重用。</p>
+<p>要开启 Schema 缓存，需要配置一个 <code>cache</code> <a href="guide-structure-application-components.html">应用组件</a>来储存 Schema 信息，
+并在 <a href="guide-concept-configurations.html">配置</a> 中设置 <a href="./yii-db-connection.html#$enableSchemaCache-detail">yii\db\Connection::$enableSchemaCache</a> 为 <code>true</code> :</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-comment">// ...</span>
+        <span class="hljs-string">'cache'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\caching\FileCache'</span>,
+        ],
+        <span class="hljs-string">'db'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\db\Connection'</span>,
+            <span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'mysql:host=localhost;dbname=mydatabase'</span>,
+            <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'root'</span>,
+            <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">''</span>,
+            <span class="hljs-string">'enableSchemaCache'</span> =&gt; <span class="hljs-keyword">true</span>,
+
+            <span class="hljs-comment">// Duration of schema cache.</span>
+            <span class="hljs-string">'schemaCacheDuration'</span> =&gt; <span class="hljs-number">3600</span>,
+
+            <span class="hljs-comment">// Name of the cache component used to store schema information</span>
+            <span class="hljs-string">'schemaCache'</span> =&gt; <span class="hljs-string">'cache'</span>,
+        ],
+    ],
+];
+</code></pre>
+<h2>合并和压缩资源文件  <span id="optimizing-assets"></span><a href="#optimizing-assets" class="hashlink">&para;</a></h2><p>一个复杂的网页往往包括许多 CSS 和 JavaScript 资源文件。
+为减少 HTTP 请求的数量和这些资源总下载的大小，应考虑将它们合并成一个单一的文件并压缩。
+这可大大提高页面加载时间，且减少了服务器负载。
+想了解更多细节，请参阅<a href="guide-structure-assets.html">前端资源</a>部分。</p>
+<h2>优化会话存储  <span id="optimizing-session"></span><a href="#optimizing-session" class="hashlink">&para;</a></h2><p>默认会话数据被存储在文件中。
+这是好的对处于发展项目或小型项目。
+但是，当涉及要处理大量并发请求时，
+最好使用其他的会话存储方式，比如数据库。
+Yii 支持各种会话存储。
+你可以通过在<a href="guide-concept-configurations.html">配置</a>中配置 <code>session</code> 组件来使用这些存储，
+如下代码：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'session'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\web\DbSession'</span>,
+
+            <span class="hljs-comment">// Set the following if you want to use DB component other than</span>
+            <span class="hljs-comment">// default 'db'.</span>
+            <span class="hljs-comment">// 'db' =&gt; 'mydb',</span>
+
+            <span class="hljs-comment">// To override default session table, set the following</span>
+            <span class="hljs-comment">// 'sessionTable' =&gt; 'my_session',</span>
+        ],
+    ],
+];
+</code></pre>
+<p>以上配置是使用数据库来存储会话数据。默认情况下，
+它会使用 <code>db</code> 应用组件连接数据库并将会话数据存储在 <code>session</code> 表。
+因此，你必须创建如下的 <code>session</code> 表，</p>
+<pre><code class="hljs sql language-sql"><span class="hljs-operator"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">session</span> (
+    <span class="hljs-keyword">id</span> <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">40</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+    <span class="hljs-keyword">expire</span> <span class="hljs-built_in">INTEGER</span>,
+    <span class="hljs-keyword">data</span> <span class="hljs-built_in">BLOB</span>
+)
+</span></code></pre>
+<p>你也可以通过使用缓存来存储会话数据 <a href="./yii-web-cachesession.html">yii\web\CacheSession</a> 。
+理论上讲，你可以使用只要支持<a href="guide-caching-data.html#supported-cache-storage">数据缓存</a>。
+但是请注意，某些缓存的存储当达到存储限制会清除缓存数据。出于这个原因，你应主要在不存在存储限制时才使用这些缓存存储。
+如果你的服务器支持 <a href="http://redis.io/">Redis</a>，强烈建议你通过使用 <a href="./yii-redis-session.html">yii\redis\Session</a> 来作为会话存储。</p>
+<p>如果您的服务器上有 <a href="http://redis.io/">Redis</a>，
+强烈建议您使用 <a href="./yii-redis-session.html">yii\redis\Session</a> 作为会话存储。</p>
+<h2>优化数据库  <span id="optimizing-databases"></span><a href="#optimizing-databases" class="hashlink">&para;</a></h2><p>执行数据库查询并从数据库中取出数据往往是一个 Web 应用程序主要的性能瓶颈。
+尽管使用<a href="guide-caching-data.html">数据缓存</a>技术可以缓解性能下降，但它并不完全解决这个问题。
+当数据库包含大量的数据且缓存数据是无效的，
+获取最新的数据可能是最耗性能的假如在没有适当地设计数据库和查询条件。</p>
+<p>一般来说，提高数据库查询的性能是创建索引。例如，如果你需要找一个用户表的“用户名”，
+你应该为“用户名”创建一个索引。
+注意，尽管索引可以使选择查询的速度快得多，但它会减慢插入、更新和删除的查询。</p>
+<p>对于复杂的数据库查询，建议你创建数据库视图来保存查询分析和准备的时间。</p>
+<p>最后，在“SELECT”中使用“LIMIT”查询。
+这可以避免从数据库中取出大量数据。</p>
+<h2>使用普通数组  <span id="using-arrays"></span><a href="#using-arrays" class="hashlink">&para;</a></h2><p>尽管<a href="guide-db-active-record.html">活动记录</a>对象使用起来非常方便，
+但当你需要从数据库中检索大量数据时它的效率不如使用普通的数组。
+在这种情况下，你可以考虑在使用活动记录查询数据时调用 <code>asArray()</code>，
+使检索到的数据被表示为数组而不是笨重的活动记录对象。例如，</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PostController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionIndex</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$posts</span> = Post::find()-&gt;limit(<span class="hljs-number">100</span>)-&gt;asArray()-&gt;all();
+        
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;render(<span class="hljs-string">'index'</span>, [<span class="hljs-string">'posts'</span> =&gt; <span class="hljs-variable">$posts</span>]);
+    }
+}
+</code></pre>
+<p>在上述代码中，$posts 将被表中的行填充形成数组。每一行是一个普通的数组。要访问
+第 i 行的 <code>title</code> 列，你可以使用表达式 <code>$post[$i]['title']</code>。</p>
+<p>你也可以使用 <a href="guide-db-dao.html">DAO</a> 以数组的方式来构建查询和检索数据。</p>
+<h2>优化 Composer 自动加载  <span id="optimizing-autoloader"></span><a href="#optimizing-autoloader" class="hashlink">&para;</a></h2><p>因为 Composer 自动加载用于加载大多数第三方类文件，
+应考虑对其进行优化，通过执行以下命令：</p>
+<pre><code class="hljs nginx"><span class="hljs-title">composer</span> dumpautoload -o
+</code></pre>
+<p>另外，您可以考虑使用
+<a href="https://getcomposer.org/doc/articles/autoloader-optimization.md#optimization-level-2-a-authoritative-class-maps">authoritative class maps</a>
+和 <a href="https://getcomposer.org/doc/articles/autoloader-optimization.md#optimization-level-2-b-apcu-cache">APCu 缓存</a>。
+请注意，这两种选择可能适用于您的特定情况，也可能不适合您。</p>
+<h2>处理离线数据  <span id="processing-data-offline"></span><a href="#processing-data-offline" class="hashlink">&para;</a></h2><p>当一个请求涉及到一些资源密集操作，
+你应该想办法在无需用户等待他们完成脱机模式时来执行这些操作。</p>
+<p>有两种方法可以离线数据处理：推和拉。</p>
+<p>在拉中，只要有请求涉及到一些复杂的操作，你创建一个任务，并将其保存在永久存储，例如数据库。然后，
+使用一个单独的进程（如 cron 作业）拉任务，并进行处理。
+这种方法很容易实现，但它也有一些缺点。
+例如，该任务过程中需要定期地从任务存储拉。如果拉频率太低，这些任务可以延迟处理；
+但是如果频率过高，将引起的高开销。</p>
+<p>在推中，你可以使用消息队列（如 RabbitMQ ，ActiveMQ ， Amazon SQS 等）来管理任务。
+每当一个新的任务放在队列中，它会启动或者通知任务处理过程去触发任务处理。</p>
+<h2>性能分析  <span id="performance-profiling"></span><a href="#performance-profiling" class="hashlink">&para;</a></h2><p>你应该配置你的代码来找出性能缺陷，并相应地采取适当措施。
+以下分析工具可能是有用的:</p>
+<ul>
+<li><a href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Yii debug toolbar and debugger</a></li>
+<li><a href="https://blackfire.io/">Blackfire</a></li>
+<li><a href="https://secure.php.net/manual/en/book.xhprof.php">XHProf</a></li>
+<li><a href="http://xdebug.org/docs/profiler">XDebug profiler</a></li>
+</ul>
+<h2>准备扩展应用程序 <span id="zhun-bei-kuo-zhan-ying-yong-cheng-xu"></span><a href="#zhun-bei-kuo-zhan-ying-yong-cheng-xu" class="hashlink">&para;</a></h2><p>当没有任何帮助时，您可以尝试使您的应用程序可扩展。<a href="https://github.com/samdark/yii2-cookbook/blob/master/book/scaling.md">Configuring a Yii2 Application for an Autoscaling Stack</a> 中提供了一个很好的介绍。有关进一步阅读，请参阅 <a href="http://thehighload.com/">Web apps performance and scaling</a>.</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

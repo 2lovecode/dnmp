@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side） - 接收用户数据（Getting Data from Users） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w662" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w662-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w662-collapse" class="collapse navbar-collapse"><ul id="w663" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w664" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-646" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-646" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-647" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-647" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-648" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-648" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-649" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-649" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-650" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-650" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-651" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-651" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-zh-CN/README.md">Sphinx</a>
+<a class="list-group-item" href="./guide-yii2-redis.html">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-zh-CN/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-zh-CN/README.md">ElasticSearch</a></div>
+<a class="list-group-item active" href="#navigation-652" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-652" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item active" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-653" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-653" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-654" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-654" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-655" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-655" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-656" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-656" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-657" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-657" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-658" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-658" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-659" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-659" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-660" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-660" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-661" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-661" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>在客户端扩展 ActiveForm <span id="zai-ke-hu-duan-kuo-zhan-activeform"></span><a href="#zai-ke-hu-duan-kuo-zhan-activeform" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#activeform-shi-jian">ActiveForm 事件</a></li>
+<li><a href="#tong-guo-ajax-ti-jiao-biao-dan">通过 AJAX 提交表单</a></li>
+<li><a href="#dong-tai-tian-jia-zi-duan">动态添加字段</a></li></ol></div>
+<p><a href="./yii-widgets-activeform.html">yii\widgets\ActiveForm</a> 小部件附带一组用于客户端验证的 JavaScript 方法。
+它的实现非常灵活，可以让你以不同的方式扩展它。
+下面我们来看描述。</p>
+<h2>ActiveForm 事件 <span id="activeform-shi-jian"></span><a href="#activeform-shi-jian" class="hashlink">&para;</a></h2><p>ActiveForm 触发一系列专用事件。使用类似以下的代码，您可以订阅这些代码
+事件并处理它们：</p>
+<pre><code class="hljs javascript language-javascript">$(<span class="hljs-string">'#contact-form'</span>).on(<span class="hljs-string">'beforeSubmit'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
+	<span class="hljs-keyword">if</span> (!confirm(<span class="hljs-string">"Everything is correct. Submit?"</span>)) {
+		<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+	}
+	<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+});
+</code></pre>
+<p>在下文中，我们将查看可用的事件。</p>
+<h3><code>beforeValidate</code> <span id="beforevalidate"></span><a href="#beforevalidate" class="hashlink">&para;</a></h3><p><code>beforeValidate</code> 是在验证整个表单之前触发的。</p>
+<p>事件处理程序的签名应该是：</p>
+<pre><code class="hljs javascript language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event, messages, deferreds</span>)
+</span></code></pre>
+<p>其中</p>
+<ul>
+<li><code>event</code>: 一个 Event 对象。</li>
+<li><code>messages</code>: 一个关联数组，其中键是属性ID，
+值是相应属性的错误消息数组。</li>
+<li><code>deferreds</code>: 一个 Deferred 对象数组。你可以使用 <code>deferreds.add(callback)</code>
+来添加一个新的延迟验证。</li>
+</ul>
+<p>如果处理程序返回一个布尔型 <code>false</code>，它将在此事件后停止进一步的表单验证。
+结果 <code>afterValidate</code> 事件将不会被触发。</p>
+<h3><code>afterValidate</code> <span id="aftervalidate"></span><a href="#aftervalidate" class="hashlink">&para;</a></h3><p><code>afterValidate</code> 是在验证整个表单后触发的。</p>
+<p>事件处理程序的签名应该是：</p>
+<pre><code class="hljs javascript language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event, messages, errorAttributes</span>)
+</span></code></pre>
+<p>其中</p>
+<ul>
+<li><code>event</code>: 一个 Event 对象。</li>
+<li><code>messages</code>: 一个关联数组，其中键是属性ID，
+值是相应属性的错误消息数组。</li>
+<li><code>errorAttributes</code>: 一个具有验证错误的属性数组。有关此参数的结构，
+请参阅 <code>attributeDefaults</code>。</li>
+</ul>
+<h3><code>beforeValidateAttribute</code> <span id="beforevalidateattribute"></span><a href="#beforevalidateattribute" class="hashlink">&para;</a></h3><p><code>beforeValidateAttribute</code> 事件是在验证属性之前触发的。
+事件处理程序的签名应该是：</p>
+<pre><code class="hljs javascript language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event, attribute, messages, deferreds</span>)
+</span></code></pre>
+<p>其中</p>
+<ul>
+<li><code>event</code>: 一个 Event 对象。</li>
+<li><code>attribute</code>: 要验证的属性。 请参阅这个参数的 <code>attributeDefaults</code> 
+结构。</li>
+<li><code>messages</code>: 可以为其添加指定属性的验证错误消息的数组。</li>
+<li><code>deferreds</code>: 一个 Deferred 对象数组。你可以使用 <code>deferreds.add(callback)</code>
+来添加一个新的延迟验证。</li>
+</ul>
+<p>如果处理程序返回布尔型 <code>false</code>，它将停止进一步验证指定的属性。
+结果，<code>afterValidateAttribute</code> 事件将不会被触发。</p>
+<h3><code>afterValidateAttribute</code> <span id="aftervalidateattribute"></span><a href="#aftervalidateattribute" class="hashlink">&para;</a></h3><p><code>afterValidateAttribute</code> 事件在验证整个表单和每个属性后触发的。</p>
+<p>事件处理程序的签名应该是：</p>
+<pre><code class="hljs javascript language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event, attribute, messages</span>)
+</span></code></pre>
+<p>其中</p>
+<ul>
+<li><code>event</code>: 一个 Event 对象。</li>
+<li><code>attribute</code>: 该属性会被验证。有关此参数的结构，
+请参阅 <code>attributeDefaults</code>。</li>
+<li><code>messages</code>: 可以为其添加指定属性的其他验证错误消息的
+数组。</li>
+</ul>
+<h3><code>beforeSubmit</code> <span id="beforesubmit"></span><a href="#beforesubmit" class="hashlink">&para;</a></h3><p><code>beforeSubmit</code> 是在所有验证通过后且提交表单之前触发的。</p>
+<p>事件处理程序的签名应该是：</p>
+<pre><code class="hljs javascript language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>)
+</span></code></pre>
+<p>其中 <code>event</code> 是一个 Event 对象。</p>
+<p>如果处理返回布尔型“false”，它将停止表单提交。</p>
+<h3><code>ajaxBeforeSend</code> <span id="ajaxbeforesend"></span><a href="#ajaxbeforesend" class="hashlink">&para;</a></h3><p><code>ajaxBeforeSend</code> 事件是在发送用于基于AJAX的验证的AJAX请求之前触发的。</p>
+<p>事件处理程序的签名应该是：</p>
+<pre><code class="hljs javascript language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event, jqXHR, settings</span>)
+</span></code></pre>
+<p>其中</p>
+<ul>
+<li><code>event</code>: 一个 Event 对象。</li>
+<li><code>jqXHR</code>: 一个 jqXHR 对象</li>
+<li><code>settings</code>: AJAX 请求的设置</li>
+</ul>
+<h3><code>ajaxComplete</code> <span id="ajaxcomplete"></span><a href="#ajaxcomplete" class="hashlink">&para;</a></h3><p><code>ajaxComplete</code> 事件是在完成基于 AJAX 验证的 AJAX 请求后触发的。</p>
+<p>事件处理程序的签名应该是：</p>
+<pre><code class="hljs javascript language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event, jqXHR, textStatus</span>)
+</span></code></pre>
+<p>where</p>
+<ul>
+<li><code>event</code>: 一个 Event 对象。</li>
+<li><code>jqXHR</code>: 一个 jqXHR 对象</li>
+<li><code>textStatus</code>: 请求的状态 ("success", "notmodified", "error", "timeout",
+"abort", or "parsererror")。</li>
+</ul>
+<h2>通过 AJAX 提交表单 <span id="tong-guo-ajax-ti-jiao-biao-dan"></span><a href="#tong-guo-ajax-ti-jiao-biao-dan" class="hashlink">&para;</a></h2><p>虽然可以在客户端或通过 AJAX 请求进行验证，但作为默认的正常请求
+表单提交本身已完成。如果你想通过 AJAX 提交表单，你可以
+通过以下方式处理表单的 <code>beforeSubmit</code> 事件做到这一点：</p>
+<pre><code class="hljs javascript language-javascript"><span class="hljs-keyword">var</span> $form = $(<span class="hljs-string">'#formId'</span>);
+$form.on(<span class="hljs-string">'beforeSubmit'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> data = $form.serialize();
+    $.ajax({
+        url: $form.attr(<span class="hljs-string">'action'</span>),
+        type: <span class="hljs-string">'POST'</span>,
+        data: data,
+        success: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+            <span class="hljs-comment">// 执行成功</span>
+        },
+        error: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">jqXHR, errMsg</span>) </span>{
+            alert(errMsg);
+        }
+     });
+     <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>; <span class="hljs-comment">// 防止默认提交</span>
+});
+</code></pre>
+<p>要了解更多关于 jQuery <code>ajax()</code> 函数的信息，请参阅 <a href="https://api.jquery.com/jQuery.ajax/">jQuery 文档</a>。</p>
+<h2>动态添加字段 <span id="dong-tai-tian-jia-zi-duan"></span><a href="#dong-tai-tian-jia-zi-duan" class="hashlink">&para;</a></h2><p>在现代 Web 应用程序中，您经常需要在向用户显示表单后更改表单。
+这可以例如在点击“加号”图标之后添加新的字段。
+要为这些字段启用客户端验证，他们必须注册 ActiveForm JavaScript 插件。</p>
+<p>您必须自行添加一个字段，然后将其添加到验证列表中：</p>
+<pre><code class="hljs javascript language-javascript">$(<span class="hljs-string">'#contact-form'</span>).yiiActiveForm(<span class="hljs-string">'add'</span>, {
+    id: <span class="hljs-string">'address'</span>,
+    name: <span class="hljs-string">'address'</span>,
+    container: <span class="hljs-string">'.field-address'</span>,
+    input: <span class="hljs-string">'#address'</span>,
+    error: <span class="hljs-string">'.help-block'</span>,
+    validate:  <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">attribute, value, messages, deferred, $form</span>) </span>{
+        yii.validation.required(value, messages, {message: <span class="hljs-string">"Validation Message Here"</span>});
+    }
+});
+</code></pre>
+<p>要从验证列表中删除一个字段，使它不被验证，您可以执行以下操作：</p>
+<pre><code class="hljs javascript language-javascript">$(<span class="hljs-string">'#contact-form'</span>).yiiActiveForm(<span class="hljs-string">'remove'</span>, <span class="hljs-string">'address'</span>);
+</code></pre>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

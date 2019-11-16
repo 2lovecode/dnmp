@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a31ae003/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/4b963024/solarized_light.css" rel="stylesheet">
+<link href="./assets/ea07b7e2/style.css" rel="stylesheet">
+<script src="./assets/f15a60c7/jquery.js"></script>
+<script src="./assets/a31ae003/js/bootstrap.js"></script>
+<script src="./assets/f9f7ce70/jssearch.js"></script>    <title>安全领域的最佳实践（Best Practices） - 安全（Security） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w567" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w567-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w567-collapse" class="collapse navbar-collapse"><ul id="w568" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w569" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-551" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-551" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-552" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-552" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-553" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-553" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-554" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-554" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-555" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-555" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-556" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-556" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-zh-CN/README.md">Sphinx</a>
+<a class="list-group-item" href="./guide-yii2-redis.html">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-zh-CN/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-zh-CN/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-557" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-557" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-558" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-558" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item active" href="#navigation-559" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-559" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item active" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-560" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-560" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-561" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-561" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-562" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-562" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-563" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-563" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-564" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-564" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-565" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-565" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-566" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-566" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>最佳安全实践 <span id="zui-jia-an-quan-shi-jian"></span><a href="#zui-jia-an-quan-shi-jian" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#ji-ben-zhun-ze">基本准则</a></li>
+<li><a href="#bi-mian-sql-zhu-ru">避免 SQL 注入</a></li>
+<li><a href="#fang-zhi-xss-gong-ji">防止 XSS 攻击</a></li>
+<li><a href="#fang-zhi-csrf-gong-ji">防止 CSRF 攻击</a></li>
+<li><a href="#fang-zhi-wen-jian-bao-lu">防止文件暴露</a></li>
+<li><a href="#zai-sheng-chan-huan-jing-guan-bi-diao-shi-xin-xi-he-gong-ju">在生产环境关闭调试信息和工具</a></li>
+<li><a href="#shi-yong-tls-shang-de-an-quan-lian-jie">使用 TLS 上的安全连接</a></li>
+<li><a href="#an-quan-fu-wu-qi-pei-zhi">安全服务器配置</a></li></ol></div>
+<p>下面，我们将会回顾常见的安全原则，并介绍在使用 Yii 开发应用程序时，如何避免潜在安全威胁。
+大多数这些原则并非您独有，而是适用于网站或软件开发，
+因此，您还可以找到有关这些背后的一般概念的进一步阅读的链接。</p>
+<h2>基本准则 <span id="ji-ben-zhun-ze"></span><a href="#ji-ben-zhun-ze" class="hashlink">&para;</a></h2><p>无论是开发何种应用程序，我们都有两条基本的安全准则：</p>
+<ol>
+<li>过滤输入</li>
+<li>转义输出</li>
+</ol>
+<h3>过滤输入 <span id="guo-lu-shu-ru"></span><a href="#guo-lu-shu-ru" class="hashlink">&para;</a></h3><p>过滤输入的意思是，用户输入不应该认为是安全的，你需要总是验证你获得的输入值是在允许范围内。
+比如，我们假设可以通过三个字段完成排序 <code>title</code>，<code>created_at</code> 和 <code>status</code>，然后，这个值是由用户输入提供的，
+那么，最好在我们接收参数的时候，检查一下这个值是否是指定的范围。
+对于基本的 PHP 而言，上述做法类似如下：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$sortBy</span> = <span class="hljs-variable">$_GET</span>[<span class="hljs-string">'sort'</span>];
+<span class="hljs-keyword">if</span> (!in_array(<span class="hljs-variable">$sortBy</span>, [<span class="hljs-string">'title'</span>, <span class="hljs-string">'created_at'</span>, <span class="hljs-string">'status'</span>])) {
+	<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">Exception</span>(<span class="hljs-string">'Invalid sort value.'</span>);
+}
+</code></pre>
+<p>在 Yii 中，很大可能性，你会使用 <a href="guide-input-validation.html">表单校验器</a> 来执行类似的检查。</p>
+<p>进一步阅读该主题：</p>
+<ul>
+<li><a href="https://www.owasp.org/index.php/Data_Validation">https://www.owasp.org/index.php/Data_Validation</a></li>
+<li><a href="https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet">https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet</a></li>
+</ul>
+<h3>转义输出 <span id="zhuan-yi-shu-chu"></span><a href="#zhuan-yi-shu-chu" class="hashlink">&para;</a></h3><p>转义输出的意思是，根据我们使用数据的上下文环境，数据需要被转义。比如：在 HTML 上下文，
+你需要转义 <code>&lt;</code>，<code>&gt;</code> 之类的特殊字符。在 JavaScript 或者 SQL 中，也有其他的特殊含义的字符串需要被转义。
+由于手动的给所用的输出转义容易出错，
+Yii 提供了大量的工具来在不同的上下文执行转义。</p>
+<p>进一步阅读该话题：</p>
+<ul>
+<li><a href="https://www.owasp.org/index.php/Command_Injection">https://www.owasp.org/index.php/Command_Injection</a></li>
+<li><a href="https://www.owasp.org/index.php/Code_Injection">https://www.owasp.org/index.php/Code_Injection</a></li>
+<li><a href="https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29">https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)</a></li>
+</ul>
+<h2>避免 SQL 注入 <span id="bi-mian-sql-zhu-ru"></span><a href="#bi-mian-sql-zhu-ru" class="hashlink">&para;</a></h2><p>SQL 注入发生在查询语句是由连接未转义的字符串生成的场景，比如：</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$username</span> = <span class="hljs-variable">$_GET</span>[<span class="hljs-string">'username'</span>];
+<span class="hljs-variable">$sql</span> = <span class="hljs-string">"SELECT * FROM user WHERE username = '$username'"</span>;
+</code></pre>
+<p>除了提供正确的用户名外，攻击者可以给你的应用程序输入类似 <code>'; DROP TABLE user; --</code> 的语句。
+这将会导致生成如下的 SQL：</p>
+<pre><code class="hljs sql language-sql"><span class="hljs-operator"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">user</span> <span class="hljs-keyword">WHERE</span> username = <span class="hljs-string">''</span>;</span> <span class="hljs-operator"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">user</span>;</span> <span class="hljs-comment">--'</span>
+</code></pre>
+<p>这是一个合法的查询语句，并将会执行以空的用户名搜索用户操作，然后，删除 <code>user</code> 表。
+这极有可能导致网站出错，数据丢失。（你是否进行了规律的数据备份？）</p>
+<p>在 Yii 中，大部分的数据查询是通过 <a href="guide-db-active-record.html">Active Record</a> 进行的，
+而其是完全使用 PDO 预处理语句执行 SQL 查询的。在预处理语句中，上述示例中，构造 SQL 查询的场景是不可能发生的。</p>
+<p>有时，你仍需要使用 <a href="guide-db-dao.html">raw queries</a> 或者 <a href="guide-db-query-builder.html">query builder</a>。
+在这种情况下，你应该使用安全的方式传递参数。如果数据是提供给表列的值，最好使用预处理语句：</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// query builder</span>
+<span class="hljs-variable">$userIDs</span> = (<span class="hljs-keyword">new</span> Query())
+    -&gt;select(<span class="hljs-string">'id'</span>)
+    -&gt;from(<span class="hljs-string">'user'</span>)
+    -&gt;where(<span class="hljs-string">'status=:status'</span>, [<span class="hljs-string">':status'</span> =&gt; <span class="hljs-variable">$status</span>])
+    -&gt;all();
+
+<span class="hljs-comment">// DAO</span>
+<span class="hljs-variable">$userIDs</span> = <span class="hljs-variable">$connection</span>
+    -&gt;createCommand(<span class="hljs-string">'SELECT id FROM user where status=:status'</span>)
+    -&gt;bindValues([<span class="hljs-string">':status'</span> =&gt; <span class="hljs-variable">$status</span>])
+    -&gt;queryColumn();
+</code></pre>
+<p>如果数据是用于指定列的名字，或者表的名字，最好的方式是只允许预定义的枚举值。</p>
+<pre><code class="hljs php language-php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionList</span><span class="hljs-params">(<span class="hljs-variable">$orderBy</span> = null)</span>
+</span>{
+    <span class="hljs-keyword">if</span> (!in_array(<span class="hljs-variable">$orderBy</span>, [<span class="hljs-string">'name'</span>, <span class="hljs-string">'status'</span>])) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> BadRequestHttpException(<span class="hljs-string">'Only name and status are allowed to order by.'</span>)
+    }
+
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>如果上述方法不行，表名或者列名应该被转义。Yii 针对这种转义提供了一个特殊的语法，
+这样可以在所有支持的数据库都使用一套方案。</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$sql</span> = <span class="hljs-string">"SELECT COUNT([[$column]]) FROM {{table}}"</span>;
+<span class="hljs-variable">$rowCount</span> = <span class="hljs-variable">$connection</span>-&gt;createCommand(<span class="hljs-variable">$sql</span>)-&gt;queryScalar();
+</code></pre>
+<p>你可以在 <a href="guide-db-dao.html#quoting-table-and-column-names">Quoting Table and Column Names</a> 中获取更多的语法细节。</p>
+<p>进一步阅读该话题：</p>
+<ul>
+<li><a href="https://www.owasp.org/index.php/SQL_Injection">https://www.owasp.org/index.php/SQL_Injection</a></li>
+</ul>
+<h2>防止 XSS 攻击 <span id="fang-zhi-xss-gong-ji"></span><a href="#fang-zhi-xss-gong-ji" class="hashlink">&para;</a></h2><p>XSS 或者跨站脚本发生在输出 HTML 到浏览器时，输出内容没有正确的转义。
+例如，如果用户可以输入其名称，那么他输入 <code>&lt;script&gt;alert('Hello!');&lt;/script&gt;</code> 而非其名字 <code>Alexander</code>，
+所有输出没有转义直接输出用户名的页面都会执行 JavaScript 代码 <code>alert('Hello!');</code>，
+这会导致浏览器页面上出现一个警告弹出框。就具体的站点而言，除了这种无意义的警告输出外，
+这样的脚本可以以你的名义发送一些消息到后台，甚至执行一些银行交易行为。</p>
+<p>避免 XSS 攻击在 Yii 中非常简单，有如下两种一般情况：</p>
+<ol>
+<li>你希望数据以纯文本输出。</li>
+<li>你希望数据以 HTML 形式输出。</li>
+</ol>
+<p>如果你需要的是纯文本，你可以如下简单的转义：</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?</span>= \yii\helpers\Html::encode(<span class="hljs-variable">$username</span>) <span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>如果是 HTML，我们可以用 HtmlPurifier 帮助类来执行：</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?</span>= \yii\helpers\HtmlPurifier::process(<span class="hljs-variable">$description</span>) <span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>注意 HtmlPurifier 帮助类的处理过程较为费时，建议增加缓存。</p>
+<p>进一步阅读该话题：</p>
+<ul>
+<li><a href="https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29">https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)</a></li>
+</ul>
+<h2>防止 CSRF 攻击 <span id="fang-zhi-csrf-gong-ji"></span><a href="#fang-zhi-csrf-gong-ji" class="hashlink">&para;</a></h2><p>CSRF 是跨站请求伪造的缩写。这个攻击思想源自许多应用程序假设来自用户的浏览器请求是由用户自己产生的，
+而事实并非如此。</p>
+<p>例如，网站 <code>an.example.com</code> 有一个 <code>/logout</code> 网址，当使用简单的 GET 请求访问时, 记录用户退出。
+只要用户的请求一切正常，但是有一天坏人们故意在用户经常访问的论坛上放上 <code>&lt;img src="http://an.example.com/logout"&gt;</code>。
+浏览器在请求图像或请求页面之间没有任何区别，
+所以当用户打开一个带有这样一个被操作过的 <code>&lt;img&gt;</code> 标签的页面时，
+浏览器将 GET 请求发送到该 URL，用户将从 <code>an.example.com</code> 注销。</p>
+<p>这是 CSRF 攻击如何运作的基本思路。可以说用户退出并不是一件严重的事情，
+然而这仅仅是一个例子，使用这种方法可以做更多的事情，例如触发付款或者是改变数据。
+想象一下如果某个网站有一个这样的 <code>http://an.example.com/purse/transfer?to=anotherUser&amp;amount=2000</code> 网址。 
+使用 GET 请求访问它会导致从授权用户账户转账 $2000 给 <code>anotherUser</code>。
+我们知道，浏览器将始终发送 GET 请求来加载图像，
+所以我们可以修改代码以仅接受该 URL 上的 POST 请求。
+不幸的是，这并不会拯救我们，因为攻击者可以放置一些 JavaScript 代码而不是 <code>&lt;img&gt;</code> 标签，这样就可以向该 URL 发送 POST 请求。</p>
+<p>出于这个原因，Yii 应用其他机制来防止 CSRF 攻击。</p>
+<p>为了避免 CSRF 攻击，你总是需要：</p>
+<ol>
+<li>遵循 HTTP 准则，比如 GET 不应该改变应用的状态。
+有关详细信息，请参阅 <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html">RFC2616</a>。</li>
+<li>保证 Yii CSRF 保护开启。</li>
+</ol>
+<p>有的时候你需要对每个控制器和/或方法使用禁用 CSRF。可以通过设置其属性来实现：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SiteController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$enableCsrfValidation</span> = <span class="hljs-keyword">false</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionIndex</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-comment">// CSRF validation will not be applied to this and other actions</span>
+    }
+
+}
+</code></pre>
+<p>要对每个自定义方法禁用 CSRF 验证，您可以使用：</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SiteController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">beforeAction</span><span class="hljs-params">(<span class="hljs-variable">$action</span>)</span>
+    </span>{
+        <span class="hljs-comment">// ...set `$this-&gt;enableCsrfValidation` here based on some conditions...</span>
+        <span class="hljs-comment">// call parent method that will check CSRF if such property is true.</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">parent</span>::beforeAction(<span class="hljs-variable">$action</span>);
+    }
+}
+</code></pre>
+<p>在 <a href="guide-structure-controllers.html#standalone-actions">standalone actions</a> 禁用 CSRF 必须在 <code>init()</code> 方法中设置。
+不要把这段代码放在 <code>beforeRun()</code> 方法中，因为它不会起任何作用。</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Action</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ContactAction</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Action</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">parent</span>::init();
+        <span class="hljs-variable">$this</span>-&gt;controller-&gt;enableCsrfValidation = <span class="hljs-keyword">false</span>;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span><span class="hljs-params">()</span>
+    </span>{
+          <span class="hljs-variable">$model</span> = <span class="hljs-keyword">new</span> ContactForm();
+          <span class="hljs-variable">$request</span> = Yii::<span class="hljs-variable">$app</span>-&gt;request;
+          <span class="hljs-keyword">if</span> (<span class="hljs-variable">$request</span>-&gt;referrer === <span class="hljs-string">'yiipowered.com'</span>
+              &amp;&amp; <span class="hljs-variable">$model</span>-&gt;load(<span class="hljs-variable">$request</span>-&gt;post())
+              &amp;&amp; <span class="hljs-variable">$model</span>-&gt;validate()
+          ) {
+              <span class="hljs-variable">$model</span>-&gt;sendEmail();
+          }
+    }
+}
+</code></pre>
+<blockquote class="warning"><p><strong>警告： </strong>禁用 CSRF 将允许任何站点向您的站点发送 POST 请求。在这种情况下，实施额外验证非常重要，例如检查 IP 地址或秘密令牌。</p>
+</blockquote>
+<p>进一步阅读该话题：</p>
+<ul>
+<li><a href="https://www.owasp.org/index.php/CSRF">https://www.owasp.org/index.php/CSRF</a></li>
+</ul>
+<h2>防止文件暴露 <span id="fang-zhi-wen-jian-bao-lu"></span><a href="#fang-zhi-wen-jian-bao-lu" class="hashlink">&para;</a></h2><p>默认的服务器 webroot 目录指向包含有 <code>index.php</code> 的 <code>web</code> 目录。在共享托管环境下，这样是不可能的，
+这样导致了所有的代码，配置，日志都在webroot目录。</p>
+<p>如果是这样，别忘了拒绝除了 <code>web</code> 目录以外的目录的访问权限。
+如果没法这样做，考虑将你的应用程序托管在其他地方。</p>
+<h2>在生产环境关闭调试信息和工具 <span id="zai-sheng-chan-huan-jing-guan-bi-diao-shi-xin-xi-he-gong-ju"></span><a href="#zai-sheng-chan-huan-jing-guan-bi-diao-shi-xin-xi-he-gong-ju" class="hashlink">&para;</a></h2><p>在调试模式下， Yii 展示了大量的错误信息，这样是对开发有用的。
+同样，这些调试信息对于攻击者而言也是方便其用于破解数据结构，配置值，以及你的部分代码。
+永远不要在生产模式下将你的 <code>index.php</code> 中的 <code>YII_DEBUG</code> 设置为 <code>true</code>。</p>
+<p>你同样也不应该在生产模式下开启 Gii。它可以被用于获取数据结构信息，
+代码，以及简单的用 Gii 生成的代码覆盖你的代码。</p>
+<p>调试工具栏同样也应该避免在生产环境出现，除非非常有必要。它将会暴露所有的应用和配置的详情信息。
+如果你确定需要，反复确认其访问权限限定在你自己的 IP。</p>
+<p>进一步阅读该话题：</p>
+<ul>
+<li><a href="https://www.owasp.org/index.php/Exception_Handling">https://www.owasp.org/index.php/Exception_Handling</a></li>
+<li><a href="https://www.owasp.org/index.php/Top_10_2007-Information_Leakage">https://www.owasp.org/index.php/Top_10_2007-Information_Leakage</a></li>
+</ul>
+<h2>使用 TLS 上的安全连接 <span id="shi-yong-tls-shang-de-an-quan-lian-jie"></span><a href="#shi-yong-tls-shang-de-an-quan-lian-jie" class="hashlink">&para;</a></h2><p>Yii 提供依赖 cookie 和/或 PHP 会话的功能。如果您的连接受到威胁，这些可能会很容易受到攻击。
+如果应用程序通过 TLS 使用安全连接，则风险会降低。</p>
+<p>有关如何配置它的说明，请参阅您的 Web 服务器文档。
+您还可以参考 H5BP 项目提供的示例配置：</p>
+<ul>
+<li><a href="https://github.com/h5bp/server-configs-nginx">Nginx</a>。</li>
+<li><a href="https://github.com/h5bp/server-configs-apache">Apache</a>。</li>
+<li><a href="https://github.com/h5bp/server-configs-iis">IIS</a>。</li>
+<li><a href="https://github.com/h5bp/server-configs-lighttpd">Lighttpd</a>。</li>
+</ul>
+<h2>安全服务器配置 <span id="an-quan-fu-wu-qi-pei-zhi"></span><a href="#an-quan-fu-wu-qi-pei-zhi" class="hashlink">&para;</a></h2><p>本节的目的是强调在为基于 Yii 的网站提供服务配置时需要考虑的风险。 
+除了这里涉及的要点之外，
+可能还有其他与安全相关的配置选项，
+所以不要认为这部分是完整的。</p>
+<h3>避免 <code>Host</code>-header 攻击 <span id="bi-mian-host-header-gong-ji"></span><a href="#bi-mian-host-header-gong-ji" class="hashlink">&para;</a></h3><p>像 <a href="./yii-web-urlmanager.html">yii\web\UrlManager</a> 和 <a href="./yii-helpers-url.html">yii\helpers\Url</a> 这样的类会使用 
+<a href="./yii-web-request.html#getHostInfo()-detail">currently requested host name</a> 来生成链接。
+如果 Web 服务器配置为独立于 <code>Host</code> 标头的值提供相同的站点，这个信息并不可靠，
+并且 <a href="https://www.acunetix.com/vulnerabilities/web/host-header-attack">可能由发送HTTP请求的用户伪造</a>。
+在这种情况下，您应该修复您的 Web 服务器配置以便仅为指定的主机名提供站点服务
+或者通过设置 <code>request</code> 应用程序组件的 <a href="./yii-web-request.html#setHostInfo()-detail">hostInfo</a> 属性来显式设置或过滤该值。</p>
+<p>有关于服务器配置的更多信息，请参阅您的 web 服务器的文档：</p>
+<ul>
+<li>Apache 2：<a href="http://httpd.apache.org/docs/trunk/vhosts/examples.html#defaultallports">http://httpd.apache.org/docs/trunk/vhosts/examples.html#defaultallports</a></li>
+<li>Nginx：<a href="https://www.nginx.com/resources/wiki/start/topics/examples/server_blocks/">https://www.nginx.com/resources/wiki/start/topics/examples/server_blocks/</a></li>
+</ul>
+<p>如果您无权访问服务器配置，您可以在应用程序级别设置 <a href="./yii-filters-hostcontrol.html">yii\filters\HostControl</a> 过滤器，
+以防此类的攻击。</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// Web Application configuration file</span>
+<span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'as hostControl'</span> =&gt; [
+        <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\filters\HostControl'</span>,
+        <span class="hljs-string">'allowedHosts'</span> =&gt; [
+            <span class="hljs-string">'example.com'</span>,
+            <span class="hljs-string">'*.example.com'</span>,
+        ],
+        <span class="hljs-string">'fallbackHostInfo'</span> =&gt; <span class="hljs-string">'https://example.com'</span>,
+    ],
+    <span class="hljs-comment">// ...</span>
+];
+</code></pre>
+<blockquote class="note"><p><strong>注意： </strong>您应该始更倾向于使用 web 服务器配置 'host header attack' 保护而不是使用过滤器。
+  仅当服务器配置设置不可用时 <a href="./yii-filters-hostcontrol.html">yii\filters\HostControl</a> 才应该被使用。</p>
+</blockquote>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 16 Nov 2019 00:18:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>
